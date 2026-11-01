@@ -72,7 +72,7 @@ Limit: HackRF One is half duplex; wide frequency coverage does not supply a prot
 
 Licence observation: Mixed: root GPL-2.0; inspected libhackrf source has BSD-3-Clause terms.
 
-Evidence: [COPYING](https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/COPYING), [Readme.md](https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/Readme.md). APEX hardware: not tested. Source copied: no.
+Evidence: [COPYING](https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/COPYING), [Readme.md](https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/Readme.md), [libhackrf source header](https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/host/libhackrf/src/hackrf.c) (lines 1 to 48). APEX hardware: not tested. Source copied: no.
 
 ## R07: meshtastic/firmware
 
