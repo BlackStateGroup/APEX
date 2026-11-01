@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "method": "package-lock.json declarations; not a selected-file licence audit",
-  "lockfileSha256": "08c9e85acf5f5fea3a73adc7ebac5979fb9156c477d75c7e4823d661872db490",
+  "lockfileSha256": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
   "packages": [
     {
       "path": "node_modules/@babel/code-frame",
@@ -1468,6 +1468,14 @@
       "integrity": "sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA=="
     },
     {
+      "path": "node_modules/await-lock",
+      "version": "2.2.2",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-aDczADvlvTGajTDjcjpJMqRkOF6Qdz3YbPZm/PyW6tKPkx2hlYBzxMhEywM/tU72HrVZjgl5VCdRuMlA7pZ8Gw=="
+    },
+    {
       "path": "node_modules/babel-plugin-polyfill-corejs2",
       "version": "0.4.17",
       "licence": "MIT",
@@ -2012,6 +2020,14 @@
       "integrity": "sha512-ogn/7xLmvkEVYX6SimDkcNDn/d8qZpCTQdBWPnMI+Ry7Sfch0Dz2GIcweqddK4hrkvrSY01TS20BZfMlCpJ75g=="
     },
     {
+      "path": "node_modules/expo-crypto",
+      "version": "58.0.7",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-g+4i4UpqQ5jNy1VPRvVVvr9aIdh8WwvxbpwL2ntiSESDRsXyVSeb8JM6tHVdC3b9J2nGxjtrhrsaWOo0jbSxlA=="
+    },
+    {
       "path": "node_modules/expo-dev-client",
       "version": "58.0.18",
       "licence": "MIT",
@@ -2130,6 +2146,14 @@
       "developmentOnly": false,
       "optional": false,
       "integrity": "sha512-6DBlSZwxk3J0y1j2s4XebAWNiwGaMp32NcWX7b2kJC2+EFf1g+pCcVmx8ylawt2tyLmbDHswm4MHOfrd4bqfvA=="
+    },
+    {
+      "path": "node_modules/expo-sqlite",
+      "version": "58.0.15",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-jokbgUHPD1zvpFT/LeJaCoOTsd0QXXWzbthVPCMyMMn+/IZAMqQu79OxYzck5G5wlc+t+vTuEESGMY8r1n3VTA=="
     },
     {
       "path": "node_modules/expo-status-bar",
@@ -3498,6 +3522,22 @@
       "developmentOnly": false,
       "optional": false,
       "integrity": "sha512-wajWcLZ93GCN7k4Uwh4CS4L2Ah8ohcvkOXnvIYmh4Yvuqho5j3APZ9qozK+nQrHWSgauq4h8D3HN5DKK84SrHA=="
+    },
+    {
+      "path": "node_modules/react-native-ble-plx",
+      "version": "3.5.1",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-SxksmrUt9jG6DOarrrdkb5c/HBLSfZOKauo/9VQSSi3WJA4bmF78GkrtXrgSoGNk0m1ksacFTjB5DuL39xZq/g=="
+    },
+    {
+      "path": "node_modules/react-native-nfc-manager",
+      "version": "4.2.0",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-3LCVChwRxtGG89vMTSWgrGhxIYfM9WCkJ8qO5dGTy/E8X7US5XjSN3Xg2JbN6k2iPZKWVue3qImqhGpuJsqKFw=="
     },
     {
       "path": "node_modules/react-native-web",

@@ -48,8 +48,7 @@ jobs:
       - name: Compile native module
         working-directory: android
         run: ./gradlew :apex-device:compileDebugKotlin --no-daemon
-      - name: Assemble debug APK on an explicit full-build run
-        if: github.event_name == 'workflow_dispatch'
+      - name: Assemble debug APK including NFC and Bluetooth
         working-directory: android
         run: ./gradlew :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon
   esp32s3:
@@ -64,3 +63,16 @@ jobs:
           . /opt/esp/idf/export.sh
           idf.py -C firmware/esp32s3 set-target esp32s3 build
 
+  ios:
+    runs-on: macos-15
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx expo prebuild --platform ios
+      - name: Compile unsigned iPhone Simulator app
+        run: xcodebuild -workspace ios/APEX.xcworkspace -scheme APEX -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build

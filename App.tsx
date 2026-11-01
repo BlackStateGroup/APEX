@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { DeviceSession } from './packages/core/session.ts';
 import { SimulatorTransport } from './packages/core/simulator.ts';
@@ -7,11 +7,21 @@ import { CAN_FIXTURE, decodeNec, necFixture, parseCanLog } from './packages/core
 import type { ByteTransport } from './packages/core/transport.ts';
 import { text, utf8 } from './packages/protocol/index.ts';
 import { nativeDevice } from './modules/apex-device/index.ts';
-import type { NativeStatus, NfcTag, UsbDevice } from './modules/apex-device/index.ts';
+import type { NativeStatus, UsbDevice } from './modules/apex-device/index.ts';
 import { AndroidUsbTransport } from './modules/apex-device/usb-transport.ts';
 import { catalogue } from './src/catalogue.ts';
 
-type Tab = 'Console' | 'Devices' | 'Analysis' | 'Research';
+import { NfcReader } from './packages/core/nfc.ts';
+import type { NfcObservation } from './packages/core/nfc.ts';
+import { nfcBackend } from './src/platform/nfc';
+import { BleTransport } from './packages/core/ble-transport.ts';
+import type { BleCandidate } from './packages/core/ble-transport.ts';
+import { bleDriver, scanAccessories, shutdownBluetooth } from './src/platform/bluetooth';
+import { evidenceStore } from './src/platform/evidence';
+import type { EvidenceRecord } from './packages/core/evidence.ts';
+import { sourceAtlas } from './src/source-atlas.ts';
+
+type Tab = 'Console' | 'Devices' | 'Analysis' | 'Evidence' | 'Research';
 function Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {
   return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}
     style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>
@@ -34,7 +44,14 @@ export default function App() {
   const [devices, setDevices] = useState<UsbDevice[]>([]);
   const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);
   const [nfcActive, setNfcActive] = useState(false);
-  const [tag, setTag] = useState<NfcTag | null>(null);
+  const [tag, setTag] = useState<NfcObservation | null>(null);
+  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);
+  const [scanning, setScanning] = useState(false);
+  const stopScan = useRef<(() => Promise<void>) | null>(null);
+  const reader = useRef<NfcReader | null>(null);
+  const [records, setRecords] = useState<EvidenceRecord[]>([]);
+  const [lastAnalysis, setLastAnalysis] = useState<{ kind: 'analysis.nec' | 'analysis.can'; source: 'offline-fixture' | 'offline-import'; payload: unknown } | null>(null);
+  const [search, setSearch] = useState('');
   const [format, setFormat] = useState<'NEC' | 'CAN'>('NEC');
   const [input, setInput] = useState(JSON.stringify(necFixture()));
   const [fixture, setFixture] = useState(true);
@@ -43,14 +60,26 @@ export default function App() {
   const clearSession = () => { setIdentity('No device connected'); setSource('Disconnected'); setCaps([]); };
 
   useEffect(() => {
-    const subscriptions = nativeDevice ? [
-      nativeDevice.addListener('onNfcTag', setTag),
-      nativeDevice.addListener('onNfcStopped', () => setNfcActive(false)),
-    ] : [];
+    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));
+    void load();
+    const nfc = new NfcReader(nfcBackend, {
+      onState: state => setNfcActive(state !== 'idle'),
+      onError: error => setNotice(error.message),
+      onTag: observation => {
+        setTag(observation);
+        if (observation.platform === 'web') return;
+        void evidenceStore.save({ kind: 'nfc.metadata', source: observation.platform === 'ios' ? 'native-ios' : 'native-android', payload: observation, observedAt: observation.observedAt })
+          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));
+      },
+    });
+    reader.current = nfc;
+    const lifecycle = AppState.addEventListener('change', state => {
+      if (state !== 'active') { void nfc.stop().catch(error => setNotice(String(error))); void stopScan.current?.().catch(error => setNotice(String(error))); }
+    });
     return () => {
-      subscriptions.forEach(x => x.remove()); disconnectListener.current?.();
+      lifecycle.remove(); disconnectListener.current?.();
       void session.current?.close().catch(() => {});
-      void nativeDevice?.stopNfcReader().catch(() => {});
+      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});
     };
   }, []);
 
@@ -72,7 +101,7 @@ export default function App() {
     try {
       await next.open();
       setIdentity(`${next.info!.id} / ${next.info!.firmware}`);
-      setSource(next.source === 'simulator' ? 'Simulator · software only' : 'USB accessory · device report');
+      setSource(next.source === 'simulator' ? 'Simulator · software only' : next.source === 'ble' ? 'Bluetooth accessory · device report' : 'USB accessory · device report');
       setCaps(next.capabilities); append(`Connected: ${next.info!.id}. ${next.capabilities.length} operations.`);
     } catch (error) { disconnectListener.current?.(); disconnectListener.current = null; session.current = null; throw error; }
   }
@@ -81,15 +110,16 @@ export default function App() {
     await session.current?.close(); session.current = null; clearSession(); append('Session closed.');
   }
   async function refreshDevices() {
-    if (!nativeDevice) throw new Error('An Android development build is required for USB and NFC.');
+    if (!nativeDevice) throw new Error('USB host access requires an Android development build.');
     const [status, list] = await Promise.all([nativeDevice.getStatus(), nativeDevice.listUsbDevices()]);
     setNativeStatus(status); setDevices(list); append(`USB inventory: ${list.length} attached device(s).`);
   }
   function loadFixture(next: 'NEC' | 'CAN') {
-    setFormat(next); setInput(next === 'NEC' ? JSON.stringify(necFixture()) : CAN_FIXTURE); setFixture(true);
+    setLastAnalysis(null); setFormat(next); setInput(next === 'NEC' ? JSON.stringify(necFixture()) : CAN_FIXTURE); setFixture(true);
     setAnalysis('Fixture loaded. Ready to analyse.');
   }
   function analyse() {
+    setLastAnalysis(null);
     try {
       if (input.length > 262144) throw new Error('Input exceeds analysis limit');
       let result: unknown;
@@ -98,6 +128,7 @@ export default function App() {
         if (!Array.isArray(value) || value.some(x => typeof x !== 'number')) throw new Error('Expected a JSON array of pulse durations');
         result = decodeNec(value);
       } else { const frames = parseCanLog(input); result = { frames: frames.length, identifiers: [...new Set(frames.map(f => f.id.toString(16)))], firstFrame: frames[0] ?? null }; }
+      setLastAnalysis({ kind: format === 'NEC' ? 'analysis.nec' : 'analysis.can', source: fixture ? 'offline-fixture' : 'offline-import', payload: { format, result } });
       setAnalysis(JSON.stringify({ source: fixture ? 'synthetic fixture' : 'user-supplied offline data', format, result }, null, 2));
     } catch (error) { setAnalysis(`Analysis error: ${error instanceof Error ? error.message : String(error)}`); }
   }
@@ -109,7 +140,7 @@ export default function App() {
         <View><Text style={styles.brand}>APEX<Text style={styles.brandDot}>.</Text></Text><Text style={styles.strap}>UNIVERSAL MASTER KEY</Text></View>
         <View style={styles.version}><Text style={styles.versionText}>FOUNDATION 0.1</Text><Text style={styles.platform}>{Platform.OS.toUpperCase()} / LOCAL</Text></View>
       </View>
-      <View style={styles.tabs}>{(['Console', 'Devices', 'Analysis', 'Research'] as Tab[]).map(name =>
+      <View style={styles.tabs}>{(['Console', 'Devices', 'Analysis', 'Evidence', 'Research'] as Tab[]).map(name =>
         <Pressable key={name} accessibilityRole="tab" accessibilityState={{ selected: tab === name }} onPress={() => setTab(name)} style={[styles.tab, tab === name && styles.activeTab]}>
           <Text style={[styles.tabText, tab === name && { color: '#d8ff6b' }]}>{name}</Text>
         </Pressable>)}</View>
@@ -140,17 +171,26 @@ export default function App() {
         </>}
         {tab === 'Devices' && <>
           <Label>02 / EQUIPMENT</Label><Text style={styles.heading}>Know the interface.</Text>
-          <Text style={styles.description}>{nativeDevice ? 'Select an attached CDC accessory. Android will request USB permission when needed.' : 'USB and NFC need an Android development build with the APEX native module. This runtime supports the simulator and offline analysis.'}</Text>
+          <Text style={styles.description}>{nativeDevice ? 'Select an attached CDC accessory. Android will request USB permission when needed.' : 'iPhone and Android use native NFC and Bluetooth integrations. USB host access uses the Android development build. Web supports the simulator and offline analysis.'}</Text>
           <Button title="Refresh USB inventory" disabled={busy || !nativeDevice} onPress={() => void run(refreshDevices)} />
           {nativeStatus && <Text style={styles.description}>USB host: {String(nativeStatus.usbHost)} · NFC: {nativeStatus.nfcAvailable ? nativeStatus.nfcEnabled ? 'enabled' : 'disabled' : 'unavailable'}</Text>}
           {devices.map(device => <View key={device.id} style={styles.card}><Text style={styles.identity}>USB {device.vendorId.toString(16)}:{device.productId.toString(16)}</Text>
             <Text style={styles.description}>{device.name} · permission {device.hasPermission ? 'granted' : 'required'}</Text>
             <Button title={`Connect USB ${device.id}`} disabled={busy} onPress={() => void run(() => connect(new AndroidUsbTransport(nativeDevice!, device.id)))} />
           </View>)}
+          <View style={styles.card}><Label>AXP BLUETOOTH ACCESSORIES</Label>
+            <Text style={styles.description}>Foreground discovery of the custom AXP service only. Requires an AXP BLE peer; existing third-party firmware is not automatically compatible.</Text>
+            <Button title={scanning ? 'Stop accessory discovery' : 'Find Bluetooth accessories'} disabled={busy || Platform.OS === 'web'} onPress={() => void run(async () => {
+              if (scanning) { await stopScan.current?.(); return; }
+              setBleDevices([]); setScanning(true);
+              try { stopScan.current = await scanAccessories(device => setBleDevices(items => [...items.filter(x => x.id !== device.id), device].slice(-64)), error => { setScanning(false); if (error) setNotice(error.message); }); }
+              catch (error) { setScanning(false); throw error; }
+            })} />
+            {bleDevices.map(device => <View key={device.id}><Text style={styles.description}>{device.name} · {device.rssi ?? '?'} dBm</Text><Button title={`Connect Bluetooth ${device.id}`} disabled={busy} onPress={() => void run(() => connect(new BleTransport(bleDriver, device.id)))} /></View>)}
+          </View>
           <View style={styles.card}><Label>FOREGROUND NFC METADATA</Label><Text style={styles.description}>Tag identifier, supported technologies and cached NDEF record summaries.</Text>
-            <Button title={nfcActive ? 'Stop NFC reader' : 'Start NFC reader'} disabled={busy || !nativeDevice} onPress={() => void run(async () => {
-              if (nfcActive) await nativeDevice!.stopNfcReader(); else await nativeDevice!.startNfcReader();
-              setNfcActive(!nfcActive);
+            <Button title={nfcActive ? 'Stop NFC reader' : 'Start NFC reader'} disabled={busy || Platform.OS === 'web'} onPress={() => void run(async () => {
+              if (nfcActive) await reader.current!.stop(); else await reader.current!.start();
             })} />{tag && <Text selectable style={styles.log}>{JSON.stringify(tag, null, 2)}</Text>}
           </View>
         </>}
@@ -159,13 +199,24 @@ export default function App() {
           <Text style={styles.description}>Deterministic offline analysis. No AI provider is connected. NEC uses microsecond pulse durations; CAN accepts compact classic candump data frames.</Text>
           <View style={styles.actions}><Button title="Load NEC fixture" quiet onPress={() => loadFixture('NEC')} /><Button title="Load CAN fixture" quiet onPress={() => loadFixture('CAN')} /></View>
           <Text style={styles.pill}>{format} / {fixture ? 'SYNTHETIC FIXTURE' : 'OFFLINE INPUT'}</Text>
-          <TextInput accessibilityLabel="Recording input" multiline value={input} maxLength={262144} onChangeText={value => { setInput(value); setFixture(false); }} style={styles.input} autoCapitalize="none" autoCorrect={false} />
-          <Button title="Analyse recording" onPress={analyse} /><View style={styles.terminal}><Text selectable style={styles.log}>{analysis}</Text></View>
+          <TextInput accessibilityLabel="Recording input" multiline value={input} maxLength={262144} onChangeText={value => { setInput(value); setFixture(false); setLastAnalysis(null); }} style={styles.input} autoCapitalize="none" autoCorrect={false} />
+          <View style={styles.actions}><Button title="Analyse recording" onPress={analyse} /><Button title="Save analysis evidence" quiet disabled={busy || !lastAnalysis} onPress={() => void run(async () => {
+            if (!lastAnalysis) return; await evidenceStore.save(lastAnalysis); setRecords(await evidenceStore.list()); setNotice('Analysis saved to local evidence.');
+          })} /></View><View style={styles.terminal}><Text selectable style={styles.log}>{analysis}</Text></View>
         </>}
-        {tab === 'Research' && <>
+        {tab === 'Evidence' && <>
+          <Label>04 / LOCAL EVIDENCE</Label><Text style={styles.heading}>Keep what you learn.</Text>
+          <Text style={styles.description}>Saved NFC metadata and offline analysis summaries. SHA-256 detects changes; it does not prove authenticity. Native storage uses the app sandbox. Web storage belongs to this browser.</Text>
+          <Button title="Refresh evidence" quiet onPress={() => void run(async () => setRecords(await evidenceStore.list()))} />
+          {!records.length && <Text style={styles.description}>No saved observations yet. Analyse a fixture or inspect an authorised NFC tag.</Text>}
+          {records.map(record => <View key={record.id} style={styles.card}><Text style={styles.identity}>{record.kind}</Text><Text style={styles.pill}>{record.source}</Text><Text style={styles.description}>{record.observedAt}</Text><Text selectable style={styles.log}>{JSON.stringify(record.payload, null, 2)}</Text><Text selectable style={styles.log}>SHA-256 {record.sha256}</Text><Button title={`Verify ${record.id}`} quiet onPress={() => void run(async () => setNotice(await evidenceStore.verify(record) ? 'Evidence digest verified.' : 'Evidence digest mismatch.'))} /></View>)}
+        </>}
+        {tab === 'Research'  && <>
           <Label>04 / CAPABILITY ATLAS</Label><Text style={styles.heading}>Ambition, with evidence.</Text>
-          <Text style={styles.description}>28 upstream projects studied. Each capability retains its implementation status and hardware dependencies.</Text>
+          <Text style={styles.description}>30 upstream projects copied and pinned. Each capability retains its implementation status and hardware dependencies.</Text>
           {catalogue.map(item => <View key={item.domain} style={styles.catalogue}><View style={styles.row}><Text style={styles.catalogueTitle}>{item.domain}</Text><Text style={styles.pill}>{item.status}</Text></View><Text style={styles.description}>{item.detail}</Text></View>)}
+          <TextInput accessibilityLabel="Search source projects" value={search} onChangeText={setSearch} placeholder="Search copied projects" placeholderTextColor="#99a38f" style={[styles.input, { minHeight: 48 }]} />
+          {sourceAtlas.filter(item => `${item.id} ${item.repository}`.toLowerCase().includes(search.toLowerCase())).map(item => <View key={item.id} style={styles.catalogue}><Text style={styles.catalogueTitle}>{item.id} / {item.repository}</Text><Text style={styles.pill}>{item.use}</Text><Text selectable style={styles.log}>{item.commit}</Text></View>)}
           <Button title="Open research register" quiet onPress={() => void Linking.openURL('https://github.com/BlackStateGroup/APEX/blob/feat/research-blueprint/docs/RESEARCH_REGISTER.md').catch(error => append(String(error)))} />
         </>}
         <View style={styles.footer}><Text style={styles.footerText}>BLACK STATE GROUP</Text><Text style={styles.footerText}>APEX / RESEARCH FOUNDATION</Text></View>

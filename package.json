@@ -11,24 +11,30 @@
   "scripts": {
     "start": "expo start --dev-client",
     "web": "expo start --web",
-    "android": "expo run:android",
+    "android": "node tools/native-build.mjs android",
     "typecheck": "tsc --noEmit",
     "firmware:build": "python3 tools/build_firmware.py",
     "test": "npm run firmware:build && node --test tests/*.test.ts",
-    "build": "expo export --platform android --platform web",
+    "build": "expo export --platform ios --platform android --platform web",
     "demo": "npm run firmware:build && node tools/demo.ts",
     "test:ui": "playwright test",
     "inventory": "node tools/npm-inventory.mjs",
-    "inventory:check": "node tools/npm-inventory.mjs --check"
+    "inventory:check": "node tools/npm-inventory.mjs --check",
+    "ios": "node tools/native-build.mjs ios"
   },
   "dependencies": {
+    "base64-js": "1.5.1",
     "expo": "58.0.22",
+    "expo-crypto": "~58.0.7",
     "expo-dev-client": "~58.0.18",
+    "expo-sqlite": "~58.0.15",
     "expo-status-bar": "~58.0.4",
     "expo-system-ui": "~58.0.7",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-native": "0.88.1",
+    "react-native-ble-plx": "3.5.1",
+    "react-native-nfc-manager": "4.2.0",
     "react-native-web": "^0.21.4"
   },
   "devDependencies": {

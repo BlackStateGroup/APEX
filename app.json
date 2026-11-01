@@ -1,9 +1,42 @@
 {
   "expo": {
-    "name": "APEX", "slug": "apex", "version": "0.1.0",
-    "orientation": "portrait", "userInterfaceStyle": "dark", "scheme": "apex",
-    "android": { "package": "group.blackstate.apex" },
-    "web": { "bundler": "metro", "name": "APEX Console" },
-    "plugins": ["expo-dev-client", "expo-status-bar"]
+    "name": "APEX",
+    "slug": "apex",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "apex",
+    "android": {
+      "package": "group.blackstate.apex"
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "APEX Console"
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-status-bar",
+      "expo-sqlite",
+      [
+        "react-native-nfc-manager",
+        {
+          "nfcPermission": "APEX reads NFC tag metadata when you start a foreground inspection.",
+          "includeNdefEntitlement": true
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true,
+          "modes": [],
+          "bluetoothAlwaysPermission": "APEX connects to your AXP laboratory accessories over Bluetooth."
+        }
+      ]
+    ],
+    "ios": {
+      "bundleIdentifier": "group.blackstate.apex",
+      "supportsTablet": true
+    }
   }
 }

@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-01",
+  "scope": "Local source expansion. Original archive backups remain unchanged and do not include these newly fetched nested sources. Reproduce with recursive submodule update; broken upstream declarations remain explicit.",
+  "results": [
+    {
+      "id": "R01",
+      "status": "complete",
+      "dependencies": 16,
+      "lines": [
+        " 1c84fa48919cbb71d1cc65236fc0ee36740e24c6 assets/protobuf (0.25)",
+        " df88fe4fdd97714fadfd3ef17de0b4401f804052 documentation/doxygen/doxygen-awesome-css (df88fe4)",
+        " def7d2df2b0506d3d249334974f51e427c17a41c lib/FreeRTOS-Kernel (def7d2d)",
+        " 4273ca3211b99914f31518378fb590fbff064953 lib/FreeRTOS-Kernel/portable/ThirdParty/Community-Supported-Ports (4273ca3)",
+        " 3f9c99a682c5c796bb7eb89fd9c4385688fce27a lib/FreeRTOS-Kernel/portable/ThirdParty/Partner-Supported-Ports (3f9c99a)",
+        " 7398ccc91652a33483245200cfa1a83b073bc206 lib/heatshrink (heads/master)",
+        " 6ca2857519f996244f7b324dd227fdf0a075fffb lib/libusb_stm32 (6ca2857)",
+        " 107ea89daaefb9867ea9121002fbbdf926780e98 lib/mbedtls (107ea89)",
+        " 94599c0e3b5036e086446a51a3f79640f70f22f6 lib/mbedtls/framework (94599c0)",
+        " 1e921369b2c92bb219fcef84a37d4d2347794c0f lib/microtar (heads/master)",
+        " 62c8ac3e5d4a7a4f8757328e7a80286fde2686b6 lib/mlib (62c8ac3)",
+        " 6cfe48d6f1593f8fa5c0f90437f5e6522587745e lib/nanopb (6cfe48d)",
+        " d1b860584dfe24d40d455ae624ed14600dfa93c9 lib/stm32wb_cmsis (d1b8605)",
+        " 133182d5583e998bb263cd947105be4df9c29cb3 lib/stm32wb_copro (v1.20.0)",
+        " 781464e628eb694b4c98a79ab524c293f527fc8d lib/stm32wb_copro/scripts (heads/dev)",
+        " cfd0dd258cb031c95b2b2d6d04c19f9f625fe3e8 lib/stm32wb_hal (cfd0dd2)"
+      ]
+    },
+    {
+      "id": "R02",
+      "status": "failed",
+      "error": "Upstream gitlink applications/external_Back has no URL in .gitmodules. No source URL was fabricated."
+    },
+    {
+      "id": "R06",
+      "status": "complete",
+      "dependencies": 2,
+      "lines": [
+        " a0bb997968bf57c87f2aa4e389a63219580bb5c3 firmware/libopencm3 (heads/master)",
+        " 41173d673f9dec5f73c0cb88ea69e9b167b001b3 hardware/gsg-kicad-lib (41173d6)"
+      ]
+    },
+    {
+      "id": "R07",
+      "status": "complete",
+      "dependencies": 2,
+      "lines": [
+        " dcac7e5673005f4d8a2b1f0f6e06877b689d7519 meshtestic (heads/master)",
+        " 8d0ed0c135f91ad1d6f9c60bc341277d64946bce protobufs (8d0ed0c)"
+      ]
+    },
+    {
+      "id": "R11",
+      "status": "complete",
+      "dependencies": 28,
+      "lines": [
+        " 24c60e243580c7868f4334a1ba3123481fe1aa48 components/bootloader/subproject/components/micro-ecc/micro-ecc (24c60e2)",
+        " e4281c149690558467f75137d64bd5334076e7e1 components/bt/controller/lib_esp32 (heads/master)",
+        " f36e7642c87d790cd43e6545479de2a93015582c components/bt/controller/lib_esp32c2/esp32c2-bt-lib (f36e764)",
+        " 0a08c4b32f3666003080b662a1a61794da24ff0f components/bt/controller/lib_esp32c3_family (heads/master)",
+        " 3556b7b894e93826cf1d83ea1a4962862315cd45 components/bt/controller/lib_esp32c5/esp32c5-bt-lib (3556b7b)",
+        " 55334862047fc94a8a40715069390092d21ab000 components/bt/controller/lib_esp32c6/esp32c6-bt-lib (5533486)",
+        " 7d65dcaeceb6700d6db473988939acd689282082 components/bt/controller/lib_esp32h2/esp32h2-bt-lib (7d65dca)",
+        " c0c43b29a6381ac5a4877ae830ea87e893862435 components/bt/controller/lib_esp32h4/esp32h4-bt-lib (c0c43b2)",
+        " 7a85006f35f6839ae7ea5adee16e68a757759196 components/bt/controller/lib_esp32s31/esp32s31-bt-lib (7a85006)",
+        " 2480ba6a30beba46a7b18fc1fd061e81dae03b2a components/bt/esp_ble_audio/lib/lib (heads/main)",
+        " 8b693178d76ec2578abf46aec53c2fb895b63df7 components/bt/esp_ble_mesh/lib/lib (heads/main)",
+        " fa3fd0e196e4cec72285cf6a1caedf921f1b057e components/bt/host/nimble/nimble (fa3fd0e)",
+        " eeecc49ce8af123cf8ad40efdb9673e37b56230f components/cmock/CMock (eeecc49)",
+        " 71b47be7c950f1bf5f7e5303779fa99a16224bb6 components/cmock/CMock/vendor/c_exception (71b47be)",
+        " cf949f45ca6d172a177b00da21310607b97bc7a7 components/cmock/CMock/vendor/unity (cf949f4)",
+        " fa152b3b6b2e3c5e3a57e55fcf4b005a4e28cef9 components/esp_coex/lib (heads/main)",
+        " 20f1db053a0e6cb9f1c09d255c43bf42483041d0 components/esp_phy/lib (heads/master)",
+        " d26b374259d0ead25b7f07c9f0e51cde40db8d55 components/esp_wifi/lib (d26b374)",
+        " 2867f6883a12920b1969ff9624c0ab0e4185c2ce components/heap/tlsf (2867f68)",
+        " fc73c67e5c37c27a319725a0aee974c087dbf1a6 components/lwip/lwip (fc73c67)",
+        " f5c91881be98b4da0bf57c217bf45b668fb84f9f components/mbedtls/mbedtls (heads/mbedtls-4.1.1-idf)",
+        " b7bc06ab3cb69d8058192f9177c01468880f4698 components/openthread/lib (b7bc06a)",
+        " 43cc05a9bcf780bd758bad53d897e2d88cf8cb75 components/openthread/openthread (43cc05a)",
+        " e185d7fd85499c8ce5ca2a54f5cf8fe7dbe3f8df components/openthread/openthread/third_party/mbedtls/repo (e185d7f)",
+        " 457996474728cb8e968ed21953b72f74d2f536b2 components/openthread/openthread/third_party/mbedtls/repo/framework (4579964)",
+        " abc67a11c6db271bedbb9f58be85d6f4e2ea8389 components/protobuf-c/protobuf-c (abc67a1)",
+        " ad902cadceb39d0825a97e25ecb5867641f606ba components/spiffs/spiffs (ad902ca)",
+        " bf560290f6020737eafaa8b5cbd2177c3956c03f components/unity/unity (bf56029)"
+      ]
+    },
+    {
+      "id": "R14",
+      "status": "complete",
+      "dependencies": 1,
+      "lines": [
+        " f7cd036f7b21dfac8a958931360866f0580bf741 react-native-lab/react-native (f7cd036f)"
+      ]
+    },
+    {
+      "id": "R25",
+      "status": "complete",
+      "dependencies": 1,
+      "lines": [
+        " 538ba7b87170f1313f63ab6be90a8e3716deb085 utils (heads/master)"
+      ]
+    },
+    {
+      "id": "R30",
+      "status": "complete",
+      "dependencies": 3,
+      "lines": [
+        " b80cddb56bbfd01c9a951dc5000826b53f463767 hackrf (heads/next)",
+        " cfc2f3451486f6f05cc5e05ff6b5308269980fe3 hackrf/firmware/libopencm3 (cfc2f34)",
+        " 41173d673f9dec5f73c0cb88ea69e9b167b001b3 hackrf/hardware/gsg-kicad-lib (41173d6)"
+      ]
+    }
+  ]
+}

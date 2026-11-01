@@ -1,4 +1,4 @@
-export type SourceKind = 'simulator' | 'host' | 'usb';
+export type SourceKind = 'simulator' | 'host' | 'usb' | 'ble';
 export interface ByteTransport {
   readonly source: SourceKind;
   connect(): Promise<void>;
