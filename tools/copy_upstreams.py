@@ -59,6 +59,8 @@ def copy(project):
                'archiveBytes': archive.stat().st_size, 'archiveSha256': digest,
                'licences': [str(p.relative_to(folder)) for p in folder.iterdir() if any(x in p.name.lower() for x in ['licen', 'copying', 'copyright'])],
                'applicationCodeIntegrated': False}
+        if project.get('runtimeDependency'):
+            row['runtimeDependency'] = project['runtimeDependency']
         old = previous.get((project['repository'], head), {})
         if old.get('archiveSha256') == digest and old.get('backups'):
             row['backups'] = old['backups']
@@ -68,7 +70,7 @@ def copy(project):
         print(json.dumps({'id': row['id'], 'status': row['status'], 'files': len(tracked), 'archiveMiB': round(row['archiveBytes']/1048576, 1), 'nestedDependencies': len(submodules)}), flush=True)
         return row
     except Exception as error:
-        row = {'id': project['id'], 'repository': project['repository'], 'commit': project['commit'], 'status': 'failed', 'error': str(error)}
+        row = {**previous.get((project['repository'], project['commit']), {}), 'id': project['id'], 'repository': project['repository'], 'commit': project['commit'], 'status': 'failed', 'error': str(error)}
         print(json.dumps(row), flush=True)
         return row
 
@@ -81,7 +83,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
 manifest = {'schemaVersion': 1, 'date': '2026-11-01', 'sourceRoot': 'research/upstream-sources',
             'copies': sorted(rows, key=lambda x:x['id']),
             'unresolvedEarlierConversation': ['Unnamed Android SDR visualisation repository', 'Unnamed vehicle/industrial communication repository', 'Unnamed accessory firmware repository'],
-            'scope': 'Actual pinned root-repository checkouts. Nested submodules are explicitly enumerated; upstream code is not linked into the APEX application.'}
+            'scope': 'Actual pinned root-repository checkouts. nestedSubmodulesNotInitialised describes original archive snapshots; subsequent local expansion is recorded in nested-dependencies.json. Reference checkout files are not linked into APEX; explicit runtimeDependency entries describe separately pinned npm integrations.'}
 (ROOT / 'research/source-imports.json').write_text(json.dumps(manifest, indent=2)+'\n')
 if any(row['status'] != 'copied-and-verified' for row in rows):
     raise SystemExit(1)

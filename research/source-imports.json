@@ -25,6 +25,7 @@
         "lib/stm32wb_hal"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R01-flipperdevices--flipperzero-firmware-9981d9d4aa5e.tar.gz",
       "archiveBytes": 41544338,
       "archiveSha256": "b925caae4da07e85e61dce9ff3c2cac3cd972c4b32b95a20d1ee6c14cb73295c",
       "licences": [
@@ -41,7 +42,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_de4c701893bc8191929213d852cdf920&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R01-flipperdevices--flipperzero-firmware-9981d9d4aa5e.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -69,6 +69,7 @@
         "lib/uzlib"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on-83cd7d56d06e.tar.gz",
       "archiveBytes": 140705528,
       "archiveSha256": "be5e4fdc3b485e0fcb4bff444936a040acfd35485871e0b0985da044e121e763",
       "licences": [
@@ -85,7 +86,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_947b76d113f08191abb8de6de7852779&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on-83cd7d56d06e.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -97,6 +97,7 @@
       "trackedEntries": 1256,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R03-BruceDevices--firmware-a59213f3ec6c.tar.gz",
       "archiveBytes": 101600591,
       "archiveSha256": "3bd0872cbba2eed7857c543a1a2f356df29cb3f67ee3c333df0ff5d53c276d1b",
       "licences": [
@@ -113,7 +114,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_8d4a703ed2308191ae2497b8e0e141e9&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R03-BruceDevices--firmware-a59213f3ec6c.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -125,6 +125,7 @@
       "trackedEntries": 2827,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R04-RfidResearchGroup--proxmark3-754bbae3d946.tar.gz",
       "archiveBytes": 86985635,
       "archiveSha256": "5553d14a6052ddfd94f2ada00bc45310143d5c397138654612cf0415f97425c6",
       "licences": [
@@ -141,7 +142,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_def31ed15354819187ecc3eb14bf9c92&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R04-RfidResearchGroup--proxmark3-754bbae3d946.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -153,6 +153,7 @@
       "trackedEntries": 1810,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R05-RfidResearchGroup--ChameleonUltra-4c5bc2cb6b02.tar.gz",
       "archiveBytes": 34248752,
       "archiveSha256": "e8ca238e48f9c5871d64bea94f455e20a8f475474d1be498c7da75e5dee769e3",
       "licences": [
@@ -169,7 +170,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_946a459f14308191b910ef18d272239d&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R05-RfidResearchGroup--ChameleonUltra-4c5bc2cb6b02.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -184,6 +184,7 @@
         "hardware/gsg-kicad-lib"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R06-greatscottgadgets--hackrf-468c5d93b660.tar.gz",
       "archiveBytes": 34255511,
       "archiveSha256": "0dac2d2090bcb631b91b8956b21302f9b0590385614f2f463aa13d6919381ecd",
       "licences": [
@@ -200,7 +201,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_bcc57a1db9f08191b139a39c1994dda5&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R06-greatscottgadgets--hackrf-468c5d93b660.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -215,6 +215,7 @@
         "protobufs"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R07-meshtastic--firmware-f9c26505edb4.tar.gz",
       "archiveBytes": 13805316,
       "archiveSha256": "2c259a86f51c4b04771763d76c64ca717c3a9b3f277131d86b885bfb96f37ceb",
       "licences": [
@@ -231,7 +232,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_448c30c8ee9c819194962253dd7a1675&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R07-meshtastic--firmware-f9c26505edb4.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -243,6 +243,7 @@
       "trackedEntries": 417,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R08-jgromes--RadioLib-3a664b64099e.tar.gz",
       "archiveBytes": 11251601,
       "archiveSha256": "b7f55bf6a17507f78cd38633497690052d4f77e5f956cb6b5c31c1da3ef00c86",
       "licences": [
@@ -259,7 +260,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_4d6aaa6946548191800e0c6a2d3c2dcb&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R08-jgromes--RadioLib-3a664b64099e.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -271,6 +271,7 @@
       "trackedEntries": 1877,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R09-crankyoldgit--IRremoteESP8266-1e2f0f3ef0a9.tar.gz",
       "archiveBytes": 11700716,
       "archiveSha256": "b6794c2dbdaa876d09679ba115fbab036a8e77e15436bec798ea91ee780a5fe7",
       "licences": [
@@ -287,7 +288,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_7264a334fdc8819193e98f4d3cbf8409&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R09-crankyoldgit--IRremoteESP8266-1e2f0f3ef0a9.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -299,11 +299,12 @@
       "trackedEntries": 2783,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R10-hathach--tinyusb-67570a60d4c8.tar.gz",
       "archiveBytes": 9665436,
       "archiveSha256": "8fea152a5e75aac17582640570859d324fa6ab05997ae4ae77ffd346f7b268ec",
       "licences": [
         "LICENSE",
-        "LICENSES/"
+        "LICENSES"
       ],
       "applicationCodeIntegrated": false,
       "backups": [
@@ -316,7 +317,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_4bd339f4f1488191b76401f6e800219f&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R10-hathach--tinyusb-67570a60d4c8.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -353,6 +353,7 @@
         "components/unity/unity"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R11-espressif--esp-idf-d445e947156f.tar.gz",
       "archiveBytes": 161033649,
       "archiveSha256": "cfc4e598510b2c2d3759a152f26ffd8c09603767a8468083a2ac8e02438e6217",
       "licences": [
@@ -369,7 +370,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_58d17e72e6508191bae6669027503301&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R11-espressif--esp-idf-d445e947156f.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -381,11 +381,12 @@
       "trackedEntries": 69384,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R12-zephyrproject-rtos--zephyr-0534e997eacb.tar.gz",
       "archiveBytes": 292676281,
       "archiveSha256": "63a82211c27b2f161061fd98d9720212d865b433c292c22fd6a903c7010a33e0",
       "licences": [
         "LICENSE",
-        "LICENSES/",
+        "LICENSES",
         "README.license"
       ],
       "applicationCodeIntegrated": false,
@@ -399,7 +400,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_5bbb084820408191aee632dfcec3246c&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R12-zephyrproject-rtos--zephyr-0534e997eacb.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -411,6 +411,7 @@
       "trackedEntries": 97,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R13-mik3y--usb-serial-for-android-4cb9e82cdcfa.tar.gz",
       "archiveBytes": 442894,
       "archiveSha256": "b2e1c607df20c3bd1a1bcbed5082f75e201a33559e877976b26f987800b683c2",
       "licences": [
@@ -427,7 +428,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_a8dd9202f29881919e24de319d8e541d&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R13-mik3y--usb-serial-for-android-4cb9e82cdcfa.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -441,6 +441,7 @@
         "react-native-lab/react-native"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R14-expo--expo-dfb069d9cc5b.tar.gz",
       "archiveBytes": 347303930,
       "archiveSha256": "d01c31d3476795f4a619c65c7ce4f6f5749a123371f7a77751d1f6c2cfd44306",
       "licences": [
@@ -458,7 +459,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_6d93139e41dc8191b9035dc7e5ba905b&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R14-expo--expo-dfb069d9cc5b.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -470,12 +470,19 @@
       "trackedEntries": 420,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R15-dotintent--react-native-ble-plx-92a496d60f81.tar.gz",
       "archiveBytes": 5505414,
       "archiveSha256": "530152eaed07719886a034cb6231f6ca9de30d9223b0715dde458d4cf5f27473",
       "licences": [
         "LICENSE"
       ],
       "applicationCodeIntegrated": false,
+      "runtimeDependency": {
+        "package": "react-native-ble-plx",
+        "version": "3.5.1",
+        "licence": "Apache-2.0",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      },
       "backups": [
         {
           "filename": "APEX-R15-dotintent--react-native-ble-plx-92a496d60f81.tar.gz",
@@ -486,7 +493,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_9d1fe09691ac8191a5d4e4501a73e1f1&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R15-dotintent--react-native-ble-plx-92a496d60f81.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -498,12 +504,19 @@
       "trackedEntries": 209,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R16-revtel--react-native-nfc-manager-c44f7110f791.tar.gz",
       "archiveBytes": 1735875,
       "archiveSha256": "668afe44ffa4fbbb862a306326a13c084fb1a499ad20daffc77ebb157dff17b6",
       "licences": [
         "LICENSE"
       ],
       "applicationCodeIntegrated": false,
+      "runtimeDependency": {
+        "package": "react-native-nfc-manager",
+        "version": "4.2.0",
+        "licence": "MIT",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      },
       "backups": [
         {
           "filename": "APEX-R16-revtel--react-native-nfc-manager-c44f7110f791.tar.gz",
@@ -514,7 +527,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_bff2fd05ec848191b799744b673be7da&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R16-revtel--react-native-nfc-manager-c44f7110f791.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -526,6 +538,7 @@
       "trackedEntries": 602,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R17-merbanan--rtl_433-f35183aaf1d2.tar.gz",
       "archiveBytes": 3500496,
       "archiveSha256": "3b291f10c818f4a0e34d37e8217654710304a01c216a275e1935d4a6c47502b3",
       "licences": [
@@ -542,7 +555,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_121941abb1a88191985c24194a110a71&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R17-merbanan--rtl_433-f35183aaf1d2.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -554,6 +566,7 @@
       "trackedEntries": 5776,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R18-gnuradio--gnuradio-ec1bf153c922.tar.gz",
       "archiveBytes": 13257136,
       "archiveSha256": "23250a9339dbc9bc5b50ea863db37b57c2e5bf359981cc44ce0c7f5c4727bda1",
       "licences": [
@@ -570,7 +583,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_4fe8f85613a08191805e102ab7747659&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R18-gnuradio--gnuradio-ec1bf153c922.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -582,6 +594,7 @@
       "trackedEntries": 167,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R19-pothosware--SoapySDR-cf0c0eb5279a.tar.gz",
       "archiveBytes": 582001,
       "archiveSha256": "4403ebc81aaa0e21ac2982f2e6b2ab979dcfc22ddc8bd7ad085a0b4aad0d6a7a",
       "licences": [
@@ -598,7 +611,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_7ca0f6a41e0c8191b60504d9001526f9&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R19-pothosware--SoapySDR-cf0c0eb5279a.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -610,6 +622,7 @@
       "trackedEntries": 199,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R20-nfc-tools--libnfc-3fa0751ad58f.tar.gz",
       "archiveBytes": 736826,
       "archiveSha256": "f823584e51bbed5609d7faa6647767b190c398182dfee5e9947ab430f278a9cc",
       "licences": [
@@ -626,7 +639,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_384803416bac8191a8be5994f8fde7d3&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R20-nfc-tools--libnfc-3fa0751ad58f.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -638,10 +650,11 @@
       "trackedEntries": 132,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R21-linux-can--can-utils-834ceef1f1ea.tar.gz",
       "archiveBytes": 696164,
       "archiveSha256": "4fe4b83c7eb584a371d498a70d2738568547e1e205609e52982a3f67cc1bfaac",
       "licences": [
-        "LICENSES/"
+        "LICENSES"
       ],
       "applicationCodeIntegrated": false,
       "backups": [
@@ -654,7 +667,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_bae1111560dc8191a3864b7be20387f1&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R21-linux-can--can-utils-834ceef1f1ea.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -666,6 +678,7 @@
       "trackedEntries": 267,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R22-hardbyte--python-can-b4f82abede25.tar.gz",
       "archiveBytes": 2613372,
       "archiveSha256": "7f228887ab856287aa0b55069f6b5cc2db0bd09220e91928889470a8b9ea59f7",
       "licences": [
@@ -682,7 +695,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_b1c3ad41b1348191a1dc6e4a8d0ed67e&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R22-hardbyte--python-can-b4f82abede25.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -694,6 +706,7 @@
       "trackedEntries": 208,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R23-pymodbus-dev--pymodbus-e0460de3f464.tar.gz",
       "archiveBytes": 5381996,
       "archiveSha256": "c72e719b9710ad7c5d3c788180afced2df351fb10de8958c78b4561128b05298",
       "licences": [
@@ -710,7 +723,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_b1348ab7602c81918429ab0528400859&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R23-pymodbus-dev--pymodbus-e0460de3f464.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -722,10 +734,11 @@
       "trackedEntries": 1863,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R24-bacnet-stack--bacnet-stack-62e4340bf044.tar.gz",
       "archiveBytes": 22325994,
       "archiveSha256": "1669f2edf45ccf4e43f2cb228a83ed51823b1ca5462fb6bd45d8a90374a78457",
       "licences": [
-        "license/"
+        "license"
       ],
       "applicationCodeIntegrated": false,
       "backups": [
@@ -738,7 +751,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_3c142df9308c8191982291d4a0501957&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R24-bacnet-stack--bacnet-stack-62e4340bf044.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -752,6 +764,7 @@
         "utils"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R25-osdp-dev--libosdp-3654c63685d9.tar.gz",
       "archiveBytes": 1599961,
       "archiveSha256": "4a093ebb4f6567cfc796cd80e2796852eee90b10dcd2b562be0d7aa16e9d47c6",
       "licences": [
@@ -768,7 +781,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_902e5d942bd081919324d71be79a6d3a&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R25-osdp-dev--libosdp-3654c63685d9.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -780,6 +792,7 @@
       "trackedEntries": 24,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R26-sigmf--SigMF-60121977f5f8.tar.gz",
       "archiveBytes": 2945050,
       "archiveSha256": "06f48d7b4a75d0896aa3889dcaee92370def696ee6b80c9d1e28bb2c18c8fc19",
       "licences": [
@@ -796,7 +809,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_47cd36c7ba00819187b596e94fc9ee08&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R26-sigmf--SigMF-60121977f5f8.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -808,6 +820,7 @@
       "trackedEntries": 575,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R27-jopohl--urh-1403d92987cc.tar.gz",
       "archiveBytes": 27086660,
       "archiveSha256": "f8bdb9f2b8e9ce0ccd814658e7630a4fd48756ae1d7da41eaf304ef9d92b2628",
       "licences": [
@@ -824,7 +837,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_5f2dc9f8207881919c1cbee0226ff363&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R27-jopohl--urh-1403d92987cc.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -836,6 +848,7 @@
       "trackedEntries": 185,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R28-libusb--libusb-987c1170d001.tar.gz",
       "archiveBytes": 1171677,
       "archiveSha256": "66899a8efa282f6ed88a43f6a4458eef41ded00f1dd2275b4d2806885ec91880",
       "licences": [
@@ -852,7 +865,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_b69552d2078481919a6cb02b8e11f7b5&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R28-libusb--libusb-987c1170d001.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -864,6 +876,7 @@
       "trackedEntries": 611,
       "nestedSubmodulesNotInitialised": [],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R29-RocketGod-git--mayhem-mobile-a18fca46f585.tar.gz",
       "archiveBytes": 26044750,
       "archiveSha256": "156030a36a46d055abe9bdcf2520942c1466d448413c4f02cca06a342eb387c2",
       "licences": [
@@ -880,7 +893,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_78d961b0604c81918038b2aa77521acc&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R29-RocketGod-git--mayhem-mobile-a18fca46f585.tar.gz",
       "backupStatus": "saved-and-identified"
     },
     {
@@ -894,6 +906,7 @@
         "hackrf"
       ],
       "history": "shallow pinned checkout",
+      "archiveName": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz",
       "archiveBytes": 534927389,
       "archiveSha256": "f5e17d329c1aa61108c219622010a19788e2222635718862fec8d971d63e2329",
       "licences": [
@@ -919,7 +932,6 @@
           "url": "https://chatgpt.com/library?file_id=libfile_04a6456132f88191869f6f97caa8446e&account_id=personal"
         }
       ],
-      "archiveName": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz",
       "backupStatus": "saved-and-identified"
     }
   ],
@@ -928,5 +940,5 @@
     "Unnamed vehicle/industrial communication repository",
     "Unnamed accessory firmware repository"
   ],
-  "scope": "Actual pinned root-repository checkouts. Nested submodules are explicitly enumerated; upstream code is not linked into the APEX application."
+  "scope": "Actual pinned root-repository checkouts. nestedSubmodulesNotInitialised describes original archive snapshots; subsequent local expansion is recorded in nested-dependencies.json. Reference checkout files are not linked into APEX; explicit runtimeDependency entries describe separately pinned npm integrations."
 }

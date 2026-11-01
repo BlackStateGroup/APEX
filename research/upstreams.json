@@ -530,7 +530,13 @@
       "apexHardwareEvidence": "not-tested",
       "sourceCopied": true,
       "applicationCodeIntegrated": false,
-      "referenceSourcePath": "research/upstream-sources/R15-dotintent--react-native-ble-plx"
+      "referenceSourcePath": "research/upstream-sources/R15-dotintent--react-native-ble-plx",
+      "runtimeDependency": {
+        "package": "react-native-ble-plx",
+        "version": "3.5.1",
+        "licence": "Apache-2.0",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      }
     },
     {
       "id": "R16",
@@ -564,7 +570,13 @@
       "apexHardwareEvidence": "not-tested",
       "sourceCopied": true,
       "applicationCodeIntegrated": false,
-      "referenceSourcePath": "research/upstream-sources/R16-revtel--react-native-nfc-manager"
+      "referenceSourcePath": "research/upstream-sources/R16-revtel--react-native-nfc-manager",
+      "runtimeDependency": {
+        "package": "react-native-nfc-manager",
+        "version": "4.2.0",
+        "licence": "MIT",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      }
     },
     {
       "id": "R17",

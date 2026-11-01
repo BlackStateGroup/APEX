@@ -2,7 +2,7 @@
 
 30 source checkouts are present under `research/upstream-sources/`. All match their pinned Git commits. Their restorable backups include source files and Git metadata. Original licence files remain in each checkout.
 
-The copies cover 157,411 tracked entries and 1,937,330,939 archived bytes. They are shallow root-repository checkouts. The 58 nested submodules listed in source-imports.json have not been initialised.
+The copies cover 157,411 tracked entries and 1,937,330,939 archived bytes. They are shallow root-repository checkouts. The original archive snapshots omit the 58 root nested submodule entries listed in source-imports.json. Subsequent local recursive fetching is recorded separately in [nested-dependencies.json](nested-dependencies.json), including the broken DIY Flipper declaration. Original archive hashes and backup contents are unchanged.
 
 | ID | Repository | Pinned commit | Source backup |
 | --- | --- | --- | --- |

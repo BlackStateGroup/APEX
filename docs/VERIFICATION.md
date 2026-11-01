@@ -1,5 +1,7 @@
 # Verification record
 
+## Platform foundation baseline (PR #2)
+
 Verified locally on 1 November 2026 using Node 24.22.1, npm 11.9.0, Python 3.12.14 and GCC. Source inspection pinned 28 upstream repositories to exact commits and document blobs. No upstream security-tool firmware binary was executed and no physical hardware was tested.
 
 | Check | Observed result | What it establishes |
@@ -22,8 +24,18 @@ The [first GitHub workflow run](https://github.com/BlackStateGroup/APEX/actions/
 
 The [final source workflow](https://github.com/BlackStateGroup/APEX/actions/runs/41286965388) passed all three jobs on b7048a8694efeff27cc18a1daf6053b36ef5152e: 42 Node tests, C/sanitizer checks, strict TypeScript, both browser scenarios, production exports, inventory verification, native module compilation and the digest-pinned ESP32-S3 build. The native module, Android configuration, dependency lockfile and firmware source are unchanged from the full APK build. Later changes only record documentation and research evidence. Machine-readable results are in [verification.json](../research/verification.json).
 
-The ongoing PR workflow runs host/browser checks, native module compilation and the digest-pinned ESP32-S3 cross-build. An explicit workflow_dispatch run also assembles the full Android debug APK. Documentation/research-only changes are excluded from repeated compilation; evidence cites the actual tested source commit. No build artefacts are uploaded automatically, avoiding persistent binary storage consumption.
+The baseline PR workflow ran host/browser checks, native module compilation and the digest-pinned ESP32-S3 cross-build. Its explicit workflow_dispatch run assembled the full Android debug APK. PR #4 additionally assembles the full Android app and unsigned iOS Simulator target on pull requests. Documentation/research-only changes are excluded from repeated compilation; evidence cites the actual tested source commit. No build artefacts are uploaded automatically, avoiding persistent binary storage consumption.
 
 Known limitations: AXP has no authentication/encryption; only system information/capabilities/ping are available. Native USB/NFC and the S3 entry point have target build evidence but require physical fixtures. No BLE, RF, SDR, access-control, vehicle or industrial hardware adapter is working yet. The AI provider contract/validator is tested; no model, provider endpoint or AI UI is connected. Persistent capture storage remains planned. CRC and device-reported identity are not security guarantees.
 
 Release gates are defined in ENGINEERING_WORK_PACKAGES.md. A source file, generated project, mock or JavaScript bundle never substitutes for native compilation, flashing or measured equipment behaviour.
+
+## Accessory workbench (PR #4)
+
+The workbench adds native NFC/BLE integrations on iPhone and Android, an ESP32-S3 BLE peer, and persistent local evidence. This supersedes the baseline's planned BLE/persistence status; physical hardware remains untested.
+
+Locally verified: 54 Node tests plus portable C checks; strict TypeScript; iOS/Android/web bundle exports; three browser scenarios run separately with Chromium 153, including evidence save/reload/digest verification and source search. A maximum 512-byte payload traverses an MTU-23 GATT test bridge to the compiled C peer and back. This is a transport test, not radio evidence. Real SQLite reopen, duplicate-insert preservation and digest mismatch tests pass. The lockfile inventory contains 541 dependency entries. iOS prebuild generated the expected NFC entitlements and Bluetooth usage string.
+
+Address/undefined-behaviour checks pass locally with ASAN_OPTIONS=detect_leaks=0. This host's LeakSanitizer cannot inspect /proc tasks; the unmodified sanitizer command is separately run in GitHub CI.
+
+Native compilation is tracked against source 6b2632faa70fcfd538e0236374e4dcea34e450a2 in [workbench CI](https://github.com/BlackStateGroup/APEX/actions/runs/41299626059). Results must be recorded after the jobs finish; a started job is not a passing build.
