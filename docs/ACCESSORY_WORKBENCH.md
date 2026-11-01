@@ -1,6 +1,6 @@
 # iPhone and Android accessory workbench
 
-The workbench adds native NFC metadata inspection and custom-service BLE transport on both mobile platforms, with local evidence persistence. Use `npm ci`, then `npm run ios` on a Mac with Xcode 26.2 (Swift 6.2) or `npm run android` with the Android SDK. Expo Go is not a supported native runtime. `npm run web` provides the simulator, offline analysis, source atlas and browser evidence store.
+The workbench adds native NFC metadata inspection and custom-service BLE transport on both mobile platforms, with local evidence persistence. Use `npm ci`, then `npm run ios` on a Mac with Xcode 26.4 or newer (CI uses Xcode 26.6) or `npm run android` with the Android SDK. Expo Go is not a supported native runtime. `npm run web` provides the simulator, offline analysis, source atlas and browser evidence store.
 
 ## AXP BLE contract
 

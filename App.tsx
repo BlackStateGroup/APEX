@@ -74,7 +74,8 @@ export default function App() {
     });
     reader.current = nfc;
     const lifecycle = AppState.addEventListener('change', state => {
-      if (state !== 'active') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }
+      // iOS permission sheets can be temporarily inactive without backgrounding.
+      if (state === 'background') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }
     });
     return () => {
       lifecycle.remove(); disconnectListener.current?.();
