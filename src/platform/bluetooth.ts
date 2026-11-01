@@ -4,3 +4,5 @@ export async function scanAccessories(_onDevice: (device: BleCandidate) => void,
   throw new Error('Bluetooth is unavailable in this web console');
 }
 export async function shutdownBluetooth(): Promise<void> {}
+
+export async function stopAccessoryDiscovery(): Promise<void> {}

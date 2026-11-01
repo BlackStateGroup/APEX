@@ -16,7 +16,7 @@ import type { NfcObservation } from './packages/core/nfc.ts';
 import { nfcBackend } from './src/platform/nfc';
 import { BleTransport } from './packages/core/ble-transport.ts';
 import type { BleCandidate } from './packages/core/ble-transport.ts';
-import { bleDriver, scanAccessories, shutdownBluetooth } from './src/platform/bluetooth';
+import { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from './src/platform/bluetooth';
 import { evidenceStore } from './src/platform/evidence';
 import type { EvidenceRecord } from './packages/core/evidence.ts';
 import { sourceAtlas } from './src/source-atlas.ts';
@@ -74,7 +74,7 @@ export default function App() {
     });
     reader.current = nfc;
     const lifecycle = AppState.addEventListener('change', state => {
-      if (state !== 'active') { void nfc.stop().catch(error => setNotice(String(error))); void stopScan.current?.().catch(error => setNotice(String(error))); }
+      if (state !== 'active') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }
     });
     return () => {
       lifecycle.remove(); disconnectListener.current?.();

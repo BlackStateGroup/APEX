@@ -2,6 +2,7 @@
  * This unauthenticated peer exposes identity, capability report and ping only.
  */
 #include <string.h>
+#include <stdbool.h>
 #include "apex.h"
 #include "ble_accessory.h"
 #include "esp_err.h"

@@ -6,6 +6,7 @@ import type { BleCandidate, BleDriver } from '../../packages/core/ble-transport.
 
 let manager: BleManager | null = null;
 let loading: Promise<BleManager> | null = null;
+let scanGeneration = 0;
 let stopScan: (() => Promise<void>) | null = null;
 async function getManager(): Promise<BleManager> {
   if (manager) return manager;
@@ -33,8 +34,10 @@ async function prepare(): Promise<BleManager> {
 }
 
 export async function scanAccessories(onDevice: (device: BleCandidate) => void, onEnd: (error?: Error) => void): Promise<() => Promise<void>> {
-  await stopScan?.();
-  const ble = await prepare(); let active = true;
+  await stopAccessoryDiscovery(); const generation = scanGeneration;
+  const ble = await prepare();
+  if (generation !== scanGeneration) throw new Error('Bluetooth discovery cancelled');
+  let active = true;
   let timer: ReturnType<typeof setTimeout>;
   const stop = async () => {
     if (!active) return; active = false; clearTimeout(timer); stopScan = null; await ble.stopDeviceScan(); onEnd();
@@ -44,7 +47,7 @@ export async function scanAccessories(onDevice: (device: BleCandidate) => void, 
     await ble.startDeviceScan([AXP_SERVICE], { allowDuplicates: false }, (error, device) => {
       if (!active) return;
       if (error) { void stop().then(() => onEnd(error)).catch(onEnd); return; }
-      if (device) onDevice({ id: device.id, name: device.name ?? device.localName ?? 'AXP accessory', rssi: device.rssi });
+      if (device) onDevice({ id: device.id, name: (device.name ?? device.localName ?? 'AXP accessory').slice(0, 128), rssi: device.rssi });
     });
   } catch (error) { await stop(); throw error; }
   return stop;
@@ -81,4 +84,5 @@ export const bleDriver: BleDriver = {
     } catch (error) { await ble.cancelDeviceConnection(device.id).catch(() => {}); throw error; }
   },
 };
-export async function shutdownBluetooth(): Promise<void> { await stopScan?.(); const instance = manager; manager = null; loading = null; await instance?.destroy(); }
+export async function stopAccessoryDiscovery(): Promise<void> { ++scanGeneration; await stopScan?.(); }
+export async function shutdownBluetooth(): Promise<void> { await stopAccessoryDiscovery(); const instance = manager; manager = null; loading = null; await instance?.destroy(); }

@@ -51,3 +51,27 @@ test('parallel host requests correlate independent binary payloads', async t => 
   const payloads = Array.from({ length: 8 }, (_, i) => new Uint8Array(512).fill(i));
   assert.deepEqual(await Promise.all(payloads.map(p => session.request('system.ping', p))), payloads);
 });
+
+test('AXP BLE MTU bridge negotiates and transfers a maximum binary frame through compiled C', async t => {
+  const { BleTransport, AXP_READY } = await import('../packages/core/ble-transport.ts');
+  const process = new FirmwareProcessTransport();
+  const sizes: number[] = [];
+  const transport = new BleTransport({ connect: async () => {
+    await process.connect();
+    return {
+      mtu: 23,
+      subscribe: async (onData, onClosed) => {
+        const data = process.onData(bytes => { for (let i = 0; i < bytes.length; i += 20) onData(bytes.slice(i, i + 20)); });
+        const closed = process.onDisconnect(onClosed); onData(AXP_READY);
+        return () => { data(); closed(); };
+      },
+      writeWithResponse: async bytes => { sizes.push(bytes.length); await process.write(bytes); },
+      disconnect: () => process.disconnect(),
+    };
+  } }, 'compiled-c-gatt-test');
+  const session = new DeviceSession(transport); t.after(() => session.close()); await session.open();
+  assert.equal(session.info!.id, 'apex-host'); assert.equal(session.source, 'ble');
+  const bytes = Uint8Array.from({ length: 512 }, (_, i) => i % 256);
+  assert.deepEqual(await session.request('system.ping', bytes), bytes);
+  assert.ok(sizes.length > 26); assert.ok(sizes.every(size => size >= 1 && size <= 20));
+});

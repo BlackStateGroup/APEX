@@ -2,7 +2,7 @@
 
 **Universal Master Key**: a modular electronic interoperability platform from Black State Group.
 
-**Mobile targets: iPhone and Android.** Native iOS integration remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
+**Mobile targets: iPhone and Android.** Native NFC and AXP Bluetooth integrations are implemented; physical iPhone testing remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
 
 The [source-copy catalogue](research/SOURCE_COPIES.md) records 30 actual pinned upstream checkouts under `research/upstream-sources/`, with original licences, verified commits and independently retained source backups. Missing nested dependencies and unrecovered suggestions are listed explicitly.
 
@@ -42,9 +42,9 @@ npm run web
 
 For browser checks after `npm run build`: `npx playwright install chromium` then `npm run test:ui`. `npm run inventory:check` verifies the lockfile licence inventory.
 
-For native Android, install the Android SDK/JDK toolchain, run `npx expo prebuild --platform android --no-install` and `npm run android`. USB/NFC require a development build; Expo Go and web cannot load the custom Android module. The native source supports a conservative single CDC-ACM interface pair, not arbitrary USB serial chips. See the [firmware guide](firmware/README.md) for the ESP-IDF v6.1 target.
+For native Android, install the Android SDK/JDK toolchain, run `npm run android`. NFC and Bluetooth on both mobile platforms require a development build. On a Mac with Xcode, run `npm run ios`. The npm native scripts protect reference sources during Expo prebuild. The native source supports a conservative single CDC-ACM interface pair, not arbitrary USB serial chips. See the [firmware guide](firmware/README.md) for the ESP-IDF v6.1 target.
 
-Current evidence and unexecuted native/hardware gates are recorded in [VERIFICATION.md](docs/VERIFICATION.md). Planned adapters are listed openly in the capability matrix. A bounded, data-only AI provider contract and hypothesis validator are implemented; no model or endpoint is connected. Captures and the session journal are in memory only. The durable vault, RF drivers and vehicle/industrial integrations remain work packages.
+Current evidence and unexecuted native/hardware gates are recorded in [VERIFICATION.md](docs/VERIFICATION.md). Planned adapters are listed openly in the capability matrix. A bounded, data-only AI provider contract and hypothesis validator are implemented; no model or endpoint is connected. The session journal is in memory. NFC metadata and offline analysis summaries can now persist in the local Evidence journal with SHA-256 verification. An encrypted vault, RF drivers and vehicle/industrial integrations remain work packages. See the [accessory workbench](docs/ACCESSORY_WORKBENCH.md) and [source mining register](research/SOURCE_MINING.md).
 
 ![APEX console connected to its explicitly labelled software simulator](docs/images/console.png)
 
