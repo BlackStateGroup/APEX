@@ -71,7 +71,7 @@ At 20 Msamples/s and 8-bit I plus 8-bit Q, a HackRF stream is approximately 40 M
 
 Future evidence object: schema/version, local observation ID, source kind, fixture/device identity, start/end UTC, monotonic durations, firmware/adapter/protocol versions, input hash, parser version, parameters, errors/dropped counts and licence/authority references. Claims link to observation IDs. M0 displays results in memory; durable encrypted capture storage and tamper-evident journals remain work packages.
 
-Deterministic analysis runs first. AI later receives explicitly selected bounded inputs through a provider interface, returns structured hypotheses with uncertainty and provenance, and cannot call device transports directly. Reject fabricated source IDs and unsupported protocol labels. External data is untrusted content; instructions embedded in captures or metadata must not alter tool authority.
+Deterministic analysis runs first. The implemented data-only provider seam in packages/core/hypotheses.ts accepts bounded observation summaries, requires explicit selection for remote export, limits response size/time, validates referenced observation IDs and assigns unverified/hypothesis status. Provider responses have no command or execution fields and receive no transport reference. Confidence is an uncalibrated provider score, not proof. No model or external endpoint is connected. Provider adapters must honour the abort signal. Actual model evaluation and UI integration remain planned. External data is untrusted content; instructions embedded in captures or metadata must not alter tool authority.
 
 ## Failure and recovery
 

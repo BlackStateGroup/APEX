@@ -23,6 +23,7 @@ function Label({ children }: { children: React.ReactNode }) { return <Text style
 export default function App() {
   const [tab, setTab] = useState<Tab>('Console');
   const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   const lock = useRef(false);
   const session = useRef<DeviceSession | null>(null);
   const disconnectListener = useRef<(() => void) | null>(null);
@@ -55,16 +56,19 @@ export default function App() {
 
   async function run(action: () => Promise<void>) {
     if (lock.current) return;
-    lock.current = true; setBusy(true);
+    lock.current = true; setBusy(true); setNotice(null);
     try { await action(); }
-    catch (error) { append(`Error: ${error instanceof Error ? error.message : String(error)}`); }
+    catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      setNotice(message); append(`Error: ${message}`);
+    }
     finally { lock.current = false; setBusy(false); }
   }
   async function connect(transport: ByteTransport) {
     disconnectListener.current?.(); disconnectListener.current = null;
     await session.current?.close(); session.current = null; clearSession();
     const next = new DeviceSession(transport); session.current = next;
-    disconnectListener.current = transport.onDisconnect(error => { clearSession(); append(error.message); });
+    disconnectListener.current = transport.onDisconnect(error => { clearSession(); setNotice(error.message); append(error.message); });
     try {
       await next.open();
       setIdentity(`${next.info!.id} / ${next.info!.firmware}`);
@@ -110,6 +114,7 @@ export default function App() {
           <Text style={[styles.tabText, tab === name && { color: '#d8ff6b' }]}>{name}</Text>
         </Pressable>)}</View>
       <ScrollView contentContainerStyle={styles.body}>
+        {notice && <View accessibilityRole="alert" style={styles.notice}><Text style={styles.noticeText}>{notice}</Text></View>}
         {tab === 'Console' && <>
           <Label>01 / OPERATOR CONSOLE</Label>
           <Text style={styles.heading}>One platform.<Text style={styles.accent}> Many interfaces.</Text></Text>
@@ -180,6 +185,7 @@ const styles = StyleSheet.create({
   body: { padding: 24, gap: 20 }, label: { fontFamily: mono, color: '#a3b594', letterSpacing: 1.5, fontSize: 10, lineHeight: 17 },
   heading: { color: '#f1f4ee', fontSize: 36, lineHeight: 43, fontWeight: '600', maxWidth: 700, letterSpacing: -1 }, accent: { color: '#d8ff6b' },
   description: { color: '#a7b0a1', fontSize: 14, lineHeight: 23 }, card: { padding: 22, gap: 18, backgroundColor: '#141a12', borderWidth: 1, borderColor: '#313c29', borderRadius: 6 },
+  notice: { padding: 15, borderWidth: 1, borderColor: '#a97638', backgroundColor: '#2b2114', borderRadius: 4 }, noticeText: { color: '#f2d29f', fontSize: 13, lineHeight: 21 },
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'space-between', alignItems: 'center' }, pill: { color: '#c8dcab', fontFamily: mono, fontSize: 10, lineHeight: 16 },
   identity: { color: '#f1f4ee', fontSize: 19, fontWeight: '500' }, actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   button: { alignSelf: 'flex-start', paddingHorizontal: 17, paddingVertical: 13, borderRadius: 4, backgroundColor: '#d8ff6b', borderWidth: 1, borderColor: '#d8ff6b' },

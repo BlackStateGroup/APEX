@@ -1,8 +1,11 @@
 name: APEX foundation checks
 on:
   pull_request:
-  push:
-    branches: [feat/platform-foundation]
+    paths-ignore:
+      - 'docs/**'
+      - 'research/**'
+      - 'README.md'
+      - 'LICENSE.md'
   workflow_dispatch:
 permissions:
   contents: read
@@ -42,13 +45,17 @@ jobs:
           java-version: '21'
       - run: npm ci
       - run: npx expo prebuild --platform android --no-install
-      - name: Compile native module and assemble debug APK
+      - name: Compile native module
         working-directory: android
-        run: ./gradlew :apex-device:compileDebugKotlin :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon
+        run: ./gradlew :apex-device:compileDebugKotlin --no-daemon
+      - name: Assemble debug APK on an explicit full-build run
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: android
+        run: ./gradlew :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon
   esp32s3:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    container: espressif/idf:v6.1
+    container: espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - name: Cross-compile accessory target

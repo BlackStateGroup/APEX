@@ -40,5 +40,7 @@ For browser checks after `npm run build`: `npx playwright install chromium` then
 
 For native Android, install the Android SDK/JDK toolchain, run `npx expo prebuild --platform android --no-install` and `npm run android`. USB/NFC require a development build; Expo Go and web cannot load the custom Android module. The native source supports a conservative single CDC-ACM interface pair, not arbitrary USB serial chips. See the [firmware guide](firmware/README.md) for the ESP-IDF v6.1 target.
 
-Current evidence and unexecuted native/hardware gates are recorded in [VERIFICATION.md](docs/VERIFICATION.md). Planned adapters are listed openly in the capability matrix. Captures and the session journal are in memory only; no AI provider, durable vault, RF driver or vehicle/industrial control is connected.
+Current evidence and unexecuted native/hardware gates are recorded in [VERIFICATION.md](docs/VERIFICATION.md). Planned adapters are listed openly in the capability matrix. A bounded, data-only AI provider contract and hypothesis validator are implemented; no model or endpoint is connected. Captures and the session journal are in memory only. The durable vault, RF drivers and vehicle/industrial integrations remain work packages.
+
+![APEX console connected to its explicitly labelled software simulator](docs/images/console.png)
 
