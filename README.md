@@ -20,6 +20,8 @@ One workspace for supported electronic systems across NFC/RFID, radio, Bluetooth
 - [AXP/1 device protocol](docs/DEVICE_PROTOCOL.md)
 - [Security research boundaries](docs/SECURITY_RESEARCH.md)
 - [Verification record](docs/VERIFICATION.md)
+- [Project state and continuity](docs/PROJECT_STATE.md)
+- [Physical bench acceptance](docs/BENCH_ACCEPTANCE.md)
 
 The research branch defines the system. The dependent `feat/platform-foundation` branch establishes the Expo application, native Android module, shared protocol and portable C firmware. Review research before implementation. Physical hardware claims require separate evidence; no product-wide universal unlocking claim is made.
 
