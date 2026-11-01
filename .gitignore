@@ -1,0 +1,13 @@
+node_modules/
+.expo/
+dist/
+build/
+android/
+ios/
+!modules/**/android/
+*.log
+.DS_Store
+test-results/
+playwright-report/
+.env*
+!.env.example

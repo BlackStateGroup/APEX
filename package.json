@@ -1,0 +1,41 @@
+{
+  "name": "apex",
+  "version": "0.1.0",
+  "private": true,
+  "description": "APEX Universal Master Key interoperability research platform",
+  "type": "module",
+  "main": "index.ts",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "start": "expo start --dev-client",
+    "web": "expo start --web",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "firmware:build": "python3 tools/build_firmware.py",
+    "test": "npm run firmware:build && node --test tests/*.test.ts",
+    "build": "expo export --platform android --platform web",
+    "demo": "npm run firmware:build && node tools/demo.ts",
+    "test:ui": "playwright test",
+    "inventory": "node tools/npm-inventory.mjs",
+    "inventory:check": "node tools/npm-inventory.mjs --check"
+  },
+  "dependencies": {
+    "expo": "58.0.22",
+    "expo-dev-client": "~58.0.18",
+    "expo-status-bar": "~58.0.4",
+    "expo-system-ui": "~58.0.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-web": "^0.21.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  },
+  "license": "UNLICENSED"
+}
