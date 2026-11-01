@@ -1,6 +1,6 @@
 # Licensing inventory
 
-APEX original source remains private and all rights reserved pending the owner's licensing decision. Repository privacy does not remove third-party obligations. No upstream Flipper, Bruce, Proxmark, Chameleon, SDR or industrial-tool source is copied into this foundation. Expo and its dependencies are installed normally, with exact versions in package-lock.json. The ESP-IDF target references its SDK rather than vendoring it.
+APEX original source remains private and all rights reserved pending the owner's licensing decision. Repository privacy does not remove third-party obligations. Pinned upstream reference checkouts are held separately under research/upstream-sources with their original licences. None of their code is integrated into the APEX application or accessory firmware. Expo and its dependencies are installed normally, with exact versions in package-lock.json. The ESP-IDF target references its SDK rather than vendoring it.
 
 The following is an engineering intake inventory, not a blanket redistribution clearance. GitHub's detected licence is only a clue: PyModbus, HackRF, CAN utilities and BACnet demonstrate why component/file inspection matters. A process boundary is an architectural choice, not proof that copyleft obligations disappear.
 

@@ -1,0 +1,120 @@
+[submodule "R01"]
+	path = research/upstream-sources/R01-flipperdevices--flipperzero-firmware
+	url = https://github.com/flipperdevices/flipperzero-firmware.git
+	shallow = true
+[submodule "R02"]
+	path = research/upstream-sources/R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on
+	url = https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on.git
+	shallow = true
+[submodule "R03"]
+	path = research/upstream-sources/R03-BruceDevices--firmware
+	url = https://github.com/BruceDevices/firmware.git
+	shallow = true
+[submodule "R04"]
+	path = research/upstream-sources/R04-RfidResearchGroup--proxmark3
+	url = https://github.com/RfidResearchGroup/proxmark3.git
+	shallow = true
+[submodule "R05"]
+	path = research/upstream-sources/R05-RfidResearchGroup--ChameleonUltra
+	url = https://github.com/RfidResearchGroup/ChameleonUltra.git
+	shallow = true
+[submodule "R06"]
+	path = research/upstream-sources/R06-greatscottgadgets--hackrf
+	url = https://github.com/greatscottgadgets/hackrf.git
+	shallow = true
+[submodule "R07"]
+	path = research/upstream-sources/R07-meshtastic--firmware
+	url = https://github.com/meshtastic/firmware.git
+	shallow = true
+[submodule "R08"]
+	path = research/upstream-sources/R08-jgromes--RadioLib
+	url = https://github.com/jgromes/RadioLib.git
+	shallow = true
+[submodule "R09"]
+	path = research/upstream-sources/R09-crankyoldgit--IRremoteESP8266
+	url = https://github.com/crankyoldgit/IRremoteESP8266.git
+	shallow = true
+[submodule "R10"]
+	path = research/upstream-sources/R10-hathach--tinyusb
+	url = https://github.com/hathach/tinyusb.git
+	shallow = true
+[submodule "R11"]
+	path = research/upstream-sources/R11-espressif--esp-idf
+	url = https://github.com/espressif/esp-idf.git
+	shallow = true
+[submodule "R12"]
+	path = research/upstream-sources/R12-zephyrproject-rtos--zephyr
+	url = https://github.com/zephyrproject-rtos/zephyr.git
+	shallow = true
+[submodule "R13"]
+	path = research/upstream-sources/R13-mik3y--usb-serial-for-android
+	url = https://github.com/mik3y/usb-serial-for-android.git
+	shallow = true
+[submodule "R14"]
+	path = research/upstream-sources/R14-expo--expo
+	url = https://github.com/expo/expo.git
+	shallow = true
+[submodule "R15"]
+	path = research/upstream-sources/R15-dotintent--react-native-ble-plx
+	url = https://github.com/dotintent/react-native-ble-plx.git
+	shallow = true
+[submodule "R16"]
+	path = research/upstream-sources/R16-revtel--react-native-nfc-manager
+	url = https://github.com/revtel/react-native-nfc-manager.git
+	shallow = true
+[submodule "R17"]
+	path = research/upstream-sources/R17-merbanan--rtl_433
+	url = https://github.com/merbanan/rtl_433.git
+	shallow = true
+[submodule "R18"]
+	path = research/upstream-sources/R18-gnuradio--gnuradio
+	url = https://github.com/gnuradio/gnuradio.git
+	shallow = true
+[submodule "R19"]
+	path = research/upstream-sources/R19-pothosware--SoapySDR
+	url = https://github.com/pothosware/SoapySDR.git
+	shallow = true
+[submodule "R20"]
+	path = research/upstream-sources/R20-nfc-tools--libnfc
+	url = https://github.com/nfc-tools/libnfc.git
+	shallow = true
+[submodule "R21"]
+	path = research/upstream-sources/R21-linux-can--can-utils
+	url = https://github.com/linux-can/can-utils.git
+	shallow = true
+[submodule "R22"]
+	path = research/upstream-sources/R22-hardbyte--python-can
+	url = https://github.com/hardbyte/python-can.git
+	shallow = true
+[submodule "R23"]
+	path = research/upstream-sources/R23-pymodbus-dev--pymodbus
+	url = https://github.com/pymodbus-dev/pymodbus.git
+	shallow = true
+[submodule "R24"]
+	path = research/upstream-sources/R24-bacnet-stack--bacnet-stack
+	url = https://github.com/bacnet-stack/bacnet-stack.git
+	shallow = true
+[submodule "R25"]
+	path = research/upstream-sources/R25-osdp-dev--libosdp
+	url = https://github.com/osdp-dev/libosdp.git
+	shallow = true
+[submodule "R26"]
+	path = research/upstream-sources/R26-sigmf--SigMF
+	url = https://github.com/sigmf/SigMF.git
+	shallow = true
+[submodule "R27"]
+	path = research/upstream-sources/R27-jopohl--urh
+	url = https://github.com/jopohl/urh.git
+	shallow = true
+[submodule "R28"]
+	path = research/upstream-sources/R28-libusb--libusb
+	url = https://github.com/libusb/libusb.git
+	shallow = true
+[submodule "R29"]
+	path = research/upstream-sources/R29-RocketGod-git--mayhem-mobile
+	url = https://github.com/RocketGod-git/mayhem-mobile.git
+	shallow = true
+[submodule "R30"]
+	path = research/upstream-sources/R30-portapack-mayhem--mayhem-firmware
+	url = https://github.com/portapack-mayhem/mayhem-firmware.git
+	shallow = true

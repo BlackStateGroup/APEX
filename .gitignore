@@ -11,3 +11,7 @@ test-results/
 playwright-report/
 .env*
 !.env.example
+
+# Materialised upstream references are restored from pinned archives.
+research/upstream-sources/*/
+research/source-import-progress.json

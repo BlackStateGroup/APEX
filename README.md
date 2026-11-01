@@ -2,6 +2,10 @@
 
 **Universal Master Key**: a modular electronic interoperability platform from Black State Group.
 
+**Mobile targets: iPhone and Android.** Native iOS integration remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
+
+The [source-copy catalogue](research/SOURCE_COPIES.md) records 30 actual pinned upstream checkouts under `research/upstream-sources/`, with original licences, verified commits and independently retained source backups. Missing nested dependencies and unrecovered suggestions are listed explicitly.
+
 One workspace for supported electronic systems across NFC/RFID, radio, Bluetooth, Wi-Fi, infrared, embedded accessories, vehicle electronics and industrial/access-control benches. Compatibility is recorded per operation, equipment revision and test environment. Protocol recognition and authenticated access are distinct.
 
 ## Design and research
