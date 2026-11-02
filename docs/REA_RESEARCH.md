@@ -1,6 +1,6 @@
 # REA research and firmware workbench
 
-REA is morluto/rea, Reverse Engineer Anything. APEX now pins `rea-agents` 6.8.0 in a separate desktop tooling package. The reference checkout is R31, commit `144843ccc26bd372d61b8c6a27b37a01a5b0fb61`; its source archive is preserved in the source catalogue. The npm release and the later reference checkout are distinct provenance records. REA is MIT; declared transitive licences and release integrity are in `research/rea-toolchain.json`. These tools are not bundled into the iPhone/Android app.
+REA is morluto/rea, Reverse Engineer Anything. APEX now pins `rea-agents` 6.8.0 in a separate desktop tooling package. The reference checkout is R31, commit `144843ccc26bd372d61b8c6a27b37a01a5b0fb61`; its root source archive is preserved in the source catalogue. Five provider-source submodules remain uninitialised and are recorded separately in the manifest; the root archive does not contain their source trees. The npm release and the later reference checkout are distinct provenance records. REA is MIT; declared transitive licences and release integrity are in `research/rea-toolchain.json`. These tools are not bundled into the iPhone/Android app.
 
 ## What was actually run here
 
@@ -33,7 +33,7 @@ npm run firmware:build
 npm run research:inspect -- build/apex-firmware build/my-first-inspection
 ```
 
-Use a new output directory each time. The tool refuses existing directories, uses bounded subprocess calls without a shell, compares the selected artifact's before/after digests and REA's reported digest, and retains raw evidence plus each GNU supplement and diagnostic stream. Missing or unsupported GNU operations remain explicit supplemental failures; they do not erase successful REA metadata. Digest agreement is an endpoint observation, not proof against a concurrent ABA file replacement. Inspection does not recover secrets, prove runtime behaviour or establish hardware compatibility.
+Use Node 24.22.1 or a later supported 24.x patch for the pinned CLI. Use a new output directory each time. The tool refuses existing directories, uses bounded subprocess calls without a shell, compares the selected artifact's before/after digests and REA's reported digest, and retains raw evidence plus each GNU supplement and diagnostic stream. Missing or unsupported GNU operations remain explicit supplemental failures; they do not erase successful REA metadata. Digest agreement is an endpoint observation, not proof against a concurrent ABA file replacement. Inspection does not recover secrets, prove runtime behaviour or establish hardware compatibility.
 
 In the mobile/web app, open Analysis, choose **Import REA report**, paste the generated `rea-evidence.json`, then analyse and save. A recorded sample is available separately. The app validates operation/provider/version, digest agreement, counts, bounded note ranges and metadata lengths. It drops execution-shaped extra fields and local filesystem paths. Imported data always retains the warning that the original artifact has not been verified on this device. Saving a summary uses the existing local journal and does not execute report content or call a remote model.
 

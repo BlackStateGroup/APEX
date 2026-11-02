@@ -941,7 +941,13 @@
       "path": "research/upstream-sources/R31-morluto--rea",
       "status": "copied-and-verified",
       "trackedEntries": 7081,
-      "nestedSubmodulesNotInitialised": [],
+      "nestedSubmodulesNotInitialised": [
+        "third_party/binwalk",
+        "third_party/ghidra-nativeaot",
+        "third_party/jadx-headless-mcp",
+        "third_party/unblob",
+        "third_party/wakaru"
+      ],
       "history": "shallow pinned checkout",
       "archiveName": "APEX-R31-morluto--rea-144843ccc26b.tar.gz",
       "archiveBytes": 49631058,
@@ -966,6 +972,28 @@
           "bytes": 49631058,
           "sha256": "186e92a08125bd796c1aa71d9c1e9cd63712aaf4830dded7dae4e4866ba80274",
           "url": "https://chatgpt.com/library?file_id=libfile_0ff8f1f68fe8819192b0fd4c86b4bde8&account_id=personal"
+        }
+      ],
+      "nestedSourcePins": [
+        {
+          "commit": "4fdab3d464d97b68e0af9088df3f9e2e1545b21c",
+          "path": "third_party/binwalk"
+        },
+        {
+          "commit": "effeb734fc570c32650f88b159608979dc7b423e",
+          "path": "third_party/ghidra-nativeaot"
+        },
+        {
+          "commit": "5844800a486d2248fa949b74c9896285f5b54de2",
+          "path": "third_party/jadx-headless-mcp"
+        },
+        {
+          "commit": "1fcc7a0a584a70a96c31f5a276c20944d199a089",
+          "path": "third_party/unblob"
+        },
+        {
+          "commit": "8219bf5016a063d7fb215101a8c45d5959ec733f",
+          "path": "third_party/wakaru"
         }
       ]
     }

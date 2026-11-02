@@ -2,7 +2,7 @@
 
 31 source projects are registered under `research/upstream-sources/`. Source snapshots were verified against pinned Git commits. Local copies can be materialised on demand after workspace maintenance. Their restorable backups include source files and Git metadata. Original licence files remain in each checkout.
 
-The original 30 snapshots cover 157,411 tracked entries and 1,937,330,939 archived bytes. R31 adds 7,081 tracked entries and 49,631,058 archived bytes. They are shallow root-repository checkouts. The original archive snapshots omit the 58 root nested submodule entries listed in source-imports.json. Subsequent local recursive fetching is recorded separately in [nested-dependencies.json](nested-dependencies.json), including the broken DIY Flipper declaration. Original archive hashes and backup contents are unchanged.
+The original 30 snapshots cover 157,411 tracked entries and 1,937,330,939 archived bytes. R31 adds 7,081 tracked entries and 49,631,058 archived bytes. They are shallow root-repository checkouts. The original archive snapshots omit the 58 root nested submodule entries listed in source-imports.json. Subsequent local recursive fetching is recorded separately in [nested-dependencies.json](nested-dependencies.json), including the broken DIY Flipper declaration. Original archive hashes and backup contents are unchanged. R31 adds five uninitialised provider-source submodules, explicitly listed with pins in the manifest; they are not included in its root snapshot archive.
 
 | ID | Repository | Pinned commit | Source backup |
 | --- | --- | --- | --- |

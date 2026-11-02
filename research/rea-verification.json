@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-02",
+  "testedSourceCommit": "69d1d5d5ef9360188b8cd6de4d0a601b7f41bf7b",
+  "workflowRun": 41467890970,
+  "workflowUrl": "https://github.com/BlackStateGroup/APEX/actions/runs/41467890970",
+  "local": {
+    "nodeTestsPassed": 59,
+    "browserScenariosPassed": 4,
+    "typecheck": "passed",
+    "exports": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "rootDependencyInventoryEntries": 541,
+    "reaCliVersion": "6.8.0",
+    "controlledTarget": "APEX compiled C host firmware",
+    "targetExecutedByInspection": false,
+    "rawAndSupplementDigestsVerified": true
+  },
+  "ci": {
+    "host": {
+      "jobId": 125353478957,
+      "conclusion": "success"
+    },
+    "ios": {
+      "jobId": 125353480212,
+      "conclusion": "success",
+      "target": "unsigned iPhone Simulator"
+    },
+    "esp32s3": {
+      "jobId": 125353479560,
+      "conclusion": "success"
+    },
+    "android": {
+      "jobId": 125353479616,
+      "conclusion": "success",
+      "target": "full arm64-v8a debug APK"
+    }
+  },
+  "sourceArchiveFiles": 32,
+  "sourceProjects": 31,
+  "originalThirtyRecordsUnchanged": true,
+  "physicalHardwareTested": false,
+  "deepDecompilerConfigured": false,
+  "reaExternalToolPreflight": "Process-ownership ps invocation fails in this managed runtime; no guard was bypassed.",
+  "workflowConclusion": "success"
+}
