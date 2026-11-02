@@ -19,6 +19,8 @@ import type { BleCandidate } from './packages/core/ble-transport.ts';
 import { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from './src/platform/bluetooth';
 import { evidenceStore } from './src/platform/evidence';
 import type { EvidenceRecord } from './packages/core/evidence.ts';
+import { parseReaElfEvidence } from './packages/core/rea-inspection.ts';
+import reaSample from './src/fixtures/rea-elf-notes.json';
 import { sourceAtlas } from './src/source-atlas.ts';
 
 type Tab = 'Console' | 'Devices' | 'Analysis' | 'Evidence' | 'Research';
@@ -50,9 +52,9 @@ export default function App() {
   const stopScan = useRef<(() => Promise<void>) | null>(null);
   const reader = useRef<NfcReader | null>(null);
   const [records, setRecords] = useState<EvidenceRecord[]>([]);
-  const [lastAnalysis, setLastAnalysis] = useState<{ kind: 'analysis.nec' | 'analysis.can'; source: 'offline-fixture' | 'offline-import'; payload: unknown } | null>(null);
+  const [lastAnalysis, setLastAnalysis] = useState<{ kind: 'analysis.nec' | 'analysis.can' | 'analysis.firmware'; source: 'offline-fixture' | 'offline-import'; payload: unknown } | null>(null);
   const [search, setSearch] = useState('');
-  const [format, setFormat] = useState<'NEC' | 'CAN'>('NEC');
+  const [format, setFormat] = useState<'NEC' | 'CAN' | 'REA ELF'>('NEC');
   const [input, setInput] = useState(JSON.stringify(necFixture()));
   const [fixture, setFixture] = useState(true);
   const [analysis, setAnalysis] = useState('Load a fixture or paste a local recording, then analyse.');
@@ -124,13 +126,14 @@ export default function App() {
     try {
       if (input.length > 262144) throw new Error('Input exceeds analysis limit');
       let result: unknown;
-      if (format === 'NEC') {
+      if (format === 'REA ELF') { result = parseReaElfEvidence(input); }
+      else if (format === 'NEC') {
         const value: unknown = JSON.parse(input);
         if (!Array.isArray(value) || value.some(x => typeof x !== 'number')) throw new Error('Expected a JSON array of pulse durations');
         result = decodeNec(value);
       } else { const frames = parseCanLog(input); result = { frames: frames.length, identifiers: [...new Set(frames.map(f => f.id.toString(16)))], firstFrame: frames[0] ?? null }; }
-      setLastAnalysis({ kind: format === 'NEC' ? 'analysis.nec' : 'analysis.can', source: fixture ? 'offline-fixture' : 'offline-import', payload: { format, result } });
-      setAnalysis(JSON.stringify({ source: fixture ? 'synthetic fixture' : 'user-supplied offline data', format, result }, null, 2));
+      setLastAnalysis({ kind: format === 'REA ELF' ? 'analysis.firmware' : format === 'NEC' ? 'analysis.nec' : 'analysis.can', source: fixture ? 'offline-fixture' : 'offline-import', payload: { format, result } });
+      setAnalysis(JSON.stringify({ source: fixture ? format === 'REA ELF' ? 'recorded lab sample' : 'synthetic fixture' : 'user-supplied offline data', format, result }, null, 2));
     } catch (error) { setAnalysis(`Analysis error: ${error instanceof Error ? error.message : String(error)}`); }
   }
 
@@ -197,9 +200,9 @@ export default function App() {
         </>}
         {tab === 'Analysis' && <>
           <Label>03 / LOCAL WORKBENCH</Label><Text style={styles.heading}>Evidence before inference.</Text>
-          <Text style={styles.description}>Deterministic offline analysis. No AI provider is connected. NEC uses microsecond pulse durations; CAN accepts compact classic candump data frames.</Text>
-          <View style={styles.actions}><Button title="Load NEC fixture" quiet onPress={() => loadFixture('NEC')} /><Button title="Load CAN fixture" quiet onPress={() => loadFixture('CAN')} /></View>
-          <Text style={styles.pill}>{format} / {fixture ? 'SYNTHETIC FIXTURE' : 'OFFLINE INPUT'}</Text>
+          <Text style={styles.description}>Deterministic offline analysis. No AI provider is connected. NEC uses microsecond pulse durations; CAN accepts compact classic candump data frames. REA imports offline ELF-note evidence produced by the pinned research CLI; the original binary is not verified on this phone.</Text>
+          <View style={styles.actions}><Button title="Load NEC fixture" quiet onPress={() => loadFixture('NEC')} /><Button title="Load CAN fixture" quiet onPress={() => loadFixture('CAN')} /><Button title="Import REA report" quiet onPress={() => { setFormat('REA ELF'); setInput(''); setFixture(false); setLastAnalysis(null); setAnalysis('Paste rea-evidence.json from the research CLI, then analyse.'); }} /><Button title="Load REA sample" quiet onPress={() => { setFormat('REA ELF'); setInput(JSON.stringify(reaSample)); setFixture(true); setLastAnalysis(null); setAnalysis('Recorded REA lab sample loaded. Ready to analyse.'); }} /></View>
+          <Text style={styles.pill}>{format} / {fixture ? format === 'REA ELF' ? 'RECORDED LAB SAMPLE' : 'SYNTHETIC FIXTURE' : 'OFFLINE INPUT'}</Text>
           <TextInput accessibilityLabel="Recording input" multiline value={input} maxLength={262144} onChangeText={value => { setInput(value); setFixture(false); setLastAnalysis(null); }} style={styles.input} autoCapitalize="none" autoCorrect={false} />
           <View style={styles.actions}><Button title="Analyse recording" onPress={analyse} /><Button title="Save analysis evidence" quiet disabled={busy || !lastAnalysis} onPress={() => void run(async () => {
             if (!lastAnalysis) return; await evidenceStore.save(lastAnalysis); setRecords(await evidenceStore.list()); setNotice('Analysis saved to local evidence.');
@@ -207,14 +210,14 @@ export default function App() {
         </>}
         {tab === 'Evidence' && <>
           <Label>04 / LOCAL EVIDENCE</Label><Text style={styles.heading}>Keep what you learn.</Text>
-          <Text style={styles.description}>Saved NFC metadata and offline analysis summaries. SHA-256 detects changes; it does not prove authenticity. Native storage uses the app sandbox. Web storage belongs to this browser.</Text>
+          <Text style={styles.description}>Saved NFC metadata, offline analyses and imported firmware inspection summaries. SHA-256 detects changes; it does not prove authenticity. Native storage uses the app sandbox. Web storage belongs to this browser.</Text>
           <Button title="Refresh evidence" quiet onPress={() => void run(async () => setRecords(await evidenceStore.list()))} />
           {!records.length && <Text style={styles.description}>No saved observations yet. Analyse a fixture or inspect an authorised NFC tag.</Text>}
           {records.map(record => <View key={record.id} style={styles.card}><Text style={styles.identity}>{record.kind}</Text><Text style={styles.pill}>{record.source}</Text><Text style={styles.description}>{record.observedAt}</Text><Text selectable style={styles.log}>{JSON.stringify(record.payload, null, 2)}</Text><Text selectable style={styles.log}>SHA-256 {record.sha256}</Text><Button title={`Verify ${record.id}`} quiet onPress={() => void run(async () => setNotice(await evidenceStore.verify(record) ? 'Evidence digest verified.' : 'Evidence digest mismatch.'))} /></View>)}
         </>}
         {tab === 'Research'  && <>
           <Label>04 / CAPABILITY ATLAS</Label><Text style={styles.heading}>Ambition, with evidence.</Text>
-          <Text style={styles.description}>30 upstream projects copied and pinned. Each capability retains its implementation status and hardware dependencies.</Text>
+          <Text style={styles.description}>31 upstream projects registered and backed up. Each capability retains its implementation status and hardware dependencies.</Text>
           {catalogue.map(item => <View key={item.domain} style={styles.catalogue}><View style={styles.row}><Text style={styles.catalogueTitle}>{item.domain}</Text><Text style={styles.pill}>{item.status}</Text></View><Text style={styles.description}>{item.detail}</Text></View>)}
           <TextInput accessibilityLabel="Search source projects" value={search} onChangeText={setSearch} placeholder="Search copied projects" placeholderTextColor="#99a38f" style={[styles.input, { minHeight: 48 }]} />
           {sourceAtlas.filter(item => `${item.id} ${item.repository}`.toLowerCase().includes(search.toLowerCase())).map(item => <View key={item.id} style={styles.catalogue}><Text style={styles.catalogueTitle}>{item.id} / {item.repository}</Text><Text style={styles.pill}>{item.use}</Text><Text selectable style={styles.log}>{item.commit}</Text></View>)}

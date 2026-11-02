@@ -21,6 +21,10 @@ The complete earlier chat is not available in this workspace. The 28 named initi
 
 `research/SOURCE_MINING.md` records examined interfaces and the first actual integrations. NFC manager and BLE PLX are pinned npm dependencies; their release versions are distinct from the research checkout commits. The rest of the corpus remains reference-only until separately implemented and tested.
 
+## REA workbench, 2 November 2026
+
+Branch `feat/rea-firmware-lab` adds the pinned desktop REA CLI, static ELF-note report import, GNU inspection supplements and evidence persistence. R31 source and its archive are retained. There are now 31 source projects and 32 preserved archive files; the original 30 pins/backups are unchanged. Workspace maintenance removed old local clones; materialise references on demand. Deep analysis engines and supervised REA process launches remain unverified here; see REA_RESEARCH.md for observed failures and the successful built-in parser.
+
 ## Next engineering gates
 
 1. Resolve native build errors in PR #4 before changing its readiness. Preserve exact tested source revisions in verification evidence.

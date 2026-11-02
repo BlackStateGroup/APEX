@@ -4,7 +4,7 @@
 
 **Mobile targets: iPhone and Android.** Native NFC and AXP Bluetooth integrations are implemented; physical iPhone testing remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
 
-The [source-copy catalogue](research/SOURCE_COPIES.md) records 30 actual pinned upstream checkouts under `research/upstream-sources/`, with original licences, verified commits and independently retained source backups. Missing nested dependencies and unrecovered suggestions are listed explicitly.
+The [source-copy catalogue](research/SOURCE_COPIES.md) records 31 pinned upstream source projects under `research/upstream-sources/`, with original licences, verified commits and independently retained source backups. Local checkouts can be restored on demand; missing nested dependencies and unrecovered suggestions are listed explicitly.
 
 One workspace for supported electronic systems across NFC/RFID, radio, Bluetooth, Wi-Fi, infrared, embedded accessories, vehicle electronics and industrial/access-control benches. Compatibility is recorded per operation, equipment revision and test environment. Protocol recognition and authenticated access are distinct.
 
@@ -22,6 +22,7 @@ One workspace for supported electronic systems across NFC/RFID, radio, Bluetooth
 - [Verification record](docs/VERIFICATION.md)
 - [Project state and continuity](docs/PROJECT_STATE.md)
 - [Physical bench acceptance](docs/BENCH_ACCEPTANCE.md)
+- [REA research and firmware inspection](docs/REA_RESEARCH.md)
 
 The research branch defines the system. The dependent `feat/platform-foundation` branch establishes the Expo application, native Android module, shared protocol and portable C firmware. Review research before implementation. Physical hardware claims require separate evidence; no product-wide universal unlocking claim is made.
 

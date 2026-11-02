@@ -23,6 +23,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - run: npm run research:setup
       - run: npm test
       - run: npm run typecheck
       - run: python3 tools/build_firmware.py --sanitize

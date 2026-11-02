@@ -4,7 +4,7 @@ export const EVIDENCE_SCHEMA = `CREATE TABLE IF NOT EXISTS apex_evidence (
 );`;
 export const INSERT_EVIDENCE = 'INSERT INTO apex_evidence(id, document) VALUES (?, ?)';
 export const SELECT_EVIDENCE = 'SELECT document FROM apex_evidence ORDER BY rowid DESC LIMIT ?';
-export type EvidenceKind = 'nfc.metadata' | 'analysis.nec' | 'analysis.can';
+export type EvidenceKind = 'nfc.metadata' | 'analysis.nec' | 'analysis.can' | 'analysis.firmware';
 export type EvidenceSource = 'native-ios' | 'native-android' | 'offline-fixture' | 'offline-import';
 export interface EvidenceRecord {
   schemaVersion: 1; id: string; kind: EvidenceKind; source: EvidenceSource;
@@ -29,7 +29,7 @@ function canonical(value: unknown, depth = 0): unknown {
 }
 function checkedBase(record: Record<string, unknown>) {
   if (record.schemaVersion !== 1 || typeof record.id !== 'string' || !/^[\w.:-]{1,80}$/.test(record.id) ||
-      !['nfc.metadata', 'analysis.nec', 'analysis.can'].includes(String(record.kind)) ||
+      !['nfc.metadata', 'analysis.nec', 'analysis.can', 'analysis.firmware'].includes(String(record.kind)) ||
       !['native-ios', 'native-android', 'offline-fixture', 'offline-import'].includes(String(record.source)) ||
       typeof record.observedAt !== 'string' || !Number.isFinite(Date.parse(record.observedAt))) throw new Error('Invalid evidence envelope');
   if (record.kind === 'nfc.metadata' && !['native-ios', 'native-android'].includes(String(record.source))) throw new Error('NFC evidence needs a native source');

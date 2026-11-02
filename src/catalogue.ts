@@ -1,4 +1,5 @@
 export const catalogue = [
+  { domain: 'Firmware / REA', status: 'Static lab verified', detail: 'ELF-note evidence import and persistence; desktop REA CLI plus GNU binary metadata; no decompiler connected' },
   { domain: 'AXP control plane', status: 'Host verified', detail: 'Identity, capability negotiation and binary ping' },
   { domain: 'Infrared / NEC', status: 'Offline decoder', detail: 'Standard 32-bit pulse fixture analysis' },
   { domain: 'Vehicle / CAN', status: 'Offline parser', detail: 'Classic candump data frames, no live bus connection' },

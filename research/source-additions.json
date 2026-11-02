@@ -12,5 +12,19 @@
     "commit": "97c349701723b7f8334b71867439a436a5ab8d02",
     "licence": "GPL-3.0",
     "recovered": true
+  },
+  {
+    "id": "R31",
+    "repository": "morluto/rea",
+    "commit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
+    "licence": "MIT",
+    "recovered": false,
+    "purpose": "Desktop reverse-engineering analysis tooling",
+    "runtimeDependency": {
+      "package": "rea-agents",
+      "version": "6.8.0",
+      "licence": "MIT",
+      "integration": "Isolated desktop research CLI; not bundled in the mobile app; npm release source differs from current reference checkout."
+    }
   }
 ]

@@ -1,8 +1,8 @@
 # Source copy and backup catalogue
 
-30 source checkouts are present under `research/upstream-sources/`. All match their pinned Git commits. Their restorable backups include source files and Git metadata. Original licence files remain in each checkout.
+31 source projects are registered under `research/upstream-sources/`. Source snapshots were verified against pinned Git commits. Local copies can be materialised on demand after workspace maintenance. Their restorable backups include source files and Git metadata. Original licence files remain in each checkout.
 
-The copies cover 157,411 tracked entries and 1,937,330,939 archived bytes. They are shallow root-repository checkouts. The original archive snapshots omit the 58 root nested submodule entries listed in source-imports.json. Subsequent local recursive fetching is recorded separately in [nested-dependencies.json](nested-dependencies.json), including the broken DIY Flipper declaration. Original archive hashes and backup contents are unchanged.
+The original 30 snapshots cover 157,411 tracked entries and 1,937,330,939 archived bytes. R31 adds 7,081 tracked entries and 49,631,058 archived bytes. They are shallow root-repository checkouts. The original archive snapshots omit the 58 root nested submodule entries listed in source-imports.json. Subsequent local recursive fetching is recorded separately in [nested-dependencies.json](nested-dependencies.json), including the broken DIY Flipper declaration. Original archive hashes and backup contents are unchanged.
 
 | ID | Repository | Pinned commit | Source backup |
 | --- | --- | --- | --- |
@@ -36,6 +36,7 @@ The copies cover 157,411 tracked entries and 1,937,330,939 archived bytes. They 
 | R28 | libusb/libusb | `987c1170d001` | [Archive](https://chatgpt.com/library?file_id=libfile_b69552d2078481919a6cb02b8e11f7b5&account_id=personal) |
 | R29 | RocketGod-git/mayhem-mobile | `a18fca46f585` | [Archive](https://chatgpt.com/library?file_id=libfile_78d961b0604c81918038b2aa77521acc&account_id=personal) |
 | R30 | portapack-mayhem/mayhem-firmware | `97c349701723` | [Part 1](https://chatgpt.com/library?file_id=libfile_36f3d08472ac819193a47fba6be3458c&account_id=personal), [Part 2](https://chatgpt.com/library?file_id=libfile_04a6456132f88191869f6f97caa8446e&account_id=personal) |
+| R31 | morluto/rea | `144843ccc26b` | [Archive](https://chatgpt.com/library?file_id=libfile_0ff8f1f68fe8819192b0fd4c86b4bde8&account_id=personal) |
 
 Mayhem firmware has two archive parts. Reassemble in recorded order and verify the full archive SHA-256 before extraction. Use tools/restore_source_archives.py with the downloaded backup files.
 
@@ -45,8 +46,8 @@ These names/URLs were not recovered and have not been invented: unnamed Android 
 
 ## Platform scope
 
-iPhone and Android are both first-class targets. The current Android native module has build evidence. Native iOS integration and physical iPhone testing remain pending. See docs/PLATFORM_SCOPE.md.
+iPhone and Android are both first-class targets. The current Android native module has build evidence. The unsigned iOS Simulator build has passed; physical iPhone testing and signing remain pending. See docs/PLATFORM_SCOPE.md.
 
 ## Verification
 
-Each source HEAD matches its recorded commit and each checkout is clean. All 31 backup files were saved successfully with persistent identities recorded. Upstream code was not executed, built or integrated into APEX. Source import does not imply interoperability or a hardware breakthrough.
+The original 30 snapshots were verified on 1 November; R31 was verified on 2 November. All 32 backup files have persistent identities recorded. Reference snapshots have not been built. Separately pinned NFC/BLE releases are integrated, and the pinned REA npm release has now been executed for static analysis of APEX-owned lab firmware. Source import does not imply interoperability or a hardware breakthrough.

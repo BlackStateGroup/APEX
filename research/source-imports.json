@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "sourceRoot": "research/upstream-sources",
   "copies": [
     {
@@ -933,6 +933,41 @@
         }
       ],
       "backupStatus": "saved-and-identified"
+    },
+    {
+      "id": "R31",
+      "repository": "morluto/rea",
+      "commit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
+      "path": "research/upstream-sources/R31-morluto--rea",
+      "status": "copied-and-verified",
+      "trackedEntries": 7081,
+      "nestedSubmodulesNotInitialised": [],
+      "history": "shallow pinned checkout",
+      "archiveName": "APEX-R31-morluto--rea-144843ccc26b.tar.gz",
+      "archiveBytes": 49631058,
+      "archiveSha256": "186e92a08125bd796c1aa71d9c1e9cd63712aaf4830dded7dae4e4866ba80274",
+      "licences": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "applicationCodeIntegrated": false,
+      "runtimeDependency": {
+        "package": "rea-agents",
+        "version": "6.8.0",
+        "licence": "MIT",
+        "integration": "Isolated desktop research CLI; not bundled in the mobile app; npm release source differs from current reference checkout."
+      },
+      "backupStatus": "saved-and-identified",
+      "backups": [
+        {
+          "filename": "APEX-R31-morluto--rea-144843ccc26b.tar.gz",
+          "libraryFileId": "libfile_0ff8f1f68fe8819192b0fd4c86b4bde8",
+          "version": 0,
+          "bytes": 49631058,
+          "sha256": "186e92a08125bd796c1aa71d9c1e9cd63712aaf4830dded7dae4e4866ba80274",
+          "url": "https://chatgpt.com/library?file_id=libfile_0ff8f1f68fe8819192b0fd4c86b4bde8&account_id=personal"
+        }
+      ]
     }
   ],
   "unresolvedEarlierConversation": [
@@ -940,5 +975,6 @@
     "Unnamed vehicle/industrial communication repository",
     "Unnamed accessory firmware repository"
   ],
-  "scope": "Actual pinned root-repository checkouts. nestedSubmodulesNotInitialised describes original archive snapshots; subsequent local expansion is recorded in nested-dependencies.json. Reference checkout files are not linked into APEX; explicit runtimeDependency entries describe separately pinned npm integrations."
+  "scope": "Actual pinned root-repository checkouts. nestedSubmodulesNotInitialised describes original archive snapshots; subsequent local expansion is recorded in nested-dependencies.json. Reference checkout files are not linked into APEX; explicit runtimeDependency entries describe separately pinned npm integrations.",
+  "localMaterialisationNote": "Workspace maintenance removed earlier local clones. Existing 30 source backups and pins are retained unchanged; materialise selected references on demand. R31 was freshly cloned and archived on 2026-11-02."
 }

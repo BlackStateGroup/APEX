@@ -118,3 +118,7 @@
 	path = research/upstream-sources/R30-portapack-mayhem--mayhem-firmware
 	url = https://github.com/portapack-mayhem/mayhem-firmware.git
 	shallow = true
+[submodule "R31"]
+	path = research/upstream-sources/R31-morluto--rea
+	url = https://github.com/morluto/rea.git
+	shallow = true

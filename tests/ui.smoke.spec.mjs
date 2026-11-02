@@ -25,7 +25,7 @@ test('console, equipment, offline workbench and research work in a real browser'
   await page.getByRole('button', { name: 'Analyse recording' }).click();
   await expect(page.getByText(/"frames": 2/)).toBeVisible();
   await page.getByRole('tab', { name: 'Research' }).click();
-  await expect(page.getByText(/30 upstream projects copied and pinned/)).toBeVisible();
+  await expect(page.getByText(/31 upstream projects registered and backed up/)).toBeVisible();
   await expect(page.getByText('AI protocol assistance', { exact: true })).toBeVisible();
   expect(errors).toEqual([]);
 });
@@ -52,4 +52,22 @@ test('console is usable at a phone viewport without horizontal overflow', async 
   await page.getByRole('textbox', { name: 'Search source projects' }).fill('mayhem');
   await expect(page.getByText('R29 / RocketGod-git/mayhem-mobile', { exact: true })).toBeVisible();
   await expect(page.getByText('R30 / portapack-mayhem/mayhem-firmware', { exact: true })).toBeVisible();
+});
+
+test('REA sample and imported reports retain provenance in saved evidence', async ({ page }) => {
+  await page.goto('/'); await page.getByRole('tab', { name:'Analysis' }).click();
+  await page.getByRole('button', { name:'Load REA sample' }).click();
+  await expect(page.getByText('REA ELF / RECORDED LAB SAMPLE')).toBeVisible();
+  await page.getByRole('button', { name:'Analyse recording' }).click();
+  await expect(page.getByText(/original artifact has not been verified on this device/)).toBeVisible();
+  await page.getByRole('button', { name:'Save analysis evidence' }).click();
+  await page.reload(); await page.getByRole('tab', { name:'Evidence' }).click();
+  await expect(page.getByText('analysis.firmware', { exact:true })).toBeVisible();
+  await expect(page.getByText('offline-fixture', { exact:true })).toBeVisible();
+  await page.getByRole('tab', { name:'Analysis' }).click();
+  await page.getByRole('button', { name:'Import REA report' }).click();
+  await page.getByRole('textbox', { name:'Recording input' }).fill('{"operation":"execute"}');
+  await page.getByRole('button', { name:'Analyse recording' }).click();
+  await expect(page.getByText(/Analysis error:/)).toBeVisible();
+  await expect(page.getByRole('button', { name:'Save analysis evidence' })).toBeDisabled();
 });
