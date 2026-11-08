@@ -1,0 +1,19 @@
+✔ independent five-await lifecycle matrix retains one slot across replacement, clear, background and repeat invalidation (122.135843ms)
+✔ independent numerical tone, exact SHA256/SHA512 and immutable full pagination (7.060387ms)
+✔ independent mutable hasher input cannot alter exact source or later analysis (3.010734ms)
+✔ independent malformed pair sizes never read either handle, read failures do not hash (1.371574ms)
+✔ observer exceptions at running publication do not strand slot or reject inspection (20.946792ms)
+✔ observer exceptions during final publication do not reject completed job (7.383826ms)
+✔ synchronous observer reentry before first read cannot start a second job (4.623341ms)
+✔ observer invalidation during initial notifications fences first read (0.736953ms)
+✔ throwing observer does not suppress later observers or invalid-pair settlement (4.97973ms)
+✔ observer exit at either initial notification prevents source read and stale publication (0.811482ms)
+✔ one-shot observer replacement preserves new selection and never reads old captured pair (2.100464ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 299.505771

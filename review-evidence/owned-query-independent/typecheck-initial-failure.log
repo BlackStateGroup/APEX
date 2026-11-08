@@ -1,0 +1,2 @@
+review-evidence/owned-query-independent/independent.test.ts(34,20): error TS7006: Parameter 'connection' implicitly has an 'any' type.
+review-evidence/owned-query-independent/independent.test.ts(34,73): error TS7006: Parameter 'error' implicitly has an 'any' type.

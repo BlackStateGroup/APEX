@@ -1,0 +1,18 @@
+✔ synthetic exact view bytes, endianness, snapshots and caller mutation during async hashing (8.401822ms)
+✔ synthetic exact source hashes and optional SHA512 are not authenticity (2.304795ms)
+✔ synthetic malformed JSON bytes, duplicates, aliases, bounds and shapes reject (2.546473ms)
+✔ synthetic unsupported fields, layout, versions, numeric types and ranges reject (2.064528ms)
+✔ synthetic optional extension content stays inert and globally bounded (2.800991ms)
+✔ synthetic context, shared buffers, and broken hash adapters reject (0.570024ms)
+✔ intrinsic IQ view bounds reject spoofed empty/oversized storage without reading claims (0.738099ms)
+✔ IQ rejects shared/resizable/detached/proxy and forged non-byte views before hashing (0.654205ms)
+✔ IQ context uses only own data fields and never invokes field getters (1.003085ms)
+✔ Buffer and subarray inputs preserve exact bytes, hashes, context and profile parity (0.950555ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.8476

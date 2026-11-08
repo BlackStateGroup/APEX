@@ -1,0 +1,9 @@
+menu "APEX reviewed laboratory target"
+config APEX_REVIEWED_BLE_BENCH_OPT_IN
+    bool "Enable unauthenticated BLE laboratory transport"
+    default n
+    help
+        Starts the NimBLE host and connectable advertising when the USB loop
+        calls apex_ble_start. For separately authorized owned-bench use only.
+        Selecting this is not permission to flash or operate a radio.
+endmenu

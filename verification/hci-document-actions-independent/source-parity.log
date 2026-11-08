@@ -1,0 +1,8 @@
+PASS owner byte-identical after removing only presentation key: hooks/effect ordering, controller identity and callbacks preserved
+PASS verified reports, staging visibility/callbacks, paging and styles byte-identical
+PASS all disabled predicate expressions identical
+PASS unchanged src/hci-document-workbench.ts 26194cbce2707aae375d5b6e8e13534f19c035f5db813109df7bbd28c4c7bb34
+PASS unchanged src/HciEvidenceReopen.tsx 499fee3b46814b32a0bd95a38dc633aa0cccf8182b14030514eb07827aa5e55c
+PASS unchanged src/analysis-navigation.ts 52626bcc849ee4d4a06984a1a69bb112365bd6b46a31d51257aaaccf988daf36
+PASS unchanged App.tsx d269db0e247a535308f0839f54f6a375ee93d74f9b6bf678df0072637cdbd583
+PASS unchanged package-lock.json 8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74

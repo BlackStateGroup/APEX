@@ -1,0 +1,16 @@
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (8.751705ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (13.500036ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (11.719625ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (14.579166ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.363758ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.779825ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (0.831445ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.867254ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 383.865022

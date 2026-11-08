@@ -1,0 +1,24 @@
+✔ exact source SHA256, literal offsets and whole NDEF value parity (3.872825ms)
+✔ explicit mode lengths and exact CC accepted set, no access inference (7.000801ms)
+✔ all 256 tags and length bytes, no search recovery (11.692754ms)
+✔ literal edge offsets, NULL exhaustion, terminator and opaque trailing (0.54562ms)
+✔ late malformed/unsupported suppress NDEF; missing, multiple, empty, decoder failure separate (0.618633ms)
+✔ snapshot before context, independent hash copy, frozen results and private source (0.957292ms)
+✔ actual fixed nonshared Uint8Array and strict own context (0.813803ms)
+✔ CLI strict args, bounded regular-file reads, symlinks, generic atomic errors, read-only permission (311.976578ms)
+✔ actual static TSX inactive and uninspected; boundaries and rejection disabled (11.042824ms)
+✔ actual TSX separates TLV statuses from NDEF missing, ambiguous, empty and decoder failure (19.436545ms)
+✔ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (13.606645ms)
+✔ strict exact-mode decoding and existing byte adapter parity (9.549589ms)
+✔ explicit mode/provenance, immutable report, separate byte copy (2.22489ms)
+✔ whole rejected edits retain draft and fence across declarations, mode and leave (1.039379ms)
+✔ late success/error fenced by accepted/rejected edits, mode, provenance, examples, clear and leave; old controls inert (1.543624ms)
+✔ bounded pages reject stale observations and reset on edits or leave (0.604533ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 489.738205

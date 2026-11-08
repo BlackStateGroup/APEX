@@ -1,0 +1,59 @@
+{
+  "baseline": "0c38590ff379dd09fdae31b9356634302ffeb150",
+  "node": "v24.22.1",
+  "sdk": {
+    "name": "react-native-nfc-manager",
+    "version": "4.2.0",
+    "main": "dist/src/index.js",
+    "locked": {
+      "version": "4.2.0",
+      "resolved": "https://registry.npmjs.org/react-native-nfc-manager/-/react-native-nfc-manager-4.2.0.tgz",
+      "integrity": "sha512-3LCVChwRxtGG89vMTSWgrGhxIYfM9WCkJ8qO5dGTy/E8X7US5XjSN3Xg2JbN6k2iPZKWVue3qImqhGpuJsqKFw==",
+      "license": "MIT",
+      "peerDependencies": {
+        "@expo/config-plugins": "*",
+        "react": ">=18.2",
+        "react-native": ">=0.76"
+      },
+      "peerDependenciesMeta": {
+        "@expo/config-plugins": {
+          "optional": true
+        }
+      }
+    },
+    "files": {
+      "dist/src/index.js": "5e8839f58fa6598d68dd0f40a863b99e977501ab25e74968944d297a05483b9f",
+      "dist/ndef-lib/index.js": "146429ca8bfb57df46cce3c697bcbe1d5b147ca4599d30ecdf951be8c52d9432",
+      "dist/ndef-lib/ndef.js": "5eb29ac7bb08411622cbb32af68dd6abc1721ee914d882492310dc65871b3f66",
+      "dist/ndef-lib/util.js": "112c878b3743193b4ce1aea3ae43df67c5e6ab3f21cd89e34a44aafe3b19095c",
+      "dist/ndef-lib/constants.js": "5829e9fb9c4bc2c551337775112b71294aa12f2adada4a39d171c87b3739ef77",
+      "dist/ndef-lib/ndef-text.js": "3f88d7100cee1e53dbd751ce7baac3226a8f7e445a6da304a9d16472e85cd1e9",
+      "dist/ndef-lib/ndef-uri.js": "8403ccd2864395ddf626cf401fc423504c25193e1750a6900f0535527b9f8870",
+      "dist/ndef-lib/ndef-wifi-simple.js": "c95eafead0aeef1c996e98a5ea5266e017d0c1f0977f14ef3561835365558282",
+      "dist/ndef-lib/stringifier.js": "cb4443c7dbb8af8e9698ec5a56804fb8eedb04822bd07cd2a876c146039f8e5e",
+      "dist/src/NfcManager.js": "3b87308c5dbfc8f6a6d4159528520c5a0a1465f1ed6e369f5683c41a2f1b6e9b",
+      "dist/src/NativeNfcManager.js": "6ee0850e1862465d7a899168df448705d087865ac5f51c853d0dccdebfc50cb4",
+      "dist/src/runtimeCompatibility.js": "3be2e03a65e0360580041da3e5ab058f67d79773b1709726a396b75b88025871",
+      "dist/src/NfcTech/NdefHandler.js": "0d28b537014ed9b051a0de6f80fb35ff78b2f634e1b57eb243cdef8342b7537e",
+      "dist/src/NfcError.js": "7b0088e472058c0842e46172f4b18500ceb3c9adb25fbd85edbb1ed4c7ca83f4",
+      "dist/src/NfcTech/NfcAHandler.js": "7ab375fd2a9b5f788d3f0a0ea2c8c047763c7c3c8f2c1c8f59f4003820495157",
+      "dist/src/NfcTech/NfcVHandler.js": "aedf7a98e55b491be3aca8e7a84300740e0fda392319ef231a743ec143e864dd",
+      "dist/src/NfcTech/IsoDepHandler.js": "e9d1a8c621c84f335679b375d8056da500a8c0d66e6dbff98ba6bd2c79d5abea",
+      "dist/src/NfcManagerAndroid.js": "8ebea1ddba334e733cde23e7df6bf929c10eb695da365a710414c6c7a5b49419",
+      "dist/src/NfcTech/MifareClassicHandlerAndroid.js": "efe61e57b630ab1efc3ae576d7c1a95cae2fa439a8954ec6d8f704cc3bce3ec0",
+      "dist/src/NfcTech/MifareUltralightHandlerAndroid.js": "11147f584d305a31c3a1d66f9b8b892ef7ea4cc42d8a13005574094c4d44d4b6",
+      "dist/src/NfcTech/NdefFormatableHandlerAndroid.js": "4d37dd3aba9e9f2af932f93f23a35a9dd452aede991f23d66f97916db60471f8",
+      "dist/src/NfcManagerIOS.js": "073d1009db548701b38ef1b3f85e0b29818b215df849bdb5f23dda4d7998a4f3",
+      "dist/src/NfcTech/Iso15693HandlerIOS.js": "e42516c93cc1b8303d43011660b972ba2e70e346a9821115e050e84fe25b74e5",
+      "package.json": "d7b01e3f9378096baa684905e738c5ddaf47fee2f476a68c54dd4550bd77aaa7"
+    }
+  },
+  "sources": {
+    "src/platform/nfc.native.ts": "83ffbaf602ec2d16aa5e3d6437b588a2627954918228118904ac59fc4f89f542",
+    "packages/core/nfc-session.ts": "b49938744e27e9bbb0de378c26be7b97d9b61a2d5b0809da5d6f32b5d2ec3fb5",
+    "packages/core/nfc.ts": "ad1e4bcc8da12088148e43600b6ddfa38871d0d6e031fbc75cd27c6b4395d274",
+    "packages/core/phone-ndef-capture.ts": "a98c0a0c8f8a0dc4a0862ed69220de2e67b3b2dbba78458e018cf0b07498b5f7",
+    "packages/core/nfc-manager-ndef.ts": "2e4cf4b658bc02546c1c470343046dd5a9f7fca9e4411edddc9f45bfffb8a9ce",
+    "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74"
+  }
+}

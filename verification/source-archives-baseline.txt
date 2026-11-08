@@ -1,0 +1,39 @@
+test_restore_into_fresh_parent_repository_placeholder (test_source_archives.SourceArchivesTest.test_restore_into_fresh_parent_repository_placeholder) ... FAIL
+test_dirty_existing_copy_is_rejected_without_overwrite (test_source_archives.SourceArchivesTest.test_dirty_existing_copy_is_rejected_without_overwrite) ... FAIL
+test_gitfile_archive_cannot_claim_independent_restoration (test_source_archives.SourceArchivesTest.test_gitfile_archive_cannot_claim_independent_restoration) ... FAIL
+
+======================================================================
+FAIL: test_restore_into_fresh_parent_repository_placeholder (test_source_archives.SourceArchivesTest.test_restore_into_fresh_parent_repository_placeholder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp.Ybt1GlS4YN/tests/test_source_archives.py", line 82, in test_restore_into_fresh_parent_repository_placeholder
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : Existing destination has a different commit; refusing to overwrite
+
+
+======================================================================
+FAIL: test_dirty_existing_copy_is_rejected_without_overwrite (test_source_archives.SourceArchivesTest.test_dirty_existing_copy_is_rejected_without_overwrite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp.Ybt1GlS4YN/tests/test_source_archives.py", line 97, in test_dirty_existing_copy_is_rejected_without_overwrite
+    self.assert_failed(self.restore(), 'modified or untracked')
+  File "/tmp/tmp.Ybt1GlS4YN/tests/test_source_archives.py", line 71, in assert_failed
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+AssertionError: 0 == 0 : R01: existing pinned copy retained
+
+
+======================================================================
+FAIL: test_gitfile_archive_cannot_claim_independent_restoration (test_source_archives.SourceArchivesTest.test_gitfile_archive_cannot_claim_independent_restoration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmp.Ybt1GlS4YN/tests/test_source_archives.py", line 166, in test_gitfile_archive_cannot_claim_independent_restoration
+    self.assert_failed(self.restore(), 'external Git metadata pointer')
+  File "/tmp/tmp.Ybt1GlS4YN/tests/test_source_archives.py", line 71, in assert_failed
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+AssertionError: 0 == 0 : R01: restored and verified 1df6268a8cab4085c6dec36b45f5187650dab4b3
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.238s
+
+FAILED (failures=3)

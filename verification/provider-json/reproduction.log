@@ -1,0 +1,2 @@
+{"provider":"local","summary":"last","hypotheses":[],"status":"unverified"}
+{"provider":"local","summary":"s","hypotheses":[{"protocol":"NEC","confidence":1,"rationale":"r","observationIds":["fixture.1"],"status":"hypothesis"}],"status":"unverified"}

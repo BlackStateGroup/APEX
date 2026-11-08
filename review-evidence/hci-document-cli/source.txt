@@ -1,0 +1,4 @@
+34e355b3cedd9b2a9f3f6f2ee5567748fd87f608
+9295bc28c2d468c0fc0b9818b6c088fd2d60bac044bb560aeedbd11cf44fc77e  tools/inspect-hci.ts
+464cb48f5cc657dcf6898873790556f5a3b35c475d0d14242132542ed1c2d8b0  tools/inspect-hci-selected.ts
+8e5dd2f8b89eadfbe9cc1f3fdd58aa7540a73bc089871d744e1bf570edc5fe29  packages/core/hci-offline.ts

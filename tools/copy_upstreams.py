@@ -5,7 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
-import tarfile
+
+from source_archive_utils import create_archive, verify_checkout
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / 'research/upstream-sources'
@@ -27,31 +28,33 @@ def copy(project):
     folder = SOURCES / name
     archive = ARCHIVES / ('APEX-' + name + '-' + project['commit'][:12] + '.tar.gz')
     try:
+        if folder.is_symlink() or (folder / '.git').is_symlink():
+            raise ValueError('Existing source contains a Git or checkout symlink')
         with (ARCHIVES / (name + '.log')).open('a') as log:
             if not (folder / '.git').exists():
-                if folder.exists():
+                if folder.is_symlink() or (folder.exists() and
+                        (not folder.is_dir() or any(folder.iterdir()))):
                     raise ValueError('Existing non-Git folder: refusing to overwrite')
-                folder.mkdir()
+                folder.mkdir(exist_ok=True)
                 command(['git', 'init', '--quiet'], folder, log)
                 command(['git', 'remote', 'add', 'origin', 'https://github.com/' + project['repository'] + '.git'], folder, log)
             current = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=folder, capture_output=True, text=True)
+            if current.returncode == 0:
+                verify_checkout(folder, current.stdout.strip())
+                if current.stdout.strip() != project['commit']:
+                    raise ValueError('Existing checkout has a different commit; refusing to switch pins')
+            elif any(entry.name != '.git' for entry in folder.iterdir()):
+                raise ValueError('Unborn checkout contains local files; refusing to overwrite')
             if current.returncode != 0 or current.stdout.strip() != project['commit']:
                 command(['git', '-c', 'core.hooksPath=/dev/null', 'fetch', '--depth=1', 'origin', project['commit']], folder, log)
-                command(['git', '-c', 'core.hooksPath=/dev/null', 'checkout', '--detach', project['commit']], folder, log)
+                command(['git', '-c', 'core.hooksPath=/dev/null', 'checkout', '--no-overwrite-ignore', '--detach', project['commit']], folder, log)
         head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=folder, text=True).strip()
-        if head != project['commit']:
-            raise ValueError('Commit mismatch')
+        verify_checkout(folder, project['commit'])
         tracked = subprocess.check_output(['git', 'ls-tree', '-r', 'HEAD'], cwd=folder, text=True).splitlines()
         submodules = [line.split('\t', 1)[1] for line in tracked if line.startswith('160000 ')]
-        status = subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=folder, text=True)
-        if status.strip():
-            raise ValueError('Checkout differs from pinned commit')
-        if not archive.exists():
-            temporary = archive.with_suffix('.partial')
-            with tarfile.open(temporary, 'w:gz', compresslevel=1) as output:
-                output.add(folder, arcname=name)
-            temporary.rename(archive)
-        digest = hashlib.file_digest(archive.open('rb'), 'sha256').hexdigest()
+        create_archive(folder, archive, name, project['commit'])
+        with archive.open('rb') as source:
+            digest = hashlib.file_digest(source, 'sha256').hexdigest()
         row = {'id': project['id'], 'repository': project['repository'], 'commit': head,
                'path': str(folder.relative_to(ROOT)), 'status': 'copied-and-verified',
                'trackedEntries': len(tracked), 'nestedSubmodulesNotInitialised': submodules,

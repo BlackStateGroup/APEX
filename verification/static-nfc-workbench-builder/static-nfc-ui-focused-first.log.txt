@@ -1,0 +1,35 @@
+✔ actual static TSX inactive and uninspected; boundaries and rejection disabled (13.101267ms)
+✔ actual TSX separates TLV statuses from NDEF missing, ambiguous, empty and decoder failure (20.533953ms)
+✖ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (6.998784ms)
+✔ strict exact-mode decoding and existing byte adapter parity (7.384777ms)
+✔ explicit mode/provenance, immutable report, separate byte copy (2.122485ms)
+✔ whole rejected edits retain draft and fence across declarations, mode and leave (0.560146ms)
+✔ late success/error fenced by accepted/rejected edits, mode, provenance, examples, clear and leave; old controls inert (1.179714ms)
+✔ bounded pages reject stale observations and reset on edits or leave (0.49572ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 370.576168
+
+✖ failing tests:
+
+test at tests/nfc-static-render.test.ts:87:1
+✖ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (6.998784ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /URI &quot;https:\/\/example.x&quot;/. Input:
+  
+  '<div><span>Offline static NFC inspector</span><span>Memory only; host/source-only evidence. No actual tag reads, writes, emulation or replay. Leaving this inspector clears reports, retaining draft, mode, provenance and rejected-edit fence. Pending hashing is fenced, not cancelled.</span><span>APEX profile apex-static-48-v1 only, not generic tag compatibility or current-spec conformance. No identity, licensing, security, ownership, access or unlocking determination. First 12 structure bytes are uninterpreted; UID and lock contents are not displayed in results.</span><span>Select static-data-48 (exactly 96 hex characters) or static-structure-64 (exactly 128). Mode is never inferred from length. Strict contiguous ASCII hex, maximum 128 characters; no whitespace, trimming or truncation. Odd-length drafts may be typed but Inspect refuses them. Invalid or oversized edits are rejected whole, retaining prior draft and blocking Inspect until accepted replacement or Clear.</span><span>Provenance is caller-declared. SHA-256 covers exact decoded supplied bytes, NOT hex text; it does not guarantee the original pre-paste file or capture, ownership, UID, locks or access. The exact input draft is visible below; results omit raw UID, lock, proprietary, trailing and unknown record bytes.</span><div><button aria-label="Select static-data-48"><span>Select static-data-48</span></button><button aria-label="Select static-structure-64"><span>Select static-structure-64</span></button></div><div><button aria-label="Declare synthetic static source"><span>Declare synthetic static source</span></button><button aria-label="Declare imported static source"><span>Declare imported static source</span></button></div><div><button aria-label="Load synthetic 48-byte example"><span>Load synthetic 48-byte example</span></button><button aria-label="Load synthetic 64-byte example"><span>Load synthetic 64-byte example</span></button></div><span>Selected mode: static-data-48; provenance: synthetic-fixture. Examples are manually authored synthetic bytes, never automatically inspected.</span><span>128 accepted hex characters. Input draft only; no raw byte projection in results.</span><div><button aria-label="Inspect static NFC"><span>Inspect static NFC</span></button><button aria-label="Clear static NFC draft"><span>Clear static NFC draft</span></button></div><span>Inspection refused: selected mode requires exactly 96 or 128 ASCII hex characters respectively and a successful local byte hash.</span></div>'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/tests/nfc-static-render.test.ts:92:47)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div><span>Offline static NFC inspector</span><span>Memory only; host/source-only evidence. No actual tag reads, writes, emulation or replay. Leaving this inspector clears reports, retaining draft, mode, provenance and rejected-edit fence. Pending hashing is fenced, not cancelled.</span><span>APEX profile apex-static-48-v1 only, not generic tag compatibility or current-spec conformance. No identity, licensing, security, ownership, access or unlocking determination. First 12 structure bytes are uninterpreted; UID and lock contents are not displayed in results.</span><span>Select static-data-48 (exactly 96 hex characters) or static-structure-64 (exactly 128). Mode is never inferred from length. Strict contiguous ASCII hex, maximum 128 characters; no whitespace, trimming or truncation. Odd-length drafts may be typed but Inspect refuses them. Invalid or oversized edits are rejected whole, retaining prior draft and blocking Inspect until accepted replacement or Clear.</span><span>Provenance is caller-declared. SHA-256 covers exact decoded supplied bytes, NOT hex text; it does not guarantee the original pre-paste file or capture, ownership, UID, locks or access. The exact input draft is visible below; results omit raw UID, lock, proprietary, trailing and unknown record bytes.</span><div><button aria-label="Select static-data-48"><span>Select static-data-48</span></button><button aria-label="Select static-structure-64"><span>Select static-structure-64</span></button></div><div><button aria-label="Declare synthetic static source"><span>Declare synthetic static source</span></button><button aria-label="Declare imported static source"><span>Declare imported static source</span></button></div><div><button aria-label="Load synthetic 48-byte example"><span>Load synthetic 48-byte example</span></button><button aria-label="Load synthetic 64-byte example"><span>Load synthetic 64-byte example</span></button></div><span>Selected mode: static-data-48; provenance: synthetic-fixture. Examples are manually authored synthetic bytes, never automatically inspected.</span><span>128 accepted hex characters. Input draft only; no raw byte projection in results.</span><div><button aria-label="Inspect static NFC"><span>Inspect static NFC</span></button><button aria-label="Clear static NFC draft"><span>Clear static NFC draft</span></button></div><span>Inspection refused: selected mode requires exactly 96 or 128 ASCII hex characters respectively and a successful local byte hash.</span></div>',
+    expected: /URI &quot;https:\/\/example.x&quot;/,
+    operator: 'match',
+    diff: 'simple'
+  }

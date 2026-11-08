@@ -1,0 +1,127 @@
+✔ exact draft, explicit inspect and caller declaration; authored response has explicit presence (2.158521ms)
+✔ malformed and over-budget edits reject whole, preserve exact previous draft and clear results (12.390563ms)
+✔ every edit attempt and provenance selection invalidates, fixture does not inspect (0.317458ms)
+✔ unknown and nonzero status, omitted defaults, incomplete tails and ambiguity remain observations (0.475232ms)
+✔ frame and metadata pages are bounded; malformed navigation cannot expand rendering (0.355769ms)
+✔ content remains data, including URL/control/markup strings (0.709131ms)
+✖ report returned by visible frames cannot mutate retained report (3.443364ms)
+✖ original bytes exposed through state cannot alter report evidence (0.518504ms)
+✖ page transitions cannot mutate reports retained by earlier states (0.52346ms)
+✔ field helper metadata is detached (0.518493ms)
+✖ accessor edit cannot validate one draft and retain another (5.395238ms)
+✔ invalid edit clears stale report and page indexes (2.130715ms)
+✖ provenance action snapshots the declaration before validation (1.122223ms)
+✔ invalid pure navigation inputs retain current bounded state (0.407418ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 9
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.01176
+
+✖ failing tests:
+
+test at verification/flipper-review/adversarial.test.ts:5:1
+✖ report returned by visible frames cannot mutate retained report (3.443364ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  99 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-flipper-review/verification/flipper-review/adversarial.test.ts:8:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 99,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at verification/flipper-review/adversarial.test.ts:10:1
+✖ original bytes exposed through state cannot alter report evidence (0.518504ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 13
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-flipper-review/verification/flipper-review/adversarial.test.ts:12:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 13,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at verification/flipper-review/adversarial.test.ts:14:1
+✖ page transitions cannot mutate reports retained by earlier states (0.52346ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  999 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-flipper-review/verification/flipper-review/adversarial.test.ts:17:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 999,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at verification/flipper-review/adversarial.test.ts:23:1
+✖ accessor edit cannot validate one draft and retain another (5.395238ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(s.draft.length<=FLIPPER_TEXT_LIMIT)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-flipper-review/verification/flipper-review/adversarial.test.ts:27:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at verification/flipper-review/adversarial.test.ts:34:1
+✖ provenance action snapshots the declaration before validation (1.122223ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(s.provenance===null||s.provenance==='synthetic'||s.provenance==='imported')
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-flipper-review/verification/flipper-review/adversarial.test.ts:38:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,39 @@
+✔ independent exhaustive 65536 event words and periodic interval arithmetic (1767.581979ms)
+✔ independent exhaustive octets, directed applicability, signed and conditional states (11.142172ms)
+✔ all data sizes and feasible counts, offsets, allowlisted property privacy (10.026928ms)
+✔ snapshot and trusted hasher separation, private brand, repeated selection (1.13646ms)
+✔ structural late failures, selector framing and all non-three small flags (2.295946ms)
+✔ actual CLI privacy, conflicts, atomic stderr, symlink scope and read denial (1896.30175ms)
+✔ explicit metadata selection, scalar spans, privacy and standalone disclosures (3.383005ms)
+✔ whole-event structural rejection has precise absolute offsets, including late failures (2.969655ms)
+✔ scalar states exhaust wire values without guessing unavailable or reserved measurements (22.572588ms)
+✔ directed fields ignored when inapplicable, resolved target not asserted as identity (20.443177ms)
+✔ event bits, conditional coded PHY, legacy contradictions and fragment statuses remain separate (0.711318ms)
+✔ CLI option is exclusive, default stays private, late structural failure emits no stdout (299.052495ms)
+✔ manual byte oracle: offsets, signed64 max, BE drops, repeated reports and address reversal (4.234872ms)
+✔ all RSSI octets and enum octets use exact supported sets (35.823725ms)
+✔ classification does not validate; complete wrapper with every shortened candidate refuses selection (12.616952ms)
+✔ nonlegacy metadata has only safe keys; every unknown first octet remains unexposed (13.009326ms)
+✔ AD parser and service parity retain malformed, encrypted, unknown and inert URL bytes (4.840987ms)
+✔ intrinsic view offset, detached buffer, frozen brand and copied hasher bytes (0.947611ms)
+✔ standalone selected JSON carries source/time/drop/identity/RF limitations (0.603338ms)
+✔ CLI subprocesses: no opaque markers/path leakage, strict argument matrix, atomic failure, ancestor link permitted (2602.873285ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.819423ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (7.388561ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (19.604473ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.684691ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (6.347423ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (1.14011ms)
+✔ explicit bounded pagination, no silent truncation and output cap (5.480719ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (623.221682ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (1.046974ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (12.097809ms)
+✔ standalone selected JSON retains every metadata disclosure (0.600342ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3908.777958

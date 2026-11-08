@@ -1,0 +1,113 @@
+{
+  "scope": "Installed PLX published ESM; synthetic RN/native events and promises; C data callbacks only. No native ordering, ABI, radio or startup proof.",
+  "platform": "android",
+  "mtu": 517,
+  "events": [
+    "permissions",
+    "create",
+    "connect",
+    "mtu",
+    "monitor:13",
+    "cancelTransaction",
+    "cancelDevice",
+    "android-destroy-ack"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "SUBSCRIBE"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158505f5245414459"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 1 1 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010100010000001815"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102010001005b007b226964223a22617065782d73332d646576222c22626f617264223a2265737033327333222c226669726d77617265223a22302e312e30222c2270726f746f636f6c223a312c22736f75726365223a226163636573736f7279227d7cdf"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 2 0 0 0 2 2 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010200020000002440"
+    },
+    {
+      "origin": "C-notification",
+      "value": "415801020200020042007b226f7065726174696f6e73223a5b2273797374656d2e696e666f222c2273797374656d2e6361706162696c6974696573222c2273797374656d2e70696e67225d7de7d7"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 3 0 0 0 3 3 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010300030000003073"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102030003000000b2ab"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 4 0 0 0 4 4 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 41580101030004000002000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 5 0 0 244 4 4 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdd"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 6 0 0 488 4 4 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W dedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff550e"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102030004000002000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdd"
+    },
+    {
+      "origin": "C-notification",
+      "value": "dedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeffd5d4"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 7 0 0 0 7 7 7"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 8 0 0 0 7 7 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

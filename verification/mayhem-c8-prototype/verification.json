@@ -1,0 +1,62 @@
+{
+  "candidateCommit": "87e2e4557b18cc444fe13d4446298317d821fd97",
+  "baseCommit": "fa8e934363bfb39554f104d25ac6a19c502ebb83",
+  "tests": {
+    "initialNew": {
+      "passed": 19,
+      "failed": 0
+    },
+    "focused": {
+      "passed": 370,
+      "failed": 0
+    },
+    "initialFull": {
+      "passed": 1838,
+      "failed": 8,
+      "reason": "REA runtime absent in isolated clone"
+    },
+    "fullWithExistingPinnedRea": {
+      "passed": 1846,
+      "failed": 0,
+      "skipped": 0
+    },
+    "finalWithIndependentTests": {
+      "passed": 1861,
+      "failed": 0,
+      "skipped": 0
+    },
+    "independentFocused": {
+      "passed": 390,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "typecheck": "passed",
+  "dependencyInventory": "passed",
+  "nativeOrHardwareAcceptance": "not-run",
+  "files": {
+    "full-tests-rea-runtime.log": "2a06b26386202f419056cd7ce2192f98d5deb3c39ebe4a64696a17ad03f01a0a",
+    "inventory.log": "58197a2237439bc59af4786dbe7a7ea337713c3d7fda7cac8d59466063c23899",
+    "final-combined-tests.log": "d556d6d4fa08c73da485ffe60a54d1e547f86591fe4a5a4cfa7d2fa59770fe3d",
+    "final-typecheck.log": "4bf47d6e007329281ee31f3c71e1c0ccb4b64e3d605f3f54c9c500a38e1dd6c1",
+    "rea-runtime.json": "c042bd3367cc81b372a7180de1f612ef1735b5b05fd471ca566362d4ff6eef3d",
+    "focused-tests.log": "281aad4cd38ac466672336e56f225f0293072d1b50d139dfaccca606dbfa3a89",
+    "source-hashes.json": "f2ad25ec3a55a7190efcb2229436d8a44e85bdf7d27ff487a5c22f0dff957a7b",
+    "README.md": "3ffdd00cd88bea966fa9edf358de08c5466c11124d965b1b695ad2931eff1a70",
+    "full-rerun-exit-status.txt": "2198ba0ae14f7066fadaba2abdcdc339d14c3e92776e6e7664634007be6ac56b",
+    "full-tests.log": "00b01a8d5dee7b2bc2ab1d929e098ed7541936124718e8d1f3c3077f3363a613",
+    "final-exit-status.txt": "663b28a085a516d772b40c7b9271bf85826cee5e53574450ca9f2e12c70f531b",
+    "typecheck.log": "4bf47d6e007329281ee31f3c71e1c0ccb4b64e3d605f3f54c9c500a38e1dd6c1",
+    "exit-status.txt": "31a5c0ad656ae1d4f47ba93447c65bde661c5a56ed929ab439707400b0872251",
+    "final-inventory.log": "58197a2237439bc59af4786dbe7a7ea337713c3d7fda7cac8d59466063c23899",
+    "synthetic/report.json": "858d1ac8a316d906b400970e2e7b185c00a358f90e07815ecbaf958777e31b2e",
+    "synthetic/quarter-rate-tone.c8": "bce9564f43b9839baea6da78b05f2bdfe6bbf0d0cff6b091caff485aab1cf189",
+    "synthetic/quarter-rate-tone.txt": "19e5a31b09e07c31fa049926e139d54ad7cdddd16063dcb344ee994be4daacaf"
+  },
+  "testedCombinedCommit": "da43bc7a73ffd983247015367472fe583fb5ec9b",
+  "independentReviewCommit": "91ba77d3009765e089c72900c07fe9453b3208e4",
+  "includedReviewCommit": "da43bc7",
+  "independentReview": "approved for isolated offline prototype; no blocker",
+  "finalTypecheck": "passed",
+  "finalInventory": "passed"
+}

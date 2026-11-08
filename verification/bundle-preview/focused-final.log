@@ -1,0 +1,20 @@
+✔ actual TSX initial/inactive renders and precise limits (15.979923ms)
+✔ actual TSX projects four bounded metadata rows and inert provenance/digest caveats (21.651537ms)
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (48.920946ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (1.56319ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (4.090072ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (1.585975ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (13.071975ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (7.574411ms)
+✔ bounds, canonical time and digest failures reject without partial values (30.282293ms)
+✔ export snapshots the entire selection before the first awaited hash (1.493761ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1646.759863ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (8.147186ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1893.364591

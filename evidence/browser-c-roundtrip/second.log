@@ -1,0 +1,12 @@
+✔ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (22.55084ms)
+✔ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (9.269038ms)
+✔ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (5.50929ms)
+✔ CRC-corrupt framed browser write produces no C response; following session request recovers (8.289481ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 292.09959

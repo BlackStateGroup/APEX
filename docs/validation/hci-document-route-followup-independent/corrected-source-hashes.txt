@@ -1,0 +1,4 @@
+5d8944657b3cd342bd31ebdf6cf12a96798857ea8f6dee21876a3b09013a6360  tests/analysis-inspector-independent.test.ts
+77b8ea55d0c8e64a45362478bb82252ecf74515c030e4e34aa5e3fb493593a3f  tests/nfc-static-memory-review.test.ts
+efa4faa00448bfe264eef20551696342038127821b913bc092438f54bbccf804  App.tsx
+ac55a4172ac5ca777a6f998b22331a824f663b1733e88c60b4114c3e05d23741  src/analysis-navigation.ts

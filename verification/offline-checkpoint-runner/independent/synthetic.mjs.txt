@@ -1,0 +1,16 @@
+import {executeStage,runStages} from '/workspace/scratch/b96d3539d24d/apex-offline-runner/tools/verify-offline-checkpoint.mjs';
+import {mkdtemp,readFile,access} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const output=await mkdtemp('/tmp/apex-runner-review-080f8c4/run-');
+const stage=(id,script,timeoutMs=5000)=>({id,command:process.execPath,args:['-e',script],cwd:output,timeoutMs});
+const descendant = `const fs=require('fs'); process.on('SIGTERM',()=>{fs.writeFileSync(${JSON.stringify(output+'/term-seen')},'TERM');setTimeout(()=>process.exit(0),100)}); fs.writeFileSync(${JSON.stringify(output+'/ready')},'ready');setInterval(()=>{},1000)`;
+const leader=`const {spawn}=require('child_process');const fs=require('fs');spawn(process.execPath,['-e',${JSON.stringify(descendant)}],{stdio:'ignore'}).unref(); const t=setInterval(()=>{if(fs.existsSync(${JSON.stringify(output+'/ready')})){clearInterval(t);process.exit(0)}},10)`;
+let result=await executeStage(stage('descendant',leader),{output});
+console.log(JSON.stringify({case:'leader-exit-descendant',output,result}));
+assert.notEqual(result.status,'succeeded');assert.equal(result.cleanup,'settled');
+let sawTerm=true;try{await access(output+'/term-seen')}catch{sawTerm=false}
+console.log(JSON.stringify({case:'term-grace',sawTerm}));
+result=await executeStage(stage('pipe-child',`const {spawn}=require('child_process');spawn(process.execPath,['-e','setTimeout(()=>{},300)'],{stdio:['ignore',process.stdout,process.stderr]}).unref();process.exit(0)`),{output});
+console.log(JSON.stringify({case:'pending-pipe',result}));assert.equal(result.status,'succeeded');assert.equal(result.cleanup,'settled');
+result=await executeStage(stage('timeout-pipe',`const {spawn}=require('child_process');spawn(process.execPath,['-e','setInterval(()=>{},1000)'],{stdio:['ignore',process.stdout,process.stderr]}).unref();process.exit(0)`,200),{output});
+console.log(JSON.stringify({case:'timeout-pipe',result}));assert.equal(result.status,'timed-out');assert.equal(result.cleanup,'settled');

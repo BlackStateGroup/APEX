@@ -1,0 +1,50 @@
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.571707ms)
+✔ failed manager shutdown preserves session and UI ownership (0.895537ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.354851ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.367907ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (5.218548ms)
+✔ closed session remains explicitly releasable after capabilities disappear (3.036796ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.190118ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.148302ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (0.10706ms)
+✔ App retention helper keeps a real failed session through failed retry (2.166617ms)
+✔ preconnected transport remains held when listener setup throws and cleanup rejects (2.335401ms)
+✔ close must not confirm release before deferred connect can acquire transport (0.61088ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (2.45073ms)
+✔ explicit close of preconnected new session releases exactly once (0.445752ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (2.421664ms)
+✔ terminal callback synchronously inside close joins the same attempt (1.007751ms)
+✔ early successful disconnect keeps slot pending until late acquisition is released (0.642847ms)
+✔ failed early disconnect is not automatically retried after connect settles (0.54731ms)
+✔ synchronous terminal registration prevents connect and removes late registered listener (0.584274ms)
+✔ throwing unsubscribe does not prevent other removal, pending rejection or transport cleanup (1.461572ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (9.301297ms)
+✔ disconnected and unavailable operations reject without transport execution (1.814295ms)
+✔ failed connect removes listeners and closes the one-use session (0.35571ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.891259ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (20.845295ms)
+✔ pending queue is bounded and unplug rejects every request (1.02622ms)
+✔ wrong response opcode and device error are rejected (0.749529ms)
+✔ write failure rejects immediately and clears pending requests (0.616081ms)
+✔ request IDs are never reused through the full 16-bit session space (565.961434ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.371986ms)
+✔ synchronous transport failure also clears pending state (0.668921ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.310153ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.280213ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.304929ms)
+✔ close during pending connect follows early successful cancellation with post-connect release (0.191492ms)
+✔ clean refused open and explicit normal close confirm release (0.196005ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.393182ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 768.179966
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+

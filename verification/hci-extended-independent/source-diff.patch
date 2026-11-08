@@ -1,0 +1,133 @@
+diff --git a/packages/core/hci-offline.ts b/packages/core/hci-offline.ts
+index 36373b7..5d1654f 100644
+--- a/packages/core/hci-offline.ts
++++ b/packages/core/hci-offline.ts
+@@ -139,7 +139,93 @@ export function selectHciLegacyEvent(prepared: PreparedHci, index: number) {
+   if (cursor !== end) fail('trailing event bytes', cursor);
+   return freeze({source: prepared.source, sourceKind: 'offline-hci-legacy-advertising-event', warnings: HCI_DISCLOSURES, record, reports});
+ }
+-export function serializeHciReport(report: ReturnType<typeof listHciRecords> | ReturnType<typeof selectHciLegacyEvent>): string {
++/** Structural metadata only. No advertising-data bytes escape this selector. */
++export function selectHciExtendedMetadata(prepared: PreparedHci, index: number) {
++  const {bytes, records} = original(prepared);
++  if (!Number.isSafeInteger(index) || index < 0 || index >= records.length) fail('record selection');
++  const record = records[index]!, p = record.payloadOffset, end = p + record.includedLength;
++  if (record.captureTruncated || record.classification !== 'extended-advertising-uninspected' || record.flags !== 3) fail('selection requires complete extended event with flags 3', record.offset);
++  if (record.includedLength < 5 || record.includedLength !== 3 + bytes[p + 2]!) fail('event length', p + 2);
++  const count = bytes[p + 4]!;
++  if (count < 1 || count > 10) fail('extended report count', p + 4);
++  // Validate the entire event before interpreting or constructing any report.
++  const offsets: number[] = [];
++  let cursor = p + 5;
++  for (let i = 0; i < count; i++) {
++    if (end - cursor < 24) fail('extended report bounds', cursor);
++    const length = bytes[cursor + 23]!;
++    if (length > 229) fail('extended data length', cursor + 23);
++    if (length > end - cursor - 24) fail('extended data bounds', cursor + 24);
++    offsets.push(cursor); cursor += 24 + length;
++  }
++  if (cursor !== end) fail('trailing event bytes', cursor);
++  type State = 'known' | 'unavailable' | 'inapplicable' | 'reserved' | 'feature-context-unknown' | 'contradictory';
++  function scalar(offset: number, length: number, state: State, meaning: string, value?: number) {
++    const raw = bytes[offset]! + (length === 2 ? bytes[offset + 1]! * 256 : 0);
++    return {offset, length, raw, state, meaning, ...(value === undefined ? {} : {value})};
++  }
++  function phy(offset: number, secondary: boolean) {
++    const raw = bytes[offset]!;
++    if (secondary && raw === 0) return scalar(offset, 1, 'inapplicable', 'No secondary packets');
++    if (raw === 1 || (secondary && raw === 2)) return scalar(offset, 1, 'known', raw === 1 ? 'LE 1M' : 'LE 2M');
++    if (raw === 3 || raw === 4) return scalar(offset, 1, 'feature-context-unknown', raw === 3
++      ? 'LE Coded: unspecified coding without Advertising Coding Selection Host Support; S=8 with that support'
++      : 'S=2 only with Advertising Coding Selection Host Support; otherwise reserved');
++    return scalar(offset, 1, 'reserved', 'Reserved PHY');
++  }
++  function power(offset: number, meaning: string) {
++    const raw = bytes[offset]!, signed = raw > 127 ? raw - 256 : raw;
++    return raw === 127 ? scalar(offset, 1, 'unavailable', meaning) : signed >= -127 && signed <= 20
++      ? scalar(offset, 1, 'known', meaning, signed) : scalar(offset, 1, 'reserved', meaning);
++  }
++  function address(offset: number, actionable: boolean) {
++    const span = {offset, length: 6};
++    // Ignored, anonymous and reserved address storage has no address interpretation.
++    if (!actionable) return span;
++    const octets = bytes.slice(offset, offset + 6);
++    return {...span, wireHex: hex(octets), display: Array.from(octets).reverse().map(b => b.toString(16).padStart(2,'0')).join(':').toUpperCase()};
++  }
++  const reports = offsets.map((offset, index) => {
++    const event = bytes[offset]! + bytes[offset + 1]! * 256;
++    const legacy = Boolean(event & 16), directed = Boolean(event & 4), status = (event >> 5) & 3;
++    const legacyContradiction = legacy && (![0x13,0x15,0x12,0x10,0x1b,0x1a].includes(event) || bytes[offset + 9] !== 1 || bytes[offset + 10] !== 0);
++    const advertiserType = bytes[offset + 2]!, directType = bytes[offset + 16]!;
++    const advertiserMeanings = ['Public address','Random address','Resolved public identity address','Resolved static random identity address'];
++    const directMeanings: Record<number,string> = {0:'Public address',1:'Non-resolvable private or static address',
++      2:'Controller-resolved target: TargetA or corresponding scanner address, depending on scanner Own_Address_Type (public context)',
++      3:'Controller-resolved target: TargetA or corresponding scanner address, depending on scanner Own_Address_Type (random context)',
++      254:'Unresolved resolvable private target address'};
++    const sid = bytes[offset + 11]!, interval = bytes[offset + 14]! + bytes[offset + 15]! * 256;
++    return {index, reportOffset: offset, reportLength: 24 + bytes[offset + 23]!,
++      eventType: {...scalar(offset, 2, legacyContradiction ? 'contradictory' : event & 0xff80 ? 'reserved' : 'known',
++        'Flags describe the original advertisement, including on scan responses; no exhaustive nonlegacy legality check'),
++        connectable: Boolean(event & 1), scannable: Boolean(event & 2), directed,
++        scanResponse: Boolean(event & 8), legacy, reservedBits: event & 0xff80},
++      dataStatus: {offset, length: 2, raw: status, mask: 0x60, shift: 5,
++        state: status === 3 ? 'reserved' : 'known', meaning: ['Terminal complete (may be the last fragment only)', 'More fragments pending', 'Terminal truncated', 'Reserved data status'][status]},
++      advertiserType: scalar(offset + 2, 1, advertiserType <= 3 ? 'known' : advertiserType === 255 ? 'unavailable' : 'reserved',
++        advertiserMeanings[advertiserType] ?? (advertiserType === 255 ? 'Anonymous; no address' : 'Reserved address type')),
++      advertiserAddress: address(offset + 3, advertiserType <= 3),
++      primaryPhy: phy(offset + 9, false), secondaryPhy: phy(offset + 10, true),
++      sid: scalar(offset + 11, 1, sid <= 15 ? 'known' : sid === 255 ? 'unavailable' : 'reserved', sid === 255 ? 'No ADI' : 'Advertising SID'),
++      txPower: power(offset + 12, 'dBm; latest applicable TxPower-bearing packet, not an RF sample'),
++      rssi: power(offset + 13, 'dBm; last packet, not an RF sample'),
++      periodicInterval: scalar(offset + 14, 2, interval === 0 ? 'inapplicable' : interval < 6 ? 'reserved' : 'known',
++        interval === 0 ? 'No periodic advertising' : 'Milliseconds (raw units of 1.25 ms)', interval >= 6 ? interval * 1.25 : undefined),
++      directType: scalar(offset + 16, 1, !directed ? 'inapplicable' : directType === 2 || directType === 3 ? 'feature-context-unknown' : directMeanings[directType] ? 'known' : 'reserved',
++        !directed ? 'Ignored because directed flag is clear' : directMeanings[directType] ?? 'Reserved directed address type'),
++      directAddress: address(offset + 17, directed && Object.hasOwn(directMeanings, directType)),
++      dataOffset: offset + 24, dataLength: bytes[offset + 23]!, dataLengthOffset: offset + 23,
++      diagnostics: legacyContradiction ? [{state: 'contradictory', offset, meaning: 'Legacy event type or primary/secondary PHY combination contradicts legacy reporting constraints'}] : [],
++    };
++  });
++  return freeze({source: prepared.source, sourceKind: 'offline-hci-extended-advertising-metadata', record, reports,
++    warnings: [...HCI_DISCLOSURES.slice(0, -1),
++      'Extended metadata only: advertising data is neither returned nor interpreted. No fragment pooling or reassembly; terminal complete can mean only the last fragment, not a whole advertisement. Other unsupported payloads remain opaque.',
++      'Structural validation is not full semantic validity. Controller feature and scanner configuration context is unknown; metadata is neither authenticated nor a physical RF measurement.']});
++}
++
++export function serializeHciReport(report: ReturnType<typeof listHciRecords> | ReturnType<typeof selectHciLegacyEvent> | ReturnType<typeof selectHciExtendedMetadata>): string {
+   const output = JSON.stringify(report, null, 2);
+   if (new TextEncoder().encode(output + '\n').length > HCI_OUTPUT_LIMIT) fail('output limit');
+   return output;
+diff --git a/tools/inspect-hci.ts b/tools/inspect-hci.ts
+index e4d9d30..981ecd7 100644
+--- a/tools/inspect-hci.ts
++++ b/tools/inspect-hci.ts
+@@ -2,23 +2,23 @@
+ import { createHash } from 'node:crypto';
+ import { pathToFileURL } from 'node:url';
+ import { readBoundedRegularFile } from './inspect-iq.ts';
+-import { HCI_SOURCE_LIMIT, prepareHci, listHciRecords, selectHciLegacyEvent, serializeHciReport } from '../packages/core/hci-offline.ts';
++import { HCI_SOURCE_LIMIT, prepareHci, listHciRecords, selectHciLegacyEvent, selectHciExtendedMetadata, serializeHciReport } from '../packages/core/hci-offline.ts';
+ export async function inspectHciCli(args: string[]): Promise<string> {
+   const [path, ...flags] = args;
+-  if (!path || path.startsWith('--')) throw new Error('Usage: inspect-hci.ts file --provenance synthetic-fixture|recorded-import --label label [--start N | --record N]');
++  if (!path || path.startsWith('--')) throw new Error('Usage: inspect-hci.ts file --provenance synthetic-fixture|recorded-import --label label [--start N | --record N | --extended-record N]');
+   const values = new Map<string, string>();
+   for (let i = 0; i < flags.length; i += 2) {
+     const flag = flags[i]!, value = flags[i + 1];
+-    if (!['--provenance','--label','--start','--record'].includes(flag) || values.has(flag) || value === undefined || value.startsWith('--')) throw new Error('Invalid or duplicate HCI option');
++    if (!['--provenance','--label','--start','--record','--extended-record'].includes(flag) || values.has(flag) || value === undefined || value.startsWith('--')) throw new Error('Invalid or duplicate HCI option');
+     values.set(flag, value);
+   }
+   const provenance = values.get('--provenance'), label = values.get('--label');
+   if ((provenance !== 'synthetic-fixture' && provenance !== 'recorded-import') || !label) throw new Error('Explicit provenance and label required');
+-  if (values.has('--start') && values.has('--record')) throw new Error('Choose metadata page or one record');
+-  for (const name of ['--start','--record']) if (values.has(name) && (!/^(0|[1-9]\d*)$/.test(values.get(name)!) || !Number.isSafeInteger(Number(values.get(name))))) throw new Error('Invalid HCI index');
++  if (['--start','--record','--extended-record'].filter(flag => values.has(flag)).length > 1) throw new Error('Choose metadata page or one record');
++  for (const name of ['--start','--record','--extended-record']) if (values.has(name) && (!/^(0|[1-9]\d*)$/.test(values.get(name)!) || !Number.isSafeInteger(Number(values.get(name))))) throw new Error('Invalid HCI index');
+   const bytes = await readBoundedRegularFile(path, HCI_SOURCE_LIMIT);
+   const prepared = await prepareHci(bytes, {provenance, label}, async data => createHash('sha256').update(data).digest('hex'));
+-  return serializeHciReport(values.has('--record') ? selectHciLegacyEvent(prepared, Number(values.get('--record'))) : listHciRecords(prepared, Number(values.get('--start') ?? 0)));
++  return serializeHciReport(values.has('--extended-record') ? selectHciExtendedMetadata(prepared, Number(values.get('--extended-record'))) : values.has('--record') ? selectHciLegacyEvent(prepared, Number(values.get('--record'))) : listHciRecords(prepared, Number(values.get('--start') ?? 0)));
+ }
+ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+   inspectHciCli(process.argv.slice(2)).then(report => process.stdout.write(report + '\n')).catch(() => {

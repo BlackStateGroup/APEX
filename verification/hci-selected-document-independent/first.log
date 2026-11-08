@@ -1,0 +1,22 @@
+✔ independent exact binary slice, hash oracle, unrelated sentinels and derivative coordinates (6.018843ms)
+✔ literal minimum 55 bytes and maximum 298 bytes with exact 255 parameter limit (2.000487ms)
+✔ existing serialized metadata, legacy and extended output is byte-for-byte unchanged (1.272094ms)
+✔ caller input and preparation/creation/read hash buffers cannot alias retained bytes (1.101493ms)
+✔ brand spoofs, nonlegacy and invalid selectors reject before hash exposure (1.728009ms)
+✔ hash failures reject atomically; valid shape is not hash honesty (2.310888ms)
+✔ exact imported whitespace and escaped Unicode survive, bounded by UTF16 length (1.060933ms)
+✔ all exact object fields reject missing and extra fields before hashing (1.602977ms)
+✔ decoded and escaped duplicate keys at every depth reject before hash (1.803232ms)
+✔ wrong types, nested objects, arrays, nonJSON and unsafe string controls reject (5.607859ms)
+✔ hex, exact header, hash syntax, byte counts and original-range plausibility are strict (6.214067ms)
+✔ plausible original claims can change and always remain explicitly UNVERIFIED (0.83163ms)
+✔ structural and late bad reports reject even with recomputed matching derivative digest (1.383201ms)
+✔ malformed, unknown, encrypted AD and inert URL retain bytes and recomputed interpretation parity (2.825719ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.515212

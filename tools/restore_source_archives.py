@@ -6,8 +6,9 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
-import tarfile
 import tempfile
+
+from source_archive_utils import extract_verified_archive, verify_checkout
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser()
@@ -21,15 +22,22 @@ if not selected:
     raise SystemExit('Unknown source ID')
 for row in selected:
     relative = Path(row['path'])
-    if relative.is_absolute() or '..' in relative.parts:
+    if relative.is_absolute() or not relative.parts or '..' in relative.parts:
         raise SystemExit('Unsafe destination')
-    destination = args.destination_root / relative
+    root = args.destination_root.resolve()
+    destination = root / relative
+    if any((root.joinpath(*relative.parts[:index])).is_symlink()
+           for index in range(1, len(relative.parts) + 1)):
+        raise SystemExit('Destination contains a symlink; refusing to overwrite')
+    empty_placeholder = destination.is_dir() and not any(destination.iterdir())
     if destination.exists():
-        head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=destination, text=True).strip()
-        if head != row['commit']:
-            raise SystemExit('Existing destination has a different commit; refusing to overwrite')
-        print(row['id'] + ': existing pinned copy retained')
-        continue
+        if not empty_placeholder:
+            try:
+                verify_checkout(destination, row['commit'])
+            except (ValueError, subprocess.SubprocessError) as error:
+                raise SystemExit('Existing destination failed verification: ' + str(error))
+            print(row['id'] + ': existing pinned copy retained')
+            continue
     destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='apex-restore-', dir=destination.parent) as temp:
         temp = Path(temp)
@@ -48,14 +56,12 @@ for row in selected:
         with combined.open('rb') as f:
             if hashlib.file_digest(f, 'sha256').hexdigest() != row['archiveSha256']:
                 raise SystemExit('Combined archive checksum mismatch')
-        with tarfile.open(combined, 'r:gz') as archive:
-            if any(Path(member.name).parts[0] != destination.name for member in archive.getmembers()):
-                raise SystemExit('Unexpected archive root')
-            archive.extractall(temp, filter='data')
-        restored = temp / destination.name
-        head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=restored, text=True).strip()
-        dirty = subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=restored, text=True).strip()
-        if head != row['commit'] or dirty:
-            raise SystemExit('Restored copy failed pinned-source verification')
+        try:
+            restored = extract_verified_archive(combined, temp, destination.name, row['commit'])
+        except (ValueError, subprocess.SubprocessError) as error:
+            raise SystemExit('Restored copy failed pinned-source verification: ' + str(error))
+        if empty_placeholder:
+            # rmdir refuses if another process has populated the placeholder.
+            destination.rmdir()
         restored.rename(destination)
     print(row['id'] + ': restored and verified ' + row['commit'])

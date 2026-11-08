@@ -1,0 +1,11 @@
+original preserved: original
+ownership: BLE acquisition release unknown; driver connect failed without a cleanup handle
+file:///workspace/scratch/b96d3539d24d/apex-unissued-review/[eval1]:1
+import {BleTransport} from './packages/core/ble-transport.ts';const t=new BleTransport({async connect(){throw Error('original')},consumeUnissuedConnection(){return Promise.reject(Error('malformed-proof-rejection'))}},'A');try{await t.connect()}catch(e){console.log('original preserved:',e.message)}try{await t.disconnect()}catch(e){console.log('ownership:',e.message)}await new Promise(r=>setImmediate(r));
+                                                                                                                                                                                   ^
+
+Error: malformed-proof-rejection
+    at Object.consumeUnissuedConnection (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/[eval1]:1:180)
+    at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/packages/core/ble-transport.ts:73:67
+
+Node.js v24.22.1

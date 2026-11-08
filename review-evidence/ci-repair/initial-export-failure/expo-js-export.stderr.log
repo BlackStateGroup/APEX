@@ -1,0 +1,9 @@
+Failed to construct transformer:  ConfigError: Configuration contains string/RegExp pattern, but no filename was passed to Babel
+    at /workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/babel.config.cjs
+    at loadPartialConfigSync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@babel/core/lib/config/index.js:37:84)
+    at Object.getCacheKey (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/metro-config/build/babel-transformer.js:308:64)
+    at Object.getCacheKey (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/metro-config/build/transform-worker/metro-transform-worker.js:916:86)
+    at getTransformCacheKey (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/getTransformCacheKey.js:17:19)
+    at new Transformer (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/Transformer.js:41:43)
+    at /workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/Bundler.js:25:29
+TypeError: Cannot read properties of undefined (reading 'transformFile')

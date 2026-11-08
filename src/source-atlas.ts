@@ -1,4 +1,4 @@
-// Pinned reference checkouts. Only explicitly named dependencies are integrated.
+// Pinned reference sources. Desktop research tools are separate from mobile runtime dependencies.
 export const sourceAtlas = [
   {
     "id": "R01",
@@ -179,5 +179,11 @@ export const sourceAtlas = [
     "repository": "portapack-mayhem/mayhem-firmware",
     "commit": "97c349701723b7f8334b71867439a436a5ab8d02",
     "use": "Reference source; not integrated"
+  },
+  {
+    "id": "R31",
+    "repository": "morluto/rea",
+    "commit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
+    "use": "Desktop REA 6.8.0 tooling; ELF notes verified; deep engines unavailable"
   }
 ] as const;

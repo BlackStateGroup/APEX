@@ -1,0 +1,36 @@
+✔ extended explicit selection stays metadata-only across all data statuses; deeply immutable private observations (7.982413ms)
+✔ switching kinds and failed whole-event selection clears every previous result (1.989664ms)
+✔ exact observed state fences both kinds and pages; bounded whole reports, invalid bounds, old activation (1.265103ms)
+✔ all reset paths clear extended and legacy results; pending hash never resurrects them (3.793001ms)
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (17.639609ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (6.612948ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (3.486775ms)
+✔ independent actual TSX: malformed AD is explicitly visible despite accepted HCI framing (3.852209ms)
+✔ independent actual TSX: encrypted, unknown, malformed, partial and complete service counts stay distinct (23.852981ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (8.689033ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (15.048279ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (10.80495ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (6.555009ms)
+✔ actual extended TSX renders exact bounded header states and applicable addresses, never marker data (29.889236ms)
+✔ actual extended TSX bounds reports, excerpts and diagnostics; reserved values and contradictions stay visible (15.47938ms)
+✔ independent: whole rejection matrix preserves exact previous input and fence across declaration/tab changes (6.191212ms)
+✔ independent: overlapping generations cannot overwrite a newer successful inspection, including old error (2.840618ms)
+✔ independent: invalid hash outcomes never publish metadata and recover explicitly (1.961906ms)
+✔ independent: same-source failed selection atomically removes an earlier valid selected event; snapshots deeply immutable (2.555082ms)
+✔ independent: old activation lease invalidates all controls while rejected draft survives tab leave (0.663565ms)
+✔ independent: actual native adapter with narrow expo digest mock and web digest agree with Node on non-ASCII subviews (15.094787ms)
+✔ independent: malformed AD remains visibly distinct from successfully parsed advertising (0.810284ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (20.293388ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.701666ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.606085ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.411625ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (2.50404ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (4.012786ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 559.175047

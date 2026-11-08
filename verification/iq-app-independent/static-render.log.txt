@@ -1,0 +1,10 @@
+✔ independent actual web TSX renders only bounded bins and inert hostile labels with disclosure (38.334325ms)
+✔ independent actual native input explicitly lacks picker, owner inactive render is empty (0.854452ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 387.068564

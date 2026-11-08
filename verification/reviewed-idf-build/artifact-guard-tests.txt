@@ -1,0 +1,14 @@
+✔ closed command grammar and default-off (1.119344ms)
+✔ separate default-off and explicit-on configs target only derivative, preserve hashes (68.330164ms)
+✔ existing output and symlink aliases refused without commands (5.412934ms)
+✔ provenance mismatch leaves honest report with build unrun (9.091918ms)
+✔ failed configure, effective mismatch, partial compile preserve evidence (64.212472ms)
+✔ bounded synthetic subprocess success, failure, spawn failure and timeout cleanup (316.151153ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 553.853168

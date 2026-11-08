@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "inputKind": "serialized-ndef-message",
+  "provenance": { "origin": "synthetic-fixture", "label": "Manually constructed greeting, not a capture" },
+  "messageHex": "d101055402656e4869"
+}

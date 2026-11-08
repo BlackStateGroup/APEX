@@ -1,0 +1,779 @@
+✖ readiness event remove rejects original 0 without escape (29.338081ms)
+✖ readiness initial remove rejects original 0 without escape (9.28573ms)
+✖ readiness alternate-contract-sync remove rejects original 0 without escape (9.442707ms)
+✖ alternate-contract-sync registration after success rejects original 0 (9.154977ms)
+✖ installed registration failure preserves original 0 (7.234036ms)
+✖ readiness event remove rejects original 1 without escape (7.195731ms)
+✖ readiness initial remove rejects original 1 without escape (8.198053ms)
+✖ readiness alternate-contract-sync remove rejects original 1 without escape (10.246723ms)
+✖ alternate-contract-sync registration after success rejects original 1 (10.368499ms)
+✖ installed registration failure preserves original 1 (8.84846ms)
+✖ readiness event remove rejects original 2 without escape (6.933048ms)
+✖ readiness initial remove rejects original 2 without escape (6.40006ms)
+✖ readiness alternate-contract-sync remove rejects original 2 without escape (6.732508ms)
+✖ alternate-contract-sync registration after success rejects original 2 (7.533158ms)
+✖ installed registration failure preserves original 2 (6.466082ms)
+✖ readiness event remove rejects original 3 without escape (7.791091ms)
+✖ readiness initial remove rejects original 3 without escape (7.228462ms)
+✖ readiness alternate-contract-sync remove rejects original 3 without escape (6.947515ms)
+✖ alternate-contract-sync registration after success rejects original 3 (8.243232ms)
+✖ installed registration failure preserves original 3 (7.428776ms)
+✖ readiness event remove rejects original 4 without escape (6.577212ms)
+✖ readiness initial remove rejects original 4 without escape (6.600601ms)
+✖ readiness alternate-contract-sync remove rejects original 4 without escape (7.249298ms)
+✖ alternate-contract-sync registration after success rejects original 4 (7.66993ms)
+✖ installed registration failure preserves original 4 (8.571097ms)
+✖ readiness event remove rejects original 5 without escape (7.212927ms)
+✖ readiness initial remove rejects original 5 without escape (7.628112ms)
+✖ readiness alternate-contract-sync remove rejects original 5 without escape (8.948566ms)
+✖ alternate-contract-sync registration after success rejects original 5 (7.462887ms)
+✖ installed registration failure preserves original 5 (7.434621ms)
+✖ readiness event remove rejects original 6 without escape (6.570918ms)
+✖ readiness initial remove rejects original 6 without escape (6.999506ms)
+✖ readiness alternate-contract-sync remove rejects original 6 without escape (9.457261ms)
+✖ alternate-contract-sync registration after success rejects original 6 (7.451914ms)
+✖ installed registration failure preserves original 6 (6.849214ms)
+✖ alternate-contract-sync readiness denial precedes registration error without coercion (9.830973ms)
+✖ independent timer, subscription and abort cleanup preserve deterministic causes (6.655328ms)
+✔ normal PoweredOff cleanup does not latch (7.958593ms)
+✔ normal Unauthorized cleanup does not latch (7.211919ms)
+✔ normal Unsupported cleanup does not latch (6.520521ms)
+✔ normal abort cleanup does not latch (6.393887ms)
+✔ normal timeout cleanup does not latch (7.817232ms)
+✔ normal event success waits for removal and disconnect remains usable (8.033941ms)
+✔ normal initial success waits for removal and disconnect remains usable (7.682011ms)
+✔ normal alternate-contract-sync success waits for removal and disconnect remains usable (7.353923ms)
+✖ readiness failure remains transport acquisitionUnknown, without receipt certification (6.621994ms)
+✖ exclusive failure blocks automatic destruction and explicit shutdown (7.339545ms)
+✖ owned connection can still cancel after another readiness cleanup loses ownership (7.671986ms)
+✖ local-only timer failure rejects without restart latch (9.79358ms)
+✖ local-only abort-listener failure rejects without restart latch (6.934276ms)
+✔ local-only abort-registration failure rejects without restart latch (7.869992ms)
+✖ abort plus SDK remove failure aggregates and fences destruction (6.792451ms)
+✖ timeout plus SDK remove failure aggregates and fences destruction (7.223148ms)
+✖ competing stale preparation fences current owner before-success (7.335476ms)
+✖ competing stale preparation fences current owner before-return (6.923634ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 9
+ℹ fail 46
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12529.327662
+
+✖ failing tests:
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 0 without escape (29.338081ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "remove fault"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: remove fault
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:67:34
+        at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+        at async node:internal/modules/esm/loader:647:26
+        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 0 without escape (9.28573ms)
+  Error: remove fault
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:67:34
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 0 without escape (9.442707ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 0 (9.154977ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 0 (7.234036ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'unknown'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:60:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'unknown',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 1 without escape (7.195731ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 1 without escape (8.198053ms)
+  undefined
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 1 without escape (10.246723ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 1 (10.368499ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 1 (8.84846ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error: undefined
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:131:63
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:295:21)
+  - undefined
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: undefined
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:131:63
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-10:295:21),
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 2 without escape (6.933048ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 2 without escape (6.40006ms)
+  null
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 2 without escape (6.732508ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 2 (7.533158ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 2 (6.466082ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error: null
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:131:63
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:295:21)
+  - null
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: null
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:131:63
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-15:295:21),
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 3 without escape (7.791091ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 3 without escape (7.228462ms)
+  false
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 3 without escape (6.947515ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 3 (8.243232ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 3 (7.428776ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error: false
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:131:63
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:295:21)
+  - false
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: false
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:131:63
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-20:295:21),
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 4 without escape (6.577212ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 4 without escape (6.600601ms)
+  0
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 4 without escape (7.249298ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 4 (7.66993ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 4 (8.571097ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error: 0
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:131:63
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:295:21)
+  - 0
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: 0
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:131:63
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-25:295:21),
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 5 without escape (7.212927ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 5 without escape (7.628112ms)
+  ''
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 5 without escape (8.948566ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 5 (7.462887ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 5 (7.434621ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + Error
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:131:63
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:295:21)
+  - ''
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:131:63
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-30:295:21),
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 6 without escape (6.570918ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "undefined"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:71:36)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness initial remove rejects original 6 without escape (6.999506ms)
+  '{ toString: [Function: toString] }'
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness alternate-contract-sync remove rejects original 6 without escape (9.457261ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:75:3
+✖ alternate-contract-sync registration after success rejects original 6 (7.451914ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:77:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:79:3
+✖ installed registration failure preserves original 6 (6.849214ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be reference-equal to "expected":
+  + actual - expected
+  
+  + Error: must not coerce
+  +     at Object.toString (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:66:82)
+  +     at String (<anonymous>)
+  +     at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:131:73
+  +     at new Promise (<anonymous>)
+  +     at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:120:9)
+  +     at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:295:21)
+  - {
+  -   toString: [Function: toString]
+  - }
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:58:55)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:81:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: must not coerce
+        at Object.toString (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:66:82)
+        at String (<anonymous>)
+        at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:131:73
+        at new Promise (<anonymous>)
+        at prepare (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:120:9)
+        at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-35:295:21),
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:84:1
+✖ alternate-contract-sync readiness denial precedes registration error without coercion (9.830973ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(error instanceof AggregateError)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:89:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:92:1
+✖ independent timer, subscription and abort cleanup preserve deterministic causes (6.655328ms)
+  {}
+
+test at tests/plx-readiness-settlement.test.ts:128:1
+✖ readiness failure remains transport acquisitionUnknown, without receipt certification (6.621994ms)
+  {}
+
+test at tests/plx-readiness-settlement.test.ts:135:1
+✖ exclusive failure blocks automatic destruction and explicit shutdown (7.339545ms)
+  Error: remove
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:136:68)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:33:66)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-47:285:26)
+      at finish (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-47:123:113)
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-47:127:34
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-47:277:11
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+test at tests/plx-readiness-settlement.test.ts:142:1
+✖ owned connection can still cancel after another readiness cleanup loses ownership (7.671986ms)
+  Error: remove
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:144:78)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:33:66)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-48:285:26)
+      at finish (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-48:123:113)
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-48:127:34
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-48:277:11
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+test at tests/plx-readiness-settlement.test.ts:151:72
+✖ local-only timer failure rejects without restart latch (9.79358ms)
+  false
+
+test at tests/plx-readiness-settlement.test.ts:151:72
+✖ local-only abort-listener failure rejects without restart latch (6.934276ms)
+  false
+
+test at tests/plx-readiness-settlement.test.ts:166:46
+✖ abort plus SDK remove failure aggregates and fences destruction (6.792451ms)
+  false
+
+test at tests/plx-readiness-settlement.test.ts:166:46
+✖ timeout plus SDK remove failure aggregates and fences destruction (7.223148ms)
+  false
+
+test at tests/plx-readiness-settlement.test.ts:177:58
+✖ competing stale preparation fences current owner before-success (7.335476ms)
+  Error: lost older listener
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:182:103)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:33:66)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-54:285:26)
+      at finish (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-54:123:113)
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-54:127:34
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:194:37)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/plx-readiness-settlement.test.ts:177:58
+✖ competing stale preparation fences current owner before-return (6.923634ms)
+  Error: lost older listener
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:182:103)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:33:66)
+      at Object.remove (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=settlement-55:285:26)
+      at finish (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-55:123:113)
+      at file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/src/platform/bluetooth.native.ts?plx-case=settlement-55:127:34
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-readiness-independent-review/tests/plx-readiness-settlement.test.ts:195:30)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

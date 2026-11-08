@@ -1,0 +1,9 @@
+==467==LeakSanitizer has encountered a fatal error.
+==467==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==467==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+Traceback (most recent call last):
+  File "/workspace/scratch/b96d3539d24d/apex-eddystone-uid-url/tools/build_firmware.py", line 19, in <module>
+    subprocess.run([str(out / ("firmware-tests" + suffix))], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/scratch/b96d3539d24d/apex-eddystone-uid-url/build/firmware-tests-san']' returned non-zero exit status 1.

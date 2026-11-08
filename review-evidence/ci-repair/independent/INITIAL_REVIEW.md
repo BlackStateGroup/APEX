@@ -1,0 +1,24 @@
+# Independent CI repair review
+
+Review performed in new no-hardlinks clone `/workspace/scratch/b96d3539d24d/apex-ci-review-independent`; never edited builder/main clones. No publication.
+
+Initial candidate: ede747906469e328c15225db18c14d9ce62d2130, tree 5a1d5a077f6593de092976455ca261e4b5273246; Android commit 05b9d4e85355c5093685db9775b24d31cf36e80e. Baseline 91564c3e64de863398006b7d380a722a720d1418 tree 706b6c4c53f9c69370c07d6d5c91adb6c6f22fb7. Exactly five changed files, no src/package/lockfile edits.
+
+## Review findings
+
+No production defect found. Babel override precedes Expo preset transforms and wins for exactly selected normalized absolute filenames. Independent synthetic Metro transforms verify configured exact/normalized paths use WeakMap; TSX near-match, prefixed name, and same filename in another directory remain loose as intended. All existing eight frozen modules covered. Native platforms also receive spec transforms, preserving public freeze and private semantics.
+
+One regression-coverage finding sent to builder: original future-controller guard only recognizes flat src/*.ts and literal Object.freeze(this). Nested/TSX/whitespace additions could evade it. Await corrected guard before final disposition.
+
+## Independent execution
+
+- Original permanent focused tests: 61 pass.
+- New reviewer-written transform tests: 54 pass, six combinations web/Android/iOS and development/production. Eight-controller private-brand rejection for forged prototypes, clones and Proxy receivers; peer-instance isolation; no public state shadowing or prototype mutation. Bundle exact provenance, nested immutable reports, stale async rejection fenced by edit/clear/deactivation-reactivation/new inspect; prior snapshots remain immutable.
+- Gradle adversarial tests: 24 malformed/duplicate forms rejected, including CR/CRLF separators, escaped keys, alternate separators, continuations and Unicode line separators; byte-preserving replacement and idempotence pass.
+- Installed Expo template extracted independently. Wrapper SHA256 b3a875ddc1f044746e1b1a55f645584505f4a10438c1afea9f15e92a7c42ec13. JAR static class inspection confirms networkTimeout, configuration getter/setter and URLConnection connect/read timeout references. Actual generated property starts at 10000. No JAR execution/download.
+- Typecheck and git diff --check pass.
+- Full suite initial setup attempt: 2188 pass, 8 REA cases fail solely because isolated clone had not yet linked existing REA dependencies. Corrected by linking previously installed dependency tree; no install. Corrected-dependency full rerun passed 2196/2196, zero failures/skips/cancellations (includes 54 reviewer-written cases); log `/workspace/shared/apex-ci-independent-full-deps.log`.
+
+## Limits
+
+No browser or localhost execution attempted. No native SDK compilation, devices, radio, USB, NFC, flashing, credentials/settings/provider changes, remote writes, merge or deployment. ESP startup/configuration delta and C++/Rust experimental gates excluded. Node-executed Expo output validates transform semantics, not browser rendering/Hermes execution. Gradle timeout is per connect/read, not an overall deadline or guarantee of network/compilation success. Exact published candidate must receive fresh remote CI.

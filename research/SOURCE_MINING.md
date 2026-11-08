@@ -22,3 +22,7 @@ Other research projects remain reference-only. APEX does not change their licenc
 5. Add AI-assisted interpretation with evidence references and explicit data-export selection. Model output remains an unverified hypothesis.
 
 The unrecorded repository names from the earlier chat remain unresolved in `source-imports.json`; they must not be silently invented.
+
+## R31: REA, 2 November 2026
+
+The isolated rea-agents 6.8.0 CLI was used for actual static ELF-note analysis of APEX host firmware. APEX now imports those reports and persists bounded summaries. GNU sections/symbols/selected CRC disassembly were separately captured and hashed. REA-supervised tools failed process-ownership preflight in this runtime; Ghidra/IDA/Hopper are not configured. See docs/REA_RESEARCH.md and research/evidence/rea-lab for successful and failed evidence. This is a desktop research dependency, excluded from mobile bundling.

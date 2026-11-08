@@ -1,0 +1,17 @@
+✔ synthetic acceptance hashes, zero spectrum and exact DC statistics (7.909657ms)
+✔ synthetic signed complex tones, periodic Hann neighbors and all FFT sizes (21.958528ms)
+✔ synthetic rails, greater-than-one complex magnitude and endian sentinel (2.114242ms)
+✔ synthetic selected windows, default fallback and explicit rejection (2.527829ms)
+✔ synthetic independent direct DFT: deterministic integers and nonzero impulse (8.516266ms)
+✔ synthetic quantized off-bin and two-tone amplitudes match independent windowed DFT (6.950706ms)
+✔ FFT helper rejects unbounded, nonfinite or inconsistent inputs (0.53804ms)
+✔ analysis rejects forged prepared summaries and scans all samples outside FFT range (0.904173ms)
+✔ synthetic nonzero-location impulse passes independent windowed DFT (3.4633ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.400439

@@ -1,0 +1,10 @@
+PASS 100 capacity/burst combinations: atomic exact-byte rollback and retry
+PASS full queue preserves 488-byte maximum-frame prefix for exact tail retry
+PASS malformed resync counters and trailing prefix roll back with response overflow
+PASS wrapped four-slot queue preserves partial head, FIFO and idempotent subscription
+PASS four scheduler failure positions fence before failed terminate and stay fenced
+PASS allocation/notify exhaustion fences on both successful and failed termination requests
+PASS invalid MTU fences without allocating or rescheduling
+PASS full output queue still accepts protocol frames generating no responses
+RESULT 8 independent probe groups passed; 100 admission combinations, host doubles only
+HOST_SIZES peer=576 staging=2736 queue=2176 (not target ABI sizes)

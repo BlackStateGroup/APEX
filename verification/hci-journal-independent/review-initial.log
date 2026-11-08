@@ -1,0 +1,27 @@
+✔ independent native adapter mock uses bytes, preserves exact snapshot and fails closed without fallback (9.065887ms)
+✔ independent saved HCI actual TSX hides document before explicit reopen and renders read-only inert bounded summaries (20.345716ms)
+✔ independent save keeps detached snapshot and one pending lock across every invalidation (11.224363ms)
+✔ independent saves require current full verification and preserve successful insert on refresh failure (1.344748ms)
+✔ independent reopen snapshots before outer and inner awaits, and fences replacement/exit (9.499973ms)
+✔ independent forged boolean verifier cannot bypass stale binary digest or malformed legacy framing (1.312301ms)
+✖ independent bundle requires byte capability, preserves exact documents and fences delayed completion (1.700617ms)
+✔ independent reopen rejects missing byte capability and wrong source even with permissive outer verifier (0.911001ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 472.01007
+
+✖ failing tests:
+
+test at tests/hci-journal-ui-independent.test.ts:67:1
+✖ independent bundle requires byte capability, preserves exact documents and fences delayed completion (1.700617ms)
+  Error: Bundle exportedAt must be canonical ISO UTC
+      at snapshot (file:///workspace/scratch/b96d3539d24d/apex-hci-journal-ui-review/packages/core/evidence-bundle.ts:26:11)
+      at createEvidenceBundle (file:///workspace/scratch/b96d3539d24d/apex-hci-journal-ui-review/packages/core/evidence-bundle.ts:53:16)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-journal-ui-review/tests/hci-journal-ui-independent.test.ts:68:118)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

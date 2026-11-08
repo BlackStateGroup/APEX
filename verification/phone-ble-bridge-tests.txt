@@ -1,0 +1,16 @@
+✔ Android retains byte order, padding, repeated unknown AD and malformed tail, not normalized replacement (3.518739ms)
+✔ iOS rawScanRecord JSON remains opaque, UUID is not MAC, no cached name fallback (0.618313ms)
+✔ null, missing, empty, sentinels and unavailable Android raw bytes remain distinguishable (1.102158ms)
+✔ canonical base64 round trips all byte values and bounded random-shaped lengths (117.316514ms)
+✔ malformed, noncanonical and oversize base64 is rejected without truncation (0.970464ms)
+✔ bounds and schemas reject bad dictionaries, duplicates, metrics and aggregate excess (2.68717ms)
+✔ source time must be supplied and validated; never invents timestamp or live provenance (0.925597ms)
+✔ all one-byte and two-byte tails round trip and reject nonzero pad bits (917.167334ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1182.892302

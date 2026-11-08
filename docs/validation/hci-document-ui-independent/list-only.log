@@ -1,0 +1,39 @@
+Listing tests:
+  ui.smoke.spec.mjs:25:1 › console, equipment, offline workbench and research work in a real browser
+  ui.smoke.spec.mjs:55:1 › console is usable at a phone viewport without horizontal overflow
+  ui.smoke.spec.mjs:62:2 › saved evidence survives reload and source catalogue searches copied projects
+  ui.smoke.spec.mjs:79:1 › REA sample and imported reports retain provenance in saved evidence
+  ui.smoke.spec.mjs:97:1 › offline BLE keeps synthetic provenance, invalidates edits, and reopens verified evidence
+  ui.smoke.spec.mjs:138:1 › offline BLE rejects malformed input and refuses to reinterpret tampered evidence
+  ui.smoke.spec.mjs:163:1 › pending BLE save and verification cannot overwrite edits or a newer tab visit
+  ui.smoke.spec.mjs:202:1 › offline BLE decoded output fits a phone viewport
+  ui.smoke.spec.mjs:221:3 › recorded-import android-scan-record retains source claims across save and reopen
+  ui.smoke.spec.mjs:221:3 › recorded-import ios-advertisement-fields retains source claims across save and reopen
+  ui.smoke.spec.mjs:256:3 › selected-source android preserves exact text and explicitly reopens
+  ui.smoke.spec.mjs:256:3 › selected-source ios preserves exact text and explicitly reopens
+  ui.smoke.spec.mjs:286:1 › NDEF preview, interpretation, inert URI and explicit journal reopen
+  ui.smoke.spec.mjs:306:1 › NDEF edits and complete oversized imports invalidate save without truncation
+  ui.smoke.spec.mjs:326:1 › foreground observation stays native-only and discloses limits on a phone viewport
+  ui.smoke.spec.mjs:345:44 › phone NDEF Android: separate drafts, inert values, explicit save and verified reopen
+  ui.smoke.spec.mjs:345:44 › phone NDEF iOS: separate drafts, inert values, explicit save and verified reopen
+  ui.smoke.spec.mjs:373:1 › phone NDEF platform edits and oversized source invalidate saving without changing wire draft
+  ui.smoke.spec.mjs:391:1 › BLE trials require explicit analysis, separate sources, invalidate on edits and retain draft across tabs
+  ui.smoke.spec.mjs:418:1 › BLE trial offset pages stay bounded, absent differs from zero and phone layout remains usable
+  ui.smoke.spec.mjs:442:1 › BLE candidate explicit checks retain drafts across tabs and clear stale results
+  ui.smoke.spec.mjs:468:1 › BLE candidate source pages stay bounded and imported labels are inert on phone viewport
+  ui.smoke.spec.mjs:499:1 › phone NDEF capture is unavailable on web and remains separate from explicit import
+  ui.smoke.spec.mjs:518:1 › service-data mode is separate and disabled on web without broadening advertised-UUID mode
+  ui.smoke.spec.mjs:536:1 › BLE authoring stages exact sources and hands off only after explicit build and use
+  ui.smoke.spec.mjs:592:1 › legacy recording edits clear stale reports and successful saves consume the current draft
+  ui.smoke.spec.mjs:611:1 › legacy recording pending save preserves selected evidence without restoring a replaced report
+  ui.smoke.spec.mjs:634:1 › legacy recording refresh failure after persistence does not invite a duplicate save
+  ui.smoke.spec.mjs:663:1 › Recording input rejects oversized whole pastes and cannot save a valid truncated prefix
+  ui.smoke.spec.mjs:684:1 › offline Flipper draft is explicit, memory-only, bounded and inert
+  ui.smoke.spec.mjs:718:1 › selected evidence bundle preview is isolated, paginated and fenced across edits and tabs
+  ui.smoke.spec.mjs:751:1 › ordinary IR inspector keeps exact memory-only draft, gates rejected edits and clears results across tabs
+  ui.smoke.spec.mjs:783:1 › memory-only HCI metadata then explicit legacy selection
+  ui.smoke.spec.mjs:804:1 › explicit extended HCI headers stay separate and reset on tab exit
+  ui.smoke.spec.mjs:824:1 › Analysis chooser shows one inspector, retains selection across tabs and performs no implicit analysis
+  ui.smoke.spec.mjs:877:1 › static NFC chooser keeps exact mode, rejection fence and drafts separate from Phone and serialized NDEF
+  ui.smoke.spec.mjs:925:1 › HCI selected document requires explicit preparation, handoff and reopen
+Total: 37 tests in 1 file

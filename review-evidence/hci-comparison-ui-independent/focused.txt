@@ -1,0 +1,21 @@
+✔ independent actual comparison TSX: exact drafts inert, selected rows only, bounded four-report pages (30.447139ms)
+✔ independent actual comparison TSX owner is inert and invisible when inactive (3.317456ms)
+✔ independent source routing preserves all eleven old IDs and routes plus exactly one stable comparison mount (3.316123ms)
+✔ independent exact synthetic examples are supported declared fixtures without runtime digest generation (3.81791ms)
+✔ independent staging: exact explicit report/side and observed-state consumption close the React navigation gap (6.234282ms)
+✔ independent staging: save retains snapshot, lock and truthful outcome through staging, navigation and replacement (3.40095ms)
+✔ independent comparison UI: manual verification never defaults report zero and re-verifies exact selected documents (4.876827ms)
+✔ independent comparison UI: parallel side verification and one-sided replacement isolate epochs (5.755832ms)
+✔ independent comparison UI: deferred compare cannot publish after edits, rejects, clear, source, selection, verify or exit (7.521819ms)
+✔ independent comparison UI: rejected whole input retains exact draft, fences one slot and cannot verify (1.803788ms)
+✔ independent comparison UI: one-shot routed sources preserve other slot and invalid requested indices never become usable (2.967739ms)
+✔ independent comparison UI: stale callbacks, invalid manual indices and off-page selections do not change state (0.509665ms)
+✔ independent comparison UI: report pages are bounded and exact examples do no automatic hashing (1.317249ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 412.93608

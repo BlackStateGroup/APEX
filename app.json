@@ -20,7 +20,7 @@
       [
         "react-native-nfc-manager",
         {
-          "nfcPermission": "APEX reads NFC tag metadata when you start a foreground inspection.",
+          "nfcPermission": "APEX reads NFC tag metadata or selected NDEF record fields when you start the corresponding foreground inspection.",
           "includeNdefEntitlement": true
         }
       ],
@@ -30,7 +30,7 @@
           "isBackgroundEnabled": false,
           "neverForLocation": true,
           "modes": [],
-          "bluetoothAlwaysPermission": "APEX connects to your AXP laboratory accessories over Bluetooth."
+          "bluetoothAlwaysPermission": "APEX observes nearby Bluetooth advertisements when you start a foreground observation and connects to your AXP laboratory accessories."
         }
       ]
     ],

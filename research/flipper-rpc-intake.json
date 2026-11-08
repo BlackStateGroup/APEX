@@ -1,0 +1,44 @@
+{
+  "schemaCommit": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+  "firmwareCommit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+  "reviewedAt": "2026-11-02",
+  "status": "source-reviewed; not implemented or hardware-tested",
+  "operations": [
+    {
+      "name": "protobuf version",
+      "requestTag": 39,
+      "responseTag": 40,
+      "requestHexForId42": "05082aba0200"
+    },
+    {
+      "name": "device identity",
+      "requestTag": 32,
+      "responseTag": 33,
+      "requestHexForId42": "05082a820200"
+    },
+    {
+      "name": "power information",
+      "requestTag": 44,
+      "responseTag": 45,
+      "requestHexForId42": "05082ae20200"
+    },
+    {
+      "name": "binary ping",
+      "requestTag": 5,
+      "responseTag": 6
+    }
+  ],
+  "findings": [
+    "Main messages use protobuf length-delimited framing, confirmed in pinned firmware pb_encode_ex/pb_decode_ex calls.",
+    "Main command_id is field 1; command_status is field 2; has_next is field 3.",
+    "Identity and power responses are streamed key/value pairs; the final pair sets has_next false.",
+    "AXP service UUIDs, readiness marker and wire framing are unrelated to this vendor protocol."
+  ],
+  "unverified": [
+    "BLE serial UUIDs and credit/flow-control handling",
+    "USB session entry and CLI-to-RPC mode transition",
+    "iOS and Android transport, pairing and version acceptance",
+    "Physical device and DIY fork compatibility",
+    "Operational frame/count/time limits and recorded fixtures"
+  ]
+}

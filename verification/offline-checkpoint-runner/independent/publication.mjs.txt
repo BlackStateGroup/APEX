@@ -1,0 +1,13 @@
+import {runStages} from '/workspace/scratch/b96d3539d24d/apex-offline-runner/tools/verify-offline-checkpoint.mjs';
+import {mkdtemp,symlink,readlink,readFile,writeFile,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+for (const kind of ['symlink','dangling-symlink','directory']) {
+ const output=await mkdtemp('/tmp/apex-runner-review-080f8c4/publication-');
+ if(kind==='directory')await mkdir(output+'/result.json');
+ else {if(kind==='symlink')await writeFile(output+'/sentinel','untouched');await symlink(output+'/sentinel',output+'/result.json');}
+ await assert.rejects(runStages([],{output,source:{}}),{code:'EEXIST'});
+ assert.equal(JSON.parse(await readFile(output+'/manifest.json','utf8')).status,'publication-failed');
+ if(kind!=='directory')assert.equal(await readlink(output+'/result.json'),output+'/sentinel');
+ if(kind==='symlink')assert.equal(await readFile(output+'/sentinel','utf8'),'untouched');
+ console.log(JSON.stringify({kind,output,status:'passed'}));
+}

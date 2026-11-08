@@ -3,7 +3,6 @@ on:
   pull_request:
     paths-ignore:
       - 'docs/**'
-      - 'research/**'
       - 'README.md'
       - 'LICENSE.md'
   workflow_dispatch:
@@ -23,6 +22,11 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - run: npm run research:setup
+      - name: Verify source archive restoration
+        run: python3 -m unittest discover -s tests -p 'test_source_archives.py' -v
+      - name: Verify REA readiness diagnostics
+        run: node --test tools/reverse-engineering/preflight.test.mjs
       - run: npm test
       - run: npm run typecheck
       - run: python3 tools/build_firmware.py --sanitize
@@ -45,6 +49,8 @@ jobs:
           java-version: '21'
       - run: npm ci
       - run: npx expo prebuild --platform android --no-install
+      - name: Bound Gradle distribution download timeout
+        run: node tools/configure-gradle-download.mjs android/gradle/wrapper/gradle-wrapper.properties
       - name: Compile native module
         working-directory: android
         run: ./gradlew :apex-device:compileDebugKotlin --no-daemon

@@ -1,0 +1,73 @@
+✖ independent: returned state cannot replace the draft behind a verified report (5.105782ms)
+✖ independent: returned report metadata and exact documents cannot be mutated (0.852486ms)
+✖ independent: nested payload and record arrays cannot mutate a verified snapshot (0.865044ms)
+✔ independent: old hash error cannot clear newer pending state or overwrite newest success (1.279178ms)
+✔ independent: UTF-16 rejection counts surrogate pairs whole and fences pending inspection (0.593017ms)
+✔ independent: preview has no journal/provider/network/action imports or executable URL projection (0.649966ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 3
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 187.562519
+
+✖ failing tests:
+
+test at tests/evidence-bundle-independent.test.ts:10:1
+✖ independent: returned state cannot replace the draft behind a verified report (5.105782ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '{}'
+  - '{"schemaVersion":1,"format":"apex.selected-evidence","exportedAt":"2026-11-08T01:02:03.000Z","recordCount":1,"records":["\\n{\\"schemaVersion\\":1,\\"id\\":\\"record-0\\",\\"kind\\":\\"analysis.can\\",\\"source\\":\\"offline-import\\",\\"observedAt\\":\\"2026-11-08T01:02:03.000Z\\",\\"payload\\":{\\"note\\":\\"not displayed\\",\\"url\\":\\"https://example.invalid/<script>\\"},\\"sha256\\":\\"a35da6f4296bb9a8f678a4a8e9b0ac2ab22584236619b3bb18cfd84d16a21296\\"}\\t"],"sha256":"2443d1c4c9cc259966b667f86013715f8d72a2f079ccf4756d9ea0b3864c8b82"}'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-bundle-preview-audit/tests/evidence-bundle-independent.test.ts:14:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '{}',
+    expected: '{"schemaVersion":1,"format":"apex.selected-evidence","exportedAt":"2026-11-08T01:02:03.000Z","recordCount":1,"records":["\\n{\\"schemaVersion\\":1,\\"id\\":\\"record-0\\",\\"kind\\":\\"analysis.can\\",\\"source\\":\\"offline-import\\",\\"observedAt\\":\\"2026-11-08T01:02:03.000Z\\",\\"payload\\":{\\"note\\":\\"not displayed\\",\\"url\\":\\"https://example.invalid/<script>\\"},\\"sha256\\":\\"a35da6f4296bb9a8f678a4a8e9b0ac2ab22584236619b3bb18cfd84d16a21296\\"}\\t"],"sha256":"2443d1c4c9cc259966b667f86013715f8d72a2f079ccf4756d9ea0b3864c8b82"}',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/evidence-bundle-independent.test.ts:16:1
+✖ independent: returned report metadata and exact documents cannot be mutated (0.852486ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'native-ios'
+  - 'offline-import'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-bundle-preview-audit/tests/evidence-bundle-independent.test.ts:22:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'native-ios',
+    expected: 'offline-import',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/evidence-bundle-independent.test.ts:25:1
+✖ independent: nested payload and record arrays cannot mutate a verified snapshot (0.865044ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'forged'
+  - 'not displayed'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-bundle-preview-audit/tests/evidence-bundle-independent.test.ts:30:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'forged',
+    expected: 'not displayed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

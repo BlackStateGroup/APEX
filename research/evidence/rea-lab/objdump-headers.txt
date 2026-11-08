@@ -1,0 +1,6 @@
+
+/workspace/scratch/477642063217/APEX/build/apex-firmware:     file format elf64-x86-64
+architecture: i386:x86-64, flags 0x00000150:
+HAS_SYMS, DYNAMIC, D_PAGED
+start address 0x00000000000011e0
+

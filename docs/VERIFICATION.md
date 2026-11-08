@@ -1,5 +1,18 @@
 # Verification record
 
+## Current local continuation checkpoint
+
+The latest local, unpushed checkpoint is described in [APEX_CONTINUATION.md](../APEX_CONTINUATION.md)
+and [continuation.json](../verification/continuation.json). The forty-third combined
+run on clean de30849 passed 2081 Node, 22 archive and 5 preflight contract tests,
+portable C, TypeScript, inventory and all three offline JavaScript exports.
+The exact fixed-runner [result](../verification/increment43-final/result.json)
+records commands and cleanup; 40 browser scenarios were listed, not executed.
+Historical native/browser CI results below do not validate this changed revision.
+The final SDK initialization/configuration delta has regression coverage but fresh
+independent review remains open; prior review applies to its named earlier source.
+
+
 ## Platform foundation baseline (PR #2)
 
 Verified locally on 1 November 2026 using Node 24.22.1, npm 11.9.0, Python 3.12.14 and GCC. Source inspection pinned 28 upstream repositories to exact commits and document blobs. No upstream security-tool firmware binary was executed and no physical hardware was tested.
@@ -41,3 +54,9 @@ Address/undefined-behaviour checks pass locally with ASAN_OPTIONS=detect_leaks=0
 Native compilation is tracked against source 904ca433f6567bc11439623c04c0200ef65c3dda in [workbench CI](https://github.com/BlackStateGroup/APEX/actions/runs/41300944586). All four jobs passed: host/browser, ESP32-S3, unsigned iOS Simulator and complete arm64-v8a Android debug APK assembly including native NFC/BLE dependencies. Host CI passed all 54 Node tests, all three browser scenarios, production exports, inventory verification and the unmodified C sanitizer checks. The Android job is 124831531389.
 
 The iOS job uses macOS 26 and Xcode 26.6. Earlier attempts with Xcode 16.4 and 26.2 failed inside Expo tooling, below the SDK-supported toolchain requirement; neither failure is hidden. The successful iOS job is 124831531413. The BLE-enabled ESP32-S3 image is 458,336 bytes and fits the 1 MiB app partition. No binary was flashed and no phone was attached. Exact results are in [workbench-verification.json](../research/workbench-verification.json); physical acceptance steps are in [BENCH_ACCEPTANCE.md](BENCH_ACCEPTANCE.md).
+
+## REA firmware lab (PR #5), 2 November 2026
+
+Runtime source `69d1d5d5ef9360188b8cd6de4d0a601b7f41bf7b` passed all four jobs in [REA feature CI](https://github.com/BlackStateGroup/APEX/actions/runs/41467890970): host/browser, full Android debug APK, unsigned iOS Simulator app and ESP32-S3 firmware. Local checks passed 59 Node tests, portable C, strict TypeScript, four browser scenarios and production exports for all three app platforms. CI repeats the checks with the isolated pinned REA toolchain. Exact job IDs and limits are in research/rea-verification.json.
+
+The real REA 6.8.0 built-in ELF parser and direct GNU tools inspected the compiled C host firmware without invoking that binary as an inspection target. Tests verify file digests, unchanged input bytes, preserved previous outputs, missing optional GNU tools, rejected malformed imports and saved report provenance. Deep engines remain unconfigured, and REA-supervised tool launch fails process-ownership preflight in this local runtime. No physical hardware was tested. Later changes only record verification and pinned Flipper read-only adapter research.

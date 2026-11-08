@@ -1,0 +1,24 @@
+✔ exact raw rejection and one fresh frozen token: undefined (1.545276ms)
+✔ exact raw rejection and one fresh frozen token: null (1.218739ms)
+✔ exact raw rejection and one fresh frozen token: 0 (0.381856ms)
+✔ exact raw rejection and one fresh frozen token: rejected (0.306665ms)
+✔ exact raw rejection and one fresh frozen token: [object Object] (0.444781ms)
+✔ exact raw rejection and one fresh frozen token: Error: original (0.183476ms)
+✔ proof missing preserves original and remains held (0.696546ms)
+✔ proof getter-throw preserves original and remains held (0.223859ms)
+✔ proof method-throw preserves original and remains held (0.558582ms)
+✔ proof promise preserves original and remains held (0.349101ms)
+✔ proof object preserves original and remains held (0.234092ms)
+✔ proof truthy preserves original and remains held (0.164703ms)
+✔ proof false preserves original and remains held (0.113283ms)
+✔ proof is never queried before dispatch or for a late returned handle (5.670495ms)
+✔ malformed rejected Promise proof stays unknown without unhandled rejection (0.513632ms)
+✔ malformed thenable proof is neither inspected nor assimilated (0.272034ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.389499

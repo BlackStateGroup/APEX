@@ -1,0 +1,10 @@
+✔ restored ESP32 transport: actual C under bounded host fault injection (130.369276ms)
+✔ reviewed ESP32 transport: actual C fault injection and default-off symbol isolation (254.255848ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 382.994847

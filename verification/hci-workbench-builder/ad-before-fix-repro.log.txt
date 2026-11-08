@@ -1,0 +1,63 @@
+{
+  "draft": "6274736e6f6f700000000001000003ea000000110000001100000003000000000000000000000000043e0e02010000010203040506020209c0",
+  "provenance": "synthetic-fixture",
+  "metadata": {
+    "source": {
+      "provenance": "synthetic-fixture",
+      "label": "pasted HCI bytes",
+      "sha256": "ccfcf2a8cb6f88e6af6c56e13c15970bfb5a125fdf62c4efef048044749c66eb",
+      "byteCount": 57
+    },
+    "recordCount": 1,
+    "start": 0,
+    "nextStart": null,
+    "warnings": [
+      "Operator-supplied offline host/controller bytes, not physical RF samples.",
+      "No guarantee of capture completeness, authenticity, ownership, or device identity.",
+      "SHA-256 identifies the supplied byte content: digest equality establishes byte equality only, not authenticated origin, truthful capture history, ownership, receiver identity, physical reception, or device identity.",
+      "Raw signed timestamps are producer-declared claims; no wall-clock conversion.",
+      "Zero cumulative drops does not establish absence of losses.",
+      "Resolved identity addresses are not necessarily the actual over-air addresses.",
+      "Scan responses remain separate from advertisements; no address pooling or concatenation.",
+      "Extended advertising is uninspected; no fragment reassembly. Other unsupported payloads remain opaque."
+    ],
+    "records": [
+      {
+        "index": 0,
+        "offset": 16,
+        "payloadOffset": 40,
+        "originalLength": 17,
+        "includedLength": 17,
+        "flags": 3,
+        "cumulativeDrops": 0,
+        "timestampRaw": "0",
+        "captureTruncated": false,
+        "classification": "legacy-advertising-candidate",
+        "flagStatus": "consistent-not-verified"
+      }
+    ]
+  },
+  "selectedIndex": 0,
+  "reports": [
+    {
+      "index": 0,
+      "reportOffset": 45,
+      "eventType": 0,
+      "kind": "advertisement",
+      "addressType": 0,
+      "addressWireHex": "010203040506",
+      "addressDisplay": "06:05:04:03:02:01",
+      "dataOffset": 54,
+      "dataLength": 2,
+      "dataHex": "0209",
+      "rssiDbm": -64,
+      "adElements": 0,
+      "serviceReadings": 0
+    }
+  ],
+  "reportCount": 1,
+  "reportPage": 0,
+  "pending": false,
+  "rejectedEdit": false,
+  "message": "Selected whole legacy event validated by the narrow offline parser."
+}

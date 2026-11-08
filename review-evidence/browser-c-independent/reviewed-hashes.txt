@@ -1,0 +1,5 @@
+b9a53bf7738a9ab6e707171a1ba12f1534471b21687962ec72188e80faccea5e  tests/browser-c-host/bridge.c
+1d16be6947295a1b58cea4a8e2b6eb68c109790f4ba39f3971670d185aaa0767  tests/browser-c-host/bridge.ts
+b079fc12445d0851feb64cdd7e485116f130bd939944e4d63aba0615d5ab0888  tests/browser-c-host/inputs.sha256.json
+03dc819a8b5a0220f18cb03c6f1b801627bb3a2b295b9b86c7e95380a0b75e5a  tests/browser-c-roundtrip.test.ts
+695090b699e22efd22159353c093786a460dad9ad515452e47c91ba3b96b2472  tests/browser-c-bridge-independent.test.ts

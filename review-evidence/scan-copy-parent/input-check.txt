@@ -1,0 +1,2 @@
+Every prior pin retained; only two intended UI hashes changed; three test source pins added; original manifest byte-exact.
+95d18224fdfdbc3746c6e90c92a024e38c2134d3

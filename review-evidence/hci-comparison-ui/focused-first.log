@@ -1,0 +1,98 @@
+✔ twelve unique typed choices preserving prior inspectors, Recording default and exact source routes (2.188457ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.433443ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.369591ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.448953ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (2.628231ms)
+✔ ir: newer inspector request wins over older completion after exit (3.534184ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.862425ms)
+✔ hci: newer inspector request wins over older completion after exit (1.782368ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.589359ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.36553ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.735012ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.663775ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.742501ms)
+✔ twelve typed inspector choices retaining the original eleven, Recording default, and separate explicit source routes (1.650094ms)
+✖ navigation source wiring keeps controllers at stable positions and has no implicit work (6.730081ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.201647ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (3.262159ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.299397ms)
+✔ source delivery during pending saves survives old failure without reviving results (1.274983ms)
+✔ prebuilt synthetic exact matrix, explicit verify/select/compare and immutable snapshots (9.226953ms)
+✔ whole UTF16 rejection retains exact text, fences only side and clears comparison; clear/replacement recovers (3.378873ms)
+✔ stale verification success fenced by edit (0.628413ms)
+✔ stale verification success fenced by reject (0.362692ms)
+✔ stale verification success fenced by clear (0.433908ms)
+✔ stale verification success fenced by exit (0.469378ms)
+✔ stale verification success fenced by source (3.008285ms)
+✔ stale verification error fenced by edit (0.576838ms)
+✔ stale verification error fenced by reject (0.368738ms)
+✔ stale verification error fenced by clear (0.731811ms)
+✔ stale verification error fenced by exit (0.362276ms)
+✔ stale verification error fenced by source (0.505727ms)
+✔ stale comparison success and old callbacks fenced (1.176541ms)
+✔ stale comparison error and old callbacks fenced (1.002401ms)
+✔ concurrent slots verify independently; source IDs consumed while hidden without replacing other slot (0.640864ms)
+✔ explicit stage consumes old callbacks synchronously and preserves truthful pending save after navigation (1.600272ms)
+✔ four metadata rows, eight comparison rows, pages do not invalidate result, invalid indices refused (4.323235ms)
+✔ App routing is separate, stable-mounted and evidence has no comparison stage action (0.807101ms)
+✔ independent boundaries: every size 0..130, explicit selections and whole rejection (4.116158ms)
+✔ independent newer completion survives older success AND older error (0.563633ms)
+✔ independent malformed digest shapes never publish and alias mutations cannot affect parse (11.189906ms)
+✔ independent whole TLV scan, unsupported CC, opaque report and offsets (1.971637ms)
+✔ independent stale paging, invalid numbers, and old leases do not mutate (0.300432ms)
+✖ independent source integration preserves static NFC and all prior inspectors alongside explicit HCI documents (1.616286ms)
+✔ independent 64-byte authored APEX example remains explicit and hashes full supplied structure (0.400739ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 42
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.730894
+
+✖ failing tests:
+
+test at tests/analysis-navigation.test.ts:18:1
+✖ navigation source wiring keeps controllers at stable positions and has no implicit work (6.730081ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(app.includes(`<${component} active={tab === 'Analysis' && inspector === '${id}'}`))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-compare-ui/tests/analysis-navigation.test.ts:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/nfc-static-memory-review.test.ts:74:1
+✖ independent source integration preserves static NFC and all prior inspectors alongside explicit HCI documents (1.616286ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'HCI report byte comparison'
+  - 'Static NFC data area'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-compare-ui/tests/nfc-static-memory-review.test.ts:76:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HCI report byte comparison',
+    expected: 'Static NFC data area',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

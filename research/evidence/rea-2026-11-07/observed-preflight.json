@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-07T19:38:35.768Z",
+  "readyForAcceptanceTest": false,
+  "decompilationVerified": false,
+  "persistenceVerified": false,
+  "targetExecuted": false,
+  "checks": [
+    {
+      "name": "node",
+      "ok": true,
+      "detail": "24.22.1"
+    },
+    {
+      "name": "process-table",
+      "ok": true,
+      "detail": {
+        "reason": "diagnostic-only-not-rea-supervision-proof",
+        "status": 0,
+        "error": null,
+        "stderr": ""
+      }
+    },
+    {
+      "name": "java",
+      "ok": true,
+      "detail": {
+        "status": 0,
+        "error": null,
+        "version": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)\n"
+      }
+    },
+    {
+      "name": "javac",
+      "ok": false,
+      "detail": {
+        "status": null,
+        "error": "ENOENT",
+        "version": ""
+      }
+    },
+    {
+      "name": "cc",
+      "ok": true,
+      "detail": {
+        "status": 0,
+        "error": null,
+        "version": "cc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+      }
+    },
+    {
+      "name": "objdump",
+      "ok": true,
+      "detail": {
+        "status": 0,
+        "error": null,
+        "version": "GNU objdump (GNU Binutils for Debian) 2.44\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n"
+      }
+    },
+    {
+      "name": "ghidra-configured",
+      "ok": false,
+      "detail": "Installation/path check only; REA doctor validates version, JDK and native engine."
+    },
+    {
+      "name": "rea-version",
+      "ok": true,
+      "detail": {
+        "status": 0,
+        "error": null,
+        "version": "6.8.0"
+      }
+    },
+    {
+      "name": "rea-supervised-objdump",
+      "ok": true,
+      "detail": {
+        "status": 0,
+        "error": null,
+        "diagnostic": ""
+      }
+    }
+  ]
+}

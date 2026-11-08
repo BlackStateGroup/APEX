@@ -1,0 +1,37 @@
+✔ canonical synthetic BTHome example carries service data but no UUID-list entry (4.916951ms)
+✔ separate explicit-list synthetic fixture is 30 AD bytes with unchanged 25°C / 50.55% payload (2.301894ms)
+✔ 16/32/128-bit lists and requested UUID forms normalize independently of service data (1.990319ms)
+✔ FEAA list and data are distinct; duplicate valid lists remain membership facts (0.491403ms)
+✔ service solicitation and lookalike unknown/name fields do not count as UUID lists (0.559477ms)
+✔ incomplete lists permit positive membership but not negative conclusions (0.638129ms)
+✔ malformed, unparsed, over-limit and unavailable sources cannot assess (0.820524ms)
+✔ iOS normalized fields never imply Android AD bytes or CoreBluetooth matching (0.664105ms)
+✔ presentation scopes absence and explicitly disclaims capture, reception, identity and OS support (0.447423ms)
+✔ initial and edited documents cannot save before successful interpretation (3.026752ms)
+✔ demo fixture is identical to documented decoder test data (0.200728ms)
+✔ edits immediately invalidate both visible results and save input (0.712126ms)
+✔ import provenance is derived from envelope, not the control used to load it (1.087972ms)
+✔ failed reparse never leaves a successful result saveable (1.274888ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.491855ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.517505ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.26512ms)
+✔ failed save retains interpreted source for explicit retry (0.418904ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (4.605961ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-BLE records (1.396114ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (0.627259ms)
+✔ iOS workflow retains normalized fields, and encrypted BTHome stays opaque through save/reopen (1.295434ms)
+✔ selected Android and iOS sources explicitly save exact whitespace then freshly reopen (4.861145ms)
+✔ missing Android raw bytes remain saveable selected source without invented interpretation (0.833856ms)
+✔ selected-source controls never relabel imported provenance, and mode changes invalidate findings (0.602241ms)
+✔ selected-source rejects malformed, oversize, incorrect representation and envelope inputs without truncation (0.762706ms)
+✔ selected-source double taps, mode edits during save and late completion never restore stale source (0.603988ms)
+✔ selected-source asynchronous verification snapshots input and rejects failing verifier (1.408556ms)
+✔ reopen success wording distinguishes actual interpretation from unavailable raw bytes (0.591776ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 189.253243

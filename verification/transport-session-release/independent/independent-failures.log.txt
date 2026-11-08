@@ -1,0 +1,48 @@
+✖ preconnected transport remains held when listener setup throws and cleanup rejects (2.303911ms)
+✖ close must not confirm release before deferred connect can acquire transport (0.653723ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (0.426226ms)
+✔ explicit close of preconnected new session releases exactly once (1.20945ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 146.377939
+
+✖ failing tests:
+
+test at tests/session-review.test.ts:7:1
+✖ preconnected transport remains held when listener setup throws and cleanup rejects (2.303911ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:13:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session-review.test.ts:17:1
+✖ close must not confirm release before deferred connect can acquire transport (0.653723ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:23:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

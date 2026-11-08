@@ -1,0 +1,5 @@
+Independent read-only review of fix/nfc-lifecycle ba1bef2 after final pending-unregister correction found no blocking issue within the documented boundary.
+
+Confirmed operation ownership survives SessionClosed while register/unregister remains pending; repeated Stop shares the same promise; failed cleanup remains retryable; old callbacks do not clear replacement listeners; App cancellation bypasses Start's lock without unlocking other operations. Installed iOS source resets session state, invokes its invalidation callback, then emits SessionClosed, supporting the wait-for-settlement-and-event requirement.
+
+Independent focused tests: 28/28 passed. Direct TypeScript and diff checks passed. Source inspection and synthetic mocks only; no browser, React UI, bridge delivery, native build, phone or physical tag verification. No aggregate retry, npm invocation, network, dependency installation or remote action in this review.

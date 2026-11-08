@@ -1,0 +1,17 @@
+✔ independent close at permission prevents subsequent acquisition effects (31.046065ms)
+✔ independent close at readiness prevents subsequent acquisition effects (5.216058ms)
+✔ independent close at connect prevents subsequent acquisition effects (5.208735ms)
+✔ independent close at discover prevents subsequent acquisition effects (4.946453ms)
+✔ independent close at mtu prevents subsequent acquisition effects (6.643478ms)
+✔ independent close at characteristics prevents subsequent acquisition effects (5.715159ms)
+✔ independent failed native cancellation retains unknown ownership and original errors (4.68675ms)
+✔ independent immediate close before dispatch issues no driver effect and releases (0.210616ms)
+✔ independent issued optional-signal-ignoring driver retains exact late handle through failed cleanup (0.855364ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.549681

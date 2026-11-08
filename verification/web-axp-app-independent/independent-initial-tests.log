@@ -1,0 +1,17 @@
+✔ independent: acquisition filters and observer order, frozen deep snapshot, selected cancel no GATT (3.124556ms)
+✔ independent: every gate applies to connect, held simulator is not closed or replaced (2.9473ms)
+✔ independent: cancelled raw picker rejects immediately, blocks replacement, late reject never acquires (3.734004ms)
+✔ independent: reentrant cancel on exact reservation cannot acquire and joins cleanup identity (3.307704ms)
+✔ independent: cancel fences before exact session.close even with operation lock and pending open (27.253718ms)
+✔ independent: pending write is locally cancelled; late raw effect cannot free poison or reach replacement (29.278064ms)
+✔ independent: failed disconnect survives view detach and requires explicit retry (1.144492ms)
+✔ independent: cancellation completion publication may select new work without old finally clearing it (1.250747ms)
+✔ independent: production source routes real App handlers through live owner and exact cleanup (0.930798ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 334.226559

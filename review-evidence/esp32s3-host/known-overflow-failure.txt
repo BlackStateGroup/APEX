@@ -1,0 +1,6 @@
+FAIL tests/esp32-host/harness.c:61: !subscribed
+PASS subscription readiness and foreign subscription
+PASS owner, operation, zero/oversize and flatten rejection
+PASS partial frame and real parser response
+PASS maximum frame fragmentation at MTU 23 and 517
+PASS four coalesced requests FIFO

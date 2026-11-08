@@ -1,0 +1,2 @@
+TSX syntax emission passed with --noCheck --noResolve. This is not a semantic typecheck or runtime test.
+Playwright scenario JavaScript syntax passed; browser scenarios not executed.

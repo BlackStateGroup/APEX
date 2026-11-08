@@ -1,0 +1,24 @@
+Listing tests:
+  ui.smoke.spec.mjs:14:1 › console, equipment, offline workbench and research work in a real browser
+  ui.smoke.spec.mjs:44:1 › console is usable at a phone viewport without horizontal overflow
+  ui.smoke.spec.mjs:51:2 › saved evidence survives reload and source catalogue searches copied projects
+  ui.smoke.spec.mjs:68:1 › REA sample and imported reports retain provenance in saved evidence
+  ui.smoke.spec.mjs:86:1 › offline BLE keeps synthetic provenance, invalidates edits, and reopens verified evidence
+  ui.smoke.spec.mjs:127:1 › offline BLE rejects malformed input and refuses to reinterpret tampered evidence
+  ui.smoke.spec.mjs:152:1 › pending BLE save and verification cannot overwrite edits or a newer tab visit
+  ui.smoke.spec.mjs:191:1 › offline BLE decoded output fits a phone viewport
+  ui.smoke.spec.mjs:210:3 › recorded-import android-scan-record retains source claims across save and reopen
+  ui.smoke.spec.mjs:210:3 › recorded-import ios-advertisement-fields retains source claims across save and reopen
+  ui.smoke.spec.mjs:245:3 › selected-source android preserves exact text and explicitly reopens
+  ui.smoke.spec.mjs:245:3 › selected-source ios preserves exact text and explicitly reopens
+  ui.smoke.spec.mjs:275:1 › NDEF preview, interpretation, inert URI and explicit journal reopen
+  ui.smoke.spec.mjs:295:1 › NDEF edits and complete oversized imports invalidate save without truncation
+  ui.smoke.spec.mjs:315:1 › foreground observation stays native-only and discloses limits on a phone viewport
+  ui.smoke.spec.mjs:334:44 › phone NDEF Android: separate drafts, inert values, explicit save and verified reopen
+  ui.smoke.spec.mjs:334:44 › phone NDEF iOS: separate drafts, inert values, explicit save and verified reopen
+  ui.smoke.spec.mjs:358:1 › phone NDEF platform edits and oversized source invalidate saving without changing wire draft
+  ui.smoke.spec.mjs:376:1 › BLE trials require explicit analysis, separate sources, invalidate on edits and retain draft across tabs
+  ui.smoke.spec.mjs:403:1 › BLE trial offset pages stay bounded, absent differs from zero and phone layout remains usable
+  ui.smoke.spec.mjs:427:1 › BLE candidate explicit checks retain drafts across tabs and clear stale results
+  ui.smoke.spec.mjs:453:1 › BLE candidate source pages stay bounded and imported labels are inert on phone viewport
+Total: 22 tests in 1 file

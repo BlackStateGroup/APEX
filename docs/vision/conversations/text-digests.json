@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "a10df91a-e5a8-43ee-9745-3d8992bc2988",
+      "role": "user",
+      "sha256Utf8": "5dcdfc64c2f246a3e1239c375327b3c3a4878ce9f920723e2b8b3f22e90fb6a8",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "28e92e5c-bdb1-4bed-959b-92bce0270841",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "36b0beb2-a3bd-4240-ba97-ff497b7d09ad",
+      "role": "user",
+      "sha256Utf8": "be3f408abac51733f9a544dea271db2a55646fe459a430405fb7560a664d8b6c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "0400b22e-f5a7-4be5-a743-2c89d91f2723",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "05304386-4ad3-4cb3-b453-05c587110b18",
+      "role": "user",
+      "sha256Utf8": "42f593dd742832c769add27424b5c0cdbc4d0709746de63c3b063c3ff0d6daf8",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ec92403b-c6a0-45f2-ba85-8ddbc9cbe473",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "3a3e759d-3827-4fb1-9a10-d4776efa4a97",
+      "role": "user",
+      "sha256Utf8": "29f66bf7729812f99e1304a7642de806a256fe3cc2618f9eeb2f0212940f1f8a",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ee2d070e-d230-4fe0-b932-4d43982fd754",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "5afdd75c-8ec0-4bab-811f-430798bc2b40",
+      "role": "user",
+      "sha256Utf8": "aa7ffed21022628a09755a8e8b2f653c58812fcc6de5a772d6a3e27fd85be203",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "6d260e97-6d24-4759-9873-616abd78914f",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "af55a4b4-90c6-46d6-945a-3a54e10a9f01",
+      "role": "user",
+      "sha256Utf8": "b00def327e761c4bf6df88054a14b7ddbe3c1961e0500ce274ded47880b550bd",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "730d3fa3-ae5b-493d-9bb5-b74c94f7a90c",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ba950175-f2f4-4daf-80dc-caa876f5c209",
+      "role": "user",
+      "sha256Utf8": "b2acd5ab8d2c08f1d80eb72ff9ec302098e5aadd34af4f1b1f65d3832d08ebfd",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "a561176c-b99f-444f-b4c6-ac8f7f66cf1e",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "2320e673-938f-4440-9485-208cc902dbb6",
+      "role": "user",
+      "sha256Utf8": "6914375a92a54b5c2a8e233162ed993bda38ff7e07e7c9f29441f4d5e03eab0c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "b19d7949-9be5-4e41-8315-9813e488fced",
+      "role": "assistant",
+      "sha256Utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentOmitted": true
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "role": "user",
+      "sha256Utf8": "9761e5487054f9fa764d52e9a255474c627d12f3b1d633a7dfa316b38d143afb",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "cb44171d-8e54-44b4-81c1-ca182510110b",
+      "role": "user",
+      "sha256Utf8": "d41105017c2e14dedeaaf7463c5807578a04884344eea9a90454b74a49364d27",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "788102ff-203c-50d8-acee-892fb578315c",
+      "role": "assistant",
+      "sha256Utf8": "331432cfc70e21c6150697ea81ccd6d4abcf58e13d2ee3160fb19c6e42d2ca86",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "a4ec6347-61c7-4a26-a72f-e5186e4e2afa",
+      "role": "user",
+      "sha256Utf8": "c5241f49edd9628f38697e94a90e504a13279e5f680d56f9226baabe069816f4",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "d9d02f47-c4a6-5db0-85ff-e66a421b455f",
+      "role": "assistant",
+      "sha256Utf8": "bb528b47531bd6aab3493136ab1bde4ae5232f2fcebd290b7193338c9664cf68",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "1628e7bf-5742-4b72-9d4a-86580c8882f3",
+      "role": "user",
+      "sha256Utf8": "9e6553b4736944356dc7768b81510cbac7e478939845986e8714138fba443997",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "524f5c48-2209-542c-9f45-5cfc4edf2fe5",
+      "role": "assistant",
+      "sha256Utf8": "89605b577b3c77d2e47e468502b6e02ff2bf523b682ef00a13bd4e00f735a6d3",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ada53bce-8282-4014-9d52-c8e5dec48339",
+      "role": "user",
+      "sha256Utf8": "8743feb803352cd38e2bbcab673c6cd3c85e90f91214b99cecf93060868bab53",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "7f52304e-429b-418f-9b85-5314a202db32",
+      "role": "user",
+      "sha256Utf8": "dc9593f26a5f07aa7f8e031ba22b37f30230806fa36473417f27e04722a5798b",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "643af32f-4d9a-553f-a68f-0bbd50a6ba6d",
+      "role": "assistant",
+      "sha256Utf8": "9104f8d5f5d6e739e13b50ac843260085e6c1e20984dd750f1dff489ce7500bd",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "829906c8-c629-4404-b872-fef41035142c",
+      "role": "user",
+      "sha256Utf8": "e95bc0d0da666e9cfa1fd895ca812c8e5c6112dafe422570c120acc52fdf0a4a",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "6530c22c-8045-52e8-886d-29ce177194c2",
+      "role": "assistant",
+      "sha256Utf8": "deaa01b211b17d36649ace11093c7326f964c286c9e2c4d36ef6cc077232d700",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "7f239b0f-6389-441c-a5d4-45a406f99354",
+      "role": "user",
+      "sha256Utf8": "a3f31fc92310da58f6b64218fd948c6f276d132e118873a36c1854f6232e8000",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "cc5e538f-b680-552f-82c7-84a243c9aa15",
+      "role": "assistant",
+      "sha256Utf8": "737c874fb4f0bdc57dbb4cecf65ecb004aaa53e79fda5cf5d1f50a783d3f1ab1",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "686225c7-5b40-4a66-ad6c-0a326c380b8b",
+      "role": "user",
+      "sha256Utf8": "e9cdfe60cfc03f4042faa3b27764674cf0522e6a876b6a6369fcb587671e74e2",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "8eb0dc9e-27f7-50ec-a285-17de810a8ef9",
+      "role": "assistant",
+      "sha256Utf8": "20972aabdafb83dd818d88f086ae550bda28260239847bc5b3a2f779b9276658",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "093d5cef-4869-454d-9f98-25023f024f3c",
+      "role": "user",
+      "sha256Utf8": "1651e9541ef078c06b22bac239e2a02116cf69ee2e3fb88667e58437af8a3727",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "afe1d6cb-cd5c-5f20-83f1-c9360f7524e4",
+      "role": "assistant",
+      "sha256Utf8": "c7973d9c4b54e12acb91713aceedf4a459fee6a5eae900784e2a7a3af6a5d7fc",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "81a0b723-1b7e-4544-8e86-86b53af85fcc",
+      "role": "user",
+      "sha256Utf8": "b975cc92070fa91f38de78d8e5ab99fecfb2dbd26803a7899c1be454e9d3879c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "2945ac66-0d9f-5f6b-aa21-3e76f8c09352",
+      "role": "assistant",
+      "sha256Utf8": "d1b57ea122a727954e5fa35fbf9976b354c7dac086ec2ce389ab1002c7f5d626",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "4cebce47-8343-40d1-9e40-d87849b01ffa",
+      "role": "user",
+      "sha256Utf8": "b8bfbccc9718c28b82fc6a6ba3e3062e3291e87416f63b47aa12e1998048e5e3",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "875655f4-a75e-5175-8ca7-7fd91077060a",
+      "role": "assistant",
+      "sha256Utf8": "63d734cc928dadb7b906251b2317e924d7b1e08d96be4fbdbc8cd7b5506783f9",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ff8c312c-ebc9-46c4-936e-67ddabbfb891",
+      "role": "user",
+      "sha256Utf8": "35a0054d29d23d626f3bcc1f88ac7f5285f0d71887ed4afeb06b8844b7cdd625",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "63ec00b6-e49a-53c6-b632-7c5e76c160a3",
+      "role": "assistant",
+      "sha256Utf8": "c16926756638a5d991b422bf957a932cc2a4ae7c1a85fb94aca4e7ebec908c7e",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "099a49e2-3e2b-40fe-b827-f70abec40042",
+      "role": "user",
+      "sha256Utf8": "0b82586046d8b203bf878e48b8d825708f28ba53431d8b5b98530e944f4e476c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "6d1ff3e1-b7d9-5c3d-93df-c6709e70f93b",
+      "role": "assistant",
+      "sha256Utf8": "a90831ba631b12baf7b87c333d58cec8e0334e0db1a887cfa6ffde2823b5df6c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "4968d9df-dbb9-48e4-9f05-53fb545c97f4",
+      "role": "user",
+      "sha256Utf8": "4289bbc7c5626ead52ef8c8bd3ddd5b1afdbaee5d08b0ceaeb37d24a7dd64e34",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "e2523cde-0b6d-5e1e-a91d-6dfc97d2f190",
+      "role": "assistant",
+      "sha256Utf8": "8dce556c6fb2b1b42d5212ba096b79b19a3478aebde8f484f6c9ef732682b2c8",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ea67f216-8a7f-416b-91c2-eb78398efacd",
+      "role": "user",
+      "sha256Utf8": "7d7105506dd8e2ff2d17eafca1a7c49f1617919669efa05693e8af26cf69a7ba",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "f21c717d-d2d1-5ab0-9839-694496a9609b",
+      "role": "assistant",
+      "sha256Utf8": "1a6ac1f1c10234233da6ea383073017709b855d199128c841d7f79090dc05966",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "bef602f1-1944-4248-aee7-2e48cd13bc05",
+      "role": "user",
+      "sha256Utf8": "c4f6e46d8f4c743cde84811255ed4a8b80225f4ef19d93e251de5d3241353e8b",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "ba5ac29a-816b-5c6a-ab1c-9e0e6edb620f",
+      "role": "assistant",
+      "sha256Utf8": "7b1239995abdc599c073602e3516930bc38851966b04f5f8cfbe656be806c251",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "dd9090be-d9c7-44be-b5a7-d0b9ec79ce98",
+      "role": "user",
+      "sha256Utf8": "80d61cc0a150508f3dc6d3a0d552fc07079e6afa5b798dfe891f266330b55f3c",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "836c95e7-1be8-5ebd-b9b0-6764e7e8d20d",
+      "role": "assistant",
+      "sha256Utf8": "dbcb28eafa8952c5773b4f1b4841946bd733b250844bf11f0b63ad29bac2dc01",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "f8883a9c-6219-4887-a4bc-f809f175cf19",
+      "role": "user",
+      "sha256Utf8": "0c7f75af8e7123c52a11754fa8e12de553a3be1abf74a9864095c43642fd58ce",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/recovered-messages.json",
+      "messageId": "7ab6db2e-fd14-51e5-a6bc-fece0710fee6",
+      "role": "assistant",
+      "sha256Utf8": "93ff50962f980212bf2b27ac5bb04a00b4c4753e2347b18f06ef38e63be32b27",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/current-direction.json",
+      "messageId": "CURRENT-01",
+      "role": "user",
+      "sha256Utf8": "63218dcc94c0119ac2736736b2a63bd66fd4b501055cf1f1f49d09ee43bbf3c0",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/current-direction.json",
+      "messageId": "CURRENT-02",
+      "role": "user",
+      "sha256Utf8": "c947fac9b4ff3e842828a177b2335d3925c44dbee1731dbbc1f00de6f9956865",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/current-direction.json",
+      "messageId": "CURRENT-03",
+      "role": "user",
+      "sha256Utf8": "90968d055dfe4054203fe3de37eb7e8e61cb04679b905db0d9029e1a261ceec3",
+      "contentOmitted": false
+    },
+    {
+      "sourceFile": "conversations/current-direction.json",
+      "messageId": "CURRENT-04",
+      "role": "user",
+      "sha256Utf8": "e28a2ad3e94292a6f4985e90c27d03df94f45a8706d53b243b508e98d1061380",
+      "contentOmitted": false
+    }
+  ]
+}

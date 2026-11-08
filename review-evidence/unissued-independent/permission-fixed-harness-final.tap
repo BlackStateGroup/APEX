@@ -1,0 +1,23 @@
+✔ installed PLX normal deny releases and permits fresh real-facade connection (33.344821ms)
+✔ installed PLX normal never-ask releases and permits fresh real-facade connection (8.508395ms)
+✔ installed PLX normal cancel releases and permits fresh real-facade connection (8.370717ms)
+✔ malformed permission missing must never certify (4.132719ms)
+✔ malformed permission unknown must never certify (4.756304ms)
+✔ malformed permission partial must never certify (4.108794ms)
+✔ malformed permission inherited must never certify (4.973618ms)
+✔ malformed permission accessor must never certify (4.098585ms)
+✔ malformed permission later-getter must never certify (4.987617ms)
+✔ malformed permission array must never certify (5.478056ms)
+✔ unexpected permission rejection keeps exact identity and transport hold (5.348755ms)
+✔ duplicate token cannot restore first pending receipt through late continuation (4.258452ms)
+✔ installed PLX construction rejection cannot certify (6.02299ms)
+✔ installed PLX readiness rejection cannot certify (6.794147ms)
+✔ installed PLX issued rejection cannot certify (8.761031ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 249.669086

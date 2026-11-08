@@ -1,0 +1,16 @@
+✔ independent bridge fails closed: EOF during command (64.679834ms)
+✔ independent bridge fails closed: abnormal child exit (59.04092ms)
+✔ independent bridge fails closed: unterminated oversized stdout (58.537921ms)
+✔ independent bridge fails closed: malformed control response (59.034422ms)
+✔ independent bridge fails closed: notification width overflow (57.915107ms)
+✔ independent bridge fails closed: bounded stderr (64.136703ms)
+✔ independent bridge bounds command bytes before writing (59.048716ms)
+✔ independent bridge times out unresponsive owned child and waits for close (2005.876928ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2566.26798

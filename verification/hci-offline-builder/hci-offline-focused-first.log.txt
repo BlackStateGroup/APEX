@@ -1,0 +1,35 @@
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.739508ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (5.222032ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (17.089374ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.696034ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (4.156239ms)
+✖ intrinsic snapshots, own context, brand and async mutation resistance (1.605114ms)
+✔ explicit bounded pagination, no silent truncation and output cap (6.848821ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (527.093603ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 752.527504
+
+✖ failing tests:
+
+test at tests/hci-offline.test.ts:74:1
+✖ intrinsic snapshots, own context, brand and async mutation resistance (1.605114ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  58 !== 57
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-offline/tests/hci-offline.test.ts:85:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 58,
+    expected: 57,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

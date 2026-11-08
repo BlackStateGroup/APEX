@@ -1,0 +1,26 @@
+✖ independent actual TSX stages TF controls and exposes complete bounded navigation (28.230658ms)
+✔ independent actual owner TF callbacks fence stale events after edit, Clear and background (9.686068ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.838651
+
+✖ failing tests:
+
+test at tests/iq-time-frequency-render-independent.test.ts:69:1
+✖ independent actual TSX stages TF controls and exposes complete bounded navigation (28.230658ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation-review/src/IqWorkbench.tsx:277:94)
+      at Object.react_stack_bottom_frame (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10371:18)
+      at renderWithHooks (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5361:19)
+      at renderElement (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5796:23)
+      at retryNode (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:6772:31)
+      at performWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:7919:19)
+      at startWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8807:7)
+      at renderToStringImpl (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8933:7)
+      at process.env.NODE_ENV.exports.renderToStaticMarkup (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10426:14)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation-review/tests/iq-time-frequency-render-independent.test.ts:69:515)

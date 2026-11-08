@@ -1,0 +1,24 @@
+✔ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (9.57958ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (2.130108ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (1.904356ms)
+✔ bounded actual bytes, lines, names, record and timing counts (60.290778ms)
+✔ raw numerical limits and finite strict fractions (2.655807ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (1.862692ms)
+✔ CLI executes with filesystem writes denied and stdout atomic; regular-file bounds (708.621772ms)
+✔ string adapter parity, exact CRLF bytes, immutable argument, input/context async mutation (10.118139ms)
+✔ adapter malformed results/rejections never produce a report or alter strict parsing (2.702274ms)
+✔ state and nested report are frozen and inaccessible to alias corruption; declaration is explicit (3.911809ms)
+✔ whole edit bounds preserve exact source; rejected edit remains blocked across declarations/tabs (45.000373ms)
+✔ success and error completions are fenced by edits, rejected edits, declarations, clear, example and tab transitions (1.86669ms)
+✔ new inspection survives old completion and duplicate pending inspection is ignored (0.507638ms)
+✔ queued callbacks from prior activation cannot edit, clear, declare, load, page or inspect after reentry (0.77835ms)
+✔ bounded four-record pages; original long names/duty survive display excerpts and numeric summaries (3.969729ms)
+✔ malformed and unsupported sources rejected whole without partial records (1.417208ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 923.638675

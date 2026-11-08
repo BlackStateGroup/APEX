@@ -1,0 +1,16 @@
+✔ independent native adapter mock uses bytes, preserves exact snapshot and fails closed without fallback (9.572603ms)
+✔ independent saved HCI actual TSX hides document before explicit reopen and renders read-only inert bounded summaries (21.236021ms)
+✔ independent save keeps detached snapshot and one pending lock across every invalidation (18.198904ms)
+✔ independent saves require current full verification and preserve successful insert on refresh failure (1.471182ms)
+✔ independent reopen snapshots before outer and inner awaits, and fences replacement/exit (12.304744ms)
+✔ independent forged boolean verifier cannot bypass stale binary digest or malformed legacy framing (1.527638ms)
+✔ independent bundle requires byte capability, preserves exact documents and fences delayed completion (11.320292ms)
+✔ independent reopen rejects missing byte capability and wrong source even with permissive outer verifier (1.659293ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 467.730147

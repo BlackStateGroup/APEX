@@ -1,0 +1,31 @@
+✔ prebuild hides corpus, restores exact bytes, and prebuild-only skips run (184.721051ms)
+✔ normal native run sees restored corpus (192.211895ms)
+✔ prebuild failure restores corpus and skips run (131.726238ms)
+✔ missing CLI failure restores corpus (139.064188ms)
+✔ missing optional corpus still builds (161.89906ms)
+✔ existing restore destination and original failure both survive (224.287208ms)
+✔ concurrent wrapper refuses before invoking CLI (1178.479504ms)
+✔ SIGTERM restores before exit (142.695118ms)
+✔ SIGINT restores before exit (163.012354ms)
+✔ SIGHUP restores before exit (162.405327ms)
+✔ invalid platform cannot move sources (67.844457ms)
+✔ stale lock is never automatically removed (65.17488ms)
+✔ signal-ignoring child is killed after bounded grace period (5149.034547ms)
+✔ SIGKILL leaves a recoverable corpus and blocks another build (500.932592ms)
+✔ leader exit 0 cannot restore ahead of a live descendant (6230.441813ms)
+✔ leader exit 23 cannot restore ahead of a live descendant (6225.319368ms)
+✔ interruption after leader exit retains protection until its descendant is gone (5343.247661ms)
+✔ unexpected lock contents preserve ownership and are never deleted (177.756118ms)
+✔ late interrupt permits escalation before ending group observation (8470.586138ms)
+✔ only ESRCH proves tracked group absence (1.762545ms)
+✔ group probe waits through present group and fails closed on timeout (0.377998ms)
+✔ group probe can verify eventual disappearance (0.254963ms)
+✔ a fixed late-interrupt deadline extends observation only once (0.37123ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 35063.807248

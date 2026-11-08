@@ -1,0 +1,57 @@
+✔ failed setup retains exact connection for explicit cleanup retry (1.947651ms)
+✔ concurrent disconnects coalesce and rejected cleanup can be retried (5.403828ms)
+✔ invalid MTU retains cleanup handle when native disconnect rejects (0.634822ms)
+✖ close during pending acquisition waits then releases returned exact handle (1.901802ms)
+✖ cancelled acquisition retains returned handle after failed native cleanup (0.977579ms)
+✔ rejected acquisition without handle remains explicitly unknown (0.643278ms)
+✔ disconnect waits late subscription and ignores late READY, data and terminal events (3.408694ms)
+✔ readiness timeout does not release while native subscribe remains pending (34.957409ms)
+✔ write timeout rejects caller promptly but cleanup waits raw native write settlement (32.144327ms)
+✔ terminal event during native write does not certify release or start queued writes (1.052357ms)
+✔ disconnect before connect has no native effects and forbids reuse (0.311932ms)
+✔ throwing unsubscribe retains subscription and native handle for explicit retry (0.355774ms)
+✔ late rejected subscribe still drains before exact handle disconnect (0.961659ms)
+✔ automatic cleanup reuses failed setup release until explicit retry (0.499018ms)
+✔ single chunk native write settling after cancellation cannot fulfill caller (0.816788ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 13
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 210.431102
+
+✖ failing tests:
+
+test at tests/ble-transport-release.test.ts:38:1
+✖ close during pending acquisition waits then releases returned exact handle (1.901802ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-c-session/tests/ble-transport-release.test.ts:44:24)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-transport-release.test.ts:48:1
+✖ cancelled acquisition retains returned handle after failed native cleanup (0.977579ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async Promise.all (index 1)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-c-session/tests/ble-transport-release.test.ts:54:31)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /native cancel failed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

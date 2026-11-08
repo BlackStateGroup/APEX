@@ -1,0 +1,46 @@
+{
+  "baseCommit": "fa8e934363bfb39554f104d25ac6a19c502ebb83",
+  "candidateCommit": "87e2e4557b18cc444fe13d4446298317d821fd97",
+  "files": {
+    "packages/core/mayhem-c8-import.ts": "90277865cbc9672979bf8bdb0506ffa1f70e21e2ec490d749a9a6a1489c1f469",
+    "tools/inspect-mayhem-c8.ts": "b190fb35cd3f8674b086517e622f4d9f0c82cc998eca5526884753007b71d996",
+    "tests/mayhem-c8-import.test.ts": "71bf7ddf6e92a63b0f749c4268b0c6f0211fbd2262cea8080c944bfe4ccb252b",
+    "tests/mayhem-c8-cli.test.ts": "050eb7a54f5cec5a69763a8f23c5f6129cb6c41a9924389285fc8086fd74e273",
+    "docs/MAYHEM_C8_PROTOTYPE.md": "ec76b49f78e21518426e482fba4a3e9da3dfbe007cf05cb14ad2cf3dfff05520"
+  },
+  "unchangedIntegrationFiles": {
+    "packages/core/iq-offline.ts": {
+      "sha256": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+      "unchangedFromBase": true
+    },
+    "packages/core/iq-analysis.ts": {
+      "sha256": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+      "unchangedFromBase": true
+    },
+    "tools/inspect-iq.ts": {
+      "sha256": "5e63dd514a334a082d8f00081b3ae00169af821a9c59225ef530532a043605cd",
+      "unchangedFromBase": true
+    },
+    "src/iq-workbench.ts": {
+      "sha256": "fbddbeb63e401349415d1a408ee5eba177b0f34368683e183532c6a1cba2b290",
+      "unchangedFromBase": true
+    },
+    "package.json": {
+      "sha256": "4c39f2cae0ecefa617fb32d510c7d0f089626a2e3fae426d5955d4aefd5bb018",
+      "unchangedFromBase": true
+    },
+    "package-lock.json": {
+      "sha256": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+      "unchangedFromBase": true
+    }
+  },
+  "formatReference": {
+    "url": "https://github.com/RocketGod-git/mayhem-mobile/blob/a18fca46f58519fc81e19304fc13bbf3da2aa69f/web/src/dsp/capture.ts",
+    "sourceSha256": "0df79d41bc15d307c10694ea4a8526ebf437a80069899dd282fbe6a647b18065",
+    "use": "Inspected format facts only; no source or tests copied; no execution"
+  },
+  "sourceCodeAndDependenciesImportedFromMayhem": false,
+  "hardwareAccessed": false,
+  "nativeRuntimeExecuted": false,
+  "realCaptureTested": false
+}

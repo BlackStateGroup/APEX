@@ -1,0 +1,136 @@
+✖ one-shot clear during example keeps latest source transaction coherent (2.173888ms)
+✖ one-shot exit during example keeps latest source transaction coherent (0.305306ms)
+✖ one-shot replace during example keeps latest source transaction coherent (1.023634ms)
+✖ one-shot clear during stage keeps latest source transaction coherent (0.782606ms)
+✖ one-shot exit during stage keeps latest source transaction coherent (0.338292ms)
+✖ one-shot replace during stage keeps latest source transaction coherent (0.21918ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.053293
+
+✖ failing tests:
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot clear during example keeps latest source transaction coherent (2.173888ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'label')
+      at IqController.example (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:83:51)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:11:29)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot exit during example keeps latest source transaction coherent (0.305306ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'label')
+      at IqController.example (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:83:51)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:11:29)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot replace during example keeps latest source transaction coherent (1.023634ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'synthetic-fixture'
+  - 'external-file'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:13:130)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'synthetic-fixture',
+    expected: 'external-file',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot clear during stage keeps latest source transaction coherent (0.782606ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   name: 'outer-metadata',
+  +   size: 168
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:14:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { name: 'outer-metadata', size: 168 },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot exit during stage keeps latest source transaction coherent (0.338292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   name: 'outer-metadata',
+  +   size: 168
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:14:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { name: 'outer-metadata', size: 168 },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/iq-app-staging-observer-independent.test.ts:7:111
+✖ one-shot replace during stage keeps latest source transaction coherent (0.21918ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'outer-metadata'
+  - 'new-metadata'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-staging-observer-independent.test.ts:13:34)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'outer-metadata',
+    expected: 'new-metadata',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

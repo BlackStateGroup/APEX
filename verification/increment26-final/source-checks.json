@@ -1,0 +1,30 @@
+{
+  "sourceRevision": "c14cbc13d5f7480cc6e4b530099a58bcb2e726b1",
+  "sha256": {
+    "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+    "node_modules/react-native-ble-plx/ios/BlePlx.m": "6ad0e48dd16c6587c279d81d06eb5553c0c9e135df4c653a91c8d8abf9990207",
+    "modules/apex-device/android/src/main/java/expo/modules/apexdevice/ApexDeviceModule.kt": "53887adec7cac4bf3be4e06c76aaddab20005546f4d569e2583995223eef7d30"
+  },
+  "originalGitBlobs": {
+    "research/source-imports.json": {
+      "current": "17858005967cd5dd7cc9c8812c49875e893cb247",
+      "original": "17858005967cd5dd7cc9c8812c49875e893cb247",
+      "unchanged": true
+    },
+    "research/upstreams.json": {
+      "current": "04f1751d2513270a76858d1d17dc2bf1ec6ac7c2",
+      "original": "04f1751d2513270a76858d1d17dc2bf1ec6ac7c2",
+      "unchanged": true
+    },
+    "research/source-additions.json": {
+      "current": "376b575642bab2210415e294a350e8d3dc377ca4",
+      "original": "376b575642bab2210415e294a350e8d3dc377ca4",
+      "unchanged": true
+    },
+    "modules/apex-device/android/src/main/java/expo/modules/apexdevice/ApexDeviceModule.kt": {
+      "current": "ca7012a2b14ae0b7531548650c7c290218a32c81",
+      "original": "ca7012a2b14ae0b7531548650c7c290218a32c81",
+      "unchanged": true
+    }
+  }
+}

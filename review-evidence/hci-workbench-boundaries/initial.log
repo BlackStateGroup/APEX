@@ -1,0 +1,14 @@
+✔ independent: whole rejection matrix preserves exact previous input and fence across declaration/tab changes (7.568971ms)
+✔ independent: overlapping generations cannot overwrite a newer successful inspection, including old error (1.818917ms)
+✔ independent: invalid hash outcomes never publish metadata and recover explicitly (1.157175ms)
+✔ independent: same-source failed selection atomically removes an earlier valid selected event; snapshots deeply immutable (1.457426ms)
+✔ independent: old activation lease invalidates all controls while rejected draft survives tab leave (0.348533ms)
+✔ independent: actual native adapter with narrow expo digest mock and web digest agree with Node on non-ASCII subviews (7.890995ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.642549

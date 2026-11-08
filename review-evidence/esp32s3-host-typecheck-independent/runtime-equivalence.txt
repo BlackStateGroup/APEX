@@ -1,0 +1,1 @@
+Only source change is as const. Node-erased runtime source is identical after removing the erased assertion whitespace before the closing parenthesis. Both exact flag/assertion pairs unchanged.

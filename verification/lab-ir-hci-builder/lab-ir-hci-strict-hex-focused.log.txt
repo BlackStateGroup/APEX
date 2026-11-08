@@ -1,0 +1,17 @@
+✔ independent oracle covers the complete original metadata, not just digest shape (173.257285ms)
+✔ post-analysis serialization exception and size assertion leave stdout empty (453.007922ms)
+✔ walkthrough completes with common network entry points trapped and filesystem writes denied (227.947123ms)
+✔ actual CLI IR exact ASCII bytes and independent whole-frame integer oracle (220.094437ms)
+✔ actual CLI HCI independent byte offsets, signed integers, hash parity and privacy (203.868052ms)
+✔ late IR and HCI fixture faults produce no stdout with filesystem writes denied (412.602645ms)
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (432.747328ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (655.959023ms)
+✔ late phase arithmetic and Flipper presence/status faults keep stdout atomic with writes denied (334.434061ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1604.522147

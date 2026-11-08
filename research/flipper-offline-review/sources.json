@@ -1,0 +1,68 @@
+{
+  "retrievedAt": "2026-11-08",
+  "scope": "Read-only interface research; no source code vendoring, generated bindings, or device operations.",
+  "schemaPin": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+  "firmwarePin": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+  "sources": [
+    {
+      "path": "docs/FLIPPER_RPC_INTAKE.md",
+      "gitBlobSha": "7a9dfa1be448110186dacfc2cb9207576dff3d23",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/FLIPPER_RPC_INTAKE.md"
+    },
+    {
+      "path": "research/flipper-rpc-intake.json",
+      "gitBlobSha": "248b1b5f8440b67b9c90ec05e23bac8b3ce37ebb",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/research/flipper-rpc-intake.json"
+    },
+    {
+      "path": "flipper.proto",
+      "gitBlobSha": "2ba75dadce34aebe41a325e6038fcde21ee79fa0",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/flipper.proto"
+    },
+    {
+      "path": "system.proto",
+      "gitBlobSha": "90238e8f34112c640b8d5b5ac1ba4a2ab2d73767",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/system.proto"
+    },
+    {
+      "path": "system.options",
+      "gitBlobSha": "b400c3eeb2e544217681053bb20956922aa2aaca",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/system.options"
+    },
+    {
+      "path": "Changelog",
+      "gitBlobSha": "14c1f14751e94b020b8e1b543a6910a73ef6116d",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/Changelog"
+    },
+    {
+      "path": "applications/services/rpc/rpc.c",
+      "gitBlobSha": "cc58d4559106bd7e2ad4a24f2f43875d7ca436b1",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/applications/services/rpc/rpc.c"
+    },
+    {
+      "path": "applications/services/rpc/rpc_system.c",
+      "gitBlobSha": "4bf923d7f53ca025074994946709945c60462105",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/applications/services/rpc/rpc_system.c"
+    },
+    {
+      "path": "LICENSE",
+      "gitBlobSha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/LICENSE"
+    },
+    {
+      "path": "targets/f7/ble_glue/services/serial_service.c",
+      "gitBlobSha": "6fe6a71300c2e279aaab58bed89159faa437066a",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service.c"
+    },
+    {
+      "path": "targets/f7/ble_glue/services/serial_service_uuid.inc",
+      "gitBlobSha": "577e8f2eda449a590d10bf17017b8595be1fbb91",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service_uuid.inc"
+    },
+    {
+      "path": "targets/f7/ble_glue/profiles/serial_profile.c",
+      "gitBlobSha": "9bba0d897e92d0dfecedd0a1f575e9856f82b80d",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/profiles/serial_profile.c"
+    }
+  ]
+}

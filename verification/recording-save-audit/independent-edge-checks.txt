@@ -1,0 +1,1 @@
+PASS: unchanged-draft failed insert remains retryable and consumes on success; unsupported/non-active lifecycle states do not acquire.

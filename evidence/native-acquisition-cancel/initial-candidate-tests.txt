@@ -1,0 +1,45 @@
+✔ failed setup retains exact connection for explicit cleanup retry (3.214529ms)
+✔ concurrent disconnects coalesce and rejected cleanup can be retried (5.079035ms)
+✔ invalid MTU retains cleanup handle when native disconnect rejects (0.464244ms)
+✔ close during pending acquisition waits then releases returned exact handle (1.470038ms)
+✔ cancelled acquisition retains returned handle after failed native cleanup (0.791442ms)
+✔ rejected acquisition without handle remains explicitly unknown (0.953402ms)
+✔ disconnect waits late subscription and ignores late READY, data and terminal events (2.795318ms)
+✔ readiness timeout does not release while native subscribe remains pending (35.385904ms)
+✔ write timeout rejects caller promptly but cleanup waits raw native write settlement (31.871846ms)
+✔ terminal event during native write does not certify release or start queued writes (0.992222ms)
+✔ disconnect before connect has no native effects and forbids reuse (0.2933ms)
+✔ throwing unsubscribe retains subscription and native handle for explicit retry (0.196667ms)
+✔ late rejected subscribe still drains before exact handle disconnect (0.873979ms)
+✔ automatic cleanup reuses failed setup release until explicit retry (0.412375ms)
+✔ single chunk native write settling after cancellation cannot fulfill caller (0.63048ms)
+✔ immediate cancellation skips deferred driver dispatch without claiming unknown release (0.325065ms)
+✔ optional acquisition signal aborts without releasing an unresolved legacy driver call (0.491808ms)
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (39.935812ms)
+✔ fake android MTU 23: C ATT error closes session (10.088158ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (11.495946ms)
+✔ fake android MTU 517: C ATT error closes session (9.514968ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (13.537696ms)
+✔ fake ios MTU 23: C ATT error closes session (9.318758ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (11.141199ms)
+✔ fake ios MTU 517: C ATT error closes session (10.389734ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (8.924649ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (9.073661ms)
+✔ late Android permission grant cannot start a connection after session close (6.621845ms)
+✔ fake android: cancellation during readiness removes listener and prevents connect (7.091645ms)
+✔ fake android: cancel during connect drains issued effect without next setup effect (7.121394ms)
+✔ fake android: cancel during discover drains issued effect without next setup effect (6.190074ms)
+✔ fake android: cancel during requestMTU:185 drains issued effect without next setup effect (7.34142ms)
+✔ fake android: cancel during characteristics drains issued effect without next setup effect (6.925112ms)
+✔ fake ios: cancellation during readiness removes listener and prevents connect (6.107921ms)
+✔ fake ios: cancel during connect drains issued effect without next setup effect (6.744056ms)
+✔ fake ios: cancel during discover drains issued effect without next setup effect (7.110141ms)
+✔ fake ios: cancel during characteristics drains issued effect without next setup effect (6.761286ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 444.606943

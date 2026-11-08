@@ -1,9 +1,25 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true, "noUncheckedIndexedAccess": true,
-    "allowImportingTsExtensions": true, "types": ["node", "react"]
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "allowImportingTsExtensions": true,
+    "types": [
+      "node",
+      "react"
+    ]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "android", "ios", "dist", "build", "research/upstream-sources"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "android",
+    "ios",
+    "dist",
+    "build",
+    "research/upstream-sources",
+    "tools/reverse-engineering"
+  ]
 }

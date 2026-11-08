@@ -1,0 +1,30 @@
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (16.139398ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (8.667658ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (3.233883ms)
+✔ independent actual TSX: malformed AD is explicitly visible despite accepted HCI framing (6.26246ms)
+✔ independent actual TSX: encrypted, unknown, malformed, partial and complete service counts stay distinct (18.445302ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (9.884092ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (16.030779ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (11.90033ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (6.288746ms)
+✔ independent: whole rejection matrix preserves exact previous input and fence across declaration/tab changes (6.215686ms)
+✔ independent: overlapping generations cannot overwrite a newer successful inspection, including old error (2.41286ms)
+✔ independent: invalid hash outcomes never publish metadata and recover explicitly (1.671824ms)
+✔ independent: same-source failed selection atomically removes an earlier valid selected event; snapshots deeply immutable (1.855018ms)
+✔ independent: old activation lease invalidates all controls while rejected draft survives tab leave (0.426862ms)
+✔ independent: actual native adapter with narrow expo digest mock and web digest agree with Node on non-ASCII subviews (9.944206ms)
+✔ independent: malformed AD remains visibly distinct from successfully parsed advertising (0.997128ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (13.049424ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.332521ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.72675ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.032851ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.612802ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (2.860539ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 517.174604

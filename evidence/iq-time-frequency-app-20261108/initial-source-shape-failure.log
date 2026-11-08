@@ -1,0 +1,201 @@
+✔ IQ validates both captured sizes before either read, including missing pair and every boundary (2.34207ms)
+✔ IQ staging is read-free and size/name/read method are captured, not reread at inspection (4.722875ms)
+✔ IQ exact boundary sizes accepted and raw read mismatches fail closed (28.007687ms)
+✔ IQ import rejects UTF8, BOM, duplicate escaped keys, profile drift and SHA512 mismatch without reports (5.928707ms)
+✔ IQ exact byte provenance never conflates supplier time, external naming or synthetic source (14.794689ms)
+✔ IQ pages expose at most eight immutable bins, cover FFT exactly, and refuse stale/invalid events (6.764614ms)
+✔ IQ clear, replacement and deactivate preserve one actual read slot until settle and fence stale results (2.938365ms)
+✔ IQ metadata snapshot survives deferred data read (9.783002ms)
+✔ IQ pending hash is fenced at each boundary and slot drains before retry (4.101255ms)
+✔ IQ invalid or throwing digest outcomes never publish source claims (2.184221ms)
+✔ IQ second-read and digest rejections drain one slot without reviving cleared report or exposing errors (33.931462ms)
+✔ IQ failed replacement removes successful report immediately and tab exit releases both handles (3.540168ms)
+✔ IQ source buffers mutated during hash await cannot change prepared exact bytes or statistics (0.651365ms)
+✔ IQ web/native adapters hash exact subview bytes with both algorithms and take isolated snapshots (79.593274ms)
+✔ independent five-await lifecycle matrix retains one slot across replacement, clear, background and repeat invalidation (309.171388ms)
+✔ independent numerical tone, exact SHA256/SHA512 and immutable full pagination (22.506036ms)
+✔ independent mutable hasher input cannot alter exact source or later analysis (6.204716ms)
+✔ independent malformed pair sizes never read either handle, read failures do not hash (6.983224ms)
+✔ observer exceptions at running publication do not strand slot or reject inspection (34.272515ms)
+✔ observer exceptions during final publication do not reject completed job (8.088676ms)
+✔ synchronous observer reentry before first read cannot start a second job (8.912152ms)
+✔ observer invalidation during initial notifications fences first read (0.921094ms)
+✔ throwing observer does not suppress later observers or invalid-pair settlement (6.080075ms)
+✔ observer exit at either initial notification prevents source read and stale publication (0.800181ms)
+✔ one-shot observer replacement preserves new selection and never reads old captured pair (1.403514ms)
+✔ independent actual web TSX renders only bounded bins and inert hostile labels with disclosure (69.206556ms)
+✔ independent actual native input explicitly lacks picker, owner inactive render is empty (1.812395ms)
+✔ independent actual TSX window callbacks expose all choices and truthful actual report (16.535877ms)
+✔ actual IQ TSX projects bounded immutable results, selectable full hashes and honest zero/short states (40.70449ms)
+✔ native input is truthful, inert and has no unsupported file picker or paste fallback (0.711005ms)
+✔ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (15.184105ms)
+✔ actual owner callbacks fence stale events and retain single job across background and inspector reentry (11.343494ms)
+✖ IQ source wiring keeps one stable mounted owner and excludes save/network/device and multi-window analysis (2.433881ms)
+✔ actual owner stages window controls, rejects whole input, fences stale callbacks and resets examples (14.916677ms)
+✔ independent synthetic staging needs no TextEncoder and preserves exact ASCII bytes/hash (21.995ms)
+✔ independent missing decoder or WebCrypto refuses Inspect cleanly and permits later explicit retry (35.214161ms)
+✔ synthetic Load needs no global TextEncoder and preserves exact ASCII bytes/hashes (16.427405ms)
+✔ unavailable decoder or WebCrypto refuses Inspect cleanly and releases slot for later explicit retry (20.91707ms)
+✔ example and file staging commit atomically before one-shot observer clear, exit or replacement (18.297426ms)
+✔ clear and exit publish released labels and sources together without overwriting observer replacement (80.084082ms)
+✔ one-shot clear during example keeps latest source transaction coherent (11.326546ms)
+✔ one-shot exit during example keeps latest source transaction coherent (0.428746ms)
+✔ one-shot replace during example keeps latest source transaction coherent (9.464866ms)
+✔ one-shot clear during stage keeps latest source transaction coherent (0.412082ms)
+✔ one-shot exit during stage keeps latest source transaction coherent (1.338801ms)
+✔ one-shot replace during stage keeps latest source transaction coherent (4.88295ms)
+✔ selection operations publish one coherent state each, with no intermediate synthetic/external pair (0.986888ms)
+✔ replacement inside clear notification retains matching public and private sources (0.95312ms)
+✔ replacement inside exit notification retains matching public and private sources (3.27986ms)
+✔ all window sizes and exact last-valid boundary preflight before either read; every Inspect rereads/rehashes (106.678038ms)
+✔ default short inputs preserve statistics-only but explicit windows refuse before IO (0.587933ms)
+✔ whole input validation rejects every malformed or oversized edit and never retains previous valid settings (32.939776ms)
+✔ exact nonzero example has independently constructed bytes and signed quarter-bin amplitudes in both halves (28.83283ms)
+✔ each settings action during held reads or either digest fences success/failure and keeps actual slot until settlement (3.713375ms)
+✔ settings notification snapshots are atomic against recursive Inspect, clear and replacement (2.980393ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 54
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 942.052827
+
+✖ failing tests:
+
+test at tests/iq-app-render.test.ts:104:1
+✖ IQ source wiring keeps one stable mounted owner and excludes save/network/device and multi-window analysis (2.433881ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /analyzeIq\(prepared,options\)/. Input:
+  
+  "import { prepareIq, IQ_METADATA_LIMIT, IQ_DATA_LIMIT } from '../packages/core/iq-offline.ts';\n" +
+    "import type { IqByteHasher, IqImportContext } from '../packages/core/iq-offline.ts';\n" +
+    "import type { IqAnalysisOptions } from '../packages/core/iq-analysis.ts';\n" +
+    "import { analyzeIq, analyzeIqTimeFrequency } from '../packages/core/iq-analysis.ts';\n" +
+    '\n' +
+    'export type IqFftSize = 256 | 512 | 1024 | 2048 | 4096;\n' +
+    "export type IqWindowMode = 'default' | 'explicit' | 'time-frequency';\n" +
+    'export const IQ_FFT_SIZES: readonly IqFftSize[] = Object.freeze([256,512,1024,2048,4096]);\n' +
+    "const defaults = () => ({ windowMode: 'default' as IqWindowMode, fftSize: 1024 as IqFftSize | null, startText: '0', startSample: 0 as number | null, hopText: '1024', hopSamples: 1024 as number | null, frameCountText: '1', frameCount: 1 as number | null });\n" +
+    "export type IqSide = 'metadata' | 'data';\n" +
+    'export interface IqFile { readonly name: string; readonly size: number; arrayBuffer(): Promise<ArrayBuffer> }\n' +
+    'type Immutable<T> = T extends object ? { readonly [K in keyof T]: Immutable<T[K]> } : T;\n' +
+    'type Analysis = ReturnType<typeof analyzeIq>;\n' +
+    "type Spectrum = NonNullable<Analysis['spectrum']>;\n" +
+    "export type IqBin = Immutable<Spectrum['bins'][number]>;\n" +
+    'export interface IqLabel { readonly name: string; readonly size: number }\n' +
+    'export interface IqReport {\n' +
+    " readonly origin: IqImportContext['origin']; readonly importedAt: string; readonly producerTime: string | null;\n" +
+    ' readonly metadataSha256: string; readonly dataSha256: string; readonly metadataLength: number; readonly dataLength: number;\n' +
+    " readonly sha512Status: 'byte-match-only' | 'not-provided'; readonly sampleRate: number; readonly centerFrequency: number;\n" +
+    " readonly statistics: Immutable<Analysis['statistics']>; readonly spectrum: Immutable<Omit<Spectrum, 'bins'>> | null;\n" +
+    ' readonly warnings: readonly string[];\n' +
+    '}\n' +
+    'type TimeFrequency = ReturnType<typeof analyzeIqTimeFrequency>;\n' +
+    "export type IqFrameSummary = Immutable<Omit<TimeFrequency['frames'][number], 'amplitude' | 'dbRelativeToUnitAmplitude' | 'displayDb'>>;\n" +
+    "export interface IqTimeFrequencyReport extends Omit<IqReport, 'statistics' | 'spectrum'> {\n" +
+    " readonly geometry: Immutable<TimeFrequency['options']>;\n" +
+    ' readonly cellCount: number; readonly windowDurationSeconds: number; readonly binSpacingHz: number;\n' +
+    ' readonly normalization: string; readonly displayFloorDb: number;\n' +
+    " readonly spacing: 'overlap' | 'contiguous' | 'gaps'; readonly gapSamples: number;\n" +
+    '}\n' +
+    'const emptyFrames: readonly IqFrameSummary[] = Object.freeze([]);\n' +
+    'const emptyTimeFrequency = () => ({timeFrequencyReport: null, frames: emptyFrames, framePage: 0, framePageCount: 0, selectedFrame: null});\n' +
+    'export interface IqState {\n' +
+    ' readonly windowMode: IqWindowMode; readonly fftSize: IqFftSize | null; readonly startText: string; readonly startSample: number | null;\n' +
+    ' readonly hopText: string; readonly hopSamples: number | null; readonly frameCountText: string; readonly frameCount: number | null;\n' +
+    ' readonly timeFrequencyReport: IqTimeFrequencyReport | null; readonly frames: readonly IqFrameSummary[];\n' +
+    ' readonly framePage: number; readonly framePageCount: number; readonly selectedFrame: IqFrameSummary | null;\n' +
+    " readonly metadata: IqLabel | null; readonly data: IqLabel | null; readonly origin: IqImportContext['origin'];\n" +
+    ' readonly busy: boolean; readonly pending: boolean; readonly message: string;\n' +
+    ' readonly report: IqReport | null; readonly page: number; readonly pageCount: number; readonly bins: readonly IqBin[];\n' +
+    '}\n' +
+    'interface Source { label: IqLabel; read: () => Promise<ArrayBuffer> }\n' +
+    'const emptyBins = Object.freeze([]) as readonly IqBin[];\n' +
+    "const initial = (): IqState => Object.freeze({ ...defaults(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });\n" +
+    '// Copy every mutable analysis object before publication, without exposing core/source aliases.\n' +
+    'function immutable<T>(value: T): Immutable<T> {\n' +
+    ' if (Array.isArray(value)) return Object.freeze(value.map(immutable)) as Immutable<T>;\n' +
+    " if (value !== null && typeof value === 'object') return Object.freeze(Object.fromEntries(Object.entries(value).map(([k,v]) => [k, immutable(v)]))) as Immutable<T>;\n" +
+    ' return value as Immutable<T>;\n' +
+    '}\n' +
+    'function validSizes(metadata: number, data: number): boolean {\n' +
+    ' return Number.isSafeInteger(metadata) && metadata >= 1 && metadata <= IQ_METADATA_LIMIT && Number.isSafeInteger(data) && data >= 4 && data <= IQ_DATA_LIMIT && data % 4 === 0;\n' +
+    '}\n' +
+    'function label(name: string, size: number): IqLabel { return Object.freeze({ name: name.slice(0,160), size }); }\n' +
+    'function returnedBytes(value: ArrayBuffer, expected: number): Uint8Array {\n' +
+    ' // Intrinsic rejects spoofed objects and SharedArrayBuffer. No text decoding/normalization here.\n' +
+    " const length = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'byteLength')!.get!.call(value);\n" +
+    " const resizable = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'resizable')?.get?.call(value);\n" +
+    " if (length !== expected || resizable) throw new Error('Read length mismatch');\n" +
+    ' return new Uint8Array(value).slice();\n' +
+    '}\n' +
+    '/** Private handles and a single actual outstanding operation. Fencing is not cancellation. */\n' +
+    'export class IqController {\n' +
+    ' #state: IqState = initial(); #active: boolean; #lease = 0; #generation = 0; #running = false; #notifying = false;\n' +
+    ' #sources: Partial<Record<IqSide, Source>> = {}; #bins: readonly IqBin[] = emptyBins;\n' +
+    " #timeFrequency: Immutable<Pick<TimeFrequency, 'axis' | 'frames'>> | null = null;\n" +
+    ' #frameSummaries: readonly IqFrameSummary[] = emptyFrames;\n' +
+    ' readonly #hasher: IqByteHasher; readonly #now: () => string; #listeners = new Set<() => void>();\n' +
+    ' constructor(active: boolean, hasher: IqByteHasher, now: () => string = () => new Date().toISOString()) { this.#active = active; this.#hasher = hasher; this.#now = now; Object.freeze(this); }\n' +
+    ' get state() { return this.#state; } get lease() { return this.#lease; }\n' +
+    ' isActive(lease: number) { return this.#active && lease === this.#lease; }\n' +
+    ' subscribe(listener: () => void) { this.#listeners.add(listener); return () => { this.#listeners.delete(listener); }; }\n' +
+    ' #publish(change: Partial<IqState>) {\n' +
+    '  this.#state = Object.freeze({ ...this.#state, ...change, busy: this.#running });\n' +
+    '  // Observers may read/mutate state, but cannot strand job ownership by throwing.\n' +
+    "  // Snapshot the set and suppress nested dispatch, not the observer's state change.\n" +
+    '  if (this.#notifying) return;\n' +
+    '  this.#notifying = true;\n' +
+    '  try { for (const listener of [...this.#listeners]) { try { listener(); } catch { /* Observer failure does not alter inspection outcome. */ } } }\n' +
+    '  finally { this.#notifying = false; }\n' +
+    ' }\n' +
+    ' #current(lease: number, state: IqState) { return this.isActive(lease) && this.#state === state; }\n' +
+    ' #invalidate(message: string) { ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#publish({ ...emptyTimeFrequency(), report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }\n' +
+    " #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false) {\n" +
+    '  // Commit handles, provenance, labels and invalidation before one notification.\n' +
+    "  // A synchronous observer's newer selection/clear/exit then remains authoritative.\n" +
+    '  ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames;\n' +
+    '  this.#publish({...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});\n' +
+    ' }\n' +
+    ' activate() { if (!this.#active) { this.#active = true; ++this.#lease; } }\n' +
+    " deactivate() { this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true); }\n" +
+    ' stageFile(side: IqSide, file: IqFile | null, lease: number, state: IqState) {\n' +
+    "  if (!this.#current(lease,state) || (side !== 'metadata' && side !== 'data')) return;\n" +
+    "  const sources: Partial<Record<IqSide, Source>> = state.origin === 'synthetic-fixture' ? {} : {...this.#sources};\n" +
+    "  let message = 'Selection staged only. Explicit Inspect required.';\n" +
+    '  if (file) {\n' +
+    '   try { const captured = label(file.name,file.size); const read = file.arrayBuffer.bind(file); sources[side] = {label:captured,read}; }\n' +
+    "   catch { delete sources[side]; message = 'File handle refused.'; }\n" +
+    '  } else { delete sources[side]; }\n' +
+    "  this.#selection(sources,'external-file',message);\n" +
+    ' }\n' +
+    ' example(lease: number, state: IqState) {\n' +
+    '  if (!this.#current(lease,state)) return;\n' +
+    '  // Manually authored supported profile: 1024 zero complex samples. Loading does no digest or inspection.\n' +
+    '  // Exact ASCII literal: one code unit is one byte, with no runtime text encoder required.\n' +
+    `  const metadata = Uint8Array.from('{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":1024},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}',character=>character.charCodeAt(0));\n` +
+    '  const data = new Uint8Array(4096);\n' +
+    "  const sources = { metadata: {label:label('synthetic-zero.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer}, data: {label:label('synthetic-zero.sigmf-data',data.length),read:async()=>data.slice().buffer} };\n" +
+    "  this.#selection(sources,'synthetic-fixture','Synthetic zero example staged, not inspected. Explicit Inspect required.',true);\n" +
+    ' }\n' +
+    ' toneExample(lease: number, state: IqState) {\n' +
+    '  if (!this.#current(lease,state)) return;\n' +
+    `  const metadata = Uint8Array.from('{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":8192},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}',c=>c.charCodeAt(0));\n` +
+    '  const data = new Uint8Array(8192*4), view = new DataView(data.buffer);\n' +
+    '  // Exact integer quarter cycles, not a trigonometric oracle. Second hal'... 9709 more characters
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-time-frequency-app/tests/iq-app-render.test.ts:108:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: `import { prepareIq, IQ_METADATA_LIMIT, IQ_DATA_LIMIT } from '../packages/core/iq-offline.ts';\nimport type { IqByteHasher, IqImportContext } from '../packages/core/iq-offline.ts';\nimport type { IqAnalysisOptions } from '../packages/core/iq-analysis.ts';\nimport { analyzeIq, analyzeIqTimeFrequency } from '../packages/core/iq-analysis.ts';\n\nexport type IqFftSize = 256 | 512 | 1024 | 2048 | 4096;\nexport type IqWindowMode = 'default' | 'explicit' | 'time-frequency';\nexport const IQ_FFT_SIZES: readonly IqFftSize[] = Object.freeze([256,512,1024,2048,4096]);\nconst defaults = () => ({ windowMode: 'default' as IqWindowMode, fftSize: 1024 as IqFftSize | null, startText: '0', startSample: 0 as number | null, hopText: '1024', hopSamples: 1024 as number | null, frameCountText: '1', frameCount: 1 as number | null });\nexport type IqSide = 'metadata' | 'data';\nexport interface IqFile { readonly name: string; readonly size: number; arrayBuffer(): Promise<ArrayBuffer> }\ntype Immutable<T> = T extends object ? { readonly [K in keyof T]: Immutable<T[K]> } : T;\ntype Analysis = ReturnType<typeof analyzeIq>;\ntype Spectrum = NonNullable<Analysis['spectrum']>;\nexport type IqBin = Immutable<Spectrum['bins'][number]>;\nexport interface IqLabel { readonly name: string; readonly size: number }\nexport interface IqReport {\n readonly origin: IqImportContext['origin']; readonly importedAt: string; readonly producerTime: string | null;\n readonly metadataSha256: string; readonly dataSha256: string; readonly metadataLength: number; readonly dataLength: number;\n readonly sha512Status: 'byte-match-only' | 'not-provided'; readonly sampleRate: number; readonly centerFrequency: number;\n readonly statistics: Immutable<Analysis['statistics']>; readonly spectrum: Immutable<Omit<Spectrum, 'bins'>> | null;\n readonly warnings: readonly string[];\n}\ntype TimeFrequency = ReturnType<typeof analyzeIqTimeFrequency>;\nexport type IqFrameSummary = Immutable<Omit<TimeFrequency['frames'][number], 'amplitude' | 'dbRelativeToUnitAmplitude' | 'displayDb'>>;\nexport interface IqTimeFrequencyReport extends Omit<IqReport, 'statistics' | 'spectrum'> {\n readonly geometry: Immutable<TimeFrequency['options']>;\n readonly cellCount: number; readonly windowDurationSeconds: number; readonly binSpacingHz: number;\n readonly normalization: string; readonly displayFloorDb: number;\n readonly spacing: 'overlap' | 'contiguous' | 'gaps'; readonly gapSamples: number;\n}\nconst emptyFrames: readonly IqFrameSummary[] = Object.freeze([]);\nconst emptyTimeFrequency = () => ({timeFrequencyReport: null, frames: emptyFrames, framePage: 0, framePageCount: 0, selectedFrame: null});\nexport interface IqState {\n readonly windowMode: IqWindowMode; readonly fftSize: IqFftSize | null; readonly startText: string; readonly startSample: number | null;\n readonly hopText: string; readonly hopSamples: number | null; readonly frameCountText: string; readonly frameCount: number | null;\n readonly timeFrequencyReport: IqTimeFrequencyReport | null; readonly frames: readonly IqFrameSummary[];\n readonly framePage: number; readonly framePageCount: number; readonly selectedFrame: IqFrameSummary | null;\n readonly metadata: IqLabel | null; readonly data: IqLabel | null; readonly origin: IqImportContext['origin'];\n readonly busy: boolean; readonly pending: boolean; readonly message: string;\n readonly report: IqReport | null; readonly page: number; readonly pageCount: number; readonly bins: readonly IqBin[];\n}\ninterface Source { label: IqLabel; read: () => Promise<ArrayBuffer> }\nconst emptyBins = Object.freeze([]) as readonly IqBin[];\nconst initial = (): IqState => Object.freeze({ ...defaults(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });\n// Copy every mutable analysis object before publication, without exposing core/source aliases.\nfunction immutable<T>(value: T): Immutable<T> {\n if (Array.isArray(value)) return Object.freeze(value.map(immutable)) as Immutable<T>;\n if (value !== null && typeof value === 'object') return Object.freeze(Object.fromEntries(Object.entries(value).map(([k,v]) => [k, immutable(v)]))) as Immutable<T>;\n return value as Immutable<T>;\n}\nfunction validSizes(metadata: number, data: number): boolean {\n return Number.isSafeInteger(metadata) && metadata >= 1 && metadata <= IQ_METADATA_LIMIT && Number.isSafeInteger(data) && data >= 4 && data <= IQ_DATA_LIMIT && data % 4 === 0;\n}\nfunction label(name: string, size: number): IqLabel { return Object.freeze({ name: name.slice(0,160), size }); }\nfunction returnedBytes(value: ArrayBuffer, expected: number): Uint8Array {\n // Intrinsic rejects spoofed objects and SharedArrayBuffer. No text decoding/normalization here.\n const length = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'byteLength')!.get!.call(value);\n const resizable = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'resizable')?.get?.call(value);\n if (length !== expected || resizable) throw new Error('Read length mismatch');\n return new Uint8Array(value).slice();\n}\n/** Private handles and a single actual outstanding operation. Fencing is not cancellation. */\nexport class IqController {\n #state: IqState = initial(); #active: boolean; #lease = 0; #generation = 0; #running = false; #notifying = false;\n #sources: Partial<Record<IqSide, Source>> = {}; #bins: readonly IqBin[] = emptyBins;\n #timeFrequency: Immutable<Pick<TimeFrequency, 'axis' | 'frames'>> | null = null;\n #frameSummaries: readonly IqFrameSummary[] = emptyFrames;\n readonly #hasher: IqByteHasher; readonly #now: () => string; #listeners = new Set<() => void>();\n constructor(active: boolean, hasher: IqByteHasher, now: () => string = () => new Date().toISOString()) { this.#active = active; this.#hasher = hasher; this.#now = now; Object.freeze(this); }\n get state() { return this.#state; } get lease() { return this.#lease; }\n isActive(lease: number) { return this.#active && lease === this.#lease; }\n subscribe(listener: () => void) { this.#listeners.add(listener); return () => { this.#listeners.delete(listener); }; }\n #publish(change: Partial<IqState>) {\n  this.#state = Object.freeze({ ...this.#state, ...change, busy: this.#running });\n  // Observers may read/mutate state, but cannot strand job ownership by throwing.\n  // Snapshot the set and suppress nested dispatch, not the observer's state change.\n  if (this.#notifying) return;\n  this.#notifying = true;\n  try { for (const listener of [...this.#listeners]) { try { listener(); } catch { /* Observer failure does not alter inspection outcome. */ } } }\n  finally { this.#notifying = false; }\n }\n #current(lease: number, state: IqState) { return this.isActive(lease) && this.#state === state; }\n #invalidate(message: string) { ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#publish({ ...emptyTimeFrequency(), report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }\n #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false) {\n  // Commit handles, provenance, labels and invalidation before one notification.\n  // A synchronous observer's newer selection/clear/exit then remains authoritative.\n  ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames;\n  this.#publish({...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});\n }\n activate() { if (!this.#active) { this.#active = true; ++this.#lease; } }\n deactivate() { this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true); }\n stageFile(side: IqSide, file: IqFile | null, lease: number, state: IqState) {\n  if (!this.#current(lease,state) || (side !== 'metadata' && side !== 'data')) return;\n  const sources: Partial<Record<IqSide, Source>> = state.origin === 'synthetic-fixture' ? {} : {...this.#sources};\n  let message = 'Selection staged only. Explicit Inspect required.';\n  if (file) {\n   try { const captured = label(file.name,file.size); const read = file.arrayBuffer.bind(file); sources[side] = {label:captured,read}; }\n   catch { delete sources[side]; message = 'File handle refused.'; }\n  } else { delete sources[side]; }\n  this.#selection(sources,'external-file',message);\n }\n example(lease: number, state: IqState) {\n  if (!this.#current(lease,state)) return;\n  // Manually authored supported profile: 1024 zero complex samples. Loading does no digest or inspection.\n  // Exact ASCII literal: one code unit is one byte, with no runtime text encoder required.\n  const metadata = Uint8Array.from('{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":1024},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}',character=>character.charCodeAt(0));\n  const data = new Uint8Array(4096);\n  const sources = { metadata: {label:label('synthetic-zero.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer}, data: {label:label('synthetic-zero.sigmf-data',data.length),read:async()=>data.slice().buffer} };\n  this.#selection(sources,'synthetic-fixture','Synthetic zero example staged, not inspected. Explicit Inspect required.',true);\n }\n toneExample(lease: number, state: IqState) {\n  if (!this.#current(lease,state)) return;\n  const metadata = Uint8Array.from('{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":8192},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}',c=>c.charCodeAt(0));\n  const data = new Uint8Array(8192*4), view = new DataView(data.buffer);\n  // Exact integer quarter cycles, not a trigonometric oracle. Second hal`... 9709 more characters,
+    expected: /analyzeIq\(prepared,options\)/,
+    operator: 'match',
+    diff: 'simple'
+  }

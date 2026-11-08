@@ -1,0 +1,171 @@
+✖ installed PLX normal deny releases and permits fresh real-facade connection (24.629358ms)
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (8.142659ms)
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (7.179127ms)
+✖ malformed permission missing must never certify (4.554298ms)
+✖ malformed permission unknown must never certify (4.282526ms)
+✖ malformed permission partial must never certify (7.877956ms)
+✖ malformed permission inherited must never certify (4.705634ms)
+✖ malformed permission accessor must never certify (4.438825ms)
+✖ malformed permission later-getter must never certify (4.185238ms)
+✖ malformed permission array must never certify (4.040504ms)
+✔ unexpected permission rejection keeps exact identity and transport hold (4.805316ms)
+✔ duplicate token cannot restore first pending receipt through late continuation (4.746159ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 2
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222.901781
+
+✖ failing tests:
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal deny releases and permits fresh real-facade connection (24.629358ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10001:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10001:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10001:376:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (8.142659ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10002:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10002:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10002:376:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (7.179127ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10003:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10003:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10003:376:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission missing must never certify (4.554298ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission unknown must never certify (4.282526ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission partial must never certify (7.877956ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission inherited must never certify (4.705634ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission accessor must never certify (4.438825ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission later-getter must never certify (4.185238ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-independent.test.ts:32:37
+✖ malformed permission array must never certify (4.040504ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:33:240)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

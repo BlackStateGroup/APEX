@@ -1,0 +1,9 @@
+# AXP response JSON boundary
+
+Identity, capabilities, and device-error JSON use the existing duplicate-aware bounded JSON parser. Decoded member names must be unique in every object, including escaped aliases and nested extension fields. Parsing completes before any identity, capability list, or error code is used. Malformed error JSON therefore yields the existing generic `DEVICE_ERROR`, never a partially extracted or overwritten code.
+
+Public identity/capability validators enforce the same 512-byte payload limit as the normal frame decoder, before fatal UTF-8 decoding. They snapshot actual Uint8Array view bytes using intrinsic accessors and fixed nonshared ArrayBuffer storage. Shadowed size/buffer properties do not change the bound; proxies, other view types, detached, resizable, and shared storage are rejected. This is an ordinary byte-input integrity boundary, not a sandbox for hostile JavaScript or modified runtime intrinsics.
+
+JSON is limited to eight simultaneously open objects/arrays, counting the root object. Existing required fields and permitted extra fields remain unchanged within these bounds. Identity `source` must be an actual string equal to `simulator`, `host`, or `accessory`; arrays and other values are never coerced. Valid capability orderings, ordinary extension fields, valid device error codes, and binary ping payloads retain their prior behavior.
+
+`tests/axp-response-json.test.ts` covers decoded duplicate keys, scalar source typing, exact/over byte bounds, multibyte text, strict UTF-8, intrinsic snapshots, depth boundaries, valid parity, and synthetic DeviceSession handshake/error paths. Handshake failure clears negotiated state, pending requests, and listeners; existing release uncertainty, explicit retry, and one-use behavior are tested without changing cleanup logic. These synthetic results do not establish native release, physical device behavior, authentication, or authorization for additional operations.

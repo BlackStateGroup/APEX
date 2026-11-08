@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "inputKind": "serialized-ndef-message",
+  "provenance": { "origin": "synthetic-fixture", "label": "Manually constructed URI, not a capture" },
+  "messageHex": "d1010c55046578616d706c652e636f6d"
+}

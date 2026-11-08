@@ -1,0 +1,1 @@
+PASS: exact source hash and temporary-fixture application. Installed files unchanged. Not compiled or native accepted.

@@ -1,0 +1,36 @@
+✔ BLE waits for notifications and serialises MTU-sized frame chunks (4.068903ms)
+✔ BLE readiness timeout and unexpected data close the peer (21.359532ms)
+✔ BLE disconnect cancels opening and drops stale notifications (1.342646ms)
+✔ BLE bounds notifications and reports link failure once (0.817533ms)
+✔ BLE bounded queue and failed writes prevent following writes (1.565459ms)
+✔ NFC normalisation discards payload contents and handles iOS technology (0.943361ms)
+✔ NFC stop during startup cancels before backend begins (1.529219ms)
+✔ NFC drops callbacks after stop and cleans up registration exactly once (0.669722ms)
+✔ failed setup retains exact connection for explicit cleanup retry (2.179519ms)
+✔ concurrent disconnects coalesce and rejected cleanup can be retried (6.170664ms)
+✔ invalid MTU retains cleanup handle when native disconnect rejects (0.536358ms)
+✔ close during pending acquisition waits then releases returned exact handle (0.987729ms)
+✔ cancelled acquisition retains returned handle after failed native cleanup (0.530135ms)
+✔ rejected acquisition without handle remains explicitly unknown (0.633599ms)
+✔ disconnect waits late subscription and ignores late READY, data and terminal events (1.892343ms)
+✔ readiness timeout does not release while native subscribe remains pending (35.494824ms)
+✔ write timeout rejects caller promptly but cleanup waits raw native write settlement (31.959021ms)
+✔ terminal event during native write does not certify release or start queued writes (0.908977ms)
+✔ disconnect before connect has no native effects and forbids reuse (0.259775ms)
+✔ throwing unsubscribe retains subscription and native handle for explicit retry (0.197368ms)
+✔ late rejected subscribe still drains before exact handle disconnect (1.018121ms)
+✔ automatic cleanup reuses failed setup release until explicit retry (0.389438ms)
+✔ single chunk native write settling after cancellation cannot fulfill caller (0.702073ms)
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.194174ms)
+✔ failed manager shutdown preserves session and UI ownership (0.757328ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.346878ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.37998ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (6.464911ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 244.509327

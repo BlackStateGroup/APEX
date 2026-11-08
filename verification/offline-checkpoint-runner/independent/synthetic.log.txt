@@ -1,0 +1,4 @@
+{"case":"leader-exit-descendant","output":"/tmp/apex-runner-review-080f8c4/run-3q9eAW","result":{"status":"lingering-process-group","cleanup":"settled","logBytes":{"stdout":0,"stderr":0},"logTruncated":false,"maxLogBytes":16777216,"pid":20,"processGroup":20,"code":0,"signal":null}}
+{"case":"term-grace","sawTerm":false}
+{"case":"pending-pipe","result":{"status":"succeeded","cleanup":"settled","logBytes":{"stdout":0,"stderr":0},"logTruncated":false,"maxLogBytes":16777216,"pid":36,"processGroup":36,"code":0,"signal":null}}
+{"case":"timeout-pipe","result":{"status":"timed-out","cleanup":"settled","logBytes":{"stdout":0,"stderr":0},"logTruncated":false,"maxLogBytes":16777216,"pid":52,"processGroup":52,"code":0,"signal":null}}

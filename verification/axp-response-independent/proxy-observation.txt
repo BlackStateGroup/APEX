@@ -1,0 +1,2 @@
+Rejected proxy: Invalid response bytes
+Proxy getPrototypeOf calls: 1

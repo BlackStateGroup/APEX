@@ -1,0 +1,42 @@
+
+/workspace/scratch/477642063217/APEX/build/apex-firmware:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+00000000000012d0 <apex_crc16>:
+    12d0:	f3 0f 1e fa          	endbr64
+    12d4:	48 85 f6             	test   %rsi,%rsi
+    12d7:	74 3f                	je     1318 <apex_crc16+0x48>
+    12d9:	4c 8d 04 37          	lea    (%rdi,%rsi,1),%r8
+    12dd:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    12e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    12e8:	0f b6 17             	movzbl (%rdi),%edx
+    12eb:	c1 e2 08             	shl    $0x8,%edx
+    12ee:	31 d0                	xor    %edx,%eax
+    12f0:	ba 08 00 00 00       	mov    $0x8,%edx
+    12f5:	0f 1f 00             	nopl   (%rax)
+    12f8:	89 c6                	mov    %eax,%esi
+    12fa:	01 c0                	add    %eax,%eax
+    12fc:	89 c1                	mov    %eax,%ecx
+    12fe:	66 81 f1 21 10       	xor    $0x1021,%cx
+    1303:	66 85 f6             	test   %si,%si
+    1306:	0f 48 c1             	cmovs  %ecx,%eax
+    1309:	83 ea 01             	sub    $0x1,%edx
+    130c:	75 ea                	jne    12f8 <apex_crc16+0x28>
+    130e:	48 83 c7 01          	add    $0x1,%rdi
+    1312:	49 39 f8             	cmp    %rdi,%r8
+    1315:	75 d1                	jne    12e8 <apex_crc16+0x18>
+    1317:	c3                   	ret
+    1318:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    131d:	c3                   	ret
+
+Disassembly of section .fini:

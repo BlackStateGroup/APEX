@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "inputKind": "android-scan-record",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "Synthetic BTHome example plus complete 16-bit FCD2 UUID list for offline filter comparison; not received over RF.",
+    "capturedAt": null
+  },
+  "rssiDbm": null,
+  "dataStatus": "complete",
+  "advertisingHex": "0201060303d2fc0b094449592d73656e736f720a16d2fc4002c40903bf13"
+}

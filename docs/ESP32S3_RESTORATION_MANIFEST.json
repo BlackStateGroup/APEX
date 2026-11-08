@@ -1,0 +1,70 @@
+{
+  "repository": "BlackStateGroup/APEX",
+  "commit": "e51750ec0b34b280399877d67e1036058874c373",
+  "upstream_root_tree_sha1": "65feddc47127bd228383e5fa87ca1e70ff26b2c8",
+  "upstream_target_tree_sha1": "f5c1b4c438935e50d045c094b9c2073e68903fe0",
+  "restoration_base_commit": "bb30f68ff4c4b959fdcfef0648ef86bd5caa9aef",
+  "status": "Exact historical source recovery only. No build, flash, radio use or board acceptance.",
+  "files": [
+    {
+      "path": "firmware/esp32s3/CMakeLists.txt",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "59903dbd110f3e5efcfc05af2cdb2eefb9a12957",
+      "sha256": "b7303343980ca37d93711efae80ec3d5254cf3c33c370f78cdb003cff48884ef",
+      "bytes": 111,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/CMakeLists.txt",
+      "role": "missing original ESP32-S3 target source"
+    },
+    {
+      "path": "firmware/esp32s3/main/CMakeLists.txt",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "74c6179a1c8db4fcbcc1b786d9ac65789597b466",
+      "sha256": "542ddc0c0d8385c3fc02c44c86802c8134b2828a45898571bb8e259dcee0dad8",
+      "bytes": 153,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/main/CMakeLists.txt",
+      "role": "missing original ESP32-S3 target source"
+    },
+    {
+      "path": "firmware/esp32s3/main/ble_accessory.c",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "1e6b7a24c81b1989caee17254a6d77c5ff1818f1",
+      "sha256": "359d5b601357fff0c10d270608c04f9a6c39db90c3be28672e3e4ac7b0f59876",
+      "bytes": 6662,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/main/ble_accessory.c",
+      "role": "missing original ESP32-S3 target source"
+    },
+    {
+      "path": "firmware/esp32s3/main/ble_accessory.h",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "d9edbede4932c31508b4db239bccdb62d34181d8",
+      "sha256": "8328b10ae8c6452cc7236b1e3f1c6d2f951a05f00fa3af4074c0f088f86a4ed8",
+      "bytes": 92,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/main/ble_accessory.h",
+      "role": "missing original ESP32-S3 target source"
+    },
+    {
+      "path": "firmware/esp32s3/main/main.c",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "4dfc92f41c9f70ab606b7824a384ae7f0f62f906",
+      "sha256": "519eb19bcbd940f01954193c5c28dd7b8b9a723d83ccb09320ba8ae63f7b4193",
+      "bytes": 1094,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/main/main.c",
+      "role": "missing original ESP32-S3 target source"
+    },
+    {
+      "path": "firmware/esp32s3/sdkconfig.defaults",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "b28a2ec022389b601b855b54c57b9c324775d28d",
+      "sha256": "f7259cff6506bd6d88b5c8914c5be855448407369bee81a3aa93cb63a66e84e1",
+      "bytes": 342,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/esp32s3/sdkconfig.defaults",
+      "role": "missing original ESP32-S3 target source"
+    }
+  ]
+}

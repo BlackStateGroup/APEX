@@ -1,0 +1,12 @@
+✔ real process orchestration: independent off/on executable fixtures (1817.048924ms)
+✔ real orchestration rejects effective mismatch, missing artifact, partial build and changed final config (2761.819477ms)
+✔ previous outputs and SDK symlink cannot be overwritten (3.43139ms)
+✔ runner timeout, output overflow and signal cancellation retain failed status (403.392189ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5083.056104

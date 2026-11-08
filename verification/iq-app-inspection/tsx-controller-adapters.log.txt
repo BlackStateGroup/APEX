@@ -1,0 +1,27 @@
+✔ IQ validates both captured sizes before either read, including missing pair and every boundary (3.46738ms)
+✔ IQ staging is read-free and size/name/read method are captured, not reread at inspection (3.895716ms)
+✔ IQ exact boundary sizes accepted and raw read mismatches fail closed (19.132317ms)
+✔ IQ import rejects UTF8, BOM, duplicate escaped keys, profile drift and SHA512 mismatch without reports (3.048241ms)
+✔ IQ exact byte provenance never conflates supplier time, external naming or synthetic source (6.468034ms)
+✔ IQ pages expose at most eight immutable bins, cover FFT exactly, and refuse stale/invalid events (4.428066ms)
+✔ IQ clear, replacement and deactivate preserve one actual read slot until settle and fence stale results (1.845478ms)
+✔ IQ metadata snapshot survives deferred data read (1.747523ms)
+✔ IQ pending hash is fenced at each boundary and slot drains before retry (2.675613ms)
+✔ IQ invalid or throwing digest outcomes never publish source claims (0.991038ms)
+✔ IQ second-read and digest rejections drain one slot without reviving cleared report or exposing errors (10.605326ms)
+✔ IQ failed replacement removes successful report immediately and tab exit releases both handles (1.69568ms)
+✔ IQ source buffers mutated during hash await cannot change prepared exact bytes or statistics (0.4238ms)
+✔ IQ web/native adapters hash exact subview bytes with both algorithms and take isolated snapshots (27.799652ms)
+✔ actual IQ TSX projects bounded immutable results, selectable full hashes and honest zero/short states (30.694179ms)
+✔ native input is truthful, inert and has no unsupported file picker or paste fallback (0.540133ms)
+✔ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (8.00388ms)
+✔ actual owner callbacks fence stale events and retain single job across background and inspector reentry (10.154267ms)
+✔ IQ source wiring keeps one stable mounted owner and excludes save/network/device and configurable analysis (0.959473ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 456.046559

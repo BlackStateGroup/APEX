@@ -1,0 +1,5 @@
+Exact commit 8567be2b5400701238a5d026ef960d1a50ce44df and patch SHA256 a934152f7daee371fdb52e113fa51cc1f2d7cf466393eb0c8c79f9dfa5fc7407 verified. No blocking finding.
+Independent focused tests: 22 passed, none failed/skipped. Semantic TypeScript: exit 0.
+A separate oracle parsed retained Python constants as AST without executing upstream code, then used Node Buffer integer reads to check 24000 vectors across all 24 new IDs, including signed extrema and unsigned 32-bit boundaries. Widths, signedness, divisors and units match retained source facts.
+Additional checks: 52 truncated field prefixes and every one of 219 unsupported IDs retain their full unparsed tails. Reference and license SHA256/Git blob hashes match. Production delta is 24 table entries; parser flow is unchanged.
+No binary states, commands, timestamps, variable data, decryption, reception or sensor-truth verification added. Full suite/C/export were not independently repeated by this review; combined merge checks recorded separately.

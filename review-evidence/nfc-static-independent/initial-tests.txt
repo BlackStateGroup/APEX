@@ -1,0 +1,18 @@
+✔ independent: every tag at every static-area position has a fixed no-resynchronization outcome (177.893231ms)
+✔ independent: all length octets at all available positions obey subtraction bounds (307.860822ms)
+✔ independent: each CC octet exhaustively checked against literal accepted values, no physical identity inference (7.616544ms)
+✔ independent: literal NDEF slice, absolute offsets, source digest, inert URI and private opaque bytes (1.026688ms)
+✔ independent: missing, empty, ambiguous, exact exhaustion and terminator are distinct (0.270563ms)
+✔ independent: a valid early NDEF never escapes later malformed/unsupported region (0.194906ms)
+✔ independent: whole NDEF value, malformed/chunked/unknown semantics remain separate from TLV (0.265245ms)
+✔ independent: exact sizes, explicit own context, buffer brands and hasher result shape fail closed (2.300252ms)
+✔ independent: intrinsic source copy precedes context traps and async adapter mutation (0.635536ms)
+✔ independent: real CLI generic atomic errors, strict options, final symlink refusal and ancestor allowance under Node write denial (1842.886219ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2471.148843

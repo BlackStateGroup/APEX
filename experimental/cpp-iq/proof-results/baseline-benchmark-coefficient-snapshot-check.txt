@@ -1,0 +1,1 @@
+Verified 7936 Hann, 4095 cosine and 4095 sine coefficients.
