@@ -54,6 +54,9 @@ jobs:
       - name: Compile native module
         working-directory: android
         run: ./gradlew :apex-device:compileDebugKotlin --no-daemon
+      - name: Test Android USB permission callbacks
+        working-directory: android
+        run: ./gradlew :apex-device:testDebugUnitTest --no-daemon
       - name: Assemble debug APK including NFC and Bluetooth
         working-directory: android
         run: ./gradlew :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon
