@@ -1,0 +1,1468 @@
+{
+  "schemaVersion": 1,
+  "kind": "apex.rea.function-control-flow",
+  "inspectedAt": "2026-11-08T19:22:18.291Z",
+  "artifact": {
+    "name": "O0.elf",
+    "sha256": "ec2cc99bc2e152ab050b2b86ef6d8693bbdb11afb711bd1fd90660f4a42862f6",
+    "bytes": 16800,
+    "format": "ELF64",
+    "architecture": "x86-64",
+    "byteOrder": "little"
+  },
+  "engine": {
+    "rea": "6.8.0",
+    "objdump": "GNU objdump (GNU Binutils for Debian) 2.44",
+    "node": "24.22.1"
+  },
+  "analysisInput": {
+    "kind": "bounded-read-only-local-snapshot",
+    "sourcePath": "/workspace/scratch/b96d3539d24d/apex-rea-flow/verification/rea-flow/2026-11-08/O0.elf",
+    "snapshotPath": "/tmp/apex-rea-flow-LXoRZD/O0.elf",
+    "retained": false,
+    "endpointIdentityAndDigestMatch": true
+  },
+  "targetExecuted": false,
+  "decompilationPerformed": false,
+  "hardwareValidated": false,
+  "functions": [
+    {
+      "name": "apex_crc16",
+      "address": "0x1201",
+      "fileOffset": 4609,
+      "byteLength": 123,
+      "bytesSha256": "dc3b3017b962fc89ecfc2788b5200cbcf5d240f8f10085bbc8f86a76d8884ad9",
+      "instructionCount": 36,
+      "blockCount": 10,
+      "blocks": [
+        {
+          "start": "0x1201",
+          "byteLength": 28,
+          "instructionCount": 7,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x126c",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x121d",
+          "byteLength": 33,
+          "instructionCount": 9,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x1261",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x123e",
+          "byteLength": 9,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x1253",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1247",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1247",
+          "byteLength": 12,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x1259",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1253",
+          "byteLength": 6,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x1259",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1259",
+          "byteLength": 8,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x1261",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1261",
+          "byteLength": 6,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x123e",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1267",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1267",
+          "byteLength": 5,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x126c",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x126c",
+          "byteLength": 10,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x121d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1276",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1276",
+          "byteLength": 6,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [],
+      "unresolved": [],
+      "observedImmediates": [
+        {
+          "address": "0x120d",
+          "immediate": "0xffff"
+        },
+        {
+          "address": "0x1213",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x122e",
+          "immediate": "0x8"
+        },
+        {
+          "address": "0x1235",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x124d",
+          "immediate": "0x1021"
+        },
+        {
+          "address": "0x125d",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1261",
+          "immediate": "0x7"
+        },
+        {
+          "address": "0x1267",
+          "immediate": "0x1"
+        }
+      ],
+      "crc1021Candidate": true,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "recognized-direct-transfers-only",
+      "evidenceId": "ev_e26ae315adda157978d36a67ae78964a10a7c53784f19939ec7a7d505b280f3b",
+      "evidenceFile": "apex_crc16.rea.json"
+    },
+    {
+      "name": "apex_encode",
+      "address": "0x127c",
+      "fileOffset": 4732,
+      "byteLength": 360,
+      "bytesSha256": "bddb194bf0c0f3c343f9a9e57dbc28716ee6a3b986655c34d76ff2d2e9c00090",
+      "instructionCount": 102,
+      "blockCount": 16,
+      "blocks": [
+        {
+          "start": "0x127c",
+          "byteLength": 27,
+          "instructionCount": 8,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1297",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1297",
+          "byteLength": 7,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x129e",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x129e",
+          "byteLength": 11,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x12a9",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12a9",
+          "byteLength": 11,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x12b4",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12b4",
+          "byteLength": 13,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x12c1",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12c1",
+          "byteLength": 14,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x12d9",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x12cf",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12cf",
+          "byteLength": 10,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x13e2",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12d9",
+          "byteLength": 29,
+          "instructionCount": 8,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x1300",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x12f6",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x12f6",
+          "byteLength": 10,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x13e2",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1300",
+          "byteLength": 104,
+          "instructionCount": 29,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1368",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1368",
+          "byteLength": 29,
+          "instructionCount": 8,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1385",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1385",
+          "byteLength": 38,
+          "instructionCount": 10,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x13ab",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x13ab",
+          "byteLength": 23,
+          "instructionCount": 6,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x13c2",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x13c2",
+          "byteLength": 28,
+          "instructionCount": 8,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x13de",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x13de",
+          "byteLength": 4,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x13e2",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x13e2",
+          "byteLength": 2,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x1363",
+          "target": "0x11d0",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x1380",
+          "target": "0x11d0",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x13a6",
+          "target": "0x1080",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x13bd",
+          "target": "0x1201",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x13d9",
+          "target": "0x11d0",
+          "resolution": "direct-address-only"
+        }
+      ],
+      "unresolved": [],
+      "observedImmediates": [
+        {
+          "address": "0x1280",
+          "immediate": "0x30"
+        },
+        {
+          "address": "0x1290",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x1297",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x12b0",
+          "immediate": "0x3"
+        },
+        {
+          "address": "0x12c9",
+          "immediate": "0x200"
+        },
+        {
+          "address": "0x12cf",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x12e4",
+          "immediate": "0xc"
+        },
+        {
+          "address": "0x12f6",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x1304",
+          "immediate": "0x41"
+        },
+        {
+          "address": "0x130b",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x130f",
+          "immediate": "0x58"
+        },
+        {
+          "address": "0x1316",
+          "immediate": "0x2"
+        },
+        {
+          "address": "0x131a",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1344",
+          "immediate": "0x5"
+        },
+        {
+          "address": "0x1348",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x135a",
+          "immediate": "0x6"
+        },
+        {
+          "address": "0x1377",
+          "immediate": "0x8"
+        }
+      ],
+      "crc1021Candidate": false,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "recognized-direct-transfers-only",
+      "evidenceId": "ev_e1b197f69bf71a1ceb7b6316fe43fe5bfcf696309824bb6e4f56c8a74c24aab3",
+      "evidenceFile": "apex_encode.rea.json"
+    },
+    {
+      "name": "apex_stream_init",
+      "address": "0x13e4",
+      "fileOffset": 5092,
+      "byteLength": 75,
+      "bytesSha256": "89dc9c24d1198b8b270c76301d87af2137e2853dd0a969dad9a440fd14a565d0",
+      "instructionCount": 20,
+      "blockCount": 2,
+      "blocks": [
+        {
+          "start": "0x13e4",
+          "byteLength": 42,
+          "instructionCount": 11,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x140e",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x140e",
+          "byteLength": 33,
+          "instructionCount": 9,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x1409",
+          "target": "0x1060",
+          "resolution": "direct-address-only"
+        }
+      ],
+      "unresolved": [],
+      "observedImmediates": [
+        {
+          "address": "0x13e8",
+          "immediate": "0x20"
+        },
+        {
+          "address": "0x13fc",
+          "immediate": "0x230"
+        },
+        {
+          "address": "0x1401",
+          "immediate": "0x0"
+        }
+      ],
+      "crc1021Candidate": false,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "recognized-direct-transfers-only",
+      "evidenceId": "ev_16b6ea999b0132c98467bff691109d9773cc8cfd63dabbe354632d95b1dc74ec",
+      "evidenceFile": "apex_stream_init.rea.json"
+    },
+    {
+      "name": "apex_stream_feed",
+      "address": "0x14b1",
+      "fileOffset": 5297,
+      "byteLength": 746,
+      "bytesSha256": "31db281a9088cdf94b018e100ba46ebe8e850d6bddd631619d16d8fc5727fe37",
+      "instructionCount": 172,
+      "blockCount": 36,
+      "blocks": [
+        {
+          "start": "0x14b1",
+          "byteLength": 46,
+          "instructionCount": 9,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x1782",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x14df",
+          "byteLength": 22,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x150e",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x14f5",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x14f5",
+          "byteLength": 25,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x150e",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x150e",
+          "byteLength": 65,
+          "instructionCount": 12,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x175f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x154f",
+          "byteLength": 22,
+          "instructionCount": 6,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x1574",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1565",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1565",
+          "byteLength": 15,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x1592",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1574",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1574",
+          "byteLength": 25,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x158d",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x158d",
+          "byteLength": 5,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x175f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1592",
+          "byteLength": 24,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x1779",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x15aa",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15aa",
+          "byteLength": 16,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x15ba",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15ba",
+          "byteLength": 20,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x15ce",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15ce",
+          "byteLength": 19,
+          "instructionCount": 6,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x161d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x15e1",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15e1",
+          "byteLength": 15,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x161d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x15f0",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15f0",
+          "byteLength": 15,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x161d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x15ff",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x15ff",
+          "byteLength": 15,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x161d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x160e",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x160e",
+          "byteLength": 7,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x161d",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1615",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1615",
+          "byteLength": 8,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x163b",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x161d",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x161d",
+          "byteLength": 25,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1636",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1636",
+          "byteLength": 5,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x175f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x163b",
+          "byteLength": 36,
+          "instructionCount": 7,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x177c",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x165f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x165f",
+          "byteLength": 23,
+          "instructionCount": 6,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1676",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1676",
+          "byteLength": 25,
+          "instructionCount": 7,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x168f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x168f",
+          "byteLength": 5,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x16b2",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1694",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1694",
+          "byteLength": 25,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x16ad",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x16ad",
+          "byteLength": 5,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x175f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x16b2",
+          "byteLength": 84,
+          "instructionCount": 18,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1706",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1706",
+          "byteLength": 27,
+          "instructionCount": 6,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1721",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1721",
+          "byteLength": 19,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x175f",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1734",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1734",
+          "byteLength": 43,
+          "instructionCount": 8,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x175f",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x175f",
+          "byteLength": 24,
+          "instructionCount": 4,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x154f",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1777",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1777",
+          "byteLength": 2,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x177d",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1779",
+          "byteLength": 3,
+          "instructionCount": 2,
+          "successors": [
+            {
+              "kind": "jump",
+              "target": "0x177d",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x177c",
+          "byteLength": 1,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x177d",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x177d",
+          "byteLength": 5,
+          "instructionCount": 1,
+          "successors": [
+            {
+              "kind": "fallthrough",
+              "target": "0x1782",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1782",
+          "byteLength": 17,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "conditional-taken",
+              "target": "0x14df",
+              "scope": "function"
+            },
+            {
+              "kind": "conditional-not-taken",
+              "target": "0x1793",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1793",
+          "byteLength": 8,
+          "instructionCount": 5,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x1509",
+          "target": "0x142f",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x1588",
+          "target": "0x142f",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x15b5",
+          "target": "0x11a9",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x15c9",
+          "target": "0x11a9",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x1631",
+          "target": "0x142f",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x1671",
+          "target": "0x1201",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x168a",
+          "target": "0x11a9",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x16a8",
+          "target": "0x142f",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x1701",
+          "target": "0x1080",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x171c",
+          "target": "0x142f",
+          "resolution": "direct-address-only"
+        },
+        {
+          "address": "0x175d",
+          "target": null,
+          "resolution": "indirect-unresolved"
+        }
+      ],
+      "unresolved": [
+        {
+          "address": "0x175d",
+          "kind": "indirect-call"
+        }
+      ],
+      "observedImmediates": [
+        {
+          "address": "0x14b6",
+          "immediate": "0x258"
+        },
+        {
+          "address": "0x14d2",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x14ed",
+          "immediate": "0x20c"
+        },
+        {
+          "address": "0x14fc",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1501",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1561",
+          "immediate": "0x41"
+        },
+        {
+          "address": "0x1569",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1570",
+          "immediate": "0x58"
+        },
+        {
+          "address": "0x157b",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1580",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x15a0",
+          "immediate": "0x9"
+        },
+        {
+          "address": "0x15ae",
+          "immediate": "0x8"
+        },
+        {
+          "address": "0x15c2",
+          "immediate": "0x6"
+        },
+        {
+          "address": "0x15d6",
+          "immediate": "0x2"
+        },
+        {
+          "address": "0x15dd",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x15e5",
+          "immediate": "0x3"
+        },
+        {
+          "address": "0x15f4",
+          "immediate": "0x3"
+        },
+        {
+          "address": "0x15fb",
+          "immediate": "0x3"
+        },
+        {
+          "address": "0x1603",
+          "immediate": "0x5"
+        },
+        {
+          "address": "0x160e",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x1615",
+          "immediate": "0x200"
+        },
+        {
+          "address": "0x1624",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1629",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x163f",
+          "immediate": "0xc"
+        },
+        {
+          "address": "0x169b",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x16a0",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x1711",
+          "immediate": "0x0"
+        },
+        {
+          "address": "0x176d",
+          "immediate": "0x1"
+        },
+        {
+          "address": "0x177d",
+          "immediate": "0x1"
+        }
+      ],
+      "crc1021Candidate": false,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "partial-unresolved-transfers",
+      "evidenceId": "ev_05691e591072e4b672cc0d3c8aba412e903483782a00b5215c786bf18a63e458",
+      "evidenceFile": "apex_stream_feed.rea.json"
+    },
+    {
+      "name": "apex_device_init",
+      "address": "0x19a6",
+      "fileOffset": 6566,
+      "byteLength": 79,
+      "bytesSha256": "607db50b70d8df9b3adbe8a4630a1bef7f3aa4fb4be5abb5b66460e652feea5d",
+      "instructionCount": 21,
+      "blockCount": 2,
+      "blocks": [
+        {
+          "start": "0x19a6",
+          "byteLength": 76,
+          "instructionCount": 18,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x19f2",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x19f2",
+          "byteLength": 3,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x19ed",
+          "target": "0x13e4",
+          "resolution": "direct-address-only"
+        }
+      ],
+      "unresolved": [],
+      "observedImmediates": [
+        {
+          "address": "0x19aa",
+          "immediate": "0x20"
+        }
+      ],
+      "crc1021Candidate": false,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "recognized-direct-transfers-only",
+      "evidenceId": "ev_98dbf14529e868b6b8de5ff7b608d21b90f7a70c36d068d283586a37938f9e66",
+      "evidenceFile": "apex_device_init.rea.json"
+    },
+    {
+      "name": "apex_device_feed",
+      "address": "0x19f5",
+      "fileOffset": 6645,
+      "byteLength": 46,
+      "bytesSha256": "4c1b0b0476550eb3243ba8d39653cf59b4e2e558d66ed33dc6cd5e453d7701a5",
+      "instructionCount": 15,
+      "blockCount": 2,
+      "blocks": [
+        {
+          "start": "0x19f5",
+          "byteLength": 43,
+          "instructionCount": 12,
+          "successors": [
+            {
+              "kind": "if-call-returns",
+              "target": "0x1a20",
+              "scope": "function"
+            }
+          ]
+        },
+        {
+          "start": "0x1a20",
+          "byteLength": 3,
+          "instructionCount": 3,
+          "successors": [
+            {
+              "kind": "return",
+              "target": null,
+              "scope": "unresolved",
+              "detail": "Return destination is not inferred."
+            }
+          ]
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x1a1b",
+          "target": "0x14b1",
+          "resolution": "direct-address-only"
+        }
+      ],
+      "unresolved": [],
+      "observedImmediates": [
+        {
+          "address": "0x19f9",
+          "immediate": "0x20"
+        }
+      ],
+      "crc1021Candidate": false,
+      "candidateMeaning": "An immediate 0x1021 is a search lead only; it does not establish a CRC algorithm, cryptography, or semantic equivalence.",
+      "byteCoverage": "exact-selected-ELF-symbol",
+      "graphCoverage": "recognized-direct-transfers-only",
+      "evidenceId": "ev_bc014135450ff20f1ee2851a40f97ef25612a1c80ec52103f5f6ad2fc3342843",
+      "evidenceFile": "apex_device_feed.rea.json"
+    }
+  ],
+  "limitations": [
+    "Only the six exact AXP ELF symbol ranges are covered. Static functions, external callees and other executable bytes are outside this selection.",
+    "Instruction bytes exactly match the selected ELF ranges. GNU objdump supplies decoding; it is not independently re-decoded or cryptographically attested.",
+    "Blocks include padding and potentially unreachable instructions. This is a structural direct-transfer graph, not runtime reachability, data-flow analysis, algorithm recovery or a complete call graph.",
+    "Indirect targets, return destinations, exceptional flow, signals, dynamic linking and self-modification are not resolved. A call fallthrough is conditional on that call returning.",
+    "Compiler variants need separate reports; matching names or constants does not prove behavioral equivalence. CRC is not authentication or encryption.",
+    "Endpoint source observations do not exclude intervening changes. A same-user process could tamper with the private snapshot, toolchain or output directory.",
+    "Analyzer timeout or failure retains partial evidence, not success. REA normal subprocess cleanup is used; abnormal parent termination is not a verified process-tree cleanup guarantee."
+  ],
+  "analyzerSources": [
+    {
+      "file": "tools/inspect-control-flow.mjs",
+      "sha256": "22bfdc1bcb236193ecb30412bed1a48dfc8ec7d9f5294744bb9235e377b01f6e"
+    },
+    {
+      "file": "tools/reverse-engineering/elf-control-flow.mjs",
+      "sha256": "159d619be1e42d0e0c3615fbaa69d4001e9b385b97698f3a55a6574d0bd08877"
+    },
+    {
+      "file": "tools/reverse-engineering/package-lock.json",
+      "sha256": "520d5e7cd9f64bb99104cfecb060b1cae75ea9641272cd8b0b2d618c293cb02d"
+    }
+  ],
+  "analyzerSourceObservation": "Source files on disk matched initial/final observations; this does not independently attest loaded module or executable bytes."
+}

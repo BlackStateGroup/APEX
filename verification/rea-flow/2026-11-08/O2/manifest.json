@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactSha256": "a9d2393adc37fffa3ef8eed26344a20d572930ec207f26de96c07db07ea7cca5",
+  "files": [
+    {
+      "file": "apex_crc16.rea.json",
+      "sha256": "000b8f574c888a9dc855cfcc283ffdf5922c85d1a5402cdff928fc8f1217b336",
+      "bytes": 5080
+    },
+    {
+      "file": "apex_encode.rea.json",
+      "sha256": "51a086e1024dcc140b09995e9fdc1312c437f7cca846c4fa4ef262c1ca20fbe3",
+      "bytes": 10908
+    },
+    {
+      "file": "apex_stream_init.rea.json",
+      "sha256": "1eee789aa4d1517c373cd3356f9cb74ab33bbef2850c67cb8dffba969b0f01bc",
+      "bytes": 3956
+    },
+    {
+      "file": "apex_stream_feed.rea.json",
+      "sha256": "3555565349bbdfa9d773c593198128662db8bbc35f4116361bb4cffb749fdc07",
+      "bytes": 20656
+    },
+    {
+      "file": "apex_device_init.rea.json",
+      "sha256": "8ae4fed35b10f743718cc22007faea8fab430896bee7253057c1a88e92ca12c6",
+      "bytes": 4400
+    },
+    {
+      "file": "apex_device_feed.rea.json",
+      "sha256": "64043d81538ed807d448c6ae486789535a91267023403c1fef1244dea7521d2d",
+      "bytes": 2678
+    },
+    {
+      "file": "control-flow.json",
+      "sha256": "a60609ada16d880f70e0133607b1c0a25978746d88bfc278f56115a2e05a4fb7",
+      "bytes": 36890
+    }
+  ]
+}

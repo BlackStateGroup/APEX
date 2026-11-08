@@ -1,0 +1,38 @@
+{
+  "repository": "BlackStateGroup/APEX",
+  "commit": "7f1110f9455d0c5b87419046b864314e1f1df191",
+  "files": [
+    {
+      "path": "firmware/core/apex.c",
+      "gitBlob": "5081d37754e913067b6a0ecf4e883b7c1a6b257f"
+    },
+    {
+      "path": "firmware/core/apex.h",
+      "gitBlob": "5d4d5bb4c2f3450628cc5058a93417ceb99eb362"
+    },
+    {
+      "path": "firmware/host/main.c",
+      "gitBlob": "9e5e1cefb57e9f69631057c82d45659f7c22c3ad"
+    },
+    {
+      "path": "packages/core/rea-inspection.ts",
+      "gitBlob": "7e36150cb29114354a15c2b3bbe01505bb37b0bb"
+    },
+    {
+      "path": "docs/REA_RESEARCH.md",
+      "gitBlob": "2ed6180d7dc122b6706dd81e0bcb3f78c02e40d1"
+    },
+    {
+      "path": "docs/REA_WORKER_CONTRACT.md",
+      "gitBlob": "305a79db50ef3afee575a45fc60163ab36809bd8"
+    },
+    {
+      "path": "tools/reverse-engineering/package.json",
+      "gitBlob": "5f941b0b82ee2271bec7be20154373a3031c3c44"
+    },
+    {
+      "path": "tools/reverse-engineering/package-lock.json",
+      "gitBlob": "9e3e993aa84ee4b1f956a3adee34050bee87422d"
+    }
+  ]
+}
