@@ -18,6 +18,7 @@ const controllers = [
   ['hci-evidence-reopen', 'HciEvidenceReopenController'],
   ['hci-workbench', 'HciWorkbenchController'],
   ['iq-workbench', 'IqController'],
+  ['ir-receiver-workbench', 'IrReceiverWorkbenchController'],
   ['ir-workbench', 'IrWorkbenchController'],
   ['nfc-static-workbench', 'NfcStaticWorkbenchController'],
 ] as const;
@@ -92,6 +93,24 @@ for (const platform of ['web', 'android', 'ios']) for (const dev of [false, true
       assert.ok(c.lease > oldLease);
       assert.ok(Object.isFrozen(c.state));
     }
+  });
+
+  test(`${platform} ${dev ? 'development' : 'production'}: receiver inspection and stale async result fencing`, async () => {
+    const { IrReceiverWorkbenchController: C } = load('src/ir-receiver-workbench.ts');
+    const c = new C(true, hash);
+    c.example(c.lease); await c.inspect(c.lease);
+    assert.equal(c.state.report?.kind, 'offline-ir-receiver-excerpt');
+    assert.equal(c.state.report.records[0].carrier.frequencyHz, null);
+    let finish!: (value: string) => void;
+    const slow = new C(true, () => new Promise<string>(resolve => { finish = resolve; }));
+    slow.example(slow.lease); const pending = slow.inspect(slow.lease);
+    // Expo async lowering can defer entry into the nested hasher by microtasks.
+    for (let turn = 0; turn < 16 && !finish; turn++) await Promise.resolve();
+    assert.equal(typeof finish, 'function');
+    assert.equal(slow.state.pending, true);
+    slow.deactivate(); slow.activate(); const afterExit = slow.state;
+    finish('0'.repeat(64)); await pending;
+    assert.equal(slow.state, afterExit); assert.equal(slow.state.report, null);
   });
 
   test(`${platform} ${dev ? 'development' : 'production'}: NFC inspection and stale async result fencing`, async () => {

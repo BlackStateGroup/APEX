@@ -2,6 +2,8 @@ import React, { useLayoutEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { IrWorkbenchController, IR_RECORD_PAGE, irExcerpt, irVisibleRecords } from './ir-workbench.ts';
 import type { IrWorkbenchState } from './ir-workbench.ts';
+import { IrReceiverWorkbenchController } from './ir-receiver-workbench.ts';
+import type { IrReceiverWorkbenchState } from './ir-receiver-workbench.ts';
 // Existing platform-local UTF-8 hashing, no evidence store or provider calls.
 import { bundleDigest } from './platform/bundle-digest';
 function Control({ title, disabled = false, onPress }: { title: string; disabled?: boolean; onPress: () => void }) {
@@ -9,22 +11,33 @@ function Control({ title, disabled = false, onPress }: { title: string; disabled
 }
 export function IrWorkbench({ active }: { active: boolean }) {
   const [controller] = useState(() => new IrWorkbenchController(active, bundleDigest));
+  const [receiver] = useState(() => new IrReceiverWorkbenchController(active, bundleDigest));
   const [, refresh] = useState(0);
   const changed = () => refresh(n => n + 1);
   useLayoutEffect(() => {
-    if (active) controller.activate(); else controller.deactivate();
+    if (active) { controller.activate(); receiver.activate(); } else { controller.deactivate(); receiver.deactivate(); }
     changed();
-    return () => controller.deactivate();
-  }, [active, controller]);
+    return () => { controller.deactivate(); receiver.deactivate(); };
+  }, [active, controller, receiver]);
   const lease = controller.lease;
   const act = (action: () => void) => { if (controller.isActive(lease)) { action(); changed(); } };
+  const receiverLease = receiver.lease;
+  const receiverAct = (action: () => void) => { if (receiver.isActive(receiverLease)) { action(); changed(); } };
   if (!active) return null;
-  return <IrWorkbenchView state={controller.state}
+  return <><IrWorkbenchView state={controller.state}
     edit={draft => act(() => controller.edit(draft, lease))}
     declare={provenance => act(() => controller.declare(provenance, lease))}
     example={() => act(() => controller.example(lease))} clear={() => act(() => controller.clear(lease))}
     page={page => act(() => controller.page(page, lease))}
-    inspect={() => act(() => { void controller.inspect(lease).then(() => { if (controller.isActive(lease)) changed(); }); })} />;
+    inspect={() => act(() => { void controller.inspect(lease).then(() => { if (controller.isActive(lease)) changed(); }); })} />
+    <IrReceiverWorkbenchView state={receiver.state}
+      edit={draft => receiverAct(() => receiver.edit(draft, receiverLease))}
+      declare={provenance => receiverAct(() => receiver.declare(provenance, receiverLease))}
+      example={() => receiverAct(() => receiver.example(receiverLease))}
+      clear={() => receiverAct(() => receiver.clear(receiverLease))}
+      page={page => receiverAct(() => receiver.page(page, receiverLease))}
+      inspect={() => receiverAct(() => { void receiver.inspect(receiverLease).then(() => { if (receiver.isActive(receiverLease)) changed(); }); })} />
+  </>;
 }
 export interface IrWorkbenchViewProps {
   state: IrWorkbenchState; edit: (draft: string) => void;
@@ -64,6 +77,45 @@ export function IrWorkbenchView({ state, edit, declare, example, clear, inspect,
           <Text style={styles.text}>Duration summary: {record.durationsUs.length} values, minimum {Math.min(...record.durationsUs)} µs, maximum {Math.max(...record.durationsUs)} µs, total {record.durationsUs.reduce((a, b) => a + b, 0)} µs. Convention: {record.timingConvention}.</Text>
           <Text style={styles.text}>Whole-array NEC recognition: {record.recognition.status}.{record.recognition.status === 'recognized' ? ` Conditional decoded address ${record.recognition.decoded.address}, command ${record.recognition.decoded.command}.` : ' No supported complete standard NEC frame recognized; file may still contain valid raw timings.'}</Text>
         </>}
+      </View>)}
+    </>}
+  </View>;
+}
+export interface IrReceiverWorkbenchViewProps {
+  state: IrReceiverWorkbenchState; edit: (draft: string) => void;
+  declare: (provenance: 'synthetic-fixture' | 'recorded-import') => void;
+  example: () => void; clear: () => void; inspect: () => void; page: (page: number) => void;
+}
+/** Separate receiver report: unknown carrier is never coerced into a .ir frequency. */
+export function IrReceiverWorkbenchView({ state, edit, declare, example, clear, inspect, page }: IrReceiverWorkbenchViewProps) {
+  const report = state.report, pages = report ? Math.ceil(report.records.length / 4) : 0;
+  return <View style={styles.card}>
+    <Text style={styles.heading}>Offline IRremoteESP8266 receiver import</Text>
+    <Text style={styles.text}>Paste the uint16_t rawData source-code block from IRrecvDumpV2, optionally followed by generated address, command and data declarations. Multiple blocks are accepted. Paste source-code excerpts only, not full serial logs, sketches or AC state arrays. No code is executed.</Text>
+    <Text style={styles.text}>Memory only, no transmission, replay, device access, provider calls, save or export. Draft retained across tabs; leaving this inspector or Analysis clears results and fences pending hashing. Import here means offline pasted-text inspection, not receiver connection.</Text>
+    <Text style={styles.text}>Limits: 262144 ASCII characters, 16384 per line, 32 captures, 1024 timings per capture, 8192 total timings, 1–65535 µs each. Zero separators used for split long durations are unsupported and rejected, never silently merged. Oversized or non-ASCII edits are rejected whole and block Inspect until an accepted replacement or Clear.</Text>
+    <View style={styles.actions}>
+      <Control title="Load synthetic receiver example" onPress={example} />
+      <Control title="Declare synthetic receiver source" onPress={() => declare('synthetic-fixture')} />
+      <Control title="Declare imported receiver source" onPress={() => declare('recorded-import')} />
+    </View>
+    <Text style={styles.text}>Receiver caller declaration: {state.provenance ?? 'not selected'}. A declaration does not verify capture origin; the example is manually authored, not a physical recording.</Text>
+    <TextInput accessibilityLabel="IRremoteESP8266 receiver excerpt draft" multiline value={state.draft} onChangeText={edit} autoCapitalize="none" autoCorrect={false} style={styles.input} />
+    <Text style={styles.text}>{state.draft.length} accepted ASCII draft characters. Changes never inspect automatically.</Text>
+    <View style={styles.actions}><Control title="Inspect receiver excerpt" disabled={state.pending || state.rejectedEdit} onPress={inspect} /><Control title="Clear receiver draft" onPress={clear} /></View>
+    <Text accessibilityLiveRegion="polite" style={styles.text}>{state.message}</Text>
+    {report && <>
+      <Text style={styles.heading}>Receiver inspection: {report.records.length} captures · {report.byteCount} accepted draft bytes</Text>
+      <Text style={styles.text}>Accepted receiver draft SHA-256: {report.sha256}. This identifies exact ASCII text received by the app, not original file or clipboard bytes before paste or text-widget processing. Line-ending normalization before the app receives it is unverified. No authenticity, ownership, physical capture or device compatibility is established.</Text>
+      <Text style={styles.text}>Carrier frequency and duty cycle are unknown, not measured or supplied in this source format. Receiver timing envelopes do not determine carrier. Capture completeness is unverified: excerpts can omit buffer-overflow warnings. Repeats are not inferred. Comments and generated fields are inert source claims, never treated as trusted decoding.</Text>
+      <Text style={styles.text}>Source-format reference: IRremoteESP8266 {report.referencePin}. This reference does not identify the firmware that produced the pasted text. Whole-array standard NEC recognition is conditional on the source-format first-mark alternating convention; timings are not repaired or rescaled.</Text>
+      <Text style={styles.text}>Receiver capture page {state.page + 1} of {pages}. Up to four summaries, no duration dump.</Text>
+      <View style={styles.actions}><Control title="Previous receiver captures" disabled={state.page === 0} onPress={() => page(state.page - 1)} /><Control title="Next receiver captures" disabled={state.page + 1 >= pages} onPress={() => page(state.page + 1)} /></View>
+      {report.records.slice(state.page * 4, (state.page + 1) * 4).map(record => <View key={record.ordinal} style={styles.record}>
+        <Text style={styles.heading}>Receiver capture {record.ordinal}</Text>
+        <Text style={styles.text}>Source lines {record.startLine}–{record.endLine}. Declared count {record.declaredCount}; {record.durationsUs.length} unchanged timings. Minimum {Math.min(...record.durationsUs)} µs, maximum {Math.max(...record.durationsUs)} µs, total {record.durationsUs.reduce((a, b) => a + b, 0)} µs.</Text>
+        <Text style={styles.text}>Unverified declared fields: address {record.declaredFields.address ?? 'not supplied'}, command {record.declaredFields.command ?? 'not supplied'}, data {record.declaredFields.data ?? 'not supplied'}. These are not compared with recognition or used to infer device identity.</Text>
+        <Text style={styles.text}>Whole-array NEC recognition: {record.recognition.status}.{record.recognition.status === 'recognized' ? ` Conditional decoded address ${record.recognition.decoded.address}, command ${record.recognition.decoded.command}.` : ' No supported complete standard NEC frame recognized; other valid protocols or repeat frames may be present.'}</Text>
       </View>)}
     </>}
   </View>;
