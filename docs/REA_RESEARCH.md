@@ -56,3 +56,13 @@ In the mobile/web app, open Analysis, choose **Import REA report**, paste the ge
 4. Treat Pwnagotchi integration as a separate proposed accessory adapter. No password-recovery or live Wi-Fi capture integration is implemented by this work.
 
 Primary sources: https://github.com/morluto/rea, its pinned `docs/cli.md`, `docs/reverse-engineering-tools.md`, `docs/installation.md`, and https://github.com/flipperdevices/flipperzero-protobuf. Research scope remains owned or explicitly authorised equipment and controlled tests.
+
+## Byte-verified function structure, 8 November
+
+[RES-01A](REA_CONTROL_FLOW_RESEARCH.md) adds actual REA-supervised disassembly
+for all six public AXP core entry points, with instruction bytes checked against
+ELF symbol/file ranges and explicit unresolved transfers. Four own-host compiler
+variants show why direct call names alone miss optimized CRC copies; a controlled
+polynomial change supplies a negative control. Exact inputs, original observations
+and digest manifests are retained. This is structural offline analysis, not
+Ghidra decompilation, semantic proof, phone integration or hardware validation.
