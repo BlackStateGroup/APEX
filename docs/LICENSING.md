@@ -39,3 +39,5 @@ Before adopting code, record exact release/commit, selected files, author notice
 
 Distribution gates: produce an SBOM from the lockfile and selected SDK components; retain notices in shipped artefacts; prepare corresponding source where required; review app-store and static-linking implications before distributing copyleft-derived firmware or applications. The included npm inventory is a lockfile report, not a completed source-licence audit.
 
+The implementation branch includes [npm-dependencies.json](../research/npm-dependencies.json), with package paths, exact versions, declared licences, development/optional flags, integrity identifiers and the lockfile SHA-256. Regenerate with `npm run inventory` and verify with `npm run inventory:check`. It includes the tooling graph as well as application dependencies, including MPL-2.0, attribution and dual-licence entries that deserve selected-file review before distribution. SDK images, Android/Maven dependencies and future drivers need separate inventories when actually built/adopted.
+

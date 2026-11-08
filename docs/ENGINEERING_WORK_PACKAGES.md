@@ -9,9 +9,9 @@ Each package requires a reviewable PR, a reproducible command/test log and expli
 | WP03 | Session manager (F01,F02) | WP02 | Capability/identity negotiation, finite pending limit, timeouts, opcode/ID checks, failed-open cleanup and disconnect rejection | Implemented host foundation |
 | WP04 | Portable accessory firmware (F04) | WP02 | Host executable with identity/capabilities/ping and error dispatch; real cross-language tests and sanitizer run | Implemented host foundation |
 | WP05 | Expo operator console (F01,F11) | WP03 | Explicit simulator selection, capability view, ping, offline analyses, error states and Android/web JS bundles | Implemented initial UI |
-| WP06 | Android local module build (F03) | WP05 | Native module autolinks, generated manifest reviewed, debug APK compiles with pinned toolchain | Source; build gate separate |
+| WP06 | Android local module build (F03) | WP05 | Native module autolinks, generated manifest reviewed, debug APK compiles with pinned toolchain | Native compilation/debug APK passed in CI; phone test pending |
 | WP07 | Android USB transport (F03) | WP03,WP06 | CDC interface association, OS grant/denial, partial writes, detach events, timeout and reopen tested on named handset | Source; physical validation pending |
-| WP08 | ESP32-S3 target (F04) | WP04 | ESP-IDF v6.1 cross-build, UART-only logs, flashed native USB board, recovery and repeated round trips | Source; board validation pending |
+| WP08 | ESP32-S3 target (F04) | WP04 | ESP-IDF v6.1 cross-build, UART-only logs, flashed native USB board, recovery and repeated round trips | CI cross-build passed; board validation pending |
 | WP09 | NFC metadata reader (F05) | WP06 | Foreground activity lifecycle, unavailable/disabled hardware states, two tag technologies, NDEF summaries and stop/restart on a real phone | Source; physical validation pending |
 | WP10 | Device/fixture registry (F01,F14) | WP03 | Persistent versioned board/driver/fixture inventory, attestation separate from claimed identity, migration tests | Planned |
 | WP11 | Evidence vault (F13) | WP10 | Encrypted local captures, UTC/monotonic provenance, SHA-256 content identity, retention and export/reimport verifier | Planned |
@@ -30,7 +30,7 @@ Each package requires a reviewable PR, a reproducible command/test log and expli
 | WP24 | Embedded diagnostic modules (F14) | WP08,WP10 | Per-board bus/resource/voltage manifests, probe/stop lifecycle, conflicts rejected and external equipment protections verified | Planned |
 | WP25 | Wi-Fi application integrations (F07) | WP06,WP10 | OS inventory with result age and permission handling, then authenticated known-device API fixtures | Planned |
 | WP26 | Analysis workbench (F11) | WP11,WP20 | Typed observations, deterministic decoder registry, input provenance and independent interpretation fixtures | NEC/CAN subset implemented |
-| WP27 | AI hypothesis provider (F12) | WP26 | Explicit input selection, structured output, source-ID validation, prompt-injection tests and benchmarked abstention/false-positive rates | Planned |
+| WP27 | AI hypothesis provider (F12) | WP26 | Explicit input selection, structured output, source-ID validation, prompt-injection tests and benchmarked abstention/false-positive rates | Provider contract/validation implemented; model, UI and evaluation planned |
 | WP28 | Accessory trust and update (F15) | WP08,WP10 | Threat model, device authentication, signed manifests/firmware, board checks, rollback/recovery and independent negative tests | Planned |
 | WP29 | Field release qualification | WP07–WP28 as included | Complete actual feature matrix, physical regressions, electrical/region/distribution checks, notices and reproducible release artefacts | Planned |
 

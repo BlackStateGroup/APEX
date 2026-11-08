@@ -21,3 +21,26 @@ The research branch defines the system. The dependent `feat/platform-foundation`
 
 Research and security testing use owned or explicitly authorised equipment and controlled environments. Nothing is automatically merged, deployed or flashed.
 
+## Run the foundation
+
+Requires Node 24, npm, Python 3 and GCC for the portable C tests.
+
+```sh
+npm ci
+npm test
+npm run typecheck
+npm run demo
+npm run build
+npm run web
+```
+
+`demo` connects the TypeScript session to the compiled C firmware process. The application offers a separate, explicitly selected simulator plus offline NEC and classic CAN analysis. Neither is a physical hardware test.
+
+For browser checks after `npm run build`: `npx playwright install chromium` then `npm run test:ui`. `npm run inventory:check` verifies the lockfile licence inventory.
+
+For native Android, install the Android SDK/JDK toolchain, run `npx expo prebuild --platform android --no-install` and `npm run android`. USB/NFC require a development build; Expo Go and web cannot load the custom Android module. The native source supports a conservative single CDC-ACM interface pair, not arbitrary USB serial chips. See the [firmware guide](firmware/README.md) for the ESP-IDF v6.1 target.
+
+Current evidence and unexecuted native/hardware gates are recorded in [VERIFICATION.md](docs/VERIFICATION.md). Planned adapters are listed openly in the capability matrix. A bounded, data-only AI provider contract and hypothesis validator are implemented; no model or endpoint is connected. Captures and the session journal are in memory only. The durable vault, RF drivers and vehicle/industrial integrations remain work packages.
+
+![APEX console connected to its explicitly labelled software simulator](docs/images/console.png)
+

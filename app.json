@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "APEX", "slug": "apex", "version": "0.1.0",
+    "orientation": "portrait", "userInterfaceStyle": "dark", "scheme": "apex",
+    "android": { "package": "group.blackstate.apex" },
+    "web": { "bundler": "metro", "name": "APEX Console" },
+    "plugins": ["expo-dev-client", "expo-status-bar"]
+  }
+}

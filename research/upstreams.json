@@ -198,6 +198,13 @@
           "blob": "747ca054963199a7ced29a61366cfd56e080af4d",
           "url": "https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/Readme.md",
           "read": true
+        },
+        {
+          "path": "host/libhackrf/src/hackrf.c",
+          "blob": "2efbfea4233d2925ab74686d47ef697904f36680",
+          "url": "https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/host/libhackrf/src/hackrf.c",
+          "read": true,
+          "inspection": "header lines 1 to 48"
         }
       ],
       "finding": "USB SDR hardware and host software for RF development.",
@@ -931,4 +938,3 @@
     }
   ]
 }
-

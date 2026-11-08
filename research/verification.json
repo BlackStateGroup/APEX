@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-01",
+  "repository": "BlackStateGroup/APEX",
+  "testedSourceCommit": "b7048a8694efeff27cc18a1daf6053b36ef5152e",
+  "sourceWorkflow": {
+    "runId": 41286965388,
+    "url": "https://github.com/BlackStateGroup/APEX/actions/runs/41286965388",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "host",
+        "id": 124790121201,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "android",
+        "id": 124790121461,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "esp32s3",
+        "id": 124790121464,
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "fullAndroidApk": {
+    "sourceCommit": "72f43149354984cef407d3ea3c7ea396254005aa",
+    "runId": 41286056964,
+    "jobId": 124787471536,
+    "architecture": "arm64-v8a",
+    "conclusion": "success"
+  },
+  "nodeTests": {
+    "passed": 42,
+    "failed": 0
+  },
+  "browserScenarios": {
+    "passed": 2,
+    "failed": 0
+  },
+  "portableFirmware": "C checks and ASan/UBSan passed in CI",
+  "espIdf": {
+    "version": "v6.1",
+    "image": "espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c",
+    "crossBuild": "passed",
+    "flashed": false
+  },
+  "npmInventoryEntries": 536,
+  "physicalEquipmentTested": false,
+  "modelConnected": false,
+  "accessoryOperations": [
+    "system.info",
+    "system.capabilities",
+    "system.ping"
+  ],
+  "limitations": [
+    "Physical USB/NFC/board acceptance pending",
+    "Live RF/RFID/SDR/BLE/Wi-Fi/vehicle/industrial/access adapters pending",
+    "AI model/UI/evaluation pending; provider contract and validation tested",
+    "Capture vault, accessory authentication and signed firmware updates pending"
+  ]
+}
