@@ -1,0 +1,30 @@
+✖ independent actual document TSX: inert sensitive whole-event disclosure, exact draft and paginated status summaries (1.470807ms)
+✔ independent actual TSX owner has no inactive output and no automatic verification on static render (7.47873ms)
+✔ independent document races: earlier success/failure cannot overwrite later accepted verification (7.836681ms)
+✔ independent document fencing: clear, rejected edit, source delivery and navigation invalidate pending work (1.553508ms)
+✔ independent exact edits, source IDs, private frozen state and stale callbacks (2.308993ms)
+✔ independent preparation: second selection owns document despite overlapping hashes and stale handoff (4.538725ms)
+✔ independent preparation fences rejected edits, clear, extended selection and navigation (2.713027ms)
+✔ independent source receipt while inactive is exact, one-shot and never verifies (0.453681ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 382.977995
+
+✖ failing tests:
+
+test at tests/hci-document-render-independent.test.ts:73:1
+✖ independent actual document TSX: inert sensitive whole-event disclosure, exact draft and paginated status summaries (1.470807ms)
+  Error: HCI import refused: context label at offset 0
+      at fail (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/packages/core/hci-offline.ts:31:58)
+      at contextSnapshot (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/packages/core/hci-offline.ts:66:135)
+      at prepareHci (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/packages/core/hci-offline.ts:72:15)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/tests/hci-document-render-independent.test.ts:75:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)

@@ -1,0 +1,43 @@
+(node:13) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native detached retained run does not invoke an action or publish state (2.805564ms)
+✔ native prior-close wait cannot acquire after unmount cleanup has already run (7.682747ms)
+✔ direct retained connect is inert before removing the existing listener (0.972206ms)
+✔ prior-close continuation is inert after remount replacement (3.215291ms)
+✔ prior-close continuation is inert after operation replacement (2.366251ms)
+✔ prior-close continuation is inert after session replacement (2.074525ms)
+✔ normal native replacement negotiates and run lock excludes duplicate acquisition (2.134175ms)
+✔ uncertain prior cleanup retains exact session and prevents replacement (1.28815ms)
+✔ unmount during native open retains cleanup ownership and suppresses late callbacks/publication (1.632723ms)
+✔ run rejection cannot publish to detach successor (1.163418ms)
+✔ run rejection cannot publish to remount successor (0.539037ms)
+✔ run rejection cannot publish to operation successor (0.406383ms)
+✔ connected callback cannot publish after same-object remount or session replacement (0.808801ms)
+✖ explicit native cancellation during prior close prevents new acquisition and retains original lock (2.742954ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.917589
+
+✖ failing tests:
+
+test at tests/app-native-acquisition.test.ts:168:1
+✖ explicit native cancellation during prior close prevents new acquisition and retains original lock (2.742954ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cancel/tests/app-native-acquisition.test.ts:177:16)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,2 @@
+53c06f9499bb6016135bd5c624160e57e2157cecff7dd53ae3577de8faee3267  tests/analysis-inspector-independent.test.ts
+ba2ab7527928838e74c111548fd4ab8a89aeace0cf589f42165c4b9cbd256c92  tests/nfc-static-memory-review.test.ts

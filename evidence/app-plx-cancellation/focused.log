@@ -1,0 +1,22 @@
+(node:49) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ App + installed PLX: cancel held permissions before the next effect (30.671272ms)
+✔ App + installed PLX: cancel held readiness before the next effect (11.994155ms)
+✔ App + installed PLX: cancel held connect before the next effect (11.117685ms)
+✔ App + installed PLX: cancel held discover before the next effect (11.669661ms)
+✔ App + installed PLX: cancel held mtu before the next effect (10.478398ms)
+✔ App + installed PLX: cancel held characteristics before the next effect (10.651208ms)
+✔ App + installed PLX: cancel held monitor-ready before the next effect (12.942518ms)
+✔ App + installed PLX: cancel held write before the next effect (15.694631ms)
+✔ App + installed PLX android: failed held close, pending SDK monitor, explicit retry and stale presses (12.778363ms)
+✔ App + installed PLX ios: failed held close, pending SDK monitor, explicit retry and stale presses (12.803995ms)
+✔ App + installed PLX: cancellation before session creation performs no native effect (5.77518ms)
+✔ App + installed PLX: cancelling one simultaneous owner leaves the other C session usable (25.868751ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 408.842033

@@ -1,0 +1,172 @@
+✖ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (0.647898ms)
+✖ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (0.112711ms)
+✖ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (0.065977ms)
+✖ CRC-corrupt framed browser write produces no C response; following session request recovers (0.059522ms)
+✖ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (0.114046ms)
+✖ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (0.162773ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 252.357192
+
+✖ failing tests:
+
+test at tests/browser-c-roundtrip.test.ts:69:3
+✖ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (0.647898ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:69:3
+✖ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (0.112711ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:105:1
+✖ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (0.065977ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:120:1
+✖ CRC-corrupt framed browser write produces no C response; following session request recovers (0.059522ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:133:1
+✖ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (0.114046ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:142:1
+✖ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (0.162773ms)
+  AssertionError [ERR_ASSERTION]: pinned input: src/platform/bluetooth.native.ts
+  + actual - expected
+  
+  + undefined
+  - 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:31:65)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/browser-c-roundtrip.test.ts:29:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

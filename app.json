@@ -1,9 +1,42 @@
 {
   "expo": {
-    "name": "APEX", "slug": "apex", "version": "0.1.0",
-    "orientation": "portrait", "userInterfaceStyle": "dark", "scheme": "apex",
-    "android": { "package": "group.blackstate.apex" },
-    "web": { "bundler": "metro", "name": "APEX Console" },
-    "plugins": ["expo-dev-client", "expo-status-bar"]
+    "name": "APEX",
+    "slug": "apex",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "apex",
+    "android": {
+      "package": "group.blackstate.apex"
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "APEX Console"
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-status-bar",
+      "expo-sqlite",
+      [
+        "react-native-nfc-manager",
+        {
+          "nfcPermission": "APEX reads NFC tag metadata or selected NDEF record fields when you start the corresponding foreground inspection.",
+          "includeNdefEntitlement": true
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true,
+          "modes": [],
+          "bluetoothAlwaysPermission": "APEX observes nearby Bluetooth advertisements when you start a foreground observation and connects to your AXP laboratory accessories."
+        }
+      ]
+    ],
+    "ios": {
+      "bundleIdentifier": "group.blackstate.apex",
+      "supportsTablet": true
+    }
   }
 }

@@ -1,0 +1,29 @@
+Starting Metro Bundler
+
+Web Bundling failed 5ms index.ts (1 module)
+ ERROR  TypeError: Cannot read properties of undefined (reading 'transformFile')
+    at Bundler.transformFile (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/Bundler.js:55:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async patchedBundler.transformFile (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/start/server/metro/withMetroCacheVary.js:93:22)
+    at async Object.transform (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/lib/transformHelpers.js:139:12)
+    at async transform (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/Graph.js:176:26)
+    at async visit (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/buildSubgraph.js:80:29)
+    at async Promise.all (index 0)
+    at async buildSubgraph (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/buildSubgraph.js:105:3)
+    at async Graph._buildDelta (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/Graph.js:163:22)
+    at async Graph.initialTraverseDependencies (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/Graph.js:146:19)
+    at async DeltaCalculator._getChangedDependencies (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/DeltaCalculator.js:165:25)
+    at async DeltaCalculator.getDelta (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler/DeltaCalculator.js:75:16)
+    at async DeltaBundler.buildGraph (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/DeltaBundler.js:42:5)
+    at async IncrementalBundler.buildGraphForEntries (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/IncrementalBundler.js:94:19)
+    at async IncrementalBundler.buildGraph (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/IncrementalBundler.js:178:19)
+    at async /workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/IncrementalBundler.js:216:34
+    at async IncrementalBundler.initializeGraph (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/metro/src/IncrementalBundler.js:233:24)
+    at async MetroBundlerDevServer._bundleDirectAsync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/start/server/metro/MetroBundlerDevServer.js:1637:35)
+    at async MetroBundlerDevServer.metroLoadModuleContents (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/start/server/metro/MetroBundlerDevServer.js:688:25)
+    at async MetroBundlerDevServer.legacySinglePageExportBundleAsync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/start/server/metro/MetroBundlerDevServer.js:883:24)
+    at async /workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/export/exportApp.js:207:30
+    at async Promise.all (index 2)
+    at async exportAppAsync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/export/exportApp.js:196:13)
+    at async exportAsync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/export/exportAsync.js:91:5)
+

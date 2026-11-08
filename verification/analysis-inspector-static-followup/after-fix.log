@@ -1,0 +1,45 @@
+✔ nine unique typed choices, Recording default, exact source routes and invalid IDs (2.145295ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.284084ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (5.139593ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.36605ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.518531ms)
+✔ ir: newer inspector request wins over older completion after exit (7.555824ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.866714ms)
+✔ hci: newer inspector request wins over older completion after exit (1.93273ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.594919ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (2.938578ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.733433ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.022067ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.011404ms)
+✔ nine typed inspector choices, Recording default, and separate explicit source routes (1.675497ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (5.47477ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.299012ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (2.610668ms)
+✔ source delivery during pending saves survives old completion without reviving results (7.193615ms)
+✔ source delivery during pending saves survives old failure without reviving results (4.811125ms)
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (37.847393ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (11.353794ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (3.418276ms)
+✔ independent actual TSX: malformed AD is explicitly visible despite accepted HCI framing (3.490779ms)
+✔ independent actual TSX: encrypted, unknown, malformed, partial and complete service counts stay distinct (16.378515ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (14.476379ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (22.269067ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (19.891242ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (5.856176ms)
+✔ actual extended TSX renders exact bounded header states and applicable addresses, never marker data (31.782029ms)
+✔ actual extended TSX bounds reports, excerpts and diagnostics; reserved values and contradictions stay visible (16.147657ms)
+✔ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (23.688784ms)
+✔ independent actual TSX 128-record final page and escaped exact field spellings (17.460557ms)
+✔ actual TSX initial/inactive render: exact limits, no automatic result or external actions (11.100258ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (17.785863ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (10.752956ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (26.993115ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (11.267636ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 709.498589

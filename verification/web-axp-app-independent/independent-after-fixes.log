@@ -1,0 +1,33 @@
+✔ independent: acquisition filters and observer order, frozen deep snapshot, selected cancel no GATT (3.210229ms)
+✔ independent: every gate applies to connect, held simulator is not closed or replaced (3.31742ms)
+✔ independent: cancelled raw picker rejects immediately, blocks replacement, late reject never acquires (5.214512ms)
+✔ independent: reentrant cancel on exact reservation cannot acquire and joins cleanup identity (1.326984ms)
+✔ independent: cancel fences before exact session.close even with operation lock and pending open (27.294337ms)
+✔ independent: pending write is locally cancelled; late raw effect cannot free poison or reach replacement (29.513915ms)
+✖ independent: failed disconnect survives view detach and requires explicit retry (1.134122ms)
+✔ independent: cancellation completion publication may select new work without old finally clearing it (1.259895ms)
+✔ independent: production source routes real App handlers through live owner and exact cleanup (0.999708ms)
+✔ independent: actual Ping closure cannot publish after replacement (0.560017ms)
+✔ independent: actual Ping closure cannot publish after unmount (0.336013ms)
+✔ independent: actual Ping closure cannot publish after StrictMode epoch (0.146654ms)
+✔ independent: actual Ping closure cannot publish after closed session (0.102093ms)
+✔ independent: actual lifecycle adapter and singleton never acquire on import, bind, remount or visible (3.694199ms)
+✔ independent: actual stale Cancel closure never reports poisoned cleanup completed (1.822471ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 228.018587
+
+✖ failing tests:
+
+test at tests/web-axp-application-independent.test.ts:78:1
+✖ independent: failed disconnect survives view detach and requires explicit retry (1.134122ms)
+  Error: Browser AXP cleanup failed. Use explicit Retry browser AXP cleanup.
+      at WebAxpApplication.cancel (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/src/experimental/web-axp-application.ts:108:69)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:80:123)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

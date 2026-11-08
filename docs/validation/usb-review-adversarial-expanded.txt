@@ -1,0 +1,109 @@
+3d6243b19ebb30950e97b1958ad733b69942e794
+✖ failed close followed by delayed closed event must retain ownership (6.29204ms)
+✖ terminal release task must not outrun failed close after outstanding write settles (1.912118ms)
+✖ sparse bytes must not silently become zero-valued valid data (1.568882ms)
+✖ null malformed native events do not throw into emitter (0.619628ms)
+✖ matching early event plus overflow cannot auto-release cleanup-required lease (2.161459ms)
+✔ listener removal failures cannot revive cancelled callbacks or block known-token retry (0.670462ms)
+✔ terminal waits for native pending rejected write while queued write never invokes native (2.876735ms)
+✔ invalid tokens cannot terminate active ownership (0.608578ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 3
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 144.871723
+
+✖ failing tests:
+
+test at tests/usb-review-adversarial.test.ts:31:1
+✖ failed close followed by delayed closed event must retain ownership (6.29204ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:37:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /owned/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-review-adversarial.test.ts:39:1
+✖ terminal release task must not outrun failed close after outstanding write settles (1.912118ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:47:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /owned/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-review-adversarial.test.ts:49:1
+✖ sparse bytes must not silently become zero-valued valid data (1.568882ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   [
+  +     0,
+  +     0,
+  +     0
+  +   ]
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:53:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ [ 0, 0, 0 ] ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/usb-review-adversarial.test.ts:55:1
+✖ null malformed native events do not throw into emitter (0.619628ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "Cannot read properties of null (reading 'token')"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:57:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: Cannot read properties of null (reading 'token')
+        at file:///workspace/scratch/b96d3539d24d/apex-usb-review/modules/apex-device/usb-transport.ts:37:106
+        at NativeFixture.emit (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:15:143)
+        at file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:57:34
+        at getActual (node:assert:611:5)
+        at strict.doesNotThrow (node:assert:779:32)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:57:10)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at tests/usb-review-adversarial.test.ts:61:1
+✖ matching early event plus overflow cannot auto-release cleanup-required lease (2.161459ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-review/tests/usb-review-adversarial.test.ts:67:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /owned/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

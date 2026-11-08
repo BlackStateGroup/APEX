@@ -1,0 +1,18 @@
+✔ application chooser is same-stack, reserves before publication and refuses double clicks (9.755556ms)
+✔ every live acquisition gate rejects without invoking chooser (0.63504ms)
+✔ real unchanged session negotiation and ping use shared slot and 20-byte fragments (33.524453ms)
+✔ pending picker cancellation cannot replace raw owner; late selection never connects (21.50631ms)
+✔ pending open cancels synchronously before close, holds raw poison and requires explicit retry (33.317948ms)
+✔ unmount/remount detaches presentation but preserves pending owner and stale callbacks (7.840064ms)
+✔ cancel during reservation observer never proceeds into GATT or leaves an orphan handle (1.192825ms)
+✔ pending write cancel fences immediately and raw settlement alone never clears the shared slot (33.150538ms)
+✔ missing actual READY does not negotiate; cancellation remains reachable outside lock (5.530319ms)
+✔ unsupported or insecure host never invokes picker and can be retried after public rejection (0.782179ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 545.892745

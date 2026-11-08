@@ -1,0 +1,43 @@
+4367bd417edaeb407d726c51c178e522a2c9d263
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.607815ms)
+✔ failed manager shutdown preserves session and UI ownership (0.729177ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.450585ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.377252ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (2.548662ms)
+✔ closed session remains explicitly releasable after capabilities disappear (3.113956ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.219888ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.232871ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (0.117938ms)
+✔ App retention helper keeps a real failed session through failed retry (1.227421ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (7.341311ms)
+✔ disconnected and unavailable operations reject without transport execution (1.840611ms)
+✔ failed connect removes listeners and closes the one-use session (0.398751ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.841487ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (21.779439ms)
+✔ pending queue is bounded and unplug rejects every request (0.866342ms)
+✔ wrong response opcode and device error are rejected (0.691899ms)
+✔ write failure rejects immediately and clears pending requests (0.58307ms)
+✔ request IDs are never reused through the full 16-bit session space (570.606374ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.349616ms)
+✔ synchronous transport failure also clears pending state (0.503119ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.293293ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.249315ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.215374ms)
+✔ close during pending connect shares cancellation cleanup with failed open (0.182603ms)
+✔ clean refused open and explicit normal close confirm release (0.174762ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.23231ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 785.212166
+focused_exit=0
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+
+typecheck_exit=0

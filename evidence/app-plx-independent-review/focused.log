@@ -1,0 +1,16 @@
+(node:29) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ independent App PLX android: close before delayed subscribe; resolve real SDK monitor late (31.810063ms)
+✔ independent App PLX android: retired handle and late close preserve live replacement identity (30.025396ms)
+✔ independent App PLX android: unmount while first raw write is held suppresses every later setter (11.312588ms)
+✔ independent App PLX ios: close before delayed subscribe; resolve real SDK monitor late (11.164569ms)
+✔ independent App PLX ios: retired handle and late close preserve live replacement identity (27.952111ms)
+✔ independent App PLX ios: unmount while first raw write is held suppresses every later setter (10.593539ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 346.084475

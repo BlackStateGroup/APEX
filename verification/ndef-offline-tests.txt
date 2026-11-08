@@ -1,0 +1,21 @@
+✔ known synthetic fixtures yield readable values without reception or identity claims (2.572139ms)
+✔ UTF-8 preserves scalars, BOM, controls and text as inert content (0.702824ms)
+✔ Text status and language lengths are validated without guessing language validity (0.343615ms)
+✔ UTF-16 handles both BOMs, BE default, surrogate pairs and malformed units (0.425907ms)
+✔ all assigned URI prefixes map exactly and unknown prefixes remain opaque (0.758252ms)
+✔ long payload length, ID field, exact record and field offsets (0.699027ms)
+✔ opaque types and nested payloads are never recursively interpreted (0.203786ms)
+✔ MB/ME/CF/SR/IL/TNF constraints and limits fail closed while retaining bytes (0.624984ms)
+✔ every truncation boundary of short/long/IL messages is rejected with all bytes retained (0.286913ms)
+✔ import preserves exact source, distinguishes claimed origins, rejects fabricated verification/native dictionaries (1.883498ms)
+✔ deterministic fuzz is total, bounded, and preserves record spans and undecoded tail (180.564284ms)
+✔ ambiguous duplicate keys including escaped aliases cannot change origin claims (0.273442ms)
+✔ inclusive byte and record boundaries and structured payload fuzz (22.809788ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 351.010391

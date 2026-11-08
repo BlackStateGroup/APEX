@@ -1,0 +1,34 @@
+✔ explicit metadata selection, scalar spans, privacy and standalone disclosures (3.253658ms)
+✔ whole-event structural rejection has precise absolute offsets, including late failures (3.52976ms)
+✔ scalar states exhaust wire values without guessing unavailable or reserved measurements (14.945237ms)
+✔ directed fields ignored when inapplicable, resolved target not asserted as identity (21.931771ms)
+✔ event bits, conditional coded PHY, legacy contradictions and fragment statuses remain separate (0.841389ms)
+✔ CLI option is exclusive, default stays private, late structural failure emits no stdout (280.207165ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (4.385145ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (6.543273ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (23.987538ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.832184ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (5.421346ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (1.806196ms)
+✔ explicit bounded pagination, no silent truncation and output cap (7.723649ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (427.194044ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (0.981186ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (11.787869ms)
+✔ standalone selected JSON retains every metadata disclosure (0.590045ms)
+✔ nonfirst event exact binary span, unrelated marker exclusion, source vs derivative and coordinate oracles (8.441018ms)
+✔ 55 and 298 byte exact boundaries and maximum document label (3.048449ms)
+✔ forged spread proxy and invalid selections fail before hashing (1.265682ms)
+✔ caller and malicious hash copy mutation, async hash rejection and bad digest never publish (2.58176ms)
+✔ strict bounded exact schema, escaped duplicate names and shape/range confusion before hashing (6.828523ms)
+✔ plausible claimed original references remain explicitly unverified, not substituted (0.603292ms)
+✔ all accepted report enums/RSSI/AD lengths and opaque malformed unknown encrypted/inert AD parity (48.713933ms)
+✔ whole event rejected for malformed wrappers, framing, reports or late invalid data on create and reopen (2.630129ms)
+✔ exact JSON budget, escaped text retained, runtime input types, and multiple embedded records refused (1.23788ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 678.768717

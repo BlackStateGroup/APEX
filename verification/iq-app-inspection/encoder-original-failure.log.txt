@@ -1,0 +1,38 @@
+✖ synthetic Load needs no global TextEncoder and preserves exact ASCII bytes/hashes (1.454338ms)
+✔ unavailable decoder or WebCrypto refuses Inspect cleanly and releases slot for later explicit retry (18.416393ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.481582
+
+✖ failing tests:
+
+test at tests/iq-app-runtime.test.ts:13:1
+✖ synthetic Load needs no global TextEncoder and preserves exact ASCII bytes/hashes (1.454338ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "TextEncoder is not a constructor"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/tests/iq-app-runtime.test.ts:17:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: TextEncoder is not a constructor
+        at IqController.example (file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/src/iq-workbench.ts:78:20)
+        at file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/tests/iq-app-runtime.test.ts:17:29
+        at getActual (node:assert:611:5)
+        at strict.doesNotThrow (node:assert:779:32)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/tests/iq-app-runtime.test.ts:17:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.start (node:internal/test_runner/test:1262:17)
+        at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }

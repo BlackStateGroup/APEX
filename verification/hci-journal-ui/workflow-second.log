@@ -1,0 +1,13 @@
+✔ explicit save only, exact source mapping, no duplicate stale dispatch, refresh failure retains successful save (10.429282ms)
+✔ dispatched save survives newer edits, rejected edits, clear and leaving without reviving old verification (4.120668ms)
+✔ journal reopening snapshots before await and independently rejects bad bytes, size and malformed documents despite true verifier (1.898322ms)
+✔ reopen record replacement, leases, overlap and late failures cannot publish stale interpretations (5.02666ms)
+✔ real web adapter isolated mock, storage failure, bundle byte capability and native/App wiring (13.016973ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.77777

@@ -1,0 +1,223 @@
+{
+  "experiment": "Offline BLE interpretation; no RF reception, no network, no device actions",
+  "results": [
+    {
+      "decoded": {
+        "schemaVersion": 1,
+        "inputKind": "android-scan-record",
+        "provenance": {
+          "origin": "synthetic-fixture",
+          "label": "Hand-constructed public TLM layout: 3000 mV, 25.5 C, one advertisement, one second uptime. Not received over RF.",
+          "capturedAt": null
+        },
+        "rssiDbm": null,
+        "validation": "offline-format-check",
+        "physicalReceptionVerified": false,
+        "authenticatedIdentity": false,
+        "rawAdvertising": {
+          "inputHex": "0201060303aafe1116aafe20000bb81980000000010000000a",
+          "elements": [
+            {
+              "offset": 0,
+              "type": 1,
+              "dataHex": "06",
+              "value": {
+                "kind": "flags",
+                "bytesHex": "06"
+              }
+            },
+            {
+              "offset": 3,
+              "type": 3,
+              "dataHex": "aafe",
+              "value": {
+                "kind": "service-uuids",
+                "complete": true,
+                "uuids": [
+                  "0000feaa-0000-1000-8000-00805f9b34fb"
+                ]
+              }
+            },
+            {
+              "offset": 7,
+              "type": 22,
+              "dataHex": "aafe20000bb81980000000010000000a",
+              "value": {
+                "kind": "service-data",
+                "uuid": "0000feaa-0000-1000-8000-00805f9b34fb",
+                "payloadHex": "20000bb81980000000010000000a"
+              }
+            }
+          ],
+          "issues": [],
+          "paddingBytes": 0,
+          "unparsedHex": "",
+          "status": "parsed"
+        },
+        "normalizedFields": null,
+        "captureCompleteness": "complete",
+        "serviceReadings": [
+          {
+            "uuid": "0000feaa-0000-1000-8000-00805f9b34fb",
+            "reading": {
+              "status": "format-match",
+              "format": "Eddystone-TLM-v0",
+              "batteryMillivolts": 3000,
+              "temperatureCelsius": 25.5,
+              "advertisementCount": 1,
+              "uptimeDeciseconds": 10,
+              "authenticated": false
+            }
+          }
+        ]
+      },
+      "localHypothesisInput": {
+        "id": "ble:synthetic:1",
+        "kind": "signal-metadata",
+        "inputSha256": "e9efecea4dea46c3976b5f2b4151be0bbd31a75b939ef86fc68210501a742801",
+        "summary": "BLE offline format check; origin=synthetic-fixture; input=android-scan-record; completeness=complete; AD fields=3; AD issues=0; service fields=1; public TLM v0 format matches=1; public BTHome v2 complete format matches=0; physical reception unverified; identity unauthenticated. No device name, address or payload bytes included."
+      }
+    },
+    {
+      "decoded": {
+        "schemaVersion": 1,
+        "inputKind": "ios-advertisement-fields",
+        "provenance": {
+          "origin": "synthetic-fixture",
+          "label": "Synthetic normalized Core Bluetooth-shaped fields with the same TLM bytes; not an iPhone capture.",
+          "capturedAt": null
+        },
+        "rssiDbm": null,
+        "validation": "offline-format-check",
+        "physicalReceptionVerified": false,
+        "authenticatedIdentity": false,
+        "rawAdvertising": null,
+        "normalizedFields": {
+          "localName": null,
+          "serviceUuids": [
+            "0000feaa-0000-1000-8000-00805f9b34fb"
+          ],
+          "serviceData": [
+            {
+              "uuid": "0000feaa-0000-1000-8000-00805f9b34fb",
+              "payloadHex": "20000bb81980000000010000000a"
+            }
+          ],
+          "manufacturerDataHex": null,
+          "txPowerDbm": null,
+          "isConnectable": false
+        },
+        "captureCompleteness": "not-exposed",
+        "serviceReadings": [
+          {
+            "uuid": "0000feaa-0000-1000-8000-00805f9b34fb",
+            "reading": {
+              "status": "format-match",
+              "format": "Eddystone-TLM-v0",
+              "batteryMillivolts": 3000,
+              "temperatureCelsius": 25.5,
+              "advertisementCount": 1,
+              "uptimeDeciseconds": 10,
+              "authenticated": false
+            }
+          }
+        ]
+      },
+      "localHypothesisInput": {
+        "id": "ble:synthetic:2",
+        "kind": "signal-metadata",
+        "inputSha256": "a10c9e09c533e2d240cd6950879cbca33e7669aa9d5ad64dfd65cef629e52337",
+        "summary": "BLE offline format check; origin=synthetic-fixture; input=ios-advertisement-fields; completeness=not-exposed; AD fields=not exposed; AD issues=not applicable; service fields=1; public TLM v0 format matches=1; public BTHome v2 complete format matches=0; physical reception unverified; identity unauthenticated. No device name, address or payload bytes included."
+      }
+    },
+    {
+      "decoded": {
+        "schemaVersion": 1,
+        "inputKind": "android-scan-record",
+        "provenance": {
+          "origin": "synthetic-fixture",
+          "label": "Synthetic unknown AD type and repeated company-ID fields; company number is test data, not device attribution.",
+          "capturedAt": null
+        },
+        "rssiDbm": null,
+        "validation": "offline-format-check",
+        "physicalReceptionVerified": false,
+        "authenticatedIdentity": false,
+        "rawAdvertising": {
+          "inputHex": "020106090941504558204c6162020aec05ff3412010205ff34120304047fdeadbe",
+          "elements": [
+            {
+              "offset": 0,
+              "type": 1,
+              "dataHex": "06",
+              "value": {
+                "kind": "flags",
+                "bytesHex": "06"
+              }
+            },
+            {
+              "offset": 3,
+              "type": 9,
+              "dataHex": "41504558204c6162",
+              "value": {
+                "kind": "name",
+                "complete": true,
+                "text": "APEX Lab"
+              }
+            },
+            {
+              "offset": 13,
+              "type": 10,
+              "dataHex": "ec",
+              "value": {
+                "kind": "tx-power",
+                "dbm": -20
+              }
+            },
+            {
+              "offset": 16,
+              "type": 255,
+              "dataHex": "34120102",
+              "value": {
+                "kind": "manufacturer-data",
+                "companyId": 4660,
+                "payloadHex": "0102"
+              }
+            },
+            {
+              "offset": 22,
+              "type": 255,
+              "dataHex": "34120304",
+              "value": {
+                "kind": "manufacturer-data",
+                "companyId": 4660,
+                "payloadHex": "0304"
+              }
+            },
+            {
+              "offset": 28,
+              "type": 127,
+              "dataHex": "deadbe",
+              "value": {
+                "kind": "unknown"
+              }
+            }
+          ],
+          "issues": [],
+          "paddingBytes": 0,
+          "unparsedHex": "",
+          "status": "parsed"
+        },
+        "normalizedFields": null,
+        "captureCompleteness": "unknown",
+        "serviceReadings": []
+      },
+      "localHypothesisInput": {
+        "id": "ble:synthetic:3",
+        "kind": "signal-metadata",
+        "inputSha256": "bb08f8107b005c4e2b00ccd39af7459cb4d62730e8d13a85f33b72e7031a3fb8",
+        "summary": "BLE offline format check; origin=synthetic-fixture; input=android-scan-record; completeness=unknown; AD fields=6; AD issues=0; service fields=0; public TLM v0 format matches=0; public BTHome v2 complete format matches=0; physical reception unverified; identity unauthenticated. No device name, address or payload bytes included."
+      }
+    }
+  ]
+}

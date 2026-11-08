@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "counts": {
+    "historicalConversations": 4,
+    "historicalMessages": 52,
+    "unavailableBodies": 8,
+    "currentInstructions": 4,
+    "requirements": 29,
+    "sourceRoots": 31,
+    "archiveParts": 32,
+    "absentNestedGitlinks": 63,
+    "localLinksChecked": 96,
+    "manifestFiles": 31
+  },
+  "errors": [],
+  "scope": "Documentation integrity only; no runtime/native/device test claim"
+}

@@ -1,0 +1,89 @@
+✔ real REA evidence imports bounded metadata, deduplicates overlapping build IDs and stays unverified (1.704588ms)
+✔ REA report rejects mismatched digests, incorrect providers, invalid coverage and out-of-file ranges (1.277379ms)
+✔ firmware report persists as offline evidence without native provenance or raw payload promotion (2.289063ms)
+✔ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (2849.846572ms)
+✔ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (2887.568165ms)
+✖ REA stderr-only errors retain useful diagnostics (100.047306ms)
+✖ an output directory created during analysis is preserved and rejected (2755.380939ms)
+✖ all analysis consumes the exact snapshot even if source bytes change and are restored (2729.869166ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 5
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11490.230756
+
+✖ failing tests:
+
+test at tests/rea-inspection.test.ts:86:1
+✖ REA stderr-only errors retain useful diagnostics (100.047306ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /specific parser failure/. Input:
+  
+  'file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:19\n' +
+    '  if (result.error || result.status !== 0) throw new Error(`REA failed: ${result.error?.message ?? result.stdout.slice(0,4096) ?? result.stderr.slice(0,4096)}`);\n' +
+    '                                                 ^\n' +
+    '\n' +
+    'Error: REA failed: \n' +
+    '    at command (file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:19:50)\n' +
+    '    at file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:22:17\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '    at async node:internal/modules/esm/loader:647:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.22.1\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tests/rea-inspection.test.ts:90:47)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:19\n  if (result.error || result.status !== 0) throw new Error(`REA failed: ${result.error?.message ?? result.stdout.slice(0,4096) ?? result.stderr.slice(0,4096)}`);\n                                                 ^\n\nError: REA failed: \n    at command (file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:19:50)\n    at file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tools/inspect-firmware.mjs:22:17\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n',
+    expected: /specific parser failure/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:93:1
+✖ an output directory created during analysis is preserved and rejected (2755.380939ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: 0
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tests/rea-inspection.test.ts:98:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 0,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:102:1
+✖ all analysis consumes the exact snapshot even if source bytes change and are restored (2729.869166ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(record.supplements.every((item     ) => item.success))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-rea-hardening/tests/rea-inspection.test.ts:112:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

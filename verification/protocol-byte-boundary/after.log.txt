@@ -1,0 +1,27 @@
+✔ frame metadata is read once and validated as encoded (1.547254ms)
+✔ byte access ignores own hooks and preserves Buffer and subarray bytes (0.675147ms)
+✔ real payload size is bounded even with a shadowed length (0.351898ms)
+✔ unsupported byte inputs are rejected before changing partial decoder state (0.859585ms)
+✔ callback mutation of unread bytes is observed, delivered payload is independent (0.323429ms)
+✔ callback reentrant push is synchronous; reset and exceptions keep consumed frame removed (1.485411ms)
+✔ detachment in callback rejects remaining input without feeding undefined bytes (0.296137ms)
+✔ crc and decoder do not consume caller iterator contents (0.202153ms)
+✔ metadata side effects are completed before byte validation and copying (0.378207ms)
+✔ partial frame completed by a chunk permits callback reset and nested partial input (0.559044ms)
+✔ empty fixed views are accepted and invalid metadata never coerces values (0.347083ms)
+✔ CRC uses the independent CCITT-FALSE check value (1.334494ms)
+✔ encoder matches independently generated Python golden vectors (2.551662ms)
+✔ all possible two-chunk boundaries retain a maximum payload (21.445246ms)
+✔ single-byte fragments and coalesced frames decode identically (0.366629ms)
+✔ bad CRC and boot noise do not hide the next intact frame (0.419576ms)
+✔ invalid version, flags, kinds, zero ID and oversized lengths are rejected (0.372935ms)
+✔ encoder rejects invalid bounds and reset discards partial data (0.623818ms)
+✔ one million noise bytes retain bounded parser memory (29.281919ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.536818

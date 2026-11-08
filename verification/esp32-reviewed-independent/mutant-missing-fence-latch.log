@@ -1,0 +1,5 @@
+PASS 100 capacity/burst combinations: atomic exact-byte rollback and retry
+PASS full queue preserves 488-byte maximum-frame prefix for exact tail retry
+PASS malformed resync counters and trailing prefix roll back with response overflow
+PASS wrapped four-slot queue preserves partial head, FIFO and idempotent subscription
+FAIL line 77: fenced&&!subscribed&&!count&&!tx_timer.pending&&term_calls==1&&connection==7

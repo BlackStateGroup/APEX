@@ -1,0 +1,13 @@
+✔ independent boundaries: every size 0..130, explicit selections and whole rejection (5.029172ms)
+✔ independent newer completion survives older success AND older error (0.648169ms)
+✔ independent malformed digest shapes never publish and alias mutations cannot affect parse (6.593557ms)
+✔ independent whole TLV scan, unsupported CC, opaque report and offsets (3.248719ms)
+✔ independent stale paging, invalid numbers, and old leases do not mutate (0.681205ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.971351

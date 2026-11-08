@@ -1,0 +1,37 @@
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (8.512417ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (14.404577ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (22.909049ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (7.610743ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (22.358321ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.340988ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (4.766951ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.18855ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.558341ms)
+✖ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.38832ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 570.230293
+
+✖ failing tests:
+
+test at tests/hci-workbench.test.ts:65:1
+✖ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.38832ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-workbench/tests/hci-workbench.test.ts:76:111)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

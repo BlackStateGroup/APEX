@@ -1,0 +1,32 @@
+✖ independent: actual stale Cancel closure never reports poisoned cleanup completed (9.752059ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.872298
+
+✖ failing tests:
+
+test at tests/web-axp-application-independent.test.ts:133:1
+✖ independent: actual stale Cancel closure never reports poisoned cleanup completed (9.752059ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'Browser AXP local cleanup completed.'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:140:60)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Browser AXP local cleanup completed.' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,290 @@
+﻿2026-11-08T11:05:24.2798599Z Current runner version: '2.338.2'
+2026-11-08T11:05:24.2838875Z ##[group]Runner Image Provisioner
+2026-11-08T11:05:24.2840613Z Hosted Compute Agent
+2026-11-08T11:05:24.2842030Z Version: 20261028.624
+2026-11-08T11:05:24.2843443Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-08T11:05:24.2845292Z Build Date: 2026-10-28T21:51:42Z
+2026-11-08T11:05:24.2846717Z Worker ID: {b26d052d-5042-4645-9c9f-f0993db0bdc3}
+2026-11-08T11:05:24.2848126Z Region: eastus
+2026-11-08T11:05:24.2849155Z Cloud: Azure
+2026-11-08T11:05:24.2850260Z ##[endgroup]
+2026-11-08T11:05:24.2852882Z ##[group]Operating System
+2026-11-08T11:05:24.2854017Z Ubuntu
+2026-11-08T11:05:24.2854935Z 24.04.5
+2026-11-08T11:05:24.2855905Z LTS
+2026-11-08T11:05:24.2856899Z ##[endgroup]
+2026-11-08T11:05:24.2857887Z ##[group]Runner Image
+2026-11-08T11:05:24.2859064Z Image: ubuntu-24.04
+2026-11-08T11:05:24.2860102Z Version: 20261101.360.1
+2026-11-08T11:05:24.2862763Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-08T11:05:24.2865754Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-08T11:05:24.2867712Z ##[endgroup]
+2026-11-08T11:05:24.2869782Z ##[group]GITHUB_TOKEN Permissions
+2026-11-08T11:05:24.2873479Z Contents: read
+2026-11-08T11:05:24.2874599Z Metadata: read
+2026-11-08T11:05:24.2875678Z ##[endgroup]
+2026-11-08T11:05:24.2879639Z Secret source: Actions
+2026-11-08T11:05:24.2881720Z Cache mode: write
+2026-11-08T11:05:24.2883624Z Prepare workflow directory
+2026-11-08T11:05:24.3366583Z Prepare all required actions
+2026-11-08T11:05:24.3438728Z Getting action download info
+2026-11-08T11:05:24.5668089Z Download action repository 'actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-11-08T11:05:24.7988377Z Download action repository 'actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+2026-11-08T11:05:24.9525384Z Download action repository 'actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961' (SHA:b6effb05e454b25005698d916606bdc6ffcbf961)
+2026-11-08T11:05:25.2894783Z Complete job name: android
+2026-11-08T11:05:25.3885536Z ##[group]Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+2026-11-08T11:05:25.3886915Z with:
+2026-11-08T11:05:25.3887470Z   repository: BlackStateGroup/APEX
+2026-11-08T11:05:25.3891507Z   token: ***
+2026-11-08T11:05:25.3892049Z   ssh-strict: true
+2026-11-08T11:05:25.3892571Z   ssh-user: git
+2026-11-08T11:05:25.3893097Z   persist-credentials: true
+2026-11-08T11:05:25.3893673Z   clean: true
+2026-11-08T11:05:25.3894201Z   sparse-checkout-cone-mode: true
+2026-11-08T11:05:25.3894805Z   fetch-depth: 1
+2026-11-08T11:05:25.3895308Z   fetch-tags: false
+2026-11-08T11:05:25.3895846Z   show-progress: true
+2026-11-08T11:05:25.3896383Z   lfs: false
+2026-11-08T11:05:25.3896873Z   submodules: false
+2026-11-08T11:05:25.3897399Z   set-safe-directory: true
+2026-11-08T11:05:25.3898004Z   allow-unsafe-pr-checkout: false
+2026-11-08T11:05:25.3898947Z ##[endgroup]
+2026-11-08T11:05:25.7772106Z Syncing repository: BlackStateGroup/APEX
+2026-11-08T11:05:25.7776210Z ##[group]Getting Git version info
+2026-11-08T11:05:25.7778259Z Working directory is '/home/runner/work/APEX/APEX'
+2026-11-08T11:05:25.7781672Z [command]/usr/bin/git version
+2026-11-08T11:05:25.7903305Z git version 2.56.0
+2026-11-08T11:05:25.7979082Z ##[endgroup]
+2026-11-08T11:05:25.7989424Z Temporarily overriding HOME='/home/runner/work/_temp/a537322b-e35f-4517-bac1-24e2098c0a16' before making global git config changes
+2026-11-08T11:05:25.7992707Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T11:05:25.7995191Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/APEX/APEX
+2026-11-08T11:05:25.8139333Z Deleting the contents of '/home/runner/work/APEX/APEX'
+2026-11-08T11:05:25.8143098Z ##[group]Determining repository object format
+2026-11-08T11:05:25.8146194Z ##[endgroup]
+2026-11-08T11:05:25.8150167Z ##[group]Initializing the repository
+2026-11-08T11:05:25.8153220Z [command]/usr/bin/git init /home/runner/work/APEX/APEX
+2026-11-08T11:05:25.8330011Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-08T11:05:25.8334964Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-08T11:05:25.8337501Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-08T11:05:25.8339764Z hint: call:
+2026-11-08T11:05:25.8341486Z hint:
+2026-11-08T11:05:25.8343266Z hint: 	git config --global init.defaultBranch <name>
+2026-11-08T11:05:25.8345157Z hint:
+2026-11-08T11:05:25.8346963Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-08T11:05:25.8349670Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-08T11:05:25.8352304Z hint:
+2026-11-08T11:05:25.8353912Z hint: 	git branch -m <name>
+2026-11-08T11:05:25.8355477Z hint:
+2026-11-08T11:05:25.8357221Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-08T11:05:25.8359928Z Initialized empty Git repository in /home/runner/work/APEX/APEX/.git/
+2026-11-08T11:05:25.8388225Z [command]/usr/bin/git remote add origin https://github.com/BlackStateGroup/APEX
+2026-11-08T11:05:25.8485397Z ##[endgroup]
+2026-11-08T11:05:25.8487656Z ##[group]Disabling automatic garbage collection
+2026-11-08T11:05:25.8489474Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-08T11:05:25.8579569Z ##[endgroup]
+2026-11-08T11:05:25.8582464Z ##[group]Setting up auth
+2026-11-08T11:05:25.8584245Z Removing SSH command configuration
+2026-11-08T11:05:25.8586340Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T11:05:25.8666242Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T11:05:25.9191304Z Removing HTTP extra header
+2026-11-08T11:05:25.9200539Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T11:05:25.9251292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T11:05:25.9508830Z Removing includeIf entries pointing to credentials config files
+2026-11-08T11:05:25.9515903Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T11:05:25.9563732Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T11:05:25.9834651Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-08T11:05:25.9903628Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/APEX/APEX/.git.path /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:05:25.9947480Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/APEX/APEX/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:05:26.0005595Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:05:26.0052318Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:05:26.0097518Z ##[endgroup]
+2026-11-08T11:05:26.0099701Z ##[group]Fetching the repository
+2026-11-08T11:05:26.0117110Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2f16be2e3327fec3de77da13c35d917f9879a1cd:refs/remotes/pull/6/merge
+2026-11-08T11:05:27.6706732Z From https://github.com/BlackStateGroup/APEX
+2026-11-08T11:05:27.6707995Z  * [new ref]         2f16be2e3327fec3de77da13c35d917f9879a1cd -> pull/6/merge
+2026-11-08T11:05:27.6717448Z ##[endgroup]
+2026-11-08T11:05:27.6718912Z ##[group]Determining the checkout info
+2026-11-08T11:05:27.6720548Z ##[endgroup]
+2026-11-08T11:05:27.6726528Z [command]/usr/bin/git sparse-checkout disable
+2026-11-08T11:05:27.6795173Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-08T11:05:27.6847199Z ##[group]Checking out the ref
+2026-11-08T11:05:27.6848352Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/6/merge
+2026-11-08T11:05:27.8519042Z Note: switching to 'refs/remotes/pull/6/merge'.
+2026-11-08T11:05:27.8519852Z 
+2026-11-08T11:05:27.8520304Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-08T11:05:27.8521580Z changes and commit them, and you can discard any commits you make in this
+2026-11-08T11:05:27.8522738Z state without impacting any branches by switching back to a branch.
+2026-11-08T11:05:27.8523379Z 
+2026-11-08T11:05:27.8523842Z If you want to create a new branch to retain commits you create, you may
+2026-11-08T11:05:27.8524797Z do so (now or later) by using -c with the switch command. Example:
+2026-11-08T11:05:27.8525299Z 
+2026-11-08T11:05:27.8525530Z   git switch -c <new-branch-name>
+2026-11-08T11:05:27.8525908Z 
+2026-11-08T11:05:27.8526148Z Or undo this operation with:
+2026-11-08T11:05:27.8526460Z 
+2026-11-08T11:05:27.8526644Z   git switch -
+2026-11-08T11:05:27.8526899Z 
+2026-11-08T11:05:27.8527319Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-08T11:05:27.8527911Z 
+2026-11-08T11:05:27.8528588Z HEAD is now at 2f16be2 Merge bc21d0ac7e9a0449c523121ca82ba7bccd1604ed into e51750ec0b34b280399877d67e1036058874c373
+2026-11-08T11:05:27.8562179Z ##[endgroup]
+2026-11-08T11:05:27.8607491Z [command]/usr/bin/git log -1 --format=%H
+2026-11-08T11:05:27.8642375Z 2f16be2e3327fec3de77da13c35d917f9879a1cd
+2026-11-08T11:05:27.8963781Z ##[group]Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+2026-11-08T11:05:27.8964324Z with:
+2026-11-08T11:05:27.8964643Z   node-version: 24
+2026-11-08T11:05:27.8964965Z   cache: npm
+2026-11-08T11:05:27.8965289Z   check-latest: false
+2026-11-08T11:05:27.8967849Z   token: ***
+2026-11-08T11:05:27.8968172Z   package-manager-cache: true
+2026-11-08T11:05:27.8968573Z ##[endgroup]
+2026-11-08T11:05:28.1845096Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+2026-11-08T11:05:28.1912906Z ##[group]Environment details
+2026-11-08T11:05:28.9110633Z node: v24.22.2
+2026-11-08T11:05:28.9122361Z npm: 11.19.1
+2026-11-08T11:05:28.9127977Z yarn: 1.22.22
+2026-11-08T11:05:28.9142002Z ##[endgroup]
+2026-11-08T11:05:28.9173555Z [command]/opt/hostedtoolcache/node/24.22.2/x64/bin/npm config get cache
+2026-11-08T11:05:29.0953992Z /home/runner/.npm
+2026-11-08T11:05:29.1968722Z npm cache is not found
+2026-11-08T11:05:29.2210265Z ##[group]Run actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+2026-11-08T11:05:29.2210696Z with:
+2026-11-08T11:05:29.2210898Z   distribution: temurin
+2026-11-08T11:05:29.2211459Z   java-version: 21
+2026-11-08T11:05:29.2211680Z   java-package: jdk
+2026-11-08T11:05:29.2211900Z   check-latest: false
+2026-11-08T11:05:29.2212122Z   set-default: true
+2026-11-08T11:05:29.2212343Z   verify-signature: false
+2026-11-08T11:05:29.2212577Z   server-id: github
+2026-11-08T11:05:29.2212803Z   server-username: GITHUB_ACTOR
+2026-11-08T11:05:29.2213064Z   server-password: GITHUB_TOKEN
+2026-11-08T11:05:29.2213323Z   overwrite-settings: true
+2026-11-08T11:05:29.2213572Z   job-status: success
+2026-11-08T11:05:29.2215964Z   token: ***
+2026-11-08T11:05:29.2216195Z   show-download-progress: false
+2026-11-08T11:05:29.2216461Z ##[endgroup]
+2026-11-08T11:05:29.3874702Z ##[group]Installed distributions
+2026-11-08T11:05:29.3960432Z Resolved Java 21.0.13+9 from tool-cache
+2026-11-08T11:05:29.3962995Z Setting Java 21.0.13+9 as the default
+2026-11-08T11:05:29.3966851Z Creating toolchains.xml for JDK version 21 from temurin
+2026-11-08T11:05:29.4050714Z Writing to /home/runner/.m2/toolchains.xml
+2026-11-08T11:05:29.4056092Z 
+2026-11-08T11:05:29.4056608Z Java configuration:
+2026-11-08T11:05:29.4058308Z   Distribution: temurin
+2026-11-08T11:05:29.4059056Z   Version: 21.0.13+9
+2026-11-08T11:05:29.4060010Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:29.4060834Z 
+2026-11-08T11:05:29.4061757Z ##[endgroup]
+2026-11-08T11:05:29.4069077Z Creating settings.xml with server-id: github
+2026-11-08T11:05:29.4103459Z Writing to /home/runner/.m2/settings.xml
+2026-11-08T11:05:29.4132364Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+2026-11-08T11:05:29.4338397Z ##[group]Run npm ci
+2026-11-08T11:05:29.4338828Z [36;1mnpm ci[0m
+2026-11-08T11:05:29.4378666Z shell: /usr/bin/bash -e {0}
+2026-11-08T11:05:29.4379105Z env:
+2026-11-08T11:05:29.4379648Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:29.4380523Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:29.4399362Z   MAVEN_ARGS: -ntp
+2026-11-08T11:05:29.4399741Z ##[endgroup]
+2026-11-08T11:05:45.1263240Z 
+2026-11-08T11:05:45.1283243Z added 503 packages, and audited 504 packages in 16s
+2026-11-08T11:05:45.1301518Z 
+2026-11-08T11:05:45.1311829Z 47 packages are looking for funding
+2026-11-08T11:05:45.1324726Z   run `npm fund` for details
+2026-11-08T11:05:45.1871665Z 
+2026-11-08T11:05:45.1912275Z 8 moderate severity vulnerabilities
+2026-11-08T11:05:45.1942803Z 
+2026-11-08T11:05:45.1952120Z To address issues that do not require attention, run:
+2026-11-08T11:05:45.1971931Z   npm audit fix
+2026-11-08T11:05:45.1974170Z 
+2026-11-08T11:05:45.1992042Z To address all issues (including breaking changes), run:
+2026-11-08T11:05:45.2012564Z   npm audit fix --force
+2026-11-08T11:05:45.2031675Z 
+2026-11-08T11:05:45.2049895Z Run `npm audit` for details.
+2026-11-08T11:05:45.2960046Z ##[group]Run npx expo prebuild --platform android --no-install
+2026-11-08T11:05:45.2960848Z [36;1mnpx expo prebuild --platform android --no-install[0m
+2026-11-08T11:05:45.2988793Z shell: /usr/bin/bash -e {0}
+2026-11-08T11:05:45.2989204Z env:
+2026-11-08T11:05:45.2989752Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:45.2990638Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:45.2991558Z   MAVEN_ARGS: -ntp
+2026-11-08T11:05:45.2991926Z ##[endgroup]
+2026-11-08T11:05:46.0942442Z - Creating native directory (./android)
+2026-11-08T11:05:46.6658308Z ✔ Created native directory
+2026-11-08T11:05:46.6681588Z - Updating package.json
+2026-11-08T11:05:46.7118708Z ✔ Updated package.json | no changes
+2026-11-08T11:05:46.7129166Z - Running prebuild
+2026-11-08T11:05:46.9592679Z ✔ Finished prebuild
+2026-11-08T11:05:47.0590367Z ##[group]Run ./gradlew :apex-device:compileDebugKotlin --no-daemon
+2026-11-08T11:05:47.0611747Z [36;1m./gradlew :apex-device:compileDebugKotlin --no-daemon[0m
+2026-11-08T11:05:47.0661691Z shell: /usr/bin/bash -e {0}
+2026-11-08T11:05:47.0662135Z env:
+2026-11-08T11:05:47.0662716Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:47.0663688Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026-11-08T11:05:47.0664436Z   MAVEN_ARGS: -ntp
+2026-11-08T11:05:47.0664832Z ##[endgroup]
+2026-11-08T11:05:48.7264584Z Downloading https://services.gradle.org/distributions/gradle-9.4.1-bin.zip
+2026-11-08T11:06:00.4326284Z 
+2026-11-08T11:06:00.4416754Z ##[error]Exception in thread "main" java.io.IOException: Downloading from https://services.gradle.org/distributions/gradle-9.4.1-bin.zip failed: timeout (10000ms)
+2026-11-08T11:06:00.4427476Z 	at org.gradle.wrapper.Install.forceFetch(SourceFile:4)
+2026-11-08T11:06:00.4428070Z 	at org.gradle.wrapper.Install$1.call(SourceFile:8)
+2026-11-08T11:06:00.4428904Z 	at org.gradle.wrapper.GradleWrapperMain.main(SourceFile:67)
+2026-11-08T11:06:00.4429444Z Caused by: java.net.SocketTimeoutException: Read timed out
+2026-11-08T11:06:00.4429980Z 	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+2026-11-08T11:06:00.4430551Z 	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+2026-11-08T11:06:00.4431764Z 	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+2026-11-08T11:06:00.4432810Z 	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+2026-11-08T11:06:00.4433613Z 	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+2026-11-08T11:06:00.4434231Z 	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+2026-11-08T11:06:00.4434967Z 	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+2026-11-08T11:06:00.4436429Z 	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+2026-11-08T11:06:00.4437996Z 	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1460)
+2026-11-08T11:06:00.4439136Z 	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+2026-11-08T11:06:00.4439793Z 	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:291)
+2026-11-08T11:06:00.4440392Z 	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:347)
+2026-11-08T11:06:00.4441292Z 	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+2026-11-08T11:06:00.4442015Z 	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
+2026-11-08T11:06:00.4442638Z 	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:835)
+2026-11-08T11:06:00.4443221Z 	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:767)
+2026-11-08T11:06:00.4443941Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1730)
+2026-11-08T11:06:00.4444796Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1632)
+2026-11-08T11:06:00.4445538Z 	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+2026-11-08T11:06:00.4446352Z 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+2026-11-08T11:06:00.4447033Z 	at org.gradle.wrapper.Install.forceFetch(SourceFile:2)
+2026-11-08T11:06:00.4447372Z 	... 2 more
+2026-11-08T11:06:00.4622709Z ##[error]Process completed with exit code 1.
+2026-11-08T11:06:00.4746892Z Post job cleanup.
+2026-11-08T11:06:00.6405819Z Post job cleanup.
+2026-11-08T11:06:00.7571654Z [command]/usr/bin/git version
+2026-11-08T11:06:00.7578105Z git version 2.56.0
+2026-11-08T11:06:00.8266230Z Temporarily overriding HOME='/home/runner/work/_temp/19c58cdd-1de6-42ff-ad3c-bdffb3f69fcb' before making global git config changes
+2026-11-08T11:06:00.8272006Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T11:06:00.8511519Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/APEX/APEX
+2026-11-08T11:06:00.8517841Z Removing SSH command configuration
+2026-11-08T11:06:00.8519107Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T11:06:00.8522243Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T11:06:00.9322969Z Removing HTTP extra header
+2026-11-08T11:06:00.9328735Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T11:06:00.9613759Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T11:06:00.9814285Z Removing includeIf entries pointing to credentials config files
+2026-11-08T11:06:00.9815791Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T11:06:00.9871985Z includeif.gitdir:/home/runner/work/APEX/APEX/.git.path
+2026-11-08T11:06:00.9898394Z includeif.gitdir:/home/runner/work/APEX/APEX/.git/worktrees/*.path
+2026-11-08T11:06:00.9963254Z includeif.gitdir:/github/workspace/.git.path
+2026-11-08T11:06:00.9964899Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-08T11:06:00.9968433Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/APEX/APEX/.git.path
+2026-11-08T11:06:00.9970278Z /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:00.9976015Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/APEX/APEX/.git.path /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0048465Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/APEX/APEX/.git/worktrees/*.path
+2026-11-08T11:06:01.0094646Z /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0109233Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/APEX/APEX/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0157941Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-08T11:06:01.0196415Z /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0205844Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0253075Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-08T11:06:01.0290094Z /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0310373Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config
+2026-11-08T11:06:01.0356448Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T11:06:01.0626376Z Removing credentials config '/home/runner/work/_temp/git-credentials-ce14ee30-4342-4499-b2bd-595400a2535f.config'
+2026-11-08T11:06:01.0795148Z Cleaning up orphan processes
+

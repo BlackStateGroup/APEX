@@ -1,0 +1,42 @@
+✔ query rejection retains exactly one SDK conversion and error identity (28.669822ms)
+✔ abort stays responsive and fences until late resolve (8.23365ms)
+✔ PoweredOff stays responsive and fences until late resolve (8.614743ms)
+✔ abort stays responsive and fences until late reject (10.627032ms)
+✔ PoweredOff stays responsive and fences until late reject (8.449863ms)
+✔ ready event waits for resolve and late query failure cannot replace success (8.266927ms)
+✔ ready event waits for reject and late query failure cannot replace success (12.335808ms)
+✔ ready decision may still be vetoed by cancellation during query drainage (10.988277ms)
+✔ Resetting invalidates stale initial PoweredOn (8.376896ms)
+✔ Unknown invalidates stale initial PoweredOn (7.785813ms)
+✔ synchronous raw query throw undefined is exact and separately latched (7.965698ms)
+✔ synchronous raw query throw null is exact and separately latched (7.38004ms)
+✔ synchronous raw query throw false is exact and separately latched (8.44086ms)
+✔ synchronous raw query throw 0 is exact and separately latched (7.505279ms)
+✔ synchronous raw query throw  is exact and separately latched (6.384564ms)
+✔ synchronous raw query throw Error: sync is exact and separately latched (6.62821ms)
+✔ cancelled scanner permission may reset before permission returns without later acquisition (6.838668ms)
+✔ normal denial is recoverable and keeps only permission receipt (6.472758ms)
+✔ existing owned connection writes and cancellation remain possible during a new pending query (8.520647ms)
+✔ query callback observed first locks success despite later PoweredOff (9.053847ms)
+✔ raw fulfillment is not observed before a synchronous newer event (6.864449ms)
+✔ late drain cannot clear simultaneous remove uncertainty (7.054206ms)
+✔ ordinary scan stop stays responsive but query prevents reset and replacement (8.40577ms)
+✔ exclusive failed acquisition cannot destroy while query remains pending (8.503642ms)
+✔ real readiness deadline vetoes ready event without forgetting hung query (10012.592143ms)
+✔ alternate-contract synchronous abort before terminal callback keeps first preparation veto (8.724828ms)
+✔ installed SDK synchronous emitter registration order abort then PoweredOff (10.069797ms)
+✔ installed SDK synchronous emitter registration order PoweredOff then abort (7.146789ms)
+✔ installed SDK synchronous emitter registration order PoweredOn then abort (9.51766ms)
+(node:35) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ live connection permission remains reserved while shutdown is refused (10.104606ms)
+✔ App and DeviceSession keep uncertain selected transport after query cancel (14.103473ms)
+✔ App and DeviceSession keep uncertain selected transport after query reject (9.339144ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10434.161909

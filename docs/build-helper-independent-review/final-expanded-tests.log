@@ -1,0 +1,23 @@
+✔ only ESRCH proves tracked group absence (2.050221ms)
+✔ group probe waits through present group and fails closed on timeout (0.271063ms)
+✔ group probe can verify eventual disappearance (0.147974ms)
+✔ a fixed late-interrupt deadline extends observation only once (0.200078ms)
+✔ real process orchestration: independent off/on executable fixtures (1746.734527ms)
+✔ real orchestration rejects effective mismatch, missing artifact, partial build and changed final config (4497.802566ms)
+✔ previous outputs and SDK symlink cannot be overwritten (5.19393ms)
+✔ runner timeout, output overflow and signal cancellation retain failed status (390.460078ms)
+✔ ambient config/provenance overrides and arbitrary secrets are not inherited or recorded (775.988663ms)
+✔ closed command grammar and default-off (1.243657ms)
+✔ separate default-off and explicit-on configs target only derivative, preserve hashes (96.315947ms)
+✔ existing output and symlink aliases refused without commands (4.370395ms)
+✔ provenance mismatch leaves honest report with build unrun (8.892898ms)
+✔ failed configure, effective mismatch, partial compile preserve evidence (82.319271ms)
+✔ bounded synthetic subprocess success, failure, spawn failure and timeout cleanup (362.297411ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7528.245693

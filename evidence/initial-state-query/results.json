@@ -1,0 +1,262 @@
+{
+  "sourceCommit": "deb5f27a8a0781f518479c1e84aee26e316a29df",
+  "scope": "Exact unchanged installed PLX 3.5.1 ESM and exact adapter. Synthetic RN/native failures; real Node ten-second readiness timer; no device evidence. Owned-query modes are SDK API probes, not adapter corrections.",
+  "inputs": {
+    "src/platform/bluetooth.native.ts": "34e1c8d708785dba6ea2c26af53bf463c4c56a0b1be409daa5448cd9a6d0da71",
+    "node_modules/react-native-ble-plx/lib/module/BleManager.js": "4c7f98edd9dc1e148b618fd78a85b7a1cea8164bc45f38128a74dcd88b4acf21",
+    "node_modules/react-native-ble-plx/lib/module/BleError.js": "8cb7becd8940bb054d7adf97f5fa03bb01f02927a7bf3fad412a9d6746382f52"
+  },
+  "reports": [
+    {
+      "mode": "reject-timeout",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "remove"
+      ],
+      "pendingBefore": 2,
+      "beforeRawReject": {
+        "outcome": "pending",
+        "ownership": "owned",
+        "listeners": 1,
+        "pendingSdk": 2
+      },
+      "afterFailure": {
+        "outcome": "pending",
+        "ownership": "owned",
+        "listeners": 1,
+        "sdkSubscriptions": 1,
+        "pendingSdk": 0
+      },
+      "final": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "error": {
+          "name": "Error",
+          "message": "Bluetooth did not become ready"
+        },
+        "errorIsNativeOriginal": false
+      },
+      "unhandled": [
+        {
+          "name": "BleError",
+          "message": "Unknown error occurred. This is probably a bug! Check reason property.",
+          "reason": "Device is not authorized to use BluetoothLE",
+          "errorCode": 0,
+          "isNativeOriginal": false,
+          "isAdapterRejection": false
+        }
+      ],
+      "receipt": false
+    },
+    {
+      "mode": "abort-then-reject",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "remove"
+      ],
+      "pendingBefore": 2,
+      "beforeRawReject": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "pendingSdk": 2
+      },
+      "afterFailure": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "sdkSubscriptions": 0,
+        "pendingSdk": 0
+      },
+      "final": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "error": {
+          "name": "Error",
+          "message": "Bluetooth preparation cancelled"
+        },
+        "errorIsNativeOriginal": false
+      },
+      "unhandled": [
+        {
+          "name": "BleError",
+          "message": "Unknown error occurred. This is probably a bug! Check reason property.",
+          "reason": "Device is not authorized to use BluetoothLE",
+          "errorCode": 0,
+          "isNativeOriginal": false,
+          "isAdapterRejection": false
+        }
+      ],
+      "receipt": false
+    },
+    {
+      "mode": "event-then-reject",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "remove"
+      ],
+      "pendingBefore": 2,
+      "beforeRawReject": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "pendingSdk": 2
+      },
+      "afterFailure": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "sdkSubscriptions": 0,
+        "pendingSdk": 0
+      },
+      "final": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "error": {
+          "name": "Error",
+          "message": "Bluetooth poweredoff"
+        },
+        "errorIsNativeOriginal": false
+      },
+      "unhandled": [
+        {
+          "name": "BleError",
+          "message": "Unknown error occurred. This is probably a bug! Check reason property.",
+          "reason": "Device is not authorized to use BluetoothLE",
+          "errorCode": 0,
+          "isNativeOriginal": false,
+          "isAdapterRejection": false
+        }
+      ],
+      "receipt": false
+    },
+    {
+      "mode": "abort-destroy-then-reject",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "remove",
+        "destroy"
+      ],
+      "pendingBefore": 2,
+      "beforeRawReject": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "pendingSdk": 2
+      },
+      "afterFailure": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "sdkSubscriptions": 0,
+        "pendingSdk": 0
+      },
+      "final": {
+        "outcome": "rejected",
+        "ownership": "idle",
+        "listeners": 0,
+        "error": {
+          "name": "Error",
+          "message": "Bluetooth preparation cancelled"
+        },
+        "errorIsNativeOriginal": false
+      },
+      "unhandled": [
+        {
+          "name": "BleError",
+          "message": "Unknown error occurred. This is probably a bug! Check reason property.",
+          "reason": "BleManager was destroyed",
+          "errorCode": 0,
+          "isNativeOriginal": false,
+          "isAdapterRejection": false
+        }
+      ],
+      "receipt": false
+    },
+    {
+      "mode": "sync-state-throw",
+      "events": [
+        "create",
+        "listen",
+        "state"
+      ],
+      "pendingBefore": 0,
+      "beforeRawReject": {
+        "outcome": "rejected",
+        "ownership": "unknown",
+        "listeners": 1,
+        "pendingSdk": 0
+      },
+      "afterFailure": {
+        "outcome": "rejected",
+        "ownership": "unknown",
+        "listeners": 1,
+        "sdkSubscriptions": 0,
+        "pendingSdk": 0
+      },
+      "final": {
+        "outcome": "rejected",
+        "ownership": "unknown",
+        "listeners": 1,
+        "error": {
+          "name": "Error",
+          "message": "{\"errorCode\":101,\"reason\":\"synthetic state fault\",\"androidErrorCode\":73}"
+        },
+        "errorIsNativeOriginal": true
+      },
+      "unhandled": [],
+      "receipt": false
+    },
+    {
+      "mode": "owned-query-reject",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "query-error",
+        "remove"
+      ],
+      "pendingBefore": 1,
+      "unhandled": 0,
+      "error": {
+        "name": "BleError",
+        "message": "Device is not authorized to use BluetoothLE",
+        "reason": "synthetic state fault",
+        "errorCode": 101
+      },
+      "errorIsNativeOriginal": false,
+      "pendingAfter": 0
+    },
+    {
+      "mode": "owned-query-remove-then-reject",
+      "events": [
+        "create",
+        "listen",
+        "state",
+        "remove",
+        "query-error"
+      ],
+      "pendingBefore": 1,
+      "unhandled": 0,
+      "error": {
+        "name": "BleError",
+        "message": "Device is not authorized to use BluetoothLE",
+        "reason": "synthetic state fault",
+        "errorCode": 101
+      },
+      "errorIsNativeOriginal": false,
+      "pendingAfter": 0
+    }
+  ]
+}

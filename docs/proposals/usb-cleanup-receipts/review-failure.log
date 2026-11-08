@@ -1,0 +1,60 @@
+✔ analysis bound to exact inspected Kotlin bytes, not native validation (1.756424ms)
+✔ unknown token is never acknowledgement and cannot target owner (0.322082ms)
+✔ null active link is not modeled as released ownership (0.656346ms)
+✔ failed open retains reserved identity and handle (0.178571ms)
+✔ acquisition settlement required before cleanup (0.720925ms)
+✔ writer settlement required before cleanup (0.190732ms)
+✔ reader settlement required before cleanup (0.113138ms)
+✔ ambiguous release remains failed even after other steps succeed (0.947746ms)
+✔ ambiguous close is not repeated (0.596026ms)
+✔ closed receipt survives a lost result or thrown event (0.761182ms)
+✔ destroy/recreate preserves unresolved fence and exact handle (0.258514ms)
+✔ closed receipts bounded; eviction is unknown, not success (0.28431ms)
+✔ token exhaustion refuses acquisition rather than wraps (1.157961ms)
+✖ review: wrong-token retry cannot finish a different owner (4.392475ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 107.874295
+
+✖ failing tests:
+
+test at docs/proposals/usb-cleanup-receipts/reviewer.test.mjs:81:1
+✖ review: wrong-token retry cannot finish a different owner (4.392475ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + null
+  - {
+  -   acquisition: false,
+  -   closing: true,
+  -   handle: {},
+  -   reader: false,
+  -   state: 'pending',
+  -   steps: [
+  -     'succeeded',
+  -     'succeeded',
+  -     'succeeded'
+  -   ],
+  -   token: 1,
+  -   writer: false
+  - }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-receipt-review/docs/proposals/usb-cleanup-receipts/reviewer.test.mjs:86:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: { token: 1, handle: {}, state: 'pending', acquisition: false, writer: false, reader: false, closing: true, steps: [ 'succeeded', 'succeeded', 'succeeded' ] },
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "dataset": "{\n  \"schemaVersion\": 1,\n  \"scope\": \"owned-lab\",\n  \"serviceUuid\": \"FCD2\",\n  \"groups\": [\n    {\n      \"id\": \"baseline\",\n      \"condition\": \"Synthetic declared 20 C\"\n    },\n    {\n      \"id\": \"changed\",\n      \"condition\": \"Synthetic declared 18.44 C\"\n    }\n  ],\n  \"sources\": [\n    {\n      \"id\": \"android\",\n      \"platform\": \"android\",\n      \"snapshotId\": \"android\",\n      \"origin\": \"synthetic-fixture\"\n    },\n    {\n      \"id\": \"ios\",\n      \"platform\": \"ios\",\n      \"snapshotId\": \"ios\",\n      \"origin\": \"synthetic-fixture\"\n    }\n  ],\n  \"trials\": [\n    {\n      \"id\": \"android-baseline-1\",\n      \"groupId\": \"baseline\",\n      \"sourceId\": \"android\",\n      \"receiptId\": \"synthetic-android-baseline-1\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"android\\\",\\\"representation\\\":\\\"android-ad-bytes\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"android\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"BxbS/EAC0Ac=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QALQBw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"android-baseline-2\",\n      \"groupId\": \"baseline\",\n      \"sourceId\": \"android\",\n      \"receiptId\": \"synthetic-android-baseline-2\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"android\\\",\\\"representation\\\":\\\"android-ad-bytes\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"android\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"BxbS/EAC0Ac=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QALQBw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"android-changed-1\",\n      \"groupId\": \"changed\",\n      \"sourceId\": \"android\",\n      \"receiptId\": \"synthetic-android-changed-1\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"android\\\",\\\"representation\\\":\\\"android-ad-bytes\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"android\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"BxbS/EACNAc=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QAI0Bw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"android-changed-2\",\n      \"groupId\": \"changed\",\n      \"sourceId\": \"android\",\n      \"receiptId\": \"synthetic-android-changed-2\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"android\\\",\\\"representation\\\":\\\"android-ad-bytes\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"android\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"BxbS/EACNAc=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QAI0Bw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"ios-baseline-1\",\n      \"groupId\": \"baseline\",\n      \"sourceId\": \"ios\",\n      \"receiptId\": \"synthetic-ios-baseline-1\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"ios\\\",\\\"representation\\\":\\\"ios-normalized-fields-with-opaque-json-base64\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"ios\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"e30=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QALQBw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"ios-baseline-2\",\n      \"groupId\": \"baseline\",\n      \"sourceId\": \"ios\",\n      \"receiptId\": \"synthetic-ios-baseline-2\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"ios\\\",\\\"representation\\\":\\\"ios-normalized-fields-with-opaque-json-base64\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"ios\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"e30=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QALQBw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"ios-changed-1\",\n      \"groupId\": \"changed\",\n      \"sourceId\": \"ios\",\n      \"receiptId\": \"synthetic-ios-changed-1\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"ios\\\",\\\"representation\\\":\\\"ios-normalized-fields-with-opaque-json-base64\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"ios\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"e30=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QAI0Bw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    },\n    {\n      \"id\": \"ios-changed-2\",\n      \"groupId\": \"changed\",\n      \"sourceId\": \"ios\",\n      \"receiptId\": \"synthetic-ios-changed-2\",\n      \"document\": \"{\\\"schemaVersion\\\":1,\\\"sdk\\\":\\\"react-native-ble-plx@3.5.1\\\",\\\"platform\\\":\\\"ios\\\",\\\"representation\\\":\\\"ios-normalized-fields-with-opaque-json-base64\\\",\\\"provenance\\\":{\\\"origin\\\":\\\"synthetic-fixture\\\",\\\"label\\\":\\\"Synthetic controlled byte comparison; not a physical measurement\\\",\\\"capturedAt\\\":null},\\\"snapshot\\\":{\\\"id\\\":\\\"ios\\\",\\\"name\\\":null,\\\"rssi\\\":null,\\\"manufacturerData\\\":null,\\\"rawScanRecord\\\":\\\"e30=\\\",\\\"serviceData\\\":{\\\"FCD2\\\":\\\"QAI0Bw==\\\"},\\\"serviceUUIDs\\\":null,\\\"localName\\\":null,\\\"txPowerLevel\\\":null,\\\"solicitedServiceUUIDs\\\":null,\\\"isConnectable\\\":null,\\\"overflowServiceUUIDs\\\":null},\\\"unavailableFields\\\":[\\\"name\\\",\\\"rssi\\\",\\\"manufacturerData\\\",\\\"serviceUUIDs\\\",\\\"localName\\\",\\\"txPowerLevel\\\",\\\"solicitedServiceUUIDs\\\",\\\"isConnectable\\\",\\\"overflowServiceUUIDs\\\"],\\\"undefinedFields\\\":[]}\"\n    }\n  ]\n}\n",
+  "candidate": {
+    "byteOffset": 2,
+    "width": 2,
+    "byteOrder": "little",
+    "signed": true,
+    "divisor": 100,
+    "valueOffset": 0
+  },
+  "tolerance": "0",
+  "assignments": [
+    {
+      "trialId": "android-baseline-1",
+      "subset": "discovery",
+      "expected": "20"
+    },
+    {
+      "trialId": "android-baseline-2",
+      "subset": "held-out",
+      "expected": "20"
+    },
+    {
+      "trialId": "android-changed-1",
+      "subset": "discovery",
+      "expected": "18.44"
+    },
+    {
+      "trialId": "android-changed-2",
+      "subset": "held-out",
+      "expected": "18.44"
+    },
+    {
+      "trialId": "ios-baseline-1",
+      "subset": "discovery",
+      "expected": "20"
+    },
+    {
+      "trialId": "ios-baseline-2",
+      "subset": "held-out",
+      "expected": "20"
+    },
+    {
+      "trialId": "ios-changed-1",
+      "subset": "discovery",
+      "expected": "18.44"
+    },
+    {
+      "trialId": "ios-changed-2",
+      "subset": "held-out",
+      "expected": "18.44"
+    }
+  ]
+}

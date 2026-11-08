@@ -1,0 +1,5 @@
+34938fdf302142535cc3ccb6454fc5b0ec770fea8870ec65fa2bf0a7d38e4676  App.tsx
+9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404  packages/core/session.ts
+30bf233d19a90efd83819d5fb45dbc0e1569c76f72dd2af2d49a46d723602762  packages/core/ble-transport.ts
+1b5ed3e76b3c289b2e63b690f51f9e5c8de10988b566320389802e829d7c56bf  src/platform/bluetooth.native.ts
+492cb7345f33f3429ac9edbad88c3e1d92ebbe9e01abbe87995f0996454a8a22  tests/app-native-lifecycle-independent.test.ts

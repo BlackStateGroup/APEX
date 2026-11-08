@@ -1,0 +1,10 @@
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (352.570588ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (600.448749ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1091.176448

@@ -1,0 +1,41 @@
+✔ independent HCI exact inner document retained; outer canonical digest and byte digest distinct (10.792066ms)
+✔ independent missing byte capability fails all verification/persistence APIs; parse/list stay structural (1.877902ms)
+✔ independent re-signed outer envelopes and bundles cannot launder invalid inner digest/framing (6.506718ms)
+✔ independent source declaration mapping is exact and rejects native/mismatched labels (1.305088ms)
+✔ independent save refuses payload/input accessors without executing them (0.722243ms)
+✔ independent verify refuses accessor-bearing HCI records before serialization (0.528486ms)
+✔ independent save snapshots mutable caller input before text/byte hash awaits (1.75457ms)
+✔ independent malicious byte-hasher cannot mutate retained framing or future report (2.941555ms)
+✔ independent errors never insert; storage failure is not success; byte vs hex-text hash rejects (1.471183ms)
+✔ independent old string-only callers preserve bytes, false mismatch and malformed throw (0.683927ms)
+✔ independent actual CLI HCI roundtrip and malformed/strict inputs emit no partial stdout (1174.492744ms)
+✔ independent exact payload rejects inherited/nonenumerable/symbol/extra fields and never calls toJSON (0.839709ms)
+✔ independent delayed verify and bundle hash cannot observe later caller mutation (1.431646ms)
+✔ independent inherited and accessor toJSON cannot substitute a different HCI verification target (0.620339ms)
+✔ independent outer envelope serialized size cap remains fail closed (0.909204ms)
+✔ independent HCI verification cannot enter through missing-own-kind toJSON substitution (0.845589ms)
+✔ independent real web adapter hashes HCI bytes and preserves stored records on quota failure (21.141059ms)
+✔ independent old-kind toJSON cannot smuggle HCI past descriptor validation (0.731219ms)
+✖ independent EvidenceCrypto byte method retains its crypto receiver (0.636311ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 18
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1386.094184
+
+✖ failing tests:
+
+test at tests/hci-evidence-independent.test.ts:60:1
+✖ independent EvidenceCrypto byte method retains its crypto receiver (0.636311ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'marker')
+      at sha256Bytes (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/tests/hci-evidence-independent.test.ts:60:280)
+      at prepareHci (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/packages/core/hci-offline.ts:98:24)
+      at readHciLegacyEventDocument (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/packages/core/hci-offline.ts:315:26)
+      at verifyHciEventEvidencePayload (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/packages/core/hci-event-evidence.ts:44:10)
+      at EvidenceStore.save (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/packages/core/evidence.ts:123:51)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/tests/hci-evidence-independent.test.ts:60:442)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

@@ -1,0 +1,18 @@
+✔ synthetic cross-platform fixture is deterministic; counts, byte offsets and runs are exact (9.236003ms)
+✔ within-group changes are not field identification; absent byte differs from zero (2.953852ms)
+✔ encrypted BTHome is opaque, including unknown header versions, without inferred objects (4.619314ms)
+✔ FEAA payloads compare without assuming frame kind or equal payload lengths (2.06289ms)
+✔ exact provenance, whitespace and unverified receipt survive; iOS raw bytes stay opaque (1.768856ms)
+✔ reject ambiguous selections, missing Android raw bytes and malformed/truncated AD (2.067001ms)
+✔ strict schema, grouping, source declarations and duplicate references fail closed (4.86362ms)
+✔ exact character and trial limits; over-limit fails before analysis (4.764283ms)
+✔ CLI synthetic demo succeeds; malformed input produces no partial report (253.928055ms)
+✔ CLI only reads regular files, follows regular-file symlinks, and rejects invalid UTF-8 and excess bytes (775.945059ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1235.233382

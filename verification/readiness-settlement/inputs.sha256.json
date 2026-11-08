@@ -1,0 +1,11 @@
+{
+  "src/platform/bluetooth.native.ts": "34e1c8d708785dba6ea2c26af53bf463c4c56a0b1be409daa5448cd9a6d0da71",
+  "tests/plx-readiness-settlement.test.ts": "ba0fb48ce54c0783934f54519b3be130ba4c60e8d0acf6019b5eb2434b077173",
+  "tests/plx-facade-host/loader.ts": "74b700c6fbb108923c190b6f30881067627e93d4d6afd07de00247c03d6483a7",
+  "tests/plx-facade-host/inputs.sha256.json": "2ddad250dd1a4cf4d43b9abfd37ae8b925bc9ce4c6f273ba89e3debba57f2337",
+  "evidence/readiness-cleanup/reproduce.ts": "f19b3fea185d5098fc015e2b17ea11a0f7e3c9fcc4a9f2a4c8f25bb6adb64ab1",
+  "evidence/readiness-cleanup/before.json": "a4e2d08c9449ed5e69deb7e0e23f737f2f43784ae33824c1d36359cce6612677",
+  "evidence/readiness-cleanup/REPORT.md": "30f624660b777d19380cf95ffdf1cc5d8db9fa8995a50e3a1ee0e6a53735ef5b",
+  "package.json": "4c39f2cae0ecefa617fb32d510c7d0f089626a2e3fae426d5955d4aefd5bb018",
+  "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74"
+}

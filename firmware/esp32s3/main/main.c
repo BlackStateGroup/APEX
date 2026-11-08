@@ -1,4 +1,5 @@
 #include "apex.h"
+#include "ble_accessory.h"
 #include "driver/usb_serial_jtag.h"
 #include "esp_err.h"
 #include "freertos/FreeRTOS.h"
@@ -20,6 +21,7 @@ void app_main(void) {
     config.tx_buffer_size = 1024; config.rx_buffer_size = 1024;
     ESP_ERROR_CHECK(usb_serial_jtag_driver_install(&config));
     apex_device_init(&device, output, NULL);
+    apex_ble_start();
     for (;;) {
         int count = usb_serial_jtag_read_bytes(bytes, sizeof(bytes), pdMS_TO_TICKS(50));
         if (count > 0) apex_device_feed(&device, bytes, (size_t)count);

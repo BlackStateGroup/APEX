@@ -1,0 +1,22 @@
+✔ actual read-only plan CLI lists fixed commands without execution (67.962817ms)
+✔ exclusive output refuses existing directories, symlinks and symlink ancestors (73.736152ms)
+✔ synthetic real commands retain failure logs and do not run later stages (71.380287ms)
+✔ real executor forces offline flags and logs successful output (62.251965ms)
+✔ timeout terminates a synthetic child and records bounded failure (110.336463ms)
+✔ cancellation settles a synthetic child and leaves later stages not-run (157.407019ms)
+✔ uncertain cleanup never publishes a final result (2.541658ms)
+✔ already cancelled runner does not invoke its executor (1.869116ms)
+✔ excessive output is capped, marked truncated, and fails without advancing (120.44054ms)
+✔ TERM-resistant synthetic child is killed before result is settled (1261.570035ms)
+✔ successful synthetic checkpoint has a settled success result (70.583381ms)
+✔ missing existing executable fails without installation or fallback (14.407522ms)
+✔ surviving-group cleanup preserves TERM grace before escalating (1225.797616ms)
+✔ final publication refuses an unexpected existing result atomically (3.022177ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3579.006698

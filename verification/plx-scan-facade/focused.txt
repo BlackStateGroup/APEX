@@ -1,0 +1,26 @@
+✔ android: exact AXP filter, real Device conversion, 100 callback cap and late event fencing (25.7642ms)
+✔ android: absent native device ignored and oversized projected candidate ends before publication (8.313438ms)
+✔ android: cancel pending start, remove listener immediately, await raw start before replacement (7.738213ms)
+✔ android: stop acknowledgement gates connection handoff and fences stale callbacks (8.619556ms)
+✔ android: ScanEvent error converted by actual SDK and stops once (6.59779ms)
+✔ android: native start rejection converts error and cleans listener before next scan (6.745672ms)
+✔ android: native stop rejection converts error and poisons replacement (7.845439ms)
+✔ ios: exact AXP filter, real Device conversion, 100 callback cap and late event fencing (6.66809ms)
+✔ ios: absent native device ignored and oversized projected candidate ends before publication (9.914216ms)
+✔ ios: cancel pending start, remove listener immediately, await raw start before replacement (6.545013ms)
+✔ ios: stop acknowledgement gates connection handoff and fences stale callbacks (6.356414ms)
+✔ ios: ScanEvent error converted by actual SDK and stops once (6.320929ms)
+✔ ios: native start rejection converts error and cleans listener before next scan (6.415247ms)
+✔ ios: native stop rejection converts error and poisons replacement (7.976673ms)
+✔ Android preparation cancellation never dispatches a late start after permission returns (3.490685ms)
+✔ raw start held beyond controller grace prevents manager replacement (2007.407428ms)
+✔ raw stop held beyond controller grace prevents manager replacement (2008.790477ms)
+✔ two isolated case owners preserve their own actual SDK singleton and listeners (17.525523ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4299.070862

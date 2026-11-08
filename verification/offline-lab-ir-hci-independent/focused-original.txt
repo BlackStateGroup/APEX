@@ -1,0 +1,22 @@
+✔ independent exact CLI identity and original-stage byte preservation (346.446171ms)
+✔ independent NEC bit ordering, complements and precise fixture bytes (177.182675ms)
+✔ independent HCI exact source and scalar offsets refer to container bytes (162.439388ms)
+✔ no-argument contract rejects every supplied argument before fixture reads (646.713117ms)
+✔ late IR/HCI digest mismatches, serialization, and output bound fail atomically (715.875422ms)
+✔ independent oracle covers the complete original metadata, not just digest shape (177.251456ms)
+✔ post-analysis serialization exception and size assertion leave stdout empty (356.518471ms)
+✔ walkthrough completes with common network entry points trapped and filesystem writes denied (199.311663ms)
+✔ actual CLI IR exact ASCII bytes and independent whole-frame integer oracle (177.483357ms)
+✔ actual CLI HCI independent byte offsets, signed integers, hash parity and privacy (175.5714ms)
+✔ late IR and HCI fixture faults produce no stdout with filesystem writes denied (317.644881ms)
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (355.443123ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (635.915585ms)
+✔ late phase arithmetic and Flipper presence/status faults keep stdout atomic with writes denied (320.515469ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3091.189241

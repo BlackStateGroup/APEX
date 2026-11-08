@@ -102,3 +102,97 @@ test('synchronous transport failure also clears pending state', async t => {
   peer.write = () => { throw new Error('Synchronous driver failure'); };
   await assert.rejects(session.request('system.ping'), /Synchronous driver failure/); assert.equal(session.pendingCount, 0);
 });
+
+function deferred() {
+  let resolve!: () => void;
+  let reject!: (error: Error) => void;
+  const promise = new Promise<void>((yes, no) => { resolve = yes; reject = no; });
+  return { promise, resolve, reject };
+}
+
+// Synthetic transport promises only: these do not establish native release.
+test('failed open retains cleanup uncertainty and only explicit close retries', async () => {
+  const peer = new TestPeer();
+  const original = new Error('Permission/open refused');
+  peer.connect = async () => { throw original; };
+  let calls = 0;
+  peer.disconnect = async () => { ++calls; throw new Error('Release failed'); };
+  const session = new DeviceSession(peer);
+  await assert.rejects(session.open(), error => error === original);
+  assert.equal(session.state, 'closed');
+  assert.equal(session.transportReleasePending, true);
+  assert.equal(calls, 1);
+  await assert.rejects(session.close(), /Release failed/);
+  assert.equal(session.transportReleasePending, true);
+  assert.equal(calls, 2);
+  peer.disconnect = async () => { ++calls; };
+  await session.close();
+  assert.equal(session.transportReleasePending, false);
+  assert.equal(calls, 3);
+  await assert.rejects(session.open(), /reused/);
+});
+
+test('terminal cleanup remains pending until resolved and simultaneous closes share it', async () => {
+  const peer = new TestPeer(); const session = new DeviceSession(peer);
+  assert.equal(session.transportReleasePending, false);
+  await session.open(); assert.equal(session.transportReleasePending, true);
+  const release = deferred(); let calls = 0;
+  peer.disconnect = () => { ++calls; return release.promise; };
+  peer.drop();
+  assert.equal(session.state, 'closed'); assert.equal(session.transportReleasePending, true);
+  const a = session.close(); const b = session.close();
+  await Promise.resolve(); assert.equal(calls, 1);
+  release.resolve(); await Promise.all([a, b]);
+  assert.equal(session.transportReleasePending, false);
+});
+
+test('terminal cleanup failure stays pending until an explicit successful retry', async () => {
+  const peer = new TestPeer(); const session = new DeviceSession(peer); await session.open();
+  const release = deferred(); let calls = 0;
+  peer.disconnect = () => { ++calls; return release.promise; };
+  peer.drop(); const closing = assert.rejects(session.close(), /Release failed/);
+  release.reject(new Error('Release failed')); await closing;
+  assert.equal(session.transportReleasePending, true); assert.equal(calls, 1);
+  peer.disconnect = async () => { ++calls; };
+  await session.close(); assert.equal(calls, 2); assert.equal(session.transportReleasePending, false);
+});
+
+test('close during pending connect follows early successful cancellation with post-connect release', async () => {
+  const peer = new TestPeer(); const connecting = deferred(); const releasing = deferred(); let calls = 0;
+  peer.connect = () => connecting.promise;
+  peer.disconnect = () => { ++calls; return releasing.promise; };
+  const session = new DeviceSession(peer);
+  const opening = assert.rejects(session.open(), /closed during open/);
+  assert.equal(session.transportReleasePending, true);
+  const closing = session.close();
+  connecting.resolve(); await Promise.resolve(); await Promise.resolve();
+  assert.equal(session.transportReleasePending, true);
+  releasing.resolve(); await Promise.all([opening, closing]);
+  assert.equal(calls, 2); assert.equal(session.transportReleasePending, false);
+  assert.equal(peer.frames.length, 0); assert.equal(peer.data.size + peer.closed.size, 0);
+});
+
+test('clean refused open and explicit normal close confirm release', async () => {
+  const peer = new TestPeer(); peer.failConnect = true; const session = new DeviceSession(peer);
+  await assert.rejects(session.open(), /Connect failed/);
+  assert.equal(session.transportReleasePending, false);
+  const good = new DeviceSession(new TestPeer()); await good.open(); await good.close();
+  assert.equal(good.transportReleasePending, false);
+});
+
+test('terminal event during negotiation and open failure share one failed cleanup', async () => {
+  const peer = new TestPeer(); const release = deferred(); let calls = 0;
+  peer.handler = () => { peer.drop(); };
+  peer.disconnect = () => { ++calls; return release.promise; };
+  const session = new DeviceSession(peer);
+  const opening = assert.rejects(session.open(), /Cable removed/);
+  // Allow negotiation, its terminal callback and open's catch to join cleanup.
+  await Promise.resolve(); await Promise.resolve(); await Promise.resolve();
+  const closing = assert.rejects(session.close(), /Release failed/);
+  release.reject(new Error('Release failed'));
+  await Promise.all([opening, closing]);
+  assert.equal(calls, 1); assert.equal(session.transportReleasePending, true);
+  assert.equal(session.state, 'closed'); assert.equal(session.pendingCount, 0);
+  peer.disconnect = async () => { ++calls; };
+  await session.close(); assert.equal(calls, 2); assert.equal(session.transportReleasePending, false);
+});

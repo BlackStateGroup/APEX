@@ -3,7 +3,6 @@ on:
   pull_request:
     paths-ignore:
       - 'docs/**'
-      - 'research/**'
       - 'README.md'
       - 'LICENSE.md'
   workflow_dispatch:
@@ -23,6 +22,11 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - run: npm run research:setup
+      - name: Verify source archive restoration
+        run: python3 -m unittest discover -s tests -p 'test_source_archives.py' -v
+      - name: Verify REA readiness diagnostics
+        run: node --test tools/reverse-engineering/preflight.test.mjs
       - run: npm test
       - run: npm run typecheck
       - run: python3 tools/build_firmware.py --sanitize
@@ -45,11 +49,12 @@ jobs:
           java-version: '21'
       - run: npm ci
       - run: npx expo prebuild --platform android --no-install
+      - name: Bound Gradle distribution download timeout
+        run: node tools/configure-gradle-download.mjs android/gradle/wrapper/gradle-wrapper.properties
       - name: Compile native module
         working-directory: android
         run: ./gradlew :apex-device:compileDebugKotlin --no-daemon
-      - name: Assemble debug APK on an explicit full-build run
-        if: github.event_name == 'workflow_dispatch'
+      - name: Assemble debug APK including NFC and Bluetooth
         working-directory: android
         run: ./gradlew :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon
   esp32s3:
@@ -64,3 +69,18 @@ jobs:
           . /opt/esp/idf/export.sh
           idf.py -C firmware/esp32s3 set-target esp32s3 build
 
+  ios:
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    runs-on: macos-26
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx expo prebuild --platform ios
+      - name: Compile unsigned iPhone Simulator app
+        run: xcodebuild -workspace ios/APEX.xcworkspace -scheme APEX -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build

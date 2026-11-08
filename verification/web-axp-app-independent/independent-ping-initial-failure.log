@@ -1,0 +1,107 @@
+✔ independent: acquisition filters and observer order, frozen deep snapshot, selected cancel no GATT (3.276417ms)
+✔ independent: every gate applies to connect, held simulator is not closed or replaced (3.41716ms)
+✔ independent: cancelled raw picker rejects immediately, blocks replacement, late reject never acquires (5.490515ms)
+✔ independent: reentrant cancel on exact reservation cannot acquire and joins cleanup identity (1.536093ms)
+✔ independent: cancel fences before exact session.close even with operation lock and pending open (27.46631ms)
+✔ independent: pending write is locally cancelled; late raw effect cannot free poison or reach replacement (29.468929ms)
+✔ independent: failed disconnect survives view detach and requires explicit retry (1.207954ms)
+✔ independent: cancellation completion publication may select new work without old finally clearing it (1.366272ms)
+✔ independent: production source routes real App handlers through live owner and exact cleanup (1.013769ms)
+✖ independent: actual Ping closure cannot publish after replacement (1.343538ms)
+✖ independent: actual Ping closure cannot publish after unmount (0.648577ms)
+✖ independent: actual Ping closure cannot publish after StrictMode epoch (0.310867ms)
+✖ independent: actual Ping closure cannot publish after closed session (0.288787ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 9
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.756679
+
+✖ failing tests:
+
+test at tests/web-axp-application-independent.test.ts:106:87
+✖ independent: actual Ping closure cannot publish after replacement (1.343538ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'Ping received: old reply [ble]'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:111:23)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Ping received: old reply [ble]' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/web-axp-application-independent.test.ts:106:87
+✖ independent: actual Ping closure cannot publish after unmount (0.648577ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'Ping received: old reply [ble]'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:111:23)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Ping received: old reply [ble]' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/web-axp-application-independent.test.ts:106:87
+✖ independent: actual Ping closure cannot publish after StrictMode epoch (0.310867ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'Ping received: old reply [ble]'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:111:23)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Ping received: old reply [ble]' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/web-axp-application-independent.test.ts:106:87
+✖ independent: actual Ping closure cannot publish after closed session (0.288787ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'Ping received: old reply [ble]'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:111:23)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Ping received: old reply [ble]' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

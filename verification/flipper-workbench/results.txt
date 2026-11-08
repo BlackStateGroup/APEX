@@ -1,0 +1,16 @@
+Flipper offline workbench validation (2026-11-08 UTC)
+Base: a1566eb
+Environment on all test/build commands:
+CI=1 EXPO_OFFLINE=1 EXPO_NO_TELEMETRY=1 npm_config_update_notifier=false npm_config_offline=true npm_config_audit=false npm_config_fund=false
+App and REA dependencies: existing local node_modules symlinks only. No installation, package or lock changes.
+
+PASS node --test tests/flipper-workbench.test.ts (6/6)
+PASS npm run typecheck
+PASS npm run firmware:build (before full suite)
+PASS node --test --test-concurrency=2 tests/*.test.ts (607/607)
+PASS npm run build (web, Android and iOS export; not native device builds)
+PASS node --check tests/ui.smoke.spec.mjs (syntax only)
+PASS git diff --check
+
+Saved local logs: focused.log, typecheck.log, firmware.log, full.log, build.log in this directory (ignored by repository log policy).
+Playwright scenario authored, NOT RUN. No browser, phone or Flipper device validation performed. No network/provider/device operations performed.

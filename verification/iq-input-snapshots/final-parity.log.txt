@@ -1,0 +1,5 @@
+zero identical prepared digests/context, all five FFT sizes/time-frequency, activity, lag
+dc identical prepared digests/context, all five FFT sizes/time-frequency, activity, lag
+positive identical prepared digests/context, all five FFT sizes/time-frequency, activity, lag
+negative identical prepared digests/context, all five FFT sizes/time-frequency, activity, lag
+rails identical prepared digests/context, all five FFT sizes/time-frequency, activity, lag

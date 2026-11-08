@@ -1,0 +1,130 @@
+9e5b9ae028005f908c654421c1071f43ffda6f3c
+✔ simulator handshake and synchronous-before-write-completion replies work (4.8587ms)
+✔ disconnected and unavailable operations reject without transport execution (1.44565ms)
+✔ failed connect removes listeners and closes the one-use session (0.489467ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.582484ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (21.076505ms)
+✔ pending queue is bounded and unplug rejects every request (1.086947ms)
+✔ wrong response opcode and device error are rejected (0.758471ms)
+✔ write failure rejects immediately and clears pending requests (0.704134ms)
+✔ request IDs are never reused through the full 16-bit session space (573.229214ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.342075ms)
+✔ synchronous transport failure also clears pending state (0.532392ms)
+✖ failed open retains cleanup uncertainty and only explicit close retries (1.109304ms)
+✖ terminal cleanup remains pending until resolved and simultaneous closes share it (0.320315ms)
+✖ terminal cleanup failure stays pending until an explicit successful retry (0.46557ms)
+✖ close during pending connect shares cancellation cleanup with failed open (0.263267ms)
+✖ clean refused open and explicit normal close confirm release (0.258211ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 11
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 753.182271
+
+✖ failing tests:
+
+test at tests/session.test.ts:114:1
+✖ failed open retains cleanup uncertainty and only explicit close retries (1.109304ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/session.test.ts:123:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session.test.ts:135:1
+✖ terminal cleanup remains pending until resolved and simultaneous closes share it (0.320315ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/session.test.ts:137:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session.test.ts:149:1
+✖ terminal cleanup failure stays pending until an explicit successful retry (0.46557ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/session.test.ts:155:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session.test.ts:160:1
+✖ close during pending connect shares cancellation cleanup with failed open (0.263267ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/session.test.ts:166:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session.test.ts:175:1
+✖ clean refused open and explicit normal close confirm release (0.258211ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/session.test.ts:178:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,23 @@
+✔ independent bridge fails closed: EOF during command (64.892406ms)
+✔ independent bridge fails closed: abnormal child exit (61.695996ms)
+✔ independent bridge fails closed: unterminated oversized stdout (60.245956ms)
+✔ independent bridge fails closed: malformed control response (58.30471ms)
+✔ independent bridge fails closed: notification width overflow (64.386685ms)
+✔ independent bridge fails closed: bounded stderr (57.675107ms)
+✔ independent bridge bounds command bytes before writing (61.764153ms)
+✔ independent bridge times out unresponsive owned child and waits for close (2004.466432ms)
+✔ independent bridge rejects correlated-control fault: wrong serial (62.77955ms)
+✔ independent bridge rejects correlated-control fault: unsafe integer (61.510347ms)
+✔ independent bridge rejects correlated-control fault: invalid connection handle (60.484193ms)
+✔ independent bridge rejects correlated-control fault: invalid ATT return code (62.896464ms)
+✔ independent bridge rejects correlated-control fault: impossible stream length (63.996639ms)
+✔ independent bridge rejects high-bit bytes rather than ASCII-normalizing them (64.173407ms)
+✔ independent bridge rejects notification bytes following completed control response (56.280989ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3008.969272

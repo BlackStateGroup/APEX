@@ -1,0 +1,39 @@
+✔ ten unique typed choices, Recording default, exact source routes and invalid IDs (2.417023ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.438947ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.17976ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.508308ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.856977ms)
+✔ ir: newer inspector request wins over older completion after exit (5.348563ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.970976ms)
+✔ hci: newer inspector request wins over older completion after exit (1.858627ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.843549ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.867495ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.982717ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (3.307006ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.181957ms)
+✔ ten typed inspector choices, Recording default, and separate explicit source routes (2.469776ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.357436ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.382318ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (4.394169ms)
+✔ source delivery during pending saves survives old completion without reviving results (4.254543ms)
+✔ source delivery during pending saves survives old failure without reviving results (3.359117ms)
+✔ actual static TSX inactive and uninspected; boundaries and rejection disabled (11.717974ms)
+✔ actual TSX separates TLV statuses from NDEF missing, ambiguous, empty and decoder failure (19.21537ms)
+✔ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (11.13206ms)
+✔ actual TSX opaque spans never echo proprietary, trailing or unknown payload bytes (3.785588ms)
+✔ authored Text structure example loads without inspection and renders quoted inert APEX only after Inspect (4.175343ms)
+✔ strict exact-mode decoding and existing byte adapter parity (11.838047ms)
+✔ explicit mode/provenance, immutable report, separate byte copy (2.394201ms)
+✔ whole rejected edits retain draft and fence across declarations, mode and leave (1.571272ms)
+✔ late success/error fenced by accepted/rejected edits, mode, provenance, examples, clear and leave; old controls inert (2.067206ms)
+✔ bounded pages reject stale observations and reset on edits or leave (0.666414ms)
+✔ record and issue paging use independent observations, and repeated inspect pending is inert (0.912728ms)
+✔ authored structure example contains complete inert Text APEX and exact source hash (4.608082ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 415.419749

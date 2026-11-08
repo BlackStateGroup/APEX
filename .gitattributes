@@ -1,0 +1,2 @@
+# Raw tool evidence retains exact whitespace for digest verification.
+research/evidence/rea-lab/objdump-*.txt -whitespace

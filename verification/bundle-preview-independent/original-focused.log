@@ -1,0 +1,18 @@
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (73.769424ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (1.00611ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (3.887492ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (1.047132ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (14.471958ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (8.12277ms)
+✔ bounds, canonical time and digest failures reject without partial values (24.215987ms)
+✔ export snapshots the entire selection before the first awaited hash (1.445507ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1548.947749ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (9.499953ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1792.013139

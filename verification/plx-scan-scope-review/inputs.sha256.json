@@ -1,0 +1,9 @@
+{
+  "docs/PLX_SCAN_SCOPE_CORRECTION.md": "26dbb6df3b75c64be323ce0b7cec9a6eb0721365bdb3e5117b957bf7e5649a15",
+  "tests/plx-ios-scan-void.test.ts": "14a01abdab64e12b0aa67f9b668f1dd2ff11ccb9886feaabc1df61717e23eb99",
+  "tests/plx-scan-independent.test.ts": "1d2069d16c38765b06d108524d7a90a93fab03e4daa2adf20a9e646b35d4b2a2",
+  "tests/plx-facade-scan.test.ts": "702c112c35ebc513955a2d65f1ff7c4e4a2b732f0b8e216ed053f52811784726",
+  "tests/plx-facade-host/loader.ts": "74b700c6fbb108923c190b6f30881067627e93d4d6afd07de00247c03d6483a7",
+  "verification/plx-ios-scan-void/inputs.sha256.json": "9b79f1aa2ca9b3801aab50466b471d9d3e4807dd170ef3f19d74803314fec3d4",
+  "verification/plx-scan-facade/inputs.sha256.json": "ab1b571e2b699adedd15b5833dd35f823ae04e629888de6bc639e8e45a40312f"
+}

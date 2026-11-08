@@ -1,0 +1,5 @@
+a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578  src/platform/bluetooth.native.ts
+a377ccd2563a03d329a5cab19b804424467a5d8a09cbea2ba0421a17fe8649b8  packages/core/ble-transport.ts
+b7829f2888b9c7afc9dc3c2b51b2f53c781b8bd2ffef97f73c5a11446e50eedd  tests/ble-unissued-independent.test.ts
+d3ad9632b5e48b5c4efec1d25ec2d278e2d2d646d65597264779873135d4b5fc  tests/ble-unissued-proof-promise-independent.test.ts
+b352ea1d0c1ffa832c7f7b486b10d5e63d523e95debe5e53ff1362af8d44319b  tests/browser-c-host/current-inputs.sha256.json

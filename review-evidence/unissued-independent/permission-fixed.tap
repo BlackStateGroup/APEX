@@ -1,0 +1,72 @@
+✖ installed PLX normal deny releases and permits fresh real-facade connection (31.487934ms)
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (8.61423ms)
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (7.870925ms)
+✔ malformed permission missing must never certify (4.205228ms)
+✔ malformed permission unknown must never certify (5.386987ms)
+✔ malformed permission partial must never certify (3.989289ms)
+✔ malformed permission inherited must never certify (5.025368ms)
+✔ malformed permission accessor must never certify (3.673273ms)
+✔ malformed permission later-getter must never certify (4.101463ms)
+✔ malformed permission array must never certify (4.709323ms)
+✔ unexpected permission rejection keeps exact identity and transport hold (5.257291ms)
+✔ duplicate token cannot restore first pending receipt through late continuation (5.177324ms)
+✔ installed PLX construction rejection cannot certify (9.615451ms)
+✔ installed PLX readiness rejection cannot certify (7.514613ms)
+✖ installed PLX issued rejection cannot certify (8.586644ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 11
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 253.035774
+
+✖ failing tests:
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal deny releases and permits fresh real-facade connection (31.487934ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10001:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10001:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10001:388:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (8.61423ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10002:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10002:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10002:388:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (7.870925ms)
+  TypeError [Error]: BleModule.isDeviceConnected is not a function
+      at BleManager.isDeviceConnected (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10003:482:40)
+      at BleManager.connectToDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10003:427:50)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10003:388:34)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/ble-unissued-independent.test.ts:38:67
+✖ installed PLX issued rejection cannot certify (8.586644ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:38:486)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

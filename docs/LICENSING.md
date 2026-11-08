@@ -41,3 +41,7 @@ Distribution gates: produce an SBOM from the lockfile and selected SDK component
 
 The implementation branch includes [npm-dependencies.json](../research/npm-dependencies.json), with package paths, exact versions, declared licences, development/optional flags, integrity identifiers and the lockfile SHA-256. Regenerate with `npm run inventory` and verify with `npm run inventory:check`. It includes the tooling graph as well as application dependencies, including MPL-2.0, attribution and dual-licence entries that deserve selected-file review before distribution. SDK images, Android/Maven dependencies and future drivers need separate inventories when actually built/adopted.
 
+
+## Desktop REA toolchain, 2 November 2026
+
+REA (`rea-agents` 6.8.0) declares MIT. Its reference checkout preserves LICENSE and THIRD_PARTY_NOTICES.md; the installed npm release and reference commit are separately pinned. `research/rea-toolchain.json` inventories the isolated tooling lockfile, including optional packages even though installation omits them. GNU objdump is a system executable, not a mobile dependency; its version output identifies GNU binutils and GPLv3-or-later licensing. The tooling is excluded from Metro and TypeScript application discovery. No proprietary Ghidra/IDA/Hopper installation or binary is redistributed.

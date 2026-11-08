@@ -1,0 +1,13 @@
+✔ ownership diagnostic requires current uid and unique pid (0.915837ms)
+✔ failed ps cannot be treated as success (0.134159ms)
+✔ successful probes qualify only for acceptance test (1.024326ms)
+✔ real supervisor failure blocks even if ps diagnostic works (3.669381ms)
+✔ unhealthy doctor and version mismatch fail closed (0.331967ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 94.941321

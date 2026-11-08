@@ -1,0 +1,73 @@
+✔ independent: exact synchronous chooser, local handle, no eager GATT (2.592513ms)
+✔ independent: cancelled raw chooser keeps exclusivity until late settlement (5.361797ms)
+✔ independent: unavailable chooser gate false (0.264168ms)
+✔ independent: unavailable chooser gate true (0.124839ms)
+✔ independent: actual session negotiates and ping uses 20-byte conservative chunks (6.341808ms)
+✔ independent: retired old handle cannot disconnect replacement lease (1.152106ms)
+✔ independent: hung connect is bounded but raw ownership persists (51.394885ms)
+✔ independent: hung service:6f1d0001-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (50.202153ms)
+✔ independent: hung char:6f1d0002-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (51.271784ms)
+✔ independent: hung char:6f1d0003-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (51.259776ms)
+✔ independent: hung start is bounded but raw ownership persists (50.169841ms)
+✖ independent: preconnected foreign GATT is not disconnected (1.034112ms)
+✔ independent: notification uses intrinsic offset and immutable copied bytes (0.470016ms)
+✔ independent: DeviceSession keeps releasePending across hung write and explicit retry (62.044167ms)
+✔ independent: rejected connect retires without later discovery (0.440216ms)
+✔ independent: rejected service:6f1d0001-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.225476ms)
+✔ independent: rejected char:6f1d0002-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.186031ms)
+✔ independent: rejected char:6f1d0003-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.15922ms)
+✔ independent: rejected start retires without later discovery (0.192824ms)
+✔ independent: notification bound 0 fails closed (0.241182ms)
+✔ independent: notification bound 513 fails closed (0.135385ms)
+✔ independent: shared notification backing rejected (0.282413ms)
+✔ independent: resizable notification backing rejected (0.169367ms)
+✔ independent: pending startup can deliver READY but cannot write before startup settles (2.064204ms)
+✔ independent: hanging notification stop retains poison until explicit retry (20.997187ms)
+✔ independent: observer cancellation at reservation cannot trigger acquisition (0.39318ms)
+✔ independent: stale local candidate failure handle cannot affect active owner (0.266301ms)
+✔ independent: saved old disconnect listener cannot fence same-device replacement (0.263929ms)
+✖ independent: disconnected characteristics do not require impossible stop call (0.23016ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 27
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 496.818257
+
+✖ failing tests:
+
+test at tests/web-axp-independent-review.test.ts:51:1
+✖ independent: preconnected foreign GATT is not disconnected (1.034112ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /outside/. Input:
+  
+  'Error: Web AXP lease is closing'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/tests/web-axp-independent-review.test.ts:53:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Web AXP lease is closing
+        at error (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:39:43)
+        at file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:192:32
+        at new Promise (<anonymous>)
+        at Lease.bounded (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:181:12)
+        at Lease.subscribe (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:220:17)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/tests/web-axp-independent-review.test.ts:53:31)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: /outside/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/web-axp-independent-review.test.ts:101:1
+✖ independent: disconnected characteristics do not require impossible stop call (0.23016ms)
+  Error: Web AXP cleanup unknown; explicit retry required
+      at error (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:39:43)
+      at file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/src/experimental/web-axp.ts:303:13
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/tests/web-axp-independent-review.test.ts:104:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

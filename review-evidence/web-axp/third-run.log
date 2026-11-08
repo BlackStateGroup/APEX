@@ -1,0 +1,119 @@
+✔ independent: exact synchronous chooser, local handle, no eager GATT (2.719302ms)
+✔ independent: cancelled raw chooser keeps exclusivity until late settlement (5.708366ms)
+✔ independent: unavailable chooser gate false (0.253194ms)
+✔ independent: unavailable chooser gate true (0.134905ms)
+✔ independent: actual session negotiates and ping uses 20-byte conservative chunks (5.380563ms)
+✔ independent: retired old handle cannot disconnect replacement lease (1.195226ms)
+✔ independent: hung connect is bounded but raw ownership persists (51.254827ms)
+✔ independent: hung service:6f1d0001-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (50.01211ms)
+✔ independent: hung char:6f1d0002-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (50.233821ms)
+✔ independent: hung char:6f1d0003-8632-4a97-a816-7776d2b7a101 is bounded but raw ownership persists (51.304552ms)
+✔ independent: hung start is bounded but raw ownership persists (51.121418ms)
+✔ independent: preconnected foreign GATT is not disconnected (0.388951ms)
+✔ independent: notification uses intrinsic offset and immutable copied bytes (0.496454ms)
+✔ independent: DeviceSession keeps releasePending across hung write and explicit retry (61.61318ms)
+✔ independent: rejected connect retires without later discovery (0.424294ms)
+✔ independent: rejected service:6f1d0001-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.158845ms)
+✔ independent: rejected char:6f1d0002-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.134009ms)
+✔ independent: rejected char:6f1d0003-8632-4a97-a816-7776d2b7a101 retires without later discovery (0.195516ms)
+✔ independent: rejected start retires without later discovery (0.168505ms)
+✔ independent: notification bound 0 fails closed (0.303151ms)
+✔ independent: notification bound 513 fails closed (0.181478ms)
+✔ independent: shared notification backing rejected (0.268069ms)
+✔ independent: resizable notification backing rejected (0.155753ms)
+✔ independent: pending startup can deliver READY but cannot write before startup settles (1.720279ms)
+✖ independent: hanging notification stop retains poison until explicit retry (0.99084ms)
+✔ independent: observer cancellation at reservation cannot trigger acquisition (0.281127ms)
+✔ independent: stale local candidate failure handle cannot affect active owner (0.260276ms)
+✔ independent: saved old disconnect listener cannot fence same-device replacement (0.359602ms)
+✔ independent: disconnected characteristics do not require impossible stop call (0.230436ms)
+✔ independent: cleanup observer reentry joins one retirement (0.321965ms)
+✔ independent: immediate cancellation fences pending connect (24.485058ms)
+✔ independent: immediate cancellation fences pending service:6f1d0001-8632-4a97-a816-7776d2b7a101 (20.671636ms)
+✔ independent: immediate cancellation fences pending char:6f1d0002-8632-4a97-a816-7776d2b7a101 (20.70696ms)
+✔ independent: immediate cancellation fences pending char:6f1d0003-8632-4a97-a816-7776d2b7a101 (20.574423ms)
+✔ independent: immediate cancellation fences pending start (20.607178ms)
+✔ independent: chooser denial releases local ownership without GATT (0.294522ms)
+✔ independent: notification length 512 is accepted and copied exactly (0.347096ms)
+✖ independent: public connection is opaque and manager has no release bypass (1.097278ms)
+✔ independent: later acquisition discovers fresh characteristic objects (0.384307ms)
+✔ independent: missing write capability refuses startup (0.227261ms)
+✔ independent: missing writeMethod capability refuses startup (0.119026ms)
+✔ independent: missing notify capability refuses startup (0.136315ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 40
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 590.320842
+
+✖ failing tests:
+
+test at tests/web-axp-independent-review.test.ts:85:1
+✖ independent: hanging notification stop retains poison until explicit retry (0.99084ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/tests/web-axp-independent-review.test.ts:87:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /cleanup unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/web-axp-independent-review.test.ts:124:1
+✖ independent: public connection is opaque and manager has no release bypass (1.097278ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'active',
+  +   'cleanup',
+  +   'cleanupWork',
+  +   'closing',
+  +   'device',
+  +   'deviceListener',
+  +   'failure',
+  +   'manager',
+  -   'disconnect',
+      'mtu',
+  +   'notificationListener',
+  +   'notify',
+  +   'onClosed',
+  +   'ownsServer',
+  +   'raw',
+  +   'retired',
+  +   'server',
+  +   'stopAttempted',
+  +   'subscribed',
+  +   'waiters',
+  +   'write'
+  -   'subscribe',
+  -   'writeWithResponse'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-independent-review/tests/web-axp-independent-review.test.ts:125:56)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'active',        'cleanup',
+      'cleanupWork',   'closing',
+      'device',        'deviceListener',
+      'failure',       'manager',
+      'mtu',           'notificationListener',
+      'notify',        'onClosed',
+      'ownsServer',    'raw',
+      'retired',       'server',
+      'stopAttempted', 'subscribed',
+      'waiters',       'write'
+    ],
+    expected: [ 'disconnect', 'mtu', 'subscribe', 'writeWithResponse' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

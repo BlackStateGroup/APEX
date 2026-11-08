@@ -1,0 +1,1 @@
+tests/iq-app-observer-independent.test.ts(13,820): error TS2339: Property 'statistics' does not exist on type 'never'.

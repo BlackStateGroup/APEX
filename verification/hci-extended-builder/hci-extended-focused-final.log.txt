@@ -1,0 +1,25 @@
+✔ explicit metadata selection, scalar spans, privacy and standalone disclosures (3.628563ms)
+✔ whole-event structural rejection has precise absolute offsets, including late failures (5.220562ms)
+✔ scalar states exhaust wire values without guessing unavailable or reserved measurements (14.553581ms)
+✔ directed fields ignored when inapplicable, resolved target not asserted as identity (18.128516ms)
+✔ event bits, conditional coded PHY, legacy contradictions and fragment statuses remain separate (0.633514ms)
+✔ CLI option is exclusive, default stays private, late structural failure emits no stdout (273.972489ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.275691ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (5.78817ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (23.849037ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.567367ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (5.314043ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (0.936156ms)
+✔ explicit bounded pagination, no silent truncation and output cap (4.515353ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (491.836634ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (0.988136ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (13.547874ms)
+✔ standalone selected JSON retains every metadata disclosure (0.561344ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 722.822202

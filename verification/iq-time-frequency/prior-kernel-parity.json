@@ -1,0 +1,14 @@
+{
+  "baselineCommit": "7027b8c",
+  "singleWindowReportsCompared": 50,
+  "timeFrequencyWindowsCompared": 100,
+  "fftSizes": [
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "seed": 20261108,
+  "result": "Exact deep equality for complete pre/post-refactor reports and all frame amplitude/raw-dB/display arrays. This checks refactor parity, not an independent FFT algorithm or physical reception."
+}

@@ -1,0 +1,16 @@
+✔ actual document TSX: no implicit work, exact inert text and required cautions (19.065678ms)
+✔ actual document TSX: imported labels are exact inert text, never links or nested AD objects (5.256153ms)
+✔ actual saved HCI TSX hides unverified document and renders verified exact snapshot read-only (6.190283ms)
+✔ editable actions and both live statuses precede initially collapsed exact JSON; all caveats stay visible (2.180277ms)
+✔ expanded actual TSX preserves exact whitespace and hostile strings as selectable inert text after actions/status (1.590666ms)
+✔ save availability and messages remain default-visible across pending, rejected, saving, saved and failed states (12.359669ms)
+✔ disclosure keys track exact replacement and Clear; activation resets only the presentation subtree (4.368184ms)
+✔ readonly verified projection has no disclosure, staging, edit or save controls (2.4332ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 442.840151

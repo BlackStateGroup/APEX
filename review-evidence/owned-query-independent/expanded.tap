@@ -1,0 +1,33 @@
+✔ query rejection retains exactly one SDK conversion and error identity (29.248196ms)
+✔ abort stays responsive and fences until late resolve (8.852353ms)
+✔ PoweredOff stays responsive and fences until late resolve (8.798941ms)
+✔ abort stays responsive and fences until late reject (9.154623ms)
+✔ PoweredOff stays responsive and fences until late reject (7.97501ms)
+✔ ready event waits for resolve and late query failure cannot replace success (8.059632ms)
+✔ ready event waits for reject and late query failure cannot replace success (11.374585ms)
+✔ ready decision may still be vetoed by cancellation during query drainage (10.610688ms)
+✔ Resetting invalidates stale initial PoweredOn (8.136773ms)
+✔ Unknown invalidates stale initial PoweredOn (8.52377ms)
+✔ synchronous raw query throw undefined is exact and separately latched (8.365803ms)
+✔ synchronous raw query throw null is exact and separately latched (6.364516ms)
+✔ synchronous raw query throw false is exact and separately latched (8.619934ms)
+✔ synchronous raw query throw 0 is exact and separately latched (6.679413ms)
+✔ synchronous raw query throw  is exact and separately latched (6.76013ms)
+✔ synchronous raw query throw Error: sync is exact and separately latched (6.942225ms)
+✔ cancelled scanner permission may reset before permission returns without later acquisition (6.86746ms)
+✔ normal denial is recoverable and keeps only permission receipt (6.385671ms)
+✔ existing owned connection writes and cancellation remain possible during a new pending query (8.286032ms)
+✔ query callback observed first locks success despite later PoweredOff (7.604967ms)
+✔ raw fulfillment is not observed before a synchronous newer event (8.613474ms)
+✔ late drain cannot clear simultaneous remove uncertainty (7.35986ms)
+✔ ordinary scan stop stays responsive but query prevents reset and replacement (7.749869ms)
+✔ exclusive failed acquisition cannot destroy while query remains pending (9.088444ms)
+✔ real readiness deadline vetoes ready event without forgetting hung query (10009.109769ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10365.228995

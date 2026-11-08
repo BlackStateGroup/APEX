@@ -1,0 +1,2 @@
+tests/browser-c-bridge-independent.test.ts
+tests/browser-c-roundtrip.test.ts

@@ -1,0 +1,46 @@
+import assert from 'node:assert/strict';
+import { inspectFlipperResponses as inspect } from '/workspace/scratch/b96d3539d24d/apex-flipper-inspector/packages/core/flipper-offline.ts';
+import { spawnSync } from 'node:child_process';
+import { writeFileSync, symlinkSync, mkdirSync } from 'node:fs';
+let checks=0;
+const read = a => inspect(Uint8Array.from(a),{provenance:'synthetic'});
+function ok(name,fn){fn(); checks++; console.log('PASS',name);}
+function bad(name,bytes,code){ok(name,()=>assert.throws(()=>read(bytes),e=>e.code===code));}
+ok('selected fields/defaults and scalar presence',()=>{let f=read([3,138,2,0]).frames[0]; assert.equal(f.content.kind,'identity');assert.deepEqual(f.commandId,{present:false,effective:0});assert.equal(f.status.observation,'omitted');assert.equal(f.hasNext.present,false);assert.deepEqual(f.content.key,{present:false,effective:''});});
+ok('explicit empty key/value',()=>{let f=read([7,138,2,4,10,0,18,0]).frames[0];assert.deepEqual(f.content.key,{present:true,effective:''});assert.deepEqual(f.content.value,{present:true,effective:''});});
+ok('field 40 observed version',()=>{let f=read([7,194,2,4,8,0,16,25]).frames[0];assert.equal(f.content.kind,'version');assert.deepEqual(f.content.major,{present:true,effective:0});assert.deepEqual(f.content.minor,{present:true,effective:25});});
+ok('field 45 power',()=>assert.equal(read([3,234,2,0]).frames[0].content.kind,'power'));
+ok('error/decode status retained',()=>{let f=read([4,16,2,34,0]).frames[0];assert.equal(f.status.effective,2);assert.match(f.diagnostics.join(' '),/unreliable/);});
+ok('unknown enum not success',()=>assert.equal(read([3,16,255,1]).frames[0].status.observation,'nonzero-or-unknown'));
+ok('input copy isolation',()=>{let a=Uint8Array.of(3,138,2,0),r=inspect(a,{provenance:'imported'});a.fill(255);assert.deepEqual([...r.originalBytes],[3,138,2,0]);});
+ok('prefix splits classified without resync',()=>{let a=[7,138,2,4,10,0,18,0]; for(let n=1;n<a.length;n++){let r=read(a.slice(0,n));assert.equal(r.frames.length,0);assert.equal(r.tail.kind,'incomplete-payload');}});
+ok('trailing incomplete length',()=>assert.equal(read([0,128]).tail.kind,'incomplete-length'));
+bad('length overlong',[128,0],'noncanonical-varint');
+bad('length overflow',[255,255,255,255,16],'varint-overflow');
+bad('5 continued length bytes',[128,128,128,128,128],'varint-overflow');
+bad('frame cap before payload allocation',[129,64],'frame-budget');
+bad('zero field',[1,0],'field-zero');
+bad('illegal wire 3',[1,35],'unsupported-wire-type');
+bad('illegal wire 4',[1,36],'unsupported-wire-type');
+bad('illegal wire 6',[1,38],'unsupported-wire-type');
+bad('illegal wire 7',[1,39],'unsupported-wire-type');
+bad('uint32 overflow',[6,8,255,255,255,255,16],'varint-overflow');
+bad('unknown 64bit overflow',[11,48,255,255,255,255,255,255,255,255,255,2],'varint-overflow');
+bad('child cannot read next frame',[3,138,2,1,0],'truncated-field');
+bad('incomplete known child varint',[4,194,2,1,8],'truncated-varint');
+bad('duplicate known scalar',[4,8,1,8,1],'duplicate-known-field');
+bad('duplicate known nested',[7,194,2,4,8,1,8,2],'duplicate-known-field');
+bad('multiple selected content',[6,138,2,0,234,2,0],'ambiguous-content');
+bad('unknown plus selected content',[5,48,0,138,2,0],'ambiguous-content');
+bad('strict UTF8 overlong',[7,138,2,4,10,2,192,128],'invalid-utf8');
+bad('strict UTF8 surrogate',[8,138,2,5,10,3,237,160,128],'invalid-utf8');
+bad('known wrong wire',[2,10,0],'wrong-known-wire-type');
+bad('noncanonical bool',[2,24,2],'noncanonical-bool');
+bad('frame count cap',new Array(257).fill(0),'frame-count-budget');
+bad('aggregate input cap',new Array(65537).fill(0),'input-budget');
+ok('unknown fixed32 retained',()=>{let r=read([5,53,1,2,3,4]);assert.equal(r.frames[0].unknownFields[0].wire,5);assert.deepEqual([...r.originalBytes],[5,53,1,2,3,4]);});
+ok('arbitrary short complete-frame fuzz stays typed',()=>{for(let a=0;a<256;a++)for(let b=0;b<256;b++){try{read([2,a,b]);}catch(e){assert.equal(e.name,'FlipperInspectionError');}}});
+mkdirSync('/tmp/flipper-independent-files',{recursive:true});writeFileSync('/tmp/flipper-independent-files/malformed',Uint8Array.of(0,1,0));writeFileSync('/tmp/flipper-independent-files/valid',Uint8Array.of(3,138,2,0));
+try{symlinkSync('/tmp/flipper-independent-files/valid','/tmp/flipper-independent-files/link');}catch{}
+for(const path of ['malformed','link','/tmp'])ok('CLI no stdout on error '+path,()=>{let p=spawnSync(process.execPath,['/workspace/scratch/b96d3539d24d/apex-flipper-inspector/tools/inspect-flipper-offline.ts',path==='/tmp'?path:'/tmp/flipper-independent-files/'+path,'--provenance','synthetic'],{encoding:'utf8'});assert.equal(p.status,1);assert.equal(p.stdout,'');assert.ok(p.stderr.length);});
+console.log('TOTAL',checks);

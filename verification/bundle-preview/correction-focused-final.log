@@ -1,0 +1,30 @@
+✔ independent: returned state cannot replace the draft behind a verified report (6.3142ms)
+✔ independent: returned report metadata and exact documents cannot be mutated (1.020154ms)
+✔ independent: nested payload and record arrays cannot mutate a verified snapshot (1.014056ms)
+✔ independent: old hash error cannot clear newer pending state or overwrite newest success (2.023691ms)
+✔ independent: UTF-16 rejection counts surrogate pairs whole and fences pending inspection (0.809494ms)
+✔ independent: preview has no journal/provider/network/action imports or executable URL projection (1.044661ms)
+✔ actual TSX initial/inactive renders and precise limits (8.726145ms)
+✔ actual TSX projects four bounded metadata rows and inert provenance/digest caveats (14.372005ms)
+✔ actual TSX bounds valid long legacy timestamps without changing retained data (10.412988ms)
+✔ independent: valid long timestamp metadata uses a bounded display excerpt (9.951149ms)
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (59.510137ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (1.72888ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (4.774461ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (1.781663ms)
+✔ published state, nested reports and exact strings cannot be mutated or replaced (1.397654ms)
+✔ deactivated controllers reject queued actions; activation leases never revive old controls (0.560915ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (13.154461ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (6.208961ms)
+✔ bounds, canonical time and digest failures reject without partial values (36.683839ms)
+✔ export snapshots the entire selection before the first awaited hash (2.57089ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1559.283877ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (7.397559ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1830.834841

@@ -1,0 +1,34 @@
+Sun Nov  8 00:07:53 UTC 2026
+0d8009ad94fcb3bfe8eb2901d3701bab825e6af2
+v24.22.1
+{"fakeExpoExit":0,"wrapperResult":{"code":0,"signal":null},"sentinel":"original","descendantResult":"ENOENT","lockModeOctal":"700","output":""}
+{"fakeExpoExit":23,"wrapperResult":{"code":1,"signal":null},"sentinel":"original","descendantResult":"ENOENT","lockModeOctal":"700","output":"AggregateError: Native command or process-group safety check failed\n    at run (file:///tmp/apex-review-descendant-IMQobA/app/tools/native-build.mjs:74:28)\n    at async file:///tmp/apex-review-descendant-IMQobA/app/tools/native-build.mjs:91:3 {\n  [errors]: [\n    Error: Expo exited 23\n        at ChildProcess.<anonymous> (file:///tmp/apex-review-descendant-IMQobA/app/tools/native-build.mjs:54:24)\n        at ChildProcess.emit (node:events:514:28)\n        at maybeClose (node:internal/child_process:1172:16)\n        at ChildProcess._handle.onexit (node:internal/child_process:335:5)\n  ]\n}\n"}
+✔ prebuild hides corpus, restores exact bytes, and prebuild-only skips run (151.103917ms)
+✔ normal native run sees restored corpus (187.67896ms)
+✔ prebuild failure restores corpus and skips run (128.983348ms)
+✔ missing CLI failure restores corpus (152.8335ms)
+✔ missing optional corpus still builds (127.52977ms)
+✔ existing restore destination and original failure both survive (189.167016ms)
+✔ concurrent wrapper refuses before invoking CLI (1131.83307ms)
+✔ SIGTERM restores before exit (135.004877ms)
+✔ SIGINT restores before exit (135.926849ms)
+✔ SIGHUP restores before exit (139.395371ms)
+✔ invalid platform cannot move sources (73.623953ms)
+✔ stale lock is never automatically removed (66.593907ms)
+✔ signal-ignoring child is killed after bounded grace period (5145.358144ms)
+✔ SIGKILL leaves a recoverable corpus and blocks another build (498.443684ms)
+✔ leader exit 0 cannot restore ahead of a live descendant (6221.375005ms)
+✔ leader exit 23 cannot restore ahead of a live descendant (6198.861316ms)
+✔ interruption after leader exit retains protection until its descendant is gone (5309.668606ms)
+✔ unexpected lock contents preserve ownership and are never deleted (136.783968ms)
+✔ only ESRCH proves tracked group absence (2.681291ms)
+✔ group probe waits through present group and fails closed on timeout (0.416558ms)
+✔ group probe can verify eventual disappearance (0.316701ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 26293.88169

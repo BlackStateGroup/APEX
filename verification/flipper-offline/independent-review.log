@@ -1,0 +1,38 @@
+PASS selected fields/defaults and scalar presence
+PASS explicit empty key/value
+PASS field 40 observed version
+PASS field 45 power
+PASS error/decode status retained
+PASS unknown enum not success
+PASS input copy isolation
+PASS prefix splits classified without resync
+PASS trailing incomplete length
+PASS length overlong
+PASS length overflow
+PASS 5 continued length bytes
+PASS frame cap before payload allocation
+PASS zero field
+PASS illegal wire 3
+PASS illegal wire 4
+PASS illegal wire 6
+PASS illegal wire 7
+PASS uint32 overflow
+PASS unknown 64bit overflow
+PASS child cannot read next frame
+PASS incomplete known child varint
+PASS duplicate known scalar
+PASS duplicate known nested
+PASS multiple selected content
+PASS unknown plus selected content
+PASS strict UTF8 overlong
+PASS strict UTF8 surrogate
+PASS known wrong wire
+PASS noncanonical bool
+PASS frame count cap
+PASS aggregate input cap
+PASS unknown fixed32 retained
+PASS arbitrary short complete-frame fuzz stays typed
+PASS CLI no stdout on error malformed
+PASS CLI no stdout on error link
+PASS CLI no stdout on error /tmp
+TOTAL 37

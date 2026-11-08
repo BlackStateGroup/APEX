@@ -1,0 +1,89 @@
+✔ rejected cleanup remains visible across BLE setup and session catch (8.492398ms)
+✖ terminal callback and connect catch never retry failed release before explicit close (3.433103ms)
+✔ failed automatic BLE setup release waits for explicit session close before retry (5.394805ms)
+✔ combined session cancellation waits late BLE handle without recursive deadlock (5.427156ms)
+✔ combined session no-handle BLE acquisition rejection stays pending through explicit retry (0.762227ms)
+✔ terminal callback inside subscribe waits raw registration and releases once (1.722252ms)
+✔ failed setup retains exact connection for explicit cleanup retry (3.342832ms)
+✔ concurrent disconnects coalesce and rejected cleanup can be retried (8.319355ms)
+✔ invalid MTU retains cleanup handle when native disconnect rejects (0.567683ms)
+✔ close during pending acquisition waits then releases returned exact handle (1.664507ms)
+✔ cancelled acquisition retains returned handle after failed native cleanup (0.570417ms)
+✔ rejected acquisition without handle remains explicitly unknown (1.05664ms)
+✔ disconnect waits late subscription and ignores late READY, data and terminal events (1.449698ms)
+✔ readiness timeout does not release while native subscribe remains pending (35.961001ms)
+✔ write timeout rejects caller promptly but cleanup waits raw native write settlement (32.540245ms)
+✔ terminal event during native write does not certify release or start queued writes (1.118027ms)
+✔ disconnect before connect has no native effects and forbids reuse (0.353023ms)
+✔ throwing unsubscribe retains subscription and native handle for explicit retry (0.323386ms)
+✔ late rejected subscribe still drains before exact handle disconnect (1.254228ms)
+✔ automatic cleanup reuses failed setup release until explicit retry (0.371844ms)
+✔ single chunk native write settling after cancellation cannot fulfill caller (0.550552ms)
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (1.749846ms)
+✔ failed manager shutdown preserves session and UI ownership (0.564294ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.323407ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.243997ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (2.171367ms)
+✔ closed session remains explicitly releasable after capabilities disappear (5.1148ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.341509ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.271118ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (0.367555ms)
+✔ App retention helper keeps a real failed session through failed retry (1.230806ms)
+✔ preconnected transport remains held when listener setup throws and cleanup rejects (2.224685ms)
+✔ close must not confirm release before deferred connect can acquire transport (0.672014ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (2.805953ms)
+✔ explicit close of preconnected new session releases exactly once (0.5229ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (2.561638ms)
+✔ terminal callback synchronously inside close joins the same attempt (0.918305ms)
+✔ early successful disconnect keeps slot pending until late acquisition is released (0.731459ms)
+✔ failed early disconnect is not automatically retried after connect settles (0.608194ms)
+✔ synchronous terminal registration prevents connect and removes late registered listener (0.486915ms)
+✔ throwing unsubscribe does not prevent other removal, pending rejection or transport cleanup (1.689304ms)
+✔ concurrent closes join failed late release (connect-first) (17.432138ms)
+✔ concurrent closes join failed late release (release-first) (0.899687ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (10.315ms)
+✔ disconnected and unavailable operations reject without transport execution (2.184742ms)
+✔ failed connect removes listeners and closes the one-use session (0.259666ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.894313ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (22.531282ms)
+✔ pending queue is bounded and unplug rejects every request (1.248516ms)
+✔ wrong response opcode and device error are rejected (1.117524ms)
+✔ write failure rejects immediately and clears pending requests (1.084514ms)
+✔ request IDs are never reused through the full 16-bit session space (624.382434ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.551731ms)
+✔ synchronous transport failure also clears pending state (0.743513ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.466046ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.302218ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.301009ms)
+✔ close during pending connect follows early successful cancellation with post-connect release (0.349003ms)
+✔ clean refused open and explicit normal close confirm release (0.213398ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.332903ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 59
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 949.525586
+
+✖ failing tests:
+
+test at tests/ble-review-automatic-context.test.ts:24:1
+✖ terminal callback and connect catch never retry failed release before explicit close (3.433103ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /closed/. Input:
+  
+  'Error: Terminal during setup'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/ble-review-automatic-context.test.ts:34:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Terminal during setup
+        at Object.subscribe (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/ble-review-automatic-context.test.ts:29:69)
+        at file:///workspace/scratch/b96d3539d24d/apex-session-review/packages/core/ble-transport.ts:69:27,
+    expected: /closed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

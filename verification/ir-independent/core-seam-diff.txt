@@ -1,0 +1,31 @@
+diff --git a/packages/core/ir-offline.ts b/packages/core/ir-offline.ts
+index 5375f35..6bda5e2 100644
+--- a/packages/core/ir-offline.ts
++++ b/packages/core/ir-offline.ts
+@@ -51,7 +51,11 @@ function uint(value: string, line: number): number {
+ }
+ /** Snapshots bytes/context synchronously before hashing. Exact ASCII source is immutable;
+  * rejected files produce no partial report. Names and source labels are inert caller data. */
+-export async function inspectIrFile(input: Uint8Array, context: IrContext): Promise<IrInspection> {
++/** Trusted local adapter only: hash this exact ASCII string as UTF-8 bytes without
++ * normalization. ASCII guarantees byte identity. It receives no private mutable bytes.
++ * Shape validation does not prove a supplied adapter computed SHA-256 honestly. */
++export type IrStringHasher = (exactAscii: string) => Promise<string>;
++export async function inspectIrFile(input: Uint8Array, context: IrContext, localHash?: IrStringHasher): Promise<IrInspection> {
+   const bytes = snapshot(input), capturedContext = contextSnapshot(context);
+   let source = '';
+   for (const b of bytes) {
+@@ -110,8 +114,11 @@ export async function inspectIrFile(input: Uint8Array, context: IrContext): Prom
+     } else return fail('unsupported-type', type.line);
+   }
+   if (!records.length) return fail('empty-remote');
+-  const hash = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes));
++  const sha256 = localHash === undefined
++    ? Array.from(new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('')
++    : await localHash(source);
++  if (typeof sha256 !== 'string' || !/^[0-9a-f]{64}$/.test(sha256)) return fail('invalid-sha256');
+   return Object.freeze({ schemaVersion: 1, kind: 'offline-ir-file', referencePin: IR_REFERENCE_PIN, context: capturedContext,
+-    originalSource: source, byteCount: bytes.length, sha256: Array.from(hash, b => b.toString(16).padStart(2, '0')).join(''), records: Object.freeze(records),
++    originalSource: source, byteCount: bytes.length, sha256, records: Object.freeze(records),
+     verification: Object.freeze({ physicalCaptureVerified: false, authenticityVerified: false, deviceCompatibilityVerified: false, provenanceIsCallerClaim: true }) });
+ }

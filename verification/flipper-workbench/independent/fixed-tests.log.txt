@@ -1,0 +1,27 @@
+✔ exact draft, explicit inspect and caller declaration; authored response has explicit presence (3.700562ms)
+✔ malformed and over-budget edits reject whole, preserve exact previous draft and clear results (16.692026ms)
+✔ every edit attempt and provenance selection invalidates, fixture does not inspect (0.482817ms)
+✔ unknown and nonzero status, omitted defaults, incomplete tails and ambiguity remain observations (0.911006ms)
+✔ frame and metadata pages are bounded; malformed navigation cannot expand rendering (0.779233ms)
+✔ content remains data, including URL/control/markup strings (1.114447ms)
+✔ UI snapshots and navigation aliases cannot mutate observations or retained source (1.061329ms)
+✔ accessor actions are rejected without invoking getters, including enums and page values (0.82632ms)
+✔ report returned by visible frames cannot mutate retained report (2.565149ms)
+✔ original bytes exposed through state cannot alter report evidence (0.497534ms)
+✔ page transitions cannot mutate reports retained by earlier states (0.420196ms)
+✔ field helper metadata is detached (1.709367ms)
+✔ accessor edit cannot validate one draft and retain another (0.471587ms)
+✔ invalid edit clears stale report and page indexes (2.599934ms)
+✔ provenance action snapshots the declaration before validation (0.371094ms)
+✔ invalid pure navigation inputs retain current bounded state (0.674848ms)
+✔ malformed action shapes including symbol keys clear stale report without invoking getters (0.550894ms)
+✔ enum and page non-numeric values cannot corrupt state or invoke coercion (0.626767ms)
+✔ all reachable report data and all returned states are frozen (0.635121ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.613002

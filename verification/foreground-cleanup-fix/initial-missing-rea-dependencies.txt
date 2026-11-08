@@ -1,0 +1,1006 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 test
+> npm run firmware:build && node --test tests/*.test.ts
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 firmware:build
+> python3 tools/build_firmware.py
+
+C: CRC vector, bounds, fragmentation, corruption recovery and 1,000,000 noise bytes passed.
+Built portable C firmware and passed C checks.
+✔ BLE waits for notifications and serialises MTU-sized frame chunks (7.411695ms)
+✔ BLE readiness timeout and unexpected data close the peer (33.754913ms)
+✔ BLE disconnect cancels opening and drops stale notifications (1.214651ms)
+✔ BLE bounds notifications and reports link failure once (1.238752ms)
+✔ BLE bounded queue and failed writes prevent following writes (2.581043ms)
+✔ NFC normalisation discards payload contents and handles iOS technology (3.587652ms)
+✔ NFC stop during startup cancels before backend begins (1.97164ms)
+✔ NFC drops callbacks after stop and cleans up registration exactly once (0.687561ms)
+✔ standard NEC fixture yields expected address and command (2.254016ms)
+✔ NEC tolerates bounded timing variation (0.441398ms)
+✔ NEC rejects incomplete, non-finite, malformed and extended frames (0.586567ms)
+✔ classic CAN import preserves timestamps, extended IDs and bytes (0.753701ms)
+✔ CAN rejects odd payloads, FD, RTR, error IDs and out-of-range classic IDs (0.496645ms)
+✔ CAN import enforces count and size limits (3.600267ms)
+✔ Android-shaped synthetic input decodes a documented public telemetry layout (17.516823ms)
+✔ iOS normalized fixture yields the same telemetry without inventing raw bytes (1.511954ms)
+✔ unknown AD types, duplicate fields, names and signed TX power are preserved (0.85425ms)
+✔ 16-, 32- and 128-bit UUIDs use little-endian AD encoding (0.372821ms)
+✔ all service-data widths split UUID bytes from opaque payload without guessing (4.470163ms)
+✔ UTF-8 names decode, invalid UTF-8 remains preserved with a diagnostic (0.713714ms)
+✔ truncated AD structure preserves parsed prefix and exact undecoded tail (0.295095ms)
+✔ only all-zero trailing padding is accepted, with no parsing beyond it (0.317741ms)
+✔ malformed known fields retain original bytes and do not abort later fields (0.696705ms)
+✔ Flags allow zero or more octets as specified by CSS, without inventing missing flags (0.661005ms)
+✔ host capture truncation is separate from structurally valid AD bytes (0.510722ms)
+✔ TLM uses big-endian unsigned counters and signed fixed-point temperature (0.268499ms)
+✔ unknown, encrypted, future-version and incomplete TLM are not guessed (0.260923ms)
+✔ hex format, byte and element bounds are enforced (4.18919ms)
+✔ strict offline envelope rejects native claims and fabricated extra fields (1.84358ms)
+✔ recorded imports retain source-supplied timestamps without attesting physical reception (1.346001ms)
+✔ iOS normalized values have strict field, aggregate and dictionary limits (1.052196ms)
+✔ metadata-only summaries fit existing hypothesis input and omit raw private values (1.702171ms)
+✔ deterministic malformed-input sweep is bounded and retains every byte (149.059154ms)
+✔ explicit check retains exact document and full report; repeated analysis is deterministic (41.313737ms)
+✔ every edit invalidates results; oversize is refused whole including after a report (7.188669ms)
+✔ invalid, duplicate and ineligible documents fail closed without stale report (4.115562ms)
+✔ source-separated bounded pagination preserves all rows and rejects invalid navigation (8.431386ms)
+✔ exact fractions stay primary, incomplete never becomes zero; unselected rows excluded (9.625987ms)
+✔ integration stays mounted and imported content cannot trigger actions or persistence (8.218214ms)
+✔ synthetic cross-platform fixture is deterministic; counts, byte offsets and runs are exact (25.988788ms)
+✔ within-group changes are not field identification; absent byte differs from zero (21.130395ms)
+✔ encrypted BTHome is opaque, including unknown header versions, without inferred objects (9.250649ms)
+✔ FEAA payloads compare without assuming frame kind or equal payload lengths (3.69973ms)
+✔ exact provenance, whitespace and unverified receipt survive; iOS raw bytes stay opaque (2.828346ms)
+✔ reject ambiguous selections, missing Android raw bytes and malformed/truncated AD (16.6379ms)
+✔ strict schema, grouping, source declarations and duplicate references fail closed (6.340417ms)
+✔ exact character and trial limits; over-limit fails before analysis (8.466221ms)
+✔ CLI synthetic demo succeeds; malformed input produces no partial report (659.713719ms)
+✔ CLI only reads regular files, follows regular-file symlinks, and rejects invalid UTF-8 and excess bytes (1532.857188ms)
+✔ BLE evidence preserves exact offline input across SQLite reopen and reinterprets it (23.770417ms)
+✔ iOS normalized input stays normalized after journal round-trip (3.070107ms)
+✔ BTHome official-example bytes retain their meaning without a sensor-truth claim (3.312562ms)
+✔ retained encrypted BTHome stays opaque rather than acquiring decoded or authenticated claims (1.362733ms)
+✔ recorded import retains capture time separately from journal save time (1.355474ms)
+✔ BLE source mismatch and native source claims fail before storage (3.245333ms)
+✔ stored decoded-result claims and extra payload fields are never trusted (0.431229ms)
+✔ a valid retained-byte change breaks the journal digest (6.818766ms)
+✔ string-like arrays cannot bypass BLE envelope validation (1.557248ms)
+✔ journal size boundary retains the complete source or rejects it without truncation (1.481751ms)
+✔ BLE additions preserve old journal kinds and do not require a database migration (1.441018ms)
+✔ a failed BLE insert cannot replace existing evidence or report success (1.223846ms)
+✔ UID, URL and reserved encodings retain exact evidence across SQLite reopen without identity or navigation claims (5.59693ms)
+✔ golden synthetic fixture retains exact inputs and independently matches 2000/100 and 1844/100 (31.381208ms)
+✔ all integer widths, byte orders and signed extrema use exact independent golden integers (50.104404ms)
+✔ rational residuals, decimal negatives and inclusive tolerance never use floating comparison (8.591579ms)
+✔ designated held-out changes do not affect discovery, sources remain separate, unselected explicit (4.511975ms)
+✔ missing candidate bytes are incomplete while malformed format truncation rejects (8.371903ms)
+✔ eligibility rejects encrypted, unknown, partial, identity and unsupported public formats (57.171023ms)
+✔ strict schema, declarations, decimals, candidate and assignment bounds reject (30.588629ms)
+✔ 32 selected trials and explicit source omission remain bounded and transparent (13.053602ms)
+✔ CLI bounded regular file, symlink, malformed, UTF-8, byte-limit and FIFO paths (1906.82349ms)
+✔ canonical synthetic BTHome example carries service data but no UUID-list entry (8.826055ms)
+✔ separate explicit-list synthetic fixture is 30 AD bytes with unchanged 25°C / 50.55% payload (1.627712ms)
+✔ 16/32/128-bit lists and requested UUID forms normalize independently of service data (5.300986ms)
+✔ FEAA list and data are distinct; duplicate valid lists remain membership facts (0.742175ms)
+✔ service solicitation and lookalike unknown/name fields do not count as UUID lists (0.692018ms)
+✔ incomplete lists permit positive membership but not negative conclusions (5.31703ms)
+✔ malformed, unparsed, over-limit and unavailable sources cannot assess (1.686356ms)
+✔ iOS normalized fields never imply Android AD bytes or CoreBluetooth matching (0.969939ms)
+✔ presentation scopes absence and explicitly disclaims capture, reception, identity and OS support (0.579625ms)
+✔ BLE metadata passes the unchanged APEX hypothesis contract with a local deterministic stub (2.1546ms)
+✔ existing data-export gate blocks a remote provider before it receives any observations (0.675715ms)
+✔ existing output validator still rejects invented evidence and unsupported BLE protocol labels (1.66634ms)
+✔ native wrappers use one lease, preserve AXP filter and connect/write behavior, never connect for observations (31.530861ms)
+✔ native permission cancellation never starts later and invalid/oversize source fails without invented bytes (11.985916ms)
+✔ foreground validation and single AXP error callback (2.447888ms)
+✔ first iOS permission sheet inactive/active preserves preparation, while real background cancels (1.690236ms)
+✔ poisoned manager blocks connect, both scans and existing writes until successful destruction (1.665297ms)
+✔ connection setup lease spans pending connect and discovery and forbids reset or overlapping work (1.363385ms)
+✔ failed connect or discovery releases the setup lease without allowing stale work (2.312752ms)
+✔ all connection handles retain ownership and lifecycle listeners survive notification unsubscribe (1.268264ms)
+✔ native close delivers once and removes notification subscriptions independently of the caller (0.639853ms)
+✔ identical close callbacks retain independent notification subscription lifetimes (0.684897ms)
+✔ Android reconnect waits for both cancellation settlement and terminal event consumption (1.180601ms)
+✔ iOS successful connection uses consumed single-terminal monitor and settled-cancel fence (0.443323ms)
+✔ failed startup cancellation retains unknown ownership until native close or destruction (4.524403ms)
+✔ characteristic failure cancels, optional MTU rejection preserves normal writes (0.978815ms)
+✔ failed explicit disconnect is unknown, retryable, and a late native close releases ownership (0.604726ms)
+✔ native close during cancellation cannot release the in-flight operation; repeated disconnect coalesces (3.090622ms)
+✔ native close before subscribe is remembered and stale callbacks cannot release a new epoch (0.795434ms)
+✔ disconnect during pending connect or synchronous registration requires settled startup cleanup (7.389811ms)
+✔ reservation is synchronous, broad duplicates only for explicit mode, matching then destruction (19.659908ms)
+✔ busy ordinary scan, owned connection and unknown cancellation reject exclusive mode (2.355769ms)
+✔ permission cancellation reserves until delayed permission settles and never starts (0.928758ms)
+✔ immediate stop before deferred acquisition releases reservation without permissions (1.391879ms)
+✔ denied permission certifies no acquisition and background/inactive rules (1.402241ms)
+✔ synchronous callbacks exhaust callback budget and still stop/destroy once (1.924859ms)
+✔ pending start blocks shutdown and destruction until final start settlement (1.550221ms)
+✔ failed stop still destroys but reports nonreusable; failed destroy requires explicit recovery (2.974805ms)
+✔ hung stop timeout never releases; late settlement safely finishes destruction (6004.159107ms)
+✔ hung destruction timeout holds singleton; late success releases without rewriting result (2003.705161ms)
+✔ closed connection with unsettled write still fences broad acquisition and destruction (1.351509ms)
+✔ readiness failure destroys Android manager; iOS rejects before preparation (0.469968ms)
+✔ late start settlement after timeout only cleans old owner, never starts replacement (2003.144273ms)
+✔ hung permission keeps quarantine past done until late no-effect cleanup (2002.349018ms)
+✔ start rejection after native entry still stops and destroys (0.805458ms)
+✔ constructor throw cannot masquerade as no native ownership (9.14418ms)
+✔ iOS void destruction never certifies teardown or permits manager reuse; empty shutdown is safe (0.307848ms)
+✔ Android retains byte order, padding, repeated unknown AD and malformed tail, not normalized replacement (9.120033ms)
+✔ iOS rawScanRecord JSON remains opaque, UUID is not MAC, no cached name fallback (1.194451ms)
+✔ null, missing, empty, sentinels and unavailable Android raw bytes remain distinguishable (0.627939ms)
+✔ canonical base64 round trips all byte values and bounded random-shaped lengths (270.105389ms)
+✔ malformed, noncanonical and oversize base64 is rejected without truncation (1.445404ms)
+✔ bounds and schemas reject bad dictionaries, duplicates, metrics and aggregate excess (5.679171ms)
+✔ source time must be supplied and validated; never invents timestamp or live provenance (1.481716ms)
+✔ all one-byte and two-byte tails round trip and reject nonzero pad bits (1669.943334ms)
+✔ service-data-only FCD2 matches, service lists/name/RSSI/identity never establish membership (3.85736ms)
+✔ Android raw source wins contradictions; no normalized fallback; iOS never parses raw AD (0.531721ms)
+✔ missing, null and undefined differ from valid empty sources; inherited source is unavailable (0.341083ms)
+✔ UUID widths and case normalize; all dictionary aliases reject, even unrelated aliases (0.768384ms)
+✔ duplicate selected raw payloads reject even when equal, empty or in different UUID widths (0.483516ms)
+✔ strict raw framing and existing element limit checked through entire source, not first match (1.054675ms)
+✔ payloads are service membership only: empty, unknown and encrypted data all match (0.405874ms)
+✔ source and map accessors are never invoked; unrelated callback fields are never read (9.03159ms)
+✔ plain dictionary shapes only; hidden keys, symbols, inherited maps, arrays and boxed strings reject (5.559866ms)
+✔ byte, key and aggregate character limits reject without truncating (9.423622ms)
+✔ results never retain sources or payloads; mutation isolation and explicit evidence preparation (4.820887ms)
+✔ unsupported caller selections throw fixed errors rather than infer membership (0.748705ms)
+✔ aggregate character cap is inclusive; malformed unrelated entries cannot hide behind a match (2.554571ms)
+✔ complete selected source, spelling and exact document whitespace survive SQLite reopen and digest verification (14.517031ms)
+✔ missing and explicit-null Android raw source remain uninterpretable; empty raw is distinct (0.93514ms)
+✔ iOS raw JSON base64 remains opaque and selected normalized fields alone are reinterpreted (2.758086ms)
+✔ declared recorded origin and source timestamp remain separate from journal save time (9.558492ms)
+✔ strict source schema rejects claims, extra or missing fields, SDK/platform changes and inconsistent availability (4.106895ms)
+✔ source mismatch and native provenance are rejected on save and parse (1.71392ms)
+✔ Device methods and arbitrary properties are neither read nor retained; selected accessors fail (0.941738ms)
+✔ 4096-character source boundary is exact; oversize complete snapshots are rejected without writes (2.505187ms)
+✔ old records retain identical canonical digest semantics with no schema migration (2.188498ms)
+✔ ordinary pending start (resolve) fences reset and exclusive scanning past timeout (2014.632305ms)
+✔ ordinary pending start (reject) fences reset and exclusive scanning past timeout (2010.681016ms)
+✔ ordinary pending stop (resolve) fences reset and exclusive scanning past timeout (2007.636795ms)
+✔ ordinary pending stop (reject) fences reset and exclusive scanning past timeout (2002.797005ms)
+✔ duplicate SDK callbacks count toward a strict cap; late events and duplicate stops cannot deliver twice (12.841119ms)
+✔ cancellation during unresolved preparation releases lease and never starts late (2.814084ms)
+✔ preparation failure has one terminal result without an SDK stop (2.140883ms)
+✔ synchronous start callbacks, rejected start, delayed acknowledgement and immediate stop are safe (2.492327ms)
+✔ stop failure reports once and poisons subsequent scans (1.090193ms)
+✔ duration, background, memory limits, projection and consumer failures invalidate callbacks (5.852244ms)
+✔ invalid bounds fail before preparation, and mutating options cannot widen a running scan (1.342955ms)
+✔ selected source clock is callback receipt, Android bytes and iOS opaque fields remain separate (5.921889ms)
+✔ deadline cancels unresolved preparation; delayed stop keeps the manager leased (1.160685ms)
+✔ unresolved SDK start and stop settle terminal notification within cleanup bounds and fail closed (13.133027ms)
+✔ 100 unrelated deliveries exhaust total budget without invoking full preparation or receipt clock (13.822415ms)
+✔ mixed callback statuses sum to total; 25 duplicate matches retain exact selected source (24.810552ms)
+✔ retained serialized-character budget rejects whole matching callback, never truncates (50.524639ms)
+✔ undefined callback counts before terminating (0.863543ms)
+✔ malformed source counts before terminating (0.877701ms)
+✔ SDK error counts before terminating (0.541438ms)
+✔ full preparation may reject a membership match; malformed count remains gate-only (0.444498ms)
+✔ deadline at callback entry rejects even when scheduled timer has not run (0.277286ms)
+✔ deadline includes acquisition and preparation (0.819545ms)
+✔ deadline after synchronous preparation prevents retention (0.821169ms)
+✔ immediate cancellation avoids acquire, repeated stop shares one result (0.240897ms)
+✔ pending acquisition aborts, retains lease until late acquisition is stopped and destroyed (0.40145ms)
+✔ acquisition timeout poisons, late ownership is cleaned and never automatically recycled (1.104969ms)
+✔ acquisition rejection means ownership unknown; null certifies unavailable without poisoning (0.237572ms)
+✔ synchronous callbacks during start obey budget, stale callbacks ignored across explicit sessions (1.192476ms)
+✔ pending start receives early stop and final stop after acknowledgement before destruction (0.376019ms)
+✔ unknown late start cannot release reuse; cleanup follows settlement, never overlaps destruction (0.817295ms)
+✔ stop failure retains error and poisons even if other cleanup succeeds (0.576479ms)
+✔ destroyAndRelease failure retains error and poisons even if other cleanup succeeds (2.083207ms)
+✔ delayed destruction holds busy until confirmation; timeout remains poisoned after late success (0.650856ms)
+✔ timer terminates a zero-result session without retry; explicit next start requires successful cleanup (0.539597ms)
+✔ bounds fixed and invalid service/platform rejected before acquisition (0.248503ms)
+✔ SDK diagnostic does not retain arbitrary messages, causes, custom properties or callback references (0.314622ms)
+✔ invalid monotonic reading NaN fails closed (0.197496ms)
+✔ invalid monotonic reading Infinity fails closed (0.185334ms)
+✔ invalid monotonic reading -1 fails closed (0.227522ms)
+✔ synchronous start throw after synchronous callback still cleans and preserves processed counts (0.385602ms)
+✔ callbacks arriving during delayed cleanup do not count or retain data (1.666539ms)
+✔ late cleanup failure is visible through safe controller diagnostics but never reopens controller (0.838471ms)
+✔ Android raw membership and FEAA selection preserve authoritative source semantics (1.525934ms)
+✔ oversized matching exact source fails preparation without truncation (1.53007ms)
+✔ timer setup throw poisons deterministically without acquiring or stranding done (0.60987ms)
+✔ callback clock throw terminates and cleans without throwing through callback (0.694276ms)
+✔ timer clear throw cannot strand completion or permit reuse (1.022112ms)
+✔ cleanup timer setup throw reports uncertainty and never automatically reopens (2.314471ms)
+✔ retained observations and source payloads are immutable copies (1.175837ms)
+✔ staging requires exact current validated selected source, never legacy, edits, or pending saves (5.797933ms)
+✔ stage preserves exact strings without adding trial, ownership or export; same-frame invalidation (19.397999ms)
+✔ atomic edits, referenced removal and failed builds clear stale exports (16.457439ms)
+✔ explicit build then single-use handoff replaces comparison without analysis or automatic save (17.779896ms)
+✔ staging gate consumes before callbacks and reads current revision, not a stale render (2.461041ms)
+✔ unsupported runtime edit kind rejects atomically and clears built output (8.886131ms)
+✔ synthetic exact roundtrip and isolated snapshots, caller inputs and reports (26.973239ms)
+✔ incomplete drafts may be rendered but not built; references and declarations stay strict (1.865821ms)
+✔ duplicates, source mismatches, invalid replacements and referenced removal are atomic (19.5424ms)
+✔ untrusted direct objects reject accessors, extra keys and serialization hooks without executing them (6.089105ms)
+✔ missing, undefined and explicit null selected-source fields survive byte-for-byte (2.087952ms)
+✔ encrypted unknown headers stay opaque; unknown objects stay bytes; malformed documents and AD fail closed (30.399138ms)
+✔ exact 8 groups, 8 sources and 32 trials are bounded; overflow does not modify draft (102.20946ms)
+✔ serialized draft at exactly 196608 characters builds; one additional character rejects atomically (292.175608ms)
+✔ complete coverage builds at individual group/source maxima without pooling aliases (25.474929ms)
+✔ selected-service mismatch refuses the whole addition (0.799316ms)
+✔ explicit analysis only; exact draft and complete core report survive selection changes (23.486513ms)
+✔ every edit and fixture reload invalidates results, including repeated identical text (10.76696ms)
+✔ oversized edit is rejected whole without silently truncating or leaving stale results (8.1928ms)
+✔ malformed, duplicate-key, declaration mismatch and missing reference fail without partial report (1.208504ms)
+✔ summary separates sources and exposes declared references without raw documents or payload dumps (2.328183ms)
+✔ bounded pagination retains full matrix, distinguishes absent and zero, and leaves ciphertext opaque (3.170015ms)
+✔ invalid navigation cannot leave the bounded projection or select another source accidentally (1.646517ms)
+✔ Analysis integration remains mounted and presentation has no persistence or actionable data paths (0.647567ms)
+✔ initial and edited documents cannot save before successful interpretation (8.129561ms)
+✔ demo fixture is identical to documented decoder test data (0.280718ms)
+✔ edits immediately invalidate both visible results and save input (5.088701ms)
+✔ import provenance is derived from envelope, not the control used to load it (3.716185ms)
+✔ failed reparse never leaves a successful result saveable (2.082553ms)
+✔ journal cap does not hide successful interpretation or truncate source (5.000621ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.649486ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.257567ms)
+✔ failed save retains interpreted source for explicit retry (0.533978ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (14.795477ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-BLE records (2.07814ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (1.060819ms)
+✔ iOS workflow retains normalized fields, and encrypted BTHome stays opaque through save/reopen (2.137545ms)
+✔ selected Android and iOS sources explicitly save exact whitespace then freshly reopen (12.376649ms)
+✔ missing Android raw bytes remain saveable selected source without invented interpretation (1.086947ms)
+✔ selected-source controls never relabel imported provenance, and mode changes invalidate findings (0.488189ms)
+✔ selected-source rejects malformed, oversize, incorrect representation and envelope inputs without truncation (0.384996ms)
+✔ selected-source double taps, mode edits during save and late completion never restore stale source (0.422969ms)
+✔ selected-source asynchronous verification snapshots input and rejects failing verifier (13.3644ms)
+✔ reopen success wording distinguishes actual interpretation from unavailable raw bytes (0.54929ms)
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.163241ms)
+✔ failed manager shutdown preserves session and UI ownership (0.752183ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.422682ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.338188ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (1.730907ms)
+✔ bounded JSON preserves native JSON values, keys, escapes and object semantics (11.049585ms)
+✔ duplicate keys reject per object after JSON escape decoding, including special names (1.428012ms)
+✔ malformed JSON is rejected rather than repaired or treated as a duplicate-key scan (0.725694ms)
+✔ depth and character bounds are exact, strings cannot simulate structure (1.456609ms)
+✔ BLE envelopes reject overwritten claims at every supported object level and escaped aliases (10.162785ms)
+✔ selected source documents reject duplicates and deep values while preserving exact valid bytes (3.47358ms)
+✔ deterministic bounded fuzz agrees with JSON.parse on unique-key values and rejects injected aliases (196.633738ms)
+✔ 24 additional scalar IDs retain independent golden values, units and exact rational evidence (3.900946ms)
+✔ new scalar types preserve zero, all-bits-set and high-bit extrema without clamps (2.288767ms)
+✔ every proper prefix of each new field stops after a valid original field without consuming bytes (1.158688ms)
+✔ mixed original/new stream preserves ordering, repeated IDs, offsets and complete byte reconstruction (0.468549ms)
+✔ all new scalar fields compose into an ordered stream and survive encrypted-header gating (0.425782ms)
+✔ excluded objects stop without guessing across numeric-looking tails (0.447503ms)
+✔ wide unsigned values obey the unchanged 128-object cap (0.763904ms)
+✔ retained MIT constants and license remain exactly the pinned local source bytes (1.110375ms)
+✔ official advertising example imports offline and retains source provenance (6.397027ms)
+✔ original numeric IDs match official wire examples (packet-id is synthetic) (0.820545ms)
+✔ signed little-endian minima, maxima, negative one and zero are numeric, not invented sentinels (1.658553ms)
+✔ unsigned 8, 16, 24-bit extrema stay unsigned without range clamping (0.334227ms)
+✔ ordered repeated object IDs retain every occurrence and byte position (0.287093ms)
+✔ descending IDs stop without reordering or overwriting the parsed prefix (0.215948ms)
+✔ unsupported object IDs stop at the ID, with no guessed length or resynchronization (0.263541ms)
+✔ all proper prefixes of each supported field preserve the truncated ID and bytes (0.549654ms)
+✔ every header byte gates version, encryption and reserved bits before measurements (1.403665ms)
+✔ official encrypted example and plausible plaintext with encryption flag stay opaque (0.495161ms)
+✔ object and common input bounds are enforced at exact boundaries (1.680113ms)
+✔ iOS and recorded envelopes preserve provenance without an identity or native claim (1.425953ms)
+✔ summary distinguishes TLM and BTHome counts and exports no measurement or label (0.753664ms)
+✔ deterministic malformed sweep preserves every byte and never exceeds object bound (523.857918ms)
+✔ catalogue separates offline evidence from historical builds and unverified acquisition (1.609374ms)
+✔ UID field offsets follow pinned specification; claimed namespace and instance are opaque identifiers (2.485586ms)
+✔ URL spec example is decoded to inert text without canonicalization or navigation (0.518951ms)
+✔ every signed power octet is range checked in both frames (12.304717ms)
+✔ UID strict length includes RFU; URL accepts zero through 17 encoded octets (1.575264ms)
+✔ every reserved frame nibble and UID RFU value stays opaque without identity fields (4.183234ms)
+✔ all prefix, expansion, printable and reserved octets match exact spec tables (4.014595ms)
+✔ Android/iOS fixtures give identical readings without upgrading provenance or exporting identifier/URL claims (2.736029ms)
+✔ deterministic malformed sweep never guesses unknown bytes, loses input or changes provenance (216.941177ms)
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (8.640299ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (1.187584ms)
+✔ failed inserts retain existing evidence and never report a successful save (0.984593ms)
+✔ evidence rejects duplicate decoded envelope and payload keys before digest verification (1.306971ms)
+✔ evidence bounded envelope parsing preserves the existing maximum canonical depth (1.395256ms)
+✔ evidence accepts inert duplicate-looking JSON text without interpreting it as envelope structure (6.949085ms)
+✔ TypeScript session negotiates with the compiled C firmware, not the simulator (16.30779ms)
+✔ C peer accepts independent golden requests including all 256 byte values (11.067059ms)
+✔ C peer handles fragmented/coalesced frames and ignores a corrupt request (12.251122ms)
+✔ C dispatcher rejects unsupported and invalid operations without invoking another action (9.13088ms)
+✔ parallel host requests correlate independent binary payloads (13.359419ms)
+✔ AXP BLE MTU bridge negotiates and transfers a maximum binary frame through compiled C (17.736797ms)
+✔ unavailable environment and repeated start do not start another collector (3.157421ms)
+✔ retains exact copied source, receipt clock and unknown RSSI without save or native claims (15.482639ms)
+✔ stop immediately ignores later callbacks and retains lease until cleanup finishes (2.34385ms)
+✔ stale callbacks and completions cannot mutate a later session (0.953758ms)
+✔ service selection and clearing are disabled during active scan and explicit after stop (0.87198ms)
+✔ disposal stops collection, suppresses callbacks and prevents restart without stranding busy state (0.716216ms)
+✔ bounded retained observations never exceed count or character budget (24.815952ms)
+✔ mismatched service, clock basis, source receipt and fixture provenance reject (1.327448ms)
+✔ synchronous start failure releases UI busy state and reports exact error (0.719681ms)
+✔ synchronous end before handle return and done-only settlement finish exactly once (1.296247ms)
+✔ stop during synchronous start stops the returned handle before accepting more observations (1.003577ms)
+✔ stop and done rejection do not strand controls or create unhandled rejection (0.895632ms)
+✔ actual scan cleanup failure fences inspection, same-frame starts and app work until explicit recovery (5.146527ms)
+✔ known parser error with successful SDK cleanup remains reusable and retains earlier sources (2.142565ms)
+✔ unexpected done rejection fails closed and late completion cannot clear the fence (0.945656ms)
+✔ provider output remains explicitly unverified even at maximum confidence (2.503744ms)
+✔ remote provider is not called before explicit data export selection (0.937789ms)
+✔ invented observation IDs and extra execution fields are rejected (0.744544ms)
+✔ response bounds, unsupported protocols and invalid confidence are rejected (3.116053ms)
+✔ invalid, duplicate or overlarge observations never reach the provider (0.542996ms)
+✔ no candidate is a valid abstention and prompt-like text stays data (1.082538ms)
+✔ stalled providers time out and receive an abort signal (13.943612ms)
+✔ protocol enums require strings without coercion (0.850426ms)
+✔ malformed observation records and sparse lists are rejected before provider calls (1.415243ms)
+✔ provider identity and remote consent must have the expected primitive types (0.769163ms)
+✔ all observation kinds and exact selection bounds remain valid (4.24353ms)
+✔ provider input is a frozen defensive copy and attribution survives asynchronous mutation (0.686159ms)
+✔ timeout wins when provider rejects synchronously on abort (5.399294ms)
+✔ provider errors propagate and completed calls clear timeout without late aborts (31.326224ms)
+✔ direct validation also bounds and validates the evidence references input (0.610825ms)
+✔ time-frequency CLI explicit options, source and actual malformed/size/nonregular refusals (53.851964ms)
+✔ synthetic CLI requires two bounded regular files and retains external-file origin (70.368254ms)
+✔ proposal is inert and declares a promise export using the original helper (1.602691ms)
+✔ guard refuses unsupported versions and changed fixture bytes (1.098764ms)
+✔ exact pinned source accepts temporary patch and preserves nil-safe invalidation helper (12.804459ms)
+✔ synthetic acceptance hashes, zero spectrum and exact DC statistics (14.134632ms)
+✔ synthetic signed complex tones, periodic Hann neighbors and all FFT sizes (36.107635ms)
+✔ synthetic rails, greater-than-one complex magnitude and endian sentinel (2.335672ms)
+✔ synthetic selected windows, default fallback and explicit rejection (2.660546ms)
+✔ synthetic independent direct DFT: deterministic integers and nonzero impulse (15.132194ms)
+✔ synthetic quantized off-bin and two-tone amplitudes match independent windowed DFT (11.400974ms)
+✔ FFT helper rejects unbounded, nonfinite or inconsistent inputs (0.966578ms)
+✔ analysis rejects forged prepared summaries and scans all samples outside FFT range (1.040173ms)
+✔ synthetic nonzero-location impulse passes independent windowed DFT (5.266795ms)
+✔ synthetic exact view bytes, endianness, snapshots and caller mutation during async hashing (13.208552ms)
+✔ synthetic exact source hashes and optional SHA512 are not authenticity (2.932521ms)
+✔ synthetic malformed JSON bytes, duplicates, aliases, bounds and shapes reject (3.970921ms)
+✔ synthetic unsupported fields, layout, versions, numeric types and ranges reject (3.103971ms)
+✔ synthetic optional extension content stays inert and globally bounded (6.107641ms)
+✔ synthetic context, shared buffers, and broken hash adapters reject (1.322264ms)
+✔ changing signed tones, phase rotation, axes, exact times and untouched source (15.969644ms)
+✔ zero sentinels, DC and Nyquist orientation (3.323294ms)
+✔ independent windowed negative-exponent DFT for overlapping nonzero-start off-bin frames (19.729738ms)
+✔ exact frame/cell/range/hop boundaries and refusal without truncation (88.383222ms)
+✔ invalid options, accessors and forged recording reject (1.594508ms)
+✔ Hann zero-weight endpoint sentinel and raw dB remain separate from display floor (5.403444ms)
+✔ prebuild hides corpus, restores exact bytes, and prebuild-only skips run (332.704061ms)
+✔ normal native run sees restored corpus (484.990074ms)
+✔ prebuild failure restores corpus and skips run (235.869898ms)
+✔ missing CLI failure restores corpus (235.165304ms)
+✔ missing optional corpus still builds (172.475321ms)
+✔ existing restore destination and original failure both survive (317.291818ms)
+✔ concurrent wrapper refuses before invoking CLI (1185.465769ms)
+✔ SIGTERM restores before exit (163.126921ms)
+✔ SIGINT restores before exit (147.756392ms)
+✔ SIGHUP restores before exit (180.784447ms)
+✔ invalid platform cannot move sources (74.987198ms)
+✔ stale lock is never automatically removed (90.303004ms)
+✔ signal-ignoring child is killed after bounded grace period (5177.042661ms)
+✔ SIGKILL leaves a recoverable corpus and blocks another build (516.450441ms)
+✔ leader exit 0 cannot restore ahead of a live descendant (6232.211731ms)
+✔ leader exit 23 cannot restore ahead of a live descendant (6274.583384ms)
+✔ interruption after leader exit retains protection until its descendant is gone (5359.034517ms)
+✔ unexpected lock contents preserve ownership and are never deleted (134.420334ms)
+✔ late interrupt permits escalation before ending group observation (8441.746343ms)
+✔ only ESRCH proves tracked group absence (3.2012ms)
+✔ group probe waits through present group and fails closed on timeout (0.661866ms)
+✔ group probe can verify eventual disappearance (0.433625ms)
+✔ a fixed late-interrupt deadline extends observation only once (0.337355ms)
+✔ NDEF exact whitespace and case survive SQLite close/reopen with fresh interpretation (11.668941ms)
+✔ source conflicts, native claims and extra decoded claims fail save/read/replay (5.702919ms)
+✔ recorded provenance remains only a caller claim and URI remains inert (1.447331ms)
+✔ malformed, opaque and unsupported bytes retain all original records/tails through journal replay (3.860304ms)
+✔ tampering with exact whitespace or bytes breaks digest (4.320397ms)
+✔ 4096 character journal cap retains all or rejects all without widening old limits (1.70098ms)
+✔ old canonical digest and schema are unchanged (2.126447ms)
+✔ known synthetic fixtures yield readable values without reception or identity claims (3.310081ms)
+✔ UTF-8 preserves scalars, BOM, controls and text as inert content (1.047492ms)
+✔ Text status and language lengths are validated without guessing language validity (1.539396ms)
+✔ UTF-16 handles both BOMs, BE default, surrogate pairs and malformed units (0.995507ms)
+✔ all assigned URI prefixes map exactly and unknown prefixes remain opaque (1.165897ms)
+✔ long payload length, ID field, exact record and field offsets (0.563728ms)
+✔ opaque types and nested payloads are never recursively interpreted (0.330772ms)
+✔ MB/ME/CF/SR/IL/TNF constraints and limits fail closed while retaining bytes (0.862078ms)
+✔ every truncation boundary of short/long/IL messages is rejected with all bytes retained (0.466033ms)
+✔ import preserves exact source, distinguishes claimed origins, rejects fabricated verification/native dictionaries (2.79668ms)
+✔ deterministic fuzz is total, bounded, and preserves record spans and undecoded tail (389.537758ms)
+✔ ambiguous duplicate keys including escaped aliases cannot change origin claims (0.330622ms)
+✔ inclusive byte and record boundaries and structured payload fuzz (57.221711ms)
+✔ initial and edited documents cannot save before successful interpretation (2.874064ms)
+✔ edits immediately invalidate both visible results and save input (0.651193ms)
+✔ import provenance is derived from envelope, not the control used to load it (0.490684ms)
+✔ failed reparse never leaves a successful result saveable (5.238984ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.983128ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.489181ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (1.149255ms)
+✔ failed save retains interpreted source for explicit retry (0.657116ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (6.048296ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-NDEF records (3.013308ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (0.862173ms)
+✔ NFC pending status stays stopping until settlement and does not begin (9.575829ms)
+✔ NFC pending begin drops tags after stop and retries a failed cleanup without idle (2.38433ms)
+✔ NFC synchronous SessionClosed cannot expose idle until begin has settled (2.241435ms)
+✔ NFC reentrant starting callback queues stop after its own start (0.39509ms)
+✔ NFC session closure confirms release after cleanup failure and drops stale callbacks (0.524195ms)
+✔ native controller rejects competing begin before replacing singleton listeners (1.427171ms)
+✔ native controller retains ownership across failed unregister and retries explicitly (0.587175ms)
+✔ native synchronous closure reserves lease through pending registration (4.135282ms)
+✔ native late old callbacks cannot clear replacement after unregister settles (0.854754ms)
+✔ native failed registration and SDK load release the lease for a later start (0.688678ms)
+✔ reader and native controller keep failed stop recoverable and confirm close before reuse (0.511148ms)
+✔ native user cancellation closes without surfacing an error (0.274463ms)
+✔ native concurrent cleanup shares one unregister attempt (1.029946ms)
+✔ cancelled rejected status cannot strand the reader or overwrite a reentrant next start (2.187565ms)
+✔ iOS unregister completion alone cannot release listeners before its final global close event (4.583197ms)
+✔ iOS close event waits for pending unregister, then consumes its late rejection (0.709868ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: true) (0.588219ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: false) (0.630826ms)
+✔ reader can restart after close and pending unregister both settle (0.776315ms)
+✔ App NFC action stops pending startup outside run without releasing its busy lock (1.378145ms)
+✔ android fixture preserves selected source and inert interpretations (6.179001ms)
+✔ ios fixture preserves selected source and inert interpretations (0.971844ms)
+✔ snapshot copies selected fields, retains hex case, excludes tag identity and is isolated from projection (0.790978ms)
+✔ missing, null and empty message stay distinct; optional ID stays missing (1.190656ms)
+✔ native shape is narrower than JS construction typings; platform mismatch rejects (1.444603ms)
+✔ no getters execute, including on ignored top-level fields and array elements (0.67928ms)
+✔ reject non-data objects, holes, decorated arrays and invalid byte values (1.087669ms)
+✔ counts and total bytes are bounded inclusively without truncation (34.744237ms)
+✔ logical TNF constraints reject fragments and inconsistent fields (0.534568ms)
+✔ malformed known encodings reject, unknown types remain opaque and URI data stays inert (0.83965ms)
+✔ import refuses duplicated/extra fields, source/verification claims and unsupported formats (2.045589ms)
+✔ UTF16 payload interpretation is reused without constructing message framing (0.192652ms)
+✔ deterministic generated opaque records roundtrip exact selected source (91.743819ms)
+✔ actual service-data initial renders gate Start on consent and platform (45.989954ms)
+✔ service-data render retains separate mode, cooperative bounds and privacy disclosures (2.359674ms)
+✔ inactive service-data renders nothing; blocked Android disables consent and Start (6.35802ms)
+✔ actual advertised-UUID render remains a separate mode with web acquisition unavailable (13.231795ms)
+✔ one callback snapshots exact selected fields synchronously, waits for cleanup, never retains tag identity (16.421108ms)
+✔ honest unavailable missing (0.838373ms)
+✔ honest unavailable empty-array (1.209461ms)
+✔ honest unavailable null (0.721208ms)
+✔ invalid/oversize rejected whole and closed (0.807432ms)
+✔ invalid/oversize rejected whole and closed (0.475321ms)
+✔ deadline includes status preparation and cannot falsely release pending startup (4.891518ms)
+✔ cancel pending begin suppresses callbacks, duplicate stop shares cleanup and late start failure releases honestly (0.549317ms)
+✔ Foreground left suppresses old callbacks across restart (0.640824ms)
+✔ Devices tab left suppresses old callbacks across restart (1.012512ms)
+✔ unmount suppresses old callbacks across restart (0.458785ms)
+✔ failed cleanup retains ownership and capture; explicit Stop retries without restarting (1.413763ms)
+✔ deadline callback boundary rejects after window even before timer dispatch (0.466641ms)
+✔ handoff exact document/platform replaces draft but never interprets; stale save cannot restore findings (1.40709ms)
+✔ mock native singleton remains owned through iOS close and pending unregister (1.219643ms)
+✔ successful late startup after cancel must clean up before release (0.717185ms)
+✔ late status failure after deadline never enables inspect (0.364023ms)
+✔ web refuses before native begin (0.25065ms)
+✔ inactive to active during pending preparation preserves read; background cancels with no automatic restart (0.474171ms)
+✔ inactive to active allows already-pending preparation to complete normally (3.348978ms)
+✔ wall clock change to -1000000000000 does not extend the monotonic acceptance window (0.392399ms)
+✔ wall clock change to 1000000000000 does not extend the monotonic acceptance window (0.989677ms)
+✔ valid wall time is retained separately from monotonic elapsed time (0.635058ms)
+✔ invalid receipt NaN rejects and releases ownership safely (0.462217ms)
+✔ invalid receipt Infinity rejects and releases ownership safely (0.276545ms)
+✔ invalid receipt 8640000000000001 rejects and releases ownership safely (0.266058ms)
+✔ throwing receipt clock also cleans up (1.098685ms)
+✔ invalid monotonic start NaN acquires no lease (0.288604ms)
+✔ invalid monotonic start Infinity acquires no lease (0.075455ms)
+✔ invalid monotonic start -1 acquires no lease (0.048354ms)
+✔ invalid monotonic start 9007199254740991 acquires no lease (0.091416ms)
+✔ invalid or backwards callback clock NaN refuses and releases (0.714976ms)
+✔ invalid or backwards callback clock Infinity refuses and releases (0.607649ms)
+✔ invalid or backwards callback clock 99 refuses and releases (0.558581ms)
+✔ android: exact selected fields survive SQLite close/reopen and verified reinterpretation (13.364922ms)
+✔ ios: exact selected fields survive SQLite close/reopen and verified reinterpretation (4.162835ms)
+✔ selected-source platform/provenance binding, unsupported claims and old wire cross-import fail (3.99576ms)
+✔ missing, null, empty and absent versus empty record IDs survive journal (3.321585ms)
+✔ exact 4096 character cap; larger imports can preview but cannot save or truncate (5.848283ms)
+✔ digest tampering refuses reinterpretation; reopen snapshots caller data before async verification (3.063018ms)
+✔ draft/platform edits invalidate findings; duplicate saves and stale completions cannot restore findings (1.10423ms)
+✔ save failure permits retry, unrelated completion is ignored, same document cannot be resaved after refresh failure (2.323364ms)
+✔ CRC uses the independent CCITT-FALSE check value (1.251987ms)
+✔ encoder matches independently generated Python golden vectors (2.608026ms)
+✔ all possible two-chunk boundaries retain a maximum payload (58.554449ms)
+✔ single-byte fragments and coalesced frames decode identically (0.34639ms)
+✔ bad CRC and boot noise do not hide the next intact frame (0.471157ms)
+✔ invalid version, flags, kinds, zero ID and oversized lengths are rejected (0.562628ms)
+✔ encoder rejects invalid bounds and reset discards partial data (0.676917ms)
+✔ one million noise bytes retain bounded parser memory (112.083635ms)
+✔ real REA evidence imports bounded metadata, deduplicates overlapping build IDs and stays unverified (2.900875ms)
+✔ REA report rejects mismatched digests, incorrect providers, invalid coverage and out-of-file ranges (2.212978ms)
+✔ firmware report persists as offline evidence without native provenance or raw payload promotion (4.177122ms)
+✖ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (248.970318ms)
+✖ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (291.74048ms)
+✔ REA stderr-only errors retain useful diagnostics (118.936821ms)
+✔ an output directory created during analysis is preserved and rejected (248.139725ms)
+✖ all analysis consumes the exact snapshot even if source bytes change and are restored (230.140269ms)
+✔ nonregular, tiny and oversized inputs fail before any analysis (466.811959ms)
+✔ dangling output symlinks are preserved and rejected (114.489502ms)
+✖ source replacement with identical bytes is rejected (177.816633ms)
+✖ REA timeout and signal failures reject reports and clean the snapshot (166.487546ms)
+✖ GNU timeout, signal, overflow and exit failures retain diagnostics without claiming success (175.307396ms)
+✔ growth or shrinkage during bounded input capture fails before analysis (240.409026ms)
+✖ snapshot cleanup failure prevents report publication or success output (209.475002ms)
+✔ an analysis failure remains visible when snapshot cleanup also fails (130.704162ms)
+✖ snapshot is removed before report writes and partial reports survive a write failure (172.127138ms)
+✔ all 28 research records have immutable source and licence evidence (4.404164ms)
+✔ one-session opt-in is consumed; selection, leaving and denied start clear it (2.369637ms)
+✔ Stop works during preparation and keeps busy until confirmed cleanup (4.030399ms)
+✔ exact source handoff only after reusable result, with distinct metrics and four-row pages (2.330096ms)
+✔ uncertainty releases UI task but fences inspection and new starts until explicit reset (0.499565ms)
+✔ background/disposal cancel without restart; malformed result fails closed (0.738335ms)
+✔ synchronous start failure fails closed and exposes recovery without retaining busy (0.210633ms)
+✔ reentrant cancellation during start stops the returned handle; stale completion cannot release new session (0.405388ms)
+✔ closed session remains explicitly releasable after capabilities disappear (5.902946ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.266066ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (9.937693ms)
+✔ disconnected and unavailable operations reject without transport execution (2.865406ms)
+✔ failed connect removes listeners and closes the one-use session (0.422986ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.956809ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (21.226061ms)
+✔ pending queue is bounded and unplug rejects every request (1.51796ms)
+✔ wrong response opcode and device error are rejected (1.544471ms)
+✔ write failure rejects immediately and clears pending requests (0.843386ms)
+✔ request IDs are never reused through the full 16-bit session space (775.72278ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.526155ms)
+✔ synchronous transport failure also clears pending state (0.82017ms)
+✔ USB permission denial does not open a connection or install listeners (1.765573ms)
+✔ USB failed open cleans up native subscriptions (0.306493ms)
+✔ USB data validates bytes and ignores stale connection generations (0.37767ms)
+✔ USB writes are ordered and detach rejects subsequent writes (8.433146ms)
+✔ web adapter retains exact BLE input and can read and verify it again (20.590479ms)
+✔ web adapter detects valid document tampering without discarding the stored bytes (5.105542ms)
+✔ quota failure retains previous web evidence and surfaces the failure (12.964351ms)
+✔ corrupt web index is not overwritten by a new save (3.459007ms)
+✔ web capacity boundary preserves all existing records (50.197167ms)
+✔ overlapping saves in one app context preserve every record (17.258377ms)
+ℹ tests 542
+ℹ suites 0
+ℹ pass 534
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38897.075606
+
+✖ failing tests:
+
+test at tests/rea-inspection.test.ts:42:1
+✖ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (248.970318ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42
+      if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\n').slice(0,4096) || 'No diagnostic output'}`);
+                                                     ^
+  
+  Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568
+    throw err;
+    ^
+  
+  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+      at Module._load (node:internal/modules/cjs/loader:1341:5)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+  
+  Node.js v24.22.1
+  
+      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)
+      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:49:34)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:71:1
+✖ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (291.74048ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42
+      if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\n').slice(0,4096) || 'No diagnostic output'}`);
+                                                     ^
+  
+  Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568
+    throw err;
+    ^
+  
+  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+      at Module._load (node:internal/modules/cjs/loader:1341:5)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+  
+  Node.js v24.22.1
+  
+      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)
+      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:76:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:108:1
+✖ all analysis consumes the exact snapshot even if source bytes change and are restored (230.140269ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42
+      if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\n').slice(0,4096) || 'No diagnostic output'}`);
+                                                     ^
+  
+  Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568
+    throw err;
+    ^
+  
+  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+      at Module._load (node:internal/modules/cjs/loader:1341:5)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+  
+  Node.js v24.22.1
+  
+      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)
+      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:116:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:152:1
+✖ source replacement with identical bytes is rejected (177.816633ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Artifact changed/. Input:
+  
+  'file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n' +
+    "    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n" +
+    '                                                   ^\n' +
+    '\n' +
+    'Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n" +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n' +
+    '    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n' +
+    '    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1341:5)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n' +
+    '    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n' +
+    '    at node:internal/main/run_main_module:33:47 {\n' +
+    "  code: 'MODULE_NOT_FOUND',\n" +
+    '  requireStack: []\n' +
+    '}\n' +
+    '\n' +
+    'Node.js v24.22.1\n' +
+    '\n' +
+    '    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n' +
+    '    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '    at async node:internal/modules/esm/loader:647:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.22.1\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:157:47)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n                                                   ^\n\nError: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n  throw err;\n  ^\n\nError: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n    at Module._load (node:internal/modules/cjs/loader:1341:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v24.22.1\n\n    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n",
+    expected: /Artifact changed/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:160:1
+✖ REA timeout and signal failures reject reports and clean the snapshot (166.487546ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /SIGKILL/. Input:
+  
+  'file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n' +
+    "    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n" +
+    '                                                   ^\n' +
+    '\n' +
+    'Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n" +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n' +
+    '    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n' +
+    '    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1341:5)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n' +
+    '    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n' +
+    '    at node:internal/main/run_main_module:33:47 {\n' +
+    "  code: 'MODULE_NOT_FOUND',\n" +
+    '  requireStack: []\n' +
+    '}\n' +
+    '\n' +
+    'Node.js v24.22.1\n' +
+    '\n' +
+    '    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n' +
+    '    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '    at async node:internal/modules/esm/loader:647:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.22.1\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:168:49)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n                                                   ^\n\nError: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n  throw err;\n  ^\n\nError: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n    at Module._load (node:internal/modules/cjs/loader:1341:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v24.22.1\n\n    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n",
+    expected: /SIGKILL/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:173:1
+✖ GNU timeout, signal, overflow and exit failures retain diagnostics without claiming success (175.307396ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42
+      if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\n').slice(0,4096) || 'No diagnostic output'}`);
+                                                     ^
+  
+  Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568
+    throw err;
+    ^
+  
+  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+      at Module._load (node:internal/modules/cjs/loader:1341:5)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+  
+  Node.js v24.22.1
+  
+      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)
+      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:182:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:207:1
+✖ snapshot cleanup failure prevents report publication or success output (209.475002ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Temporary snapshot cleanup failed/. Input:
+  
+  'file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:87\n' +
+    '      throw new AggregateError([error, cleanupError], `Inspection failed and temporary snapshot cleanup also failed at ${temporary}`, { cause:error });\n' +
+    '            ^\n' +
+    '\n' +
+    'AggregateError: Inspection failed and temporary snapshot cleanup also failed at /tmp/apex-inspection-NjmKho\n' +
+    '    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:87:13\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '    at async node:internal/modules/esm/loader:647:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n' +
+    '  [cause]: Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n' +
+    '    throw err;\n' +
+    '    ^\n' +
+    '  \n' +
+    "  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n" +
+    '      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n' +
+    '      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n' +
+    '      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n' +
+    '      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n' +
+    '      at Module._load (node:internal/modules/cjs/loader:1341:5)\n' +
+    '      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n' +
+    '      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n' +
+    '      at node:internal/main/run_main_module:33:47 {\n' +
+    "    code: 'MODULE_NOT_FOUND',\n" +
+    '    requireStack: []\n' +
+    '  }\n' +
+    '  \n' +
+    '  Node.js v24.22.1\n' +
+    '  \n' +
+    '      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n' +
+    '      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n' +
+    '      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '      at async node:internal/modules/esm/loader:647:26\n' +
+    '      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5),\n' +
+    '  [errors]: [\n' +
+    '    Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n' +
+    '      throw err;\n' +
+    '      ^\n' +
+    '    \n' +
+    "    Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n" +
+    '        at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n' +
+    '        at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n' +
+    '        at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n' +
+    '        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n' +
+    '        at Module._load (node:internal/modules/cjs/loader:1341:5)\n' +
+    '        at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n' +
+    '        at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n' +
+    '        at node:internal/main/run_main_module:33:47 {\n' +
+    "      code: 'MODULE_NOT_FOUND',\n" +
+    '      requireStack: []\n' +
+    '    }\n' +
+    '    \n' +
+    '    Node.js v24.22.1\n' +
+    '    \n' +
+    '        at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n' +
+    '        at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n' +
+    '        at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '        at async node:internal/modules/esm/loader:647:26\n' +
+    '        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5),\n' +
+    '    Error: injected cleanup failure\n' +
+    '        at fs.rmSync (file:///tmp/apex-rea-cleanup-PbFGk4/fault.mjs:6:105)\n' +
+    '        at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:86:11\n' +
+    '        at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '        at async node:internal/modules/esm/loader:647:26\n' +
+    '        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '  ]\n' +
+    '}\n' +
+    '\n' +
+    'Node.js v24.22.1\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:218:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:87\n      throw new AggregateError([error, cleanupError], `Inspection failed and temporary snapshot cleanup also failed at ${temporary}`, { cause:error });\n            ^\n\nAggregateError: Inspection failed and temporary snapshot cleanup also failed at /tmp/apex-inspection-NjmKho\n    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:87:13\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  [cause]: Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n    throw err;\n    ^\n  \n  Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n      at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n      at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n      at Module._load (node:internal/modules/cjs/loader:1341:5)\n      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n      at node:internal/main/run_main_module:33:47 {\n    code: 'MODULE_NOT_FOUND',\n    requireStack: []\n  }\n  \n  Node.js v24.22.1\n  \n      at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n      at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n      at async node:internal/modules/esm/loader:647:26\n      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5),\n  [errors]: [\n    Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n      throw err;\n      ^\n    \n    Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n        at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n        at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n        at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n        at Module._load (node:internal/modules/cjs/loader:1341:5)\n        at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n        at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n        at node:internal/main/run_main_module:33:47 {\n      code: 'MODULE_NOT_FOUND',\n      requireStack: []\n    }\n    \n    Node.js v24.22.1\n    \n        at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n        at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n        at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n        at async node:internal/modules/esm/loader:647:26\n        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5),\n    Error: injected cleanup failure\n        at fs.rmSync (file:///tmp/apex-rea-cleanup-PbFGk4/fault.mjs:6:105)\n        at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:86:11\n        at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n        at async node:internal/modules/esm/loader:647:26\n        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n  ]\n}\n\nNode.js v24.22.1\n",
+    expected: /Temporary snapshot cleanup failed/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:242:1
+✖ snapshot is removed before report writes and partial reports survive a write failure (172.127138ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /injected report write failure/. Input:
+  
+  'file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n' +
+    "    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n" +
+    '                                                   ^\n' +
+    '\n' +
+    'Error: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n' +
+    '  throw err;\n' +
+    '  ^\n' +
+    '\n' +
+    "Error: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n" +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n' +
+    '    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n' +
+    '    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1341:5)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n' +
+    '    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n' +
+    '    at node:internal/main/run_main_module:33:47 {\n' +
+    "  code: 'MODULE_NOT_FOUND',\n" +
+    '  requireStack: []\n' +
+    '}\n' +
+    '\n' +
+    'Node.js v24.22.1\n' +
+    '\n' +
+    '    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n' +
+    '    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n' +
+    '    at async node:internal/modules/esm/loader:647:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.22.1\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tests/rea-inspection.test.ts:257:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42\n    if (result.error || result.status !== 0) throw new Error(`REA failed (exit ${result.status}, signal ${result.signal ?? 'none'}): ${[result.error?.message, result.stderr, result.stdout].filter(Boolean).join('\\n').slice(0,4096) || 'No diagnostic output'}`);\n                                                   ^\n\nError: REA failed (exit 1, signal none): node:internal/modules/cjs/loader:1568\n  throw err;\n  ^\n\nError: Cannot find module '/workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/reverse-engineering/node_modules/rea-agents/scripts/rea.mjs'\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n    at Module._load (node:internal/modules/cjs/loader:1341:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v24.22.1\n\n    at command (file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:42:52)\n    at file:///workspace/scratch/b96d3539d24d/apex-cleanup-fix/tools/inspect-firmware.mjs:45:19\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n",
+    expected: /injected report write failure/,
+    operator: 'match',
+    diff: 'simple'
+  }

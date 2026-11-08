@@ -1,0 +1,13 @@
+✔ lag-correlation CLI explicit options, source and actual malformed/size/nonregular refusals (272.901576ms)
+✔ independent integer oracle, signed extrema, exact rational and Cauchy bound (10.844652ms)
+✔ complex orientation, zero on either side, DC, tone and known synthetic repetition (1.790101ms)
+✔ full original hashes/context and mutation isolation (0.782886ms)
+✔ strict explicit options, getter refusal, safe ranges and exact bounded work (30.617228ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 405.309989

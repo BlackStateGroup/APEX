@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "mode": "benchmark",
+  "variant": "frozen",
+  "startedAt": "2026-11-08T09:52:48.278Z",
+  "status": "PASS",
+  "sourceCommit": "63f530d1f6f8f943d4fd2c1016904f3259daf77a",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "mobileAcceptance": "NOT RUN",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.57",
+    "node": "v24.22.1",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  },
+  "precision": {
+    "scalar": "IEEE-754 binary64",
+    "amplitudeTolerance": "1e-12 * (1 + abs(reference))",
+    "meaningfulRawDbTolerance": "1e-6 * (1 + abs(reference)), amplitude >= 1e-10",
+    "displayDbTolerance": "1e-8 * (1 + abs(reference))",
+    "semantics": "Peak signed index and exact-zero/null classification must match. Low-amplitude dB discrepancies are counted, never hidden."
+  },
+  "sourceSha256": {
+    "src/iq.hpp": "19c5453469205464a7f6139bd7a4e34a8915a53f9411d3d5ae0b69cba288bc3e",
+    "src/iq.cpp": "2ab544e4426ad79b68dce57fa7292ac5c50597440197b39cde2a783911af9870",
+    "src/host.cpp": "604a2afa6cdee45e166e39bb9bc9d2e0a12ee6809efba50b7493aa30d7d890b3",
+    "generate-coefficients.mjs": "50bd2762aae3ec7d8829750353e86d9a0b3db2d7c66dfb1f463d2a085e4cc29c",
+    "src/coefficients.hpp": "b50cfbb65f1f480efd8f7bb88a70381fbc92be08adf2483275afc8aba868ef2c",
+    "proof.mjs": "678f24d9ab04823c580234a6c7a76a00f875f11e0e513ed546e3e816ecc98eb2",
+    "proof-codec.mjs": "e289812af0959ef37e39410bf2a2e9a4f25d46fabebb1608554540f23316c7e5",
+    "proof-codec.test.mjs": "9658339d2277df0482f6a95c62176da57785d59e1258780caa2ef0399ff92118",
+    "reference.mjs": "677a5facafca8082ae19617553246549446f142975ab0ad140c16cc2fc932dad",
+    "packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+    "packages/core/bounded-json.ts": "2dc9c63e96aed350348590119d8e5c0963e9d35f2da3e509b124bc8147690212"
+  },
+  "stages": [
+    {
+      "name": "compiler-version",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "--version"
+      ]
+    },
+    {
+      "name": "compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "-DAPEX_FROZEN_COEFFICIENTS",
+        "src/iq.cpp",
+        "src/host.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-cpp-iq-proof/proof-host-frozen-benchmark"
+      ]
+    },
+    {
+      "name": "codec-tests",
+      "status": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test",
+        "proof-codec.test.mjs"
+      ]
+    },
+    {
+      "name": "cpp-typescript-differential",
+      "status": "PASS",
+      "cases": 41,
+      "strictPassedCases": 41,
+      "strictFailures": [],
+      "bins": 105472,
+      "lowAmplitudeDbDifferences": 0,
+      "maxAmplitudeAbsoluteError": 1.1102230246251565e-16,
+      "maxDisplayDbAbsoluteError": 2.842170943040401e-14,
+      "maxLowAmplitudeRawDbAbsoluteError": 1.1368683772161603e-13,
+      "fixtures": [
+        {
+          "name": "zero-256",
+          "dataSha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "dc-256",
+          "dataSha256": "0ead4bcc84b62039f7a3f621dfe52e0818941dc999c126726a2a4cd77296cbe7",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter--1-256",
+          "dataSha256": "8495409a722b372dd13ea66e992e144f5761878d51df7b6bf66d5e8a67bbd883",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter-1-256",
+          "dataSha256": "fad75c6c2877cf3970eae5004f7d6f38680fe00f2788b2b677fb918a3056eb2d",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "nyquist-256",
+          "dataSha256": "29e3788984f874d2113b176acff0e6b003a5a94f76cc3a4ea66fd4a3b3a1df46",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "integer-mix-256",
+          "dataSha256": "2eeb350130d8437d542c3dc914e4b22495c20d7e9c57b933aebd0d6e2315baa4",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "hann-zero-256",
+          "dataSha256": "0af3838618ef2d5717b42f7c8d5c406455a5aec3fcaf1b01b72db79cef9980b5",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "zero-512",
+          "dataSha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "dc-512",
+          "dataSha256": "3f7312a237a4aea113dae402315430f971cef2b481fee9b1415e761c6a1de79d",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter--1-512",
+          "dataSha256": "2009299a2767cf893e419c4e01e0fab0b4208c940cf2aa763212640da0e7f173",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter-1-512",
+          "dataSha256": "cc995f2629cf517ff6c853b78800a5e831a8a974faf1d17fb7b777c018a46bda",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "nyquist-512",
+          "dataSha256": "f3ea98f4c9e1c8da8c17112ff220c904fba4b8274d4f53a0871b901d1c09da45",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "integer-mix-512",
+          "dataSha256": "8a6ddc9a9a757df35ce52f80065b5bcfa2a2a66479d57e19792623d58f0c20dc",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "hann-zero-512",
+          "dataSha256": "79e938523f7bffc57c96e0bb2aedb5f06660ecd536d64f3326176ba6e625bad0",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "zero-1024",
+          "dataSha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "dc-1024",
+          "dataSha256": "e57738f0e3d360a8f5b304b1897a17d4ffca4abed2c2b5417aa494e41fec8f53",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter--1-1024",
+          "dataSha256": "6714bc3de4d3e8d854fcdf5864e4301702f74ec5b8ba2611b5d274cd7d78a95e",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter-1-1024",
+          "dataSha256": "68c24b6a2979d80199589a4222538c99be8216b150db8a35127ef04cea3272ef",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "nyquist-1024",
+          "dataSha256": "f485f6c3a98a982ecc20c073ba8bf4d5884b26f1f48071e7cf889a5c35cd26a7",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "integer-mix-1024",
+          "dataSha256": "0a2f54b05077948fe63540fa0372206150414ef1270553a2a48887649a647e37",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "hann-zero-1024",
+          "dataSha256": "91b22e935306a585f5abb01ceff0b6e3b9ab75e2b738107360daa1d2afd0341b",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "zero-2048",
+          "dataSha256": "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "dc-2048",
+          "dataSha256": "e200cf79a7331025a60c26bf5f59036c9cb8d2ee0046e5ddb2a98065bd8fa7d0",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter--1-2048",
+          "dataSha256": "cec82d1d44716ad167346b089c8ac437ff034e15863e8b0f0734a1156560f99c",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter-1-2048",
+          "dataSha256": "5c0037f3b7854664d4c2749a3ddd9862f8189ca62b23acd005f039f040ec9e1b",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "nyquist-2048",
+          "dataSha256": "843ae873d67d73da8dc4f85f95042bc2d2ae2d0e5396e7b12f7ae2c6ac536a9e",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "integer-mix-2048",
+          "dataSha256": "9f979f3baa0623be4cc9f655ba8a9c5e5ea5154f14bf84d8b784fa48f4d7187d",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "hann-zero-2048",
+          "dataSha256": "d6719eafd0e9509e57c4685ee6802571f765d442ee0e39ada50bba71207e0b82",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "zero-4096",
+          "dataSha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "dc-4096",
+          "dataSha256": "6ff5d40d5a9daa59abd998e9743a532e2aaec3517dc972ac8e741d83e79fa359",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter--1-4096",
+          "dataSha256": "ce64eec989e0f1c64fe962171d3636bd0a527536a56712e0440b685cb2ba37da",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "quarter-1-4096",
+          "dataSha256": "ec121541fde7b590a667de25137e1f140c31ab7d64da16ce67d7bda0439032fd",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "nyquist-4096",
+          "dataSha256": "304c23c0bb4654eed5217e3aa5d81ae323aa68f8f36367006e9a1ce4b41782dc",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "integer-mix-4096",
+          "dataSha256": "f678d70b34eee1ea2633e39eadbab7410e8ec40f02bb793961af7a6a6500289f",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "hann-zero-4096",
+          "dataSha256": "a046a3aaeedd27dbae924bcd8a7f1c0ef1f5e6fc9aec6b4f80aa702a63537356",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "selection-256-64-1-0",
+          "dataSha256": "2b576e7a75a08ab97110e79e8c408b7d46d9d6d10bcab2cc4b3addf91b5b0bf9",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "selection-256-64-1024-0",
+          "dataSha256": "2b576e7a75a08ab97110e79e8c408b7d46d9d6d10bcab2cc4b3addf91b5b0bf9",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "selection-4096-4-4096-37",
+          "dataSha256": "2b576e7a75a08ab97110e79e8c408b7d46d9d6d10bcab2cc4b3addf91b5b0bf9",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "selection-256-1-65536-65280",
+          "dataSha256": "2b576e7a75a08ab97110e79e8c408b7d46d9d6d10bcab2cc4b3addf91b5b0bf9",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "endian-rails",
+          "dataSha256": "778ffb654e3176c2376e9c562ffd3f22b458d1159c707b468259de2877bbdc82",
+          "lowAmplitudeDbDifferences": 0
+        },
+        {
+          "name": "off-bin-two-tone",
+          "dataSha256": "7359dd07fef0143c2bce75d6b97c0482c959891a034dc0a76120f1223995a9c2",
+          "lowAmplitudeDbDifferences": 0
+        }
+      ]
+    },
+    {
+      "name": "cpp-independent-direct-dft",
+      "status": "PASS",
+      "cases": 10,
+      "comparedBins": 2560,
+      "maxAbsoluteError": 8.864818974100696e-15,
+      "tolerance": "1e-9 * (1 + abs(DFT))"
+    },
+    {
+      "name": "negative-host-inputs",
+      "status": "PASS",
+      "cases": 39
+    },
+    {
+      "name": "host-warm-compute-benchmark",
+      "status": "PASS",
+      "iterations": 25,
+      "batches": 7,
+      "warmupCallsPerBatch": 3,
+      "order": "alternates TS first and C++ first",
+      "results": [
+        {
+          "name": "integer-mix-4096",
+          "sampleCount": 4096,
+          "fftSize": 4096,
+          "frameCount": 1,
+          "cppMsPerCall": [
+            0.197021,
+            0.18534612,
+            0.1792992,
+            0.1746332,
+            0.16769164,
+            0.184697,
+            0.16575672
+          ],
+          "typescriptMsPerCall": [
+            1.5908541999999999,
+            1.48775484,
+            1.47390316,
+            1.4652866,
+            1.53382832,
+            1.4547584800000002,
+            1.46728592
+          ],
+          "nativeRoundtripMsPerBatch": [
+            11.023348,
+            11.479338,
+            10.528348,
+            10.081013,
+            10.022771,
+            10.587695,
+            9.904987
+          ],
+          "cppMedianMs": 0.1792992,
+          "typescriptMedianMs": 1.47390316,
+          "nativeRoundtripMedianMs": 10.528348
+        },
+        {
+          "name": "selection-256-64-1-0",
+          "sampleCount": 65536,
+          "fftSize": 256,
+          "frameCount": 64,
+          "cppMsPerCall": [
+            0.68717564,
+            0.6688682,
+            0.67394836,
+            0.6776894,
+            0.6917051200000001,
+            0.7062652,
+            0.6666021999999999
+          ],
+          "typescriptMsPerCall": [
+            5.83164004,
+            5.6994693199999995,
+            5.2988645199999995,
+            4.80598824,
+            4.9200998,
+            5.2219182,
+            5.07234948
+          ],
+          "nativeRoundtripMsPerBatch": [
+            39.803557,
+            34.400185,
+            37.490123,
+            35.545348,
+            40.314039,
+            36.408521,
+            36.527616
+          ],
+          "cppMedianMs": 0.6776894,
+          "typescriptMedianMs": 5.2219182,
+          "nativeRoundtripMedianMs": 36.527616
+        },
+        {
+          "name": "selection-4096-4-4096-37",
+          "sampleCount": 65536,
+          "fftSize": 4096,
+          "frameCount": 4,
+          "cppMsPerCall": [
+            0.83382684,
+            0.82066436,
+            0.80257372,
+            0.88196636,
+            0.82149764,
+            0.88809208,
+            0.8251484000000001
+          ],
+          "typescriptMsPerCall": [
+            5.992504,
+            5.79102496,
+            5.4837210800000005,
+            5.6221938399999996,
+            5.69852832,
+            5.59576916,
+            5.44171332
+          ],
+          "nativeRoundtripMsPerBatch": [
+            42.272589,
+            49.62957,
+            40.438012,
+            42.699161,
+            42.290703,
+            44.717907,
+            42.067747
+          ],
+          "cppMedianMs": 0.8251484000000001,
+          "typescriptMedianMs": 5.6221938399999996,
+          "nativeRoundtripMedianMs": 42.290703
+        }
+      ],
+      "limits": [
+        "Single shared Linux x86-64 host, no core pinning, possible concurrent workloads; descriptive medians, not inferential statistical claims.",
+        "Compute timers exclude process startup, framing, IPC, serialization, hashing, import preparation and UI. Cold single-call performance is NOT measured.",
+        "Native roundtrip is per 25-call batch, includes 3 warmups, process creation, IPC, serialization and strict JS decode; it is not a mobile bridge or per-call latency.",
+        "Both allocate numerical results. TS also snapshots the prepared bytes and constructs provenance/warnings/full metadata; C++ repeats per-frame axes and lacks that metadata. GC and native destruction differ.",
+        "Not a language-isolated or equal-end-to-end speedup; no mobile speed, battery, RF throughput, calibration, or production readiness is established."
+      ]
+    }
+  ],
+  "executableSha256": "2e853aca16cf49ea4d51008612cd351fd2344d08d0a3cdc2f73725612d34f047",
+  "finishedAt": "2026-11-08T09:52:53.962Z"
+}

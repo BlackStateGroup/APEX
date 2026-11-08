@@ -1,0 +1,23 @@
+✔ BLE evidence preserves exact offline input across SQLite reopen and reinterprets it (8.741524ms)
+✔ iOS normalized input stays normalized after journal round-trip (1.0195ms)
+✔ BTHome official-example bytes retain their meaning without a sensor-truth claim (4.081972ms)
+✔ retained encrypted BTHome stays opaque rather than acquiring decoded or authenticated claims (4.019214ms)
+✔ recorded import retains capture time separately from journal save time (1.142081ms)
+✔ BLE source mismatch and native source claims fail before storage (1.136863ms)
+✔ stored decoded-result claims and extra payload fields are never trusted (0.303727ms)
+✔ a valid retained-byte change breaks the journal digest (0.757084ms)
+✔ string-like arrays cannot bypass BLE envelope validation (0.798976ms)
+✔ journal size boundary retains the complete source or rejects it without truncation (0.872404ms)
+✔ BLE additions preserve old journal kinds and do not require a database migration (0.633923ms)
+✔ a failed BLE insert cannot replace existing evidence or report success (0.896629ms)
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (4.690963ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (0.511773ms)
+✔ failed inserts retain existing evidence and never report a successful save (0.682404ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 180.319828

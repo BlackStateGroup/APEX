@@ -1,0 +1,11 @@
+{
+  "exitCode": 1,
+  "priorLogSha256": {
+    "api.log": "5ef8bb1fc72cc20db230f39ff0f5935fcbcf79cc4b25e76eb1bb7689b9511551",
+    "supplied-tests.log": "6f44fd6e3ca4108227066e5782371ded0ca48df71261a8becfc50e468dd7eabb",
+    "oracle.log": "b4e3b017c9e4b19d2548fd04952962e667d6152c65e742ff8baa70c16631f0ba",
+    "typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "unchanged": true,
+  "stderr": "mkdir: cannot create directory \u2018/workspace/scratch/b96d3539d24d/apex-phase-wrapper-validation\u2019: File exists\n"
+}

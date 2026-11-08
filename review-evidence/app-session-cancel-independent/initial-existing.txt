@@ -1,0 +1,52 @@
+(node:13) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ independent: reentrant browser refresh cannot overwrite successor busy state (3.246808ms)
+✔ independent: old rejected close cannot clear replacement session/listener/operation (5.647064ms)
+✖ independent: rejected open cannot remove a successor listener or publish stale UI (2.142775ms)
+✖ independent: epoch change fences successful native negotiation and retained observer (2.055751ms)
+✖ independent: native run adds no foreground/background acquisition policy (1.615382ms)
+ℹ Error: Test "independent: old rejected close cannot clear replacement session/listener/operation" at tests/app-native-lifecycle-independent.test.ts:35:1 generated asynchronous activity after the test ended. This activity created the error "Error: unknown old release" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "independent: rejected open cannot remove a successor listener or publish stale UI" at tests/app-native-lifecycle-independent.test.ts:45:1 generated asynchronous activity after the test ended. This activity created the error "Error: late open rejection" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147.686234
+
+✖ failing tests:
+
+test at tests/app-native-lifecycle-independent.test.ts:45:1
+✖ independent: rejected open cannot remove a successor listener or publish stale UI (2.142775ms)
+  TypeError [Error]: Cannot read properties of null (reading 'state')
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-cancel-independent-review/tests/app-native-lifecycle-independent.test.ts:50:187)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/app-native-lifecycle-independent.test.ts:53:1
+✖ independent: epoch change fences successful native negotiation and retained observer (2.055751ms)
+  TypeError [Error]: t.observers[0] is not a function
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-cancel-independent-review/tests/app-native-lifecycle-independent.test.ts:56:47)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/app-native-lifecycle-independent.test.ts:60:1
+✖ independent: native run adds no foreground/background acquisition policy (1.615382ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'open'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-cancel-independent-review/tests/app-native-lifecycle-independent.test.ts:62:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'open',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

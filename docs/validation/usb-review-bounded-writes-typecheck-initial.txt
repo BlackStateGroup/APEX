@@ -1,0 +1,10 @@
+1ab409095d65682d7262033d6f423e2a92279273
+tests/usb-review-adversarial.test.ts(129,9): error TS2416: Property 'byteLength' in type 'HostileBytes' is not assignable to the same property in base type 'Uint8Array<ArrayBuffer>'.
+  Type 'void' is not assignable to type 'number'.
+tests/usb-review-adversarial.test.ts(130,9): error TS2416: Property 'byteOffset' in type 'HostileBytes' is not assignable to the same property in base type 'Uint8Array<ArrayBuffer>'.
+  Type 'void' is not assignable to type 'number'.
+tests/usb-review-adversarial.test.ts(132,9): error TS2416: Property '[Symbol.toStringTag]' in type 'HostileBytes' is not assignable to the same property in base type 'Uint8Array<ArrayBuffer>'.
+  Type 'void' is not assignable to type '"Uint8Array"'.
+tests/usb-review-adversarial.test.ts(135,25): error TS2345: Argument of type 'HostileBytes' is not assignable to parameter of type 'Uint8Array<ArrayBufferLike>'.
+  Types of property 'byteLength' are incompatible.
+    Type 'void' is not assignable to type 'number'.

@@ -1,0 +1,4 @@
+tests/iq-app-independent.test.ts(28,110): error TS2339: Property 'origin' does not exist on type 'never'.
+tests/iq-app-independent.test.ts(28,167): error TS2339: Property 'statistics' does not exist on type 'never'.
+tests/iq-app-independent.test.ts(38,106): error TS2339: Property 'statistics' does not exist on type 'never'.
+tests/iq-app-independent.test.ts(38,165): error TS2339: Property 'spectrum' does not exist on type 'never'.

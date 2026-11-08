@@ -1,0 +1,18 @@
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (38.439ms)
+✔ fake android MTU 23: C ATT error closes session (10.831976ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (10.515556ms)
+✔ fake android MTU 517: C ATT error closes session (11.080583ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (11.473488ms)
+✔ fake ios MTU 23: C ATT error closes session (8.463243ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (15.216918ms)
+✔ fake ios MTU 517: C ATT error closes session (8.954269ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (9.88157ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (9.874961ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.043711

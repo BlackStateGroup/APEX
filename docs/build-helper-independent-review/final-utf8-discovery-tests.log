@@ -1,0 +1,30 @@
+✔ only ESRCH proves tracked group absence (1.367337ms)
+✔ group probe waits through present group and fails closed on timeout (0.266132ms)
+✔ group probe can verify eventual disappearance (0.156393ms)
+✔ a fixed late-interrupt deadline extends observation only once (0.195257ms)
+✔ closed command grammar and default-off (2.087328ms)
+✔ separate default-off and explicit-on configs target only derivative, preserve hashes (71.553735ms)
+✔ existing output and symlink aliases refused without commands (5.220108ms)
+✔ provenance mismatch leaves honest report with build unrun (14.724567ms)
+✔ failed configure, effective mismatch, partial compile preserve evidence (50.565499ms)
+✔ bounded synthetic subprocess success, failure, spawn failure and timeout cleanup (334.098983ms)
+✔ raw byte budget bounds multibyte output and reports exact retained prefix (154.052156ms)
+✔ UTF-8 split across subprocess writes is decoded once without replacement (111.738018ms)
+✔ exact multibyte byte limit succeeds; malformed output preserves canonical bytes (320.229994ms)
+✔ real process orchestration: independent off/on executable fixtures (1641.823178ms)
+✔ real orchestration rejects effective mismatch, missing artifact, partial build and changed final config (4588.799685ms)
+✔ previous outputs and SDK symlink cannot be overwritten (3.110747ms)
+✔ runner timeout, output overflow and signal cancellation retain failed status (424.043838ms)
+✔ ambient config/provenance overrides and arbitrary secrets are not inherited or recorded (820.844292ms)
+✔ independent raw-byte limit rejects multibyte output on each stream (339.517153ms)
+✔ independent split UTF-8 characters survive subprocess chunk boundaries (514.945467ms)
+✔ independent malformed UTF-8 retains canonical bounded bytes and marks diagnostic truncation (247.971358ms)
+✔ aggregate discovery includes these original fixture cases without adding stages (3.44508ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9776.61587

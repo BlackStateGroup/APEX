@@ -1,0 +1,32 @@
+✔ nine typed inspector choices, Recording default, and separate explicit source routes (2.132551ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (5.707299ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.32065ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (7.808626ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.137714ms)
+✔ source delivery during pending saves survives old failure without reviving results (12.353014ms)
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (20.930339ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (96.305621ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (5.38094ms)
+✔ independent actual TSX: malformed AD is explicitly visible despite accepted HCI framing (6.538933ms)
+✔ independent actual TSX: encrypted, unknown, malformed, partial and complete service counts stay distinct (22.851875ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (11.540046ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (86.066834ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (15.744376ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (9.253486ms)
+✔ actual extended TSX renders exact bounded header states and applicable addresses, never marker data (45.563413ms)
+✔ actual extended TSX bounds reports, excerpts and diagnostics; reserved values and contradictions stay visible (23.433223ms)
+✔ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (82.01703ms)
+✔ independent actual TSX 128-record final page and escaped exact field spellings (20.441746ms)
+✔ actual TSX initial/inactive render: exact limits, no automatic result or external actions (19.356899ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (24.103983ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (65.238258ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (38.243136ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (9.082646ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 833.154094

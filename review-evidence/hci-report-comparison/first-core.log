@@ -1,0 +1,14 @@
+✔ nonfirst selection exact matrix and differing metadata compare supplied fields only (6.07269ms)
+✔ empty, identical, zero vs absent, changed headers and insertion/deletion are positional only (3.707302ms)
+✔ maximum report selection/data bounds and separate malformed/unknown/encrypted AD status (4.469366ms)
+✔ all primitive/structural failures on either side precede any hashing (2.587381ms)
+✔ whole-event late failure, digest errors, sequential bounded hashes and selection after full verification (1.816455ms)
+✔ hash argument isolation, deep freezing, original substitutions and excluded report privacy (1.426256ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.225

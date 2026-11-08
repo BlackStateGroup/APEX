@@ -1,0 +1,19 @@
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.246359ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (4.496757ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (15.160128ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.802943ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (4.342486ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (0.903482ms)
+✔ explicit bounded pagination, no silent truncation and output cap (5.279409ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (442.988481ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (1.481712ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (12.501132ms)
+✔ standalone selected JSON retains every metadata disclosure (0.507928ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 648.418531

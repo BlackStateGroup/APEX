@@ -1,0 +1,29 @@
+✔ combined session cancellation waits late handle without recursive deadlock (5.360331ms)
+✔ combined session no-handle driver rejection stays pending through explicit retry (0.741262ms)
+✔ synchronous terminal during subscribe retains handle through deferred subscription (2.799741ms)
+✖ single chunk native write resolving after explicit close rejects caller (2.751667ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.174825
+
+✖ failing tests:
+
+test at tests/ble-review-boundaries.test.ts:27:1
+✖ single chunk native write resolving after explicit close rejects caller (2.751667ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async Promise.all (index 0)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/ble-review-boundaries.test.ts:31:84)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /changed|closed|cancelled/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

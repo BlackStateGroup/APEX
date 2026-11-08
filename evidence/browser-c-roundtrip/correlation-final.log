@@ -1,0 +1,14 @@
+✔ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (21.085808ms)
+✔ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (8.217796ms)
+✔ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (5.227079ms)
+✔ CRC-corrupt framed browser write produces no C response; following session request recovers (7.309328ms)
+✔ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (16.691083ms)
+✔ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (4.503422ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.921124

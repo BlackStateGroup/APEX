@@ -1,0 +1,27 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 build
+> expo export --platform ios --platform android --platform web
+
+/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/utils/errors.js:154
+    throw error;
+    ^
+
+Error: ENOENT: no such file or directory, mkdir '/home/agent/.expo'
+    at Object.mkdirSync (node:fs:1410:26)
+    at write (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/json-file/build/JsonFile.js:257:27)
+    at setSync (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/json-file/build/JsonFile.js:309:12)
+    at JsonFile.set (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/json-file/build/JsonFile.js:143:16)
+    at getAnonymousId (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/api/user/UserSettings.js:203:18)
+    at new Telemetry (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/utils/telemetry/Telemetry.js:36:66)
+    at getTelemetry (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/utils/telemetry/index.js:48:21)
+    at recordCommand (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/utils/telemetry/index.js:67:9)
+    at /workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/@expo/cli/build/src/index.js:256:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: '/home/agent/.expo'
+}
+
+Node.js v24.22.1

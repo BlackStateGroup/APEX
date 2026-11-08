@@ -1,0 +1,41 @@
+✔ prepare option: exact selected binary, original coordinates, default compatibility and atomic refusals (2655.382552ms)
+✔ reopen: fatal UTF8, BOM, strict arguments, bounded regular input and no mutation (2260.967817ms)
+✔ reopen reports forged original references only as unverified; binary tampering and late bad reports remain atomic (561.009959ms)
+✔ explicit preparation/reopen uses binary digest, excludes unrelated records and performs no file writes (428.384307ms)
+✔ old metadata, page, legacy and extended subprocess outputs remain byte-for-byte compatible (680.533941ms)
+✔ preparation rejects conflicts, bad indices, duplicate flags, extra args, wrong record types and missing context (2808.165688ms)
+✔ reopen rejects strict argument errors and unsafe filesystem targets; ancestor links are allowed (1701.818533ms)
+✔ reopen rejects malformed UTF8, preserved BOM, byte and decoded limits, strict JSON and digest corruption atomically (1516.61394ms)
+✔ late source framing and event failures never publish prepared or reopened partial output (469.218178ms)
+✔ plausible original claims can change without derivative failure and remain explicitly unverified (234.522783ms)
+✔ independent exact binary slice, hash oracle, unrelated sentinels and derivative coordinates (5.324982ms)
+✔ literal minimum 55 bytes and maximum 298 bytes with exact 255 parameter limit (1.681373ms)
+✔ existing serialized metadata, legacy and extended output is byte-for-byte unchanged (1.359995ms)
+✔ caller input and preparation/creation/read hash buffers cannot alias retained bytes (1.096223ms)
+✔ brand spoofs, nonlegacy and invalid selectors reject before hash exposure (1.952274ms)
+✔ hash failures reject atomically; valid shape is not hash honesty (2.192825ms)
+✔ exact imported whitespace and escaped Unicode survive, bounded by UTF16 length (0.890498ms)
+✔ all exact object fields reject missing and extra fields before hashing (1.596526ms)
+✔ decoded and escaped duplicate keys at every depth reject before hash (1.520604ms)
+✔ wrong types, nested objects, arrays, nonJSON and unsafe string controls reject (6.835365ms)
+✔ hex, exact header, hash syntax, byte counts and original-range plausibility are strict (6.579575ms)
+✔ plausible original claims can change and always remain explicitly UNVERIFIED (0.960153ms)
+✔ structural and late bad reports reject even with recomputed matching derivative digest (1.51384ms)
+✔ malformed, unknown, encrypted AD and inert URL retain bytes and recomputed interpretation parity (2.559402ms)
+✔ nonfirst event exact binary span, unrelated marker exclusion, source vs derivative and coordinate oracles (7.527488ms)
+✔ 55 and 298 byte exact boundaries and maximum document label (2.379165ms)
+✔ forged spread proxy and invalid selections fail before hashing (1.411709ms)
+✔ caller and malicious hash copy mutation, async hash rejection and bad digest never publish (3.064148ms)
+✔ strict bounded exact schema, escaped duplicate names and shape/range confusion before hashing (6.689512ms)
+✔ plausible claimed original references remain explicitly unverified, not substituted (0.610511ms)
+✔ all accepted report enums/RSSI/AD lengths and opaque malformed unknown encrypted/inert AD parity (51.129385ms)
+✔ whole event rejected for malformed wrappers, framing, reports or late invalid data on create and reopen (4.464962ms)
+✔ exact JSON budget, escaped text retained, runtime input types, and multiple embedded records refused (1.76758ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7987.714212
