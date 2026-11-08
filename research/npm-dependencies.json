@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "method": "package-lock.json declarations; not a selected-file licence audit",
-  "lockfileSha256": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+  "lockfileSha256": "4a2e632b3a3db4bd68b8699c7dbd6f38e614e3d06505a1837f99b530a4555be3",
   "packages": [
     {
       "path": "node_modules/@babel/code-frame",
@@ -2058,6 +2058,14 @@
       "developmentOnly": false,
       "optional": false,
       "integrity": "sha512-XdjO3ZZhEq1dXm15GVtzQ0SXxSTPguJIDZib3Z8tAf2jLxfPUlQObgO/0hdnw7ssEBhTT2jQo2HAfnOSGUfj8w=="
+    },
+    {
+      "path": "node_modules/expo-document-picker",
+      "version": "58.0.4",
+      "licence": "MIT",
+      "developmentOnly": false,
+      "optional": false,
+      "integrity": "sha512-rxs+9RrpI55/BEGNB/3sXjoBG6yZDLyn6Z7KzjbbBLdX8bE2cZT4IozQ3Q5wufaEEeaHQn48EgPiuMoTsAidpg=="
     },
     {
       "path": "node_modules/expo-file-system",
