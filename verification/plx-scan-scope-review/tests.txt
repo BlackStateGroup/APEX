@@ -1,0 +1,39 @@
+✔ android: exact AXP filter, real Device conversion, 100 callback cap and late event fencing (37.950448ms)
+✔ android: absent native device ignored and oversized projected candidate ends before publication (8.845321ms)
+✔ android: cancel pending start, remove listener immediately, await raw start before replacement (8.674069ms)
+✔ android: stop acknowledgement gates connection handoff and fences stale callbacks (9.120978ms)
+✔ android: ScanEvent error converted by actual SDK and stops once (6.401242ms)
+✔ android: native start rejection converts error and cleans listener before next scan (6.741202ms)
+✔ android: native stop rejection converts error and poisons replacement (6.761288ms)
+✔ ios: exact AXP filter, real Device conversion, 100 callback cap and late event fencing (8.132428ms)
+✔ ios: absent native device ignored and oversized projected candidate ends before publication (7.596456ms)
+✔ ios: cancel pending start, remove listener immediately, await raw start before replacement (9.965351ms)
+✔ ios: stop acknowledgement gates connection handoff and fences stale callbacks (6.716813ms)
+✔ ios: ScanEvent error converted by actual SDK and stops once (5.854124ms)
+✔ ios: native start rejection converts error and cleans listener before next scan (7.555952ms)
+✔ ios: native stop rejection converts error and poisons replacement (7.254694ms)
+✔ Android preparation cancellation never dispatches a late start after permission returns (3.679264ms)
+✔ raw start held beyond controller grace prevents manager replacement (2008.446066ms)
+✔ raw stop held beyond controller grace prevents manager replacement (2011.412992ms)
+✔ two isolated case owners preserve their own actual SDK singleton and listeners (13.952609ms)
+✔ iOS void boundary: ordinary stop returns and next scan is allowed without native completion input (32.252101ms)
+✔ iOS void boundary: connect dispatch follows JS scan stop settlement without native stop ack (14.914588ms)
+✔ iOS void boundary: advertised-UUID controller publishes reusable true without native ack (9.69884ms)
+✔ Android Promise boundary: genuine boundary promise remains a JS handoff gate (9.170786ms)
+✔ iOS void boundary: exact workbench enables retained document inspection after JS-only stop (12.571806ms)
+✔ android: synchronous event inside native start reaches installed listener before raw acknowledgement (33.284395ms)
+✔ android: synchronous SDK error during held start ends once and waits for raw start (8.264919ms)
+✔ android: cancellation during held readiness never issues native scan (12.995477ms)
+✔ android: stale uncapped error and data cannot terminate or publish into replacement (8.668818ms)
+✔ ios: synchronous event inside native start reaches installed listener before raw acknowledgement (14.010318ms)
+✔ ios: synchronous SDK error during held start ends once and waits for raw start (9.432602ms)
+✔ ios: cancellation during held readiness never issues native scan (7.748104ms)
+✔ ios: stale uncapped error and data cannot terminate or publish into replacement (10.433848ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4312.689662

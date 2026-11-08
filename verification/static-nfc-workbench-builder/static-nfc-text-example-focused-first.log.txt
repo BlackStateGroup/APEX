@@ -1,0 +1,94 @@
+✔ ten unique typed choices, Recording default, exact source routes and invalid IDs (3.592676ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.603145ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (2.517371ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (1.024836ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (1.148065ms)
+✔ ir: newer inspector request wins over older completion after exit (4.633058ms)
+✔ ir: newer inspector request wins over older rejection after exit (1.044799ms)
+✔ hci: newer inspector request wins over older completion after exit (2.283249ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.628353ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.996194ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.94831ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.927781ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.201376ms)
+✔ ten typed inspector choices, Recording default, and separate explicit source routes (2.295661ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.551132ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.396492ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (4.187596ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.65809ms)
+✔ source delivery during pending saves survives old failure without reviving results (3.897272ms)
+✔ actual static TSX inactive and uninspected; boundaries and rejection disabled (11.973515ms)
+✔ actual TSX separates TLV statuses from NDEF missing, ambiguous, empty and decoder failure (22.033151ms)
+✔ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (12.323243ms)
+✔ actual TSX opaque spans never echo proprietary, trailing or unknown payload bytes (4.060988ms)
+✖ authored Text structure example loads without inspection and renders quoted inert APEX only after Inspect (3.242955ms)
+✖ strict exact-mode decoding and existing byte adapter parity (14.098376ms)
+✔ explicit mode/provenance, immutable report, separate byte copy (4.027003ms)
+✖ whole rejected edits retain draft and fence across declarations, mode and leave (1.122818ms)
+✔ late success/error fenced by accepted/rejected edits, mode, provenance, examples, clear and leave; old controls inert (2.097734ms)
+✔ bounded pages reject stale observations and reset on edits or leave (0.702454ms)
+✔ record and issue paging use independent observations, and repeated inspect pending is inert (1.609841ms)
+✖ authored structure example contains complete inert Text APEX and exact source hash (1.048477ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 27
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 426.181939
+
+✖ failing tests:
+
+test at tests/nfc-static-render.test.ts:105:1
+✖ authored Text structure example loads without inspection and renders quoted inert APEX only after Inspect (3.242955ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Text &quot;APEX&quot;; language &quot;en&quot;; encoding utf-8/. Input:
+  
+  '<div><span>Offline static NFC inspector</span><span>Memory only; host/source-only evidence. No actual tag reads, writes, emulation or replay. Leaving this inspector clears reports, retaining draft, mode, provenance and rejected-edit fence. Pending hashing is fenced, not cancelled.</span><span>APEX profile apex-static-48-v1 only, not generic tag compatibility or current-spec conformance. No identity, licensing, security, ownership, access or unlocking determination. First 12 structure bytes are uninterpreted; UID and lock contents are not displayed in results.</span><span>Select static-data-48 (exactly 96 hex characters) or static-structure-64 (exactly 128). Mode is never inferred from length. Strict contiguous ASCII hex, maximum 128 characters; no whitespace, trimming or truncation. Odd-length drafts may be typed but Inspect refuses them. Invalid or oversized edits are rejected whole, retaining prior draft and blocking Inspect until accepted replacement or Clear.</span><span>Provenance is caller-declared. SHA-256 covers exact decoded supplied bytes, NOT hex text; it does not guarantee the original pre-paste file or capture, ownership, UID, locks or access. The exact input draft is visible below; results omit raw UID, lock, proprietary, trailing and unknown record bytes.</span><div><button aria-label="Select static-data-48"><span>Select static-data-48</span></button><button aria-label="Select static-structure-64"><span>Select static-structure-64</span></button></div><div><button aria-label="Declare synthetic static source"><span>Declare synthetic static source</span></button><button aria-label="Declare imported static source"><span>Declare imported static source</span></button></div><div><button aria-label="Load synthetic empty data-area example"><span>Load synthetic empty data-area example</span></button><button aria-label="Load synthetic Text structure example"><span>Load synthetic Text structure example</span></button></div><span>Selected mode: static-structure-64; provenance: synthetic-fixture. Examples are manually authored synthetic bytes, never automatically inspected.</span><span>130 accepted hex characters. Input draft only; no raw byte projection in results.</span><div><button aria-label="Inspect static NFC"><span>Inspect static NFC</span></button><button aria-label="Clear static NFC draft"><span>Clear static NFC draft</span></button></div><span>Inspection refused: selected mode requires exactly 96 or 128 ASCII hex characters respectively and a successful local byte hash.</span></div>'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/tests/nfc-static-render.test.ts:109:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div><span>Offline static NFC inspector</span><span>Memory only; host/source-only evidence. No actual tag reads, writes, emulation or replay. Leaving this inspector clears reports, retaining draft, mode, provenance and rejected-edit fence. Pending hashing is fenced, not cancelled.</span><span>APEX profile apex-static-48-v1 only, not generic tag compatibility or current-spec conformance. No identity, licensing, security, ownership, access or unlocking determination. First 12 structure bytes are uninterpreted; UID and lock contents are not displayed in results.</span><span>Select static-data-48 (exactly 96 hex characters) or static-structure-64 (exactly 128). Mode is never inferred from length. Strict contiguous ASCII hex, maximum 128 characters; no whitespace, trimming or truncation. Odd-length drafts may be typed but Inspect refuses them. Invalid or oversized edits are rejected whole, retaining prior draft and blocking Inspect until accepted replacement or Clear.</span><span>Provenance is caller-declared. SHA-256 covers exact decoded supplied bytes, NOT hex text; it does not guarantee the original pre-paste file or capture, ownership, UID, locks or access. The exact input draft is visible below; results omit raw UID, lock, proprietary, trailing and unknown record bytes.</span><div><button aria-label="Select static-data-48"><span>Select static-data-48</span></button><button aria-label="Select static-structure-64"><span>Select static-structure-64</span></button></div><div><button aria-label="Declare synthetic static source"><span>Declare synthetic static source</span></button><button aria-label="Declare imported static source"><span>Declare imported static source</span></button></div><div><button aria-label="Load synthetic empty data-area example"><span>Load synthetic empty data-area example</span></button><button aria-label="Load synthetic Text structure example"><span>Load synthetic Text structure example</span></button></div><span>Selected mode: static-structure-64; provenance: synthetic-fixture. Examples are manually authored synthetic bytes, never automatically inspected.</span><span>130 accepted hex characters. Input draft only; no raw byte projection in results.</span><div><button aria-label="Inspect static NFC"><span>Inspect static NFC</span></button><button aria-label="Clear static NFC draft"><span>Clear static NFC draft</span></button></div><span>Inspection refused: selected mode requires exactly 96 or 128 ASCII hex characters respectively and a successful local byte hash.</span></div>',
+    expected: /Text &quot;APEX&quot;; language &quot;en&quot;; encoding utf-8/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/nfc-static-workbench.test.ts:9:1
+✖ strict exact-mode decoding and existing byte adapter parity (14.098376ms)
+  Error: Exact selected-mode ASCII hex required.
+      at decodeStaticHex (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/src/nfc-static-workbench.ts:11:193)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/tests/nfc-static-workbench.test.ts:13:15)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/nfc-static-workbench.test.ts:30:1
+✖ whole rejected edits retain draft and fence across declarations, mode and leave (1.122818ms)
+  TypeError [Error]: Cannot read properties of null (reading 'source')
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/tests/nfc-static-workbench.test.ts:39:134)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/nfc-static-workbench.test.ts:68:1
+✖ authored structure example contains complete inert Text APEX and exact source hash (1.048477ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  130 !== 128
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-static-nfc-workbench/tests/nfc-static-workbench.test.ts:70:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 130,
+    expected: 128,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

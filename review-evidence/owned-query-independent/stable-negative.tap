@@ -1,0 +1,306 @@
+✖ query rejection retains exactly one SDK conversion and error identity (34.950773ms)
+✖ abort stays responsive and fences until late resolve (13.609428ms)
+✖ PoweredOff stays responsive and fences until late resolve (8.456384ms)
+✖ abort stays responsive and fences until late reject (9.600947ms)
+✖ PoweredOff stays responsive and fences until late reject (9.274331ms)
+✖ ready event waits for resolve and late query failure cannot replace success (9.363427ms)
+✖ ready event waits for reject and late query failure cannot replace success (12.107614ms)
+✖ ready decision may still be vetoed by cancellation during query drainage (14.142191ms)
+✖ Resetting invalidates stale initial PoweredOn (9.157457ms)
+✖ Unknown invalidates stale initial PoweredOn (7.710801ms)
+✖ synchronous raw query throw undefined is exact and separately latched (7.41164ms)
+✖ synchronous raw query throw null is exact and separately latched (7.576084ms)
+✖ synchronous raw query throw false is exact and separately latched (8.97049ms)
+✖ synchronous raw query throw 0 is exact and separately latched (9.898708ms)
+✖ synchronous raw query throw  is exact and separately latched (6.509976ms)
+✖ synchronous raw query throw Error: sync is exact and separately latched (7.440736ms)
+✔ cancelled scanner permission may reset before permission returns without later acquisition (7.309451ms)
+✔ normal denial is recoverable and keeps only permission receipt (6.670609ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 2
+ℹ fail 16
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10173.745991
+
+✖ failing tests:
+
+test at review-evidence/owned-query-independent/independent.test.ts:45:1
+✖ query rejection retains exactly one SDK conversion and error identity (34.950773ms)
+  Error [BleError]: Unknown error occurred. This is probably a bug! Check reason property.
+      at parseBleError (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/node_modules/react-native-ble-plx/lib/module/BleError.js?plx-case=query-independent-1:58:16)
+      at BleManager._callPromise (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=query-independent-1:158:13) {
+    errorCode: 0,
+    attErrorCode: null,
+    iosErrorCode: null,
+    androidErrorCode: null,
+    reason: 'Device is not authorized to use BluetoothLE'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:51:105
+✖ abort stays responsive and fences until late resolve (13.609428ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'owned'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:54:85)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'owned',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:51:105
+✖ PoweredOff stays responsive and fences until late resolve (8.456384ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'owned'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:54:85)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'owned',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:51:105
+✖ abort stays responsive and fences until late reject (9.600947ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'owned'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:54:85)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'owned',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:51:105
+✖ PoweredOff stays responsive and fences until late reject (9.274331ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'owned'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:54:85)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'owned',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:59:52
+✖ ready event waits for resolve and late query failure cannot replace success (9.363427ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'pending'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:60:91)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'pending',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:59:52
+✖ ready event waits for reject and late query failure cannot replace success (12.107614ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'pending'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:60:91)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'pending',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:64:1
+✖ ready decision may still be vetoed by cancellation during query drainage (14.142191ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'rejected'
+       ^
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:66:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:68:44
+✖ Resetting invalidates stale initial PoweredOn (9.157457ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'pending'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:69:108)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'pending',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:68:44
+✖ Unknown invalidates stale initial PoweredOn (7.710801ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'resolved'
+  - 'pending'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:69:108)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'resolved',
+    expected: 'pending',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw undefined is exact and separately latched (7.41164ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw null is exact and separately latched (7.576084ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw false is exact and separately latched (8.97049ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw 0 is exact and separately latched (9.898708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw  is exact and separately latched (6.509976ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review-evidence/owned-query-independent/independent.test.ts:72:66
+✖ synchronous raw query throw Error: sync is exact and separately latched (7.440736ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-query-review/review-evidence/owned-query-independent/independent.test.ts:73:157)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

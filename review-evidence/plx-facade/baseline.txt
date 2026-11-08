@@ -1,0 +1,26 @@
+✔ installed PLX android MTU 23: C protocol, transaction filter and late cancellation (45.967791ms)
+✔ installed PLX android MTU 23: native write rejection through BleError (14.325739ms)
+✔ installed PLX android MTU 517: C protocol, transaction filter and late cancellation (13.014714ms)
+✔ installed PLX android MTU 517: native write rejection through BleError (12.722031ms)
+✔ installed PLX ios MTU 23: C protocol, transaction filter and late cancellation (21.403144ms)
+✔ installed PLX ios MTU 23: native write rejection through BleError (11.152622ms)
+✔ installed PLX ios MTU 517: C protocol, transaction filter and late cancellation (11.709634ms)
+✔ installed PLX ios MTU 517: native write rejection through BleError (12.243086ms)
+✔ installed PLX android: event error closes active session (11.642959ms)
+✔ installed PLX android: promise error closes active session (13.076292ms)
+✔ installed PLX android: disconnect error closes active session (12.330965ms)
+✔ installed PLX ios: event error closes active session (9.760088ms)
+✔ installed PLX ios: promise error closes active session (9.419916ms)
+✔ installed PLX ios: disconnect error closes active session (9.873588ms)
+✔ installed PLX android: cancel rejection retains unknown ownership until explicit retry (12.347761ms)
+✔ installed PLX ios: cancel rejection retains unknown ownership until explicit retry (10.705937ms)
+✔ installed PLX simultaneous fixtures: creation lazy import order stays owner-scoped (23.176446ms)
+✔ installed PLX simultaneous fixtures: reverse lazy import order stays owner-scoped (22.107977ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 519.6057

@@ -1,0 +1,250 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 test
+> npm run firmware:build && node --test tests/*.test.ts
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 firmware:build
+> python3 tools/build_firmware.py
+
+C: CRC vector, bounds, fragmentation, corruption recovery and 1,000,000 noise bytes passed.
+Built portable C firmware and passed C checks.
+✔ BLE waits for notifications and serialises MTU-sized frame chunks (2.880131ms)
+✔ BLE readiness timeout and unexpected data close the peer (20.672433ms)
+✔ BLE disconnect cancels opening and drops stale notifications (0.797521ms)
+✔ BLE bounds notifications and reports link failure once (0.574175ms)
+✔ BLE bounded queue and failed writes prevent following writes (0.927625ms)
+✔ NFC normalisation discards payload contents and handles iOS technology (12.728462ms)
+✔ NFC stop during startup cancels before backend begins (1.631121ms)
+✔ NFC drops callbacks after stop and cleans up registration exactly once (1.252517ms)
+✔ standard NEC fixture yields expected address and command (2.141664ms)
+✔ NEC tolerates bounded timing variation (0.373595ms)
+✔ NEC rejects incomplete, non-finite, malformed and extended frames (0.559429ms)
+✔ classic CAN import preserves timestamps, extended IDs and bytes (0.703136ms)
+✔ CAN rejects odd payloads, FD, RTR, error IDs and out-of-range classic IDs (13.763747ms)
+✔ CAN import enforces count and size limits (7.278592ms)
+✔ Android-shaped synthetic input decodes a documented public telemetry layout (9.532413ms)
+✔ iOS normalized fixture yields the same telemetry without inventing raw bytes (0.745411ms)
+✔ unknown AD types, duplicate fields, names and signed TX power are preserved (0.547099ms)
+✔ 16-, 32- and 128-bit UUIDs use little-endian AD encoding (0.41365ms)
+✔ all service-data widths split UUID bytes from opaque payload without guessing (0.525434ms)
+✔ UTF-8 names decode, invalid UTF-8 remains preserved with a diagnostic (0.347356ms)
+✔ truncated AD structure preserves parsed prefix and exact undecoded tail (0.254633ms)
+✔ only all-zero trailing padding is accepted, with no parsing beyond it (0.373954ms)
+✔ malformed known fields retain original bytes and do not abort later fields (0.266011ms)
+✔ Flags allow zero or more octets as specified by CSS, without inventing missing flags (1.285234ms)
+✔ host capture truncation is separate from structurally valid AD bytes (0.412083ms)
+✔ TLM uses big-endian unsigned counters and signed fixed-point temperature (0.286816ms)
+✔ unknown, encrypted, future-version and incomplete TLM are not guessed (0.255835ms)
+✔ hex format, byte and element bounds are enforced (1.004186ms)
+✔ strict offline envelope rejects native claims and fabricated extra fields (0.909724ms)
+✔ recorded imports retain source-supplied timestamps without attesting physical reception (1.845555ms)
+✔ iOS normalized values have strict field, aggregate and dictionary limits (0.579924ms)
+✔ metadata-only summaries fit existing hypothesis input and omit raw private values (2.07646ms)
+✔ deterministic malformed-input sweep is bounded and retains every byte (118.380936ms)
+✔ BLE evidence preserves exact offline input across SQLite reopen and reinterprets it (10.781674ms)
+✔ iOS normalized input stays normalized after journal round-trip (2.699355ms)
+✔ BTHome official-example bytes retain their meaning without a sensor-truth claim (2.326771ms)
+✔ retained encrypted BTHome stays opaque rather than acquiring decoded or authenticated claims (0.965364ms)
+✔ recorded import retains capture time separately from journal save time (1.17878ms)
+✔ BLE source mismatch and native source claims fail before storage (1.718287ms)
+✔ stored decoded-result claims and extra payload fields are never trusted (0.395601ms)
+✔ a valid retained-byte change breaks the journal digest (1.286476ms)
+✔ string-like arrays cannot bypass BLE envelope validation (1.319114ms)
+✔ journal size boundary retains the complete source or rejects it without truncation (1.333209ms)
+✔ BLE additions preserve old journal kinds and do not require a database migration (1.359471ms)
+✔ a failed BLE insert cannot replace existing evidence or report success (3.031782ms)
+✔ BLE metadata passes the unchanged APEX hypothesis contract with a local deterministic stub (2.059216ms)
+✔ existing data-export gate blocks a remote provider before it receives any observations (1.065985ms)
+✔ existing output validator still rejects invented evidence and unsupported BLE protocol labels (0.480191ms)
+✔ native wrappers use one lease, preserve AXP filter and connect/write behavior, never connect for observations (14.83561ms)
+✔ native permission cancellation never starts later and invalid/oversize source fails without invented bytes (3.461712ms)
+✔ foreground validation and single AXP error callback (3.256084ms)
+✔ Android retains byte order, padding, repeated unknown AD and malformed tail, not normalized replacement (7.51722ms)
+✔ iOS rawScanRecord JSON remains opaque, UUID is not MAC, no cached name fallback (2.598655ms)
+✔ null, missing, empty, sentinels and unavailable Android raw bytes remain distinguishable (7.924955ms)
+✔ canonical base64 round trips all byte values and bounded random-shaped lengths (262.559972ms)
+✔ malformed, noncanonical and oversize base64 is rejected without truncation (1.341915ms)
+✔ bounds and schemas reject bad dictionaries, duplicates, metrics and aggregate excess (8.217058ms)
+✔ source time must be supplied and validated; never invents timestamp or live provenance (1.450622ms)
+✔ all one-byte and two-byte tails round trip and reject nonzero pad bits (1557.283643ms)
+✔ complete selected source, spelling and exact document whitespace survive SQLite reopen and digest verification (14.350569ms)
+✔ missing and explicit-null Android raw source remain uninterpretable; empty raw is distinct (2.875899ms)
+✔ iOS raw JSON base64 remains opaque and selected normalized fields alone are reinterpreted (2.106601ms)
+✔ declared recorded origin and source timestamp remain separate from journal save time (2.735834ms)
+✔ strict source schema rejects claims, extra or missing fields, SDK/platform changes and inconsistent availability (6.951388ms)
+✔ source mismatch and native provenance are rejected on save and parse (6.656078ms)
+✔ Device methods and arbitrary properties are neither read nor retained; selected accessors fail (1.104898ms)
+✔ 4096-character source boundary is exact; oversize complete snapshots are rejected without writes (3.184261ms)
+✔ old records retain identical canonical digest semantics with no schema migration (3.149159ms)
+✔ duplicate SDK callbacks count toward a strict cap; late events and duplicate stops cannot deliver twice (9.395862ms)
+✔ cancellation during unresolved preparation releases lease and never starts late (1.7351ms)
+✔ preparation failure has one terminal result without an SDK stop (0.778889ms)
+✔ synchronous start callbacks, rejected start, delayed acknowledgement and immediate stop are safe (2.54468ms)
+✔ stop failure reports once and poisons subsequent scans (1.311443ms)
+✔ duration, background, memory limits, projection and consumer failures invalidate callbacks (1.686099ms)
+✔ invalid bounds fail before preparation, and mutating options cannot widen a running scan (1.118306ms)
+✔ selected source clock is callback receipt, Android bytes and iOS opaque fields remain separate (6.339004ms)
+✔ initial and edited documents cannot save before successful interpretation (3.068938ms)
+✔ demo fixture is identical to documented decoder test data (0.209092ms)
+✔ edits immediately invalidate both visible results and save input (0.476977ms)
+✔ import provenance is derived from envelope, not the control used to load it (10.167681ms)
+✔ failed reparse never leaves a successful result saveable (0.969324ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.497759ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (2.858703ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.362903ms)
+✔ failed save retains interpreted source for explicit retry (1.76323ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (7.430534ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-BLE records (8.991935ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (3.328963ms)
+✔ iOS workflow retains normalized fields, and encrypted BTHome stays opaque through save/reopen (2.084848ms)
+✔ official advertising example imports offline and retains source provenance (8.165387ms)
+✔ all supported numeric IDs match official wire examples (packet-id is synthetic) (0.428505ms)
+✔ signed little-endian minima, maxima, negative one and zero are numeric, not invented sentinels (1.360645ms)
+✔ unsigned 8, 16, 24-bit extrema stay unsigned without range clamping (0.213334ms)
+✔ ordered repeated object IDs retain every occurrence and byte position (4.395941ms)
+✔ descending IDs stop without reordering or overwriting the parsed prefix (0.213015ms)
+✔ unsupported object IDs stop at the ID, with no guessed length or resynchronization (0.23058ms)
+✔ all proper prefixes of each supported field preserve the truncated ID and bytes (0.349795ms)
+✔ every header byte gates version, encryption and reserved bits before measurements (2.518487ms)
+✔ official encrypted example and plausible plaintext with encryption flag stay opaque (4.560394ms)
+✔ object and common input bounds are enforced at exact boundaries (1.376636ms)
+✔ iOS and recorded envelopes preserve provenance without an identity or native claim (0.999122ms)
+✔ summary distinguishes TLM and BTHome counts and exports no measurement or label (0.491095ms)
+✔ deterministic malformed sweep preserves every byte and never exceeds object bound (539.320028ms)
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (27.863526ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (0.937505ms)
+✔ failed inserts retain existing evidence and never report a successful save (1.04899ms)
+✔ TypeScript session negotiates with the compiled C firmware, not the simulator (28.652607ms)
+✔ C peer accepts independent golden requests including all 256 byte values (10.343037ms)
+✔ C peer handles fragmented/coalesced frames and ignores a corrupt request (19.109794ms)
+✔ C dispatcher rejects unsupported and invalid operations without invoking another action (10.12717ms)
+✔ parallel host requests correlate independent binary payloads (27.982685ms)
+✔ AXP BLE MTU bridge negotiates and transfers a maximum binary frame through compiled C (15.848189ms)
+✔ provider output remains explicitly unverified even at maximum confidence (1.541024ms)
+✔ remote provider is not called before explicit data export selection (0.614332ms)
+✔ invented observation IDs and extra execution fields are rejected (0.658479ms)
+✔ response bounds, unsupported protocols and invalid confidence are rejected (2.574678ms)
+✔ invalid, duplicate or overlarge observations never reach the provider (0.810809ms)
+✔ no candidate is a valid abstention and prompt-like text stays data (0.926875ms)
+✔ stalled providers time out and receive an abort signal (11.362572ms)
+✔ protocol enums require strings without coercion (0.564067ms)
+✔ malformed observation records and sparse lists are rejected before provider calls (0.750598ms)
+✔ provider identity and remote consent must have the expected primitive types (0.503192ms)
+✔ all observation kinds and exact selection bounds remain valid (3.623294ms)
+✔ provider input is a frozen defensive copy and attribution survives asynchronous mutation (0.676546ms)
+✔ timeout wins when provider rejects synchronously on abort (5.318808ms)
+✔ provider errors propagate and completed calls clear timeout without late aborts (31.278205ms)
+✔ direct validation also bounds and validates the evidence references input (0.399651ms)
+✔ CRC uses the independent CCITT-FALSE check value (3.001282ms)
+✔ encoder matches independently generated Python golden vectors (3.309477ms)
+✔ all possible two-chunk boundaries retain a maximum payload (45.000552ms)
+✔ single-byte fragments and coalesced frames decode identically (0.471065ms)
+✔ bad CRC and boot noise do not hide the next intact frame (0.732878ms)
+✔ invalid version, flags, kinds, zero ID and oversized lengths are rejected (0.91616ms)
+✔ encoder rejects invalid bounds and reset discards partial data (0.9351ms)
+✔ one million noise bytes retain bounded parser memory (52.513616ms)
+✔ real REA evidence imports bounded metadata, deduplicates overlapping build IDs and stays unverified (2.895724ms)
+✔ REA report rejects mismatched digests, incorrect providers, invalid coverage and out-of-file ranges (1.854305ms)
+✔ firmware report persists as offline evidence without native provenance or raw payload promotion (3.283256ms)
+✖ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (204.00121ms)
+✖ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (200.611782ms)
+✔ all 28 research records have immutable source and licence evidence (3.095064ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (8.274861ms)
+✔ disconnected and unavailable operations reject without transport execution (2.070963ms)
+✔ failed connect removes listeners and closes the one-use session (0.38093ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.959409ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (22.621761ms)
+✔ pending queue is bounded and unplug rejects every request (1.340918ms)
+✔ wrong response opcode and device error are rejected (1.219834ms)
+✔ write failure rejects immediately and clears pending requests (3.906916ms)
+✔ request IDs are never reused through the full 16-bit session space (711.506476ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.321679ms)
+✔ synchronous transport failure also clears pending state (0.514686ms)
+✔ USB permission denial does not open a connection or install listeners (1.556474ms)
+✔ USB failed open cleans up native subscriptions (0.434642ms)
+✔ USB data validates bytes and ignores stale connection generations (0.386892ms)
+✔ USB writes are ordered and detach rejects subsequent writes (6.985872ms)
+✔ web adapter retains exact BLE input and can read and verify it again (11.617501ms)
+✔ web adapter detects valid document tampering without discarding the stored bytes (2.609479ms)
+✔ quota failure retains previous web evidence and surfaces the failure (5.66541ms)
+✔ corrupt web index is not overwritten by a new save (2.300794ms)
+✔ web capacity boundary preserves all existing records (39.277534ms)
+✔ overlapping saves in one app context preserve every record (4.865328ms)
+ℹ tests 162
+ℹ suites 0
+ℹ pass 160
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2141.396499
+
+✖ failing tests:
+
+test at tests/rea-inspection.test.ts:42:1
+✖ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (204.00121ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:19
+    if (result.error || result.status !== 0) throw new Error(`REA failed: ${result.error?.message ?? result.stdout.slice(0,4096) ?? result.stderr.slice(0,4096)}`);
+                                                   ^
+
+  Error: REA failed:
+      at command (file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:19:50)
+      at file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:22:17
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+  Node.js v24.22.1
+
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tests/rea-inspection.test.ts:49:34)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/rea-inspection.test.ts:66:1
+✖ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (200.611782ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:19
+    if (result.error || result.status !== 0) throw new Error(`REA failed: ${result.error?.message ?? result.stdout.slice(0,4096) ?? result.stderr.slice(0,4096)}`);
+                                                   ^
+
+  Error: REA failed:
+      at command (file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:19:50)
+      at file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tools/inspect-firmware.mjs:22:17
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+  Node.js v24.22.1
+
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ble-controlled/tests/rea-inspection.test.ts:71:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

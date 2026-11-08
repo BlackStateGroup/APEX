@@ -1,0 +1,11 @@
+✔ combined session cancellation waits late handle without recursive deadlock (4.238014ms)
+✔ combined session no-handle driver rejection stays pending through explicit retry (0.71566ms)
+✔ synchronous terminal during subscribe retains handle through deferred subscription (1.871133ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136.714861

@@ -1,0 +1,35 @@
+✔ independent: acquisition filters and observer order, frozen deep snapshot, selected cancel no GATT (3.303939ms)
+✔ independent: every gate applies to connect, held simulator is not closed or replaced (3.693612ms)
+✔ independent: cancelled raw picker rejects immediately, blocks replacement, late reject never acquires (6.17854ms)
+✔ independent: reentrant cancel on exact reservation cannot acquire and joins cleanup identity (1.41346ms)
+✔ independent: cancel fences before exact session.close even with operation lock and pending open (27.166516ms)
+✔ independent: pending write is locally cancelled; late raw effect cannot free poison or reach replacement (29.492296ms)
+✔ independent: failed disconnect survives view detach and requires explicit retry (1.097527ms)
+✔ independent: cancellation completion publication may select new work without old finally clearing it (1.317185ms)
+✔ independent: production source routes real App handlers through live owner and exact cleanup (1.067929ms)
+✔ independent: actual Ping closure cannot publish after replacement (0.649029ms)
+✔ independent: actual Ping closure cannot publish after unmount (0.311198ms)
+✔ independent: actual Ping closure cannot publish after StrictMode epoch (0.139803ms)
+✔ independent: actual Ping closure cannot publish after closed session (0.099495ms)
+✔ independent: actual lifecycle adapter and singleton never acquire on import, bind, remount or visible (3.349032ms)
+✔ independent: actual stale Cancel closure never reports poisoned cleanup completed (2.001842ms)
+✔ independent: actual browserAction suppresses old cleanup success after new selection (1.153358ms)
+✖ independent: actual generic simulator connect rejects selected, pending and poisoned browser owners (0.775836ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 16
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 252.909969
+
+✖ failing tests:
+
+test at tests/web-axp-application-independent.test.ts:154:1
+✖ independent: actual generic simulator connect rejects selected, pending and poisoned browser owners (0.775836ms)
+  SyntaxError [Error]: Missing } in template expression
+      at new Function (<anonymous>)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-application-independent.test.ts:160:17)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

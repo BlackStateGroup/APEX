@@ -1,0 +1,18 @@
+tests/analysis-inspector-independent.test.ts:import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, AnalysisSourceGate, isAnalysisInspector, nextAnalysisSource } from '../src/analysis-navigation.ts';
+tests/analysis-inspector-independent.test.ts:  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+tests/analysis-inspector-independent.test.ts:  for(const x of ANALYSIS_INSPECTORS) assert.ok(isAnalysisInspector(x.id));
+tests/bthome-numeric.test.ts:  assert.equal(result.objects.length, 128); assert.equal(result.parseStatus, 'limit-exceeded');
+tests/nfc-static-memory-review.test.ts:import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR } from '../src/analysis-navigation.ts';
+tests/nfc-static-memory-review.test.ts: assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id),['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+tests/nfc-static-memory-review.test.ts: assert.equal(ANALYSIS_INSPECTORS[10].label,'Static NFC data area'); assert.equal(DEFAULT_ANALYSIS_INSPECTOR,'recording');
+tests/hci-comparison-routing-independent.test.ts:import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES } from '../src/analysis-navigation.ts';
+tests/hci-comparison-routing-independent.test.ts: assert.equal(ANALYSIS_INSPECTORS.length,13);assert.equal(new Set(ANALYSIS_INSPECTORS.map(x=>x.id)).size,13);assert.deepEqual(ANALYSIS_INSPECTORS.filter(x=>x.id!=='hci-compare').map(x=>x.id),['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','iq']);
+tests/ble-native-observation.test.ts:  assert.equal(candidates[0].name.length, 128); assert.equal(candidates[0].rssi, -50);
+tests/nfc-static-workbench.test.ts: assert.equal(c.state.draft.length,128); assert.equal(c.state.report,null);
+tests/analysis-navigation.test.ts:import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, isAnalysisInspector, nextAnalysisSource, AnalysisSourceGate } from '../src/analysis-navigation.ts';
+tests/analysis-navigation.test.ts:  assert.equal(ANALYSIS_INSPECTORS.length, 13);
+tests/analysis-navigation.test.ts:  assert.equal(new Set(ANALYSIS_INSPECTORS.map(x => x.id)).size, 13);
+tests/analysis-navigation.test.ts:  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+tests/analysis-navigation.test.ts:  for (const item of ANALYSIS_INSPECTORS) assert.ok(isAnalysisInspector(item.id));
+tests/web-evidence.test.ts:  assert.equal(records.length, 12);
+tests/protocol-byte-boundary.test.ts:  assert.equal(encode({ ...base, payload: new Uint8Array() }).length, 12);

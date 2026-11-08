@@ -1,0 +1,73 @@
+✔ installed PLX android MTU 23: C protocol, transaction filter and late cancellation (47.683ms)
+✔ installed PLX android MTU 23: native write rejection through BleError (14.748678ms)
+✔ installed PLX android MTU 517: C protocol, transaction filter and late cancellation (12.08052ms)
+✔ installed PLX android MTU 517: native write rejection through BleError (11.079345ms)
+✔ installed PLX ios MTU 23: C protocol, transaction filter and late cancellation (22.354961ms)
+✔ installed PLX ios MTU 23: native write rejection through BleError (11.27543ms)
+✔ installed PLX ios MTU 517: C protocol, transaction filter and late cancellation (11.405054ms)
+✔ installed PLX ios MTU 517: native write rejection through BleError (12.061478ms)
+✔ installed PLX android: event error closes active session (10.754999ms)
+✔ installed PLX android: promise error closes active session (12.411276ms)
+✔ installed PLX android: disconnect error closes active session (10.735739ms)
+✔ installed PLX ios: event error closes active session (9.69291ms)
+✔ installed PLX ios: promise error closes active session (9.981145ms)
+✔ installed PLX ios: disconnect error closes active session (10.383649ms)
+✔ installed PLX android: cancel rejection retains unknown ownership until explicit retry (11.61731ms)
+✔ installed PLX ios: cancel rejection retains unknown ownership until explicit retry (10.95137ms)
+✔ installed PLX simultaneous fixtures: creation lazy import order stays owner-scoped (22.178998ms)
+✔ installed PLX simultaneous fixtures: reverse lazy import order stays owner-scoped (22.074227ms)
+✔ independent installed PLX android: late error and monitor rejection cannot revive a retired session (11.570841ms)
+✔ independent installed PLX android: invalid callback value length 1 fails closed (9.701544ms)
+✔ independent installed PLX android: invalid callback value length 688 fails closed (12.711382ms)
+✔ independent installed PLX ios: late error and monitor rejection cannot revive a retired session (9.798559ms)
+✔ independent installed PLX ios: invalid callback value length 1 fails closed (10.037644ms)
+✔ independent installed PLX ios: invalid callback value length 688 fails closed (9.956461ms)
+✖ independent installed PLX: iOS retirement first, creation imports (20.115629ms)
+✖ independent installed PLX: iOS retirement first, reverse imports (21.670223ms)
+✔ independent installed PLX: every executed published module is pinned and expected (0.77286ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 25
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 619.179916
+
+✖ failing tests:
+
+test at tests/plx-facade-c.test.ts:191:38
+✖ independent installed PLX: iOS retirement first, creation imports (20.115629ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '13' !== '10'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-plx-review/tests/plx-facade-c.test.ts:198:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '13',
+    expected: '10',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-facade-c.test.ts:191:38
+✖ independent installed PLX: iOS retirement first, reverse imports (21.670223ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '13' !== '10'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-plx-review/tests/plx-facade-c.test.ts:198:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '13',
+    expected: '10',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

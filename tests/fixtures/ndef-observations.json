@@ -1,0 +1,4 @@
+[
+  {"schemaVersion":1,"inputKind":"serialized-ndef-message","provenance":{"origin":"synthetic-fixture","label":"Synthetic English greeting, not a tag capture"},"messageHex":"d101055402656e4869"},
+  {"schemaVersion":1,"inputKind":"serialized-ndef-message","provenance":{"origin":"synthetic-fixture","label":"Synthetic inert example URI, not a tag capture"},"messageHex":"d1010c55046578616d706c652e636f6d"}
+]

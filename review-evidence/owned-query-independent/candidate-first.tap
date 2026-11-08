@@ -1,0 +1,26 @@
+✔ query rejection retains exactly one SDK conversion and error identity (29.55809ms)
+✔ abort stays responsive and fences until late resolve (12.130617ms)
+✔ PoweredOff stays responsive and fences until late resolve (14.137895ms)
+✔ abort stays responsive and fences until late reject (11.229471ms)
+✔ PoweredOff stays responsive and fences until late reject (9.580464ms)
+✔ ready event waits for resolve and late query failure cannot replace success (8.87497ms)
+✔ ready event waits for reject and late query failure cannot replace success (15.773389ms)
+✔ ready decision may still be vetoed by cancellation during query drainage (11.364116ms)
+✔ Resetting invalidates stale initial PoweredOn (9.050506ms)
+✔ Unknown invalidates stale initial PoweredOn (9.601815ms)
+✔ synchronous raw query throw undefined is exact and separately latched (8.527408ms)
+✔ synchronous raw query throw null is exact and separately latched (9.734045ms)
+✔ synchronous raw query throw false is exact and separately latched (7.189698ms)
+✔ synchronous raw query throw 0 is exact and separately latched (9.232956ms)
+✔ synchronous raw query throw  is exact and separately latched (6.840545ms)
+✔ synchronous raw query throw Error: sync is exact and separately latched (7.586853ms)
+✔ cancelled scanner permission may reset before permission returns without later acquisition (7.060596ms)
+✔ normal denial is recoverable and keeps only permission receipt (7.069527ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 336.502806

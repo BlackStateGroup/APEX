@@ -1,0 +1,14 @@
+✔ TypeScript session negotiates with the compiled C firmware, not the simulator (13.347767ms)
+✔ C peer accepts independent golden requests including all 256 byte values (4.337958ms)
+✔ C peer handles fragmented/coalesced frames and ignores a corrupt request (5.462245ms)
+✔ C dispatcher rejects unsupported and invalid operations without invoking another action (3.071741ms)
+✔ parallel host requests correlate independent binary payloads (5.509937ms)
+✔ AXP BLE MTU bridge negotiates and transfers a maximum binary frame through compiled C (8.30192ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.861251

@@ -1,0 +1,2 @@
+# Verbatim historical messages retain original trailing whitespace.
+*.md -whitespace

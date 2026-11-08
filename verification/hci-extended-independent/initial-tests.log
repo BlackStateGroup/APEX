@@ -1,0 +1,14 @@
+✔ independent exhaustive 65536 event words and periodic interval arithmetic (1422.350905ms)
+✔ independent exhaustive octets, directed applicability, signed and conditional states (16.170519ms)
+✔ all data sizes and feasible counts, offsets, allowlisted property privacy (8.913539ms)
+✔ snapshot and trusted hasher separation, private brand, repeated selection (0.780027ms)
+✔ structural late failures, selector framing and all non-three small flags (1.884087ms)
+✔ actual CLI privacy, conflicts, atomic stderr, symlink scope and read denial (1756.628014ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3361.834989

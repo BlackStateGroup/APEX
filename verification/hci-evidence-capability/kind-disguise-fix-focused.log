@@ -1,0 +1,20 @@
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (7.375442ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (1.112204ms)
+✔ failed inserts retain existing evidence and never report a successful save (1.07271ms)
+✔ evidence rejects duplicate decoded envelope and payload keys before digest verification (1.390954ms)
+✔ evidence bounded envelope parsing preserves the existing maximum canonical depth (1.255568ms)
+✔ evidence accepts inert duplicate-looking JSON text without interpreting it as envelope structure (0.859476ms)
+✔ exact text, source mapping, binary bytes and all successful entry points (12.25173ms)
+✔ missing capability rejects save, verify and both bundle operations; structural list remains available (2.550062ms)
+✔ re-signed outer content cannot authorize stale digest or matching-hash malformed legacy event (10.649791ms)
+✔ payload exact own-data fields reject getters, hidden/symbol extras and malformed bounded JSON (1.929379ms)
+✔ caller mutation during delayed byte and string hashes never changes persisted/returned snapshot; storage failure propagates (1.672486ms)
+✔ real CLI create and preview round trip HCI without decoded reports, reject forged derivative (421.754372ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 606.072558

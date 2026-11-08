@@ -1,0 +1,31 @@
+✔ time-frequency CLI explicit options, source and actual malformed/size/nonregular refusals (44.32524ms)
+✔ synthetic CLI requires two bounded regular files and retains external-file origin (35.78687ms)
+✔ synthetic acceptance hashes, zero spectrum and exact DC statistics (11.708664ms)
+✔ synthetic signed complex tones, periodic Hann neighbors and all FFT sizes (21.522018ms)
+✔ synthetic rails, greater-than-one complex magnitude and endian sentinel (1.530466ms)
+✔ synthetic selected windows, default fallback and explicit rejection (2.003474ms)
+✔ synthetic independent direct DFT: deterministic integers and nonzero impulse (11.060692ms)
+✔ synthetic quantized off-bin and two-tone amplitudes match independent windowed DFT (7.799169ms)
+✔ FFT helper rejects unbounded, nonfinite or inconsistent inputs (1.127913ms)
+✔ analysis rejects forged prepared summaries and scans all samples outside FFT range (1.004573ms)
+✔ synthetic nonzero-location impulse passes independent windowed DFT (3.34792ms)
+✔ synthetic exact view bytes, endianness, snapshots and caller mutation during async hashing (14.564294ms)
+✔ synthetic exact source hashes and optional SHA512 are not authenticity (2.074794ms)
+✔ synthetic malformed JSON bytes, duplicates, aliases, bounds and shapes reject (5.792073ms)
+✔ synthetic unsupported fields, layout, versions, numeric types and ranges reject (2.338098ms)
+✔ synthetic optional extension content stays inert and globally bounded (6.0926ms)
+✔ synthetic context, shared buffers, and broken hash adapters reject (1.063984ms)
+✔ changing signed tones, phase rotation, axes, exact times and untouched source (17.456595ms)
+✔ zero sentinels, DC and Nyquist orientation (3.29344ms)
+✔ independent windowed negative-exponent DFT for overlapping nonzero-start off-bin frames (28.129043ms)
+✔ exact frame/cell/range/hop boundaries and refusal without truncation (72.034415ms)
+✔ invalid options, accessors and forged recording reject (1.215226ms)
+✔ Hann zero-weight endpoint sentinel and raw dB remain separate from display floor (1.419518ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 356.735649

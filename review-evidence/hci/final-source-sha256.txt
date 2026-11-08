@@ -1,0 +1,4 @@
+fb7e521b3d25ae65eedab235e8e94369724d0a290b5029c5e1add2b71d110a85  packages/core/hci-offline.ts
+4707bdd9225133802fde2cd454f02fa3487e2b8a4da2fe540cea2a466cf3e023  tools/inspect-hci.ts
+5e63dd514a334a082d8f00081b3ae00169af821a9c59225ef530532a043605cd  tools/inspect-iq.ts
+18274a52448fd18881b6f11803f68d44b266222079cd722defa42cc86098fef9  packages/core/ble-advertisements.ts

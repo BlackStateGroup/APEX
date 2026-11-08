@@ -1,0 +1,11 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+
+tests/hci-extended-workbench-independent.test.ts(144,128): error TS2345: Argument of type '{ extendedIndex: number | null; extendedCount: number; extendedPage: number; draft: string; provenance: HciContext['provenance'] | null; metadata: { source: Readonly<HciContext & { ...; }>; ... 4 more ...; records: HciRecord[]; } | null; ... 7 more ...; extendedReports: { ...; }[]; }' is not assignable to parameter of type 'HciWorkbenchState'.
+  Types of property 'extendedReports' are incompatible.
+    Type '{ reportOffset: number; reportLength: number; dataStatus: { offset: number; length: number; raw: number; mask: number; shift: number; state: string; meaning: string | undefined; }; advertiserType: { ...; }; ... 14 more ...; index: number; }[]' is not assignable to type 'readonly { index: number; reportOffset: number; reportLength: number; eventType: { offset: number; length: number; raw: number; state: State; meaning: string; value?: number | undefined; connectable: boolean; ... 4 more ...; reservedBits: number; }; ... 14 more ...; diagnostics: { ...; }[]; }[]'.
+      Type '{ reportOffset: number; reportLength: number; dataStatus: { offset: number; length: number; raw: number; mask: number; shift: number; state: string; meaning: string | undefined; }; advertiserType: { offset: number; length: number; raw: number; state: State; meaning: string; value?: number | undefined; }; ... 14 more...' is not assignable to type '{ index: number; reportOffset: number; reportLength: number; eventType: { offset: number; length: number; raw: number; state: State; meaning: string; value?: number | undefined; connectable: boolean; ... 4 more ...; reservedBits: number; }; ... 14 more ...; diagnostics: { ...; }[]; }'.
+        The types of 'eventType.state' are incompatible between these types.
+          Type 'string' is not assignable to type 'State'.

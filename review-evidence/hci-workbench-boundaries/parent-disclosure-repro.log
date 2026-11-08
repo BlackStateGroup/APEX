@@ -1,0 +1,26 @@
+{
+  "source": "manual synthetic bytes; no capture/device",
+  "coreAdStatus": "malformed",
+  "coreAdIssues": [
+    {
+      "offset": 0,
+      "code": "truncated-element"
+    }
+  ],
+  "uiMessage": "Selected whole legacy event validated by the narrow offline parser.",
+  "uiSummary": {
+    "index": 0,
+    "reportOffset": 45,
+    "eventType": 0,
+    "kind": "advertisement",
+    "addressType": 0,
+    "addressWireHex": "010203040506",
+    "addressDisplay": "06:05:04:03:02:01",
+    "dataOffset": 54,
+    "dataLength": 3,
+    "dataHex": "0316d2",
+    "rssiDbm": -64,
+    "adElements": 0,
+    "serviceReadings": 0
+  }
+}

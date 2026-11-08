@@ -1,0 +1,136 @@
+{
+  "idf_tag": "v6.1",
+  "idf_tag_object": "4dc1c65503e98e9a6b4c3c5646237280ba79829b",
+  "idf_commit": "fff9895c82d744c7237be8847347bdd1b07c6643",
+  "nimble_submodule": "139cada0ae932957fa06ba37d17e3c9c2c95c773",
+  "workflow_image": "espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c",
+  "image_to_source_binding_verified": false,
+  "sources": [
+    {
+      "path": "components/bt/host/nimble/CMakeLists.txt",
+      "url": "https://github.com/espressif/esp-idf/blob/fff9895c82d744c7237be8847347bdd1b07c6643/components/bt/host/nimble/CMakeLists.txt",
+      "git_blob_sha1": "74c10a6e8168e8b5f9963a4b8eea9a2625db1dbf",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "components/bt/host/nimble/Kconfig.in",
+      "url": "https://github.com/espressif/esp-idf/blob/fff9895c82d744c7237be8847347bdd1b07c6643/components/bt/host/nimble/Kconfig.in",
+      "git_blob_sha1": "f5618c6d3dd855f0dbfb2bbc75c281f20ba63684",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "components/bt/host/nimble/port/include/esp_nimble_cfg.h",
+      "url": "https://github.com/espressif/esp-idf/blob/fff9895c82d744c7237be8847347bdd1b07c6643/components/bt/host/nimble/port/include/esp_nimble_cfg.h",
+      "git_blob_sha1": "a0f62f36aa2b949c4a4aee0750248e09df8c2e4b",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "components/soc/esp32s3/include/soc/soc_caps.h",
+      "url": "https://github.com/espressif/esp-idf/blob/fff9895c82d744c7237be8847347bdd1b07c6643/components/soc/esp32s3/include/soc/soc_caps.h",
+      "git_blob_sha1": "4bb5460b35095444bdf8806305667991e5ea6cb4",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "tools/cmake/kconfig.cmake",
+      "url": "https://github.com/espressif/esp-idf/blob/fff9895c82d744c7237be8847347bdd1b07c6643/tools/cmake/kconfig.cmake",
+      "git_blob_sha1": "30006961098ecb53a96f3bcb8c3339fe3459d125",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "porting/npl/freertos/include/nimble/nimble_npl_os.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/porting/npl/freertos/include/nimble/nimble_npl_os.h",
+      "git_blob_sha1": "eeff52454e0de323fd978043b09e67c0af410d17",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "porting/npl/freertos/src/npl_os_freertos.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/porting/npl/freertos/src/npl_os_freertos.c",
+      "git_blob_sha1": "816bcc1f21b196bf79c260c4f8bd3d69703bed95",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "porting/npl/freertos/src/nimble_port_freertos.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/porting/npl/freertos/src/nimble_port_freertos.c",
+      "git_blob_sha1": "40ffca3a58efc1a492f9836a74216db2d18cdd85",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "porting/nimble/src/nimble_port.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/porting/nimble/src/nimble_port.c",
+      "git_blob_sha1": "d08d3c279a0f2001f65b981158fa7454ce69b161",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/include/host/ble_gatt.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/include/host/ble_gatt.h",
+      "git_blob_sha1": "bfa27dfc3045cb06f5c14496835d62e6d4d97aec",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/include/host/ble_att.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/include/host/ble_att.h",
+      "git_blob_sha1": "29c21393fafc3a15015e2858751c93425d0f0549",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/include/host/ble_gap.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/include/host/ble_gap.h",
+      "git_blob_sha1": "66ab3704ad3418ce81d8a2b9add9e44a135cb023",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/include/host/ble_hs.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/include/host/ble_hs.h",
+      "git_blob_sha1": "44f9ef032392cd4a910f254d11ef88b748be0691",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_gattc.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_gattc.c",
+      "git_blob_sha1": "a4f205025e227315ca7329faf2e8197153244dc5",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_gatts.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_gatts.c",
+      "git_blob_sha1": "599c149835b8de7d078ae6f6ee664968454ad2fc",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_att.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_att.c",
+      "git_blob_sha1": "b9d033296f247fe5087794d5c54442d9e25b7f82",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_att_clt.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_att_clt.c",
+      "git_blob_sha1": "12d1f8f2fe1f5aace1a6976801410aa84e26871f",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_att_svr.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_att_svr.c",
+      "git_blob_sha1": "26df0b4f4aef9d49c102f2b8ce68019adf3ba501",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_gap.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_gap.c",
+      "git_blob_sha1": "f4e8ac078138d8056e571fb33088cd781163d9db",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "nimble/host/src/ble_hs.c",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/nimble/host/src/ble_hs.c",
+      "git_blob_sha1": "37be3793d2d8e5d33b51613adf4eae4ff2d2b2d9",
+      "retrieval": "Connected GitHub read-only fetch_file; source review only, not compiler verification"
+    },
+    {
+      "path": "porting/nimble/include/syscfg/syscfg.h",
+      "url": "https://github.com/espressif/esp-nimble/blob/139cada0ae932957fa06ba37d17e3c9c2c95c773/porting/nimble/include/syscfg/syscfg.h",
+      "git_blob_sha1": "158f3846a964e334a8ea4e29507cb4e0711ec556",
+      "retrieval": "Connected GitHub read-only fetch_file; include-chain verification only"
+    }
+  ]
+}

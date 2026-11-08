@@ -1,0 +1,30 @@
+✔ actual TSX initial/inactive renders and precise limits (8.630759ms)
+✔ actual TSX projects four bounded metadata rows and inert provenance/digest caveats (12.882573ms)
+✖ independent: valid long timestamp metadata uses a bounded display excerpt (4.307251ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 381.318677
+
+✖ failing tests:
+
+test at tests/evidence-bundle-static-render.test.ts:94:1
+✖ independent: valid long timestamp metadata uses a bounded display excerpt (4.307251ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(Number.isFinite(Date.parse(padded)))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-bundle-preview-audit/tests/evidence-bundle-static-render.test.ts:99:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

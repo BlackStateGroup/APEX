@@ -1,0 +1,16 @@
+✔ independent extended UI: all status values preserve numbers and omit payload including status zero (36.768754ms)
+✔ independent extended UI: addresses have conditional absence and directed context is not target identity (50.086193ms)
+✔ independent extended controller: whole-event failure, both kind switches, bounded pages and stale controls (4.514879ms)
+✔ independent extended controller: deep immutable aliases, exact bytes and all reset fences (3.280506ms)
+✔ independent extended controller: stale hashes success/failure cannot resurrect or replace newer result (2.12098ms)
+✔ independent extended UI: unknown flags and contradictory legacy status diagnostics are explicit (9.658106ms)
+✔ independent extended UI: large forged strings and arrays never escape bounded selected projection (5.771067ms)
+✔ independent extended controller: newer inspection wins when old hash completes after it (1.049496ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 483.198339

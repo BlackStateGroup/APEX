@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "mode": "verify",
+  "startedAt": "2026-11-08T09:54:31.212Z",
+  "status": "BLOCKED",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "mobileAcceptance": "NOT RUN",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.57",
+    "node": "v24.22.1",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C"
+  },
+  "sourceSha256": {
+    "Cargo.toml": "9ad91205692de4cbc192cd9be2ef725df1d45f61ecd2beb69cffb93d704c1920",
+    "Cargo.lock": "be6216c44ced77d00106e070a2efa09258e7abb56eba05f6709019039b4a5e45",
+    "src/lib.rs": "372049ade0f25bf0d7daa0e03efed8cc547bc26331abe25fc86520cf24b3ceb1",
+    "src/wire.rs": "1c39abf356a3110992fb6010f01709749a74bdbbf91f37c1ade30dbe924050ec",
+    "src/main.rs": "d15fbf44d4742a3ae78b4765424deff8d2182cab518aca6375c4b80c1f50de60",
+    "proof.mjs": "393aee9b40ef711e05552ff23cc32497675948ab39b2998a48aaded5d793803b",
+    "proof-codec.mjs": "7791394759273e08bb9287ecd37532b5af88e83524fa4d0c4a059a4d95688158",
+    "reference.mjs": "c2a93682d0220f84d61b2baa7c3054d5a0337b72b21810e347a8a52422c9c4e4",
+    "proof-codec.test.mjs": "bfec5d41fc84d5c25f8314eda06af509bd077b369bbb4949ac3ce2427900cbc7",
+    "../../packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "../../packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8"
+  },
+  "stages": [
+    {
+      "name": "codec-and-oracle-contract-tests",
+      "status": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test",
+        "proof-codec.test.mjs"
+      ]
+    },
+    {
+      "name": "typescript-independent-dft",
+      "status": "PASS",
+      "comparedBins": 3328,
+      "rustExecuted": false
+    },
+    {
+      "name": "cargo-presence",
+      "status": "BLOCKED",
+      "command": [
+        "cargo",
+        "--version"
+      ],
+      "reason": "cargo is not installed or not on PATH"
+    }
+  ],
+  "error": "cargo-presence blocked",
+  "finishedAt": "2026-11-08T09:54:32.047Z"
+}

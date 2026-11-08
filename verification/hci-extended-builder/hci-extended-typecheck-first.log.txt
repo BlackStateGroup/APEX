@@ -1,0 +1,4 @@
+tests/hci-extended-metadata.test.ts(25,81): error TS2339: Property 'display' does not exist on type '{ offset: number; length: number; } | { offset: number; length: number; wireHex: string; display: string; }'.
+  Property 'display' does not exist on type '{ offset: number; length: number; }'.
+tests/hci-extended-metadata.test.ts(25,144): error TS2339: Property 'wireHex' does not exist on type '{ offset: number; length: number; } | { offset: number; length: number; wireHex: string; display: string; }'.
+  Property 'wireHex' does not exist on type '{ offset: number; length: number; }'.

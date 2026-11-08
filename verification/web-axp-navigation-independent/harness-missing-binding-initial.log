@@ -1,0 +1,34 @@
+✖ independent: actual Analysis navigation closes stale Devices acquisition before React state publication (1.106717ms)
+✖ independent: actual Analysis navigation preserves selected ownership but rejects stale Connect (0.673093ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.372293
+
+✖ failing tests:
+
+test at tests/web-axp-navigation-independent.test.ts:17:1
+✖ independent: actual Analysis navigation closes stale Devices acquisition before React state publication (1.106717ms)
+  ReferenceError [Error]: attached is not defined
+      at Object.browserGate [as gate] (eval at harness (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-navigation-independent.test.ts:14:13), <anonymous>:4:17)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-navigation-independent.test.ts:19:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/web-axp-navigation-independent.test.ts:22:1
+✖ independent: actual Analysis navigation preserves selected ownership but rejects stale Connect (0.673093ms)
+  ReferenceError [Error]: attached is not defined
+      at Object.browserGate [as gate] (eval at harness (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-navigation-independent.test.ts:14:13), <anonymous>:4:17)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/web-axp-navigation-independent.test.ts:24:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

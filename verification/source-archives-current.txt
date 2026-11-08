@@ -1,0 +1,27 @@
+test_archive_path_traversal_rejected (test_source_archives.SourceArchivesTest.test_archive_path_traversal_rejected) ... ok
+test_archive_with_hidden_index_modification_is_rejected (test_source_archives.SourceArchivesTest.test_archive_with_hidden_index_modification_is_rejected) ... ok
+test_assume_unchanged_source_is_not_trusted (test_source_archives.SourceArchivesTest.test_assume_unchanged_source_is_not_trusted) ... ok
+test_bad_combined_hash_rejected (test_source_archives.SourceArchivesTest.test_bad_combined_hash_rejected) ... ok
+test_bad_part_hash_preserves_empty_placeholder (test_source_archives.SourceArchivesTest.test_bad_part_hash_preserves_empty_placeholder) ... ok
+test_dirty_existing_copy_is_rejected_without_overwrite (test_source_archives.SourceArchivesTest.test_dirty_existing_copy_is_rejected_without_overwrite) ... ok
+test_existing_archive_identity_is_preserved (test_source_archives.SourceArchivesTest.test_existing_archive_identity_is_preserved) ... ok
+test_existing_clean_copy_is_retained (test_source_archives.SourceArchivesTest.test_existing_clean_copy_is_retained) ... ok
+test_gitfile_archive_cannot_claim_independent_restoration (test_source_archives.SourceArchivesTest.test_gitfile_archive_cannot_claim_independent_restoration) ... ok
+test_importer_accepts_empty_submodule_placeholder_offline (test_source_archives.SourceArchivesTest.test_importer_accepts_empty_submodule_placeholder_offline) ... ok
+test_importer_does_not_switch_existing_pin_or_overwrite_ignored_data (test_source_archives.SourceArchivesTest.test_importer_does_not_switch_existing_pin_or_overwrite_ignored_data) ... ok
+test_importer_preserves_ignored_files_in_unborn_checkout (test_source_archives.SourceArchivesTest.test_importer_preserves_ignored_files_in_unborn_checkout) ... ok
+test_modified_source_is_not_archived (test_source_archives.SourceArchivesTest.test_modified_source_is_not_archived) ... ok
+test_non_git_directory_cannot_inherit_parent_head (test_source_archives.SourceArchivesTest.test_non_git_directory_cannot_inherit_parent_head) ... ok
+test_restore_into_fresh_parent_repository_placeholder (test_source_archives.SourceArchivesTest.test_restore_into_fresh_parent_repository_placeholder) ... ok
+test_skip_worktree_source_is_not_trusted (test_source_archives.SourceArchivesTest.test_skip_worktree_source_is_not_trusted) ... ok
+test_snapshot_converts_absorbed_gitfile_to_independent_archive (test_source_archives.SourceArchivesTest.test_snapshot_converts_absorbed_gitfile_to_independent_archive) ... ok
+test_split_archive_reassembled_in_manifest_order (test_source_archives.SourceArchivesTest.test_split_archive_reassembled_in_manifest_order) ... ok
+test_symlink_destination_rejected (test_source_archives.SourceArchivesTest.test_symlink_destination_rejected) ... ok
+test_symlink_parent_rejected (test_source_archives.SourceArchivesTest.test_symlink_parent_rejected) ... ok
+test_untracked_existing_file_is_not_hidden (test_source_archives.SourceArchivesTest.test_untracked_existing_file_is_not_hidden) ... ok
+test_wrong_commit_archive_rejected (test_source_archives.SourceArchivesTest.test_wrong_commit_archive_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.628s
+
+OK

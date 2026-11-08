@@ -1,0 +1,52 @@
+✖ independent raw-byte limit rejects multibyte output on each stream (132.196854ms)
+✖ independent split UTF-8 characters survive subprocess chunk boundaries (516.042124ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 737.113184
+
+✖ failing tests:
+
+test at tests/reviewed-idf-build-independent.test.mjs:91:1
+✖ independent raw-byte limit rejects multibyte output on each stream (132.196854ms)
+  AssertionError [ERR_ASSERTION]: stdout: retained 9437715 encoded bytes
+  + actual - expected
+  
+  + 'succeeded'
+  - 'failed'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-build-helper-independent-review/tests/reviewed-idf-build-independent.test.mjs:95:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'succeeded',
+    expected: 'failed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/reviewed-idf-build-independent.test.mjs:100:1
+✖ independent split UTF-8 characters survive subprocess chunk boundaries (516.042124ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'A�������Z'
+  - 'A€𐍈Z'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-build-helper-independent-review/tests/reviewed-idf-build-independent.test.mjs:103:44)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'A�������Z',
+    expected: 'A€𐍈Z',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

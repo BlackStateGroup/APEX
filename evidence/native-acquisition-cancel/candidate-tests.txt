@@ -1,0 +1,29 @@
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (52.749407ms)
+✔ fake android MTU 23: C ATT error closes session (9.57892ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (12.669633ms)
+✔ fake android MTU 517: C ATT error closes session (8.308439ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (14.508895ms)
+✔ fake ios MTU 23: C ATT error closes session (8.452009ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (15.29063ms)
+✔ fake ios MTU 517: C ATT error closes session (8.981136ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (11.319117ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (10.086119ms)
+✔ late Android permission grant cannot start a connection after session close (6.121875ms)
+✔ fake android: cancellation during readiness removes listener and prevents connect (6.506929ms)
+✔ fake android: cancel during connect drains issued effect without next setup effect (7.418547ms)
+✔ fake android: cancel during discover drains issued effect without next setup effect (8.912947ms)
+✔ fake android: cancel during requestMTU:185 drains issued effect without next setup effect (7.616516ms)
+✔ fake android: cancel during characteristics drains issued effect without next setup effect (8.140848ms)
+✔ fake ios: cancellation during readiness removes listener and prevents connect (5.6403ms)
+✔ fake ios: cancel during connect drains issued effect without next setup effect (6.985547ms)
+✔ fake ios: cancel during discover drains issued effect without next setup effect (7.520088ms)
+✔ fake ios: cancel during characteristics drains issued effect without next setup effect (8.833058ms)
+✔ cancelled native setup with failed cancellation retains unknown ownership (6.898081ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 482.26615

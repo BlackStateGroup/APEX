@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-11-07",
+  "apexBaseline": "e51750ec0b34b280399877d67e1036058874c373",
+  "inspectedApexFiles": [
+    {
+      "path": "package.json",
+      "blobSha": "d3c922c91d412da87d437523ee5784b1e4ffcee5",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/package.json"
+    },
+    {
+      "path": "tsconfig.json",
+      "blobSha": "4dffa731826d82c4f79a96913a1881d7d28702cb",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/tsconfig.json"
+    },
+    {
+      "path": "packages/core/evidence.ts",
+      "blobSha": "263a7b5ad466cf23561c682323a8ab91644d3616",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/packages/core/evidence.ts"
+    },
+    {
+      "path": "packages/core/analysis.ts",
+      "blobSha": "46755d28f800d7ab57e850f7ca34de45716c51f5",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/packages/core/analysis.ts"
+    },
+    {
+      "path": "src/platform/bluetooth.native.ts",
+      "blobSha": "717ba008b581f64e51295d0be306ef24c5fd94d8",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/src/platform/bluetooth.native.ts"
+    },
+    {
+      "path": "tests/analysis.test.ts",
+      "blobSha": "cb77cdf153fc01c66d5ae5ec2c1c779899eecee3",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/tests/analysis.test.ts"
+    },
+    {
+      "path": "packages/core/hypotheses.ts",
+      "blobSha": "f9b41e673b65a481542b43efd3aeeb8e4f739c76",
+      "url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/packages/core/hypotheses.ts"
+    }
+  ],
+  "protocolReferences": [
+    {
+      "repository": "google/eddystone",
+      "ref": "a52406ee6053720f78fb0c63bfc38b38e6800824",
+      "path": "eddystone-tlm/tlm-plain.md",
+      "blobSha": "ecaf579c720ae86053e933c1fcb4d8c3dc4b462d",
+      "url": "https://github.com/google/eddystone/blob/a52406ee6053720f78fb0c63bfc38b38e6800824/eddystone-tlm/tlm-plain.md"
+    },
+    {
+      "repository": "google/eddystone",
+      "ref": "a52406ee6053720f78fb0c63bfc38b38e6800824",
+      "path": "protocol-specification.md",
+      "blobSha": "d2f69ce2df605490e65dededceecb6ce1f5299e4",
+      "url": "https://github.com/google/eddystone/blob/a52406ee6053720f78fb0c63bfc38b38e6800824/protocol-specification.md"
+    }
+  ],
+  "fixtureProvenance": "All supplied BLE fixture bytes/fields are constructed offline. No physical capture or model invocation."
+}

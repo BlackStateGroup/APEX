@@ -1,0 +1,12 @@
+✔ independent five-await lifecycle matrix retains one slot across replacement, clear, background and repeat invalidation (90.434344ms)
+✔ independent numerical tone, exact SHA256/SHA512 and immutable full pagination (6.482694ms)
+✔ independent mutable hasher input cannot alter exact source or later analysis (2.664839ms)
+✔ independent malformed pair sizes never read either handle, read failures do not hash (1.386486ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 240.91654

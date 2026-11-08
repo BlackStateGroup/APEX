@@ -1,0 +1,14 @@
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (10.561255ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (6.228048ms)
+✔ bounds, canonical time and digest failures reject without partial values (25.443256ms)
+✔ export snapshots the entire selection before the first awaited hash (1.471465ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1763.15276ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (8.309619ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1985.855874

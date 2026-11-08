@@ -1,0 +1,42 @@
+✔ actual TSX initial/inactive renders and precise limits (8.681578ms)
+✔ actual TSX projects four bounded metadata rows and inert provenance/digest caveats (12.672232ms)
+✖ actual TSX bounds valid long legacy timestamps without changing retained data (9.325645ms)
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (43.957793ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (1.390143ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (2.74406ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (1.301125ms)
+✔ published state, nested reports and exact strings cannot be mutated or replaced (0.956284ms)
+✔ deactivated controllers reject queued actions; activation leases never revive old controls (0.440178ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (9.676906ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (5.7063ms)
+✔ bounds, canonical time and digest failures reject without partial values (29.790336ms)
+✔ export snapshots the entire selection before the first awaited hash (2.020602ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1628.693689ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (9.994462ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1851.876384
+
+✖ failing tests:
+
+test at tests/evidence-bundle-static-render.test.ts:91:1
+✖ actual TSX bounds valid long legacy timestamps without changing retained data (9.325645ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 4
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-bundle-preview/tests/evidence-bundle-static-render.test.ts:97:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 4,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

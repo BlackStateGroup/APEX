@@ -1,0 +1,52 @@
+{
+  "scope": "host-only fake RN/PLX, MTU, scheduling and acknowledgments; no native/device/startup acceptance",
+  "platform": "android",
+  "mtu": 23,
+  "hashes": {
+    "firmware/core/apex.c": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+    "firmware/core/apex.h": "d2afe3870cf7ef794bcf33a3e57f0cb0c05e91c22534cfd5a0e67b6c08c1b588",
+    "firmware/esp32s3-reviewed/main/ble_accessory.c": "57503eaabc1773bb46272d72bd3c9b04e85964d1666093e02bb672eaf569242c",
+    "firmware/esp32s3/main/ble_accessory.h": "8328b10ae8c6452cc7236b1e3f1c6d2f951a05f00fa3af4074c0f088f86a4ed8",
+    "packages/core/ble-transport.ts": "0a4b369de47cb35a6ad04fe4a3102594c4c7052ceb3179cf40f2ab915cb1f208",
+    "packages/core/session.ts": "9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404",
+    "packages/protocol/index.ts": "fdc143b45f0722665b637ae341957e3774876be5d9343c6652e07061a3faf7bb",
+    "src/experimental/web-axp.ts": "61a0cb7cbbbeaf6ca0b632c8bf21f9bfbc6dece7fafdda0a9a99214d6a7fe50d",
+    "tests/esp32-reviewed-host/fakes/esp_err.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/fake.h": "66696ef70b0a593ff495731014653e89fd42751f8df4d86879bed282ea265bb5",
+    "tests/esp32-reviewed-host/fakes/host/ble_hs.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/host/util/util.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nimble/nimble_port.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nimble/nimble_port_freertos.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nvs_flash.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/sdkconfig.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/esp32-reviewed-host/fakes/services/gap/ble_svc_gap.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/services/gatt/ble_svc_gatt.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "src/platform/bluetooth.native.ts": "6310d4e8b96acf183e85bc7b3261963df0b8d461ed3030c0244987a1297021e5",
+    "tests/browser-c-host/bridge.c": "b9a53bf7738a9ab6e707171a1ba12f1534471b21687962ec72188e80faccea5e",
+    "tests/browser-c-host/bridge.ts": "02df9e372d93bcd654e5f584fe1960b9648571bde4cbf8a90b16b56aced66ef2",
+    "tests/native-c-roundtrip.test.ts": "24a9192ea14e7930969054bf827d3949cf3613939902619c15d508017d5a66ca"
+  },
+  "events": [
+    "fake-permission",
+    "readiness",
+    "remove-readiness",
+    "connect",
+    "discover",
+    "requestMTU:185",
+    "cancel"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 0 0 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

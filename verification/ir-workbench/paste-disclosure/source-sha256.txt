@@ -1,0 +1,3 @@
+d2797439cabe36f172fc4011f05eec39919422ed6b4af87001c548a2ce356393  src/IrWorkbench.tsx
+ab9628c082aef45dba6a528ff9219705f4401486103ab5ac5f2dcb6c40f50fdf  tests/ir-static-render.test.ts
+9e9b96e9da279312485e574d8fc55f050ff9b234b7ea239a485db9edb44c9c67  docs/IR_WORKBENCH.md

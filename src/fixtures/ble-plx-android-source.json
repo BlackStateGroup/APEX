@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "sdk": "react-native-ble-plx@3.5.1",
+  "platform": "android",
+  "representation": "android-ad-bytes",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "Synthetic android selected-source demo; no physical reception",
+    "capturedAt": null
+  },
+  "snapshot": {
+    "id": "AA:BB:CC:DD:EE:FF",
+    "name": null,
+    "rssi": -55,
+    "manufacturerData": null,
+    "rawScanRecord": "AgEGBhbS/EABZA==",
+    "serviceData": null,
+    "serviceUUIDs": null,
+    "localName": null,
+    "txPowerLevel": null,
+    "solicitedServiceUUIDs": null,
+    "isConnectable": null,
+    "overflowServiceUUIDs": null
+  },
+  "unavailableFields": [
+    "name",
+    "manufacturerData",
+    "serviceUUIDs",
+    "txPowerLevel",
+    "solicitedServiceUUIDs",
+    "isConnectable",
+    "overflowServiceUUIDs"
+  ],
+  "undefinedFields": [
+    "name"
+  ]
+}

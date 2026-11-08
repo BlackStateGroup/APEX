@@ -1,0 +1,46 @@
+✔ manual byte oracle: offsets, signed64 max, BE drops, repeated reports and address reversal (4.539218ms)
+✔ all RSSI octets and enum octets use exact supported sets (24.991448ms)
+✔ classification does not validate; complete wrapper with every shortened candidate refuses selection (7.821942ms)
+✔ nonlegacy metadata has only safe keys; every unknown first octet remains unexposed (7.327115ms)
+✔ AD parser and service parity retain malformed, encrypted, unknown and inert URL bytes (2.527787ms)
+✔ intrinsic view offset, detached buffer, frozen brand and copied hasher bytes (0.793998ms)
+✖ standalone selected JSON carries source/time/drop/identity/RF limitations (1.433583ms)
+✔ CLI subprocesses: no opaque markers/path leakage, strict argument matrix, atomic failure, ancestor link permitted (2421.050268ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.427154ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (4.96605ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (15.766712ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.559451ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (4.254978ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (0.927003ms)
+✔ explicit bounded pagination, no silent truncation and output cap (4.821221ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (459.278115ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (1.016081ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (12.524476ms)
+✔ standalone selected JSON retains every metadata disclosure (0.470813ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 18
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2634.273642
+
+✖ failing tests:
+
+test at tests/hci-independent-review.test.ts:81:1
+✖ standalone selected JSON carries source/time/drop/identity/RF limitations (1.433583ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /digest|hash|SHA-256/i. Input:
+  
+  'Operator-supplied offline host/controller bytes, not physical RF samples. No guarantee of capture completeness, authenticity, ownership, or device identity. Raw signed timestamps are producer-declared claims; no wall-clock conversion. Zero cumulative drops does not establish absence of losses. Resolved identity addresses are not necessarily the actual over-air addresses. Scan responses remain separate from advertisements; no address pooling or concatenation. Extended advertising is uninspected; no fragment reassembly. Other unsupported payloads remain opaque.'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-independent-review/tests/hci-independent-review.test.ts:86:134)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Operator-supplied offline host/controller bytes, not physical RF samples. No guarantee of capture completeness, authenticity, ownership, or device identity. Raw signed timestamps are producer-declared claims; no wall-clock conversion. Zero cumulative drops does not establish absence of losses. Resolved identity addresses are not necessarily the actual over-air addresses. Scan responses remain separate from advertisements; no address pooling or concatenation. Extended advertising is uninspected; no fragment reassembly. Other unsupported payloads remain opaque.',
+    expected: /digest|hash|SHA-256/i,
+    operator: 'match',
+    diff: 'simple'
+  }

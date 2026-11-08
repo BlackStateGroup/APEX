@@ -1,0 +1,26 @@
+Sun Nov  8 00:02:20 UTC 2026
+v24.22.1
+{"fakeExpoExit":0,"wrapperResult":{"code":0,"signal":null},"sentinel":"CORRUPTED","descendantResult":"wrote restored corpus","lockModeOctal":"755","output":""}
+{"fakeExpoExit":23,"wrapperResult":{"code":1,"signal":null},"sentinel":"CORRUPTED","descendantResult":"wrote restored corpus","lockModeOctal":"755","output":"Error: Expo exited 23\n    at ChildProcess.<anonymous> (file:///tmp/apex-review-descendant-nfmzaN/app/tools/native-build.mjs:49:35)\n    at ChildProcess.emit (node:events:514:28)\n    at maybeClose (node:internal/child_process:1172:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:335:5)\n"}
+✔ prebuild hides corpus, restores exact bytes, and prebuild-only skips run (187.516971ms)
+✔ normal native run sees restored corpus (198.138553ms)
+✔ prebuild failure restores corpus and skips run (166.161746ms)
+✔ missing CLI failure restores corpus (142.887655ms)
+✔ missing optional corpus still builds (137.467977ms)
+✔ existing restore destination and original failure both survive (201.288307ms)
+✔ concurrent wrapper refuses before invoking CLI (1145.689191ms)
+✔ SIGTERM restores before exit (138.127949ms)
+✔ SIGINT restores before exit (180.54427ms)
+✔ SIGHUP restores before exit (176.625312ms)
+✔ invalid platform cannot move sources (66.634548ms)
+✔ stale lock is never automatically removed (68.081036ms)
+✔ signal-ignoring child is killed after bounded grace period (5148.214424ms)
+✔ SIGKILL leaves a recoverable corpus and blocks another build (549.926438ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8629.123931

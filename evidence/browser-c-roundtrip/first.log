@@ -1,0 +1,138 @@
+✖ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (0.461456ms)
+✖ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (0.106434ms)
+✖ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (0.05578ms)
+✖ CRC-corrupt framed browser write produces no C response; following session request recovers (0.041149ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 227.602266
+
+✖ failing tests:
+
+test at tests/browser-c-roundtrip.test.ts:65:3
+✖ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (0.461456ms)
+  AssertionError [ERR_ASSERTION]: In file included from tests/esp32-reviewed-host/fakes/esp_err.h:1,
+                   from tests/browser-c-host/../../firmware/esp32s3-reviewed/main/ble_accessory.c:11,
+                   from tests/browser-c-host/bridge.c:6:
+  tests/esp32-reviewed-host/fakes/fake.h:17:27: error: ‘erase_calls’ defined but not used [-Werror=unused-variable]
+     17 | static unsigned nvs_calls,erase_calls,startup_calls;
+        |                           ^~~~~~~~~~~
+  cc1: all warnings being treated as errors
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:29:10)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:27:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:65:3
+✖ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (0.106434ms)
+  AssertionError [ERR_ASSERTION]: In file included from tests/esp32-reviewed-host/fakes/esp_err.h:1,
+                   from tests/browser-c-host/../../firmware/esp32s3-reviewed/main/ble_accessory.c:11,
+                   from tests/browser-c-host/bridge.c:6:
+  tests/esp32-reviewed-host/fakes/fake.h:17:27: error: ‘erase_calls’ defined but not used [-Werror=unused-variable]
+     17 | static unsigned nvs_calls,erase_calls,startup_calls;
+        |                           ^~~~~~~~~~~
+  cc1: all warnings being treated as errors
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:29:10)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:27:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:101:1
+✖ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (0.05578ms)
+  AssertionError [ERR_ASSERTION]: In file included from tests/esp32-reviewed-host/fakes/esp_err.h:1,
+                   from tests/browser-c-host/../../firmware/esp32s3-reviewed/main/ble_accessory.c:11,
+                   from tests/browser-c-host/bridge.c:6:
+  tests/esp32-reviewed-host/fakes/fake.h:17:27: error: ‘erase_calls’ defined but not used [-Werror=unused-variable]
+     17 | static unsigned nvs_calls,erase_calls,startup_calls;
+        |                           ^~~~~~~~~~~
+  cc1: all warnings being treated as errors
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:29:10)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:27:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-c-roundtrip.test.ts:116:1
+✖ CRC-corrupt framed browser write produces no C response; following session request recovers (0.041149ms)
+  AssertionError [ERR_ASSERTION]: In file included from tests/esp32-reviewed-host/fakes/esp_err.h:1,
+                   from tests/browser-c-host/../../firmware/esp32s3-reviewed/main/ble_accessory.c:11,
+                   from tests/browser-c-host/bridge.c:6:
+  tests/esp32-reviewed-host/fakes/fake.h:17:27: error: ‘erase_calls’ defined but not used [-Werror=unused-variable]
+     17 | static unsigned nvs_calls,erase_calls,startup_calls;
+        |                           ^~~~~~~~~~~
+  cc1: all warnings being treated as errors
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:29:10)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/b96d3539d24d/apex-browser-c-roundtrip/tests/browser-c-roundtrip.test.ts:27:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:647:26 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

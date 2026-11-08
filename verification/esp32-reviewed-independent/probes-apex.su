@@ -1,0 +1,10 @@
+firmware/core/apex.c:4:17:get16	16	static
+firmware/core/apex.c:5:13:put16	16	static
+firmware/core/apex.c:7:10:apex_crc16	16	static
+firmware/core/apex.c:20:8:apex_encode	64	static
+firmware/core/apex.c:33:6:apex_stream_init	48	static
+firmware/core/apex.c:36:13:discard	48	static
+firmware/core/apex.c:41:6:apex_stream_feed	624	static
+firmware/core/apex.c:76:13:dispatch	1104	static
+firmware/core/apex.c:96:6:apex_device_init	48	static
+firmware/core/apex.c:100:6:apex_device_feed	48	static

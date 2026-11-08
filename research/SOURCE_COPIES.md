@@ -51,3 +51,18 @@ iPhone and Android are both first-class targets. The current Android native modu
 ## Verification
 
 The original 30 snapshots were verified on 1 November; R31 was verified on 2 November. All 32 backup files have persistent identities recorded. Reference snapshots have not been built. Separately pinned NFC/BLE releases are integrated, and the pinned REA npm release has now been executed for static analysis of APEX-owned lab firmware. Source import does not imply interoperability or a hardware breakthrough.
+
+### Restore-tool regression checks, 7 November 2026
+
+The local continuation adds network-free tests covering fresh clone placeholders,
+dirty/untracked copies, checksum failures, split archives, path traversal and
+independent restoration of a checkout originally using an external `.git`
+pointer. The archive builder now creates a clean, self-contained, shallow Git
+snapshot of the exact root pin and verifies its restoration before publishing
+the local archive. Nested source trees remain excluded. Existing archives are
+verified and preserved byte-for-byte, not silently replaced. Original persistent
+backups and pins are unchanged; this is not a new audit of all 32 original files.
+
+Run: `python3 -m unittest discover -s tests -p 'test_source_archives.py' -v`.
+Python 3.12 or later and Git are required. The tests use only temporary local
+repositories and never fetch or execute upstream code.

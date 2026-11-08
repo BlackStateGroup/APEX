@@ -1,3 +1,4 @@
+import { hciDigest } from './hci-digest.ts';
 import { EvidenceStore } from '../../packages/core/evidence.ts';
 
 const key = 'apex-evidence-v1';
@@ -15,6 +16,7 @@ export const evidenceStore = new EvidenceStore({
   },
   async list(limit) { return documents().slice(0, limit); },
 }, {
+  sha256Bytes: hciDigest,
   randomId: () => crypto.randomUUID(),
   async sha256(text) { const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)); return Array.from(new Uint8Array(digest), x => x.toString(16).padStart(2, '0')).join(''); },
 });

@@ -1,0 +1,73 @@
+✔ independent actual web TSX renders only bounded bins and inert hostile labels with disclosure (57.347795ms)
+✔ independent actual native input explicitly lacks picker, owner inactive render is empty (0.990526ms)
+✔ independent actual TSX window callbacks expose all choices and truthful actual report (12.722532ms)
+✔ actual IQ TSX projects bounded immutable results, selectable full hashes and honest zero/short states (42.245026ms)
+✔ native input is truthful, inert and has no unsupported file picker or paste fallback (0.636144ms)
+✔ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (11.481865ms)
+✔ actual owner callbacks fence stale events and retain single job across background and inspector reentry (12.704295ms)
+✔ IQ source wiring keeps one stable mounted owner and excludes save/network/device and unrelated analyses (0.957498ms)
+✔ actual owner stages window controls, rejects whole input, fences stale callbacks and resets examples (11.915087ms)
+✔ actual TF owner events stage strict geometry, select frames/pages and fence prior callbacks with native synthetic availability (17.496157ms)
+✖ actual TF projection bounded frame/bin rows, exact source provenance and no incidental statistics (7.055207ms)
+✖ actual TF projection wires mode/hop/count/frame controls with full untruncated edits (4.31799ms)
+✖ actual peak control is accessible, null-disabled and navigates current single/TF frames with stale event fencing (26.166135ms)
+✔ peak page uses actual shifted FFT size for first, last and zero bins in both modes; retained snapshots and sources unchanged (155.317716ms)
+✔ null peak and absent spectrum are exact no-ops, including default short input (2.644571ms)
+✔ current selected frame controls peak; overview retained and stale callbacks cannot navigate after changes (9.082765ms)
+✖ independent actual TSX stages TF controls and exposes complete bounded navigation (32.888525ms)
+✔ independent actual owner TF callbacks fence stale events after edit, Clear and background (11.552562ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 14
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 583.570048
+
+✖ failing tests:
+
+test at tests/iq-app-render.test.ts:132:1
+✖ actual TF projection bounded frame/bin rows, exact source provenance and no incidental statistics (7.055207ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/src/IqWorkbench.tsx:277:94)
+      at Object.react_stack_bottom_frame (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10371:18)
+      at renderWithHooks (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5361:19)
+      at renderElement (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5796:23)
+      at retryNode (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:6772:31)
+      at performWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:7919:19)
+      at startWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8807:7)
+      at renderToStringImpl (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8933:7)
+      at process.env.NODE_ENV.exports.renderToStaticMarkup (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10426:14)
+      at render (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-app-render.test.ts:50:40)
+
+test at tests/iq-app-render.test.ts:140:1
+✖ actual TF projection wires mode/hop/count/frame controls with full untruncated edits (4.31799ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/src/IqWorkbench.tsx:277:94)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-app-render.test.ts:143:213)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/iq-app-render.test.ts:148:1
+✖ actual peak control is accessible, null-disabled and navigates current single/TF frames with stale event fencing (26.166135ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/src/IqWorkbench.tsx:277:94)
+      at control (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-app-render.test.ts:149:218)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-app-render.test.ts:152:31)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/iq-time-frequency-render-independent.test.ts:69:1
+✖ independent actual TSX stages TF controls and exposes complete bounded navigation (32.888525ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/src/IqWorkbench.tsx:277:94)
+      at Object.react_stack_bottom_frame (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10371:18)
+      at renderWithHooks (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5361:19)
+      at renderElement (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:5796:23)
+      at retryNode (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:6772:31)
+      at performWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:7919:19)
+      at startWork (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8807:7)
+      at renderToStringImpl (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:8933:7)
+      at process.env.NODE_ENV.exports.renderToStaticMarkup (/workspace/scratch/b96d3539d24d/apex-ui-validation-20261107/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js:10426:14)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-time-frequency-render-independent.test.ts:69:515)

@@ -1,0 +1,90 @@
+(node:14) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ independent: reentrant browser refresh cannot overwrite successor busy state (4.303528ms)
+✖ independent: old rejected close cannot clear replacement session/listener/operation (6.088865ms)
+✖ independent: rejected open cannot remove a successor listener or publish stale UI (2.030134ms)
+✖ independent: epoch change fences successful native negotiation and retained observer (3.135376ms)
+✔ independent: native run adds no foreground/background acquisition policy (1.320363ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.717853
+
+✖ failing tests:
+
+test at tests/app-native-lifecycle-independent.test.ts:26:1
+✖ independent: reentrant browser refresh cannot overwrite successor busy state (4.303528ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'busy',
+  +   false
+  -   true
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-review/tests/app-native-lifecycle-independent.test.ts:31:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'busy', false ],
+    expected: [ 'busy', true ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-lifecycle-independent.test.ts:35:1
+✖ independent: old rejected close cannot clear replacement session/listener/operation (6.088865ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  5 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-review/tests/app-native-lifecycle-independent.test.ts:42:180)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-lifecycle-independent.test.ts:45:1
+✖ independent: rejected open cannot remove a successor listener or publish stale UI (2.030134ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  6 !== 3
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-review/tests/app-native-lifecycle-independent.test.ts:50:136)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 6,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-lifecycle-independent.test.ts:53:1
+✖ independent: epoch change fences successful native negotiation and retained observer (3.135376ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  11 !== 3
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-review/tests/app-native-lifecycle-independent.test.ts:57:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 11,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

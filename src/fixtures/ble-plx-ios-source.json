@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sdk": "react-native-ble-plx@3.5.1",
+  "platform": "ios",
+  "representation": "ios-normalized-fields-with-opaque-json-base64",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "Synthetic ios selected-source demo; no physical reception",
+    "capturedAt": null
+  },
+  "snapshot": {
+    "id": "12345678-1111-2222-3333-444444444444",
+    "name": null,
+    "rssi": -55,
+    "manufacturerData": null,
+    "rawScanRecord": "e30=",
+    "serviceData": {
+      "0000FCD2-0000-1000-8000-00805F9B34FB": "QAFk"
+    },
+    "serviceUUIDs": [
+      "FCD2"
+    ],
+    "localName": null,
+    "txPowerLevel": null,
+    "solicitedServiceUUIDs": null,
+    "isConnectable": false,
+    "overflowServiceUUIDs": []
+  },
+  "unavailableFields": [
+    "name"
+  ],
+  "undefinedFields": [
+    "name"
+  ]
+}

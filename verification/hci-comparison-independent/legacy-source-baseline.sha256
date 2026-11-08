@@ -1,0 +1,5 @@
+e14299c2732df4a4ee0d4d2cb2bbc30edd0c21b9947ed49645269b827826140f  packages/core/hci-offline.ts
+9219afde6c5e478fb9baf988c7e62e22016fe4628f626a41da121e5f5d497fd9  packages/core/ble-differential.ts
+8bd1c29e727af32cd35d198a15ffce0fbe076db3c8b8f34af76771e665f88ad3  packages/core/ble-field-hypothesis.ts
+9295bc28c2d468c0fc0b9818b6c088fd2d60bac044bb560aeedbd11cf44fc77e  tools/inspect-hci.ts
+464cb48f5cc657dcf6898873790556f5a3b35c475d0d14242132542ed1c2d8b0  tools/inspect-hci-selected.ts

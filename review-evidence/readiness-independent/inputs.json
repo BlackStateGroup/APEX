@@ -1,0 +1,31 @@
+{
+  "runtimeCommit": "27effc528f66028684fed383d469f38a1ac28268",
+  "sha256": {
+    "src/platform/bluetooth.native.ts": "34e1c8d708785dba6ea2c26af53bf463c4c56a0b1be409daa5448cd9a6d0da71",
+    "tests/plx-readiness-settlement.test.ts": "ba0fb48ce54c0783934f54519b3be130ba4c60e8d0acf6019b5eb2434b077173",
+    "tests/plx-readiness-independent.test.ts": "edecce478fa794755156a3e789c542f6c0adc664e97446a2ef7fb1e7a1612283",
+    "tests/plx-facade-host/loader.ts": "74b700c6fbb108923c190b6f30881067627e93d4d6afd07de00247c03d6483a7",
+    "tests/plx-facade-host/inputs.sha256.json": "2ddad250dd1a4cf4d43b9abfd37ae8b925bc9ce4c6f273ba89e3debba57f2337",
+    "package.json": "4c39f2cae0ecefa617fb32d510c7d0f089626a2e3fae426d5955d4aefd5bb018",
+    "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74"
+  },
+  "manifest_checks": {
+    "verification/plx-scan-facade-current/inputs.sha256.json": {
+      "all_previous_keys_retained": true,
+      "historical_manifest_unchanged": true,
+      "current_entries": 9
+    },
+    "verification/plx-ios-scan-void-current/inputs.sha256.json": {
+      "all_previous_keys_retained": true,
+      "historical_manifest_unchanged": true,
+      "current_entries": 16
+    },
+    "tests/browser-c-host/current-inputs.sha256.json": {
+      "verified_entries": 19
+    },
+    "verification/readiness-settlement/inputs.sha256.json": {
+      "verified_entries": 9
+    }
+  },
+  "original_reproduction_byte_exact": true
+}

@@ -1,0 +1,41 @@
+✔ native wrappers use one lease, preserve AXP filter and connect/write behavior, never connect for observations (12.590505ms)
+✔ native permission cancellation never starts later and invalid/oversize source fails without invented bytes (1.2621ms)
+✔ foreground validation and single AXP error callback (1.260394ms)
+✔ first iOS permission sheet inactive/active preserves preparation, while real background cancels (0.873044ms)
+✔ poisoned manager blocks connect, both scans and existing writes until successful destruction (1.175684ms)
+✔ connection setup lease spans pending connect and discovery and forbids reset or overlapping work (0.745749ms)
+✔ failed connect or discovery releases the setup lease without allowing stale work (0.887401ms)
+✔ all connection handles retain ownership and lifecycle listeners survive notification unsubscribe (0.805138ms)
+✔ native close delivers once and removes notification subscriptions independently of the caller (0.394669ms)
+✔ identical close callbacks retain independent notification subscription lifetimes (0.406927ms)
+✔ Android reconnect waits for both cancellation settlement and terminal event consumption (0.337666ms)
+✔ iOS successful connection uses consumed single-terminal monitor and settled-cancel fence (0.368367ms)
+✔ failed startup cancellation retains unknown ownership until native close or destruction (1.735451ms)
+✔ characteristic failure cancels, optional MTU rejection preserves normal writes (0.512357ms)
+✔ failed explicit disconnect is unknown, retryable, and a late native close releases ownership (0.512708ms)
+✔ native close during cancellation cannot release the in-flight operation; repeated disconnect coalesces (0.827859ms)
+✔ native close before subscribe is remembered and stale callbacks cannot release a new epoch (0.621988ms)
+✔ disconnect during pending connect or synchronous registration requires settled startup cleanup (0.879239ms)
+✔ duplicate SDK callbacks count toward a strict cap; late events and duplicate stops cannot deliver twice (5.187665ms)
+✔ cancellation during unresolved preparation releases lease and never starts late (1.294461ms)
+✔ preparation failure has one terminal result without an SDK stop (0.652139ms)
+✔ synchronous start callbacks, rejected start, delayed acknowledgement and immediate stop are safe (1.559659ms)
+✔ stop failure reports once and poisons subsequent scans (0.848708ms)
+✔ duration, background, memory limits, projection and consumer failures invalidate callbacks (3.232396ms)
+✔ invalid bounds fail before preparation, and mutating options cannot widen a running scan (0.883423ms)
+✔ selected source clock is callback receipt, Android bytes and iOS opaque fields remain separate (4.954156ms)
+✔ deadline cancels unresolved preparation; delayed stop keeps the manager leased (1.076162ms)
+✔ unresolved SDK start and stop settle terminal notification within cleanup bounds and fail closed (11.4963ms)
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.139801ms)
+✔ failed manager shutdown preserves session and UI ownership (0.89669ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.623273ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.352758ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (4.528025ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.218492

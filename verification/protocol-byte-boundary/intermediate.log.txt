@@ -1,0 +1,43 @@
+✔ frame metadata is read once and validated as encoded (1.802386ms)
+✔ byte access ignores own hooks and preserves Buffer and subarray bytes (1.099921ms)
+✔ real payload size is bounded even with a shadowed length (0.465399ms)
+✔ unsupported byte inputs are rejected before changing partial decoder state (1.339098ms)
+✔ callback mutation of unread bytes is observed, delivered payload is independent (0.578807ms)
+✔ callback reentrant push is synchronous; reset and exceptions keep consumed frame removed (0.808485ms)
+✖ detachment in callback rejects remaining input without feeding undefined bytes (1.451052ms)
+✔ CRC uses the independent CCITT-FALSE check value (1.348462ms)
+✔ encoder matches independently generated Python golden vectors (2.675093ms)
+✔ all possible two-chunk boundaries retain a maximum payload (21.202061ms)
+✔ single-byte fragments and coalesced frames decode identically (0.432882ms)
+✔ bad CRC and boot noise do not hide the next intact frame (0.313341ms)
+✔ invalid version, flags, kinds, zero ID and oversized lengths are rejected (0.314021ms)
+✔ encoder rejects invalid bounds and reset discards partial data (0.748672ms)
+✔ one million noise bytes retain bounded parser memory (25.492747ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 215.278226
+
+✖ failing tests:
+
+test at tests/protocol-byte-boundary.test.ts:65:1
+✖ detachment in callback rejects remaining input without feeding undefined bytes (1.451052ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/tests/protocol-byte-boundary.test.ts:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

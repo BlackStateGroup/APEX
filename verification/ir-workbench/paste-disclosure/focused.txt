@@ -1,0 +1,29 @@
+✔ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (11.115627ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (1.937706ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (1.408382ms)
+✔ bounded actual bytes, lines, names, record and timing counts (58.418001ms)
+✔ raw numerical limits and finite strict fractions (5.439962ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (2.05927ms)
+✔ CLI executes with filesystem writes denied and stdout atomic; regular-file bounds (814.236007ms)
+✔ actual TSX initial/inactive render: exact limits, no automatic result or external actions (9.973309ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (13.667488ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (8.19573ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (26.479829ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (8.0911ms)
+✔ string adapter parity, exact CRLF bytes, immutable argument, input/context async mutation (9.939439ms)
+✔ adapter malformed results/rejections never produce a report or alter strict parsing (2.667123ms)
+✔ state and nested report are frozen and inaccessible to alias corruption; declaration is explicit (3.9778ms)
+✔ whole edit bounds preserve exact source; rejected edit remains blocked across declarations/tabs (54.292643ms)
+✔ success and error completions are fenced by edits, rejected edits, declarations, clear, example and tab transitions (3.44489ms)
+✔ new inspection survives old success/error and duplicate pending inspection is ignored (1.220509ms)
+✔ queued callbacks from prior activation cannot edit, clear, declare, load, page or inspect after reentry (0.747286ms)
+✔ bounded four-record pages; original long names/duty survive display excerpts and numeric summaries (23.541392ms)
+✔ malformed and unsupported sources rejected whole without partial records (2.73889ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1033.948303

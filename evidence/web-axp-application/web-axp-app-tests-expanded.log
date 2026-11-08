@@ -1,0 +1,23 @@
+✔ application chooser is same-stack, reserves before publication and refuses double clicks (3.366993ms)
+✔ every live acquisition gate rejects without invoking chooser (0.565015ms)
+✔ real unchanged session negotiation and ping use shared slot and 20-byte fragments (6.785252ms)
+✔ pending picker cancellation cannot replace raw owner; late selection never connects (4.658193ms)
+✔ pending open cancels synchronously before close, holds raw poison and requires explicit retry (31.472873ms)
+✔ unmount/remount detaches presentation but preserves pending owner and stale callbacks (0.701066ms)
+✔ cancel during reservation observer never proceeds into GATT or leaves an orphan handle (0.664685ms)
+✔ pending write cancel fences immediately and raw settlement alone never clears the shared slot (31.870022ms)
+✔ missing actual READY does not negotiate; cancellation remains reachable outside lock (0.932594ms)
+✔ unsupported or insecure host never invokes picker and can be retried after public rejection (0.396863ms)
+✔ actual READY retains the full 30000ms budget and no synthetic negotiation occurs (1.568091ms)
+✔ late READY after cancellation never revives Console identity or a newer owner (1.312087ms)
+✔ explicit retry joins cleanup in flight and stale finally cannot clear a newer selected owner (1.100065ms)
+✔ lazy binding, secure/API checks, hidden/pagehide fence order and visible refresh are host-only (1.964027ms)
+✔ App wiring preserves explicit controls, live mutual guards, out-of-lock cancel and offline navigation (0.912415ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 229.398631

@@ -1,0 +1,228 @@
+✖ exact raw rejection and one fresh frozen token: undefined (5.966358ms)
+✖ exact raw rejection and one fresh frozen token: null (0.474537ms)
+✖ exact raw rejection and one fresh frozen token: 0 (0.328757ms)
+✖ exact raw rejection and one fresh frozen token: rejected (0.292451ms)
+✖ exact raw rejection and one fresh frozen token: [object Object] (0.371808ms)
+✖ exact raw rejection and one fresh frozen token: Error: original (0.289478ms)
+✔ proof missing preserves original and remains held (0.723659ms)
+✖ proof getter-throw preserves original and remains held (0.890221ms)
+✖ proof method-throw preserves original and remains held (0.485756ms)
+✖ proof promise preserves original and remains held (0.440303ms)
+✖ proof object preserves original and remains held (0.252853ms)
+✖ proof truthy preserves original and remains held (0.234914ms)
+✖ proof false preserves original and remains held (0.41188ms)
+✔ proof is never queried before dispatch or for a late returned handle (7.961053ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 2
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.60886
+
+✖ failing tests:
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: undefined (5.966358ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: null (0.474537ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: 0 (0.328757ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: rejected (0.292451ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: [object Object] (0.371808ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:7:3
+✖ exact raw rejection and one fresh frozen token: Error: original (0.289478ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(token && Object.isFrozen(token))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:20:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof getter-throw preserves original and remains held (0.890221ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof method-throw preserves original and remains held (0.485756ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof promise preserves original and remains held (0.440303ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof object preserves original and remains held (0.252853ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof truthy preserves original and remains held (0.234914ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-transport.test.ts:26:105
+✖ proof false preserves original and remains held (0.41188ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:34:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

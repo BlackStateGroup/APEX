@@ -1,0 +1,14 @@
+✔ web adapter retains exact BLE input and can read and verify it again (10.070649ms)
+✔ web adapter detects valid document tampering without discarding the stored bytes (1.531619ms)
+✔ quota failure retains previous web evidence and surfaces the failure (1.858637ms)
+✔ corrupt web index is not overwritten by a new save (2.961395ms)
+✔ web capacity boundary preserves all existing records (18.83851ms)
+✔ overlapping saves in one app context preserve every record (6.199374ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.148948

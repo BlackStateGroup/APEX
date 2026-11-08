@@ -1,0 +1,9 @@
+Actual source SHA256: 4c4a7ac3829f87088c8c9bebbe361be752de200943401986c6cb69f20408dd7c
+missing-staging-self-pointer: killed (exit 1) FAIL line 42: delivered_len==12*(occupied+incoming)
+missing-committed-self-pointer: killed (exit 1) FAIL line 43: peer.stream.context==&peer&&peer.output==NULL&&allocations==frees
+ignore-overflow: killed (exit 1) FAIL line 39: rc==BLE_ATT_ERR_INSUFFICIENT_RES
+repeat-enable-ready: killed (exit 1) FAIL line 69: first==3&&queue[3].offset==20&&count==4
+missing-fence-latch: killed (exit 1) FAIL line 77: fenced&&!subscribed&&!count&&!tx_timer.pending&&term_calls==1&&connection==7
+ignore-schedule-failure: killed (exit 1) FAIL line 77: fenced&&!subscribed&&!count&&!tx_timer.pending&&term_calls==1&&connection==7
+unbounded-retry: killed (exit 1) FAIL line 87: fenced&&!count&&!tx_timer.pending&&term_calls==1&&allocations==frees
+wrong-wrap-slot: killed (exit 1) FAIL line 42: delivered_len==12*(occupied+incoming)

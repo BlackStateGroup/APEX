@@ -1,0 +1,101 @@
+{
+  "status": "complete",
+  "mode": "offline-synthetic-lab",
+  "demonstrationTime": "2026-11-08T00:00:00.000Z",
+  "timestampMeaning": "Fixed synthetic demonstration time, not execution or reception time",
+  "ble": {
+    "origin": "synthetic-fixture",
+    "exactSelectedDocumentRetained": true,
+    "format": "BTHome-v2",
+    "parseStatus": "complete",
+    "temperatureCelsius": 20,
+    "physicalReceptionVerified": false,
+    "authenticatedIdentity": false,
+    "limit": "Complete public interpretation is not authentication or verified sensor truth."
+  },
+  "trials": {
+    "origin": "synthetic-fixture",
+    "count": 8,
+    "sourceCount": 2,
+    "changedPayloadOffsetsBySource": [
+      {
+        "sourceId": "android",
+        "changedOffsets": [
+          2
+        ]
+      },
+      {
+        "sourceId": "ios",
+        "changedOffsets": [
+          2
+        ]
+      }
+    ],
+    "declaredCandidateMatches": 8,
+    "values": [
+      {
+        "numerator": "20",
+        "denominator": "1",
+        "approximate": 20
+      },
+      {
+        "numerator": "461",
+        "denominator": "25",
+        "approximate": 18.44
+      }
+    ],
+    "limit": "Declared synthetic discovery/held-out labels do not establish blinding, causation or device identity."
+  },
+  "ndef": {
+    "origin": "synthetic-fixture",
+    "status": "parsed",
+    "text": "Hi",
+    "authenticated": false,
+    "limit": "Inert text only; no tag session, URI opening or actions."
+  },
+  "evidence": {
+    "origin": "synthetic-fixture",
+    "storage": "memory-only",
+    "savedRecords": 2,
+    "selectedRecordIds": [
+      "synthetic-demo-2",
+      "synthetic-demo-1"
+    ],
+    "exactDocumentsRetained": true,
+    "verifiedPreview": true,
+    "bundleBytes": 2096,
+    "limit": "SHA-256 content digest is not a signature, trusted timestamp or proof of reception."
+  },
+  "iq": {
+    "origin": "synthetic-fixture",
+    "datatype": "ci16_le",
+    "sampleCount": 512,
+    "fftPeakSignedBin": 64,
+    "fftPeakAmplitude": 0.5,
+    "timeFrequencyPeakBins": [
+      64,
+      64
+    ],
+    "energySums": [
+      "68719476736",
+      "68719476736"
+    ],
+    "strictlyAboveEqualThreshold": [
+      false,
+      false
+    ],
+    "lagSamples": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "normalizedSquaredMagnitudes": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "limit": "A constant complex tone has unit normalized magnitude at every tested lag; this does not identify a period. No RF calibration, demodulation or protocol identity."
+  }
+}

@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 firmware:build
+> python3 tools/build_firmware.py
+
+C: CRC vector, bounds, fragmentation, corruption recovery and 1,000,000 noise bytes passed.
+Built portable C firmware and passed C checks.

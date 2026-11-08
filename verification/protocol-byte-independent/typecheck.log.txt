@@ -1,0 +1,1 @@
+tests/protocol-byte-independent.test.ts(25,69): error TS2378: A 'get' accessor must return a value.

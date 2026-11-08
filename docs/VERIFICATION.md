@@ -1,5 +1,18 @@
 # Verification record
 
+## Current local continuation checkpoint
+
+The latest local, unpushed checkpoint is described in [APEX_CONTINUATION.md](../APEX_CONTINUATION.md)
+and [continuation.json](../verification/continuation.json). The forty-third combined
+run on clean de30849 passed 2081 Node, 22 archive and 5 preflight contract tests,
+portable C, TypeScript, inventory and all three offline JavaScript exports.
+The exact fixed-runner [result](../verification/increment43-final/result.json)
+records commands and cleanup; 40 browser scenarios were listed, not executed.
+Historical native/browser CI results below do not validate this changed revision.
+The final SDK initialization/configuration delta has regression coverage but fresh
+independent review remains open; prior review applies to its named earlier source.
+
+
 ## Platform foundation baseline (PR #2)
 
 Verified locally on 1 November 2026 using Node 24.22.1, npm 11.9.0, Python 3.12.14 and GCC. Source inspection pinned 28 upstream repositories to exact commits and document blobs. No upstream security-tool firmware binary was executed and no physical hardware was tested.

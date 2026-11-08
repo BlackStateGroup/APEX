@@ -33,45 +33,88 @@ export function normaliseNfcTag(raw: unknown, platform: NfcStatus['platform'], n
   return { id, technologies, records, platform, source: 'nfc', observedAt: now.toISOString() };
 }
 
+interface NfcLease {
+  cancelled: boolean;
+  closed: boolean;
+  opening: boolean;
+  cleanup: (() => Promise<void>) | null;
+  stopping: Promise<void> | null;
+}
+
+/** Startup cannot be interrupted at the native API boundary. Stop suppresses
+ * callbacks immediately, then waits for status/begin and releases their lease.
+ * A hung native promise remains stopping, rather than falsely reporting idle.
+ */
 export class NfcReader {
   private backend: NfcBackend;
-  private cleanup: (() => Promise<void>) | null = null;
+  private lease: NfcLease | null = null;
   private tail = Promise.resolve();
-  private generation = 0;
   state: 'idle' | 'starting' | 'reading' | 'stopping' = 'idle';
   private callbacks: { onState?: (state: NfcReader['state']) => void; onTag: (tag: NfcObservation) => void; onError: (error: Error) => void };
   constructor(backend: NfcBackend, callbacks: NfcReader['callbacks']) { this.backend = backend; this.callbacks = callbacks; }
   private setState(state: NfcReader['state']) { this.state = state; this.callbacks.onState?.(state); }
   private enqueue(operation: () => Promise<void>): Promise<void> { const task = this.tail.then(operation); this.tail = task.catch(() => {}); return task; }
+  private release(lease: NfcLease) {
+    if (this.lease !== lease) return;
+    this.lease = null; this.setState('idle');
+  }
   start(): Promise<void> {
-    if (this.state !== 'idle') return Promise.reject(new Error('NFC reader is already active'));
-    const generation = ++this.generation; this.setState('starting');
-    return this.enqueue(async () => {
+    if (this.lease) return Promise.reject(new Error('NFC reader is already active'));
+    const lease: NfcLease = { cancelled: false, closed: false, opening: true, cleanup: null, stopping: null };
+    this.lease = lease;
+    // Queue before publishing state: an onState callback may synchronously stop.
+    const opening = this.enqueue(async () => {
       try {
         const status = await this.backend.status();
-        if (generation !== this.generation) { this.setState('idle'); return; }
+        if (lease.cancelled) return;
         if (!status.available) throw new Error('NFC is unavailable on this device or runtime');
         if (!status.enabled) throw new Error('Enable NFC in device settings');
-        const stop = await this.backend.begin(raw => {
-          if (generation !== this.generation) return;
+        lease.cleanup = await this.backend.begin(raw => {
+          if (this.lease !== lease || lease.cancelled || lease.closed) return;
           try { this.callbacks.onTag(normaliseNfcTag(raw, status.platform)); }
           catch (error) { this.callbacks.onError(error instanceof Error ? error : new Error(String(error))); }
         }, error => {
-          if (generation !== this.generation) return;
-          ++this.generation; this.cleanup = null; this.setState('idle');
+          if (this.lease !== lease || lease.closed) return;
+          lease.closed = true; lease.cleanup = null;
+          // Closure confirms the session ended, not that an in-flight backend
+          // operation settled. Keep the queue lease until both are finished.
+          if (!lease.opening && !lease.stopping) this.release(lease);
           if (error) this.callbacks.onError(error);
         });
-        if (generation !== this.generation) { await stop(); this.setState('idle'); return; }
-        this.cleanup = stop; this.setState('reading');
-      } catch (error) { this.setState('idle'); throw error; }
+        if (lease.closed) {
+          await lease.cleanup(); lease.cleanup = null;
+        } else if (!lease.cancelled) this.setState('reading');
+      } catch (error) {
+        if (this.lease === lease) {
+          if (lease.cleanup) this.setState('stopping');
+          else if (!lease.cancelled) this.release(lease);
+        }
+        throw error;
+      } finally {
+        lease.opening = false;
+        if (lease.closed && !lease.cleanup) this.release(lease);
+      }
     });
+    this.setState('starting');
+    return opening;
   }
   stop(): Promise<void> {
-    ++this.generation;
-    return this.enqueue(async () => {
-      const stop = this.cleanup; this.cleanup = null;
-      if (stop) this.setState('stopping');
-      try { await stop?.(); } finally { this.setState('idle'); }
+    const lease = this.lease;
+    if (!lease) return Promise.resolve();
+    if (lease.stopping) return lease.stopping;
+    lease.cancelled = true;
+    const stopping = this.enqueue(async () => {
+      if (this.lease !== lease) return;
+      // Retain cleanup after failure, so an explicit stop retry can release it.
+      await lease.cleanup?.(); lease.cleanup = null;
+      this.release(lease);
     });
+    lease.stopping = stopping;
+    void stopping.finally(() => {
+      lease.stopping = null;
+      if (lease.closed) this.release(lease);
+    }).catch(() => {});
+    this.setState('stopping');
+    return stopping;
   }
 }

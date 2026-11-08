@@ -1,3 +1,4 @@
+import { hciDigest } from './hci-digest.native.ts';
 import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { EvidenceStore, EVIDENCE_SCHEMA, INSERT_EVIDENCE, SELECT_EVIDENCE } from '../../packages/core/evidence.ts';
@@ -11,6 +12,7 @@ export const evidenceStore = new EvidenceStore({
   async insert(id, document) { await (await db()).runAsync(INSERT_EVIDENCE, id, document); },
   async list(limit) { return (await (await db()).getAllAsync<{ document: string }>(SELECT_EVIDENCE, limit)).map(row => row.document); },
 }, {
+  sha256Bytes: hciDigest,
   randomId: () => Crypto.randomUUID(),
   sha256: value => Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, value),
 });

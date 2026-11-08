@@ -1,0 +1,9 @@
+tests/browser-c-host/bridge.ts(71,9): error TS2739: Type '{ properties: { write: true; }; writeValueWithResponse(bytes: Uint8Array<ArrayBufferLike>): Promise<void>; addEventListener(): void; removeEventListener(): void; }' is missing the following properties from type 'WebAxpCharacteristic': startNotifications, stopNotifications
+tests/browser-c-host/bridge.ts(102,43): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+tests/browser-c-host/bridge.ts(102,91): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.

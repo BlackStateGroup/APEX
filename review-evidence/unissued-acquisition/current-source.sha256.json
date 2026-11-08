@@ -1,0 +1,11 @@
+{
+  "packages/core/ble-transport.ts": "a377ccd2563a03d329a5cab19b804424467a5d8a09cbea2ba0421a17fe8649b8",
+  "src/platform/bluetooth.native.ts": "a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578",
+  "App.tsx": "cbe848259cf66f327f5855438bace84d2c345d015f70dd0f13eed4ece3a19716",
+  "packages/core/session.ts": "9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404",
+  "tests/ble-unissued-acquisition.test.ts": "9aefe3d9b161f8793742a12685afc21baf89721cc2c555b49f74a43f4f1fe4f1",
+  "tests/ble-unissued-transport.test.ts": "13aa3eb74a9d1d0bcd6e8b6d72a9b70ef24bdfdb574b350b3d7f4d04b1b307d3",
+  "tests/plx-unissued-acquisition.test.ts": "82b5050cc6d8feb6143bf15310bf5041a714836a1bfd7de04ad2c9a734d9c393",
+  "tests/plx-facade-host/fixture.ts": "a83a404dff859184cca7cc2db7edb5ed9c62ebcc6c33c9b9ac01ac840cbdf253",
+  "tests/browser-c-host/current-inputs.sha256.json": "b352ea1d0c1ffa832c7f7b486b10d5e63d523e95debe5e53ff1362af8d44319b"
+}

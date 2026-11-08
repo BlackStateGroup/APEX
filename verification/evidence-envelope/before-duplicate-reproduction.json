@@ -1,0 +1,5 @@
+{
+  "ambiguousEnvelope": "{\"schemaVersion\":1,\"id\":\"duplicate-proof\",\"kind\":\"analysis.can\",\"source\":\"offline-fixture\",\"observedAt\":\"2026-11-08T00:00:00.000Z\",\"payload\":{\"frames\":999,\"frames\":2},\"sha256\":\"21bd7e79d136d448a48c6c0ea938ea3e98c56739230a2e0e02eb26eb351ffbf8\"}",
+  "accepted": true,
+  "note": "Synthetic only. Duplicate conflicting payload keys were silently normalized before digest verification."
+}

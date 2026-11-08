@@ -1,0 +1,61 @@
+✔ nine unique typed choices, Recording default, exact source routes and invalid IDs (2.888425ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.616049ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.137849ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.435858ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.893996ms)
+✔ ir: newer inspector request wins over older completion after exit (5.541498ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.901845ms)
+✔ hci: newer inspector request wins over older completion after exit (1.848556ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.556435ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.85349ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.72087ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (1.868417ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.94375ms)
+✔ nine typed inspector choices, Recording default, and separate explicit source routes (1.467792ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (0.953032ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.234095ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (2.553691ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.715381ms)
+✔ source delivery during pending saves survives old failure without reviving results (6.185805ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (8.974969ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (13.10854ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (13.482922ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (5.981315ms)
+✔ actual extended TSX renders exact bounded header states and applicable addresses, never marker data (30.97336ms)
+✔ actual extended TSX bounds reports, excerpts and diagnostics; reserved values and contradictions stay visible (16.457801ms)
+✔ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (16.530322ms)
+✔ independent actual TSX 128-record final page and escaped exact field spellings (19.017894ms)
+✖ actual TSX initial/inactive render: exact limits, no automatic result or external actions (10.806245ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (18.187682ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (9.696679ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (31.629636ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (13.083685ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 31
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 567.711539
+
+✖ failing tests:
+
+test at tests/ir-static-render.test.ts:74:1
+✖ actual TSX initial/inactive render: exact limits, no automatic result or external actions (10.806245ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Leaving Analysis clears/. Input:
+  
+  '<div><span>Offline ordinary .ir remote inspector</span><span>Memory only: draft and declaration retained across tabs, lost on reload. Leaving this inspector or Analysis clears inspection results. Pending hashing is fenced, not cancelled. No journal import, save, export, share, copy action, transmission, replay, device access or provider calls.</span><span>Paste an ordinary Flipper .ir remote: strict standard NEC parsed fields or raw subset only. Unsupported protocols are rejected by this narrow parser, not declared physically invalid IR. Maximum 262144 ASCII characters (accepted draft bytes), 128 records, 1024 timings per record and 8192 total timings. Non-ASCII or oversized edits are rejected whole, never truncated; the previous draft remains but Inspect is blocked until an accepted replacement or Clear. Control characters are checked during inspection.</span><div><button aria-label="Load synthetic IR example"><span>Load synthetic IR example</span></button><button aria-label="Declare synthetic IR source"><span>Declare synthetic IR source</span></button><button aria-label="Declare imported IR source"><span>Declare imported IR source</span></button></div><span>IR caller declaration: not selected. Neither declaration proves origin. The example is manually authored, not imported upstream bytes or a physical recording.</span><textarea aria-label="Ordinary IR remote draft"></textarea><span>0 exact ASCII draft characters. Edits, examples and declaration changes never inspect automatically.</span><div><button aria-label="Inspect ordinary IR remote"><span>Inspect ordinary IR remote</span></button><button aria-label="Clear IR draft"><span>Clear IR draft</span></button></div><span>Paste an ordinary .ir remote and declare provenance, then Inspect.</span></div>'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-inspector-review/tests/ir-static-render.test.ts:79:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div><span>Offline ordinary .ir remote inspector</span><span>Memory only: draft and declaration retained across tabs, lost on reload. Leaving this inspector or Analysis clears inspection results. Pending hashing is fenced, not cancelled. No journal import, save, export, share, copy action, transmission, replay, device access or provider calls.</span><span>Paste an ordinary Flipper .ir remote: strict standard NEC parsed fields or raw subset only. Unsupported protocols are rejected by this narrow parser, not declared physically invalid IR. Maximum 262144 ASCII characters (accepted draft bytes), 128 records, 1024 timings per record and 8192 total timings. Non-ASCII or oversized edits are rejected whole, never truncated; the previous draft remains but Inspect is blocked until an accepted replacement or Clear. Control characters are checked during inspection.</span><div><button aria-label="Load synthetic IR example"><span>Load synthetic IR example</span></button><button aria-label="Declare synthetic IR source"><span>Declare synthetic IR source</span></button><button aria-label="Declare imported IR source"><span>Declare imported IR source</span></button></div><span>IR caller declaration: not selected. Neither declaration proves origin. The example is manually authored, not imported upstream bytes or a physical recording.</span><textarea aria-label="Ordinary IR remote draft"></textarea><span>0 exact ASCII draft characters. Edits, examples and declaration changes never inspect automatically.</span><div><button aria-label="Inspect ordinary IR remote"><span>Inspect ordinary IR remote</span></button><button aria-label="Clear IR draft"><span>Clear IR draft</span></button></div><span>Paste an ordinary .ir remote and declare provenance, then Inspect.</span></div>',
+    expected: /Leaving Analysis clears/,
+    operator: 'match',
+    diff: 'simple'
+  }

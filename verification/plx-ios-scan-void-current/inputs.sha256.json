@@ -1,0 +1,18 @@
+{
+  "node_modules/react-native-ble-plx/ios/BlePlx.m": "6ad0e48dd16c6587c279d81d06eb5553c0c9e135df4c653a91c8d8abf9990207",
+  "node_modules/react-native-ble-plx/ios/BlePlx-Swift.h": "74b496c1da9e02dbc38cf40fb04941faa9821340150bf633fcc1e1544ed90107",
+  "node_modules/react-native-ble-plx/react-native-ble-plx.podspec": "453dbd403154f876d8b4fe7736ca87015dfaff0ff92ba0d43e2fb767ee9f6330",
+  "node_modules/react-native-ble-plx/android/src/main/java/com/bleplx/BlePlxModule.java": "42229c43cfc7bd1393c563b025776fa0b1e50d2ad9a035add3d778705b9caf9d",
+  "node_modules/react-native-ble-plx/lib/module/BleManager.js": "4c7f98edd9dc1e148b618fd78a85b7a1cea8164bc45f38128a74dcd88b4acf21",
+  "node_modules/react-native-ble-plx/lib/module/BleModule.js": "05303265af8930f44711fb1bc1560ecb85d813ea29a78a4fd344aa74d1bba95c",
+  "node_modules/react-native-ble-plx/src/index.d.ts": "3172028910162fe6ccb4484449ae02bc6c8d9310d5ab795ef0542bb948b70bc0",
+  "node_modules/react-native/React/Base/RCTModuleMethod.mm": "9fb5e758204f8f415da5d351ed5505c46c3970dcd08e1b88e63e05b14dce6e10",
+  "node_modules/react-native/Libraries/BatchedBridge/NativeModules.js": "a9f1902c21dcb5b106ec17034c3ad6c0e37df9632973c5d282ad01566ce365ee",
+  "src/platform/bluetooth.native.ts": "c50d769b3a5c5266e3fd3119b078258c584306cac0fb79a5e1bd90a8b3303f1d",
+  "packages/core/ble-scan-session.ts": "7b7d33ff1860ba43c49da30d029aa856cfe7c15b17aaaebcf69b1e5fd6c9f1fd",
+  "src/foreground-ble-workbench.ts": "9d1b62c34e3f3300b102103d8441c3fbd828709509febaffdff8a1e5fede36ee",
+  "src/ForegroundBleWorkbench.tsx": "2b9fbe8ed7880fc2347ffbd0697686fff1769f321dcb52cfef7d6dc852f88b4a",
+  "tests/plx-ios-scan-void.test.ts": "c83380499d770d2b116d1768bc228a94021dca22b32c3abf9b4b8c317114fba3",
+  "tests/foreground-ble-workbench.test.ts": "564a76f3050f90035d38e12a15b825b42c6688e7b65e7b913fd24aee04412530",
+  "tests/observation-static-render.test.ts": "0606d4f8d520700f0fceb6443516e2397258605b89351a894033a55dc0caa78b"
+}

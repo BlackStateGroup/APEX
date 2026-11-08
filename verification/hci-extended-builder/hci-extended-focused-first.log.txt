@@ -1,0 +1,41 @@
+✖ explicit metadata selection, scalar spans, privacy and standalone disclosures (3.017088ms)
+✔ whole-event structural rejection has precise absolute offsets, including late failures (2.655098ms)
+✔ scalar states exhaust wire values without guessing unavailable or reserved measurements (11.365266ms)
+✔ directed fields ignored when inapplicable, resolved target not asserted as identity (15.633213ms)
+✔ event bits, conditional coded PHY, legacy contradictions and fragment statuses remain separate (0.602816ms)
+✔ CLI option is exclusive, default stays private, late structural failure emits no stdout (269.431046ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (3.001303ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (4.811895ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (15.28092ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.631288ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (3.029927ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (1.795156ms)
+✔ explicit bounded pagination, no silent truncation and output cap (4.584122ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (454.680821ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (1.109592ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (11.663965ms)
+✔ standalone selected JSON retains every metadata disclosure (0.56153ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 16
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 644.969013
+
+✖ failing tests:
+
+test at tests/hci-extended-metadata.test.ts:19:1
+✖ explicit metadata selection, scalar spans, privacy and standalone disclosures (3.017088ms)
+  AssertionError [ERR_ASSERTION]: advertising"
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-extended/tests/hci-extended-metadata.test.ts:31:171)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,15 @@
+✔ request codec has explicit endian layout, exact lengths and an owned byte copy (47.753375ms)
+✔ request codec refuses invalid input rather than coercion, padding or fallback (36.738994ms)
+✔ all synthetic TS cases roundtrip through test-only response writer and strict decoder (202.06595ms)
+✔ response codec rejects structural, nonfinite, dB, peak and reserved-byte mutations (28.98645ms)
+✔ comparison rejects peak, amplitude, zero/null and geometry disagreements (22.929704ms)
+✔ independent quadratic DFT agrees with reference mixed, off-bin, rail and impulse cases (49.007276ms)
+✔ independently known quarter-cycle and zero fixture hashes and peaks stay exact (20.672318ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 546.336431

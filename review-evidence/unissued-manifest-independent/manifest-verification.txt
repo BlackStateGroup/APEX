@@ -1,0 +1,1 @@
+All 19 current manifest entries match disk, including native adapter.

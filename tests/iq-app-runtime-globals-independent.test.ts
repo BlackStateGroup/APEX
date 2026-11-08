@@ -1,0 +1,11 @@
+/** Simulated missing host globals, not native execution or a reported device failure. */
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {IqController} from '../src/iq-workbench.ts';
+import {iqByteHasher} from '../src/platform/iq-digest.ts';
+import {nodeDigest} from './iq-app-review-fixture.ts';
+const report=(c:IqController)=>c.state.report;
+const exact='{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":1024},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}';
+async function without(name:'TextEncoder'|'TextDecoder'|'crypto',work:()=>Promise<void>){const original=Object.getOwnPropertyDescriptor(globalThis,name)!;Object.defineProperty(globalThis,name,{configurable:true,value:undefined});try{await work();}finally{Object.defineProperty(globalThis,name,original);}}
+test('independent synthetic staging needs no TextEncoder and preserves exact ASCII bytes/hash',async()=>{const bytes=Uint8Array.from(exact,c=>c.charCodeAt(0));const expected=await nodeDigest('SHA-256',bytes);let hashes=0;const c=new IqController(true,{digest:async(a,b)=>{hashes++;return nodeDigest(a,b);}});await without('TextEncoder',async()=>{c.example(c.lease,c.state);assert.equal(hashes,0);assert.equal(c.state.metadata?.size,bytes.length);assert.equal(c.state.report,null);await c.inspect(c.lease,c.state);assert.equal(report(c)?.metadataSha256,expected);assert.equal(report(c)?.dataSha256,await nodeDigest('SHA-256',new Uint8Array(4096)));assert.equal(report(c)?.statistics.sampleCount,1024);assert.equal(c.state.busy,false);});});
+test('independent missing decoder or WebCrypto refuses Inspect cleanly and permits later explicit retry',async()=>{for(const missing of ['TextDecoder','crypto'] as const){const c=new IqController(true,missing==='crypto'?iqByteHasher:{digest:nodeDigest});await without(missing,async()=>{c.example(c.lease,c.state);assert.equal(c.state.report,null);await c.inspect(c.lease,c.state);assert.equal(c.state.busy,false);assert.equal(c.state.pending,false);assert.equal(c.state.report,null);assert.match(c.state.message,/Inspection refused/);});await c.inspect(c.lease,c.state);assert.equal(report(c)?.statistics.sampleCount,1024);assert.equal(c.state.busy,false);}});

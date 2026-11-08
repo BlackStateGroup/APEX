@@ -1,0 +1,5 @@
+tsc --noEmit
+typecheck_exit=0
+wrapper_syntax_exit=0
+helper_syntax_exit=0
+diff_check_exit=0

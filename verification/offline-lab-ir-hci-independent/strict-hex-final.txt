@@ -1,0 +1,66 @@
+✔ independent exact CLI identity and original-stage byte preservation (397.704448ms)
+✔ independent NEC bit ordering, complements and precise fixture bytes (175.388993ms)
+✔ independent HCI exact source and scalar offsets refer to container bytes (223.756022ms)
+✔ no-argument contract rejects every supplied argument before fixture reads (624.707818ms)
+✔ late IR/HCI digest mismatches, serialization, and output bound fail atomically (673.025271ms)
+✔ one final stdout write and exactly five fixed fixture reads under write denial (191.795617ms)
+✖ strict HCI hex fixture rejects ignored suffixes and odd nibble before decoding (62.890269ms)
+✔ independent oracle covers the complete original metadata, not just digest shape (175.992783ms)
+✔ post-analysis serialization exception and size assertion leave stdout empty (368.468286ms)
+✔ walkthrough completes with common network entry points trapped and filesystem writes denied (216.911934ms)
+✔ actual CLI IR exact ASCII bytes and independent whole-frame integer oracle (186.517699ms)
+✔ actual CLI HCI independent byte offsets, signed integers, hash parity and privacy (188.183566ms)
+✔ late IR and HCI fixture faults produce no stdout with filesystem writes denied (407.213151ms)
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (356.540293ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (620.40874ms)
+✔ late phase arithmetic and Flipper presence/status faults keep stdout atomic with writes denied (350.80584ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3291.898898
+
+✖ failing tests:
+
+test at tests/offline-lab-expansion-independent.test.ts:93:1
+✖ strict HCI hex fixture rejects ignored suffixes and odd nibble before decoding (62.890269ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + "data:text/javascript,import%20fs%20from%20'node%3Afs'%3Bimport%20%7BsyncBuiltinESMExports%7D%20from%20'node%3Amodule'%3B%0A%20%20%20%20%20%20const%20read%3Dfs.readFileSync%3Bfs.readFileSync%3Dfunction(path%2C...args)%7Bconst%20v%3Dread.call(this%2Cpath%2C...args)%3B%0A%20%20%20%20%20%20return%20String(path).endsWith('%2Ftests%2Ffixtures%2Foffline-lab-hci.hex')%20%3F%20v.trim()%2B%22junk%22%2B'%0A'%3Av%3B%7D%3BsyncBuiltinESMExports()%3B:3\n" +
+  +   `      return String(path).endsWith('/tests/fixtures/offline-lab-hci.hex') ? v.trim()+"junk"+'\n` +
+  +   '                                                                                            ^\n' +
+  +   '\n' +
+  +   'SyntaxError: Invalid or unexpected token\n' +
+  +   '    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)\n' +
+  +   '    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)\n' +
+  +   '    at #translate (node:internal/modules/esm/loader:438:20)\n' +
+  +   '    at afterLoad (node:internal/modules/esm/loader:506:29)\n' +
+  +   '    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)\n' +
+  +   '    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)\n' +
+  +   '    at afterResolve (node:internal/modules/esm/loader:611:52)\n' +
+  +   '    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)\n' +
+  +   '    at node:internal/modules/esm/loader:636:32\n' +
+  +   '    at TracingChannel.tracePromise (node:diagnostics_channel:370:14)\n' +
+  +   '\n' +
+  +   'Node.js v24.22.1\n'
+  - 'Offline synthetic walkthrough failed; no success summary emitted. Check fixtures and invariants.\n'
+  
+      at failure (file:///workspace/scratch/b96d3539d24d/apex-lab-ir-hci-review/tests/offline-lab-expansion-independent.test.ts:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-lab-ir-hci-review/tests/offline-lab-expansion-independent.test.ts:95:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: `data:text/javascript,import%20fs%20from%20'node%3Afs'%3Bimport%20%7BsyncBuiltinESMExports%7D%20from%20'node%3Amodule'%3B%0A%20%20%20%20%20%20const%20read%3Dfs.readFileSync%3Bfs.readFileSync%3Dfunction(path%2C...args)%7Bconst%20v%3Dread.call(this%2Cpath%2C...args)%3B%0A%20%20%20%20%20%20return%20String(path).endsWith('%2Ftests%2Ffixtures%2Foffline-lab-hci.hex')%20%3F%20v.trim()%2B%22junk%22%2B'%0A'%3Av%3B%7D%3BsyncBuiltinESMExports()%3B:3\n      return String(path).endsWith('/tests/fixtures/offline-lab-hci.hex') ? v.trim()+"junk"+'\n                                                                                            ^\n\nSyntaxError: Invalid or unexpected token\n    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)\n    at #translate (node:internal/modules/esm/loader:438:20)\n    at afterLoad (node:internal/modules/esm/loader:506:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)\n    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)\n    at afterResolve (node:internal/modules/esm/loader:611:52)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)\n    at node:internal/modules/esm/loader:636:32\n    at TracingChannel.tracePromise (node:diagnostics_channel:370:14)\n\nNode.js v24.22.1\n`,
+    expected: 'Offline synthetic walkthrough failed; no success summary emitted. Check fixtures and invariants.\n',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

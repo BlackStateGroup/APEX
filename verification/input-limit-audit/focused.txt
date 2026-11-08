@@ -1,0 +1,18 @@
+✔ editing or replacing a recording clears both displayed report and save eligibility (1.483371ms)
+✔ pending save uses selected analysis snapshot; late success never restores replaced report (2.030586ms)
+✔ committed save stays consumed after failed list refresh, tab-like reuse, and repeated interpretation (0.730457ms)
+✔ failed persistence releases retry only for the current interpreted draft (0.639258ms)
+✔ legacy analysis evidence schema and sources are preserved for all three formats (3.169576ms)
+✔ NEC rejects an oversized whole edit rather than interpreting its valid prefix (1.912711ms)
+✔ CAN rejects an oversized whole edit rather than interpreting its valid prefix (2.899578ms)
+✔ REA ELF rejects an oversized whole edit rather than interpreting its valid prefix (1.564829ms)
+✔ rejected recording edit stays invalid after an older pending save completes (0.405195ms)
+✔ recording source reaches controller without a platform truncation cap (0.635035ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.922977

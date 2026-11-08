@@ -1,0 +1,16 @@
+✔ android: synchronous event inside native start reaches installed listener before raw acknowledgement (27.729922ms)
+✔ android: synchronous SDK error during held start ends once and waits for raw start (8.366047ms)
+✔ android: cancellation during held readiness never issues native scan (7.899521ms)
+✔ android: stale uncapped error and data cannot terminate or publish into replacement (7.816157ms)
+✔ ios: synchronous event inside native start reaches installed listener before raw acknowledgement (8.388732ms)
+✔ ios: synchronous SDK error during held start ends once and waits for raw start (6.963219ms)
+✔ ios: cancellation during held readiness never issues native scan (7.155063ms)
+✔ ios: stale uncapped error and data cannot terminate or publish into replacement (8.256927ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 225.847852

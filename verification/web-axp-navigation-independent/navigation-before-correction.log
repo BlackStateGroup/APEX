@@ -1,0 +1,40 @@
+✔ thirteen typed inspector choices retaining the original twelve, Recording default, and separate explicit source routes (1.443576ms)
+✖ navigation source wiring keeps controllers at stable positions and has no implicit work (1.206212ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.346641ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (2.478639ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.796551ms)
+✔ source delivery during pending saves survives old failure without reviving results (1.335053ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 172.660003
+
+✖ failing tests:
+
+test at tests/analysis-navigation.test.ts:19:1
+✖ navigation source wiring keeps controllers at stable positions and has no implicit work (1.206212ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /setInspector\(next\); setChooserOpen\(false\); setTab\('Analysis'\)/. Input:
+  
+  '  function selectInspector(next: AnalysisInspector) {\n' +
+    "    setInspector(next); setChooserOpen(false); activeTab.current = 'Analysis'; setTab('Analysis');\n" +
+    '    scroll.current?.scrollTo({ y: 0, animated: false });\n' +
+    '  }\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-app-review/tests/analysis-navigation.test.ts:21:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "  function selectInspector(next: AnalysisInspector) {\n    setInspector(next); setChooserOpen(false); activeTab.current = 'Analysis'; setTab('Analysis');\n    scroll.current?.scrollTo({ y: 0, animated: false });\n  }\n",
+    expected: /setInspector\(next\); setChooserOpen\(false\); setTab\('Analysis'\)/,
+    operator: 'match',
+    diff: 'simple'
+  }

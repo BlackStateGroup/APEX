@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-11-08",
+  "baselineCommit": "63f530d1f6f8f943d4fd2c1016904f3259daf77a",
+  "requirements": [
+    {
+      "id": "RQ-01",
+      "requirement": "Preserve Universal Master Key ambition",
+      "sourceReference": "af55a4b4-90c6-46d6-945a-3a54e10a9f01",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e097-9d70-83ed-80e7-5a45d2a98ae3?messageId=af55a4b4-90c6-46d6-945a-3a54e10a9f01",
+      "authority": "Explicit user requirement",
+      "snapshotState": "Recorded in product documents; full platform unfinished",
+      "completionGate": "A growing verified catalogue and complete case workflows across the requested domains, without unsupported universal guarantees",
+      "artifact": "PRODUCT_VISION.md"
+    },
+    {
+      "id": "RQ-02",
+      "requirement": "Support iPhone and Android as first-class clients",
+      "sourceReference": "a4ec6347-61c7-4a26-a72f-e5186e4e2afa",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=a4ec6347-61c7-4a26-a72f-e5186e4e2afa",
+      "authority": "Explicit correction",
+      "snapshotState": "Shared app/native integration source; historical CI reports; current signed/physical acceptance unrun",
+      "completionGate": "Current signed iPhone and Android builds plus matched device-workflow acceptance; platform differences explicit",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-7d502ab3cb85",
+      "localCheckpointArtifact": "../PHONE_ACCEPTANCE_PLAN.md"
+    },
+    {
+      "id": "RQ-03",
+      "requirement": "Keep actual source copies to mine and learn",
+      "sourceReference": "1628e7bf-5742-4b72-9d4a-86580c8882f3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=1628e7bf-5742-4b72-9d4a-86580c8882f3",
+      "authority": "Explicit user requirement",
+      "snapshotState": "31 root sources recovered and hash-verified in isolated corpus; 63 nested Git links absent",
+      "completionGate": "Preserved exact archives/licences, readable restored sources, honest dependency/missing-name list and source-to-feature trace",
+      "artifact": "sources/INVENTORY.md"
+    },
+    {
+      "id": "RQ-04",
+      "requirement": "Continue implementation while doing research",
+      "sourceReference": "ada53bce-8282-4014-9d52-c8e5dec48339",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=ada53bce-8282-4014-9d52-c8e5dec48339",
+      "authority": "Explicit user requirement",
+      "snapshotState": "Substantial host code and tests; live integration gaps remain",
+      "completionGate": "Research findings become reviewed working adapters/workflows; checkpoints do not become unexplained stops",
+      "artifact": "DELIVERY_ROADMAP.md"
+    },
+    {
+      "id": "RQ-05",
+      "requirement": "Produce full PRD/architecture/capability/hardware/licence/research/work-package pack",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit user requirement",
+      "snapshotState": "Original pack exists; this additive pack reconciles latest vision and evidence",
+      "completionGate": "Documents trace requests to code/evidence/gaps and stay current without rewriting history",
+      "artifact": "README.md"
+    },
+    {
+      "id": "RQ-06",
+      "requirement": "Use REA actively for deeper investigation",
+      "sourceReference": "829906c8-c629-4404-b872-fef41035142c",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=829906c8-c629-4404-b872-fef41035142c",
+      "authority": "Explicit user requirement",
+      "snapshotState": "Known ELF parsing and supervised objdump verified; full engine/persistence/integration unaccepted",
+      "completionGate": "Known-binary decompilation verified against source, then repeated target-specific investigations yielding tested capability",
+      "artifact": "RESEARCH_PROGRAMME.md"
+    },
+    {
+      "id": "RQ-07",
+      "requirement": "Understand hardware/software/cryptographic implementations",
+      "sourceReference": "ff8c312c-ebc9-46c4-936e-67ddabbfb891",
+      "sourceUrl": "https://chatgpt.com/c/6ae7a5fa-b9e8-83ed-8709-d5ea0463c312?messageId=ff8c312c-ebc9-46c4-936e-67ddabbfb891",
+      "authority": "Explicit research request",
+      "snapshotState": "Source studies and limited analysis; no universal cryptographic access",
+      "completionGate": "Scoped reproducible investigations with independent evidence, limitations and implementation results",
+      "artifact": "RESEARCH_PROGRAMME.md"
+    },
+    {
+      "id": "RQ-08",
+      "requirement": "Support specialist emergency access/recovery",
+      "sourceReference": "099a49e2-3e2b-40fe-b827-f70abec40042",
+      "sourceUrl": "https://chatgpt.com/c/6ae7a5fa-b9e8-83ed-8709-d5ea0463c312?messageId=099a49e2-3e2b-40fe-b827-f70abec40042",
+      "authority": "Explicit product direction",
+      "snapshotState": "Vision and proposed catalogue; no field-accepted recovery product",
+      "completionGate": "Named system/revision/method/preconditions/credentials/hardware and independent physical outcome evidence",
+      "artifact": "PRODUCT_VISION.md"
+    },
+    {
+      "id": "RQ-09",
+      "requirement": "Pair with the original physical instrument",
+      "sourceReference": "4968d9df-dbb9-48e4-9f05-53fb545c97f4",
+      "sourceUrl": "https://chatgpt.com/c/6ae7a5fa-b9e8-83ed-8709-d5ea0463c312?messageId=4968d9df-dbb9-48e4-9f05-53fb545c97f4",
+      "authority": "Explicit user request; exact device variant unresolved",
+      "snapshotState": "Flipper response-only inspector and intake; no live Flipper connector",
+      "completionGate": "Version-specific real device handshake/status and reliable session handling, then supported operations",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-71af0450d2bb",
+      "localCheckpointArtifact": "../FLIPPER_OFFLINE_INSPECTOR.md"
+    },
+    {
+      "id": "RQ-10",
+      "requirement": "Add a Pwnagotchi-compatible app function",
+      "sourceReference": "dd9090be-d9c7-44be-b5a7-d0b9ec79ce98",
+      "sourceUrl": "https://chatgpt.com/c/6ae7a5fa-b9e8-83ed-8709-d5ea0463c312?messageId=dd9090be-d9c7-44be-b5a7-d0b9ec79ce98",
+      "authority": "Explicit user request",
+      "snapshotState": "Proposed only; intended fork/version not recovered; absent from 31 roots",
+      "completionGate": "Pinned source and interface, status/owned-log import, named-device acceptance; later jobs separately scoped",
+      "artifact": "RESEARCH_PROGRAMME.md"
+    },
+    {
+      "id": "RQ-11",
+      "requirement": "Cover NFC/RFID",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "NDEF selected-field capture source and offline/static inspectors; no full live specialist support",
+      "completionGate": "Supported phone modes and specialist adapters each with revision-specific operation tests",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-27fe7ff5c87d",
+      "localCheckpointArtifact": "../NFC_MANAGER_NDEF.md"
+    },
+    {
+      "id": "RQ-12",
+      "requirement": "Cover Sub-GHz",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Source research and offline interpretations; no accepted receive module",
+      "completionGate": "Selected radio/antenna/board and protocol fixtures, measured capture plus controlled operation where supported",
+      "artifact": "SOURCE_PROVENANCE_AND_LICENSING.md"
+    },
+    {
+      "id": "RQ-13",
+      "requirement": "Cover SDR",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Bounded offline I/Q analysis, C8 core/CLI converter; no live acquisition",
+      "completionGate": "Native file import and real recordings, then selected SDR/sidecar throughput and physical acceptance",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-4a0768ffe139",
+      "localCheckpointArtifact": "../MAYHEM_C8_PROTOTYPE.md"
+    },
+    {
+      "id": "RQ-14",
+      "requirement": "Cover Bluetooth",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "AXP and bounded observation source, real installed JS through synthetic native/C tests",
+      "completionGate": "Current native builds and physical device evidence including cancellation/release semantics",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-068636c24f2c",
+      "localCheckpointArtifact": "../NATIVE_C_SESSION_INTEGRATION.md"
+    },
+    {
+      "id": "RQ-15",
+      "requirement": "Cover Wi-Fi",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Source/architecture discussion and Pwnagotchi request; no functioning Wi-Fi instrument integration",
+      "completionGate": "Explicit API/instrument/version, bounded evidence and tested network workflow on permitted equipment",
+      "artifact": "PRODUCT_VISION.md"
+    },
+    {
+      "id": "RQ-16",
+      "requirement": "Cover infrared",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Offline NEC/raw timing workbench",
+      "completionGate": "Real receiver capture, correct timing/carrier metadata and later supported control with outcome evidence",
+      "artifact": "LOCAL_CHECKPOINT_REFERENCES.md#ref-c6838bbb1c58",
+      "localCheckpointArtifact": "../IR_WORKBENCH.md"
+    },
+    {
+      "id": "RQ-17",
+      "requirement": "Cover vehicle electronics",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Classic CAN offline analysis, source corpus",
+      "completionGate": "Isolated CAN/OBD bench, vendor signal definitions, error handling and verified diagnostics; no inferred immobilizer capability",
+      "artifact": "../CAPABILITY_MATRIX.md"
+    },
+    {
+      "id": "RQ-18",
+      "requirement": "Cover embedded hardware",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Portable C AXP, Android CDC source, separate ESP32 derivative",
+      "completionGate": "SDK/board acceptance and selected electrical-interface adapters with power/level/timing limits",
+      "artifact": "../HARDWARE_STRATEGY.md"
+    },
+    {
+      "id": "RQ-19",
+      "requirement": "Cover industrial systems/access control",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Modbus/BACnet/OSDP sources; no live adapters",
+      "completionGate": "Isolated simulators and bench hardware, configured maps/keys and defined operation acceptance",
+      "artifact": "RESEARCH_PROGRAMME.md"
+    },
+    {
+      "id": "RQ-20",
+      "requirement": "Use AI-assisted protocol analysis",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit domain requirement",
+      "snapshotState": "Data-only bounded hypothesis contract; no provider connected",
+      "completionGate": "Evaluated evidence-linked hypotheses with ground truth, false positives and explicit selected data export",
+      "artifact": "../ARCHITECTURE.md"
+    },
+    {
+      "id": "RQ-21",
+      "requirement": "Use modular firmware and unified communication",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit user requirement",
+      "snapshotState": "Original TS/C AXP and native session foundations",
+      "completionGate": "Stable versioned control/data contracts and actual accessory acceptance; vendor protocols remain distinct",
+      "artifact": "../DEVICE_PROTOCOL.md"
+    },
+    {
+      "id": "RQ-22",
+      "requirement": "Use feature branches/PRs; keep incomplete work out of main",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit delivery constraint",
+      "snapshotState": "Historical five-PR stack; current continuation local and unpushed",
+      "completionGate": "Verify authorized remote/head; reviewed feature branch/draft PR with exact checks; merge separately authorized",
+      "artifact": "AUDIT_PROTOCOL.md"
+    },
+    {
+      "id": "RQ-23",
+      "requirement": "Report verified progress and limitations",
+      "sourceReference": "50a827a6-1768-4042-a269-eb51f752b2b3",
+      "sourceUrl": "https://chatgpt.com/c/6ae6e711-b4dc-83ed-a009-3c5a300c422c?messageId=50a827a6-1768-4042-a269-eb51f752b2b3",
+      "authority": "Explicit delivery constraint",
+      "snapshotState": "v42 exact aggregate receipts; historical assistant reports retained as reports",
+      "completionGate": "Every claim names revision, method, tier and unrun stages; failed evidence retained",
+      "artifact": "VERIFIED_STATUS.md"
+    },
+    {
+      "id": "RQ-24",
+      "requirement": "Provide interactive command centre",
+      "sourceReference": "f8883a9c-6219-4887-a4bc-f809f175cf19",
+      "sourceUrl": "https://chatgpt.com/c/6aef96d2-4d88-83eb-8af0-ff65f3b307a1?messageId=f8883a9c-6219-4887-a4bc-f809f175cf19",
+      "authority": "Explicit user request",
+      "snapshotState": "Historical private Site report: six views, dated snapshot; browser verification blocked",
+      "completionGate": "Accurate capability/source/hardware/PR/test/backlog views, verified links and freshness; live sync only if implemented",
+      "artifact": "PRODUCT_VISION.md"
+    },
+    {
+      "id": "RQ-25",
+      "requirement": "Prefer best outcome over least time",
+      "sourceReference": "CURRENT-02",
+      "sourceUrl": "conversations/current-direction.md",
+      "authority": "Explicit latest priority",
+      "snapshotState": "Architecture recommendation and work authorized; no performance results",
+      "completionGate": "Choose designs by measured correctness, reliability, phone performance and long-term maintainability",
+      "artifact": "NATIVE_HYBRID_ARCHITECTURE.md"
+    },
+    {
+      "id": "RQ-26",
+      "requirement": "Evaluate Rust/C++ native hybrid",
+      "sourceReference": "CURRENT-01",
+      "sourceUrl": "conversations/current-direction.md",
+      "authority": "Question followed by authorized recommended direction",
+      "snapshotState": "Recommended shared Rust engine, selected C/C++, Swift/Kotlin; not implemented by this pack",
+      "completionGate": "Reviewed slice, differential parity, actual mobile builds/benchmarks and reversible integration",
+      "artifact": "NATIVE_HYBRID_ARCHITECTURE.md"
+    },
+    {
+      "id": "RQ-27",
+      "requirement": "Write down full spectrum, decisions and audit trail",
+      "sourceReference": "CURRENT-03",
+      "sourceUrl": "conversations/current-direction.md",
+      "authority": "Explicit latest instruction",
+      "snapshotState": "This documentation pack and machine-readable records",
+      "completionGate": "Repo integration, verified manifests/links and continuous append-only decisions/evidence",
+      "artifact": "AUDIT_PROTOCOL.md"
+    },
+    {
+      "id": "RQ-28",
+      "requirement": "Put conversations in repository for later checking",
+      "sourceReference": "CURRENT-03",
+      "sourceUrl": "conversations/current-direction.md",
+      "authority": "Explicit latest instruction",
+      "snapshotState": "Four recovered histories, unavailable bodies marked; latest three quotes with unknown IDs",
+      "completionGate": "Preserve exact accessible text/provenance, track unavailable messages, keep private and verify repository delivery",
+      "artifact": "conversations/README.md"
+    },
+    {
+      "id": "RQ-29",
+      "requirement": "Deliver functional features of Flipper and similar devices, not only status dashboards",
+      "sourceReference": "CURRENT-04",
+      "sourceUrl": "conversations/current-direction.md",
+      "authority": "Explicit latest clarification",
+      "snapshotState": "Full domain ambition retained; initial status adapters and host analysis are intermediate steps",
+      "completionGate": "Per-device feature adapters, physical prerequisites, supported operation tests and independently observed outcomes, including useful controls where supported",
+      "artifact": "FULL_CAPABILITY_ROLLOUT.md"
+    }
+  ]
+}

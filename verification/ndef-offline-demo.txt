@@ -1,0 +1,46 @@
+{
+  "label": "Synthetic English greeting, not a tag capture",
+  "origin": "synthetic-fixture",
+  "verification": {
+    "physicalReceptionVerified": false,
+    "identityVerified": false,
+    "authenticated": false,
+    "originIsCallerClaim": true
+  },
+  "status": "parsed",
+  "records": [
+    {
+      "offset": 0,
+      "rawHex": "d101055402656e4869",
+      "value": {
+        "kind": "text",
+        "language": "en",
+        "text": "Hi",
+        "encoding": "utf-8"
+      }
+    }
+  ]
+}
+{
+  "label": "Synthetic inert example URI, not a tag capture",
+  "origin": "synthetic-fixture",
+  "verification": {
+    "physicalReceptionVerified": false,
+    "identityVerified": false,
+    "authenticated": false,
+    "originIsCallerClaim": true
+  },
+  "status": "parsed",
+  "records": [
+    {
+      "offset": 0,
+      "rawHex": "d1010c55046578616d706c652e636f6d",
+      "value": {
+        "kind": "uri",
+        "prefixCode": 4,
+        "uri": "https://example.com",
+        "actionable": false
+      }
+    }
+  ]
+}

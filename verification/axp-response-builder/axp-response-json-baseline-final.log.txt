@@ -1,0 +1,275 @@
+✖ AXP rejects ambiguous or nonstring identity case 1 (1.886361ms)
+✖ AXP rejects ambiguous or nonstring identity case 2 (0.230851ms)
+✖ AXP rejects ambiguous or nonstring identity case 3 (0.109516ms)
+✖ AXP rejects ambiguous or nonstring identity case 4 (0.157101ms)
+✔ AXP rejects ambiguous or nonstring identity case 5 (0.994133ms)
+✔ AXP rejects ambiguous or nonstring identity case 6 (0.148988ms)
+✔ AXP rejects ambiguous or nonstring identity case 7 (0.194383ms)
+✔ AXP rejects ambiguous or nonstring identity case 8 (0.095849ms)
+✖ AXP rejects ambiguous or nonstring identity case 9 (0.203644ms)
+✖ AXP rejects ambiguous or nonstring identity case 10 (0.340216ms)
+✖ AXP rejects duplicate decoded capability keys case 1 (0.310902ms)
+✖ AXP rejects duplicate decoded capability keys case 2 (0.121666ms)
+✔ AXP preserves valid source, operation ordering, and bounded extra-field compatibility (0.877ms)
+✖ AXP public validators enforce actual byte limits and strict UTF-8 (0.359965ms)
+✖ AXP bounds all extra-field nesting to eight open containers (0.255535ms)
+✖ AXP malformed handshake closes one-use session and releases listeners (5.057613ms)
+✖ AXP malformed handshake keeps failed cleanup pending until explicit retry (1.20929ms)
+✖ AXP malformed error JSON stays generic, with valid error and ping parity (2.09082ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 5
+ℹ fail 13
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 173.723261
+
+✖ failing tests:
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 1 (1.886361ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":"accessory","\u0069d":"replacement"}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 2 (0.230851ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":"accessory","protocol":1}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 3 (0.109516ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":"accessory","source":"host"}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 4 (0.157101ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":"accessory","extra":{"a":1,"\u0061":2}}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 9 (0.203644ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":["accessory"]}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:24:3
+✖ AXP rejects ambiguous or nonstring identity case 10 (0.340216ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"id":"fixture","board":"fixture","firmware":"1","protocol":1,"source":[["accessory"]]}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:25:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:29:3
+✖ AXP rejects duplicate decoded capability keys case 1 (0.310902ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"operations":["system.info","system.capabilities","system.ping"],"\u006fperations":["system.info","system.capabilities","system.ping"]}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:30:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:29:3
+✖ AXP rejects duplicate decoded capability keys case 2 (0.121666ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: {"operations":["system.info","system.capabilities","system.ping"],"extra":{"a":1,"a":1}}
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:30:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:43:1
+✖ AXP public validators enforce actual byte limits and strict UTF-8 (0.359965ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:48:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:66:1
+✖ AXP bounds all extra-field nesting to eight open containers (0.255535ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:69:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:95:1
+✖ AXP malformed handshake closes one-use session and releases listeners (5.057613ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:102:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:112:1
+✖ AXP malformed handshake keeps failed cleanup pending until explicit retry (1.20929ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Duplicate/. Input:
+  
+  'Error: Unsupported capability manifest'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:116:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unsupported capability manifest
+        at validateCapabilities (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:43:11)
+        at DeviceSession.open (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:100:27)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:116:3)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: /Duplicate/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/axp-response-json.test.ts:123:1
+✖ AXP malformed error JSON stays generic, with valid error and ping parity (2.09082ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    Comparison {
+  +   message: 'SECOND'
+  -   message: 'DEVICE_ERROR'
+    }
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:134:7)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: SECOND
+        at DeviceSession.receive (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:152:19)
+        at FrameDecoder.receive (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:74:51)
+        at FrameDecoder.push (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/protocol/index.ts:87:14)
+        at file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:87:77
+        at FrameDecoder.decoder [as receive] (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:86:39)
+        at FrameDecoder.push (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/protocol/index.ts:87:14)
+        at Peer.write (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/tests/axp-response-json.test.ts:89:49)
+        at file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:138:33
+        at new Promise (<anonymous>)
+        at DeviceSession.exchange (file:///workspace/scratch/b96d3539d24d/apex-axp-response-json/packages/core/session.ts:126:12),
+    expected: { message: 'DEVICE_ERROR' },
+    operator: 'rejects',
+    diff: 'simple'
+  }

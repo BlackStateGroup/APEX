@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "scope": "owned-lab",
+  "serviceUuid": "FCD2",
+  "groups": [
+    {
+      "id": "baseline",
+      "condition": "Synthetic declared 20 C"
+    },
+    {
+      "id": "changed",
+      "condition": "Synthetic declared 18.44 C"
+    }
+  ],
+  "sources": [
+    {
+      "id": "android",
+      "platform": "android",
+      "snapshotId": "android",
+      "origin": "synthetic-fixture"
+    },
+    {
+      "id": "ios",
+      "platform": "ios",
+      "snapshotId": "ios",
+      "origin": "synthetic-fixture"
+    }
+  ],
+  "trials": [
+    {
+      "id": "android-baseline-1",
+      "groupId": "baseline",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-baseline-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EAC0Ac=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "android-baseline-2",
+      "groupId": "baseline",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-baseline-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EAC0Ac=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "android-changed-1",
+      "groupId": "changed",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-changed-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EACNAc=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "android-changed-2",
+      "groupId": "changed",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-changed-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EACNAc=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "ios-baseline-1",
+      "groupId": "baseline",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-baseline-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "ios-baseline-2",
+      "groupId": "baseline",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-baseline-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "ios-changed-1",
+      "groupId": "changed",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-changed-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    },
+    {
+      "id": "ios-changed-2",
+      "groupId": "changed",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-changed-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}"
+    }
+  ]
+}

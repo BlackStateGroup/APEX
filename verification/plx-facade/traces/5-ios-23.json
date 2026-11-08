@@ -1,0 +1,431 @@
+{
+  "scope": "Installed PLX published ESM; synthetic RN/native events and promises; C data callbacks only. No native ordering, ABI, radio or startup proof.",
+  "platform": "ios",
+  "mtu": 23,
+  "events": [
+    "create",
+    "connect",
+    "monitor:10",
+    "cancelTransaction",
+    "cancelDevice",
+    "ios-destroy-dispatched-no-ack"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "SUBSCRIBE"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158505f5245414459"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 1 1 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010100010000001815"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102010001005b007b226964223a22617065"
+    },
+    {
+      "origin": "C-notification",
+      "value": "782d73332d646576222c22626f617264223a2265"
+    },
+    {
+      "origin": "C-notification",
+      "value": "737033327333222c226669726d77617265223a22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "302e312e30222c2270726f746f636f6c223a312c"
+    },
+    {
+      "origin": "C-notification",
+      "value": "22736f75726365223a226163636573736f727922"
+    },
+    {
+      "origin": "C-notification",
+      "value": "7d7cdf"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 2 0 0 0 7 7 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010200020000002440"
+    },
+    {
+      "origin": "C-notification",
+      "value": "415801020200020042007b226f7065726174696f"
+    },
+    {
+      "origin": "C-notification",
+      "value": "6e73223a5b2273797374656d2e696e666f222c22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "73797374656d2e6361706162696c697469657322"
+    },
+    {
+      "origin": "C-notification",
+      "value": "2c2273797374656d2e70696e67225d7de7d7"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 3 0 0 0 11 11 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010300030000003073"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102030003000000b2ab"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 4 0 0 0 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 4158010103000400000200010203040506070809"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 5 0 0 20 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 0a0b0c0d0e0f101112131415161718191a1b1c1d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 6 0 0 40 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 1e1f202122232425262728292a2b2c2d2e2f3031"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 7 0 0 60 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 32333435363738393a3b3c3d3e3f404142434445"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 8 0 0 80 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 464748494a4b4c4d4e4f50515253545556575859"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 9 0 0 100 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 5a5b5c5d5e5f606162636465666768696a6b6c6d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 10 0 0 120 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 6e6f707172737475767778797a7b7c7d7e7f8081"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 11 0 0 140 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 82838485868788898a8b8c8d8e8f909192939495"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 12 0 0 160 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 13 0 0 180 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 14 0 0 200 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W bebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 15 0 0 220 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 16 0 0 240 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 17 0 0 260 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W fafbfcfdfeff000102030405060708090a0b0c0d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 18 0 0 280 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 0e0f101112131415161718191a1b1c1d1e1f2021"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 19 0 0 300 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 22232425262728292a2b2c2d2e2f303132333435"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 20 0 0 320 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 363738393a3b3c3d3e3f40414243444546474849"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 21 0 0 340 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 4a4b4c4d4e4f505152535455565758595a5b5c5d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 22 0 0 360 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 5e5f606162636465666768696a6b6c6d6e6f7071"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 23 0 0 380 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 72737475767778797a7b7c7d7e7f808182838485"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 24 0 0 400 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 868788898a8b8c8d8e8f90919293949596979899"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 25 0 0 420 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 9a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacad"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 26 0 0 440 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W aeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 27 0 0 460 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 28 0 0 480 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 29 0 0 500 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfd"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 30 0 0 520 12 12 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W feff550e"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158010203000400000200010203040506070809"
+    },
+    {
+      "origin": "C-notification",
+      "value": "0a0b0c0d0e0f101112131415161718191a1b1c1d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "1e1f202122232425262728292a2b2c2d2e2f3031"
+    },
+    {
+      "origin": "C-notification",
+      "value": "32333435363738393a3b3c3d3e3f404142434445"
+    },
+    {
+      "origin": "C-notification",
+      "value": "464748494a4b4c4d4e4f50515253545556575859"
+    },
+    {
+      "origin": "C-notification",
+      "value": "5a5b5c5d5e5f606162636465666768696a6b6c6d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "6e6f707172737475767778797a7b7c7d7e7f8081"
+    },
+    {
+      "origin": "C-notification",
+      "value": "82838485868788898a8b8c8d8e8f909192939495"
+    },
+    {
+      "origin": "C-notification",
+      "value": "969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+    },
+    {
+      "origin": "C-notification",
+      "value": "bebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1"
+    },
+    {
+      "origin": "C-notification",
+      "value": "d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5"
+    },
+    {
+      "origin": "C-notification",
+      "value": "e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "fafbfcfdfeff000102030405060708090a0b0c0d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "0e0f101112131415161718191a1b1c1d1e1f2021"
+    },
+    {
+      "origin": "C-notification",
+      "value": "22232425262728292a2b2c2d2e2f303132333435"
+    },
+    {
+      "origin": "C-notification",
+      "value": "363738393a3b3c3d3e3f40414243444546474849"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4a4b4c4d4e4f505152535455565758595a5b5c5d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "5e5f606162636465666768696a6b6c6d6e6f7071"
+    },
+    {
+      "origin": "C-notification",
+      "value": "72737475767778797a7b7c7d7e7f808182838485"
+    },
+    {
+      "origin": "C-notification",
+      "value": "868788898a8b8c8d8e8f90919293949596979899"
+    },
+    {
+      "origin": "C-notification",
+      "value": "9a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacad"
+    },
+    {
+      "origin": "C-notification",
+      "value": "aeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1"
+    },
+    {
+      "origin": "C-notification",
+      "value": "c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5"
+    },
+    {
+      "origin": "C-notification",
+      "value": "d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfd"
+    },
+    {
+      "origin": "C-notification",
+      "value": "feffd5d4"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 31 0 0 0 39 39 7"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 32 0 0 0 39 39 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "scope": "Installed PLX 3.5.1 ESM and exact native adapter/controller, synthetic RN/native only. No physical or native ordering evidence.",
+  "loaded": [
+    "node_modules/react-native-ble-plx/lib/module/index.js",
+    "node_modules/react-native-ble-plx/lib/module/BleError.js",
+    "node_modules/react-native-ble-plx/lib/module/Utils.js",
+    "node_modules/react-native-ble-plx/lib/module/BleManager.js",
+    "node_modules/react-native-ble-plx/lib/module/Device.js",
+    "node_modules/react-native-ble-plx/lib/module/TypeDefinition.js",
+    "node_modules/react-native-ble-plx/lib/module/Service.js",
+    "node_modules/react-native-ble-plx/lib/module/Characteristic.js",
+    "node_modules/react-native-ble-plx/lib/module/Descriptor.js",
+    "node_modules/react-native-ble-plx/lib/module/BleModule.js"
+  ],
+  "traces": [
+    {
+      "id": "scan-1",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start-void-dispatch",
+        "stop-void-dispatch",
+        "state",
+        "start-void-dispatch",
+        "stop-void-dispatch"
+      ],
+      "values": [],
+      "ends": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "scan-2",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start-void-dispatch",
+        "stop-void-dispatch",
+        "state",
+        "connect",
+        "discover",
+        "disconnect"
+      ],
+      "values": [],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-3",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start-void-dispatch",
+        "stop-void-dispatch"
+      ],
+      "values": [],
+      "ends": []
+    },
+    {
+      "id": "scan-4",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "permissions",
+        "state",
+        "connect",
+        "discover",
+        "mtu",
+        "disconnect"
+      ],
+      "values": [],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-5",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start-void-dispatch",
+        "stop-void-dispatch"
+      ],
+      "values": [],
+      "ends": []
+    }
+  ]
+}

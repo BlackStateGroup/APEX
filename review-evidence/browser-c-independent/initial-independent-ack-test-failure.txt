@@ -1,0 +1,53 @@
+✔ independent bridge fails closed: EOF during command (66.552011ms)
+✔ independent bridge fails closed: abnormal child exit (84.848539ms)
+✔ independent bridge fails closed: unterminated oversized stdout (66.305402ms)
+✔ independent bridge fails closed: malformed control response (61.633625ms)
+✔ independent bridge fails closed: notification width overflow (58.863776ms)
+✔ independent bridge fails closed: bounded stderr (55.555748ms)
+✔ independent bridge bounds command bytes before writing (58.606488ms)
+✔ independent bridge times out unresponsive owned child and waits for close (2005.636975ms)
+✔ independent bridge rejects correlated-control fault: wrong serial (57.540906ms)
+✔ independent bridge rejects correlated-control fault: unsafe integer (58.795978ms)
+✔ independent bridge rejects correlated-control fault: invalid connection handle (62.783726ms)
+✔ independent bridge rejects correlated-control fault: invalid ATT return code (59.4257ms)
+✔ independent bridge rejects correlated-control fault: impossible stream length (60.696642ms)
+✔ independent bridge rejects high-bit bytes rather than ASCII-normalizing them (61.227178ms)
+✔ independent bridge rejects notification bytes following completed control response (66.17025ms)
+✖ independent fake successful control ACK cannot manufacture READY or session identity (112.154238ms)
+✔ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (31.829324ms)
+✔ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (11.584157ms)
+✔ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (5.365072ms)
+✔ CRC-corrupt framed browser write produces no C response; following session request recovers (11.650444ms)
+✔ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (17.03982ms)
+✔ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (5.004926ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 21
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3143.559992
+
+✖ failing tests:
+
+test at tests/browser-c-bridge-independent.test.ts:73:1
+✖ independent fake successful control ACK cannot manufacture READY or session identity (112.154238ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + null
+  - undefined
+  
+      at file:///workspace/scratch/b96d3539d24d/apex-roundtrip-independent-review/tests/browser-c-bridge-independent.test.ts:82:14
+      at async fault (file:///workspace/scratch/b96d3539d24d/apex-roundtrip-independent-review/tests/browser-c-bridge-independent.test.ts:14:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-roundtrip-independent-review/tests/browser-c-bridge-independent.test.ts:76:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

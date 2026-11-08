@@ -1,0 +1,36 @@
+(node:30) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native detached retained run does not invoke an action or publish state (2.723029ms)
+✔ native prior-close wait cannot acquire after unmount cleanup has already run (8.463977ms)
+✔ direct retained connect is inert before removing the existing listener (0.924488ms)
+✔ prior-close continuation is inert after remount replacement (1.868263ms)
+✔ prior-close continuation is inert after operation replacement (1.613349ms)
+✔ prior-close continuation is inert after session replacement (1.310081ms)
+✔ normal native replacement negotiates and run lock excludes duplicate acquisition (2.005529ms)
+✔ uncertain prior cleanup retains exact session and prevents replacement (1.353993ms)
+✔ unmount during native open retains cleanup ownership and suppresses late callbacks/publication (1.770676ms)
+✔ run rejection cannot publish to detach successor (1.035213ms)
+✔ run rejection cannot publish to remount successor (0.600418ms)
+✔ run rejection cannot publish to operation successor (0.633957ms)
+✔ connected callback cannot publish after same-object remount or session replacement (1.068726ms)
+✔ explicit native cancellation during prior close prevents new acquisition and retains original lock (1.850737ms)
+✔ cancel after acquisition stops negotiation, is idempotent, and drains close before unlocking (1.239417ms)
+✔ failed cancellation retains ownership until explicit later Disconnect retry (1.115801ms)
+✔ stale cancel handler cannot affect detach (1.382178ms)
+✔ stale cancel handler cannot affect remount (1.109793ms)
+✔ stale cancel handler cannot affect operation (1.376698ms)
+✔ stale cancel handler cannot affect session (1.077855ms)
+✔ stale cancel handler cannot affect successor (1.098215ms)
+✔ old cancelled handle cannot close a later successful session (1.344702ms)
+✔ reentrant cancellation at clearSession prevents creating the next session (0.822488ms)
+✔ reentrant cancellation from listener registration prevents native acquisition (0.744575ms)
+✔ cancel cleanup cannot clear or close session replaced during drain (2.777709ms)
+✔ completed open retires cancellation handle before yielding finalization (1.478189ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 174.554087

@@ -1,0 +1,47 @@
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (1.461864ms)
+✔ failed manager shutdown preserves session and UI ownership (0.639399ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.330536ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.313937ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (1.262429ms)
+✔ new metadata and accessory acquisition gate: lifecycle=false, app=active (1.499611ms)
+✔ new metadata and accessory acquisition gate: lifecycle=false, app=inactive (0.189541ms)
+✔ new metadata and accessory acquisition gate: lifecycle=false, app=background (0.123207ms)
+✔ new metadata and accessory acquisition gate: lifecycle=true, app=active (0.351811ms)
+✔ new metadata and accessory acquisition gate: lifecycle=true, app=inactive (0.262182ms)
+✔ new metadata and accessory acquisition gate: lifecycle=true, app=background (1.098239ms)
+✔ queued starts recheck current foreground after background cleanup has already run (0.27902ms)
+✔ metadata Stop during pending startup bypasses foreground start guard and the held run lock (0.329193ms)
+✔ accessory Stop uses current scanning ref even when rendered label has not caught up, and works in background (0.263375ms)
+✔ NFC pending status stays stopping until settlement and does not begin (10.417976ms)
+✔ NFC pending begin drops tags after stop and retries a failed cleanup without idle (1.035219ms)
+✔ NFC synchronous SessionClosed cannot expose idle until begin has settled (1.432169ms)
+✔ NFC reentrant starting callback queues stop after its own start (0.281682ms)
+✔ NFC session closure confirms release after cleanup failure and drops stale callbacks (0.29774ms)
+✔ native controller rejects competing begin before replacing singleton listeners (0.515207ms)
+✔ native controller retains ownership across failed unregister and retries explicitly (0.300691ms)
+✔ native synchronous closure reserves lease through pending registration (2.284402ms)
+✔ native late old callbacks cannot clear replacement after unregister settles (0.844063ms)
+✔ native failed registration and SDK load release the lease for a later start (0.382737ms)
+✔ reader and native controller keep failed stop recoverable and confirm close before reuse (0.623678ms)
+✔ native user cancellation closes without surfacing an error (0.162456ms)
+✔ native concurrent cleanup shares one unregister attempt (0.904007ms)
+✔ cancelled rejected status cannot strand the reader or overwrite a reentrant next start (0.77201ms)
+✔ iOS unregister completion alone cannot release listeners before its final global close event (0.468591ms)
+✔ iOS close event waits for pending unregister, then consumes its late rejection (0.654301ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: true) (0.351302ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: false) (1.266199ms)
+✔ reader can restart after close and pending unregister both settle (0.68635ms)
+✔ App NFC action stops pending startup outside run without releasing its busy lock (0.949991ms)
+✔ editing or replacing a recording clears both displayed report and save eligibility (1.933585ms)
+✔ pending save uses selected analysis snapshot; late success never restores replaced report (3.20546ms)
+✔ committed save stays consumed after failed list refresh, tab-like reuse, and repeated interpretation (1.132233ms)
+✔ failed persistence releases retry only for the current interpreted draft (0.74895ms)
+✔ legacy analysis evidence schema and sources are preserved for all three formats (4.844935ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 234.840174

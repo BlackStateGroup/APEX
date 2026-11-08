@@ -1,0 +1,25 @@
+✔ independent: acquisition filters and observer order, frozen deep snapshot, selected cancel no GATT (3.148053ms)
+✔ independent: every gate applies to connect, held simulator is not closed or replaced (4.419825ms)
+✔ independent: cancelled raw picker rejects immediately, blocks replacement, late reject never acquires (7.817184ms)
+✔ independent: reentrant cancel on exact reservation cannot acquire and joins cleanup identity (1.468822ms)
+✔ independent: cancel fences before exact session.close even with operation lock and pending open (27.328916ms)
+✔ independent: pending write is locally cancelled; late raw effect cannot free poison or reach replacement (30.127918ms)
+✔ independent: failed disconnect survives view detach and requires explicit retry (1.209118ms)
+✔ independent: cancellation completion publication may select new work without old finally clearing it (1.26927ms)
+✔ independent: production source routes real App handlers through live owner and exact cleanup (1.062929ms)
+✔ independent: actual Ping closure cannot publish after replacement (0.684589ms)
+✔ independent: actual Ping closure cannot publish after unmount (0.302792ms)
+✔ independent: actual Ping closure cannot publish after StrictMode epoch (0.186901ms)
+✔ independent: actual Ping closure cannot publish after closed session (0.105675ms)
+✔ independent: actual lifecycle adapter and singleton never acquire on import, bind, remount or visible (3.717298ms)
+✔ independent: actual stale Cancel closure never reports poisoned cleanup completed (2.164248ms)
+✔ independent: actual browserAction suppresses old cleanup success after new selection (1.204448ms)
+✔ independent: actual generic simulator connect rejects selected, pending and poisoned browser owners (2.162596ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 259.17784

@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 inventory:check
+> node tools/npm-inventory.mjs --check
+
+Verified inventory of 541 locked dependency entries.
+Chromium 156.0.8078.79 built on Debian GNU/Linux 13 (trixie)

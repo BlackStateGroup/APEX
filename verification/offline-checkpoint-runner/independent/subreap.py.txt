@@ -1,0 +1,11 @@
+import ctypes,os,subprocess,time
+assert ctypes.CDLL(None).prctl(36,1,0,0,0)==0
+p=subprocess.Popen(['node','/tmp/apex-runner-review-080f8c4/synthetic.mjs'])
+code=None
+while True:
+ try:
+  pid,status=os.waitpid(-1,os.WNOHANG)
+  if pid==p.pid: code=os.waitstatus_to_exitcode(status)
+  if pid==0: time.sleep(.01)
+ except ChildProcessError:break
+assert code==0,code

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/../.."
+export CI=1 EXPO_OFFLINE=1 EXPO_NO_TELEMETRY=1 npm_config_update_notifier=false npm_config_offline=true npm_config_audit=false npm_config_fund=false
+node --test tests/iq-phase-increment.test.ts tests/inspect-iq-phase-increment.test.ts > verification/phase-independent/supplied-tests-final.log 2>&1
+python3 verification/phase-independent/oracle.py > verification/phase-independent/oracle-final.log 2>&1
+node verification/phase-independent/api-review.ts > verification/phase-independent/api-final.log 2>&1
+npm run typecheck > verification/phase-independent/typecheck-final.log 2>&1

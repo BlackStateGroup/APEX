@@ -1,0 +1,6 @@
+# Dependency-free lockfile. Cargo verification is a separate required gate.
+version = 3
+
+[[package]]
+name = "apex-iq-proof"
+version = "0.1.0"

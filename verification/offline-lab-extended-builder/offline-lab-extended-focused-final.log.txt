@@ -1,0 +1,11 @@
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (347.253021ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (612.270462ms)
+✔ late phase arithmetic and Flipper presence/status faults keep stdout atomic with writes denied (332.150838ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1411.391046

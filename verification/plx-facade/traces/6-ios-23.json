@@ -1,0 +1,110 @@
+{
+  "scope": "Installed PLX published ESM; synthetic RN/native events and promises; C data callbacks only. No native ordering, ABI, radio or startup proof.",
+  "platform": "ios",
+  "mtu": 23,
+  "events": [
+    "create",
+    "connect",
+    "monitor:10",
+    "cancelTransaction",
+    "cancelDevice"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "SUBSCRIBE"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158505f5245414459"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 1 1 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010100010000001815"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102010001005b007b226964223a22617065"
+    },
+    {
+      "origin": "C-notification",
+      "value": "782d73332d646576222c22626f617264223a2265"
+    },
+    {
+      "origin": "C-notification",
+      "value": "737033327333222c226669726d77617265223a22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "302e312e30222c2270726f746f636f6c223a312c"
+    },
+    {
+      "origin": "C-notification",
+      "value": "22736f75726365223a226163636573736f727922"
+    },
+    {
+      "origin": "C-notification",
+      "value": "7d7cdf"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 2 0 0 0 7 7 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 415801010200020000002440"
+    },
+    {
+      "origin": "C-notification",
+      "value": "415801020200020042007b226f7065726174696f"
+    },
+    {
+      "origin": "C-notification",
+      "value": "6e73223a5b2273797374656d2e696e666f222c22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "73797374656d2e6361706162696c697469657322"
+    },
+    {
+      "origin": "C-notification",
+      "value": "2c2273797374656d2e70696e67225d7de7d7"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 3 0 0 0 11 11 7"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "FAIL_FLATTEN"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 4 0 0 0 11 11 7"
+    },
+    {
+      "origin": "plx-client-write",
+      "value": "W 4158010103000300010001e559"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 5 14 0 0 11 11 7"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 6 0 0 0 11 11 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

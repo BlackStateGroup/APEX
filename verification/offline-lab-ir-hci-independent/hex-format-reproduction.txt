@@ -1,0 +1,3 @@
+{"suffix":"junk","status":0,"stdoutBytes":8806,"stderr":""}
+{"suffix":"f","status":0,"stdoutBytes":8806,"stderr":""}
+{"suffix":"  ","status":0,"stdoutBytes":8806,"stderr":""}

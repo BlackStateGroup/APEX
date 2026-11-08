@@ -1,6 +1,7 @@
-import { encode, FrameDecoder, Kind, Opcode, text, VERSION } from '../protocol/index.ts';
+import { encode, FrameDecoder, Kind, MAX_PAYLOAD, Opcode, text, VERSION } from '../protocol/index.ts';
 import type { Frame } from '../protocol/index.ts';
 import type { ByteTransport, SourceKind } from './transport.ts';
+import { parseBoundedJson } from './bounded-json.ts';
 
 export const operations = {
   'system.info': Opcode.Info,
@@ -17,8 +18,30 @@ type Pending = {
   resolve: (bytes: Uint8Array) => void; reject: (error: Error) => void;
 };
 
+const typedArrayPrototype = Object.getPrototypeOf(Uint8Array.prototype);
+const viewTag = Object.getOwnPropertyDescriptor(typedArrayPrototype, Symbol.toStringTag)!.get!;
+const viewSize = Object.getOwnPropertyDescriptor(typedArrayPrototype, 'byteLength')!.get!;
+const viewBuffer = Object.getOwnPropertyDescriptor(typedArrayPrototype, 'buffer')!.get!;
+const viewOffset = Object.getOwnPropertyDescriptor(typedArrayPrototype, 'byteOffset')!.get!;
+const bufferSize = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'byteLength')!.get!;
+const bufferResizable = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, 'resizable')?.get;
+
+function responseSnapshot(input: Uint8Array): Uint8Array {
+  // Public validators also enforce the wire bound before decoding. Intrinsic
+  // accessors ignore shadowed properties; accept only fixed, nonshared storage.
+  if (!(input instanceof Uint8Array) || viewTag.call(input) !== 'Uint8Array') throw new Error('Invalid response bytes');
+  const size: number = viewSize.call(input);
+  const buffer: ArrayBuffer = viewBuffer.call(input);
+  const offset: number = viewOffset.call(input);
+  bufferSize.call(buffer);
+  if (bufferResizable?.call(buffer) || size < 1 || size > MAX_PAYLOAD) throw new Error('Invalid response byte bounds');
+  return new Uint8Array(new Uint8Array(buffer, offset, size));
+}
+
 function object(bytes: Uint8Array): Record<string, unknown> {
-  const value: unknown = JSON.parse(text(bytes));
+  // Eight simultaneously open containers retain bounded extension fields while
+  // rejecting ambiguous duplicate decoded keys anywhere in a response.
+  const value = parseBoundedJson(text(responseSnapshot(bytes)), MAX_PAYLOAD, 8);
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Invalid response object');
   return value as Record<string, unknown>;
 }
@@ -30,7 +53,8 @@ export function validateInfo(bytes: Uint8Array): DeviceInfo {
       throw new Error(`Invalid identity field: ${key}`);
     }
   }
-  if (value.protocol !== VERSION || !['simulator', 'host', 'accessory'].includes(String(value.source))) {
+  if (value.protocol !== VERSION || typeof value.source !== 'string' ||
+      !['simulator', 'host', 'accessory'].includes(value.source)) {
     throw new Error('Unsupported device identity/protocol');
   }
   return value as unknown as DeviceInfo;
@@ -54,6 +78,11 @@ export class DeviceSession {
   private nextId = 1;
   private timeoutMs: number;
   private maxPending: number;
+  private releasePending = false;
+  private releaseAttempt: Promise<void> | null = null;
+  private releaseInFlight = false;
+  private connectPending = false;
+  private releaseBeforeConnectSettled = false;
   state: 'new' | 'opening' | 'open' | 'closed' = 'new';
   info: DeviceInfo | null = null;
   capabilities: Operation[] = [];
@@ -70,16 +99,26 @@ export class DeviceSession {
   }
   get source(): SourceKind { return this.transport.source; }
   get pendingCount(): number { return this.pending.size; }
+  /** Closed is protocol state, not confirmation that transport cleanup succeeded. */
+  get transportReleasePending(): boolean { return this.releasePending; }
 
   async open(): Promise<void> {
     if (this.state !== 'new') throw new Error('Session cannot be reused');
     this.state = 'opening';
-    this.unsubscribers = [
-      this.transport.onData(bytes => this.decoder.push(bytes)),
-      this.transport.onDisconnect(error => { this.terminate(error); void this.transport.disconnect().catch(() => {}); }),
-    ];
+    this.releasePending = true;
     try {
-      await this.transport.connect();
+      this.register(this.transport.onData(bytes => {
+        if (this.state === 'opening' || this.state === 'open') this.decoder.push(bytes);
+      }));
+      if (this.state !== 'opening') throw new Error('Connection closed during listener setup');
+      this.register(this.transport.onDisconnect(error => {
+        if (this.state === 'closed') return;
+        this.terminate(error); void this.releaseTransport().catch(() => {});
+      }));
+      if (this.state !== 'opening') throw new Error('Connection closed during listener setup');
+      this.connectPending = true;
+      try { await this.transport.connect(); }
+      finally { this.connectPending = false; }
       if (this.state !== 'opening') throw new Error('Connection closed during open');
       this.info = validateInfo(await this.exchange(Opcode.Info, new Uint8Array()));
       this.capabilities = validateCapabilities(await this.exchange(Opcode.Capabilities, new Uint8Array()));
@@ -87,7 +126,7 @@ export class DeviceSession {
       this.state = 'open';
     } catch (error) {
       this.terminate(error instanceof Error ? error : new Error(String(error)));
-      await this.transport.disconnect().catch(() => {});
+      await this.releaseTransport().catch(() => {});
       throw error;
     }
   }
@@ -139,15 +178,49 @@ export class DeviceSession {
     item.resolve(frame.payload);
   }
 
+  private register(unsubscribe: () => void): void {
+    if (this.state !== 'closed') this.unsubscribers.push(unsubscribe);
+    else { try { unsubscribe(); } catch { /* Still perform transport cleanup. */ } }
+  }
   private terminate(error: Error): void {
     this.state = 'closed';
     this.info = null; this.capabilities = [];
-    for (const unsubscribe of this.unsubscribers.splice(0)) unsubscribe();
+    for (const unsubscribe of this.unsubscribers.splice(0)) {
+      try { unsubscribe(); } catch { /* One bad listener must not prevent remaining cleanup. */ }
+    }
     for (const item of this.pending.values()) { clearTimeout(item.timer); item.reject(error); }
     this.pending.clear(); this.decoder.reset();
   }
+  private releaseTransport(retry = false): Promise<void> {
+    if (!this.releasePending && (!retry || this.releaseAttempt)) return Promise.resolve();
+    // A terminal event and open's catch must not silently retry a failed release.
+    // Concurrent closes join the current attempt; only a later explicit close retries.
+    if (this.releaseAttempt && (!retry || this.releaseInFlight)) {
+      const attempt = this.releaseAttempt;
+      return attempt.then(() => {
+        if (this.releaseAttempt !== attempt) return this.releaseTransport();
+        if (!this.connectPending && this.releaseBeforeConnectSettled) {
+          // Early cancellation cannot prove a later acquisition was released.
+          // This follows a successful release, never retries a rejected one.
+          this.releaseBeforeConnectSettled = false;
+          this.releaseAttempt = null;
+          return this.releaseTransport();
+        }
+      });
+    }
+    // Explicit close also cleans a transport supplied already connected by a caller.
+    this.releasePending = true;
+    this.releaseInFlight = true;
+    this.releaseAttempt = Promise.resolve().then(() => {
+      this.releaseBeforeConnectSettled = this.connectPending;
+      return this.transport.disconnect({ retryFailedCleanup: retry });
+    }).then(() => {
+      if (!this.releaseBeforeConnectSettled) this.releasePending = false;
+    }).finally(() => { this.releaseInFlight = false; });
+    return this.releaseAttempt;
+  }
   async close(): Promise<void> {
     this.terminate(new Error('Session closed'));
-    await this.transport.disconnect();
+    await this.releaseTransport(true);
   }
 }

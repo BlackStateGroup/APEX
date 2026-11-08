@@ -1,0 +1,5 @@
+overflow: ATT=0 requests=20 delivered=4 dropped=16 terminate_calls=16 subscribed=1
+retry: failures=10 queued=2 timer=0 subscribed=1 termination=1
+repeat subscription: response_prefix=20 replacement_READY=9 partial_input=0
+pending READY: slots=4 requests=4 responses=3 marker=9 dropped=1
+successful terminate request: cleanup occurs only after injected disconnect
