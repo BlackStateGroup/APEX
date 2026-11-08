@@ -1,0 +1,22 @@
+{
+  "executable": "gcc",
+  "args": [
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-I",
+    "/workspace/scratch/b96d3539d24d/apex-rea-flow/verification/rea-flow/2026-11-08/inputs",
+    "/workspace/scratch/b96d3539d24d/apex-rea-flow/verification/rea-flow/2026-11-08/inputs/apex-poly8005.c",
+    "/workspace/scratch/b96d3539d24d/apex-rea-flow/verification/rea-flow/2026-11-08/inputs/main.c",
+    "-o",
+    "/workspace/scratch/b96d3539d24d/apex-rea-flow/verification/rea-flow/2026-11-08/O2-poly8005.elf"
+  ],
+  "status": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "",
+  "stderr": ""
+}

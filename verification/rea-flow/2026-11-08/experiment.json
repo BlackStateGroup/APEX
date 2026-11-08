@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "investigation": "RES-01A",
+  "question": "How does optimization alter the location of the known AXP CRC implementation, and can byte-bound structural evidence distinguish a controlled polynomial mutation?",
+  "targetScope": "Only own portable APEX host firmware; no external targets or hardware.",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "sourceFiles": [
+    {
+      "file": "firmware/core/apex.c",
+      "retainedFile": "inputs/apex.c",
+      "sha256": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee"
+    },
+    {
+      "file": "firmware/core/apex.h",
+      "retainedFile": "inputs/apex.h",
+      "sha256": "d2afe3870cf7ef794bcf33a3e57f0cb0c05e91c22534cfd5a0e67b6c08c1b588"
+    },
+    {
+      "file": "firmware/host/main.c",
+      "retainedFile": "inputs/main.c",
+      "sha256": "e56dfa51ff1206df9c0101c565d56c921773943c3cdcaa74d89fe4d60a326f6d"
+    }
+  ],
+  "controlledMutation": {
+    "retainedFile": "inputs/apex-poly8005.c",
+    "sha256": "90593c5a1aa2c1fe28de8c8d86ee5a02fe666d9427fa38e731ece49384d5b76c"
+  },
+  "variants": [
+    {
+      "id": "O0",
+      "optimization": "-O0",
+      "mutation": null,
+      "sourceSha256": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+      "artifactFile": "O0.elf",
+      "artifactSha256": "ec2cc99bc2e152ab050b2b86ef6d8693bbdb11afb711bd1fd90660f4a42862f6",
+      "reportFile": "O0/control-flow.json",
+      "reportSha256": "49be7da313c3942955a190d26211a3efdd226d68f2960b1dd1ed98f4d0f174ea",
+      "functions": [
+        {
+          "name": "apex_crc16",
+          "byteLength": 123,
+          "instructions": 36,
+          "blocks": 10,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": true,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_encode",
+          "byteLength": 360,
+          "instructions": 102,
+          "blocks": 16,
+          "directCallsToCrc": 1,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_init",
+          "byteLength": 75,
+          "instructions": 20,
+          "blocks": 2,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_feed",
+          "byteLength": 746,
+          "instructions": 172,
+          "blocks": 36,
+          "directCallsToCrc": 1,
+          "unresolvedTransfers": 1,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_init",
+          "byteLength": 79,
+          "instructions": 21,
+          "blocks": 2,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_feed",
+          "byteLength": 46,
+          "instructions": 15,
+          "blocks": 2,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        }
+      ]
+    },
+    {
+      "id": "O2",
+      "optimization": "-O2",
+      "mutation": null,
+      "sourceSha256": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+      "artifactFile": "O2.elf",
+      "artifactSha256": "a9d2393adc37fffa3ef8eed26344a20d572930ec207f26de96c07db07ea7cca5",
+      "reportFile": "O2/control-flow.json",
+      "reportSha256": "a60609ada16d880f70e0133607b1c0a25978746d88bfc278f56115a2e05a4fb7",
+      "functions": [
+        {
+          "name": "apex_crc16",
+          "byteLength": 70,
+          "instructions": 24,
+          "blocks": 7,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": true,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_encode",
+          "byteLength": 266,
+          "instructions": 76,
+          "blocks": 16,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": true,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_init",
+          "byteLength": 53,
+          "instructions": 13,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_feed",
+          "byteLength": 683,
+          "instructions": 154,
+          "blocks": 39,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 1,
+          "immediate1021": true,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_init",
+          "byteLength": 75,
+          "instructions": 16,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_feed",
+          "byteLength": 5,
+          "instructions": 1,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        }
+      ]
+    },
+    {
+      "id": "Os",
+      "optimization": "-Os",
+      "mutation": null,
+      "sourceSha256": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+      "artifactFile": "Os.elf",
+      "artifactSha256": "08879a493a1383c66be2602119303496a5eb8a4cdae813548061c9d9ab76d37a",
+      "reportFile": "Os/control-flow.json",
+      "reportSha256": "7588317443d3104e40d2babfdca53142b954b8e5dd34210420cd7b8a8c225714",
+      "functions": [
+        {
+          "name": "apex_crc16",
+          "byteLength": 49,
+          "instructions": 18,
+          "blocks": 8,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": true,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_encode",
+          "byteLength": 138,
+          "instructions": 42,
+          "blocks": 10,
+          "directCallsToCrc": 1,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_init",
+          "byteLength": 27,
+          "instructions": 7,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_feed",
+          "byteLength": 340,
+          "instructions": 89,
+          "blocks": 25,
+          "directCallsToCrc": 1,
+          "unresolvedTransfers": 1,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_init",
+          "byteLength": 29,
+          "instructions": 5,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_feed",
+          "byteLength": 5,
+          "instructions": 1,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        }
+      ]
+    },
+    {
+      "id": "O2-poly8005",
+      "optimization": "-O2",
+      "mutation": "One local source-copy substitution: polynomial 0x1021u → 0x8005u. Not a production firmware change.",
+      "sourceSha256": "90593c5a1aa2c1fe28de8c8d86ee5a02fe666d9427fa38e731ece49384d5b76c",
+      "artifactFile": "O2-poly8005.elf",
+      "artifactSha256": "ba524bf91762776f3e96307d99bcb7fcfb129fab5ada259183e4e1574e617f26",
+      "reportFile": "O2-poly8005/control-flow.json",
+      "reportSha256": "550a697e95b894cf1ce903859731745bc7a6d6343e630446e5508925e28eff8c",
+      "functions": [
+        {
+          "name": "apex_crc16",
+          "byteLength": 70,
+          "instructions": 24,
+          "blocks": 7,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": true
+        },
+        {
+          "name": "apex_encode",
+          "byteLength": 266,
+          "instructions": 76,
+          "blocks": 16,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": true
+        },
+        {
+          "name": "apex_stream_init",
+          "byteLength": 53,
+          "instructions": 13,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_stream_feed",
+          "byteLength": 683,
+          "instructions": 154,
+          "blocks": 39,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 1,
+          "immediate1021": false,
+          "immediate8005": true
+        },
+        {
+          "name": "apex_device_init",
+          "byteLength": 75,
+          "instructions": 16,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        },
+        {
+          "name": "apex_device_feed",
+          "byteLength": 5,
+          "instructions": 1,
+          "blocks": 1,
+          "directCallsToCrc": 0,
+          "unresolvedTransfers": 0,
+          "immediate1021": false,
+          "immediate8005": false
+        }
+      ]
+    }
+  ],
+  "targetExecuted": false,
+  "decompilationPerformed": false,
+  "semanticEquivalenceProved": false,
+  "interpretationLimits": [
+    "Observed constants and call edges locate candidates, not recovered algorithms. The expected source behavior is known, so this is a controlled validation experiment, not blind discovery.",
+    "Optimization-specific inlining must be interpreted from evidence and source, not assumed solely from missing calls. Indirect callbacks remain unresolved.",
+    "The changed polynomial is a negative control, not a vulnerability or a cryptographic break. No functional output or physical behavior was measured."
+  ]
+}
