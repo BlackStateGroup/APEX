@@ -1,6 +1,5 @@
 package expo.modules.apexdevice
 
-import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -29,6 +28,7 @@ class ApexDeviceModule : Module() {
   private var receiverContext: Context? = null
   private var permissionPromise: Promise? = null
   private var permissionDeviceId: Int? = null
+  private var permissionCallback: UsbPermissionCallback? = null
   private var permissionTimeout: Runnable? = null
   private val lock = Any()
   private val writeLock = Any()
@@ -50,14 +50,15 @@ class ApexDeviceModule : Module() {
   private val receiver = object : BroadcastReceiver() {
     @Suppress("DEPRECATION")
     override fun onReceive(ctx: Context, intent: Intent) {
-      val device = intent.getParcelableExtra<UsbDevice>(UsbManager.EXTRA_DEVICE) ?: return
-      if (intent.action == permissionAction() && permissionDeviceId == device.deviceId) {
-        val granted = manager().hasPermission(device)
+      if (intent.action == permissionAction()) {
+        val granted = permissionCallback?.readResult(intent, manager()) ?: return
         permissionTimeout?.let { handler.removeCallbacks(it) }
         val promise = permissionPromise
+        permissionCallback?.cancel(); permissionCallback = null
         permissionPromise = null; permissionDeviceId = null; permissionTimeout = null
         promise?.resolve(granted)
       } else if (intent.action == UsbManager.ACTION_USB_DEVICE_DETACHED) {
+        val device = intent.getParcelableExtra<UsbDevice>(UsbManager.EXTRA_DEVICE) ?: return
         if (link?.deviceId == device.deviceId) closeLink("USB device detached")
         if (permissionDeviceId == device.deviceId) rejectPermission("Device detached during permission request")
       }
@@ -76,6 +77,7 @@ class ApexDeviceModule : Module() {
   private fun rejectPermission(message: String) {
     permissionTimeout?.let { handler.removeCallbacks(it) }
     val promise = permissionPromise
+    permissionCallback?.cancel(); permissionCallback = null
     permissionPromise = null; permissionDeviceId = null; permissionTimeout = null
     promise?.reject("USB_PERMISSION", message, null)
   }
@@ -105,9 +107,9 @@ class ApexDeviceModule : Module() {
           permissionPromise = promise; permissionDeviceId = id
           val timeout = Runnable { rejectPermission("USB permission request timed out") }
           permissionTimeout = timeout; handler.postDelayed(timeout, 30000)
-          val intent = Intent(permissionAction()).setPackage(context().packageName)
-          val pending = PendingIntent.getBroadcast(context(), id, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-          manager().requestPermission(device, pending)
+          val callback = UsbPermissionCallback.create(context(), permissionAction(), device)
+          permissionCallback = callback
+          manager().requestPermission(device, callback.pendingIntent)
         }
       } catch (error: Exception) {
         if (permissionPromise === promise) rejectPermission(error.message ?: "Permission request failed")
