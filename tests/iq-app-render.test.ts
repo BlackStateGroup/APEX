@@ -75,8 +75,8 @@ test('actual IQ TSX projects bounded immutable results, selectable full hashes a
  c.stageFile('data',{name:'short',size:4,arrayBuffer:async()=>new ArrayBuffer(4)},c.lease,c.state);await c.inspect(c.lease,c.state);html=render(c);
  assert.match(html,/Insufficient samples for default 1024-sample FFT/);assert.match(html,/Full-file statistics only; no padding/);assert.doesNotMatch(html,/data-selectable="true">Bin /);assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script|<a\b/);
 });
-test('native input is truthful, inert and has no unsupported file picker or paste fallback',()=>{
- const html=renderToStaticMarkup(React.createElement(NativeInput,{onFile:no}));assert.match(html,/Arbitrary local file import is unavailable/);assert.match(html,/synthetic example/);assert.doesNotMatch(html,/<input|<textarea|<button/);
+test('native input renders inert explicit controls without a paste fallback',()=>{
+ const html=renderToStaticMarkup(React.createElement(NativeInput,{onFile:no}));assert.match(html,/Choose native I\/Q pair/);assert.match(html,/Synthetic examples/);assert.doesNotMatch(html,/<input|<textarea/);
 });
 test('actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged',async()=>{
  reset();let p=refresh();let reads=0;
@@ -104,7 +104,7 @@ test('actual owner callbacks fence stale events and retain single job across bac
 test('IQ source wiring keeps one stable mounted owner and excludes save/network/device and unrelated analyses',()=>{
  const read=(path:string)=>readFileSync(new URL(path,root),'utf8');
  const app=read('App.tsx');assert.equal((app.match(/<IqWorkbench /g)||[]).length,1);assert.match(app,/\n\s*<IqWorkbench active=\{tab === 'Analysis' && inspector === 'iq'\} \/>/);
- for(const path of ['src/iq-workbench.ts','src/IqWorkbench.tsx','src/platform/iq-input.tsx','src/platform/iq-input.native.tsx','src/platform/iq-digest.ts','src/platform/iq-digest.native.ts'])assert.doesNotMatch(read(path),/\bfetch\s*\(|XMLHttpRequest|\.save\(|AsyncStorage|Clipboard|Linking|expo-document-picker|digestStringAsync|requestPermission/);
+ for(const path of ['src/iq-workbench.ts','src/IqWorkbench.tsx','src/platform/iq-input.tsx','src/platform/iq-input.native.tsx','src/platform/iq-digest.ts','src/platform/iq-digest.native.ts'])assert.doesNotMatch(read(path),/\bfetch\s*\(|XMLHttpRequest|\.save\(|AsyncStorage|Clipboard|Linking|digestStringAsync|requestPermission/);
  assert.match(read('src/iq-workbench.ts'),/analyzeIq\(prepared,options\)/);assert.doesNotMatch(read('src/iq-workbench.ts'),/analyzeIqLag|analyzeIqPhase/);
 });
 
@@ -126,7 +126,7 @@ test('actual TF owner events stage strict geometry, select frames/pages and fenc
  reset();let p=refresh();p.toneExample();p=refresh();p.mode('time-frequency');p=refresh();p.size(256);p=refresh();p.hop('256');p=refresh();p.count('32');p=refresh();assert.equal(p.state.timeFrequencyReport,null);assert.equal(p.state.busy,false);p.inspect();await settle();p=refresh();assert.equal(p.state.report,null);assert.equal(p.state.timeFrequencyReport!.cellCount,8192);assert.equal(p.state.frames.length,4);
  const stale=p;p.framePage(7);p=refresh();assert.deepEqual(p.state.frames.map(f=>f.index),[28,29,30,31]);p.selectFrame(31);p=refresh();assert.equal(p.state.selectedFrame!.peakSignedBin,-64);p.page(31);p=refresh();assert.equal(p.state.bins.at(-1)!.signedBin,127);stale.count('1');stale.selectFrame(0);stale.framePage(0);stale.page(0);assert.equal(refresh().state,p.state);
  p.hop('655360');p=refresh();assert.equal(p.state.hopText,'');assert.equal(p.state.hopSamples,null);assert.equal(p.state.timeFrequencyReport,null);assert.equal(p.state.frames.length,0);p.inspect();await settle();assert.equal(refresh().state.timeFrequencyReport,null);
- p=refresh();p.example();p=refresh();assert.equal(p.state.windowMode,'default');assert.equal(p.state.hopSamples,1024);assert.equal(p.state.frameCount,1);p.mode('time-frequency');p=refresh();p.inspect();await settle();p=refresh();assert.equal(p.state.selectedFrame!.peakSignedBin,null);assert.match(renderToStaticMarkup(React.createElement(NativeInput,{onFile:no})),/Arbitrary local file import is unavailable/);
+ p=refresh();p.example();p=refresh();assert.equal(p.state.windowMode,'default');assert.equal(p.state.hopSamples,1024);assert.equal(p.state.frameCount,1);p.mode('time-frequency');p=refresh();p.inspect();await settle();p=refresh();assert.equal(p.state.selectedFrame!.peakSignedBin,null);assert.match(renderToStaticMarkup(React.createElement(NativeInput,{onFile:no})),/Choose native I\/Q pair/);
  emit('background');p=refresh();assert.equal(p.state.timeFrequencyReport,null);assert.equal(p.state.windowMode,'default');assert.equal(p.state.data,null);reset();
 });
 test('actual TF projection bounded frame/bin rows, exact source provenance and no incidental statistics',async()=>{
@@ -154,4 +154,12 @@ test('actual peak control is accessible, null-disabled and navigates current sin
   for(const action of ['edit','mode','clear','exit']){const old=control(p);if(action==='edit')p.start('1');if(action==='mode')p.mode('default');if(action==='clear')p.clear();if(action==='exit')emit('background');const current=refresh().state;old.props.onPress();assert.equal(refresh().state,current);if(action!=='exit'){p=refresh();p.toneExample();p=refresh();p.inspect();await settle();p=refresh();}}
   reset();p=refresh();p.example();p=refresh();p.mode(mode);p=refresh();p.inspect();await settle();p=refresh();assert.equal(control(p).props.disabled,true);const zero=p.state;control(p).props.onPress();assert.equal(refresh().state,zero);reset();
  }
+});
+
+
+test('actual owner accepts only fresh atomic pair staging callbacks',()=>{
+ reset();let p=refresh();const stale=p.pair!;
+ const files={metadata:{name:'m',size:meta.length,arrayBuffer:async()=>new TextEncoder().encode(meta).buffer},data:{name:'d',size:4096,arrayBuffer:async()=>new ArrayBuffer(4096)}};
+ emit('background');emit('active');p=refresh();stale(files);p=refresh();assert.equal(p.state.metadata,null);
+ p.pair!(files);p=refresh();assert.equal(p.state.metadata!.name,'m');assert.equal(p.state.data!.name,'d');assert.equal(p.state.report,null);reset();
 });
