@@ -1,0 +1,2 @@
+Verified 16 blobs at 3a664b64099e4bdbdb3e6f28a5ca6b833050b21e; staged four guarded zero-length copies; SHA256 300521b05a0f6581b82cc2dde0465693f0e101fec2de35b750adb7d7c27234f8
+PASS: exact pin, deterministic four-site patch, immutable inputs, wrong-pin rejection, no output on failure.

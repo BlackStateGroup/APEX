@@ -1,0 +1,62 @@
+name: Receive-only RadioLib checks
+on:
+  pull_request:
+    paths:
+      - 'firmware/radio_rx/**'
+      - 'firmware/esp32s3-radio-rx/**'
+      - 'firmware/core/**'
+      - 'tests/radio_rx_test.cpp'
+      - 'tests/test_radio_rx_pin.py'
+      - 'tools/*radio*rx.py'
+      - 'research/radiolib-rx-pin.json'
+      - '.github/workflows/radio-rx.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: radio-rx-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: jgromes/RadioLib
+          ref: 3a664b64099e4bdbdb3e6f28a5ca6b833050b21e
+          path: _deps/RadioLib
+          persist-credentials: false
+      - run: python3 tools/check_radio_rx.py --radiolib-root _deps/RadioLib
+      - run: python3 tests/test_radio_rx_pin.py --radiolib-root _deps/RadioLib
+      - run: python3 tools/check_radio_rx.py --radiolib-root _deps/RadioLib --sanitize
+        env:
+          ASAN_OPTIONS: detect_leaks=1
+          UBSAN_OPTIONS: halt_on_error=1
+  esp32s3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    container: espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c
+    strategy:
+      matrix:
+        mode: [disabled, compile-only-enabled]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: jgromes/RadioLib
+          ref: 3a664b64099e4bdbdb3e6f28a5ca6b833050b21e
+          path: _deps/RadioLib
+          persist-credentials: false
+      - name: Cross-compile, never flash
+        shell: bash
+        env:
+          BUILD_MODE: ${{ matrix.mode }}
+        run: |
+          . /opt/esp/idf/export.sh
+          if [ "$BUILD_MODE" = compile-only-enabled ]; then
+            # These compile-only placeholders are NOT a wiring recommendation.
+            printf '\nCONFIG_APEX_RADIO_RX_ENABLE=y\nCONFIG_APEX_RADIO_SCK=6\nCONFIG_APEX_RADIO_MISO=7\nCONFIG_APEX_RADIO_MOSI=8\nCONFIG_APEX_RADIO_CS=10\nCONFIG_APEX_RADIO_GDO0=9\n' >> firmware/esp32s3-radio-rx/sdkconfig.defaults
+          fi
+          idf.py -C firmware/esp32s3-radio-rx -DRADIOLIB_SOURCE_DIR="$GITHUB_WORKSPACE/_deps/RadioLib" set-target esp32s3 build

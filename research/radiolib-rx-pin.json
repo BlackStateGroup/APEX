@@ -1,0 +1,24 @@
+{
+  "repository": "jgromes/RadioLib",
+  "commit": "3a664b64099e4bdbdb3e6f28a5ca6b833050b21e",
+  "license": "MIT",
+  "apexBase": "d4434c5cf789938447e83e49a5cfcbdf68b59277",
+  "files": {
+    "license.txt": "201215f256b25b620461ad16e227ae2a5b32303f",
+    "src/BuildOpt.h": "b932f690a651ba17734ab57249d353d1ab016cd6",
+    "src/BuildOptUser.h": "54f16d808f3a9060c55a80ecd174db8d6bfcf916",
+    "src/Hal.cpp": "1513b5d4dedb05b397a719794b95b0821590cee9",
+    "src/Hal.h": "0c842df2b6b1edc8f9aa31dd76760c4d8cc4a8a0",
+    "src/Module.cpp": "03ae7df8162ec924e8c1a8392e04741ffd203aaa",
+    "src/Module.h": "d0b92943b34aeec522c130085359de187d3b733b",
+    "src/TypeDef.h": "464c44961b4a05c7b334f678c519be23b4e9e0dc",
+    "src/hal/Arduino/ArduinoHal.h": "efe6d3265dd6224debde20afa54a1bd4289a9745",
+    "src/modules/CC1101/CC1101.cpp": "a7ba03e6dd290da5772f235fce6548c861bdf18c",
+    "src/modules/CC1101/CC1101.h": "36b7c5ea51b814fa598cfac173fcbcc3b61850c9",
+    "src/protocols/PhysicalLayer/PhysicalLayer.cpp": "02d6cd9642388d63a2455fc5f38386714111b1e1",
+    "src/protocols/PhysicalLayer/PhysicalLayer.h": "3681f61629c1025849d24ff05d3ddde2545056ba",
+    "src/utils/Cryptography.h": "3dd826e61acc0b7b61d42ffa9b91cc978b3cf3f1",
+    "src/utils/Utils.cpp": "5d3b5820861faddc7cc896c777cc5f1a8851d9c2",
+    "src/utils/Utils.h": "f668a13ea4e43351ffbc932f439c85b0a7d17b85"
+  }
+}
