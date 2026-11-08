@@ -49,6 +49,8 @@ jobs:
           java-version: '21'
       - run: npm ci
       - run: npx expo prebuild --platform android --no-install
+      - name: Bound Gradle distribution download timeout
+        run: node tools/configure-gradle-download.mjs android/gradle/wrapper/gradle-wrapper.properties
       - name: Compile native module
         working-directory: android
         run: ./gradlew :apex-device:compileDebugKotlin --no-daemon
