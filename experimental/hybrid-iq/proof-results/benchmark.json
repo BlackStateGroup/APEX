@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "mode": "benchmark",
+  "backend": "cpp",
+  "status": "PASS",
+  "startedAt": "2026-11-08T17:01:39.656Z",
+  "referenceCommit": "d4434c5cf789938447e83e49a5cfcbdf68b59277",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "rustCompiled": false,
+  "mobileAcceptance": "NOT RUN",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.57",
+    "node": "v24.22.1",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  },
+  "contract": "JS-runtime-owned Hann/twiddle plans; strict C++ binary64 FFT; JS hypot/log/peak. Exact numerical projection, including signed zeros; no tolerances in differential gate.",
+  "sourceSha256": {
+    "contract.mjs": "106e32b737826dbe5ff3d32ec6a775f8e776d4d0b7e55cb0e9254c6941ae9971",
+    "proof.mjs": "4215964257f07d8943ec374a7591ad6104f7c08daf1986e581ae0c8f9c57d11b",
+    "reference.mjs": "c2a93682d0220f84d61b2baa7c3054d5a0337b72b21810e347a8a52422c9c4e4",
+    "src/kernel.h": "0ce5a1a11185a4ea4efd1771813f881f7ffa80192ba437c111c2a1225b0b21a8",
+    "src/kernel.cpp": "404956d68d26490a5db70f5a60ffb905abd66e74f20b31b04d7198b5988576cc",
+    "src/host.cpp": "90fbcf8f82321199780dacfa1de2bbfa1bbc2a1a9e9da3147b90482977aad90c",
+    "src/abi_test.cpp": "de159ce1d53feafdb73e0de63126ce3d0f0afbe7c33411c8383ac0b351a19c81",
+    "../../packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "../../packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+    "../../packages/core/bounded-json.ts": "2dc9c63e96aed350348590119d8e5c0963e9d35f2da3e509b124bc8147690212",
+    "../cpp-iq/proof-codec.mjs": "e289812af0959ef37e39410bf2a2e9a4f25d46fabebb1608554540f23316c7e5",
+    "../cpp-iq/extra-fixtures.mjs": "8ca1f0e40277b7bf959dee014a82b71e5d8cdd8b3696d5ba5971691be79c2da9",
+    "rust/Cargo.toml": "c5c6f3fde2ff569571845a86fe866a145a7d21a79f15e21a5f6cc0710157825a",
+    "rust/Cargo.lock": "1864838bbc8b57c8e2442db7d4fd0acdcbf68b9c5745c6d08ebac65afd988ea4",
+    "rust/build.rs": "ece22fa488c41dd1494b73c0d77a1b4781678e294a6b20561d2ebe842b710195",
+    "rust/src/lib.rs": "d166d225d7713f7b925f9beb2968ae0a5099fa6a6291caba3ec7955cc32e4779",
+    "rust/src/main.rs": "0e28a2923d3c12dd4f4e9a5448727e868e784dc2687cca1ab20bda6bf5312c14"
+  },
+  "stages": [
+    {
+      "name": "pinned-current-source-blobs",
+      "status": "PASS",
+      "blobs": {
+        "../../packages/core/iq-analysis.ts": "c1d65937e402e53f93e40838fa89fc4063b391b7",
+        "../../packages/core/iq-offline.ts": "df6a1bea6fe1dd527e91be2979538ee054a4387f",
+        "../../packages/core/bounded-json.ts": "aed4bc98243b3bcda2ed205bf210940b95e7c49b",
+        "../cpp-iq/proof-codec.mjs": "d4446c5beee30d84139780806e0be67f02276d36",
+        "../cpp-iq/extra-fixtures.mjs": "3439245113f986011a9c810005665cae9804959f"
+      }
+    },
+    {
+      "name": "compiler-version",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "--version"
+      ]
+    },
+    {
+      "name": "compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "src/kernel.cpp",
+        "src/host.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/host-benchmark"
+      ]
+    },
+    {
+      "name": "abi-compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "src/kernel.cpp",
+        "src/abi_test.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/abi-benchmark"
+      ]
+    },
+    {
+      "name": "abi-tests",
+      "status": "PASS",
+      "command": [
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/abi-benchmark"
+      ]
+    },
+    {
+      "name": "prior-61-case-exact-equivalence",
+      "status": "PASS",
+      "cases": 61,
+      "windows": 190,
+      "bins": 137216,
+      "rawComplexComponentsExactlyEqual": 274432,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "dc301eeab13c46ef178efd8f118650cdf16c23e1f8dd029679465985a5d01cc9"
+    },
+    {
+      "name": "all-7936-impulse-positions-exact-equivalence",
+      "status": "PASS",
+      "cases": 1364,
+      "windows": 7936,
+      "bins": 22347776,
+      "rawComplexComponentsExactlyEqual": 44695552,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "47a37e2b8b2db1982d5f81e0537c9749b84b61cdbe49537f71caf12b3435c0ea"
+    },
+    {
+      "name": "seeded-full-range-selection-exact-equivalence",
+      "status": "PASS",
+      "cases": 60,
+      "windows": 798,
+      "bins": 544256,
+      "rawComplexComponentsExactlyEqual": 1088512,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "4e365b97ef412fb946c93dd974518fcb621874cdceacd6db0785c9ebe46c317e"
+    },
+    {
+      "name": "bounded-rejection-and-ownership",
+      "status": "PASS",
+      "nativeRejected": 51,
+      "responseRejected": 21
+    },
+    {
+      "name": "independent-quadratic-dft",
+      "status": "PASS",
+      "cases": 14,
+      "bins": 3584,
+      "maxAbsoluteAmplitudeError": 8.864818974100696e-15,
+      "tolerance": "1e-9*(1+abs(DFT)) only for independent approximation, never for equivalence"
+    },
+    {
+      "name": "host-diagnostic-timings",
+      "status": "PASS",
+      "batches": 7,
+      "iterations": 25,
+      "results": [
+        {
+          "fixture": "integer-mix-4096",
+          "nativeFftMs": [
+            0.06139204,
+            0.06850112,
+            0.05745292,
+            0.05666731999999999,
+            0.07113432,
+            0.06267236,
+            0.05754988
+          ],
+          "jsDecodeAndProjectionMs": [
+            0.8523584400000982,
+            0.8252902799998992,
+            0.8677272000000812,
+            0.6563666799999192,
+            0.6661066000000574,
+            0.9003755199999433,
+            0.6536842800001614
+          ],
+          "referenceJsMs": [
+            1.709699519999849,
+            1.8730225199999404,
+            1.9766064399998868,
+            1.6016508800000884,
+            1.6723625200000243,
+            1.6737507999999799,
+            1.646362960000115
+          ],
+          "hostSingleProcessRoundtripMs": [
+            9.330268999998225,
+            9.034963999998581,
+            10.063253000000259,
+            9.195797000000312,
+            9.84665700000187,
+            10.424015000004147,
+            9.094372999999905
+          ],
+          "nativeFftMedianMs": 0.06139204,
+          "jsDecodeAndProjectionMedianMs": 0.8252902799998992,
+          "referenceJsMedianMs": 1.6737507999999799,
+          "hostSingleProcessRoundtripMedianMs": 9.330268999998225,
+          "requestBytes": 114704,
+          "responseBytes": 65560
+        },
+        {
+          "fixture": "selection-256-64-1-0",
+          "nativeFftMs": [
+            0.31775364,
+            0.13818288,
+            0.142654,
+            0.12648208,
+            0.28419792,
+            0.1305598,
+            0.15797948
+          ],
+          "jsDecodeAndProjectionMs": [
+            11.633270840000186,
+            2.440545239999774,
+            2.25175796000025,
+            2.0013871600001583,
+            2.0816756400000305,
+            2.2039658000000055,
+            2.0614616000000385
+          ],
+          "referenceJsMs": [
+            9.276744720000133,
+            5.428299600000027,
+            5.974864560000133,
+            4.779654919999884,
+            5.089994199999783,
+            4.986054479999876,
+            4.841833719999995
+          ],
+          "hostSingleProcessRoundtripMs": [
+            19.308202000000165,
+            16.628888999999617,
+            16.79000100000121,
+            14.771371999995608,
+            14.337767999997595,
+            15.106085999999777,
+            16.223277999997663
+          ],
+          "nativeFftMedianMs": 0.142654,
+          "jsDecodeAndProjectionMedianMs": 2.2039658000000055,
+          "referenceJsMedianMs": 5.089994199999783,
+          "hostSingleProcessRoundtripMedianMs": 16.223277999997663,
+          "requestBytes": 268304,
+          "responseBytes": 262168
+        },
+        {
+          "fixture": "selection-4096-4-4096-37",
+          "nativeFftMs": [
+            0.26571691999999997,
+            0.27565868,
+            0.2405518,
+            0.26061744000000003,
+            0.21240464,
+            0.22587848000000002,
+            0.20871183999999998
+          ],
+          "jsDecodeAndProjectionMs": [
+            2.1153099200001453,
+            2.065898720000114,
+            2.387509720000089,
+            2.216181000000215,
+            2.0791117999999553,
+            2.140964920000115,
+            2.0987180799999625
+          ],
+          "referenceJsMs": [
+            5.054727079999866,
+            24.725152159999997,
+            5.8534725599997905,
+            6.041903720000119,
+            5.71292895999999,
+            5.498673159999889,
+            5.645752600000123
+          ],
+          "hostSingleProcessRoundtripMs": [
+            19.289770999996108,
+            46.144481000003,
+            18.21366499999567,
+            17.81952099999762,
+            17.431327000005695,
+            17.436906000002637,
+            16.484401000001526
+          ],
+          "nativeFftMedianMs": 0.2405518,
+          "jsDecodeAndProjectionMedianMs": 2.1153099200001453,
+          "referenceJsMedianMs": 5.71292895999999,
+          "hostSingleProcessRoundtripMedianMs": 17.81952099999762,
+          "requestBytes": 360464,
+          "responseBytes": 262168
+        }
+      ],
+      "limits": [
+        "Shared Linux host, no CPU affinity, descriptive measurements only. No mobile/device or language-only speedup.",
+        "Native FFT excludes parsing/allocation; output buffer is reused and validation is timed. JS projection includes response validation and array allocation. Summed medians are not measured bridge latency.",
+        "JS reference also copies prepared bytes and creates full metadata. Native/projection costs are not identical work to full reference.",
+        "Single process roundtrip includes request/plan serialization, process launch, 3 native warmups + 1 measured FFT, response serialization/decode/projection. Not cold-kernel or real mobile bridge latency.",
+        "Plans are warm cached JS runtime plans. No Rust component is compiled or timed."
+      ]
+    }
+  ],
+  "executableSha256": "92493aeb259d9490b90563d436b40196e52fb7f31bda8d11a998ebae0e4b9a52",
+  "conclusion": "Exact tested host numerical projection and raw FFT compatibility only; not universal, Hermes, app ABI integration, mobile, or production acceptance. Rust acceptance requires backend=rust and rustCompiled=true.",
+  "finishedAt": "2026-11-08T17:02:42.597Z"
+}

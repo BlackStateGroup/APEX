@@ -1,0 +1,1 @@
+PASS: reversed FFT sign, finite output perturbation, and reference-source drift are detected; original source untouched.

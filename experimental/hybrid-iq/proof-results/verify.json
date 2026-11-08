@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "mode": "verify",
+  "backend": "cpp",
+  "status": "PASS",
+  "startedAt": "2026-11-08T16:59:07.406Z",
+  "referenceCommit": "d4434c5cf789938447e83e49a5cfcbdf68b59277",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "rustCompiled": false,
+  "mobileAcceptance": "NOT RUN",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.57",
+    "node": "v24.22.1",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  },
+  "contract": "JS-runtime-owned Hann/twiddle plans; strict C++ binary64 FFT; JS hypot/log/peak. Exact numerical projection, including signed zeros; no tolerances in differential gate.",
+  "sourceSha256": {
+    "contract.mjs": "106e32b737826dbe5ff3d32ec6a775f8e776d4d0b7e55cb0e9254c6941ae9971",
+    "proof.mjs": "4215964257f07d8943ec374a7591ad6104f7c08daf1986e581ae0c8f9c57d11b",
+    "reference.mjs": "c2a93682d0220f84d61b2baa7c3054d5a0337b72b21810e347a8a52422c9c4e4",
+    "src/kernel.h": "0ce5a1a11185a4ea4efd1771813f881f7ffa80192ba437c111c2a1225b0b21a8",
+    "src/kernel.cpp": "404956d68d26490a5db70f5a60ffb905abd66e74f20b31b04d7198b5988576cc",
+    "src/host.cpp": "90fbcf8f82321199780dacfa1de2bbfa1bbc2a1a9e9da3147b90482977aad90c",
+    "src/abi_test.cpp": "de159ce1d53feafdb73e0de63126ce3d0f0afbe7c33411c8383ac0b351a19c81",
+    "../../packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "../../packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+    "../../packages/core/bounded-json.ts": "2dc9c63e96aed350348590119d8e5c0963e9d35f2da3e509b124bc8147690212",
+    "../cpp-iq/proof-codec.mjs": "e289812af0959ef37e39410bf2a2e9a4f25d46fabebb1608554540f23316c7e5",
+    "../cpp-iq/extra-fixtures.mjs": "8ca1f0e40277b7bf959dee014a82b71e5d8cdd8b3696d5ba5971691be79c2da9",
+    "rust/Cargo.toml": "c5c6f3fde2ff569571845a86fe866a145a7d21a79f15e21a5f6cc0710157825a",
+    "rust/Cargo.lock": "1864838bbc8b57c8e2442db7d4fd0acdcbf68b9c5745c6d08ebac65afd988ea4",
+    "rust/build.rs": "ece22fa488c41dd1494b73c0d77a1b4781678e294a6b20561d2ebe842b710195",
+    "rust/src/lib.rs": "d166d225d7713f7b925f9beb2968ae0a5099fa6a6291caba3ec7955cc32e4779",
+    "rust/src/main.rs": "0e28a2923d3c12dd4f4e9a5448727e868e784dc2687cca1ab20bda6bf5312c14"
+  },
+  "stages": [
+    {
+      "name": "pinned-current-source-blobs",
+      "status": "PASS",
+      "blobs": {
+        "../../packages/core/iq-analysis.ts": "c1d65937e402e53f93e40838fa89fc4063b391b7",
+        "../../packages/core/iq-offline.ts": "df6a1bea6fe1dd527e91be2979538ee054a4387f",
+        "../../packages/core/bounded-json.ts": "aed4bc98243b3bcda2ed205bf210940b95e7c49b",
+        "../cpp-iq/proof-codec.mjs": "d4446c5beee30d84139780806e0be67f02276d36",
+        "../cpp-iq/extra-fixtures.mjs": "3439245113f986011a9c810005665cae9804959f"
+      }
+    },
+    {
+      "name": "compiler-version",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "--version"
+      ]
+    },
+    {
+      "name": "compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "src/kernel.cpp",
+        "src/host.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/host-verify"
+      ]
+    },
+    {
+      "name": "abi-compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "src/kernel.cpp",
+        "src/abi_test.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/abi-verify"
+      ]
+    },
+    {
+      "name": "abi-tests",
+      "status": "PASS",
+      "command": [
+        "/workspace/scratch/b96d3539d24d/apex-native-hybrid-proof/experimental/hybrid-iq/.build/abi-verify"
+      ]
+    },
+    {
+      "name": "prior-61-case-exact-equivalence",
+      "status": "PASS",
+      "cases": 61,
+      "windows": 190,
+      "bins": 137216,
+      "rawComplexComponentsExactlyEqual": 274432,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "dc301eeab13c46ef178efd8f118650cdf16c23e1f8dd029679465985a5d01cc9"
+    },
+    {
+      "name": "all-7936-impulse-positions-exact-equivalence",
+      "status": "PASS",
+      "cases": 1364,
+      "windows": 7936,
+      "bins": 22347776,
+      "rawComplexComponentsExactlyEqual": 44695552,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "47a37e2b8b2db1982d5f81e0537c9749b84b61cdbe49537f71caf12b3435c0ea"
+    },
+    {
+      "name": "seeded-full-range-selection-exact-equivalence",
+      "status": "PASS",
+      "cases": 60,
+      "windows": 798,
+      "bins": 544256,
+      "rawComplexComponentsExactlyEqual": 1088512,
+      "projection": "deepStrictEqual",
+      "corpusSha256": "4e365b97ef412fb946c93dd974518fcb621874cdceacd6db0785c9ebe46c317e"
+    },
+    {
+      "name": "bounded-rejection-and-ownership",
+      "status": "PASS",
+      "nativeRejected": 51,
+      "responseRejected": 21
+    },
+    {
+      "name": "independent-quadratic-dft",
+      "status": "PASS",
+      "cases": 14,
+      "bins": 3584,
+      "maxAbsoluteAmplitudeError": 8.864818974100696e-15,
+      "tolerance": "1e-9*(1+abs(DFT)) only for independent approximation, never for equivalence"
+    }
+  ],
+  "executableSha256": "92493aeb259d9490b90563d436b40196e52fb7f31bda8d11a998ebae0e4b9a52",
+  "conclusion": "Exact tested host numerical projection and raw FFT compatibility only; not universal, Hermes, app ABI integration, mobile, or production acceptance. Rust acceptance requires backend=rust and rustCompiled=true.",
+  "finishedAt": "2026-11-08T17:00:17.242Z"
+}

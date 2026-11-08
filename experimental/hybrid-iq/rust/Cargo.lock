@@ -1,0 +1,7 @@
+# Minimal dependency-free lockfile prepared for offline CI.
+# Cargo has not been run in the local environment.
+version = 3
+
+[[package]]
+name = "apex-hybrid-iq-host-proof"
+version = "0.1.0"

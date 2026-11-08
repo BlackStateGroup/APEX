@@ -1,0 +1,7 @@
+{
+  "rustc": null,
+  "cargo": null,
+  "g++": "/usr/bin/g++",
+  "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "rustStatus": "NOT COMPILED: no existing toolchain; no installation attempted"
+}
