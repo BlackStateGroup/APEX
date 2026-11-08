@@ -54,6 +54,6 @@
     "packages/core/nfc.ts": "ad1e4bcc8da12088148e43600b6ddfa38871d0d6e031fbc75cd27c6b4395d274",
     "packages/core/phone-ndef-capture.ts": "a98c0a0c8f8a0dc4a0862ed69220de2e67b3b2dbba78458e018cf0b07498b5f7",
     "packages/core/nfc-manager-ndef.ts": "2e4cf4b658bc02546c1c470343046dd5a9f7fca9e4411edddc9f45bfffb8a9ce",
-    "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74"
+    "package-lock.json": "4a2e632b3a3db4bd68b8699c7dbd6f38e614e3d06505a1837f99b530a4555be3"
   }
 }
