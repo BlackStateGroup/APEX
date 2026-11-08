@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-01",
+  "method": "GitHub primary repository metadata, immutable commit snapshots, README and licence-file inspection; no upstream binary or hardware execution.",
+  "projects": [
+    {
+      "id": "R01",
+      "key": "flipper",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware",
+      "branch": "dev",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "commitUrl": "https://github.com/flipperdevices/flipperzero-firmware/commit/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family; file-level review before reuse.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+          "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/LICENSE",
+          "read": true
+        },
+        {
+          "path": "ReadMe.md",
+          "blob": "accd2ed95bd5caea9c6dfc5a05e8dc7f56c5c6a9",
+          "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/ReadMe.md",
+          "read": true
+        }
+      ],
+      "finding": "Multi-function handheld reference: Furi/FBT, STM32WB55, dedicated CC1101 and ST25R3916 front ends.",
+      "integrationDecision": "Study device/RPC boundaries; integrate a separately installed upstream device later. No firmware is copied.",
+      "limitation": "Reading or identifying a credential is distinct from authenticating it.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R02",
+      "key": "diy",
+      "repository": "GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on",
+      "url": "https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on",
+      "branch": "dev",
+      "commit": "83cd7d56d06e8b0efb306c44bd23854131e3a767",
+      "commitUrl": "https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on/commit/83cd7d56d06e8b0efb306c44bd23854131e3a767",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family; hardware and inherited assets need separate review.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+          "url": "https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on/blob/83cd7d56d06e8b0efb306c44bd23854131e3a767/LICENSE",
+          "read": true
+        },
+        {
+          "path": "ReadMe.md",
+          "blob": "e8585a3cb9ba1196c17143177904514b880752e7",
+          "url": "https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on/blob/83cd7d56d06e8b0efb306c44bd23854131e3a767/ReadMe.md",
+          "read": true
+        },
+        {
+          "path": "ReadmetechnicalReadme.md",
+          "blob": "a64ea7e01dad2786c6b518bb3a892842222b83d4",
+          "url": "https://github.com/GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on/blob/83cd7d56d06e8b0efb306c44bd23854131e3a767/ReadmetechnicalReadme.md",
+          "read": true
+        }
+      ],
+      "finding": "STM32WB55CGU6 modular hardware adaptation of the Flipper ecosystem.",
+      "integrationDecision": "Use as a hardware trade-off study, not the baseline firmware.",
+      "limitation": "Pinned technical notes report no RFID/NFC in the published build and partial external peripheral support.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R03",
+      "key": "bruce",
+      "repository": "BruceDevices/firmware",
+      "url": "https://github.com/BruceDevices/firmware",
+      "branch": "main",
+      "commit": "a59213f3ec6cd302fa32c2042b2700c9c24d991a",
+      "commitUrl": "https://github.com/BruceDevices/firmware/commit/a59213f3ec6cd302fa32c2042b2700c9c24d991a",
+      "archived": false,
+      "apiLicence": "AGPL-3.0",
+      "licenceAssessment": "AGPL-3.0-or-later per THIRD_PARTY.md; inherited code and data require individual review.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+          "url": "https://github.com/BruceDevices/firmware/blob/a59213f3ec6cd302fa32c2042b2700c9c24d991a/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "e87968ed231027caf93a59b5eeeca1cc2d91710d",
+          "url": "https://github.com/BruceDevices/firmware/blob/a59213f3ec6cd302fa32c2042b2700c9c24d991a/README.md",
+          "read": true
+        },
+        {
+          "path": "THIRD_PARTY.md",
+          "blob": "f50cace3d24bd819f46b45d5fba915c0bb6a1fd6",
+          "url": "https://github.com/BruceDevices/firmware/blob/a59213f3ec6cd302fa32c2042b2700c9c24d991a/THIRD_PARTY.md",
+          "read": true
+        }
+      ],
+      "finding": "ESP32 ecosystem with board-specific peripheral support and modular UI.",
+      "integrationDecision": "Study board manifests and module separation; keep upstream firmware external.",
+      "limitation": "Third-party attribution identifies additional copyleft and proprietary-material concerns; no code or keystores imported.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R04",
+      "key": "proxmark",
+      "repository": "RfidResearchGroup/proxmark3",
+      "url": "https://github.com/RfidResearchGroup/proxmark3",
+      "branch": "master",
+      "commit": "754bbae3d946429a6354cd34a97a2dd29ce6f157",
+      "commitUrl": "https://github.com/RfidResearchGroup/proxmark3/commit/754bbae3d946429a6354cd34a97a2dd29ce6f157",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0-or-later per README; dependency licences vary.",
+      "documents": [
+        {
+          "path": "LICENSE.txt",
+          "blob": "94a9ed024d3859793618152ea559a168bbcbb5e2",
+          "url": "https://github.com/RfidResearchGroup/proxmark3/blob/754bbae3d946429a6354cd34a97a2dd29ce6f157/LICENSE.txt",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "bac556b494e6be2f0f6bd34a67c05515d23bfe42",
+          "url": "https://github.com/RfidResearchGroup/proxmark3/blob/754bbae3d946429a6354cd34a97a2dd29ce6f157/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Specialist LF/HF RFID platform with a substantial native client and firmware.",
+      "integrationDecision": "Later desktop sidecar for bounded identification and trace import.",
+      "limitation": "Requires its own RF front end and matched host/firmware versions.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R05",
+      "key": "chameleon",
+      "repository": "RfidResearchGroup/ChameleonUltra",
+      "url": "https://github.com/RfidResearchGroup/ChameleonUltra",
+      "branch": "main",
+      "commit": "4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e",
+      "commitUrl": "https://github.com/RfidResearchGroup/ChameleonUltra/commit/4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family; review selected firmware/software files.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+          "url": "https://github.com/RfidResearchGroup/ChameleonUltra/blob/4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "07e61d338c3e7667c7ae8b8628e615033db472ac",
+          "url": "https://github.com/RfidResearchGroup/ChameleonUltra/blob/4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e/README.md",
+          "read": true
+        }
+      ],
+      "finding": "nRF52840-based RFID research accessory with firmware and multiple companion clients.",
+      "integrationDecision": "Later documented device adapter after command/protocol and hardware validation.",
+      "limitation": "Supported tag families, device revision and authorisation constrain any operation.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R06",
+      "key": "hackrf",
+      "repository": "greatscottgadgets/hackrf",
+      "url": "https://github.com/greatscottgadgets/hackrf",
+      "branch": "main",
+      "commit": "468c5d93b66032c892c95bbf9ff15ff1b803e84f",
+      "commitUrl": "https://github.com/greatscottgadgets/hackrf/commit/468c5d93b66032c892c95bbf9ff15ff1b803e84f",
+      "archived": false,
+      "apiLicence": "GPL-2.0",
+      "licenceAssessment": "Mixed: root GPL-2.0; inspected libhackrf source has BSD-3-Clause terms.",
+      "documents": [
+        {
+          "path": "COPYING",
+          "blob": "fb456fc76a6acecd61f65fc42da9db0ea70fd8f7",
+          "url": "https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/COPYING",
+          "read": true
+        },
+        {
+          "path": "Readme.md",
+          "blob": "747ca054963199a7ced29a61366cfd56e080af4d",
+          "url": "https://github.com/greatscottgadgets/hackrf/blob/468c5d93b66032c892c95bbf9ff15ff1b803e84f/Readme.md",
+          "read": true
+        }
+      ],
+      "finding": "USB SDR hardware and host software for RF development.",
+      "integrationDecision": "Later receive/capture sidecar with explicit sample metadata.",
+      "limitation": "HackRF One is half duplex; wide frequency coverage does not supply a protocol decoder.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R07",
+      "key": "meshtastic",
+      "repository": "meshtastic/firmware",
+      "url": "https://github.com/meshtastic/firmware",
+      "branch": "develop",
+      "commit": "f9c26505edb40c31038f5bcd71127fa408a6e929",
+      "commitUrl": "https://github.com/meshtastic/firmware/commit/f9c26505edb40c31038f5bcd71127fa408a6e929",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family; client/protobuf packages need independent inventory.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "10926e87f113fb026c366866d6fa466061562870",
+          "url": "https://github.com/meshtastic/firmware/blob/f9c26505edb40c31038f5bcd71127fa408a6e929/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "d4885225813cb440467cd43f1fedffc5770bc035",
+          "url": "https://github.com/meshtastic/firmware/blob/f9c26505edb40c31038f5bcd71127fa408a6e929/README.md",
+          "read": true
+        }
+      ],
+      "finding": "LoRa mesh firmware with text, location and telemetry functions.",
+      "integrationDecision": "Later adapter to its existing PhoneAPI, preserving protobuf and upstream transport conventions.",
+      "limitation": "LoRa mesh is a separate radio system, not a CC1101 firmware mode.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R08",
+      "key": "radiolib",
+      "repository": "jgromes/RadioLib",
+      "url": "https://github.com/jgromes/RadioLib",
+      "branch": "master",
+      "commit": "3a664b64099e4bdbdb3e6f28a5ca6b833050b21e",
+      "commitUrl": "https://github.com/jgromes/RadioLib/commit/3a664b64099e4bdbdb3e6f28a5ca6b833050b21e",
+      "archived": false,
+      "apiLicence": "MIT",
+      "licenceAssessment": "MIT.",
+      "documents": [
+        {
+          "path": "README.md",
+          "blob": "218bb151fd6d34589f41bbaa8a869f52e2f03cc9",
+          "url": "https://github.com/jgromes/RadioLib/blob/3a664b64099e4bdbdb3e6f28a5ca6b833050b21e/README.md",
+          "read": true
+        },
+        {
+          "path": "license.txt",
+          "blob": "201215f256b25b620461ad16e227ae2a5b32303f",
+          "url": "https://github.com/jgromes/RadioLib/blob/3a664b64099e4bdbdb3e6f28a5ca6b833050b21e/license.txt",
+          "read": true
+        }
+      ],
+      "finding": "Portable embedded radio driver abstraction supporting multiple radio families.",
+      "integrationDecision": "Preferred candidate for a future CC1101/SX126x module behind the APEX HAL.",
+      "limitation": "A driver only works with compatible attached hardware, matching networks and antennas.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R09",
+      "key": "irremote",
+      "repository": "crankyoldgit/IRremoteESP8266",
+      "url": "https://github.com/crankyoldgit/IRremoteESP8266",
+      "branch": "master",
+      "commit": "1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f",
+      "commitUrl": "https://github.com/crankyoldgit/IRremoteESP8266/commit/1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f",
+      "archived": false,
+      "apiLicence": "LGPL-2.1",
+      "licenceAssessment": "LGPL-2.1 family.",
+      "documents": [
+        {
+          "path": "LICENSE.txt",
+          "blob": "77cec6dd195dfa3b7e6fb0cc660c6f2a99fd0cbc",
+          "url": "https://github.com/crankyoldgit/IRremoteESP8266/blob/1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f/LICENSE.txt",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "7bdf4d3be0b767d6d77a88a4517e940bd05a9f2f",
+          "url": "https://github.com/crankyoldgit/IRremoteESP8266/blob/1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f/README.md",
+          "read": true
+        }
+      ],
+      "finding": "ESP8266/ESP32 infrared send/receive library with a broad protocol list.",
+      "integrationDecision": "Candidate external IR module; current offline decoder is original code.",
+      "limitation": "Arduino-oriented dependency requires a porting and distribution decision for ESP-IDF.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R10",
+      "key": "tinyusb",
+      "repository": "hathach/tinyusb",
+      "url": "https://github.com/hathach/tinyusb",
+      "branch": "master",
+      "commit": "67570a60d4c87f8bd6da7e49643b667472d63786",
+      "commitUrl": "https://github.com/hathach/tinyusb/commit/67570a60d4c87f8bd6da7e49643b667472d63786",
+      "archived": false,
+      "apiLicence": "MIT",
+      "licenceAssessment": "MIT; dependency subtrees need separate review.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "e57543ed019e848300f63251fedc4107890d2a2d",
+          "url": "https://github.com/hathach/tinyusb/blob/67570a60d4c87f8bd6da7e49643b667472d63786/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.rst",
+          "blob": "e05eab60c10a5ab7bd6b9c1cf8fc11163106d113",
+          "url": "https://github.com/hathach/tinyusb/blob/67570a60d4c87f8bd6da7e49643b667472d63786/README.rst",
+          "read": true
+        }
+      ],
+      "finding": "Cross-platform embedded USB host/device stack.",
+      "integrationDecision": "Candidate for future configurable USB OTG devices and composite interfaces.",
+      "limitation": "The initial S3 target uses the fixed USB Serial/JTAG peripheral, not this stack.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R11",
+      "key": "espidf",
+      "repository": "espressif/esp-idf",
+      "url": "https://github.com/espressif/esp-idf",
+      "branch": "master",
+      "commit": "d445e947156f276dfe0db5804e4edf6ae90fe6fb",
+      "commitUrl": "https://github.com/espressif/esp-idf/commit/d445e947156f276dfe0db5804e4edf6ae90fe6fb",
+      "archived": false,
+      "apiLicence": "Apache-2.0",
+      "licenceAssessment": "Apache-2.0 root; third-party components have separate licences.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "url": "https://github.com/espressif/esp-idf/blob/d445e947156f276dfe0db5804e4edf6ae90fe6fb/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "119668516b36594119d7b68c0c0fef2a5700ef0c",
+          "url": "https://github.com/espressif/esp-idf/blob/d445e947156f276dfe0db5804e4edf6ae90fe6fb/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Espressif framework, driver APIs and build tooling.",
+      "integrationDecision": "Selected framework for the initial ESP32-S3 target; build tag pinned separately.",
+      "limitation": "Research snapshots track master; hardware build uses v6.1 and remains unflashed.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R12",
+      "key": "zephyr",
+      "repository": "zephyrproject-rtos/zephyr",
+      "url": "https://github.com/zephyrproject-rtos/zephyr",
+      "branch": "main",
+      "commit": "0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf",
+      "commitUrl": "https://github.com/zephyrproject-rtos/zephyr/commit/0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf",
+      "archived": false,
+      "apiLicence": "Apache-2.0",
+      "licenceAssessment": "Apache-2.0 root; modules vary.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "8f71f43fee3f78649d238238cbde51e6d7055c82",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/blob/0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.rst",
+          "blob": "a82f73b6fb0a1beaf00387d24211a7dd98a240ed",
+          "url": "https://github.com/zephyrproject-rtos/zephyr/blob/0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf/README.rst",
+          "read": true
+        }
+      ],
+      "finding": "RTOS with portable drivers and multiple MCU architectures.",
+      "integrationDecision": "Evaluate for a later nRF52840 accessory; avoid a second initial RTOS.",
+      "limitation": "Board support does not prove timing or RF performance for APEX.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R13",
+      "key": "usbserial",
+      "repository": "mik3y/usb-serial-for-android",
+      "url": "https://github.com/mik3y/usb-serial-for-android",
+      "branch": "master",
+      "commit": "4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2",
+      "commitUrl": "https://github.com/mik3y/usb-serial-for-android/commit/4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2",
+      "archived": false,
+      "apiLicence": "MIT",
+      "licenceAssessment": "MIT.",
+      "documents": [
+        {
+          "path": "LICENSE.txt",
+          "blob": "98e65da7057768fcbdb823370cd6fe767814e2ff",
+          "url": "https://github.com/mik3y/usb-serial-for-android/blob/4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2/LICENSE.txt",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "89678416c7dd04ef2ff7b990eca95a06c226298c",
+          "url": "https://github.com/mik3y/usb-serial-for-android/blob/4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Android user-space serial drivers supporting several USB bridge families.",
+      "integrationDecision": "Candidate expansion beyond the initial CDC-ACM-only native transport.",
+      "limitation": "Not bundled now; initial native code does not claim CP210x, FTDI or CH34x support.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R14",
+      "key": "expo",
+      "repository": "expo/expo",
+      "url": "https://github.com/expo/expo",
+      "branch": "main",
+      "commit": "dfb069d9cc5bcebc493fa6e94d3c61124e62b85a",
+      "commitUrl": "https://github.com/expo/expo/commit/dfb069d9cc5bcebc493fa6e94d3c61124e62b85a",
+      "archived": false,
+      "apiLicence": "MIT",
+      "licenceAssessment": "MIT root; transitive dependency inventory generated separately.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "30b20e3b5f0f470947ba9480d90587ba07c137b4",
+          "url": "https://github.com/expo/expo/blob/dfb069d9cc5bcebc493fa6e94d3c61124e62b85a/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "15e746dfea1f593b9318c97a1cfa2fbc50043ae1",
+          "url": "https://github.com/expo/expo/blob/dfb069d9cc5bcebc493fa6e94d3c61124e62b85a/README.md",
+          "read": true
+        }
+      ],
+      "finding": "React Native tooling, native modules and universal application support.",
+      "integrationDecision": "Selected mobile framework, pinned through package-lock.json.",
+      "limitation": "Expo Go cannot contain the custom APEX native module; use a development build.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R15",
+      "key": "bleplx",
+      "repository": "dotintent/react-native-ble-plx",
+      "url": "https://github.com/dotintent/react-native-ble-plx",
+      "branch": "master",
+      "commit": "92a496d60f81642d2f45cecfc44f47a62904a86d",
+      "commitUrl": "https://github.com/dotintent/react-native-ble-plx/commit/92a496d60f81642d2f45cecfc44f47a62904a86d",
+      "archived": false,
+      "apiLicence": "Apache-2.0",
+      "licenceAssessment": "Apache-2.0.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "fb4279e9d666fc1a3ab00f57ae521982e02cffed",
+          "url": "https://github.com/dotintent/react-native-ble-plx/blob/92a496d60f81642d2f45cecfc44f47a62904a86d/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "57cecaedccadc5006c02f1dfb198f107a1f47ea5",
+          "url": "https://github.com/dotintent/react-native-ble-plx/blob/92a496d60f81642d2f45cecfc44f47a62904a86d/README.md",
+          "read": true
+        }
+      ],
+      "finding": "React Native BLE central/GATT library with notifications and MTU support.",
+      "integrationDecision": "Candidate BLE transport after lifecycle and reconnect acceptance tests.",
+      "limitation": "Does not provide Bluetooth Classic or arbitrary radio sniffing; not bundled now.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R16",
+      "key": "nfcmgr",
+      "repository": "revtel/react-native-nfc-manager",
+      "url": "https://github.com/revtel/react-native-nfc-manager",
+      "branch": "main",
+      "commit": "c44f7110f791901823252610627dc5cbee7dddcd",
+      "commitUrl": "https://github.com/revtel/react-native-nfc-manager/commit/c44f7110f791901823252610627dc5cbee7dddcd",
+      "archived": false,
+      "apiLicence": "MIT",
+      "licenceAssessment": "MIT.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "cdcd754ab39d5f3d3269f2694a13970a4753d60c",
+          "url": "https://github.com/revtel/react-native-nfc-manager/blob/c44f7110f791901823252610627dc5cbee7dddcd/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "f9a0187c8232890c37b5b05aab601a69226a33d1",
+          "url": "https://github.com/revtel/react-native-nfc-manager/blob/c44f7110f791901823252610627dc5cbee7dddcd/README.md",
+          "read": true
+        }
+      ],
+      "finding": "React Native NFC manager with Expo development-build support.",
+      "integrationDecision": "Candidate for broader NDEF and iOS support; initial Android metadata reader is original.",
+      "limitation": "Requires NFC hardware and a native build; support varies by tag and handset.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R17",
+      "key": "rtl433",
+      "repository": "merbanan/rtl_433",
+      "url": "https://github.com/merbanan/rtl_433",
+      "branch": "master",
+      "commit": "f35183aaf1d2d905d422fd70bcae4eb7349d6186",
+      "commitUrl": "https://github.com/merbanan/rtl_433/commit/f35183aaf1d2d905d422fd70bcae4eb7349d6186",
+      "archived": false,
+      "apiLicence": "GPL-2.0",
+      "licenceAssessment": "GPL-2.0 family; inspect individual files.",
+      "documents": [
+        {
+          "path": "COPYING",
+          "blob": "d511905c1647a1e311e8b20d5930a37a9c2531cd",
+          "url": "https://github.com/merbanan/rtl_433/blob/f35183aaf1d2d905d422fd70bcae4eb7349d6186/COPYING",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "915d322c5fd0ba03c8ccbb0612202c4f6210bd2e",
+          "url": "https://github.com/merbanan/rtl_433/blob/f35183aaf1d2d905d422fd70bcae4eb7349d6186/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Receiver and decoder for supported low-rate radio telemetry protocols.",
+      "integrationDecision": "Later process adapter for owned sensor capture and JSON output import.",
+      "limitation": "Supported decoders are finite; the project name does not mean only one frequency.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R18",
+      "key": "gnuradio",
+      "repository": "gnuradio/gnuradio",
+      "url": "https://github.com/gnuradio/gnuradio",
+      "branch": "main",
+      "commit": "ec1bf153c9222eca81f59d4e063e73d525a51a1a",
+      "commitUrl": "https://github.com/gnuradio/gnuradio/commit/ec1bf153c9222eca81f59d4e063e73d525a51a1a",
+      "archived": false,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family; block licences vary.",
+      "documents": [
+        {
+          "path": "COPYING",
+          "blob": "94a9ed024d3859793618152ea559a168bbcbb5e2",
+          "url": "https://github.com/gnuradio/gnuradio/blob/ec1bf153c9222eca81f59d4e063e73d525a51a1a/COPYING",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "386f6086234d5431f7a6ed0ee0b7f7a1132cd7ba",
+          "url": "https://github.com/gnuradio/gnuradio/blob/ec1bf153c9222eca81f59d4e063e73d525a51a1a/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Signal-processing runtime and development toolkit.",
+      "integrationDecision": "Desktop processing sidecar and reproducible offline flowgraphs.",
+      "limitation": "Do not route high-rate IQ samples through the React Native JavaScript bridge.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R19",
+      "key": "soapysdr",
+      "repository": "pothosware/SoapySDR",
+      "url": "https://github.com/pothosware/SoapySDR",
+      "branch": "master",
+      "commit": "cf0c0eb5279aa202d5b3a48aee423294b10244eb",
+      "commitUrl": "https://github.com/pothosware/SoapySDR/commit/cf0c0eb5279aa202d5b3a48aee423294b10244eb",
+      "archived": false,
+      "apiLicence": "BSL-1.0",
+      "licenceAssessment": "BSL-1.0.",
+      "documents": [
+        {
+          "path": "README.md",
+          "blob": "3a6ab1cf3882b398dd4048d0be6a671d3441b3ed",
+          "url": "https://github.com/pothosware/SoapySDR/blob/cf0c0eb5279aa202d5b3a48aee423294b10244eb/README.md",
+          "read": true
+        },
+        {
+          "path": "LICENSE_1_0.txt",
+          "blob": "36b7cd93cdfbac762f5be4c6ce276df2ea6305c2",
+          "url": "https://github.com/pothosware/SoapySDR/blob/cf0c0eb5279aa202d5b3a48aee423294b10244eb/LICENSE_1_0.txt",
+          "read": true
+        }
+      ],
+      "finding": "Vendor-neutral SDR host abstraction.",
+      "integrationDecision": "Candidate sidecar hardware abstraction.",
+      "limitation": "Hardware driver plug-ins retain their own licences and compatibility constraints.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R20",
+      "key": "libnfc",
+      "repository": "nfc-tools/libnfc",
+      "url": "https://github.com/nfc-tools/libnfc",
+      "branch": "master",
+      "commit": "3fa0751ad58fb0053d3de2e61bbbd4066259104c",
+      "commitUrl": "https://github.com/nfc-tools/libnfc/commit/3fa0751ad58fb0053d3de2e61bbbd4066259104c",
+      "archived": false,
+      "apiLicence": "LGPL-3.0",
+      "licenceAssessment": "LGPL-3.0 family.",
+      "documents": [
+        {
+          "path": "COPYING",
+          "blob": "cca7fc278f5c81ce23a2687208f0d63a6ea44009",
+          "url": "https://github.com/nfc-tools/libnfc/blob/3fa0751ad58fb0053d3de2e61bbbd4066259104c/COPYING",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "e38499ee2a0b45e562643857bb9b0265fc4c5794",
+          "url": "https://github.com/nfc-tools/libnfc/blob/3fa0751ad58fb0053d3de2e61bbbd4066259104c/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Userspace NFC reader library with multiple device backends.",
+      "integrationDecision": "Evaluate external reader sidecar and file interchange.",
+      "limitation": "Not an Android NFC-controller replacement; dependency/backend compatibility varies.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R21",
+      "key": "canutils",
+      "repository": "linux-can/can-utils",
+      "url": "https://github.com/linux-can/can-utils",
+      "branch": "master",
+      "commit": "834ceef1f1eabec67625389172eebf1050d2f42b",
+      "commitUrl": "https://github.com/linux-can/can-utils/commit/834ceef1f1eabec67625389172eebf1050d2f42b",
+      "archived": false,
+      "apiLicence": "NOASSERTION",
+      "licenceAssessment": "Mixed file-level BSD-3-Clause and GPL-2.0-only; Linux syscall exception also present.",
+      "documents": [
+        {
+          "path": "README.md",
+          "blob": "49fa3673ce887b032b5f61d20ba87dae2e3b5272",
+          "url": "https://github.com/linux-can/can-utils/blob/834ceef1f1eabec67625389172eebf1050d2f42b/README.md",
+          "read": true
+        },
+        {
+          "path": "LICENSES/GPL-2.0-only.txt",
+          "blob": "2b7b643ff4e66ebf325e18753e8ff59042d3e953",
+          "url": "https://github.com/linux-can/can-utils/blob/834ceef1f1eabec67625389172eebf1050d2f42b/LICENSES/GPL-2.0-only.txt",
+          "read": true
+        },
+        {
+          "path": "LICENSES/BSD-3-Clause",
+          "blob": "5858df50a1ffa77a89a680e26513e294880e3c19",
+          "url": "https://github.com/linux-can/can-utils/blob/834ceef1f1eabec67625389172eebf1050d2f42b/LICENSES/BSD-3-Clause",
+          "read": true
+        }
+      ],
+      "finding": "Linux SocketCAN tools and log formats.",
+      "integrationDecision": "Reference for bounded offline classic CAN log import; later isolated bench adapter.",
+      "limitation": "Access to CAN frames does not establish ECU signal meaning, security access or vehicle control.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R22",
+      "key": "pythoncan",
+      "repository": "hardbyte/python-can",
+      "url": "https://github.com/hardbyte/python-can",
+      "branch": "main",
+      "commit": "b4f82abede25ff83376be793a2935c41f81c3869",
+      "commitUrl": "https://github.com/hardbyte/python-can/commit/b4f82abede25ff83376be793a2935c41f81c3869",
+      "archived": false,
+      "apiLicence": "LGPL-3.0",
+      "licenceAssessment": "LGPL-3.0 family.",
+      "documents": [
+        {
+          "path": "LICENSE.txt",
+          "blob": "65c5ca88a67c30becee01c5a8816d964b03862f9",
+          "url": "https://github.com/hardbyte/python-can/blob/b4f82abede25ff83376be793a2935c41f81c3869/LICENSE.txt",
+          "read": true
+        },
+        {
+          "path": "README.rst",
+          "blob": "6e75d8d7d04764571ff37e7a31d4a2d2e3f2684a",
+          "url": "https://github.com/hardbyte/python-can/blob/b4f82abede25ff83376be793a2935c41f81c3869/README.rst",
+          "read": true
+        }
+      ],
+      "finding": "Common Python interfaces and virtual backends for CAN devices.",
+      "integrationDecision": "Future virtual-bus fixtures and optional desktop sidecar.",
+      "limitation": "No vehicle writes, diagnostics unlock or immobiliser functionality is integrated.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R23",
+      "key": "pymodbus",
+      "repository": "pymodbus-dev/pymodbus",
+      "url": "https://github.com/pymodbus-dev/pymodbus",
+      "branch": "dev",
+      "commit": "e0460de3f4646f82f232486ea528602d7f676c36",
+      "commitUrl": "https://github.com/pymodbus-dev/pymodbus/commit/e0460de3f4646f82f232486ea528602d7f676c36",
+      "archived": false,
+      "apiLicence": "NOASSERTION",
+      "licenceAssessment": "BSD-3-Clause terms in LICENSE, despite GitHub NOASSERTION.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "8769996092dc48eafdf1ea9771af3aa5094902a7",
+          "url": "https://github.com/pymodbus-dev/pymodbus/blob/e0460de3f4646f82f232486ea528602d7f676c36/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.rst",
+          "blob": "ac690de7494b229a77167fdc543ae8a8c5d4d610",
+          "url": "https://github.com/pymodbus-dev/pymodbus/blob/e0460de3f4646f82f232486ea528602d7f676c36/README.rst",
+          "read": true
+        }
+      ],
+      "finding": "Python Modbus client/server/simulator implementation.",
+      "integrationDecision": "Candidate local PLC simulator and bounded register-read adapter.",
+      "limitation": "Device register maps remain vendor-specific; no industrial network discovery implemented.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R24",
+      "key": "bacnet",
+      "repository": "bacnet-stack/bacnet-stack",
+      "url": "https://github.com/bacnet-stack/bacnet-stack",
+      "branch": "master",
+      "commit": "62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba",
+      "commitUrl": "https://github.com/bacnet-stack/bacnet-stack/commit/62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba",
+      "archived": false,
+      "apiLicence": "NOASSERTION",
+      "licenceAssessment": "Mixed: GPL-2.0-or-later WITH GCC-exception-2.0, MIT and other files; inspect each selected file.",
+      "documents": [
+        {
+          "path": "README.md",
+          "blob": "b1b9f0c1d7c29ab04b9f54362f95720aa608f27f",
+          "url": "https://github.com/bacnet-stack/bacnet-stack/blob/62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba/README.md",
+          "read": true
+        },
+        {
+          "path": "license/readme.txt",
+          "blob": "60e359fc16cea7c2e37a481ced520ae8350530d3",
+          "url": "https://github.com/bacnet-stack/bacnet-stack/blob/62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba/license/readme.txt",
+          "read": true
+        },
+        {
+          "path": "src/bacnet/bacdef.h",
+          "blob": "591a473c0cf60ffa0776d05f274fe3d135dab016",
+          "url": "https://github.com/bacnet-stack/bacnet-stack/blob/62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba/src/bacnet/bacdef.h",
+          "read": true
+        }
+      ],
+      "finding": "Embedded and host BACnet stack with multiple data links.",
+      "integrationDecision": "Later local simulator and property-read interoperability tests.",
+      "limitation": "An open protocol does not imply open building-controller access.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R25",
+      "key": "osdp",
+      "repository": "osdp-dev/libosdp",
+      "url": "https://github.com/osdp-dev/libosdp",
+      "branch": "master",
+      "commit": "3654c63685d9f47c298127dafd832a4f363a2f10",
+      "commitUrl": "https://github.com/osdp-dev/libosdp/commit/3654c63685d9f47c298127dafd832a4f363a2f10",
+      "archived": false,
+      "apiLicence": "Apache-2.0",
+      "licenceAssessment": "Apache-2.0.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "url": "https://github.com/osdp-dev/libosdp/blob/3654c63685d9f47c298127dafd832a4f363a2f10/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "6cd210d8752e3803fb29a912338e06de24df67a5",
+          "url": "https://github.com/osdp-dev/libosdp/blob/3654c63685d9f47c298127dafd832a4f363a2f10/README.md",
+          "read": true
+        }
+      ],
+      "finding": "C OSDP control-panel/peripheral library with secure-channel support.",
+      "integrationDecision": "Candidate owned reader/controller bench fixture over isolated RS-485.",
+      "limitation": "Secure-channel commissioning and device-specific keys remain necessary.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R26",
+      "key": "sigmf",
+      "repository": "sigmf/SigMF",
+      "url": "https://github.com/sigmf/SigMF",
+      "branch": "main",
+      "commit": "60121977f5f8d1145553251a3b3d0dbe2819aa14",
+      "commitUrl": "https://github.com/sigmf/SigMF/commit/60121977f5f8d1145553251a3b3d0dbe2819aa14",
+      "archived": false,
+      "apiLicence": "CC-BY-SA-4.0",
+      "licenceAssessment": "CC-BY-SA-4.0 for the specification; implementations vary.",
+      "documents": [
+        {
+          "path": "LICENSE.md",
+          "blob": "e04b480f52cbcd9b9eba476f2fde32b297c2e6f3",
+          "url": "https://github.com/sigmf/SigMF/blob/60121977f5f8d1145553251a3b3d0dbe2819aa14/LICENSE.md",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "2c5ebfe8a4141d9c6b6ce0d93888df2a653bbea9",
+          "url": "https://github.com/sigmf/SigMF/blob/60121977f5f8d1145553251a3b3d0dbe2819aa14/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Recording metadata specification for portable signal datasets.",
+      "integrationDecision": "Use metadata concepts for future IQ capture provenance; no specification text copied.",
+      "limitation": "A recording schema is not a licence for the recorded content.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R27",
+      "key": "urh",
+      "repository": "jopohl/urh",
+      "url": "https://github.com/jopohl/urh",
+      "branch": "master",
+      "commit": "1403d92987cc3d01d41aff64250955ce455dabd2",
+      "commitUrl": "https://github.com/jopohl/urh/commit/1403d92987cc3d01d41aff64250955ce455dabd2",
+      "archived": true,
+      "apiLicence": "GPL-3.0",
+      "licenceAssessment": "GPL-3.0 family.",
+      "documents": [
+        {
+          "path": "LICENSE",
+          "blob": "b1efdf099d882cda28080909db0bff5a63acc7d2",
+          "url": "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/LICENSE",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "9e6dddab353d06654fb61fc441861124c06895ea",
+          "url": "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Desktop wireless protocol investigation and demodulation toolkit.",
+      "integrationDecision": "External analysis/export interoperability reference.",
+      "limitation": "Inference produces hypotheses; it cannot certify authentication success or invent secret keys.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    },
+    {
+      "id": "R28",
+      "key": "libusb",
+      "repository": "libusb/libusb",
+      "url": "https://github.com/libusb/libusb",
+      "branch": "master",
+      "commit": "987c1170d0018ba82557823a98ae443e8335e11b",
+      "commitUrl": "https://github.com/libusb/libusb/commit/987c1170d0018ba82557823a98ae443e8335e11b",
+      "archived": false,
+      "apiLicence": "LGPL-2.1",
+      "licenceAssessment": "LGPL-2.1-or-later per README.",
+      "documents": [
+        {
+          "path": "COPYING",
+          "blob": "602bfc94635ddf8f1bf2b00419a85ead645a5b67",
+          "url": "https://github.com/libusb/libusb/blob/987c1170d0018ba82557823a98ae443e8335e11b/COPYING",
+          "read": true
+        },
+        {
+          "path": "README",
+          "blob": "9340c71f26846272255d14ec5ddc9dbb963584d5",
+          "url": "https://github.com/libusb/libusb/blob/987c1170d0018ba82557823a98ae443e8335e11b/README",
+          "read": true
+        },
+        {
+          "path": "README.md",
+          "blob": "100b93820ade4c16225673b4ca62bb3ade63c313",
+          "url": "https://github.com/libusb/libusb/blob/987c1170d0018ba82557823a98ae443e8335e11b/README.md",
+          "read": true
+        }
+      ],
+      "finding": "Portable userspace USB library.",
+      "integrationDecision": "Future SDR/native sidecar USB dependency.",
+      "limitation": "Android file-descriptor handling and permissions still need explicit integration.",
+      "upstreamEvidence": "source-inspected",
+      "apexHardwareEvidence": "not-tested",
+      "sourceCopied": false
+    }
+  ]
+}
+
