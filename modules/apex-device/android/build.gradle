@@ -15,6 +15,15 @@ android {
   testOptions {
     unitTests.includeAndroidResources = true
     unitTests.all {
+      // React Native uses a Java 17 compilation toolchain. Robolectric API 37
+      // needs Java 21 at runtime, independently of the app's bytecode target.
+      javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(21)
+      }
+      testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat 'full'
+      }
       jvmArgs += [
         '--add-opens=java.base/java.lang=ALL-UNNAMED',
         '--add-opens=java.base/java.util=ALL-UNNAMED',

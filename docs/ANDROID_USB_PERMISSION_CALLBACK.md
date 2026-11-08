@@ -52,6 +52,10 @@ introduced.
   and before assembling the debug APK. Robolectric setup follows its
   [Gradle instructions](https://robolectric.org/getting-started/) and
   [SDK compatibility table](https://robolectric.org/compatibility_table/).
+  The unit-test JVM explicitly uses Java 21 because API 37 requires it; React
+  Native's Java 17 compilation toolchain otherwise selects an older test JVM even
+  when Gradle itself runs on Java 21. This changes only the test runtime, not the
+  app's compilation target or SDK coverage. Test failures print full exceptions.
 
 The authoring workspace has no discovered Android SDK or Gradle installation.
 Native results must be read from the exact PR commit's CI checks; adding a test

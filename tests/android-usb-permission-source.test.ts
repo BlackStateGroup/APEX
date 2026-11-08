@@ -32,6 +32,7 @@ test('Android CI runs native permission regression tests before assembling the A
   assert.match(workflow, /:apex-device:testDebugUnitTest[\s\S]*?:app:assembleDebug/);
   const build = source(`${root}/build.gradle`);
   assert.match(build, /unitTests\.includeAndroidResources = true/);
+  assert.match(build, /unitTests\.all\s*\{[\s\S]*?javaLauncher = javaToolchains\.launcherFor\s*\{\s*languageVersion = JavaLanguageVersion\.of\(21\)/);
   assert.match(build, /org\.robolectric:robolectric:4\.17/);
   const tests = source(`${root}/src/test/java/expo/modules/apexdevice/UsbPermissionCallbackTest.kt`);
   assert.match(tests, /sdk = \[28, 31, 33, 34, 37\]/);
