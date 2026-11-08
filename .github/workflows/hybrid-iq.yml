@@ -1,0 +1,52 @@
+name: APEX experimental hybrid IQ proof
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/hybrid-iq.yml'
+      - 'experimental/hybrid-iq/**'
+      - 'experimental/cpp-iq/proof-codec.mjs'
+      - 'experimental/cpp-iq/extra-fixtures.mjs'
+      - 'packages/core/iq-analysis.ts'
+      - 'packages/core/iq-offline.ts'
+      - 'packages/core/bounded-json.ts'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: apex-hybrid-iq-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host-proof:
+    # No pull_request_target, fork code, repository secrets, or write token.
+    # Keep automatic execution scoped to the reviewed experimental branch.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.head.repo.full_name == github.repository &&
+       github.event.pull_request.head.ref == 'experiment/hybrid-fft-exact-contract')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CARGO_NET_OFFLINE: 'true'
+      RUSTUP_AUTO_INSTALL: '0'
+      RUSTC_WRAPPER: ''
+      RUSTC_WORKSPACE_WRAPPER: ''
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, already pinned by foundation.yml
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Require preinstalled Node 24 and Rust
+        shell: bash
+        run: bash experimental/hybrid-iq/ci-preflight.sh
+      - name: Verify CI guards
+        shell: bash
+        run: node --test experimental/hybrid-iq/ci-guards.test.mjs
+      - name: Compile and test exact C++ and Rust host proofs offline
+        shell: bash
+        run: bash experimental/hybrid-iq/ci-host-check.sh
+      - name: Record scope after successful proof
+        shell: bash
+        run: |
+          printf '%s\n' '## Experimental host proof passed' >> "$GITHUB_STEP_SUMMARY"
+          printf 'Tested head: `%s`\n\n' "$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          printf '%s\n' 'C++ exact parity, C++ ASan/UBSan, Rust debug/release unit tests and Rust/C++ exact parity passed. No app integration or mobile/device performance acceptance. LeakSanitizer was disabled; Rust was not sanitizer-instrumented.' >> "$GITHUB_STEP_SUMMARY"

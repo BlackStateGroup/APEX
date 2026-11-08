@@ -1,0 +1,1 @@
+C ABI bounds, late coefficient failures, unchanged-on-rejection, rounding refusal, zero transform passed

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "exactProjectionCases": 30,
+  "exactProjectionCells": 259584,
+  "hostileRequestsRejected": 86,
+  "invalidResponsesOrContextsRejected": 14,
+  "sameShapeCrossContextAccepted": true
+}

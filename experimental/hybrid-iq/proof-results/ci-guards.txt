@@ -1,0 +1,18 @@
+✔ preflight rejects missing Node without writing selected paths (9.900289ms)
+✔ preflight rejects missing Rust without writing selected paths (5.367188ms)
+✔ preflight rejects missing Cargo without writing selected paths (8.667862ms)
+✔ preflight rejects wrong Node runtime without writing selected paths (14.819622ms)
+✔ preflight rejects missing g++ without writing selected paths (133.976554ms)
+✔ preflight rejects missing ar without writing selected paths (127.89476ms)
+✔ preflight selects existing direct tool paths (Rust probes are mocks, not a Rust test) (330.114121ms)
+✔ preflight isolates a fresh Cargo home from preexisting configuration (142.974854ms)
+✔ workflow restricts code origin, permissions, trigger and toolchain installation (0.740411ms)
+✔ proof entrypoint requires both Rust test profiles and exact Rust parity offline (0.474655ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 940.122601
