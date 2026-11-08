@@ -1,8 +1,8 @@
 # APEX hybrid FFT proof: preserve the JS numerical contract
 
-**Host numerical compatibility gate passed. Not integrated into APEX. Rust wrapper is source-only and uncompiled.**
+**Host numerical compatibility gate passed. Not integrated into APEX. Local reports do not establish Rust compilation; the separate CI gate must actually pass.**
 
-The prior `experimental/cpp-iq` replacement was rightly rejected: native `hypot` rounding changed strict peak selection in almost tied impulse spectra, even with frozen JS coefficients. This experiment changes the boundary rather than weakening the test. The calling JS runtime generates Hann/twiddle coefficients and retains magnitude, logarithms, exact-zero/null handling, frequency axes and first-strict-maximum peak selection. C++ performs only bounded FFT arithmetic and returns complex values. A dependency-free Rust wrapper is supplied for ownership and FFI validation, but no Rust compiler is available here and it has **not** been compiled, run, or independently reviewed.
+The prior `experimental/cpp-iq` replacement was rightly rejected: native `hypot` rounding changed strict peak selection in almost tied impulse spectra, even with frozen JS coefficients. This experiment changes the boundary rather than weakening the test. The calling JS runtime generates Hann/twiddle coefficients and retains magnitude, logarithms, exact-zero/null handling, frequency axes and first-strict-maximum peak selection. C++ performs only bounded FFT arithmetic and returns complex values. A dependency-free Rust wrapper is supplied for ownership and FFI validation. No Rust compiler is available in the local proof environment, so Rust has **not** been compiled or run locally. A later independent source-only FFI/offline spot review is recorded in `review/CI_REVIEW.md`; that is not runtime acceptance.
 
 No production source, mobile importer, Flipper code, app dependencies, hardware operation or existing numerical version is changed.
 
@@ -73,9 +73,9 @@ This demonstrates that FFT arithmetic can move to native code without the tested
 
 `rust/` supplies a dependency-free ownership wrapper and tests. It validates dimensions before allocating, keeps coefficient arrays private, borrows inputs for the synchronous C call, and allocates a distinct initialized output vector. `build.rs` uses existing `g++` and `ar`, explicitly refuses cross-compilation/non-Linux targets, and downloads nothing.
 
-**No rustc/cargo exists in this environment. No installation was attempted. These sources have not passed a compiler, linker, Rust tests or independent Rust review.**
+**The local proof environment has no rustc/cargo and no installation was attempted. The preserved local reports therefore establish no Rust compiler, linker or test pass.** A source-only FFI/offline spot review found no blocker; actual Rust acceptance requires a successful CI run for the relevant source. Historical local reports remain unchanged when later CI evidence becomes available.
 
-`ci-host-check.sh` is a proposed CI entrypoint, not an executed GitHub workflow. On an already provisioned Linux runner with Node 24, G++, ar, rustc and cargo:
+`ci-host-check.sh` is wired to the narrowly scoped `APEX experimental hybrid IQ proof` workflow. Its preflight requires existing Node 24, G++, ar, rustc and cargo and installs nothing. See `CI.md` for origin/permission guards. Adding this workflow is not evidence that Rust has passed: that requires an actual successful run. On an already provisioned Linux runner:
 
     bash experimental/hybrid-iq/ci-host-check.sh
 
