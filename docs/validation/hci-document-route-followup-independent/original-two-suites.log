@@ -1,0 +1,110 @@
+✖ ten unique typed choices, Recording default, exact source routes and invalid IDs (3.379012ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.720432ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.132707ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.540594ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.842272ms)
+✔ ir: newer inspector request wins over older completion after exit (4.446883ms)
+✔ ir: newer inspector request wins over older rejection after exit (1.023678ms)
+✔ hci: newer inspector request wins over older completion after exit (1.810884ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.6255ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.690585ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.875636ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.966639ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.502703ms)
+✔ independent boundaries: every size 0..130, explicit selections and whole rejection (6.331274ms)
+✔ independent newer completion survives older success AND older error (0.975917ms)
+✔ independent malformed digest shapes never publish and alias mutations cannot affect parse (5.103474ms)
+✔ independent whole TLV scan, unsupported CC, opaque report and offsets (1.785127ms)
+✔ independent stale paging, invalid numbers, and old leases do not mutate (1.629209ms)
+✖ independent source integration preserves nine routes and adds only static NFC (1.937571ms)
+✔ independent 64-byte authored APEX example remains explicit and hashes full supplied structure (0.539023ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 18
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 212.122366
+
+✖ failing tests:
+
+test at tests/analysis-inspector-independent.test.ts:16:1
+✖ ten unique typed choices, Recording default, exact source routes and invalid IDs (3.379012ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'recording',
+      'ble',
+      'ble-trials',
+      'ble-candidate',
+      'flipper',
+      'ir',
+  +   'hci-document',
+      'hci',
+      'ndef',
+      'phone-ndef',
+      'static-nfc'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/tests/analysis-inspector-independent.test.ts:17:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'recording',    'ble',
+      'ble-trials',   'ble-candidate',
+      'flipper',      'ir',
+      'hci-document', 'hci',
+      'ndef',         'phone-ndef',
+      'static-nfc'
+    ],
+    expected: [ 'recording', 'ble', 'ble-trials', 'ble-candidate', 'flipper', 'ir', 'hci', 'ndef', 'phone-ndef', 'static-nfc' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/nfc-static-memory-review.test.ts:74:1
+✖ independent source integration preserves nine routes and adds only static NFC (1.937571ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'recording',
+      'ble',
+      'ble-trials',
+      'ble-candidate',
+      'flipper',
+      'ir',
+  +   'hci-document',
+      'hci',
+      'ndef',
+      'phone-ndef',
+      'static-nfc'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui-review/tests/nfc-static-memory-review.test.ts:75:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'recording',    'ble',
+      'ble-trials',   'ble-candidate',
+      'flipper',      'ir',
+      'hci-document', 'hci',
+      'ndef',         'phone-ndef',
+      'static-nfc'
+    ],
+    expected: [ 'recording', 'ble', 'ble-trials', 'ble-candidate', 'flipper', 'ir', 'hci', 'ndef', 'phone-ndef', 'static-nfc' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,35 @@
+✔ selected pinned interface response shapes and terminal pair (3.473579ms)
+✔ presence is independent of effective defaults, including empty/no content and missing children (0.507647ms)
+✔ errors and unknown statuses cannot become successful identity (0.386761ms)
+✔ IDs, repeated keys and repeated terminal sequences are never pooled (0.317953ms)
+✔ unknown values retain offsets and original bytes without nested interpretation (0.330327ms)
+✔ reject duplicate known fields and multiple possible content, even unknown content (0.979217ms)
+✔ known types, UTF-8, numeric widths, tag zero, unsupported wires and canonical policies (0.912286ms)
+✔ framing EOF tails preserve bytes while malformed complete messages throw (0.528477ms)
+✔ every byte split and coalesced responses: inspect reassembled bytes, prefix tails never scan ahead (10.951373ms)
+✔ fixed budget boundaries: input, frame, field count, frame count, strings (16.34177ms)
+✔ copies input and output, rejects missing provenance (0.36559ms)
+✔ CLI: bounded local files, explicit provenance, no stdout on error, no symlinks/FIFOs/directories/URLs (166.4168ms)
+✔ host boundary snapshots only a strict own provenance data property (0.773398ms)
+✔ host byte snapshots use intrinsic bounds and storage, rejecting shared/detached/proxy inputs (0.647364ms)
+✔ actual owning component initial and inactive static renders (10.952103ms)
+✔ actual JSX projects all dense frame pages with at most four frames and boundary controls (12.924126ms)
+✔ actual JSX projects dense metadata pages with at most eight rows and exact offsets (6.322904ms)
+✔ declared provenance, omitted versus explicit zero and partial tails remain visible observations (11.033583ms)
+✔ decoded URL, markup and control strings are JSON-quoted escaped inert text without value-derived actions (2.245733ms)
+✔ exact draft, explicit inspect and caller declaration; authored response has explicit presence (3.824819ms)
+✔ malformed and over-budget edits reject whole, preserve exact previous draft and clear results (16.354314ms)
+✔ every edit attempt and provenance selection invalidates, fixture does not inspect (0.45968ms)
+✔ unknown and nonzero status, omitted defaults, incomplete tails and ambiguity remain observations (1.014407ms)
+✔ frame and metadata pages are bounded; malformed navigation cannot expand rendering (0.778911ms)
+✔ content remains data, including URL/control/markup strings (1.120956ms)
+✔ UI snapshots and navigation aliases cannot mutate observations or retained source (0.977226ms)
+✔ accessor actions are rejected without invoking getters, including enums and page values (0.833678ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 420.228219

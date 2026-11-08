@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-11-08",
+  "documentationBaseline": "63f530d1f6f8f943d4fd2c1016904f3259daf77a",
+  "runtimeTestedCommit": "deb5f27a8a0781f518479c1e84aee26e316a29df",
+  "remoteReadCheck": {
+    "repository": "BlackStateGroup/APEX",
+    "repositoryId": "1441565304",
+    "url": "https://github.com/BlackStateGroup/APEX",
+    "visibility": "private",
+    "archived": false,
+    "defaultBranch": "main",
+    "authenticatedPushPermission": true
+  },
+  "localRemoteConfigured": false,
+  "remotePublishedByDocumentationPass": false,
+  "merged": false,
+  "deployed": false,
+  "sourceBodiesIncludedInDocsCommit": false,
+  "scope": "docs/vision only; private conversation archive; publication coordinated separately",
+  "remoteBaselineCommit": "e51750ec0b34b280399877d67e1036058874c373",
+  "remoteBaselineTree": "65feddc47127bd228383e5fa87ca1e70ff26b2c8",
+  "publicationPlan": "Dedicated docs-only draft PR stacked on feat/rea-firmware-lab; do not merge or overwrite existing branches"
+}

@@ -1,0 +1,14 @@
+✔ phase-increment CLI explicit options, source and actual malformed/size/nonregular refusals (385.442467ms)
+✔ quarter tones, negative tone, DC, lag alias and half-turn convention (6.207732ms)
+✔ zero-energy endpoints never claim phase/frequency (0.812215ms)
+✔ integer oracle, rails, irregular geometry, window-one orientation (4.678342ms)
+✔ strict explicit parameters, accessor refusal and exact extent bounds (13.391544ms)
+✔ full original provenance and caller-owned report isolation (0.590149ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 520.184546

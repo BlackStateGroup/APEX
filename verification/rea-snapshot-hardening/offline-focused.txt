@@ -1,0 +1,25 @@
+✔ real REA evidence imports bounded metadata, deduplicates overlapping build IDs and stays unverified (1.862566ms)
+✔ REA report rejects mismatched digests, incorrect providers, invalid coverage and out-of-file ranges (1.01104ms)
+✔ firmware report persists as offline evidence without native provenance or raw payload promotion (1.979085ms)
+✔ pinned REA CLI and GNU tools inspect a real C binary, preserve inputs/outputs and hash saved evidence (2678.180936ms)
+✔ missing optional GNU tools preserve a successful REA inspection and explicit failure metadata (2552.062488ms)
+✔ REA stderr-only errors retain useful diagnostics (125.488375ms)
+✔ an output directory created during analysis is preserved and rejected (2570.522377ms)
+✔ all analysis consumes the exact snapshot even if source bytes change and are restored (2635.213133ms)
+✔ nonregular, tiny and oversized inputs fail before any analysis (481.753527ms)
+✔ dangling output symlinks are preserved and rejected (110.694229ms)
+✔ source replacement with identical bytes is rejected (2561.475051ms)
+✔ REA timeout and signal failures reject reports and clean the snapshot (2830.110867ms)
+✔ GNU timeout, signal, overflow and exit failures retain diagnostics without claiming success (2687.477909ms)
+✔ growth or shrinkage during bounded input capture fails before analysis (219.973641ms)
+✔ snapshot cleanup failure prevents report publication or success output (2617.559396ms)
+✔ an analysis failure remains visible when snapshot cleanup also fails (107.501434ms)
+✔ snapshot is removed before report writes and partial reports survive a write failure (2686.785492ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25015.240675

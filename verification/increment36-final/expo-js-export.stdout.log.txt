@@ -1,0 +1,32 @@
+Starting Metro Bundler
+
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:6783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 2254ms index.ts (289 modules)
+iOS Bundled 5461ms index.ts (791 modules)
+Android Bundled 9097ms index.ts (789 modules)
+
+› web bundles (1):
+_expo/static/js/web/index-94dbf4eebf10f8a6e20ba3a917ce76c5.js (825KB)
+
+› ios bundles (1):
+_expo/static/js/ios/index-c82e4d4a46766eb6312f7d2b4bf7189b.hbc (2.5MB)
+
+› android bundles (1):
+_expo/static/js/android/index-461f028b3e99f8b782fa365dd4a742ea.hbc (2.5MB)
+
+› Files (2):
+index.html (1.2KB)
+metadata.json (244B)
+
+Exported: /workspace/scratch/b96d3539d24d/apex-v36-validation-run/expo-export

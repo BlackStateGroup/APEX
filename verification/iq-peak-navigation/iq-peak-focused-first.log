@@ -1,0 +1,59 @@
+✖ peak page uses actual shifted FFT size for first, last and zero bins in both modes; retained snapshots and sources unchanged (4.141829ms)
+✖ null peak and absent spectrum are exact no-ops, including default short input (1.934773ms)
+✖ current selected frame controls peak; overview retained and stale callbacks cannot navigate after changes (1.333196ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.879137
+
+✖ failing tests:
+
+test at tests/iq-peak-navigation.test.ts:17:1
+✖ peak page uses actual shifted FFT size for first, last and zero bins in both modes; retained snapshots and sources unchanged (4.141829ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-peak-navigation.test.ts:20:46)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/iq-peak-navigation.test.ts:28:1
+✖ null peak and absent spectrum are exact no-ops, including default short input (1.934773ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   hashes: 0,
+  -   hashes: 2,
+      reads: 2
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-peak-navigation.test.ts:29:195)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { reads: 2, hashes: 0 },
+    expected: { reads: 2, hashes: 2 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/iq-peak-navigation.test.ts:32:1
+✖ current selected frame controls peak; overview retained and stale callbacks cannot navigate after changes (1.333196ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation/tests/iq-peak-navigation.test.ts:34:262)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

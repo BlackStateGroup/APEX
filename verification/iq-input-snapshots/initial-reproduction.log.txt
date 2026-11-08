@@ -1,0 +1,14 @@
+ACCEPTED spoof 0 0
+ACCEPTED spoof 262148 262148
+context {
+  schemaVersion: 1,
+  origin: 'synthetic-fixture',
+  importedAt: '2026-11-07T00:00:00.000Z'
+} reads 3
+ACCEPTED spoof 0 0
+ACCEPTED spoof 262148 262148
+context {
+  schemaVersion: 1,
+  origin: 'native',
+  importedAt: '2026-11-07T00:00:00.000Z'
+} reads 3

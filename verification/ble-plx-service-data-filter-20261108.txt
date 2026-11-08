@@ -1,0 +1,74 @@
+✔ Android-shaped synthetic input decodes a documented public telemetry layout (4.600433ms)
+✔ iOS normalized fixture yields the same telemetry without inventing raw bytes (1.028339ms)
+✔ unknown AD types, duplicate fields, names and signed TX power are preserved (0.608673ms)
+✔ 16-, 32- and 128-bit UUIDs use little-endian AD encoding (0.330151ms)
+✔ all service-data widths split UUID bytes from opaque payload without guessing (0.361564ms)
+✔ UTF-8 names decode, invalid UTF-8 remains preserved with a diagnostic (0.393815ms)
+✔ truncated AD structure preserves parsed prefix and exact undecoded tail (0.574033ms)
+✔ only all-zero trailing padding is accepted, with no parsing beyond it (0.267246ms)
+✔ malformed known fields retain original bytes and do not abort later fields (0.389935ms)
+✔ Flags allow zero or more octets as specified by CSS, without inventing missing flags (0.323538ms)
+✔ host capture truncation is separate from structurally valid AD bytes (0.269046ms)
+✔ TLM uses big-endian unsigned counters and signed fixed-point temperature (0.189965ms)
+✔ unknown, encrypted, future-version and incomplete TLM are not guessed (0.295885ms)
+✔ hex format, byte and element bounds are enforced (0.805544ms)
+✔ strict offline envelope rejects native claims and fabricated extra fields (0.795614ms)
+✔ recorded imports retain source-supplied timestamps without attesting physical reception (1.206259ms)
+✔ iOS normalized values have strict field, aggregate and dictionary limits (0.887447ms)
+✔ metadata-only summaries fit existing hypothesis input and omit raw private values (1.481527ms)
+✔ deterministic malformed-input sweep is bounded and retains every byte (77.366623ms)
+✔ Android retains byte order, padding, repeated unknown AD and malformed tail, not normalized replacement (6.083423ms)
+✔ iOS rawScanRecord JSON remains opaque, UUID is not MAC, no cached name fallback (0.630669ms)
+✔ null, missing, empty, sentinels and unavailable Android raw bytes remain distinguishable (0.751618ms)
+✔ canonical base64 round trips all byte values and bounded random-shaped lengths (138.247376ms)
+✔ malformed, noncanonical and oversize base64 is rejected without truncation (1.063911ms)
+✔ bounds and schemas reject bad dictionaries, duplicates, metrics and aggregate excess (2.951624ms)
+✔ source time must be supplied and validated; never invents timestamp or live provenance (0.824245ms)
+✔ all one-byte and two-byte tails round trip and reject nonzero pad bits (865.03044ms)
+✔ service-data-only FCD2 matches, service lists/name/RSSI/identity never establish membership (4.683834ms)
+✔ Android raw source wins contradictions; no normalized fallback; iOS never parses raw AD (0.570735ms)
+✔ missing, null and undefined differ from valid empty sources; inherited source is unavailable (0.408635ms)
+✔ UUID widths and case normalize; all dictionary aliases reject, even unrelated aliases (1.018899ms)
+✔ duplicate selected raw payloads reject even when equal, empty or in different UUID widths (0.405102ms)
+✔ strict raw framing and existing element limit checked through entire source, not first match (0.900074ms)
+✔ payloads are service membership only: empty, unknown and encrypted data all match (0.485427ms)
+✔ source and map accessors are never invoked; unrelated callback fields are never read (0.504406ms)
+✔ plain dictionary shapes only; hidden keys, symbols, inherited maps, arrays and boxed strings reject (0.556992ms)
+✔ byte, key and aggregate character limits reject without truncating (4.946407ms)
+✔ results never retain sources or payloads; mutation isolation and explicit evidence preparation (5.217703ms)
+✔ unsupported caller selections throw fixed errors rather than infer membership (0.593191ms)
+✔ aggregate character cap is inclusive; malformed unrelated entries cannot hide behind a match (2.293386ms)
+✔ complete selected source, spelling and exact document whitespace survive SQLite reopen and digest verification (14.980648ms)
+✔ missing and explicit-null Android raw source remain uninterpretable; empty raw is distinct (1.079849ms)
+✔ iOS raw JSON base64 remains opaque and selected normalized fields alone are reinterpreted (4.544272ms)
+✔ declared recorded origin and source timestamp remain separate from journal save time (2.753246ms)
+✔ strict source schema rejects claims, extra or missing fields, SDK/platform changes and inconsistent availability (3.908096ms)
+✔ source mismatch and native provenance are rejected on save and parse (1.290529ms)
+✔ Device methods and arbitrary properties are neither read nor retained; selected accessors fail (0.620382ms)
+✔ 4096-character source boundary is exact; oversize complete snapshots are rejected without writes (1.983609ms)
+✔ old records retain identical canonical digest semantics with no schema migration (2.015497ms)
+ℹ tests 49
+ℹ suites 0
+ℹ pass 49
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1174.326473
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+
+
+Scope: offline synthetic tests and full TypeScript only. No scans, native integration, caching/deadline control, device actions, permissions, dependencies or publication.
+
+Broader regression: node --test tests/ble-*.test.ts
+ℹ tests 144
+ℹ suites 0
+ℹ pass 144
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1749.318701

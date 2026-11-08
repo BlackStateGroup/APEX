@@ -1,0 +1,104 @@
+✖ disconnect waits for delayed open then closes its token once (5.965373ms)
+✖ early terminal event cannot resurrect a connection and stale early tokens are ignored (1.798161ms)
+✖ failed close retains ownership and token for same-owner retry (1.27867ms)
+✖ native open rejection and invalid token preserve unknown-ownership fence (0.445434ms)
+✖ bounded early terminal overflow fails closed and permits explicit known-token cleanup (2.527684ms)
+✖ listener installation failure removes partial subscription and releases pre-open ownership (0.968894ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 141.535113
+
+✖ failing tests:
+
+test at tests/usb-transport.test.ts:72:1
+✖ disconnect waits for delayed open then closes its token once (5.965373ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async Promise.all (index 0)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:78:20)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /closed during open/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-transport.test.ts:81:1
+✖ early terminal event cannot resurrect a connection and stale early tokens are ignored (1.798161ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:88:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /closed during open/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-transport.test.ts:91:1
+✖ failed close retains ownership and token for same-owner retry (1.27867ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:96:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /owned/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-transport.test.ts:101:1
+✖ native open rejection and invalid token preserve unknown-ownership fence (0.445434ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:106:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /cleanup uncertain/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-transport.test.ts:122:1
+✖ bounded early terminal overflow fails closed and permits explicit known-token cleanup (2.527684ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:127:20)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /overflow/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/usb-transport.test.ts:131:1
+✖ listener installation failure removes partial subscription and releases pre-open ownership (0.968894ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-usb-lifecycle/tests/usb-transport.test.ts:135:73)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

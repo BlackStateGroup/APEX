@@ -1,0 +1,65 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {flipperWorkbenchReducer as r, initialFlipperWorkbench as initial, flipperVisibleFrames, flipperVisibleFields, FLIPPER_RESPONSE_FIXTURE as fixture, FLIPPER_TEXT_LIMIT} from '../../src/flipper-workbench.ts';
+const inspect=()=>r(r(initial,{type:'fixture'}),{type:'inspect'});
+test('report returned by visible frames cannot mutate retained report',()=>{
+ const s=inspect(); const exposed=flipperVisibleFrames(s);
+ try {(exposed[0]!.status as any).effective=99;} catch {}
+ assert.equal(s.report!.frames[0]!.status.effective,0);
+});
+test('original bytes exposed through state cannot alter report evidence',()=>{
+ const s=inspect(); assert.equal(Object.hasOwn(s.report!, 'originalBytes'),false);
+ assert.equal(s.report!.byteLength,14); assert.equal(s.draft,fixture);
+});
+test('page transitions cannot mutate reports retained by earlier states',()=>{
+ const s=inspect(); const next=r(s,{type:'frame-page',page:0});
+ try {(next.report!.frames[0]!.content.major! as any).effective=999;} catch {}
+ assert.equal(s.report!.frames[0]!.content.major!.effective,1);
+});
+test('field helper metadata is detached',()=>{
+ const s=inspect(); const fields=flipperVisibleFields(s);fields[0]!.offset=999;
+ assert.equal(s.report!.frames[0]!.fields[0]!.offset,1);
+});
+test('accessor edit cannot validate one draft and retain another',()=>{
+ let reads=0;
+ const action={type:'edit' as const,get draft(){return ++reads===1?fixture:'x'.repeat(FLIPPER_TEXT_LIMIT+1);}};
+ const s=r(inspect(),action);
+ assert.ok(s.draft.length<=FLIPPER_TEXT_LIMIT);
+});
+test('invalid edit clears stale report and page indexes',()=>{
+ for(const draft of ['f','0\t0','00\u0085','00\u2028','00\u200b','00\u0000','0x00','00'.repeat(65537)]){
+ const s=r(inspect(),{type:'edit',draft});assert.equal(s.report,null);assert.equal(s.draft,fixture);assert.equal(s.framePage,0);assert.equal(s.selectedFrame,0);assert.equal(s.fieldPage,0);
+ }
+});
+test('provenance action snapshots the declaration before validation',()=>{
+ let reads=0;
+ const action={type:'provenance' as const,get provenance(){return (++reads===1?'synthetic':'verified-device') as 'synthetic';}};
+ const s=r(inspect(),action);
+ assert.ok(s.provenance===null||s.provenance==='synthetic'||s.provenance==='imported');
+});
+test('invalid pure navigation inputs retain current bounded state',()=>{
+ const s=inspect();
+ for(const value of [-0.5,-1,NaN,Infinity,Number.MAX_SAFE_INTEGER,'0',null,{},undefined]){
+ for(const type of ['frame-page','field-page'] as const) assert.equal(r(s,{type,page:value as number}),s);
+ assert.equal(r(s,{type:'select-frame',index:value as number}),s);
+ }
+});
+test('malformed action shapes including symbol keys clear stale report without invoking getters',()=>{
+ const s=inspect();let invoked=0;
+ const bad=[null,undefined,{},[],{type:Symbol('inspect')},{type:'INSPECT'},Object.create({type:'inspect'}),{type:'inspect', [Symbol('extra')]:0},{type:'edit', get draft(){invoked++;throw Error('must not run')}},{get type(){invoked++;return 'inspect'}}];
+ for(const action of bad){const next=r(s,action as any);assert.equal(next.report,null);assert.equal(next.draft,fixture);assert.equal(next.framePage,0);assert.ok(Object.isFrozen(next));}
+ assert.equal(invoked,0);
+});
+test('enum and page non-numeric values cannot corrupt state or invoke coercion',()=>{
+ const s=inspect();let invoked=0;
+ for(const value of [Symbol('x'),1n,()=>0,{valueOf(){invoked++;return 0}}]) {
+  for(const type of ['frame-page','field-page'] as const)assert.equal(r(s,{type,page:value as any}),s);
+  assert.equal(r(s,{type:'select-frame',index:value as any}),s);
+  const next=r(s,{type:'provenance',provenance:value as any});assert.equal(next.provenance,null);assert.equal(next.report,null);
+ }
+ assert.equal(invoked,0);
+});
+test('all reachable report data and all returned states are frozen',()=>{
+ const s=inspect();const visit=(x:any)=>{if(x!==null&&typeof x==='object'){assert.ok(Object.isFrozen(x));for(const child of Object.values(x))visit(child);}};visit(s);
+ for(const action of [{type:'fixture'},{type:'edit',draft:'f'},{type:'edit',draft:''},{type:'provenance',provenance:'imported'},{type:'frame-page',page:0},{type:'select-frame',index:0},{type:'field-page',page:0}])visit(r(s,action as any));
+});

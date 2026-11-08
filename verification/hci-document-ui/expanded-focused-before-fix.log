@@ -1,0 +1,217 @@
+✖ ten unique typed choices, Recording default, exact source routes and invalid IDs (3.791888ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.835932ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.132346ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.410393ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.822171ms)
+✔ ir: newer inspector request wins over older completion after exit (5.390645ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.91323ms)
+✔ hci: newer inspector request wins over older completion after exit (1.759413ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.78083ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (8.718048ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.969285ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.594876ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.014793ms)
+✔ eleven typed inspector choices retaining the original ten, Recording default, and separate explicit source routes (2.041565ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.787411ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.315411ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (7.671765ms)
+✔ source delivery during pending saves survives old completion without reviving results (11.971371ms)
+✔ source delivery during pending saves survives old failure without reviving results (3.589833ms)
+✔ actual document TSX: no implicit work, exact inert text and required cautions (55.6621ms)
+✔ actual document TSX: imported labels are exact inert text, never links or nested AD objects (25.530055ms)
+✔ creation only follows explicit valid selection and explicit prepare; handoff once only (7.61191ms)
+✔ prepare overlap, stale callbacks, repeated selection, edits, clear and exit fence late success/rejection (8.339407ms)
+✔ exact source delivery once including hidden state; no automatic verification, old reports cleared (8.812105ms)
+✔ 4096 UTF16 whole-edit budget retains exact draft, clears reports and fences rejected edits (1.334538ms)
+✔ reopen races: new sources, accepted/rejected edits, Clear, exits and stale snapshots (2.436081ms)
+✔ bounded reports paginate and never project nested advertising or readable private text (1.886169ms)
+✔ App routes exact prepared document and preserves separate stable inspector mounts (0.706352ms)
+✔ new successful preparations/reopens survive old late completion or rejection (1.660727ms)
+✔ nonfirst selected document excludes unrelated record marker and uses derivative offsets (0.864021ms)
+✔ independent exhaustive 65536 event words and periodic interval arithmetic (2195.787817ms)
+✔ independent exhaustive octets, directed applicability, signed and conditional states (14.591125ms)
+✔ all data sizes and feasible counts, offsets, allowlisted property privacy (10.784654ms)
+✔ snapshot and trusted hasher separation, private brand, repeated selection (0.738901ms)
+✔ structural late failures, selector framing and all non-three small flags (2.000182ms)
+✔ actual CLI privacy, conflicts, atomic stderr, symlink scope and read denial (1927.370896ms)
+✔ explicit metadata selection, scalar spans, privacy and standalone disclosures (15.502149ms)
+✔ whole-event structural rejection has precise absolute offsets, including late failures (4.364245ms)
+✔ scalar states exhaust wire values without guessing unavailable or reserved measurements (28.379702ms)
+✔ directed fields ignored when inapplicable, resolved target not asserted as identity (25.065422ms)
+✔ event bits, conditional coded PHY, legacy contradictions and fragment statuses remain separate (1.542955ms)
+✔ CLI option is exclusive, default stays private, late structural failure emits no stdout (680.817682ms)
+✔ independent extended UI: all status values preserve numbers and omit payload including status zero (86.515435ms)
+✔ independent extended UI: addresses have conditional absence and directed context is not target identity (103.180905ms)
+✔ independent extended controller: whole-event failure, both kind switches, bounded pages and stale controls (6.24197ms)
+✔ independent extended controller: deep immutable aliases, exact bytes and all reset fences (6.793463ms)
+✔ independent extended controller: stale hashes success/failure cannot resurrect or replace newer result (2.319234ms)
+✔ independent extended UI: unknown flags and contradictory legacy status diagnostics are explicit (12.843833ms)
+✔ independent extended UI: large forged strings and arrays never escape bounded selected projection (8.627554ms)
+✔ independent extended controller: newer inspection wins when old hash completes after it (1.047944ms)
+✔ extended explicit selection stays metadata-only across all data statuses; deeply immutable private observations (11.389203ms)
+✔ switching kinds and failed whole-event selection clears every previous result (5.420134ms)
+✔ exact observed state fences both kinds and pages; bounded whole reports, invalid bounds, old activation (1.243172ms)
+✔ all reset paths clear extended and legacy results; pending hash never resurrects them (8.297757ms)
+✔ manual byte oracle: offsets, signed64 max, BE drops, repeated reports and address reversal (5.490985ms)
+✔ all RSSI octets and enum octets use exact supported sets (77.254458ms)
+✔ classification does not validate; complete wrapper with every shortened candidate refuses selection (30.372156ms)
+✔ nonlegacy metadata has only safe keys; every unknown first octet remains unexposed (29.173738ms)
+✔ AD parser and service parity retain malformed, encrypted, unknown and inert URL bytes (6.973288ms)
+✔ intrinsic view offset, detached buffer, frozen brand and copied hasher bytes (0.782352ms)
+✔ standalone selected JSON carries source/time/drop/identity/RF limitations (0.537211ms)
+✔ CLI subprocesses: no opaque markers/path leakage, strict argument matrix, atomic failure, ancestor link permitted (3037.268374ms)
+✔ exact source digest, offsets, multi-report address order, separate scan response and AD parity (5.193808ms)
+✔ metadata redacts all packet bodies including extended, keys, large/empty opaque payloads (8.854282ms)
+✔ atomic header, wrapper, EOF and record budgets reject without recovery (34.308839ms)
+✔ capture truncation, flags and raw timestamps remain metadata without truth claims (0.71979ms)
+✔ event framing, nested counts, enums, lengths and late errors reject whole selection (8.252424ms)
+✔ intrinsic snapshots, own context, brand and async mutation resistance (1.378646ms)
+✔ explicit bounded pagination, no silent truncation and output cap (7.962088ms)
+✔ CLI explicit selection, strict flags, read-only permissions and atomic late failures (1003.710214ms)
+✔ service interpretation is per report and malformed/opaque AD survives unchanged (1.026114ms)
+✔ actual-byte budgets ignore subclass claims, context fields do not invoke inherited data (10.643345ms)
+✔ standalone selected JSON retains every metadata disclosure (0.567218ms)
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (23.136774ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (11.968248ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (15.828599ms)
+✔ independent actual TSX: malformed AD is explicitly visible despite accepted HCI framing (8.483752ms)
+✔ independent actual TSX: encrypted, unknown, malformed, partial and complete service counts stay distinct (26.301377ms)
+✔ independent exact binary slice, hash oracle, unrelated sentinels and derivative coordinates (13.04423ms)
+✔ literal minimum 55 bytes and maximum 298 bytes with exact 255 parameter limit (5.671152ms)
+✔ existing serialized metadata, legacy and extended output is byte-for-byte unchanged (1.880966ms)
+✔ caller input and preparation/creation/read hash buffers cannot alias retained bytes (3.209917ms)
+✔ brand spoofs, nonlegacy and invalid selectors reject before hash exposure (11.559587ms)
+✔ hash failures reject atomically; valid shape is not hash honesty (3.16365ms)
+✔ exact imported whitespace and escaped Unicode survive, bounded by UTF16 length (1.561877ms)
+✔ all exact object fields reject missing and extra fields before hashing (2.794387ms)
+✔ decoded and escaped duplicate keys at every depth reject before hash (2.830324ms)
+✔ wrong types, nested objects, arrays, nonJSON and unsafe string controls reject (19.014575ms)
+✔ hex, exact header, hash syntax, byte counts and original-range plausibility are strict (27.485649ms)
+✔ plausible original claims can change and always remain explicitly UNVERIFIED (5.896993ms)
+✔ structural and late bad reports reject even with recomputed matching derivative digest (2.309311ms)
+✔ malformed, unknown, encrypted AD and inert URL retain bytes and recomputed interpretation parity (14.997786ms)
+✔ nonfirst event exact binary span, unrelated marker exclusion, source vs derivative and coordinate oracles (9.465689ms)
+✔ 55 and 298 byte exact boundaries and maximum document label (2.321405ms)
+✔ forged spread proxy and invalid selections fail before hashing (0.760818ms)
+✔ caller and malicious hash copy mutation, async hash rejection and bad digest never publish (1.733977ms)
+✔ strict bounded exact schema, escaped duplicate names and shape/range confusion before hashing (6.117428ms)
+✔ plausible claimed original references remain explicitly unverified, not substituted (0.621335ms)
+✔ all accepted report enums/RSSI/AD lengths and opaque malformed unknown encrypted/inert AD parity (76.649595ms)
+✔ whole event rejected for malformed wrappers, framing, reports or late invalid data on create and reopen (11.77611ms)
+✔ exact JSON budget, escaped text retained, runtime input types, and multiple embedded records refused (9.97751ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (9.722639ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (13.301048ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (13.931906ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (6.29743ms)
+✔ actual extended TSX renders exact bounded header states and applicable addresses, never marker data (33.023219ms)
+✔ actual extended TSX bounds reports, excerpts and diagnostics; reserved values and contradictions stay visible (15.010846ms)
+✔ independent: whole rejection matrix preserves exact previous input and fence across declaration/tab changes (12.259952ms)
+✔ independent: overlapping generations cannot overwrite a newer successful inspection, including old error (6.89976ms)
+✔ independent: invalid hash outcomes never publish metadata and recover explicitly (1.074985ms)
+✔ independent: same-source failed selection atomically removes an earlier valid selected event; snapshots deeply immutable (7.052056ms)
+✔ independent: old activation lease invalidates all controls while rejected draft survives tab leave (0.540445ms)
+✔ independent: actual native adapter with narrow expo digest mock and web digest agree with Node on non-ASCII subviews (30.530073ms)
+✔ independent: malformed AD remains visibly distinct from successfully parsed advertising (0.717432ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (33.508059ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (2.352498ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (1.822252ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.553797ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (4.055332ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.369019ms)
+✔ independent boundaries: every size 0..130, explicit selections and whole rejection (5.488673ms)
+✔ independent newer completion survives older success AND older error (0.909762ms)
+✔ independent malformed digest shapes never publish and alias mutations cannot affect parse (8.875691ms)
+✔ independent whole TLV scan, unsupported CC, opaque report and offsets (4.518959ms)
+✔ independent stale paging, invalid numbers, and old leases do not mutate (0.582638ms)
+✖ independent source integration preserves nine routes and adds only static NFC (1.987461ms)
+✔ independent 64-byte authored APEX example remains explicit and hashes full supplied structure (0.816215ms)
+ℹ tests 127
+ℹ suites 0
+ℹ pass 125
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4450.02141
+
+✖ failing tests:
+
+test at tests/analysis-inspector-independent.test.ts:16:1
+✖ ten unique typed choices, Recording default, exact source routes and invalid IDs (3.791888ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'recording',
+      'ble',
+      'ble-trials',
+      'ble-candidate',
+      'flipper',
+      'ir',
+  +   'hci-document',
+      'hci',
+      'ndef',
+      'phone-ndef',
+      'static-nfc'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui/tests/analysis-inspector-independent.test.ts:17:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'recording',    'ble',
+      'ble-trials',   'ble-candidate',
+      'flipper',      'ir',
+      'hci-document', 'hci',
+      'ndef',         'phone-ndef',
+      'static-nfc'
+    ],
+    expected: [ 'recording', 'ble', 'ble-trials', 'ble-candidate', 'flipper', 'ir', 'hci', 'ndef', 'phone-ndef', 'static-nfc' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/nfc-static-memory-review.test.ts:74:1
+✖ independent source integration preserves nine routes and adds only static NFC (1.987461ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'recording',
+      'ble',
+      'ble-trials',
+      'ble-candidate',
+      'flipper',
+      'ir',
+  +   'hci-document',
+      'hci',
+      'ndef',
+      'phone-ndef',
+      'static-nfc'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-document-ui/tests/nfc-static-memory-review.test.ts:75:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'recording',    'ble',
+      'ble-trials',   'ble-candidate',
+      'flipper',      'ir',
+      'hci-document', 'hci',
+      'ndef',         'phone-ndef',
+      'static-nfc'
+    ],
+    expected: [ 'recording', 'ble', 'ble-trials', 'ble-candidate', 'flipper', 'ir', 'hci', 'ndef', 'phone-ndef', 'static-nfc' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

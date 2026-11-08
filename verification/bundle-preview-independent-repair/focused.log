@@ -1,0 +1,34 @@
+✔ independent: returned state cannot replace the draft behind a verified report (5.143205ms)
+✔ independent: returned report metadata and exact documents cannot be mutated (1.002897ms)
+✔ independent: nested payload and record arrays cannot mutate a verified snapshot (0.72444ms)
+✔ independent: old hash error cannot clear newer pending state or overwrite newest success (1.687012ms)
+✔ independent: UTF-16 rejection counts surrogate pairs whole and fences pending inspection (0.788589ms)
+✔ independent: preview has no journal/provider/network/action imports or executable URL projection (0.954155ms)
+✔ independent repair: frozen owner rejects state/accessor shadowing without invoking getters (5.357358ms)
+✔ independent repair: initial inactive and previous activation leases cannot dispatch retained callbacks (5.159367ms)
+✔ independent repair: an inner digest finishing across repeated tab changes cannot publish stale success/error (6.514494ms)
+✔ independent repair: rejected replacement remains blocked across tab changes and has zero digest calls (0.816698ms)
+✔ actual TSX initial/inactive renders and precise limits (12.365536ms)
+✔ actual TSX projects four bounded metadata rows and inert provenance/digest caveats (13.466764ms)
+✔ actual TSX bounds valid long legacy timestamps without changing retained data (9.530434ms)
+✔ independent: valid long timestamp metadata uses a bounded display excerpt (11.047359ms)
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (44.04159ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (3.780855ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (2.79524ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (1.852329ms)
+✔ published state, nested reports and exact strings cannot be mutated or replaced (2.647218ms)
+✔ deactivated controllers reject queued actions; activation leases never revive old controls (0.868223ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (9.772045ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (6.096518ms)
+✔ bounds, canonical time and digest failures reject without partial values (27.01581ms)
+✔ export snapshots the entire selection before the first awaited hash (1.886906ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1593.486276ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (7.564912ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1902.815001

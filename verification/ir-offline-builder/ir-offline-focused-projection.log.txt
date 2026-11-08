@@ -1,0 +1,15 @@
+✔ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (8.23959ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (1.672297ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (1.403379ms)
+✔ bounded actual bytes, lines, names, record and timing counts (60.002455ms)
+✔ raw numerical limits and finite strict fractions (2.830108ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (2.637019ms)
+✔ CLI executes with filesystem writes denied and stdout atomic; regular-file bounds (686.373604ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 900.937241

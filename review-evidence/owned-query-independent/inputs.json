@@ -1,0 +1,41 @@
+{
+  "runtime_sha256": "c50d769b3a5c5266e3fd3119b078258c584306cac0fb79a5e1bd90a8b3303f1d",
+  "runtime_candidate_commit": "2a97aca20779a1fd1d745fb6ea61d83d7eca59e9",
+  "inputs": {
+    "src/platform/bluetooth.native.ts": "c50d769b3a5c5266e3fd3119b078258c584306cac0fb79a5e1bd90a8b3303f1d",
+    "review-evidence/owned-query-independent/independent.test.ts": "6fb62cbe0338db18edd8297379c77264cc5c99254798b155411964f3f675ee32",
+    "tests/plx-facade-host/loader.ts": "74b700c6fbb108923c190b6f30881067627e93d4d6afd07de00247c03d6483a7",
+    "tests/plx-facade-host/inputs.sha256.json": "2ddad250dd1a4cf4d43b9abfd37ae8b925bc9ce4c6f273ba89e3debba57f2337",
+    "node_modules/react-native-ble-plx/lib/module/BleManager.js": "4c7f98edd9dc1e148b618fd78a85b7a1cea8164bc45f38128a74dcd88b4acf21",
+    "node_modules/react-native-ble-plx/lib/module/BleError.js": "8cb7becd8940bb054d7adf97f5fa03bb01f02927a7bf3fad412a9d6746382f52",
+    "tests/ble-owned-query-independent.test.ts": "107dbc52f656aeeacc9c2e550120c358e38f1b9b6ceabbc51419914235644b80",
+    "tests/support/app-acquisition.ts": "b48769c1e7ce5678e774ac1dbaac22eedea72391d0a205a9368c63ca88a2cca7",
+    "App.tsx": "cbe848259cf66f327f5855438bace84d2c345d015f70dd0f13eed4ece3a19716",
+    "packages/core/session.ts": "9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404",
+    "packages/core/ble-transport.ts": "a377ccd2563a03d329a5cab19b804424467a5d8a09cbea2ba0421a17fe8649b8"
+  },
+  "result": {
+    "tests": 32,
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0
+  },
+  "scope": "Unchanged installed PLX published ESM and exact adapter; synthetic RN/native bridge. No native/physical acceptance.",
+  "current_fixture_commit": "c1a20621b886d8c4bb7a2253f049360f465cdeb3",
+  "baseline": {
+    "commit": "63f530d1f6f8f943d4fd2c1016904f3259daf77a",
+    "source_sha256": "34e1c8d708785dba6ea2c26af53bf463c4c56a0b1be409daa5448cd9a6d0da71",
+    "tests": 32,
+    "passed": 6,
+    "failed": 26,
+    "skipped": 0,
+    "same_final_harness": true
+  },
+  "consumer_result": {
+    "tests": 162,
+    "passed": 162,
+    "failed": 0,
+    "skipped": 0
+  },
+  "typecheck": "passed"
+}

@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-07",
+  "localBaseline": "390ae75180bbc330bd517cfcebceb89d4e238f15",
+  "upstream": {
+    "repository": "Bluetooth-Devices/bthome-ble",
+    "tag": "v3.25.0",
+    "releaseDate": "2026-10-27",
+    "commit": "590f02ba9b55306857c48c2d7f60014fde67f171",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2022 Ernst Klamer",
+    "releaseUrl": "https://github.com/Bluetooth-Devices/bthome-ble/releases/tag/v3.25.0",
+    "files": [
+      {"path": "LICENSE", "blobSha": "1e41c3a4cc71717d8e8360072326ac8196bcc406", "localCopy": "research/bthome-reference/LICENSE.bthome-ble"},
+      {"path": "src/bthome_ble/const.py", "blobSha": "5882a869e6f15038189feda5d9989bdf35b58c81", "localCopy": "research/bthome-reference/const.py.reference"}
+    ]
+  },
+  "protocolReferences": [
+    {"url": "https://bthome.io/format/", "immutable": false, "usedFor": "device-info flags, object ordering/repetition, numeric table, plaintext example"},
+    {"url": "https://bthome.io/encryption/", "immutable": false, "usedFor": "encrypted opaque example and missing MAC/key requirements"}
+  ],
+  "implementation": "Independent TypeScript decoder; upstream numeric facts cross-checked, reference file retained with MIT license; no upstream parser copied or dependency installed.",
+  "fixtureProvenance": "All tests are synthetic/offline, including official published example bytes; none establish RF reception."
+}

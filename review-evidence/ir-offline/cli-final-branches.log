@@ -1,0 +1,12 @@
+✔ actual CLI serialization failure is atomic under denied writes (123.775841ms)
+✔ actual CLI output-budget failure is atomic under denied writes (117.798975ms)
+✔ actual CLI sha256 failure is atomic under denied writes (115.115565ms)
+✔ shared reader rejects final symlinks but permits symlinked ancestor directories (251.895336ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 754.951238

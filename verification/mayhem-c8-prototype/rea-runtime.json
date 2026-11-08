@@ -1,0 +1,12 @@
+{
+  "source": "Existing installed runtime used by main APEX tests, not recovered upstream checkout",
+  "package": "rea-agents",
+  "installedVersion": "6.8.0",
+  "lockfileIntegrity": "sha512-9QDeRnGqEDzABZyr04eLnBXBv/c6I9/TWu/6M0MD4pEfkySI/BIgwTODIbAReX3C1x6hjw9+Jlx4A2yUSPZ9ww==",
+  "lockfileSha256": "520d5e7cd9f64bb99104cfecb060b1cae75ea9641272cd8b0b2d618c293cb02d",
+  "runtimePath": "/workspace/scratch/b96d3539d24d/apex-rea-worker-prep/node_modules/rea-agents",
+  "files": {
+    "package.json": "b0fc212f6bea9b4ee6e2b3ab0b52dd95402c229da3b8652127e5f131c3445b39",
+    "scripts/rea.mjs": "67ca7682986ff2b90678e1797e625caca6026a1732d9cad1a1088253c7bb45e5"
+  }
+}

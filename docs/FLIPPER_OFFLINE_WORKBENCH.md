@@ -1,0 +1,13 @@
+# Memory-only Flipper response workbench
+
+Analysis exposes the reviewed response-only inspector without any device path. It accepts explicitly pasted hex, caller-declared `synthetic` or `imported` provenance, and a manually authored nonprivileged version response fixture. Loading or editing never inspects automatically. The fixture is independent authored data, not captured upstream/device output.
+
+The exact draft stays in component memory across tab navigation and clears on reload. It is never journaled, uploaded, exported or sent to a provider. Provenance is a caller claim, not authentication or verified reception. No commands, transport, USB/BLE permissions, request encoder, URL action, success identity claim or stream assembly exists here.
+
+Input limit: 196608 text characters (including separators), at most 65536 decoded bytes. Complete pairs may be adjacent or separated by ASCII SP (20), HT (09), LF (0A), VT (0B), FF (0C) or CR (0D); separators inside a pair, odd nibbles, prefixes, punctuation and non-ASCII whitespace are rejected. Paste complete pairs rather than entering a single nibble. Rejected edits retain the previous exact draft in full, never a truncated prefix, and clear the previous report. Every edit attempt and provenance declaration resets report and pagination. Inspect is synchronous and explicit, with parser failures shown without partial results.
+
+Only four frames render per page. Eight selected-frame field metadata rows render per page, combining envelope and known content fields with labeled scope and byte offsets. No raw byte array or entire report is rendered. Presence and effective defaults are distinct for IDs, status, has_next and known pair/version values. Strings are JSON-quoted inert Text, never markup or actionable URLs. Unknown field counts, ambiguity, unknown/nonzero status, parser errors and incomplete framing tails remain visible. A zero status or absent tail proves neither success nor identity nor completion.
+
+Controller tests run offline. The Playwright smoke case is authored but requires a browser environment to execute; no browser or phone/device validation is implied.
+
+The controller exposes a recursively frozen UI observation snapshot with byte count, not the parser's mutable original byte array. The exact draft remains the source. Returned states are frozen; navigation may safely share immutable observations. Field metadata helpers return detached rows. Actions must be plain objects with the exact own data fields for their variant; getters and inherited fields are rejected without being invoked, so validation and assignment cannot observe different action values.

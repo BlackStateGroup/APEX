@@ -1,0 +1,15 @@
+✔ CRC-valid MTU23 response tail is exactly READY and reaches the decoder (3.207229ms)
+✔ every uniform notification size and every two-way frame split preserves bytes (4.461215ms)
+✔ session ping succeeds using firmware MTU-minus-three / 244-byte capped splitting for every supported MTU (109.834239ms)
+✔ first READY alone is consumed while subscription is pending; all later marker placements are data (0.927883ms)
+✔ post-READY marker delivery keeps independent copies for driver and listeners (0.389439ms)
+✔ non-exact first notifications still reject setup and cannot be rescued by READY (0.59466ms)
+✔ post-READY empty and oversized notifications fail closed, including pending subscription (3.569384ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 265.688688

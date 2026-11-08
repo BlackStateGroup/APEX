@@ -1,0 +1,79 @@
+✔ independent: returned state cannot replace the draft behind a verified report (20.945579ms)
+✔ independent: returned report metadata and exact documents cannot be mutated (13.743704ms)
+✔ independent: nested payload and record arrays cannot mutate a verified snapshot (3.54273ms)
+✔ independent: old hash error cannot clear newer pending state or overwrite newest success (6.166162ms)
+✔ independent: UTF-16 rejection counts surrogate pairs whole and fences pending inspection (1.017343ms)
+✔ independent: preview has no journal/provider/network/action imports or executable URL projection (7.199065ms)
+✔ independent repair: frozen owner rejects state/accessor shadowing without invoking getters (14.882034ms)
+✔ independent repair: initial inactive and previous activation leases cannot dispatch retained callbacks (8.042434ms)
+✔ independent repair: an inner digest finishing across repeated tab changes cannot publish stale success/error (35.45719ms)
+✔ independent repair: rejected replacement remains blocked across tab changes and has zero digest calls (0.731136ms)
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/workspace/scratch/b96d3539d24d/apex-hci-journal-ui/src/platform/hci-digest' imported from /workspace/scratch/b96d3539d24d/apex-hci-journal-ui/src/EvidenceBundleWorkbench.tsx
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at resolve (file:///workspace/scratch/b96d3539d24d/apex-hci-journal-ui/tests/evidence-bundle-static-render.test.ts:51:12)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at resolveWithHooks (node:internal/modules/customization_hooks:417:10)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:751:16) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///workspace/scratch/b96d3539d24d/apex-hci-journal-ui/src/platform/hci-digest'
+}
+
+Node.js v24.22.1
+✖ tests/evidence-bundle-static-render.test.ts (968.68183ms)
+✔ exact text bound accepted; over bound rejected whole and stale output cleared (189.814453ms)
+✔ duplicates, outer and inner digest failures never expose partial reports (5.885313ms)
+✔ pagination is bounded and edit/clear/deactivation reset pages and reports (5.376275ms)
+✔ new draft, rejected edit, clear, deactivation and newer Inspect fence stale success AND error (5.575751ms)
+✔ published state, nested reports and exact strings cannot be mutated or replaced (1.174425ms)
+✔ deactivated controllers reject queued actions; activation leases never revive old controls (0.644916ms)
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (48.452497ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (13.994642ms)
+✔ bounds, canonical time and digest failures reject without partial values (78.955597ms)
+✔ export snapshots the entire selection before the first awaited hash (12.684738ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (2002.619224ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (8.053568ms)
+✔ prepare option: exact selected binary, original coordinates, default compatibility and atomic refusals (2923.052108ms)
+✔ reopen: fatal UTF8, BOM, strict arguments, bounded regular input and no mutation (2127.013619ms)
+✔ reopen reports forged original references only as unverified; binary tampering and late bad reports remain atomic (500.997997ms)
+✔ independent actual document TSX: inert sensitive whole-event disclosure, exact draft and paginated status summaries (21.485789ms)
+✔ independent actual TSX owner has no inactive output and no automatic verification on static render (1.950923ms)
+✔ actual document TSX: no implicit work, exact inert text and required cautions (24.257311ms)
+✔ actual document TSX: imported labels are exact inert text, never links or nested AD objects (6.40428ms)
+✔ independent document races: earlier success/failure cannot overwrite later accepted verification (17.280043ms)
+✔ independent document fencing: clear, rejected edit, source delivery and navigation invalidate pending work (5.739434ms)
+✔ independent exact edits, source IDs, private frozen state and stale callbacks (6.469481ms)
+✔ independent preparation: second selection owns document despite overlapping hashes and stale handoff (19.585926ms)
+✔ independent preparation fences rejected edits, clear, extended selection and navigation (3.868237ms)
+✔ independent source receipt while inactive is exact, one-shot and never verifies (0.694311ms)
+✔ creation only follows explicit valid selection and explicit prepare; handoff once only (8.58992ms)
+✔ prepare overlap, stale callbacks, repeated selection, edits, clear and exit fence late success/rejection (12.840529ms)
+✔ exact source delivery once including hidden state; no automatic verification, old reports cleared (7.829577ms)
+✔ 4096 UTF16 whole-edit budget retains exact draft, clears reports and fences rejected edits (2.802334ms)
+✔ reopen races: new sources, accepted/rejected edits, Clear, exits and stale snapshots (8.447869ms)
+✔ bounded reports paginate and never project nested advertising or readable private text (2.019027ms)
+✔ App routes exact prepared document and preserves separate stable inspector mounts (0.835852ms)
+✔ new successful preparations/reopens survive old late completion or rejection (3.934555ms)
+✔ nonfirst selected document excludes unrelated record marker and uses derivative offsets (1.28528ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 44
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6079.033219
+
+✖ failing tests:
+
+test at tests/evidence-bundle-static-render.test.ts:1:1
+✖ tests/evidence-bundle-static-render.test.ts (968.68183ms)
+  'test failed'

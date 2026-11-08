@@ -1,0 +1,23 @@
+✔ independent HCI exact inner document retained; outer canonical digest and byte digest distinct (11.896786ms)
+✔ independent missing byte capability fails all verification/persistence APIs; parse/list stay structural (2.236017ms)
+✔ independent re-signed outer envelopes and bundles cannot launder invalid inner digest/framing (7.833383ms)
+✔ independent source declaration mapping is exact and rejects native/mismatched labels (2.257947ms)
+✔ independent save refuses payload/input accessors without executing them (0.712566ms)
+✔ independent verify refuses accessor-bearing HCI records before serialization (0.870575ms)
+✔ independent save snapshots mutable caller input before text/byte hash awaits (2.060157ms)
+✔ independent malicious byte-hasher cannot mutate retained framing or future report (3.655811ms)
+✔ independent errors never insert; storage failure is not success; byte vs hex-text hash rejects (1.570236ms)
+✔ independent old string-only callers preserve bytes, false mismatch and malformed throw (0.800952ms)
+✔ independent actual CLI HCI roundtrip and malformed/strict inputs emit no partial stdout (1126.773353ms)
+✔ independent exact payload rejects inherited/nonenumerable/symbol/extra fields and never calls toJSON (0.838635ms)
+✔ independent delayed verify and bundle hash cannot observe later caller mutation (1.228993ms)
+✔ independent inherited and accessor toJSON cannot substitute a different HCI verification target (0.621689ms)
+✔ independent outer envelope serialized size cap remains fail closed (0.323982ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1335.372908

@@ -1,0 +1,31 @@
+✔ IQ validates both captured sizes before either read, including missing pair and every boundary (7.612064ms)
+✔ IQ staging is read-free and size/name/read method are captured, not reread at inspection (3.737059ms)
+✔ IQ exact boundary sizes accepted and raw read mismatches fail closed (18.980579ms)
+✔ IQ import rejects UTF8, BOM, duplicate escaped keys, profile drift and SHA512 mismatch without reports (4.509022ms)
+✔ IQ exact byte provenance never conflates supplier time, external naming or synthetic source (8.59791ms)
+✔ IQ pages expose at most eight immutable bins, cover FFT exactly, and refuse stale/invalid events (4.456219ms)
+✔ IQ clear, replacement and deactivate preserve one actual read slot until settle and fence stale results (1.526643ms)
+✔ IQ metadata snapshot survives deferred data read (1.877355ms)
+✔ IQ pending hash is fenced at each boundary and slot drains before retry (2.676015ms)
+✔ IQ invalid or throwing digest outcomes never publish source claims (1.042445ms)
+✔ IQ second-read and digest rejections drain one slot without reviving cleared report or exposing errors (11.405861ms)
+✔ IQ failed replacement removes successful report immediately and tab exit releases both handles (1.828566ms)
+✔ IQ source buffers mutated during hash await cannot change prepared exact bytes or statistics (0.408828ms)
+✔ IQ web/native adapters hash exact subview bytes with both algorithms and take isolated snapshots (36.375879ms)
+✔ actual IQ TSX projects bounded immutable results, selectable full hashes and honest zero/short states (33.198722ms)
+✔ native input is truthful, inert and has no unsupported file picker or paste fallback (0.58345ms)
+✔ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (7.201208ms)
+✔ actual owner callbacks fence stale events and retain single job across background and inspector reentry (9.220813ms)
+✔ IQ source wiring keeps one stable mounted owner and excludes save/network/device and configurable analysis (0.95261ms)
+✔ synthetic Load needs no global TextEncoder and preserves exact ASCII bytes/hashes (16.232144ms)
+✔ unavailable decoder or WebCrypto refuses Inspect cleanly and releases slot for later explicit retry (24.264309ms)
+✔ example and file staging commit atomically before one-shot observer clear, exit or replacement (9.804826ms)
+✔ clear and exit publish released labels and sources together without overwriting observer replacement (29.842573ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 461.564834

@@ -1,0 +1,31 @@
+✔ thirteen typed inspector choices retaining the original twelve, Recording default, and separate explicit source routes (1.567722ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.215396ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.269951ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (2.392943ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.890203ms)
+✔ source delivery during pending saves survives old failure without reviving results (1.087854ms)
+✔ application chooser is same-stack, reserves before publication and refuses double clicks (3.17453ms)
+✔ every live acquisition gate rejects without invoking chooser (0.603759ms)
+✔ real unchanged session negotiation and ping use shared slot and 20-byte fragments (4.635691ms)
+✔ pending picker cancellation cannot replace raw owner; late selection never connects (6.550995ms)
+✔ pending open cancels synchronously before close, holds raw poison and requires explicit retry (31.940041ms)
+✔ unmount/remount detaches presentation but preserves pending owner and stale callbacks (1.033231ms)
+✔ cancel during reservation observer never proceeds into GATT or leaves an orphan handle (0.962583ms)
+✔ pending write cancel fences immediately and raw settlement alone never clears the shared slot (33.429002ms)
+✔ missing actual READY does not negotiate; cancellation remains reachable outside lock (1.249252ms)
+✔ unsupported or insecure host never invokes picker and can be retried after public rejection (0.519699ms)
+✔ actual READY retains the full 30000ms budget and no synthetic negotiation occurs (1.81667ms)
+✔ late READY after cancellation never revives Console identity or a newer owner (1.728126ms)
+✔ explicit retry joins cleanup in flight and stale finally cannot clear a newer selected owner (1.26379ms)
+✔ lazy binding, secure/API checks, hidden/pagehide fence order and visible refresh are host-only (2.077055ms)
+✔ App wiring preserves explicit controls, live mutual guards, out-of-lock cancel and offline navigation (0.940375ms)
+✔ stale Cancel after failed cleanup rejects rather than claiming completed cleanup (1.128472ms)
+✔ actual inspector navigation fences retained browser Choose and Connect before React tab state commits (1.028079ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 235.53577

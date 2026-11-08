@@ -1,0 +1,19 @@
+PASS readiness owner bounds and flatten rejection
+PASS partial input commit repairs embedded parser context and real core dispatch
+PASS atomic oversized burst rejection and full queue retry after drain
+PASS pending READY reserves capacity without partially admitting burst
+PASS full queue admits incomplete prefix but rejected completion preserves parser for retry
+PASS maximum response MTU fragmentation and queue bytes
+PASS all invalid MTU values 0 through 22 fence
+PASS ten allocation or notification failures fence despite terminate success or failure; new connection recovers
+PASS retry offset and success reset under fake consume-on-error contract
+PASS repeated enable preserves parser and response; disable fences until owner disconnect
+PASS foreign duplicate failed and stale nonowner callbacks preserve owner
+PASS READY scheduling failure fences
+PASS admission scheduling failure reports ATT error and fences
+PASS retry scheduling failure fences
+PASS fragment continuation scheduling failure fences
+PASS malformed maximum frame and long garbage remain bounded and recover
+PASS fully stubbed opt-in startup errors never erase or start host; successful initialization registers callbacks
+PASS 10000 deterministic revised callback and injected-failure interleavings preserve bounds
+RESULT 18 revised scenarios passed

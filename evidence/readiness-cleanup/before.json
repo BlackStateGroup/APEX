@@ -1,0 +1,55 @@
+{
+  "sourceCommit": "4825e2c7a200ee43b5e4cd04f4545c45bc09158c",
+  "scope": "Exact adapter and unchanged PLX 3.5.1 ESM; RN NativeEventEmitter and native bridge synthetic. Sync callback replaces SDK method only in explicitly labeled fixture case. No native runtime, device, radio, or release proof.",
+  "reports": [
+    {
+      "mode": "sdk-event",
+      "outcome": "pending",
+      "events": [
+        "create",
+        "state",
+        "remove"
+      ],
+      "ownership": "owned",
+      "sdkSubscriptions": 0,
+      "nativeListenerPresent": true,
+      "eventThrowIsOriginal": true,
+      "unhandledIsOriginal": false,
+      "rejectionIsOriginal": false,
+      "receipt": false
+    },
+    {
+      "mode": "sdk-initial",
+      "outcome": "pending",
+      "events": [
+        "create",
+        "state",
+        "remove"
+      ],
+      "ownership": "owned",
+      "sdkSubscriptions": 0,
+      "nativeListenerPresent": true,
+      "eventThrowIsOriginal": false,
+      "unhandledIsOriginal": true,
+      "rejectionIsOriginal": false,
+      "receipt": false
+    },
+    {
+      "mode": "fixture-sync",
+      "outcome": "pending",
+      "events": [
+        "create",
+        "synthetic-sync-callback",
+        "remove",
+        "connect"
+      ],
+      "ownership": "owned",
+      "sdkSubscriptions": 1,
+      "nativeListenerPresent": false,
+      "eventThrowIsOriginal": false,
+      "unhandledIsOriginal": false,
+      "rejectionIsOriginal": false,
+      "receipt": false
+    }
+  ]
+}

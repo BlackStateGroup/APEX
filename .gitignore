@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 .expo/
 dist/
 build/
@@ -9,6 +9,8 @@ ios/
 .DS_Store
 test-results/
 playwright-report/
+__pycache__/
+*.pyc
 .env*
 !.env.example
 

@@ -1,0 +1,40 @@
+(node:14) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ App + installed PLX: cancel held permissions before the next effect (31.525473ms)
+✔ App + installed PLX: cancel held readiness before the next effect (14.795618ms)
+✔ App + installed PLX: cancel held connect before the next effect (13.395076ms)
+✔ App + installed PLX: cancel held discover before the next effect (12.951256ms)
+✔ App + installed PLX: cancel held mtu before the next effect (11.839143ms)
+✔ App + installed PLX: cancel held characteristics before the next effect (12.576447ms)
+✔ App + installed PLX: cancel held monitor-ready before the next effect (14.23836ms)
+✔ App + installed PLX: cancel held write before the next effect (17.764113ms)
+✖ App + installed PLX android: failed held close, pending SDK monitor, explicit retry and stale presses (1514.715479ms)
+✖ App + installed PLX ios: failed held close, pending SDK monitor, explicit retry and stale presses (1516.72752ms)
+✔ App + installed PLX: cancellation before session creation performs no native effect (7.885408ms)
+✔ App + installed PLX: cancelling one simultaneous owner leaves the other C session usable (28.773015ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 10
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3441.399664
+
+✖ failing tests:
+
+test at tests/app-plx-cancellation.test.ts:48:3
+✖ App + installed PLX android: failed held close, pending SDK monitor, explicit retry and stale presses (1514.715479ms)
+  TypeError [Error]: Cannot read properties of null (reading 'state')
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-app-sdk-cancel/tests/app-plx-cancellation.test.ts:86:43)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/app-plx-cancellation.test.ts:48:3
+✖ App + installed PLX ios: failed held close, pending SDK monitor, explicit retry and stale presses (1516.72752ms)
+  TypeError [Error]: Cannot read properties of null (reading 'state')
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-app-sdk-cancel/tests/app-plx-cancellation.test.ts:86:43)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

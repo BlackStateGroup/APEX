@@ -40,3 +40,45 @@ test('failed inserts retain existing evidence and never report a successful save
     assert.deepEqual(await journal.list(), [first]);
   } finally { db.close(); }
 });
+
+test('evidence rejects duplicate decoded envelope and payload keys before digest verification', async () => {
+  const db = new DatabaseSync(':memory:'); const journal = store(db);
+  try {
+    const record = await journal.save({ kind: 'analysis.can', source: 'offline-fixture', payload: { frames: 2 } });
+    const document = JSON.stringify(record);
+    assert.equal(await journal.verify(parseEvidence(document)), true);
+    for (const ambiguous of [
+      document.replace('"frames":2', '"frames":999,"frames":2'),
+      document.replace('"frames":2', '"frames":2,"frames":2'),
+      document.replace('"frames":2', '"fram\\u0065s":999,"frames":2'),
+      document.replace('"schemaVersion":1', '"schemaVersion":0,"schemaVersion":1'),
+      document.replace('"schemaVersion":1', '"schema\\u0056ersion":1,"schemaVersion":1'),
+      document.replace('"payload":', '"payload":null,"payload":'),
+    ]) assert.throws(() => parseEvidence(ambiguous), /Duplicate JSON document key/);
+    assert.deepEqual(await journal.list(), [record]);
+  } finally { db.close(); }
+});
+
+test('evidence bounded envelope parsing preserves the existing maximum canonical depth', async () => {
+  const db = new DatabaseSync(':memory:'); const journal = store(db);
+  try {
+    let payload: unknown = {};
+    for (let depth = 0; depth < 8; depth++) payload = { child: payload };
+    const record = await journal.save({ kind: 'analysis.can', source: 'offline-fixture', payload });
+    assert.equal(await journal.verify(parseEvidence(JSON.stringify(record))), true);
+    await assert.rejects(journal.save({ kind: 'analysis.can', source: 'offline-fixture', payload: { child: payload } }), /nesting/);
+    const document = JSON.stringify(record);
+    const excessive = document.replace('"payload":', '"payload":' + '['.repeat(11)).replace(',"sha256":', ']'.repeat(11) + ',"sha256":');
+    assert.throws(() => parseEvidence(excessive), /depth limit/);
+  } finally { db.close(); }
+});
+
+test('evidence accepts inert duplicate-looking JSON text without interpreting it as envelope structure', async () => {
+  const db = new DatabaseSync(':memory:'); const journal = store(db);
+  try {
+    const payload = { note: '{"a":1,"a":2}', escaped: '"payload":null,"payload":{}' };
+    const record = await journal.save({ kind: 'analysis.can', source: 'offline-fixture', payload });
+    assert.deepEqual(parseEvidence(JSON.stringify(record)).payload, payload);
+    assert.equal(await journal.verify(record), true);
+  } finally { db.close(); }
+});

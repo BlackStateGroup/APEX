@@ -1,0 +1,11 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+
+App.tsx(61,42): error TS2344: Type '"scrollTo"' does not satisfy the constraint '"Context"'.
+App.tsx(64,5): error TS18046: 'scroll.current.scrollTo' is of type 'unknown'.
+App.tsx(224,19): error TS2322: Type 'RefObject<Pick<((props: Omit<ScrollViewProps, "ref"> & { ref?: Ref<ScrollViewInstance> | undefined; }) => ReactNode) & Readonly<...>, "scrollTo"> | null>' is not assignable to type 'Ref<ScrollViewInstance> | undefined'.
+  Type 'RefObject<Pick<((props: Omit<ScrollViewProps, "ref"> & { ref?: Ref<ScrollViewInstance> | undefined; }) => ReactNode) & Readonly<...>, "scrollTo"> | null>' is not assignable to type 'RefObject<ScrollViewInstance | null>'.
+    Type 'Pick<((props: Omit<ScrollViewProps, "ref"> & { ref?: Ref<ScrollViewInstance> | undefined; }) => ReactNode) & Readonly<...>, "scrollTo"> | null' is not assignable to type 'ScrollViewInstance | null'.
+      Type 'Pick<((props: Omit<ScrollViewProps, "ref"> & { ref?: Ref<ScrollViewInstance> | undefined; }) => ReactNode) & Readonly<{ ...; }>, "scrollTo">' is missing the following properties from type 'ScrollViewInstance': childNodes, firstChild, isConnected, lastChild, and 53 more.

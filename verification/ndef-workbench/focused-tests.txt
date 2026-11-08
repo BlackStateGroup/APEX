@@ -1,0 +1,39 @@
+✔ NDEF exact whitespace and case survive SQLite close/reopen with fresh interpretation (9.052624ms)
+✔ source conflicts, native claims and extra decoded claims fail save/read/replay (1.822002ms)
+✔ recorded provenance remains only a caller claim and URI remains inert (1.539035ms)
+✔ malformed, opaque and unsupported bytes retain all original records/tails through journal replay (3.364038ms)
+✔ tampering with exact whitespace or bytes breaks digest (1.617561ms)
+✔ 4096 character journal cap retains all or rejects all without widening old limits (2.760472ms)
+✔ old canonical digest and schema are unchanged (1.120391ms)
+✔ known synthetic fixtures yield readable values without reception or identity claims (4.531204ms)
+✔ UTF-8 preserves scalars, BOM, controls and text as inert content (1.226328ms)
+✔ Text status and language lengths are validated without guessing language validity (1.583934ms)
+✔ UTF-16 handles both BOMs, BE default, surrogate pairs and malformed units (1.008932ms)
+✔ all assigned URI prefixes map exactly and unknown prefixes remain opaque (1.199311ms)
+✔ long payload length, ID field, exact record and field offsets (0.805195ms)
+✔ opaque types and nested payloads are never recursively interpreted (0.58994ms)
+✔ MB/ME/CF/SR/IL/TNF constraints and limits fail closed while retaining bytes (1.147349ms)
+✔ every truncation boundary of short/long/IL messages is rejected with all bytes retained (0.827278ms)
+✔ import preserves exact source, distinguishes claimed origins, rejects fabricated verification/native dictionaries (1.679829ms)
+✔ deterministic fuzz is total, bounded, and preserves record spans and undecoded tail (224.407553ms)
+✔ ambiguous duplicate keys including escaped aliases cannot change origin claims (0.436545ms)
+✔ inclusive byte and record boundaries and structured payload fuzz (39.326394ms)
+✔ initial and edited documents cannot save before successful interpretation (2.867007ms)
+✔ edits immediately invalidate both visible results and save input (0.986573ms)
+✔ import provenance is derived from envelope, not the control used to load it (0.721964ms)
+✔ failed reparse never leaves a successful result saveable (1.246229ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.706623ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.696881ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.310953ms)
+✔ failed save retains interpreted source for explicit retry (0.347681ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (4.220386ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-NDEF records (2.251652ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (0.831684ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 506.720727

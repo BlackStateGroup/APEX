@@ -1,0 +1,32 @@
+✔ complete selected source, spelling and exact document whitespace survive SQLite reopen and digest verification (11.38182ms)
+✔ missing and explicit-null Android raw source remain uninterpretable; empty raw is distinct (0.54984ms)
+✔ iOS raw JSON base64 remains opaque and selected normalized fields alone are reinterpreted (1.537755ms)
+✔ declared recorded origin and source timestamp remain separate from journal save time (1.845716ms)
+✔ strict source schema rejects claims, extra or missing fields, SDK/platform changes and inconsistent availability (6.048089ms)
+✔ source mismatch and native provenance are rejected on save and parse (1.433757ms)
+✔ Device methods and arbitrary properties are neither read nor retained; selected accessors fail (0.683883ms)
+✔ 4096-character source boundary is exact; oversize complete snapshots are rejected without writes (2.153868ms)
+✔ old records retain identical canonical digest semantics with no schema migration (1.836997ms)
+✔ provider output remains explicitly unverified even at maximum confidence (1.571471ms)
+✔ remote provider is not called before explicit data export selection (0.821108ms)
+✔ invented observation IDs and extra execution fields are rejected (1.829159ms)
+✔ response bounds, unsupported protocols and invalid confidence are rejected (0.976513ms)
+✔ invalid, duplicate or overlarge observations never reach the provider (0.417956ms)
+✔ no candidate is a valid abstention and prompt-like text stays data (1.205726ms)
+✔ stalled providers time out and receive an abort signal (10.58744ms)
+✔ protocol enums require strings without coercion (0.734982ms)
+✔ malformed observation records and sparse lists are rejected before provider calls (1.264251ms)
+✔ provider identity and remote consent must have the expected primitive types (0.614454ms)
+✔ all observation kinds and exact selection bounds remain valid (2.660793ms)
+✔ provider input is a frozen defensive copy and attribution survives asynchronous mutation (0.811143ms)
+✔ timeout wins when provider rejects synchronously on abort (7.218926ms)
+✔ provider errors propagate and completed calls clear timeout without late aborts (30.935606ms)
+✔ direct validation also bounds and validates the evidence references input (1.931422ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.133845

@@ -1,0 +1,5 @@
+Exact patch SHA256 verified: 3e303a18288a0748e203b0dc106d314b7c30305e9186e67a19a5bdb315bedc93.
+Independent review found no merge blocker. Eight workbench tests, semantic TypeScript, extra zero-payload/page/offset assertions, browser scenario syntax and source diff whitespace checks passed.
+Exact bounded draft and full report retained; source strata stay separate; rendering is bounded; no persistence, scanner/provider/network path, data action or verification upgrade added.
+Literal wording delta exact frequencies -> byte-value counts reviewed as behavior-neutral.
+Browser/native interaction and layout, including actual oversized TextInput behavior, remain unexecuted. Final merge is validated separately.

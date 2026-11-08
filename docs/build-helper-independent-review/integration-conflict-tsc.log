@@ -1,0 +1,6 @@
+tests/reviewed-idf-build-independent.test.mjs(98,1): error TS1185: Merge conflict marker encountered.
+tests/reviewed-idf-build-independent.test.mjs(101,1): error TS1185: Merge conflict marker encountered.
+tests/reviewed-idf-build-independent.test.mjs(102,1): error TS1185: Merge conflict marker encountered.
+tests/reviewed-idf-build-independent.test.mjs(110,1): error TS1185: Merge conflict marker encountered.
+tests/reviewed-idf-build-independent.test.mjs(118,1): error TS1185: Merge conflict marker encountered.
+tests/reviewed-idf-build-independent.test.mjs(119,1): error TS1185: Merge conflict marker encountered.

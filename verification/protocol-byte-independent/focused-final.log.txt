@@ -1,0 +1,35 @@
+✔ frame metadata is read once and validated as encoded (1.741814ms)
+✔ byte access ignores own hooks and preserves Buffer and subarray bytes (1.128155ms)
+✔ real payload size is bounded even with a shadowed length (0.413368ms)
+✔ unsupported byte inputs are rejected before changing partial decoder state (0.724398ms)
+✔ callback mutation of unread bytes is observed, delivered payload is independent (0.594236ms)
+✔ callback reentrant push is synchronous; reset and exceptions keep consumed frame removed (2.099375ms)
+✔ detachment in callback rejects remaining input without feeding undefined bytes (0.514508ms)
+✔ crc and decoder do not consume caller iterator contents (0.408962ms)
+✔ metadata side effects are completed before byte validation and copying (0.810862ms)
+✔ partial frame completed by a chunk permits callback reset and nested partial input (0.431447ms)
+✔ empty fixed views are accepted and invalid metadata never coerces values (0.352165ms)
+✔ callback detachment at the final byte still throws after delivering the frame (0.204749ms)
+✔ single large chunks have no new cap and preserve trailing partial frames (36.593644ms)
+✔ independent golden parity across realms, Buffer slices, subclasses and poisoned view properties (9.778208ms)
+✔ captured metadata uses property-read order even when payload getter rewrites earlier fields (0.645862ms)
+✔ actual view extent and storage win over shadows including cross-realm invalid storage (4.567445ms)
+✔ callback nested partial state survives outer callback throw and outer chunk detachment (0.379848ms)
+✔ callback can replace unread bytes with another valid frame and reset nested partial state (0.235105ms)
+✔ bounded deterministic fragmentation keeps a single fixed retained buffer across maximum frames (6.818994ms)
+✔ CRC uses the independent CCITT-FALSE check value (0.890371ms)
+✔ encoder matches independently generated Python golden vectors (2.106642ms)
+✔ all possible two-chunk boundaries retain a maximum payload (21.755696ms)
+✔ single-byte fragments and coalesced frames decode identically (0.477682ms)
+✔ bad CRC and boot noise do not hide the next intact frame (0.49396ms)
+✔ invalid version, flags, kinds, zero ID and oversized lengths are rejected (0.790416ms)
+✔ encoder rejects invalid bounds and reset discards partial data (0.679677ms)
+✔ one million noise bytes retain bounded parser memory (27.767557ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.808534

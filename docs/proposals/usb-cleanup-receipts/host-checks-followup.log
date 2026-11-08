@@ -1,0 +1,23 @@
+✔ analysis bound to exact inspected Kotlin bytes, not native validation (1.450993ms)
+✔ unknown token is never acknowledgement and cannot target owner (0.295754ms)
+✔ null active link is not modeled as released ownership (0.295273ms)
+✔ failed open retains reserved identity and handle (0.133118ms)
+✔ acquisition settlement required before cleanup (0.559804ms)
+✔ writer settlement required before cleanup (0.144327ms)
+✔ reader settlement required before cleanup (0.107298ms)
+✔ ambiguous release remains failed even after other steps succeed (0.674273ms)
+✔ ambiguous close is not repeated (0.301527ms)
+✔ closed receipt survives a lost result or thrown event (0.322652ms)
+✔ destroy/recreate preserves unresolved fence and exact handle (0.142563ms)
+✔ closed receipts bounded; eviction is unknown, not success (0.978425ms)
+✔ token exhaustion refuses acquisition rather than wraps (0.270048ms)
+✔ wrong-token retry cannot finish a different owner after cleanup steps succeed (0.143778ms)
+✔ historical closed-token retry cannot finish a newer owner (0.136283ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.393233

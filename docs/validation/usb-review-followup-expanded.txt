@@ -1,0 +1,44 @@
+b5ca26aa7d9a99fe7d3abe70b807a2683e2c3981
+✔ failed close followed by delayed closed event must retain ownership (6.497205ms)
+✔ terminal release task must not outrun failed close after outstanding write settles (1.719787ms)
+✔ sparse bytes must not silently become zero-valued valid data (1.163792ms)
+✔ null malformed native events do not throw into emitter (0.377854ms)
+✔ matching early event plus overflow cannot auto-release cleanup-required lease (1.614747ms)
+✔ listener removal failures cannot revive cancelled callbacks or block known-token retry (0.602783ms)
+✔ terminal waits for native pending rejected write while queued write never invokes native (1.576836ms)
+✔ invalid tokens cannot terminate active ownership (2.122162ms)
+✔ successful close waits for both close acknowledgement and pending write despite terminal event (1.065125ms)
+✔ unsolicited early terminal waits for open settlement before releasing (1.293095ms)
+✔ removal failure cannot acknowledge pending or failed native close (1.169808ms)
+✔ overflow requires explicit successful close even with matching early terminal (0.707996ms)
+✔ USB permission denial does not open a connection or install listeners (3.681419ms)
+✔ USB failed open cleans up native subscriptions (0.797796ms)
+✔ USB data validates bytes and ignores stale connection generations (0.842768ms)
+✔ USB writes are ordered and detach rejects subsequent writes (5.23134ms)
+✔ pending permission owns the module across instances and cancellation waits without opening (1.064969ms)
+✔ disconnect waits for delayed open then closes its token once (2.410875ms)
+✔ early terminal event cannot resurrect a connection and stale early tokens are ignored (0.673667ms)
+✔ failed close retains ownership and token for same-owner retry (0.941457ms)
+✔ native open rejection and invalid token preserve unknown-ownership fence (0.960803ms)
+✔ disconnect rejects active and queued writes promptly but retains lease until native write settles (1.158491ms)
+✔ bounded early terminal overflow fails closed and permits explicit known-token cleanup (0.778585ms)
+✔ listener installation failure removes partial subscription and releases pre-open ownership (0.306008ms)
+✔ terminal event plus rejected explicit close cannot release ownership (1.07848ms)
+✔ removed callbacks are fenced even if a native emitter already queued them (0.378101ms)
+✔ failed close followed by delayed closed event must retain ownership (1.121947ms)
+✔ terminal release task must not outrun failed close after outstanding write settles (1.028956ms)
+✔ sparse bytes must not silently become zero-valued valid data (0.525744ms)
+✔ null malformed native events do not throw into emitter (0.46167ms)
+✔ matching early event plus overflow cannot auto-release cleanup-required lease (1.105475ms)
+✔ listener removal failures cannot revive cancelled callbacks or block known-token retry (0.280585ms)
+✔ terminal waits for native pending rejected write while queued write never invokes native (0.869449ms)
+✔ invalid tokens cannot terminate active ownership (0.589039ms)
+✔ native link-null before physical-close failure makes fulfilled retry no proof of release (0.412963ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 184.911758

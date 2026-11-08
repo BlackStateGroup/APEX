@@ -1,0 +1,53 @@
+✖ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (10.222942ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (2.169062ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (1.596566ms)
+✔ bounded actual bytes, lines, names, record and timing counts (36.419303ms)
+✔ raw numerical limits and finite strict fractions (1.29281ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (1.946277ms)
+✔ CLI executes with writes/network denied and stdout atomic; regular-file bounds (784.899515ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 986.093203
+
+✖ failing tests:
+
+test at tests/ir-offline.test.ts:17:1
+✖ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (10.222942ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      [
+        1,
+        4,
+  +     8,
+  -     9,
+        'Same',
+        'not-represented'
+      ],
+      [
+        2,
+  +     9,
+  +     13,
+  -     10,
+  -     15,
+        'Same',
+        'not-represented'
+      ]
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ir-offline/tests/ir-offline.test.ts:24:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ [ 1, 4, 8, 'Same', 'not-represented' ], [ 2, 9, 13, 'Same', 'not-represented' ] ],
+    expected: [ [ 1, 4, 9, 'Same', 'not-represented' ], [ 2, 10, 15, 'Same', 'not-represented' ] ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

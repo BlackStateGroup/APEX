@@ -1,0 +1,33 @@
+✔ bounded JSON preserves native JSON values, keys, escapes and object semantics (4.042044ms)
+✔ duplicate keys reject per object after JSON escape decoding, including special names (0.961003ms)
+✔ malformed JSON is rejected rather than repaired or treated as a duplicate-key scan (0.884147ms)
+✔ depth and character bounds are exact, strings cannot simulate structure (1.85306ms)
+✔ BLE envelopes reject overwritten claims at every supported object level and escaped aliases (5.289865ms)
+✔ selected source documents reject duplicates and deep values while preserving exact valid bytes (3.001653ms)
+✔ deterministic bounded fuzz agrees with JSON.parse on unique-key values and rejects injected aliases (142.660388ms)
+✔ provider output remains explicitly unverified even at maximum confidence (3.053978ms)
+✔ remote provider is not called before explicit data export selection (1.556945ms)
+✔ invented observation IDs and extra execution fields are rejected (4.2352ms)
+✔ response bounds, unsupported protocols and invalid confidence are rejected (1.735115ms)
+✔ invalid, duplicate or overlarge observations never reach the provider (0.816256ms)
+✔ no candidate is a valid abstention and prompt-like text stays data (1.095278ms)
+✔ stalled providers time out and receive an abort signal (11.085125ms)
+✔ protocol enums require strings without coercion (1.048603ms)
+✔ malformed observation records and sparse lists are rejected before provider calls (1.450207ms)
+✔ provider identity and remote consent must have the expected primitive types (0.97186ms)
+✔ all observation kinds and exact selection bounds remain valid (1.592137ms)
+✔ provider input is a frozen defensive copy and attribution survives asynchronous mutation (0.987578ms)
+✔ timeout wins when provider rejects synchronously on abort (5.306227ms)
+✔ provider errors propagate and completed calls clear timeout without late aborts (30.71212ms)
+✔ direct validation also bounds and validates the evidence references input (0.71557ms)
+✔ duplicate decoded response members are rejected, even when values agree (1.277101ms)
+✔ four-container valid responses preserve parity and deeper containers are rejected (0.647118ms)
+✔ response character limit remains inclusive and JSON-like text is inert (1.06467ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 387.70228

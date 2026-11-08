@@ -1,0 +1,18 @@
+PASS subscription readiness and foreign subscription
+PASS owner, operation, zero/oversize and flatten rejection
+PASS partial frame and real parser response
+PASS maximum frame fragmentation at MTU 23 and 517
+PASS four coalesced requests FIFO
+PASS KNOWN ISSUE overflow ACKs, drops 16 replies, failed termination leaves session open
+PASS KNOWN ISSUE failed termination after ten notify errors strands queue and later writes
+PASS allocation failure, retry offset, ownership and success reset
+PASS KNOWN ISSUE repeated subscription discards response tail and parser prefix
+PASS disconnect clears queue/parser/timer and reconnect ownership
+PASS bounded malformed input and recovery
+PASS output bounds and unsubscribe
+PASS KNOWN ISSUE pending READY consumes one of four response slots
+PASS ten allocation failures also stop scheduling
+PASS bad maximum frame CRC rejected and next request recovered
+PASS failed connect clears previous state and invokes only fake advertising
+PASS 10000 deterministic host callback/failure interleavings preserve bounds
+RESULT 17 scenarios passed (known defects explicitly asserted)

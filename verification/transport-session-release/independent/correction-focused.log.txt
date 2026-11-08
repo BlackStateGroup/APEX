@@ -1,0 +1,45 @@
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.180546ms)
+✔ failed manager shutdown preserves session and UI ownership (0.865066ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.350239ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.396623ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (4.908424ms)
+✔ closed session remains explicitly releasable after capabilities disappear (3.080895ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.235583ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.180135ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (0.196985ms)
+✔ App retention helper keeps a real failed session through failed retry (0.827324ms)
+✔ preconnected transport remains held when listener setup throws and cleanup rejects (2.324946ms)
+✔ close must not confirm release before deferred connect can acquire transport (0.657735ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (1.863229ms)
+✔ explicit close of preconnected new session releases exactly once (0.538772ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (2.312077ms)
+✔ terminal callback synchronously inside close joins the same attempt (0.872159ms)
+✔ early successful disconnect keeps slot pending until late acquisition is released (0.511257ms)
+✔ failed early disconnect is not automatically retried after connect settles (0.581009ms)
+✔ synchronous terminal registration prevents connect and removes late registered listener (0.563463ms)
+✔ throwing unsubscribe does not prevent other removal, pending rejection or transport cleanup (1.201426ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (11.493204ms)
+✔ disconnected and unavailable operations reject without transport execution (1.700273ms)
+✔ failed connect removes listeners and closes the one-use session (0.422ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.95183ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (22.115948ms)
+✔ pending queue is bounded and unplug rejects every request (1.021667ms)
+✔ wrong response opcode and device error are rejected (0.775737ms)
+✔ write failure rejects immediately and clears pending requests (0.767207ms)
+✔ request IDs are never reused through the full 16-bit session space (576.850822ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.359114ms)
+✔ synchronous transport failure also clears pending state (0.612985ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.309191ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.277912ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.298467ms)
+✔ close during pending connect follows early successful cancellation with post-connect release (0.188272ms)
+✔ clean refused open and explicit normal close confirm release (0.187348ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.329367ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 784.370467

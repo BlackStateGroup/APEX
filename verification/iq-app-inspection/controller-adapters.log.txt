@@ -1,0 +1,22 @@
+✔ IQ validates both captured sizes before either read, including missing pair and every boundary (3.213076ms)
+✔ IQ staging is read-free and size/name/read method are captured, not reread at inspection (4.272588ms)
+✔ IQ exact boundary sizes accepted and raw read mismatches fail closed (20.578327ms)
+✔ IQ import rejects UTF8, BOM, duplicate escaped keys, profile drift and SHA512 mismatch without reports (5.589922ms)
+✔ IQ exact byte provenance never conflates supplier time, external naming or synthetic source (9.819029ms)
+✔ IQ pages expose at most eight immutable bins, cover FFT exactly, and refuse stale/invalid events (7.99856ms)
+✔ IQ clear, replacement and deactivate preserve one actual read slot until settle and fence stale results (3.198675ms)
+✔ IQ metadata snapshot survives deferred data read (3.620068ms)
+✔ IQ pending hash is fenced at each boundary and slot drains before retry (3.260425ms)
+✔ IQ invalid or throwing digest outcomes never publish source claims (1.004211ms)
+✔ IQ second-read and digest rejections drain one slot without reviving cleared report or exposing errors (10.851935ms)
+✔ IQ failed replacement removes successful report immediately and tab exit releases both handles (2.059796ms)
+✔ IQ source buffers mutated during hash await cannot change prepared exact bytes or statistics (0.482589ms)
+✔ IQ web/native adapters hash exact subview bytes with both algorithms and take isolated snapshots (12.799716ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 266.366689

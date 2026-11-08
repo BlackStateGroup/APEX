@@ -22,7 +22,7 @@ test('BLE waits for notifications and serialises MTU-sized frame chunks', async 
   assert.deepEqual(p.writes.map(x => x.length), [20, 20, 20, 1]);
   assert.deepEqual(Buffer.concat(p.writes.slice(0, 3)), Buffer.from(input));
   const received: number[] = []; p.transport.onData(bytes => received.push(...bytes));
-  p.notify(AXP_READY); p.notify(Uint8Array.of(5, 6)); assert.deepEqual(received, [5, 6]);
+  p.notify(AXP_READY); p.notify(Uint8Array.of(5, 6)); assert.deepEqual(received, [...AXP_READY, 5, 6]);
   await p.transport.disconnect(); assert.deepEqual(p.stats(), { disconnected: 1, removed: 1 });
   await assert.rejects(p.transport.connect(), /cannot be reused/);
 });

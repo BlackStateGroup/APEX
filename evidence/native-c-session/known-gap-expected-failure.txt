@@ -1,0 +1,29 @@
+✖ known gap: late Android permission grant starts connection after session close (27.343275ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 268.110134
+
+✖ failing tests:
+
+test at tests/native-c-roundtrip.test.ts:155:1
+✖ known gap: late Android permission grant starts connection after session close (27.343275ms)
+  AssertionError [ERR_ASSERTION]: closed session must not initiate a connection after late permission grant
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-c-session/tests/native-c-roundtrip.test.ts:167:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

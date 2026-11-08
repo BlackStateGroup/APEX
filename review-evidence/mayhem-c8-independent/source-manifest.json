@@ -1,0 +1,71 @@
+{
+  "reviewedCommit": "87e2e4557b18cc444fe13d4446298317d821fd97",
+  "reviewedTree": "381e14741135db802ba96b8b17e24ba681d36ba5",
+  "baselineCommit": "fa8e934363bfb39554f104d25ac6a19c502ebb83",
+  "upstreamFormatFactOnlyCommit": "a18fca46f58519fc81e19304fc13bbf3da2aa69f",
+  "nodeVersion": "v24.22.1",
+  "prototypeChanges": [
+    "A\tdocs/MAYHEM_C8_PROTOTYPE.md",
+    "A\tpackages/core/mayhem-c8-import.ts",
+    "A\ttests/mayhem-c8-cli.test.ts",
+    "A\ttests/mayhem-c8-import.test.ts",
+    "A\ttools/inspect-mayhem-c8.ts"
+  ],
+  "files": {
+    "packages/core/mayhem-c8-import.ts": {
+      "sha256": "90277865cbc9672979bf8bdb0506ffa1f70e21e2ec490d749a9a6a1489c1f469",
+      "gitBlob": "2788f685bea0c629c15bf06983479875732c0a1d",
+      "unchangedFromBaseline": false
+    },
+    "tools/inspect-mayhem-c8.ts": {
+      "sha256": "b190fb35cd3f8674b086517e622f4d9f0c82cc998eca5526884753007b71d996",
+      "gitBlob": "64fa2e618250985395bd14cad099d468f6264be8",
+      "unchangedFromBaseline": false
+    },
+    "docs/MAYHEM_C8_PROTOTYPE.md": {
+      "sha256": "ec76b49f78e21518426e482fba4a3e9da3dfbe007cf05cb14ad2cf3dfff05520",
+      "gitBlob": "d4de4c87d2a9cfb47d0617285221aeb26b054256",
+      "unchangedFromBaseline": false
+    },
+    "tests/mayhem-c8-import.test.ts": {
+      "sha256": "71bf7ddf6e92a63b0f749c4268b0c6f0211fbd2262cea8080c944bfe4ccb252b",
+      "gitBlob": "2981742ab884552bfbe27eca8dbcefb5550d4d90",
+      "unchangedFromBaseline": false
+    },
+    "tests/mayhem-c8-cli.test.ts": {
+      "sha256": "050eb7a54f5cec5a69763a8f23c5f6129cb6c41a9924389285fc8086fd74e273",
+      "gitBlob": "1551264117016f064108a5bd0f3e4207f22d1dbc",
+      "unchangedFromBaseline": false
+    },
+    "packages/core/iq-offline.ts": {
+      "sha256": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+      "gitBlob": "df6a1bea6fe1dd527e91be2979538ee054a4387f",
+      "unchangedFromBaseline": true
+    },
+    "packages/core/iq-analysis.ts": {
+      "sha256": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+      "gitBlob": "c1d65937e402e53f93e40838fa89fc4063b391b7",
+      "unchangedFromBaseline": true
+    },
+    "tools/inspect-iq.ts": {
+      "sha256": "5e63dd514a334a082d8f00081b3ae00169af821a9c59225ef530532a043605cd",
+      "gitBlob": "7942715bd9be3aedcdac61c45e245b6c4311d5a0",
+      "unchangedFromBaseline": true
+    },
+    "packages/core/bounded-json.ts": {
+      "sha256": "2dc9c63e96aed350348590119d8e5c0963e9d35f2da3e509b124bc8147690212",
+      "gitBlob": "aed4bc98243b3bcda2ed205bf210940b95e7c49b",
+      "unchangedFromBaseline": true
+    },
+    "package.json": {
+      "sha256": "4c39f2cae0ecefa617fb32d510c7d0f089626a2e3fae426d5955d4aefd5bb018",
+      "gitBlob": "d3c922c91d412da87d437523ee5784b1e4ffcee5",
+      "unchangedFromBaseline": true
+    },
+    "package-lock.json": {
+      "sha256": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+      "gitBlob": "05f26d6b14d859856bc292a7382d7979ba4e355c",
+      "unchangedFromBaseline": true
+    }
+  }
+}

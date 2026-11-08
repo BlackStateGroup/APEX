@@ -1,0 +1,5 @@
+App.tsx: OK
+src/BrowserAxpControls.tsx: OK
+src/experimental/web-axp-application.ts: OK
+src/platform/web-axp.ts: OK
+src/platform/web-axp.native.ts: OK

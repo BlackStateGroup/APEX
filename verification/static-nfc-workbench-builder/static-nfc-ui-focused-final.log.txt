@@ -1,0 +1,32 @@
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (19.696927ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.987289ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (1.087073ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.314708ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.956621ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (4.31789ms)
+✔ exact source SHA256, literal offsets and whole NDEF value parity (2.805137ms)
+✔ explicit mode lengths and exact CC accepted set, no access inference (7.44886ms)
+✔ all 256 tags and length bytes, no search recovery (14.981049ms)
+✔ literal edge offsets, NULL exhaustion, terminator and opaque trailing (0.418864ms)
+✔ late malformed/unsupported suppress NDEF; missing, multiple, empty, decoder failure separate (0.406146ms)
+✔ snapshot before context, independent hash copy, frozen results and private source (0.80405ms)
+✔ actual fixed nonshared Uint8Array and strict own context (0.590534ms)
+✔ CLI strict args, bounded regular-file reads, symlinks, generic atomic errors, read-only permission (283.311454ms)
+✔ actual static TSX inactive and uninspected; boundaries and rejection disabled (16.124385ms)
+✔ actual TSX separates TLV statuses from NDEF missing, ambiguous, empty and decoder failure (28.481745ms)
+✔ actual TSX bounds TLV pages, record/issue rows and quoted inert strings (13.372014ms)
+✔ actual TSX opaque spans never echo proprietary, trailing or unknown payload bytes (5.223588ms)
+✔ strict exact-mode decoding and existing byte adapter parity (9.787867ms)
+✔ explicit mode/provenance, immutable report, separate byte copy (3.139159ms)
+✔ whole rejected edits retain draft and fence across declarations, mode and leave (1.605878ms)
+✔ late success/error fenced by accepted/rejected edits, mode, provenance, examples, clear and leave; old controls inert (2.617298ms)
+✔ bounded pages reject stale observations and reset on edits or leave (1.047024ms)
+✔ record and issue paging use independent observations, and repeated inspect pending is inert (2.284742ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 480.59818

@@ -1,0 +1,47 @@
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (43.210375ms)
+✔ fake android MTU 23: C ATT error closes session (10.79259ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (11.159703ms)
+✔ fake android MTU 517: C ATT error closes session (7.621171ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (11.438995ms)
+✔ fake ios MTU 23: C ATT error closes session (7.206149ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (16.415449ms)
+✔ fake ios MTU 517: C ATT error closes session (9.885344ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (8.435535ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (7.550875ms)
+✔ late Android permission grant cannot start a connection after session close (5.617178ms)
+✔ fake android: cancellation during readiness removes listener and prevents connect (6.147237ms)
+✔ fake android: cancel during connect drains issued effect without next setup effect (7.533197ms)
+✔ fake android: cancel during discover drains issued effect without next setup effect (6.388113ms)
+✔ fake android: cancel during requestMTU:185 drains issued effect without next setup effect (6.36157ms)
+✔ fake android: cancel during characteristics drains issued effect without next setup effect (6.158511ms)
+✔ fake ios: cancellation during readiness removes listener and prevents connect (5.293047ms)
+✔ fake ios: cancel during connect drains issued effect without next setup effect (6.290281ms)
+✔ fake ios: cancel during discover drains issued effect without next setup effect (6.263396ms)
+✔ fake ios: cancel during characteristics drains issued effect without next setup effect (7.558577ms)
+✔ cancelled native setup with failed cancellation retains unknown ownership (6.141122ms)
+✔ installed PLX android MTU 23: C protocol, transaction filter and late cancellation (43.648098ms)
+✔ installed PLX android MTU 23: native write rejection through BleError (15.400472ms)
+✔ installed PLX android MTU 517: C protocol, transaction filter and late cancellation (13.896915ms)
+✔ installed PLX android MTU 517: native write rejection through BleError (12.731202ms)
+✔ installed PLX ios MTU 23: C protocol, transaction filter and late cancellation (21.202976ms)
+✔ installed PLX ios MTU 23: native write rejection through BleError (14.672382ms)
+✔ installed PLX ios MTU 517: C protocol, transaction filter and late cancellation (12.1027ms)
+✔ installed PLX ios MTU 517: native write rejection through BleError (12.51659ms)
+✔ installed PLX android: event error closes active session (11.63911ms)
+✔ installed PLX android: promise error closes active session (12.656935ms)
+✔ installed PLX android: disconnect error closes active session (11.549584ms)
+✔ installed PLX ios: event error closes active session (9.641803ms)
+✔ installed PLX ios: promise error closes active session (10.706776ms)
+✔ installed PLX ios: disconnect error closes active session (9.550671ms)
+✔ installed PLX android: cancel rejection retains unknown ownership until explicit retry (10.594271ms)
+✔ installed PLX ios: cancel rejection retains unknown ownership until explicit retry (9.356812ms)
+✔ installed PLX simultaneous fixtures: creation lazy import order stays owner-scoped (21.847741ms)
+✔ installed PLX simultaneous fixtures: reverse lazy import order stays owner-scoped (19.810657ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 514.178884

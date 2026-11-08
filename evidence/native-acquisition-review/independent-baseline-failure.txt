@@ -1,0 +1,178 @@
+✖ independent close at permission prevents subsequent acquisition effects (28.096475ms)
+✖ independent close at readiness prevents subsequent acquisition effects (5.549856ms)
+✖ independent close at connect prevents subsequent acquisition effects (5.977289ms)
+✖ independent close at discover prevents subsequent acquisition effects (6.722526ms)
+✖ independent close at mtu prevents subsequent acquisition effects (6.779419ms)
+✖ independent close at characteristics prevents subsequent acquisition effects (4.990366ms)
+✖ independent failed native cancellation retains unknown ownership and original errors (8.312892ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 204.53323
+
+✖ failing tests:
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at permission prevents subsequent acquisition effects (28.096475ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'permission',
+  +   'manager',
+  +   'readiness',
+  +   'connect',
+  +   'discover',
+  +   'mtu',
+  +   'characteristics'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:47:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu', 'characteristics' ],
+    expected: [ 'permission' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at readiness prevents subsequent acquisition effects (5.549856ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'permission',
+      'manager',
+      'readiness',
+  +   'connect',
+  +   'discover',
+  +   'mtu',
+  +   'characteristics'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:47:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu', 'characteristics' ],
+    expected: [ 'permission', 'manager', 'readiness' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at connect prevents subsequent acquisition effects (5.977289ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'permission',
+      'manager',
+      'readiness',
+      'connect',
+  +   'discover',
+  +   'mtu',
+  +   'characteristics'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:47:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu', 'characteristics' ],
+    expected: [ 'permission', 'manager', 'readiness', 'connect' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at discover prevents subsequent acquisition effects (6.722526ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'permission',
+      'manager',
+      'readiness',
+      'connect',
+      'discover',
+  +   'mtu',
+  +   'characteristics'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:47:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu', 'characteristics' ],
+    expected: [ 'permission', 'manager', 'readiness', 'connect', 'discover' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at mtu prevents subsequent acquisition effects (6.779419ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'permission',
+      'manager',
+      'readiness',
+      'connect',
+      'discover',
+      'mtu',
+  +   'characteristics'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:47:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu', 'characteristics' ],
+    expected: [ 'permission', 'manager', 'readiness', 'connect', 'discover', 'mtu' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:38:99
+✖ independent close at characteristics prevents subsequent acquisition effects (4.990366ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:52:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/native-acquisition-independent.test.ts:54:1
+✖ independent failed native cancellation retains unknown ownership and original errors (8.312892ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(failure instanceof AggregateError)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-acquisition-review/tests/native-acquisition-independent.test.ts:58:41)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

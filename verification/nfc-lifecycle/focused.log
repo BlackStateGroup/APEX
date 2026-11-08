@@ -1,0 +1,36 @@
+✔ BLE waits for notifications and serialises MTU-sized frame chunks (3.0836ms)
+✔ BLE readiness timeout and unexpected data close the peer (20.765025ms)
+✔ BLE disconnect cancels opening and drops stale notifications (0.885931ms)
+✔ BLE bounds notifications and reports link failure once (0.689481ms)
+✔ BLE bounded queue and failed writes prevent following writes (1.494837ms)
+✔ NFC normalisation discards payload contents and handles iOS technology (1.19118ms)
+✔ NFC stop during startup cancels before backend begins (3.214796ms)
+✔ NFC drops callbacks after stop and cleans up registration exactly once (0.586108ms)
+✔ NFC pending status stays stopping until settlement and does not begin (8.772215ms)
+✔ NFC pending begin drops tags after stop and retries a failed cleanup without idle (1.621776ms)
+✔ NFC synchronous SessionClosed cannot expose idle until begin has settled (2.256437ms)
+✔ NFC reentrant starting callback queues stop after its own start (0.534972ms)
+✔ NFC session closure confirms release after cleanup failure and drops stale callbacks (0.898653ms)
+✔ native controller rejects competing begin before replacing singleton listeners (1.022513ms)
+✔ native controller retains ownership across failed unregister and retries explicitly (0.778428ms)
+✔ native synchronous closure reserves lease through pending registration (3.746872ms)
+✔ native late old callbacks cannot clear replacement after unregister settles (0.990401ms)
+✔ native failed registration and SDK load release the lease for a later start (0.812792ms)
+✔ reader and native controller keep failed stop recoverable and confirm close before reuse (1.080411ms)
+✔ native user cancellation closes without surfacing an error (0.378911ms)
+✔ native concurrent cleanup shares one unregister attempt (1.125414ms)
+✔ cancelled rejected status cannot strand the reader or overwrite a reentrant next start (0.930252ms)
+✔ iOS unregister completion alone cannot release listeners before its final global close event (0.803736ms)
+✔ iOS close event waits for pending unregister, then consumes its late rejection (0.761581ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: true) (1.041254ms)
+✔ reader remains stopping after closure while unregister never settles (iOS event requirement: false) (0.670971ms)
+✔ reader can restart after close and pending unregister both settle (0.746557ms)
+✔ App NFC action stops pending startup outside run without releasing its busy lock (1.193836ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 204.51724

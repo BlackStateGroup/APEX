@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "inputKind": "android-scan-record",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "Official bthome.io/format/ advertising example transcribed offline on 2026-11-07; not received over RF.",
+    "capturedAt": null
+  },
+  "rssiDbm": null,
+  "validation": "offline-format-check",
+  "physicalReceptionVerified": false,
+  "authenticatedIdentity": false,
+  "rawAdvertising": {
+    "inputHex": "0201060b094449592d73656e736f720a16d2fc4002c40903bf13",
+    "elements": [
+      {
+        "offset": 0,
+        "type": 1,
+        "dataHex": "06",
+        "value": {
+          "kind": "flags",
+          "bytesHex": "06"
+        }
+      },
+      {
+        "offset": 3,
+        "type": 9,
+        "dataHex": "4449592d73656e736f72",
+        "value": {
+          "kind": "name",
+          "complete": true,
+          "text": "DIY-sensor"
+        }
+      },
+      {
+        "offset": 15,
+        "type": 22,
+        "dataHex": "d2fc4002c40903bf13",
+        "value": {
+          "kind": "service-data",
+          "uuid": "0000fcd2-0000-1000-8000-00805f9b34fb",
+          "payloadHex": "4002c40903bf13"
+        }
+      }
+    ],
+    "issues": [],
+    "paddingBytes": 0,
+    "unparsedHex": "",
+    "status": "parsed"
+  },
+  "normalizedFields": null,
+  "captureCompleteness": "complete",
+  "serviceReadings": [
+    {
+      "uuid": "0000fcd2-0000-1000-8000-00805f9b34fb",
+      "reading": {
+        "format": "BTHome-v2",
+        "status": "format-match",
+        "parseStatus": "complete",
+        "payloadHex": "4002c40903bf13",
+        "deviceInfo": 64,
+        "triggerBased": false,
+        "objects": [
+          {
+            "offset": 1,
+            "objectId": 2,
+            "occurrence": 1,
+            "property": "temperature",
+            "unit": "°C",
+            "rawHex": "02c409",
+            "rawInteger": 2500,
+            "scaleDivisor": 100,
+            "value": 25
+          },
+          {
+            "offset": 4,
+            "objectId": 3,
+            "occurrence": 1,
+            "property": "humidity",
+            "unit": "%",
+            "rawHex": "03bf13",
+            "rawInteger": 5055,
+            "scaleDivisor": 100,
+            "value": 50.55
+          }
+        ],
+        "issues": [],
+        "unparsedHex": "",
+        "reason": null,
+        "authenticated": false,
+        "sensorTruthVerified": false
+      }
+    }
+  ]
+}

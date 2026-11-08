@@ -1,0 +1,15 @@
+✔ synthetic USB session negotiates AXP and snapshots a maximum payload with synchronous fragmented reply (7.583691ms)
+✔ synthetic USB identity failure retains session slot after failed close and fulfilled retry (1.477466ms)
+✔ synthetic USB capabilities failure retains session slot after failed close and fulfilled retry (1.010473ms)
+✔ synthetic permission denial releases session slot without native open write or close (0.875386ms)
+✔ synthetic session close rejects pending ping but retains ownership until actual native write settles (6.178005ms)
+✔ synthetic deferred native open with session cancellation settles without release deadlock (1.346242ms)
+✔ synthetic deferred native open with early terminal event settles without release deadlock (1.554858ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.714209

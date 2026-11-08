@@ -1,0 +1,1 @@
+Focused strict TypeScript7.0.2/noUncheckedIndexedAccess passed for BLE, phone-field adapter, evidence, workflow, demo and web storage modules/tests.

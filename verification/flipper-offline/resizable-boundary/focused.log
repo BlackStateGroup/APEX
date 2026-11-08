@@ -1,0 +1,22 @@
+✔ selected pinned interface response shapes and terminal pair (2.247214ms)
+✔ presence is independent of effective defaults, including empty/no content and missing children (0.427832ms)
+✔ errors and unknown statuses cannot become successful identity (0.3615ms)
+✔ IDs, repeated keys and repeated terminal sequences are never pooled (0.231601ms)
+✔ unknown values retain offsets and original bytes without nested interpretation (0.403789ms)
+✔ reject duplicate known fields and multiple possible content, even unknown content (0.727326ms)
+✔ known types, UTF-8, numeric widths, tag zero, unsupported wires and canonical policies (0.653165ms)
+✔ framing EOF tails preserve bytes while malformed complete messages throw (0.496632ms)
+✔ every byte split and coalesced responses: inspect reassembled bytes, prefix tails never scan ahead (7.207596ms)
+✔ fixed budget boundaries: input, frame, field count, frame count, strings (13.648299ms)
+✔ copies input and output, rejects missing provenance (0.323556ms)
+✔ CLI: bounded local files, explicit provenance, no stdout on error, no symlinks/FIFOs/directories/URLs (174.348273ms)
+✔ host boundary snapshots only a strict own provenance data property (0.777845ms)
+✔ host byte snapshots use intrinsic bounds and storage, rejecting shared/detached/proxy inputs (0.590559ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 347.756812

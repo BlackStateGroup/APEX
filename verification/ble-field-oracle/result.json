@@ -1,0 +1,13 @@
+{
+  "syntheticDatasets": 1200,
+  "rowsCompared": 2400,
+  "decisions": {
+    "within-tolerance": 1344,
+    "outside-tolerance": 936,
+    "incomplete": 120
+  },
+  "oracle": "Python fractions.Fraction and int.from_bytes; no production arithmetic helper",
+  "seed": 20261108,
+  "inputSha256": "10753b15be2e0b2994b374675a9b3ebcced69df81bce826a263780e250fe1425",
+  "result": "All exact integers, reduced value/residual fractions, statuses and inclusive tolerance decisions agree."
+}

@@ -1,0 +1,13 @@
+# Selected-window energy / threshold workbench
+
+The fourth I/Q mode uses the existing exact integer activity core. It is an explicit, offline analysis of the staged pair; edits, examples, navigation and mode selection do no reads, hashing or analysis. Native arbitrary-file import remains unavailable. The synthetic zero and quarter-cycle examples need no new bytes.
+
+Six activity settings are separate from spectral settings: start `0` (0–65535, 1–5 ASCII digits), window `1024` (1–4096, 1–4 digits), hop `1024` (1–65536, 1–5 digits), frames `1` (1–256, 1–3 digits), numerator `0` and denominator `1` (each 1–128 ASCII digits, denominator nonzero). Invalid whole input is discarded, never truncated. Rational strings never pass through Number. Clear, examples and exit reset all settings and mode. Threshold 0/1 means strictly positive raw mean squared counts, not an inferred noise floor. Noise and DC can exceed it. Both quarter-cycle halves have mean 268435456/1 despite their opposite frequency signs.
+
+Before either raw source read, both captured sizes and all six settings must validate, window × frames must not exceed 262144 processed cells, and the final complete window must fit. One read/hash preparation pipeline calls only activity analysis in this mode; no PreparedIq cache survives. Exact full-source SHA-256 and optional SHA-512 comparison remain provenance, not authentication. Source/supplier claims and byte getters are not published.
+
+Private copies are deeply frozen and bounded at 256 frames, 128 runs and 256 measured intervals total. Public state holds a bounded report, four-frame page, four-run-summary page, selected run summary without interval array and eight-interval page, with separate indices and page counts. Pagination limits rendered rows, not heap. Sums are exact decimal integers; means are exact sum/window fractions, not claimed reduced. Comparisons use strict greater-than. Sample bounds are half-open; times are nominal positions divided by declared rate. Consecutive above-threshold selected windows are not physical bursts or evidence of continuous activity. Gapped runs retain separate measured intervals.
+
+All result projections are cleared atomically before invalidation notifications. Existing generation/lease guards, observer isolation and the single actual pending-operation slot remain in force through both reads and every digest settlement. Peak navigation has no activity result and is inert in activity mode.
+
+Validation is synthetic host/controller and mocked React Native projection only. No browser, actual user files, storage, device, radio, native build, network or publication is exercised.

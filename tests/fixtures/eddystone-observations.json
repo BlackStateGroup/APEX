@@ -1,0 +1,76 @@
+[
+  {
+    "schemaVersion": 1,
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Constructed from pinned Google Eddystone layout; not received over radio",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "inputKind": "android-scan-record",
+    "dataStatus": "complete",
+    "advertisingHex": "0201060303aafe1716aafe00ee000102030405060708090a0b0c0d0e0f0000"
+  },
+  {
+    "schemaVersion": 1,
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Constructed from pinned Google Eddystone layout; not received over radio",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "inputKind": "ios-advertisement-fields",
+    "fields": {
+      "localName": null,
+      "serviceUuids": [
+        "feaa"
+      ],
+      "serviceData": [
+        {
+          "uuid": "feaa",
+          "payloadHex": "00ee000102030405060708090a0b0c0d0e0f0000"
+        }
+      ],
+      "manufacturerDataHex": null,
+      "txPowerDbm": null,
+      "isConnectable": null
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Constructed from pinned Google Eddystone layout; not received over radio",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "inputKind": "android-scan-record",
+    "dataStatus": "complete",
+    "advertisingHex": "0201060303aafe1316aafe10ee03676f6f2e676c2f417131387a46"
+  },
+  {
+    "schemaVersion": 1,
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Constructed from pinned Google Eddystone layout; not received over radio",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "inputKind": "ios-advertisement-fields",
+    "fields": {
+      "localName": null,
+      "serviceUuids": [
+        "feaa"
+      ],
+      "serviceData": [
+        {
+          "uuid": "feaa",
+          "payloadHex": "10ee03676f6f2e676c2f417131387a46"
+        }
+      ],
+      "manufacturerDataHex": null,
+      "txPowerDbm": null,
+      "isConnectable": null
+    }
+  }
+]

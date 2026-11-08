@@ -1,0 +1,2405 @@
+{
+  "profile": "apex-ci16-le-v1",
+  "parserVersion": "1",
+  "acquisition": "offline import; acquisition not verified",
+  "context": {
+    "schemaVersion": 1,
+    "origin": "synthetic-fixture",
+    "importedAt": "2026-11-07T23:18:15.340Z",
+    "supplierLabel": "APEX synthetic analytical fixture"
+  },
+  "supplierClaim": {
+    "global": {
+      "core:datatype": "ci16_le",
+      "core:version": "1.2.6",
+      "core:sample_rate": 1024,
+      "core:description": "Synthetic positive complex tone, not an RF capture"
+    },
+    "captures": [
+      {
+        "core:sample_start": 0,
+        "core:frequency": 1000000
+      }
+    ],
+    "annotations": []
+  },
+  "sampleRate": 1024,
+  "centerFrequency": 1000000,
+  "sampleCount": 256,
+  "metadataLength": 236,
+  "dataLength": 1024,
+  "metadataSha256": "1b23f22ab3a1bf216973c44f3aa1fef43b03774904337cdf846dff2a3adce2d4",
+  "dataSha256": "fad75c6c2877cf3970eae5004f7d6f38680fe00f2788b2b677fb918a3056eb2d",
+  "sha512Status": "not-provided",
+  "warnings": [],
+  "analysis": {
+    "analysisVersion": "apex-iq-analysis-v1",
+    "options": {
+      "fftSize": 256,
+      "startSample": 0,
+      "explicitWindow": true
+    },
+    "statistics": {
+      "sampleCount": 256,
+      "nominalDurationSeconds": 0.25,
+      "lastSampleTimeSeconds": 0.2490234375,
+      "rawI": {
+        "minimum": -16384,
+        "maximum": 16384
+      },
+      "rawQ": {
+        "minimum": -16384,
+        "maximum": 16384
+      },
+      "meanI": 0,
+      "meanQ": 0,
+      "dcMagnitude": 0,
+      "peakComplexMagnitude": 0.5,
+      "rmsComplexMagnitude": 0.5,
+      "acRmsComplexMagnitude": 0.5,
+      "railHits": {
+        "label": "rail hits (possible clipping)",
+        "iNegative": 0,
+        "iPositive": 0,
+        "qNegative": 0,
+        "qPositive": 0,
+        "complexPairCount": 0,
+        "complexPairFraction": 0
+      }
+    },
+    "warnings": [
+      "Offline import; acquisition not verified.",
+      "Digital normalized amplitudes are not dBm, volts, calibrated power or physical noise floor.",
+      "Rail hits indicate possible clipping; their absence does not prove a clean analog acquisition.",
+      "Declared RF axis assumes I+jQ and supplied orientation; spectral inversion and tuning error are not verified.",
+      "Largest bins are numerical features, not transmitter identities or modulation classifications."
+    ],
+    "spectrum": {
+      "fftSize": 256,
+      "startSample": 0,
+      "endSampleExclusive": 256,
+      "window": "periodic Hann",
+      "windowSum": 128,
+      "binSpacingHz": 4,
+      "windowDurationSeconds": 0.25,
+      "normalization": "coherent-gain-normalized complex magnitude; not PSD or bin-integrated power",
+      "displayFloorDb": -160,
+      "displayFloorLabel": "display floor only; raw linear amplitude unchanged",
+      "peakBin": {
+        "signedBin": 64,
+        "rawIndex": 64,
+        "offsetHz": 256,
+        "declaredRfHz": 1000256,
+        "amplitude": 0.5,
+        "dbRelativeToUnitAmplitude": -6.020599913279624,
+        "displayDb": -6.020599913279624
+      },
+      "bins": [
+        {
+          "signedBin": -128,
+          "rawIndex": 128,
+          "offsetHz": -512,
+          "declaredRfHz": 999488,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -127,
+          "rawIndex": 129,
+          "offsetHz": -508,
+          "declaredRfHz": 999492,
+          "amplitude": 1.3267283486053745e-17,
+          "dbRelativeToUnitAmplitude": -337.54435982121765,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -126,
+          "rawIndex": 130,
+          "offsetHz": -504,
+          "declaredRfHz": 999496,
+          "amplitude": 3.0121600241400954e-18,
+          "dbRelativeToUnitAmplitude": -350.4224391902307,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -125,
+          "rawIndex": 131,
+          "offsetHz": -500,
+          "declaredRfHz": 999500,
+          "amplitude": 2.2593898120762794e-18,
+          "dbRelativeToUnitAmplitude": -352.92017667748644,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -124,
+          "rawIndex": 132,
+          "offsetHz": -496,
+          "declaredRfHz": 999504,
+          "amplitude": 2.9120538858025862e-18,
+          "dbRelativeToUnitAmplitude": -350.7160118585386,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -123,
+          "rawIndex": 133,
+          "offsetHz": -492,
+          "declaredRfHz": 999508,
+          "amplitude": 2.8110191498262246e-18,
+          "dbRelativeToUnitAmplitude": -351.02272391577344,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -122,
+          "rawIndex": 134,
+          "offsetHz": -488,
+          "declaredRfHz": 999512,
+          "amplitude": 2.531433306878612e-18,
+          "dbRelativeToUnitAmplitude": -351.9326702009064,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -121,
+          "rawIndex": 135,
+          "offsetHz": -484,
+          "declaredRfHz": 999516,
+          "amplitude": 4.272758842368038e-18,
+          "dbRelativeToUnitAmplitude": -347.38583236778146,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -120,
+          "rawIndex": 136,
+          "offsetHz": -480,
+          "declaredRfHz": 999520,
+          "amplitude": 6.905481233167288e-18,
+          "dbRelativeToUnitAmplitude": -343.2161210133173,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -119,
+          "rawIndex": 137,
+          "offsetHz": -476,
+          "declaredRfHz": 999524,
+          "amplitude": 8.621822792178985e-18,
+          "dbRelativeToUnitAmplitude": -341.2880181524208,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -118,
+          "rawIndex": 138,
+          "offsetHz": -472,
+          "declaredRfHz": 999528,
+          "amplitude": 7.50496092407615e-18,
+          "dbRelativeToUnitAmplitude": -342.4930312929373,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -117,
+          "rawIndex": 139,
+          "offsetHz": -468,
+          "declaredRfHz": 999532,
+          "amplitude": 6.180768030578375e-18,
+          "dbRelativeToUnitAmplitude": -344.1791511107885,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -116,
+          "rawIndex": 140,
+          "offsetHz": -464,
+          "declaredRfHz": 999536,
+          "amplitude": 3.976548601471307e-18,
+          "dbRelativeToUnitAmplitude": -348.0098741044267,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -115,
+          "rawIndex": 141,
+          "offsetHz": -460,
+          "declaredRfHz": 999540,
+          "amplitude": 6.229745169493227e-18,
+          "dbRelativeToUnitAmplitude": -344.11059435974255,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -114,
+          "rawIndex": 142,
+          "offsetHz": -456,
+          "declaredRfHz": 999544,
+          "amplitude": 1.5838301529257954e-18,
+          "dbRelativeToUnitAmplitude": -356.0058278640479,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -113,
+          "rawIndex": 143,
+          "offsetHz": -452,
+          "declaredRfHz": 999548,
+          "amplitude": 6.5470770397972824e-18,
+          "dbRelativeToUnitAmplitude": -343.67905097364195,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -112,
+          "rawIndex": 144,
+          "offsetHz": -448,
+          "declaredRfHz": 999552,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -111,
+          "rawIndex": 145,
+          "offsetHz": -444,
+          "declaredRfHz": 999556,
+          "amplitude": 2.3611756926045198e-18,
+          "dbRelativeToUnitAmplitude": -352.53743392644924,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -110,
+          "rawIndex": 146,
+          "offsetHz": -440,
+          "declaredRfHz": 999560,
+          "amplitude": 8.503333313775598e-19,
+          "dbRelativeToUnitAmplitude": -361.40821594217505,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -109,
+          "rawIndex": 147,
+          "offsetHz": -436,
+          "declaredRfHz": 999564,
+          "amplitude": 5.371035255612121e-18,
+          "dbRelativeToUnitAmplitude": -345.3988399379022,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -108,
+          "rawIndex": 148,
+          "offsetHz": -432,
+          "declaredRfHz": 999568,
+          "amplitude": 6.008814594351087e-18,
+          "dbRelativeToUnitAmplitude": -344.42422392403705,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -107,
+          "rawIndex": 149,
+          "offsetHz": -428,
+          "declaredRfHz": 999572,
+          "amplitude": 4.7750185569586915e-18,
+          "dbRelativeToUnitAmplitude": -346.4204987259226,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -106,
+          "rawIndex": 150,
+          "offsetHz": -424,
+          "declaredRfHz": 999576,
+          "amplitude": 4.814839815071289e-18,
+          "dbRelativeToUnitAmplitude": -346.34836313688584,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -105,
+          "rawIndex": 151,
+          "offsetHz": -420,
+          "declaredRfHz": 999580,
+          "amplitude": 3.961856484931791e-18,
+          "dbRelativeToUnitAmplitude": -348.0420252096247,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -104,
+          "rawIndex": 152,
+          "offsetHz": -416,
+          "declaredRfHz": 999584,
+          "amplitude": 2.0142545773986663e-18,
+          "dbRelativeToUnitAmplitude": -353.9177128149495,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -103,
+          "rawIndex": 153,
+          "offsetHz": -412,
+          "declaredRfHz": 999588,
+          "amplitude": 4.334445010444028e-18,
+          "dbRelativeToUnitAmplitude": -347.2613300483316,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -102,
+          "rawIndex": 154,
+          "offsetHz": -408,
+          "declaredRfHz": 999592,
+          "amplitude": 3.75764658948278e-18,
+          "dbRelativeToUnitAmplitude": -348.5016813631288,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -101,
+          "rawIndex": 155,
+          "offsetHz": -404,
+          "declaredRfHz": 999596,
+          "amplitude": 7.189597480752044e-19,
+          "dbRelativeToUnitAmplitude": -362.86590846989924,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -100,
+          "rawIndex": 156,
+          "offsetHz": -400,
+          "declaredRfHz": 999600,
+          "amplitude": 1.760522295371246e-18,
+          "dbRelativeToUnitAmplitude": -355.08716941249634,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -99,
+          "rawIndex": 157,
+          "offsetHz": -396,
+          "declaredRfHz": 999604,
+          "amplitude": 5.394950135605226e-18,
+          "dbRelativeToUnitAmplitude": -345.36025130111005,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -98,
+          "rawIndex": 158,
+          "offsetHz": -392,
+          "declaredRfHz": 999608,
+          "amplitude": 4.750549390921992e-18,
+          "dbRelativeToUnitAmplitude": -346.4651232447715,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -97,
+          "rawIndex": 159,
+          "offsetHz": -388,
+          "declaredRfHz": 999612,
+          "amplitude": 1.2850370724706935e-17,
+          "dbRelativeToUnitAmplitude": -337.8216868608606,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -96,
+          "rawIndex": 160,
+          "offsetHz": -384,
+          "declaredRfHz": 999616,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -95,
+          "rawIndex": 161,
+          "offsetHz": -380,
+          "declaredRfHz": 999620,
+          "amplitude": 4.09727206930596e-18,
+          "dbRelativeToUnitAmplitude": -347.75010393658187,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -94,
+          "rawIndex": 162,
+          "offsetHz": -376,
+          "declaredRfHz": 999624,
+          "amplitude": 6.820861517438783e-18,
+          "dbRelativeToUnitAmplitude": -343.32321535543394,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -93,
+          "rawIndex": 163,
+          "offsetHz": -372,
+          "declaredRfHz": 999628,
+          "amplitude": 6.598923023460173e-18,
+          "dbRelativeToUnitAmplitude": -343.61053875320454,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -92,
+          "rawIndex": 164,
+          "offsetHz": -368,
+          "declaredRfHz": 999632,
+          "amplitude": 5.317488894884269e-18,
+          "dbRelativeToUnitAmplitude": -345.4858681682151,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -91,
+          "rawIndex": 165,
+          "offsetHz": -364,
+          "declaredRfHz": 999636,
+          "amplitude": 3.0393991796076023e-18,
+          "dbRelativeToUnitAmplitude": -350.3442451618355,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -90,
+          "rawIndex": 166,
+          "offsetHz": -360,
+          "declaredRfHz": 999640,
+          "amplitude": 1.743552139473106e-18,
+          "dbRelativeToUnitAmplitude": -355.1713012175883,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -89,
+          "rawIndex": 167,
+          "offsetHz": -356,
+          "declaredRfHz": 999644,
+          "amplitude": 4.4225986913063105e-18,
+          "dbRelativeToUnitAmplitude": -347.0864493385784,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -88,
+          "rawIndex": 168,
+          "offsetHz": -352,
+          "declaredRfHz": 999648,
+          "amplitude": 6.119558084912957e-18,
+          "dbRelativeToUnitAmplitude": -344.265598773472,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -87,
+          "rawIndex": 169,
+          "offsetHz": -348,
+          "declaredRfHz": 999652,
+          "amplitude": 6.5077947576758454e-18,
+          "dbRelativeToUnitAmplitude": -343.73132304529486,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -86,
+          "rawIndex": 170,
+          "offsetHz": -344,
+          "declaredRfHz": 999656,
+          "amplitude": 2.9021241799086704e-18,
+          "dbRelativeToUnitAmplitude": -350.74568016673715,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -85,
+          "rawIndex": 171,
+          "offsetHz": -340,
+          "declaredRfHz": 999660,
+          "amplitude": 4.821792490919862e-18,
+          "dbRelativeToUnitAmplitude": -346.3358296742257,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -84,
+          "rawIndex": 172,
+          "offsetHz": -336,
+          "declaredRfHz": 999664,
+          "amplitude": 4.9188733557157426e-18,
+          "dbRelativeToUnitAmplitude": -346.1626871780952,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -83,
+          "rawIndex": 173,
+          "offsetHz": -332,
+          "declaredRfHz": 999668,
+          "amplitude": 6.219252399135663e-18,
+          "dbRelativeToUnitAmplitude": -344.12523635262636,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -82,
+          "rawIndex": 174,
+          "offsetHz": -328,
+          "declaredRfHz": 999672,
+          "amplitude": 3.64264587579776e-18,
+          "dbRelativeToUnitAmplitude": -348.7716609433326,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -81,
+          "rawIndex": 175,
+          "offsetHz": -324,
+          "declaredRfHz": 999676,
+          "amplitude": 6.8869767596436865e-18,
+          "dbRelativeToUnitAmplitude": -343.23942765109814,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -80,
+          "rawIndex": 176,
+          "offsetHz": -320,
+          "declaredRfHz": 999680,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -79,
+          "rawIndex": 177,
+          "offsetHz": -316,
+          "declaredRfHz": 999684,
+          "amplitude": 2.0169043323187127e-18,
+          "dbRelativeToUnitAmplitude": -353.90629402316597,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -78,
+          "rawIndex": 178,
+          "offsetHz": -312,
+          "declaredRfHz": 999688,
+          "amplitude": 2.364316944300829e-18,
+          "dbRelativeToUnitAmplitude": -352.52588610628527,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -77,
+          "rawIndex": 179,
+          "offsetHz": -308,
+          "declaredRfHz": 999692,
+          "amplitude": 2.2685996975510656e-18,
+          "dbRelativeToUnitAmplitude": -352.8848426030762,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -76,
+          "rawIndex": 180,
+          "offsetHz": -304,
+          "declaredRfHz": 999696,
+          "amplitude": 3.1832149103824273e-18,
+          "dbRelativeToUnitAmplitude": -349.9426807918749,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -75,
+          "rawIndex": 181,
+          "offsetHz": -300,
+          "declaredRfHz": 999700,
+          "amplitude": 1.5312331133932578e-18,
+          "dbRelativeToUnitAmplitude": -356.2991737542434,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -74,
+          "rawIndex": 182,
+          "offsetHz": -296,
+          "declaredRfHz": 999704,
+          "amplitude": 2.813728048622807e-18,
+          "dbRelativeToUnitAmplitude": -351.0143576027724,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -73,
+          "rawIndex": 183,
+          "offsetHz": -292,
+          "declaredRfHz": 999708,
+          "amplitude": 2.0880848319742354e-18,
+          "dbRelativeToUnitAmplitude": -353.6050372272853,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -72,
+          "rawIndex": 184,
+          "offsetHz": -288,
+          "declaredRfHz": 999712,
+          "amplitude": 4.401987692162805e-18,
+          "dbRelativeToUnitAmplitude": -347.12702352112933,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -71,
+          "rawIndex": 185,
+          "offsetHz": -284,
+          "declaredRfHz": 999716,
+          "amplitude": 1.2836768218455096e-18,
+          "dbRelativeToUnitAmplitude": -357.830886007516,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -70,
+          "rawIndex": 186,
+          "offsetHz": -280,
+          "declaredRfHz": 999720,
+          "amplitude": 3.40432318309626e-18,
+          "dbRelativeToUnitAmplitude": -349.3593843538119,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -69,
+          "rawIndex": 187,
+          "offsetHz": -276,
+          "declaredRfHz": 999724,
+          "amplitude": 3.977283917112348e-18,
+          "dbRelativeToUnitAmplitude": -348.00826811875606,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -68,
+          "rawIndex": 188,
+          "offsetHz": -272,
+          "declaredRfHz": 999728,
+          "amplitude": 4.937845703784945e-18,
+          "dbRelativeToUnitAmplitude": -346.1292496977282,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -67,
+          "rawIndex": 189,
+          "offsetHz": -268,
+          "declaredRfHz": 999732,
+          "amplitude": 3.592427273876242e-18,
+          "dbRelativeToUnitAmplitude": -348.8922403017255,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -66,
+          "rawIndex": 190,
+          "offsetHz": -264,
+          "declaredRfHz": 999736,
+          "amplitude": 2.5621829286963195e-18,
+          "dbRelativeToUnitAmplitude": -351.82779733501707,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -65,
+          "rawIndex": 191,
+          "offsetHz": -260,
+          "declaredRfHz": 999740,
+          "amplitude": 1.5817465588045883e-17,
+          "dbRelativeToUnitAmplitude": -336.0172620340894,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -64,
+          "rawIndex": 192,
+          "offsetHz": -256,
+          "declaredRfHz": 999744,
+          "amplitude": 1.5308084989341915e-17,
+          "dbRelativeToUnitAmplitude": -336.30158270540784,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -63,
+          "rawIndex": 193,
+          "offsetHz": -252,
+          "declaredRfHz": 999748,
+          "amplitude": 1.7564075194265172e-17,
+          "dbRelativeToUnitAmplitude": -335.1074942457637,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -62,
+          "rawIndex": 194,
+          "offsetHz": -248,
+          "declaredRfHz": 999752,
+          "amplitude": 2.562182928696318e-18,
+          "dbRelativeToUnitAmplitude": -351.82779733501707,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -61,
+          "rawIndex": 195,
+          "offsetHz": -244,
+          "declaredRfHz": 999756,
+          "amplitude": 3.525424437395261e-18,
+          "dbRelativeToUnitAmplitude": -349.0557717877942,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -60,
+          "rawIndex": 196,
+          "offsetHz": -240,
+          "declaredRfHz": 999760,
+          "amplitude": 4.937845703784946e-18,
+          "dbRelativeToUnitAmplitude": -346.1292496977282,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -59,
+          "rawIndex": 197,
+          "offsetHz": -236,
+          "declaredRfHz": 999764,
+          "amplitude": 4.94500887823653e-18,
+          "dbRelativeToUnitAmplitude": -346.1166584867327,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -58,
+          "rawIndex": 198,
+          "offsetHz": -232,
+          "declaredRfHz": 999768,
+          "amplitude": 3.4043231830962605e-18,
+          "dbRelativeToUnitAmplitude": -349.3593843538119,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -57,
+          "rawIndex": 199,
+          "offsetHz": -228,
+          "declaredRfHz": 999772,
+          "amplitude": 4.589245435530579e-18,
+          "dbRelativeToUnitAmplitude": -346.7651743072258,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -56,
+          "rawIndex": 200,
+          "offsetHz": -224,
+          "declaredRfHz": 999776,
+          "amplitude": 4.401987692162805e-18,
+          "dbRelativeToUnitAmplitude": -347.12702352112933,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -55,
+          "rawIndex": 201,
+          "offsetHz": -220,
+          "declaredRfHz": 999780,
+          "amplitude": 2.6330187627495544e-18,
+          "dbRelativeToUnitAmplitude": -351.5909209224775,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -54,
+          "rawIndex": 202,
+          "offsetHz": -216,
+          "declaredRfHz": 999784,
+          "amplitude": 2.813728048622808e-18,
+          "dbRelativeToUnitAmplitude": -351.0143576027724,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -53,
+          "rawIndex": 203,
+          "offsetHz": -212,
+          "declaredRfHz": 999788,
+          "amplitude": 9.784684046208558e-19,
+          "dbRelativeToUnitAmplitude": -360.189063868599,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -52,
+          "rawIndex": 204,
+          "offsetHz": -208,
+          "declaredRfHz": 999792,
+          "amplitude": 3.183214910382426e-18,
+          "dbRelativeToUnitAmplitude": -349.9426807918749,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -51,
+          "rawIndex": 205,
+          "offsetHz": -204,
+          "declaredRfHz": 999796,
+          "amplitude": 2.603833077406369e-18,
+          "dbRelativeToUnitAmplitude": -351.6877372061086,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -50,
+          "rawIndex": 206,
+          "offsetHz": -200,
+          "declaredRfHz": 999800,
+          "amplitude": 2.3643169443008295e-18,
+          "dbRelativeToUnitAmplitude": -352.52588610628527,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -49,
+          "rawIndex": 207,
+          "offsetHz": -196,
+          "declaredRfHz": 999804,
+          "amplitude": 4.392627175861773e-18,
+          "dbRelativeToUnitAmplitude": -347.1455131181083,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -48,
+          "rawIndex": 208,
+          "offsetHz": -192,
+          "declaredRfHz": 999808,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -47,
+          "rawIndex": 209,
+          "offsetHz": -188,
+          "declaredRfHz": 999812,
+          "amplitude": 5.228928308764571e-18,
+          "dbRelativeToUnitAmplitude": -345.63174625050345,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -46,
+          "rawIndex": 210,
+          "offsetHz": -184,
+          "declaredRfHz": 999816,
+          "amplitude": 3.6426458757977594e-18,
+          "dbRelativeToUnitAmplitude": -348.7716609433326,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -45,
+          "rawIndex": 211,
+          "offsetHz": -180,
+          "declaredRfHz": 999820,
+          "amplitude": 6.102852231336203e-18,
+          "dbRelativeToUnitAmplitude": -344.2893429101987,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -44,
+          "rawIndex": 212,
+          "offsetHz": -176,
+          "declaredRfHz": 999824,
+          "amplitude": 4.918873355715742e-18,
+          "dbRelativeToUnitAmplitude": -346.1626871780952,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -43,
+          "rawIndex": 213,
+          "offsetHz": -172,
+          "declaredRfHz": 999828,
+          "amplitude": 6.8439908827049435e-18,
+          "dbRelativeToUnitAmplitude": -343.293811553611,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -42,
+          "rawIndex": 214,
+          "offsetHz": -168,
+          "declaredRfHz": 999832,
+          "amplitude": 2.9021241799086707e-18,
+          "dbRelativeToUnitAmplitude": -350.74568016673715,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -41,
+          "rawIndex": 215,
+          "offsetHz": -164,
+          "declaredRfHz": 999836,
+          "amplitude": 8.45513139318607e-19,
+          "dbRelativeToUnitAmplitude": -361.45759278109466,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -40,
+          "rawIndex": 216,
+          "offsetHz": -160,
+          "declaredRfHz": 999840,
+          "amplitude": 6.119558084912955e-18,
+          "dbRelativeToUnitAmplitude": -344.265598773472,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -39,
+          "rawIndex": 217,
+          "offsetHz": -156,
+          "declaredRfHz": 999844,
+          "amplitude": 2.2471282721430863e-18,
+          "dbRelativeToUnitAmplitude": -352.9674427234562,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -38,
+          "rawIndex": 218,
+          "offsetHz": -152,
+          "declaredRfHz": 999848,
+          "amplitude": 1.743552139473106e-18,
+          "dbRelativeToUnitAmplitude": -355.1713012175883,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -37,
+          "rawIndex": 219,
+          "offsetHz": -148,
+          "declaredRfHz": 999852,
+          "amplitude": 2.2470554422242794e-18,
+          "dbRelativeToUnitAmplitude": -352.96772423960124,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -36,
+          "rawIndex": 220,
+          "offsetHz": -144,
+          "declaredRfHz": 999856,
+          "amplitude": 5.31748889488427e-18,
+          "dbRelativeToUnitAmplitude": -345.4858681682151,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -35,
+          "rawIndex": 221,
+          "offsetHz": -140,
+          "declaredRfHz": 999860,
+          "amplitude": 7.138893111584033e-18,
+          "dbRelativeToUnitAmplitude": -342.92738241096606,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -34,
+          "rawIndex": 222,
+          "offsetHz": -136,
+          "declaredRfHz": 999864,
+          "amplitude": 6.8208615174387825e-18,
+          "dbRelativeToUnitAmplitude": -343.32321535543394,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -33,
+          "rawIndex": 223,
+          "offsetHz": -132,
+          "declaredRfHz": 999868,
+          "amplitude": 1.2607228232636158e-17,
+          "dbRelativeToUnitAmplitude": -337.9876076984963,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -32,
+          "rawIndex": 224,
+          "offsetHz": -128,
+          "declaredRfHz": 999872,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -31,
+          "rawIndex": 225,
+          "offsetHz": -124,
+          "declaredRfHz": 999876,
+          "amplitude": 1.2172455358961407e-18,
+          "dbRelativeToUnitAmplitude": -358.2924361900546,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -30,
+          "rawIndex": 226,
+          "offsetHz": -120,
+          "declaredRfHz": 999880,
+          "amplitude": 4.750549390921993e-18,
+          "dbRelativeToUnitAmplitude": -346.4651232447715,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -29,
+          "rawIndex": 227,
+          "offsetHz": -116,
+          "declaredRfHz": 999884,
+          "amplitude": 5.672011662817405e-18,
+          "dbRelativeToUnitAmplitude": -344.92525769651377,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -28,
+          "rawIndex": 228,
+          "offsetHz": -112,
+          "declaredRfHz": 999888,
+          "amplitude": 1.760522295371245e-18,
+          "dbRelativeToUnitAmplitude": -355.08716941249634,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -27,
+          "rawIndex": 229,
+          "offsetHz": -108,
+          "declaredRfHz": 999892,
+          "amplitude": 2.874756773784013e-18,
+          "dbRelativeToUnitAmplitude": -350.8279778805093,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -26,
+          "rawIndex": 230,
+          "offsetHz": -104,
+          "declaredRfHz": 999896,
+          "amplitude": 3.757646589482781e-18,
+          "dbRelativeToUnitAmplitude": -348.5016813631288,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -25,
+          "rawIndex": 231,
+          "offsetHz": -100,
+          "declaredRfHz": 999900,
+          "amplitude": 3.3077865713559847e-18,
+          "dbRelativeToUnitAmplitude": -349.60925040483636,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -24,
+          "rawIndex": 232,
+          "offsetHz": -96,
+          "declaredRfHz": 999904,
+          "amplitude": 2.014254577398665e-18,
+          "dbRelativeToUnitAmplitude": -353.9177128149495,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -23,
+          "rawIndex": 233,
+          "offsetHz": -92,
+          "declaredRfHz": 999908,
+          "amplitude": 2.243736609285225e-18,
+          "dbRelativeToUnitAmplitude": -352.98056251915335,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -22,
+          "rawIndex": 234,
+          "offsetHz": -88,
+          "declaredRfHz": 999912,
+          "amplitude": 4.814839815071289e-18,
+          "dbRelativeToUnitAmplitude": -346.34836313688584,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -21,
+          "rawIndex": 235,
+          "offsetHz": -84,
+          "declaredRfHz": 999916,
+          "amplitude": 6.063594502919293e-18,
+          "dbRelativeToUnitAmplitude": -344.34539698865757,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -20,
+          "rawIndex": 236,
+          "offsetHz": -80,
+          "declaredRfHz": 999920,
+          "amplitude": 6.008814594351087e-18,
+          "dbRelativeToUnitAmplitude": -344.42422392403705,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -19,
+          "rawIndex": 237,
+          "offsetHz": -76,
+          "declaredRfHz": 999924,
+          "amplitude": 5.350390693322464e-18,
+          "dbRelativeToUnitAmplitude": -345.43229008010286,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -18,
+          "rawIndex": 238,
+          "offsetHz": -72,
+          "declaredRfHz": 999928,
+          "amplitude": 8.503333313775595e-19,
+          "dbRelativeToUnitAmplitude": -361.40821594217505,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -17,
+          "rawIndex": 239,
+          "offsetHz": -68,
+          "declaredRfHz": 999932,
+          "amplitude": 1.3569629797934904e-17,
+          "dbRelativeToUnitAmplitude": -337.3486400090855,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -16,
+          "rawIndex": 240,
+          "offsetHz": -64,
+          "declaredRfHz": 999936,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -15,
+          "rawIndex": 241,
+          "offsetHz": -60,
+          "declaredRfHz": 999940,
+          "amplitude": 3.614611040921376e-18,
+          "dbRelativeToUnitAmplitude": -348.83876858354324,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -14,
+          "rawIndex": 242,
+          "offsetHz": -56,
+          "declaredRfHz": 999944,
+          "amplitude": 1.5838301529257942e-18,
+          "dbRelativeToUnitAmplitude": -356.0058278640479,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -13,
+          "rawIndex": 243,
+          "offsetHz": -52,
+          "declaredRfHz": 999948,
+          "amplitude": 3.0013096579737126e-18,
+          "dbRelativeToUnitAmplitude": -350.4537838848289,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -12,
+          "rawIndex": 244,
+          "offsetHz": -48,
+          "declaredRfHz": 999952,
+          "amplitude": 3.9765486014713075e-18,
+          "dbRelativeToUnitAmplitude": -348.0098741044267,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -11,
+          "rawIndex": 245,
+          "offsetHz": -44,
+          "declaredRfHz": 999956,
+          "amplitude": 6.606556588768769e-18,
+          "dbRelativeToUnitAmplitude": -343.6004968137751,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -10,
+          "rawIndex": 246,
+          "offsetHz": -40,
+          "declaredRfHz": 999960,
+          "amplitude": 7.504960924076152e-18,
+          "dbRelativeToUnitAmplitude": -342.4930312929373,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -9,
+          "rawIndex": 247,
+          "offsetHz": -36,
+          "declaredRfHz": 999964,
+          "amplitude": 6.673035963051945e-18,
+          "dbRelativeToUnitAmplitude": -343.51353069191634,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -8,
+          "rawIndex": 248,
+          "offsetHz": -32,
+          "declaredRfHz": 999968,
+          "amplitude": 6.9054812331672886e-18,
+          "dbRelativeToUnitAmplitude": -343.2161210133173,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -7,
+          "rawIndex": 249,
+          "offsetHz": -28,
+          "declaredRfHz": 999972,
+          "amplitude": 3.8127770774176944e-18,
+          "dbRelativeToUnitAmplitude": -348.37517171974326,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -6,
+          "rawIndex": 250,
+          "offsetHz": -24,
+          "declaredRfHz": 999976,
+          "amplitude": 2.5314333068786117e-18,
+          "dbRelativeToUnitAmplitude": -351.9326702009064,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -5,
+          "rawIndex": 251,
+          "offsetHz": -20,
+          "declaredRfHz": 999980,
+          "amplitude": 2.5617353403716674e-18,
+          "dbRelativeToUnitAmplitude": -351.8293148076217,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -4,
+          "rawIndex": 252,
+          "offsetHz": -16,
+          "declaredRfHz": 999984,
+          "amplitude": 2.912053885802587e-18,
+          "dbRelativeToUnitAmplitude": -350.7160118585386,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -3,
+          "rawIndex": 253,
+          "offsetHz": -12,
+          "declaredRfHz": 999988,
+          "amplitude": 3.37940005059983e-18,
+          "dbRelativeToUnitAmplitude": -349.423207875162,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -2,
+          "rawIndex": 254,
+          "offsetHz": -8,
+          "declaredRfHz": 999992,
+          "amplitude": 3.0121600241400946e-18,
+          "dbRelativeToUnitAmplitude": -350.42243919023076,
+          "displayDb": -160
+        },
+        {
+          "signedBin": -1,
+          "rawIndex": 255,
+          "offsetHz": -4,
+          "declaredRfHz": 999996,
+          "amplitude": 1.0755570352932137e-17,
+          "dbRelativeToUnitAmplitude": -339.36733109267414,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 0,
+          "rawIndex": 0,
+          "offsetHz": 0,
+          "declaredRfHz": 1000000,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 1,
+          "rawIndex": 1,
+          "offsetHz": 4,
+          "declaredRfHz": 1000004,
+          "amplitude": 1.781057602958752e-17,
+          "dbRelativeToUnitAmplitude": -334.9864406871801,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 2,
+          "rawIndex": 2,
+          "offsetHz": 8,
+          "declaredRfHz": 1000008,
+          "amplitude": 3.29338005397253e-18,
+          "dbRelativeToUnitAmplitude": -349.64716298175887,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 3,
+          "rawIndex": 3,
+          "offsetHz": 12,
+          "declaredRfHz": 1000012,
+          "amplitude": 3.7033818242766005e-18,
+          "dbRelativeToUnitAmplitude": -348.6280301844622,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 4,
+          "rawIndex": 4,
+          "offsetHz": 16,
+          "declaredRfHz": 1000016,
+          "amplitude": 5.869209633949951e-18,
+          "dbRelativeToUnitAmplitude": -344.6284075652516,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 5,
+          "rawIndex": 5,
+          "offsetHz": 20,
+          "declaredRfHz": 1000020,
+          "amplitude": 9.556348146986697e-19,
+          "dbRelativeToUnitAmplitude": -360.394160737336,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 6,
+          "rawIndex": 6,
+          "offsetHz": 24,
+          "declaredRfHz": 1000024,
+          "amplitude": 1.229895107310567e-18,
+          "dbRelativeToUnitAmplitude": -358.2026385233865,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 7,
+          "rawIndex": 7,
+          "offsetHz": 28,
+          "declaredRfHz": 1000028,
+          "amplitude": 2.9423013493129468e-18,
+          "dbRelativeToUnitAmplitude": -350.62625698131006,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 8,
+          "rawIndex": 8,
+          "offsetHz": 32,
+          "declaredRfHz": 1000032,
+          "amplitude": 6.801305375112073e-19,
+          "dbRelativeToUnitAmplitude": -363.3481545023451,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 9,
+          "rawIndex": 9,
+          "offsetHz": 36,
+          "declaredRfHz": 1000036,
+          "amplitude": 5.627521843145551e-18,
+          "dbRelativeToUnitAmplitude": -344.993656212327,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 10,
+          "rawIndex": 10,
+          "offsetHz": 40,
+          "declaredRfHz": 1000040,
+          "amplitude": 1.9759497528693906e-18,
+          "dbRelativeToUnitAmplitude": -354.0844820687432,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 11,
+          "rawIndex": 11,
+          "offsetHz": 44,
+          "declaredRfHz": 1000044,
+          "amplitude": 4.296227786795964e-18,
+          "dbRelativeToUnitAmplitude": -347.33825400647754,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 12,
+          "rawIndex": 12,
+          "offsetHz": 48,
+          "declaredRfHz": 1000048,
+          "amplitude": 1.4280165953428176e-18,
+          "dbRelativeToUnitAmplitude": -356.9053349096853,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 13,
+          "rawIndex": 13,
+          "offsetHz": 52,
+          "declaredRfHz": 1000052,
+          "amplitude": 5.966199936915762e-18,
+          "dbRelativeToUnitAmplitude": -344.48604393652806,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 14,
+          "rawIndex": 14,
+          "offsetHz": 56,
+          "declaredRfHz": 1000056,
+          "amplitude": 8.836404196196677e-18,
+          "dbRelativeToUnitAmplitude": -341.07448853558884,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 15,
+          "rawIndex": 15,
+          "offsetHz": 60,
+          "declaredRfHz": 1000060,
+          "amplitude": 1.248225545514012e-17,
+          "dbRelativeToUnitAmplitude": -338.0741386725287,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 16,
+          "rawIndex": 16,
+          "offsetHz": 64,
+          "declaredRfHz": 1000064,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 17,
+          "rawIndex": 17,
+          "offsetHz": 68,
+          "declaredRfHz": 1000068,
+          "amplitude": 3.0088280777070897e-18,
+          "dbRelativeToUnitAmplitude": -350.4320525365659,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 18,
+          "rawIndex": 18,
+          "offsetHz": 72,
+          "declaredRfHz": 1000072,
+          "amplitude": 7.419361716985905e-18,
+          "dbRelativeToUnitAmplitude": -342.59266910389215,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 19,
+          "rawIndex": 19,
+          "offsetHz": 76,
+          "declaredRfHz": 1000076,
+          "amplitude": 6.5253396809478e-18,
+          "dbRelativeToUnitAmplitude": -343.70793751819514,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 20,
+          "rawIndex": 20,
+          "offsetHz": 80,
+          "declaredRfHz": 1000080,
+          "amplitude": 4.029359646086591e-18,
+          "dbRelativeToUnitAmplitude": -347.89527934649874,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 21,
+          "rawIndex": 21,
+          "offsetHz": 84,
+          "declaredRfHz": 1000084,
+          "amplitude": 5.411184341489969e-18,
+          "dbRelativeToUnitAmplitude": -345.33415341623584,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 22,
+          "rawIndex": 22,
+          "offsetHz": 88,
+          "declaredRfHz": 1000088,
+          "amplitude": 7.478882057894649e-19,
+          "dbRelativeToUnitAmplitude": -362.5232663110879,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 23,
+          "rawIndex": 23,
+          "offsetHz": 92,
+          "declaredRfHz": 1000092,
+          "amplitude": 3.763275661411389e-18,
+          "dbRelativeToUnitAmplitude": -348.488679365492,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 24,
+          "rawIndex": 24,
+          "offsetHz": 96,
+          "declaredRfHz": 1000096,
+          "amplitude": 6.640107462015161e-18,
+          "dbRelativeToUnitAmplitude": -343.55649784100547,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 25,
+          "rawIndex": 25,
+          "offsetHz": 100,
+          "declaredRfHz": 1000100,
+          "amplitude": 3.9026101173943865e-18,
+          "dbRelativeToUnitAmplitude": -348.17289667779244,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 26,
+          "rawIndex": 26,
+          "offsetHz": 104,
+          "declaredRfHz": 1000104,
+          "amplitude": 6.977878149585317e-19,
+          "dbRelativeToUnitAmplitude": -363.1255323728076,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 27,
+          "rawIndex": 27,
+          "offsetHz": 108,
+          "declaredRfHz": 1000108,
+          "amplitude": 9.901558589663076e-19,
+          "dbRelativeToUnitAmplitude": -360.08592876741557,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 28,
+          "rawIndex": 28,
+          "offsetHz": 112,
+          "declaredRfHz": 1000112,
+          "amplitude": 4.0628200526206954e-18,
+          "dbRelativeToUnitAmplitude": -347.82344825386326,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 29,
+          "rawIndex": 29,
+          "offsetHz": 116,
+          "declaredRfHz": 1000116,
+          "amplitude": 2.9028992258809647e-18,
+          "dbRelativeToUnitAmplitude": -350.7433608087091,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 30,
+          "rawIndex": 30,
+          "offsetHz": 120,
+          "declaredRfHz": 1000120,
+          "amplitude": 2.2072114200850375e-18,
+          "dbRelativeToUnitAmplitude": -353.1231213097738,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 31,
+          "rawIndex": 31,
+          "offsetHz": 124,
+          "declaredRfHz": 1000124,
+          "amplitude": 1.9156284287788003e-17,
+          "dbRelativeToUnitAmplitude": -334.3537745291626,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 32,
+          "rawIndex": 32,
+          "offsetHz": 128,
+          "declaredRfHz": 1000128,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 33,
+          "rawIndex": 33,
+          "offsetHz": 132,
+          "declaredRfHz": 1000132,
+          "amplitude": 5.909105439998956e-18,
+          "dbRelativeToUnitAmplitude": -344.5695652110644,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 34,
+          "rawIndex": 34,
+          "offsetHz": 136,
+          "declaredRfHz": 1000136,
+          "amplitude": 2.2375616570598276e-18,
+          "dbRelativeToUnitAmplitude": -353.0044997731847,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 35,
+          "rawIndex": 35,
+          "offsetHz": 140,
+          "declaredRfHz": 1000140,
+          "amplitude": 1.463041397614004e-18,
+          "dbRelativeToUnitAmplitude": -356.6948677016774,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 36,
+          "rawIndex": 36,
+          "offsetHz": 144,
+          "declaredRfHz": 1000144,
+          "amplitude": 8.875339048212748e-19,
+          "dbRelativeToUnitAmplitude": -361.0363009480932,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 37,
+          "rawIndex": 37,
+          "offsetHz": 148,
+          "declaredRfHz": 1000148,
+          "amplitude": 3.85414950674388e-18,
+          "dbRelativeToUnitAmplitude": -348.2814288517613,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 38,
+          "rawIndex": 38,
+          "offsetHz": 152,
+          "declaredRfHz": 1000152,
+          "amplitude": 1.179466214952892e-17,
+          "dbRelativeToUnitAmplitude": -338.566289893697,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 39,
+          "rawIndex": 39,
+          "offsetHz": 156,
+          "declaredRfHz": 1000156,
+          "amplitude": 1.944268322971501e-17,
+          "dbRelativeToUnitAmplitude": -334.22487599041244,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 40,
+          "rawIndex": 40,
+          "offsetHz": 160,
+          "declaredRfHz": 1000160,
+          "amplitude": 3.270971943483675e-18,
+          "dbRelativeToUnitAmplitude": -349.70646361974724,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 41,
+          "rawIndex": 41,
+          "offsetHz": 164,
+          "declaredRfHz": 1000164,
+          "amplitude": 1.6684782663885122e-17,
+          "dbRelativeToUnitAmplitude": -335.55358892191606,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 42,
+          "rawIndex": 42,
+          "offsetHz": 168,
+          "declaredRfHz": 1000168,
+          "amplitude": 8.582618670009234e-18,
+          "dbRelativeToUnitAmplitude": -341.32760365929937,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 43,
+          "rawIndex": 43,
+          "offsetHz": 172,
+          "declaredRfHz": 1000172,
+          "amplitude": 9.132414063494488e-19,
+          "dbRelativeToUnitAmplitude": -360.7882881166231,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 44,
+          "rawIndex": 44,
+          "offsetHz": 176,
+          "declaredRfHz": 1000176,
+          "amplitude": 3.3838427964669734e-18,
+          "dbRelativeToUnitAmplitude": -349.41179642455614,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 45,
+          "rawIndex": 45,
+          "offsetHz": 180,
+          "declaredRfHz": 1000180,
+          "amplitude": 4.9712396261308786e-18,
+          "dbRelativeToUnitAmplitude": -346.07070604561613,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 46,
+          "rawIndex": 46,
+          "offsetHz": 184,
+          "declaredRfHz": 1000184,
+          "amplitude": 4.062008936907458e-18,
+          "dbRelativeToUnitAmplitude": -347.8251825086029,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 47,
+          "rawIndex": 47,
+          "offsetHz": 188,
+          "declaredRfHz": 1000188,
+          "amplitude": 2.7330970752946323e-17,
+          "dbRelativeToUnitAmplitude": -331.26689885157623,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 48,
+          "rawIndex": 48,
+          "offsetHz": 192,
+          "declaredRfHz": 1000192,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 49,
+          "rawIndex": 49,
+          "offsetHz": 196,
+          "declaredRfHz": 1000196,
+          "amplitude": 2.50294014148989e-18,
+          "dbRelativeToUnitAmplitude": -352.0309907308199,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 50,
+          "rawIndex": 50,
+          "offsetHz": 200,
+          "declaredRfHz": 1000200,
+          "amplitude": 7.042751193713203e-19,
+          "dbRelativeToUnitAmplitude": -363.0451530818086,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 51,
+          "rawIndex": 51,
+          "offsetHz": 204,
+          "declaredRfHz": 1000204,
+          "amplitude": 3.4656663844045863e-18,
+          "dbRelativeToUnitAmplitude": -349.20426492237624,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 52,
+          "rawIndex": 52,
+          "offsetHz": 208,
+          "declaredRfHz": 1000208,
+          "amplitude": 2.097211251761244e-18,
+          "dbRelativeToUnitAmplitude": -353.56715641832034,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 53,
+          "rawIndex": 53,
+          "offsetHz": 212,
+          "declaredRfHz": 1000212,
+          "amplitude": 3.4582901902748675e-18,
+          "dbRelativeToUnitAmplitude": -349.22277134473916,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 54,
+          "rawIndex": 54,
+          "offsetHz": 216,
+          "declaredRfHz": 1000216,
+          "amplitude": 1.7690606146499672e-18,
+          "dbRelativeToUnitAmplitude": -355.045145725559,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 55,
+          "rawIndex": 55,
+          "offsetHz": 220,
+          "declaredRfHz": 1000220,
+          "amplitude": 1.0839129402368465e-17,
+          "dbRelativeToUnitAmplitude": -339.300111977597,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 56,
+          "rawIndex": 56,
+          "offsetHz": 224,
+          "declaredRfHz": 1000224,
+          "amplitude": 5.3638375224952586e-18,
+          "dbRelativeToUnitAmplitude": -345.4104877191398,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 57,
+          "rawIndex": 57,
+          "offsetHz": 228,
+          "declaredRfHz": 1000228,
+          "amplitude": 3.2987663215723215e-18,
+          "dbRelativeToUnitAmplitude": -349.6329689594545,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 58,
+          "rawIndex": 58,
+          "offsetHz": 232,
+          "declaredRfHz": 1000232,
+          "amplitude": 2.782024905260259e-18,
+          "dbRelativeToUnitAmplitude": -351.1127797286574,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 59,
+          "rawIndex": 59,
+          "offsetHz": 236,
+          "declaredRfHz": 1000236,
+          "amplitude": 1.0912739307890909e-17,
+          "dbRelativeToUnitAmplitude": -339.2413243888305,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 60,
+          "rawIndex": 60,
+          "offsetHz": 240,
+          "declaredRfHz": 1000240,
+          "amplitude": 2.095536126351684e-18,
+          "dbRelativeToUnitAmplitude": -353.5740969534393,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 61,
+          "rawIndex": 61,
+          "offsetHz": 244,
+          "declaredRfHz": 1000244,
+          "amplitude": 1.143305312280949e-17,
+          "dbRelativeToUnitAmplitude": -338.83675557174575,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 62,
+          "rawIndex": 62,
+          "offsetHz": 248,
+          "declaredRfHz": 1000248,
+          "amplitude": 9.134656614955181e-18,
+          "dbRelativeToUnitAmplitude": -340.7861554753325,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 63,
+          "rawIndex": 63,
+          "offsetHz": 252,
+          "declaredRfHz": 1000252,
+          "amplitude": 0.25,
+          "dbRelativeToUnitAmplitude": -12.041199826559248,
+          "displayDb": -12.041199826559248
+        },
+        {
+          "signedBin": 64,
+          "rawIndex": 64,
+          "offsetHz": 256,
+          "declaredRfHz": 1000256,
+          "amplitude": 0.5,
+          "dbRelativeToUnitAmplitude": -6.020599913279624,
+          "displayDb": -6.020599913279624
+        },
+        {
+          "signedBin": 65,
+          "rawIndex": 65,
+          "offsetHz": 260,
+          "declaredRfHz": 1000260,
+          "amplitude": 0.24999999999999997,
+          "dbRelativeToUnitAmplitude": -12.041199826559248,
+          "displayDb": -12.041199826559248
+        },
+        {
+          "signedBin": 66,
+          "rawIndex": 66,
+          "offsetHz": 264,
+          "declaredRfHz": 1000264,
+          "amplitude": 9.134656614955181e-18,
+          "dbRelativeToUnitAmplitude": -340.7861554753325,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 67,
+          "rawIndex": 67,
+          "offsetHz": 268,
+          "declaredRfHz": 1000268,
+          "amplitude": 1.0129272082579199e-17,
+          "dbRelativeToUnitAmplitude": -339.888435262346,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 68,
+          "rawIndex": 68,
+          "offsetHz": 272,
+          "declaredRfHz": 1000272,
+          "amplitude": 2.0955361263516847e-18,
+          "dbRelativeToUnitAmplitude": -353.5740969534393,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 69,
+          "rawIndex": 69,
+          "offsetHz": 276,
+          "declaredRfHz": 1000276,
+          "amplitude": 7.192754675522011e-18,
+          "dbRelativeToUnitAmplitude": -342.8620950400124,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 70,
+          "rawIndex": 70,
+          "offsetHz": 280,
+          "declaredRfHz": 1000280,
+          "amplitude": 2.782024905260259e-18,
+          "dbRelativeToUnitAmplitude": -351.1127797286574,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 71,
+          "rawIndex": 71,
+          "offsetHz": 284,
+          "declaredRfHz": 1000284,
+          "amplitude": 6.878860212880379e-18,
+          "dbRelativeToUnitAmplitude": -343.24967031745234,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 72,
+          "rawIndex": 72,
+          "offsetHz": 288,
+          "declaredRfHz": 1000288,
+          "amplitude": 5.3638375224952586e-18,
+          "dbRelativeToUnitAmplitude": -345.4104877191398,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 73,
+          "rawIndex": 73,
+          "offsetHz": 292,
+          "declaredRfHz": 1000292,
+          "amplitude": 3.1957186573630497e-18,
+          "dbRelativeToUnitAmplitude": -349.9086292363039,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 74,
+          "rawIndex": 74,
+          "offsetHz": 296,
+          "declaredRfHz": 1000296,
+          "amplitude": 1.7690606146499695e-18,
+          "dbRelativeToUnitAmplitude": -355.045145725559,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 75,
+          "rawIndex": 75,
+          "offsetHz": 300,
+          "declaredRfHz": 1000300,
+          "amplitude": 7.11718154009382e-18,
+          "dbRelativeToUnitAmplitude": -342.9538391270319,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 76,
+          "rawIndex": 76,
+          "offsetHz": 304,
+          "declaredRfHz": 1000304,
+          "amplitude": 2.0972112517612427e-18,
+          "dbRelativeToUnitAmplitude": -353.56715641832034,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 77,
+          "rawIndex": 77,
+          "offsetHz": 308,
+          "declaredRfHz": 1000308,
+          "amplitude": 7.88801018723805e-18,
+          "dbRelativeToUnitAmplitude": -342.0606507436432,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 78,
+          "rawIndex": 78,
+          "offsetHz": 312,
+          "declaredRfHz": 1000312,
+          "amplitude": 7.042751193713189e-19,
+          "dbRelativeToUnitAmplitude": -363.0451530818086,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 79,
+          "rawIndex": 79,
+          "offsetHz": 316,
+          "declaredRfHz": 1000316,
+          "amplitude": 3.4469704323312533e-17,
+          "dbRelativeToUnitAmplitude": -329.2512488379649,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 80,
+          "rawIndex": 80,
+          "offsetHz": 320,
+          "declaredRfHz": 1000320,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 81,
+          "rawIndex": 81,
+          "offsetHz": 324,
+          "declaredRfHz": 1000324,
+          "amplitude": 2.3860637091506218e-18,
+          "dbRelativeToUnitAmplitude": -352.4463592924152,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 82,
+          "rawIndex": 82,
+          "offsetHz": 328,
+          "declaredRfHz": 1000328,
+          "amplitude": 4.062008936907459e-18,
+          "dbRelativeToUnitAmplitude": -347.8251825086029,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 83,
+          "rawIndex": 83,
+          "offsetHz": 332,
+          "declaredRfHz": 1000332,
+          "amplitude": 9.645109996592405e-18,
+          "dbRelativeToUnitAmplitude": -340.3138563025674,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 84,
+          "rawIndex": 84,
+          "offsetHz": 336,
+          "declaredRfHz": 1000336,
+          "amplitude": 3.3838427964669715e-18,
+          "dbRelativeToUnitAmplitude": -349.41179642455614,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 85,
+          "rawIndex": 85,
+          "offsetHz": 340,
+          "declaredRfHz": 1000340,
+          "amplitude": 6.074161216659976e-18,
+          "dbRelativeToUnitAmplitude": -344.3302737097424,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 86,
+          "rawIndex": 86,
+          "offsetHz": 344,
+          "declaredRfHz": 1000344,
+          "amplitude": 8.582618670009232e-18,
+          "dbRelativeToUnitAmplitude": -341.32760365929937,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 87,
+          "rawIndex": 87,
+          "offsetHz": 348,
+          "declaredRfHz": 1000348,
+          "amplitude": 8.805277773546378e-18,
+          "dbRelativeToUnitAmplitude": -341.1051387823144,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 88,
+          "rawIndex": 88,
+          "offsetHz": 352,
+          "declaredRfHz": 1000352,
+          "amplitude": 3.2709719434836763e-18,
+          "dbRelativeToUnitAmplitude": -349.70646361974724,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 89,
+          "rawIndex": 89,
+          "offsetHz": 356,
+          "declaredRfHz": 1000356,
+          "amplitude": 1.4751810805279473e-17,
+          "dbRelativeToUnitAmplitude": -336.6230933232466,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 90,
+          "rawIndex": 90,
+          "offsetHz": 360,
+          "declaredRfHz": 1000360,
+          "amplitude": 1.179466214952892e-17,
+          "dbRelativeToUnitAmplitude": -338.566289893697,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 91,
+          "rawIndex": 91,
+          "offsetHz": 364,
+          "declaredRfHz": 1000364,
+          "amplitude": 3.1088491599263814e-18,
+          "dbRelativeToUnitAmplitude": -350.1480069846803,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 92,
+          "rawIndex": 92,
+          "offsetHz": 368,
+          "declaredRfHz": 1000368,
+          "amplitude": 8.875339048212744e-19,
+          "dbRelativeToUnitAmplitude": -361.0363009480932,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 93,
+          "rawIndex": 93,
+          "offsetHz": 372,
+          "declaredRfHz": 1000372,
+          "amplitude": 2.3757678663102493e-18,
+          "dbRelativeToUnitAmplitude": -352.48391992117035,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 94,
+          "rawIndex": 94,
+          "offsetHz": 376,
+          "declaredRfHz": 1000376,
+          "amplitude": 2.2375616570598264e-18,
+          "dbRelativeToUnitAmplitude": -353.0044997731847,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 95,
+          "rawIndex": 95,
+          "offsetHz": 380,
+          "declaredRfHz": 1000380,
+          "amplitude": 2.0584152729346302e-17,
+          "dbRelativeToUnitAmplitude": -333.72934008855214,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 96,
+          "rawIndex": 96,
+          "offsetHz": 384,
+          "declaredRfHz": 1000384,
+          "amplitude": 0,
+          "dbRelativeToUnitAmplitude": null,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 97,
+          "rawIndex": 97,
+          "offsetHz": 388,
+          "declaredRfHz": 1000388,
+          "amplitude": 7.48913230266636e-18,
+          "dbRelativeToUnitAmplitude": -342.5113699423883,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 98,
+          "rawIndex": 98,
+          "offsetHz": 392,
+          "declaredRfHz": 1000392,
+          "amplitude": 2.2072114200850375e-18,
+          "dbRelativeToUnitAmplitude": -353.1231213097738,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 99,
+          "rawIndex": 99,
+          "offsetHz": 396,
+          "declaredRfHz": 1000396,
+          "amplitude": 2.9704958649348413e-18,
+          "dbRelativeToUnitAmplitude": -350.5434209568904,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 100,
+          "rawIndex": 100,
+          "offsetHz": 400,
+          "declaredRfHz": 1000400,
+          "amplitude": 4.062820052620696e-18,
+          "dbRelativeToUnitAmplitude": -347.82344825386326,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 101,
+          "rawIndex": 101,
+          "offsetHz": 404,
+          "declaredRfHz": 1000404,
+          "amplitude": 1.9663633320878416e-18,
+          "dbRelativeToUnitAmplitude": -354.12672465844037,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 102,
+          "rawIndex": 102,
+          "offsetHz": 408,
+          "declaredRfHz": 1000408,
+          "amplitude": 6.977878149585323e-19,
+          "dbRelativeToUnitAmplitude": -363.1255323728076,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 103,
+          "rawIndex": 103,
+          "offsetHz": 412,
+          "declaredRfHz": 1000412,
+          "amplitude": 6.4595713973346704e-18,
+          "dbRelativeToUnitAmplitude": -343.7959259433419,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 104,
+          "rawIndex": 104,
+          "offsetHz": 416,
+          "declaredRfHz": 1000416,
+          "amplitude": 6.64010746201516e-18,
+          "dbRelativeToUnitAmplitude": -343.55649784100547,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 105,
+          "rawIndex": 105,
+          "offsetHz": 420,
+          "declaredRfHz": 1000420,
+          "amplitude": 3.2450479419389342e-18,
+          "dbRelativeToUnitAmplitude": -349.7755776520597,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 106,
+          "rawIndex": 106,
+          "offsetHz": 424,
+          "declaredRfHz": 1000424,
+          "amplitude": 7.478882057894641e-19,
+          "dbRelativeToUnitAmplitude": -362.5232663110879,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 107,
+          "rawIndex": 107,
+          "offsetHz": 428,
+          "declaredRfHz": 1000428,
+          "amplitude": 4.8299339664032225e-18,
+          "dbRelativeToUnitAmplitude": -346.32117613537446,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 108,
+          "rawIndex": 108,
+          "offsetHz": 432,
+          "declaredRfHz": 1000432,
+          "amplitude": 4.029359646086591e-18,
+          "dbRelativeToUnitAmplitude": -347.89527934649874,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 109,
+          "rawIndex": 109,
+          "offsetHz": 436,
+          "declaredRfHz": 1000436,
+          "amplitude": 5.912328659896029e-18,
+          "dbRelativeToUnitAmplitude": -344.5648286397209,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 110,
+          "rawIndex": 110,
+          "offsetHz": 440,
+          "declaredRfHz": 1000440,
+          "amplitude": 7.419361716985907e-18,
+          "dbRelativeToUnitAmplitude": -342.59266910389215,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 111,
+          "rawIndex": 111,
+          "offsetHz": 444,
+          "declaredRfHz": 1000444,
+          "amplitude": 1.041645936130077e-17,
+          "dbRelativeToUnitAmplitude": -339.64559752313835,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 112,
+          "rawIndex": 112,
+          "offsetHz": 448,
+          "declaredRfHz": 1000448,
+          "amplitude": 3.469446951953614e-18,
+          "dbRelativeToUnitAmplitude": -349.1947949702182,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 113,
+          "rawIndex": 113,
+          "offsetHz": 452,
+          "declaredRfHz": 1000452,
+          "amplitude": 2.53522658880364e-18,
+          "dbRelativeToUnitAmplitude": -351.9196643805035,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 114,
+          "rawIndex": 114,
+          "offsetHz": 456,
+          "declaredRfHz": 1000456,
+          "amplitude": 8.836404196196676e-18,
+          "dbRelativeToUnitAmplitude": -341.07448853558884,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 115,
+          "rawIndex": 115,
+          "offsetHz": 460,
+          "declaredRfHz": 1000460,
+          "amplitude": 7.495230659819805e-18,
+          "dbRelativeToUnitAmplitude": -342.50429995078895,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 116,
+          "rawIndex": 116,
+          "offsetHz": 464,
+          "declaredRfHz": 1000464,
+          "amplitude": 1.4280165953428182e-18,
+          "dbRelativeToUnitAmplitude": -356.9053349096853,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 117,
+          "rawIndex": 117,
+          "offsetHz": 468,
+          "declaredRfHz": 1000468,
+          "amplitude": 2.160947942602508e-18,
+          "dbRelativeToUnitAmplitude": -353.3071139035456,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 118,
+          "rawIndex": 118,
+          "offsetHz": 472,
+          "declaredRfHz": 1000472,
+          "amplitude": 1.975949752869389e-18,
+          "dbRelativeToUnitAmplitude": -354.0844820687432,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 119,
+          "rawIndex": 119,
+          "offsetHz": 476,
+          "declaredRfHz": 1000476,
+          "amplitude": 1.940496361976682e-18,
+          "dbRelativeToUnitAmplitude": -354.2417433426837,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 120,
+          "rawIndex": 120,
+          "offsetHz": 480,
+          "declaredRfHz": 1000480,
+          "amplitude": 6.801305375112083e-19,
+          "dbRelativeToUnitAmplitude": -363.3481545023451,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 121,
+          "rawIndex": 121,
+          "offsetHz": 484,
+          "declaredRfHz": 1000484,
+          "amplitude": 4.170531421802307e-18,
+          "dbRelativeToUnitAmplitude": -347.5961720475202,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 122,
+          "rawIndex": 122,
+          "offsetHz": 488,
+          "declaredRfHz": 1000488,
+          "amplitude": 1.2298951073105674e-18,
+          "dbRelativeToUnitAmplitude": -358.2026385233865,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 123,
+          "rawIndex": 123,
+          "offsetHz": 492,
+          "declaredRfHz": 1000492,
+          "amplitude": 1.7124516077840751e-18,
+          "dbRelativeToUnitAmplitude": -355.327633848031,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 124,
+          "rawIndex": 124,
+          "offsetHz": 496,
+          "declaredRfHz": 1000496,
+          "amplitude": 5.869209633949952e-18,
+          "dbRelativeToUnitAmplitude": -344.6284075652516,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 125,
+          "rawIndex": 125,
+          "offsetHz": 500,
+          "declaredRfHz": 1000500,
+          "amplitude": 5.518242940432854e-18,
+          "dbRelativeToUnitAmplitude": -345.16398367276224,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 126,
+          "rawIndex": 126,
+          "offsetHz": 504,
+          "declaredRfHz": 1000504,
+          "amplitude": 3.293380053972531e-18,
+          "dbRelativeToUnitAmplitude": -349.64716298175887,
+          "displayDb": -160
+        },
+        {
+          "signedBin": 127,
+          "rawIndex": 127,
+          "offsetHz": 508,
+          "declaredRfHz": 1000508,
+          "amplitude": 7.125146065840559e-18,
+          "dbRelativeToUnitAmplitude": -342.9441245634042,
+          "displayDb": -160
+        }
+      ]
+    }
+  }
+}

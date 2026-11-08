@@ -1,0 +1,1429 @@
+{
+  "scope": "Installed PLX 3.5.1 ESM and exact native adapter/controller, synthetic RN/native only. No physical or native ordering evidence.",
+  "loaded": [
+    "node_modules/react-native-ble-plx/lib/module/index.js",
+    "node_modules/react-native-ble-plx/lib/module/BleError.js",
+    "node_modules/react-native-ble-plx/lib/module/Utils.js",
+    "node_modules/react-native-ble-plx/lib/module/BleManager.js",
+    "node_modules/react-native-ble-plx/lib/module/Device.js",
+    "node_modules/react-native-ble-plx/lib/module/TypeDefinition.js",
+    "node_modules/react-native-ble-plx/lib/module/Service.js",
+    "node_modules/react-native-ble-plx/lib/module/Characteristic.js",
+    "node_modules/react-native-ble-plx/lib/module/Descriptor.js",
+    "node_modules/react-native-ble-plx/lib/module/BleModule.js"
+  ],
+  "traces": [
+    {
+      "id": "scan-1",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "local",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "AXP accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-2",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "permissions",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "scan-3",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "stop",
+        "permissions",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "scan-4",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "permissions",
+        "state",
+        "connect",
+        "discover",
+        "mtu",
+        "disconnect"
+      ],
+      "values": [],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-5",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "permissions",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "scan event failed",
+          "name": "BleError"
+        },
+        null
+      ]
+    },
+    {
+      "id": "scan-6",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "stop",
+        "permissions",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "start failed",
+          "name": "BleError"
+        },
+        null
+      ]
+    },
+    {
+      "id": "scan-7",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "stop failed",
+          "name": "BleError"
+        }
+      ]
+    },
+    {
+      "id": "scan-8",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "local",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "AXP accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-9",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "scan-10",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop",
+        "stop",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "synthetic accessory",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "scan-11",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop",
+        "state",
+        "connect",
+        "discover",
+        "disconnect"
+      ],
+      "values": [],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-12",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "scan event failed",
+          "name": "BleError"
+        },
+        null
+      ]
+    },
+    {
+      "id": "scan-13",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop",
+        "stop",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "start failed",
+          "name": "BleError"
+        },
+        null
+      ]
+    },
+    {
+      "id": "scan-14",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {
+          "message": "Cannot start scanning operation",
+          "errorCode": 600,
+          "reason": "stop failed",
+          "name": "BleError"
+        }
+      ]
+    },
+    {
+      "id": "scan-15",
+      "platform": "android",
+      "events": [
+        "permissions"
+      ],
+      "values": [],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-16",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "stop",
+        "destroy",
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {},
+        null
+      ]
+    },
+    {
+      "id": "scan-17",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "destroy",
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [],
+      "ends": [
+        {},
+        null
+      ]
+    },
+    {
+      "id": "scan-18",
+      "platform": "android",
+      "events": [
+        "permissions",
+        "create",
+        "state",
+        "start",
+        "stop",
+        "destroy"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "A",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null
+      ]
+    },
+    {
+      "id": "scan-19",
+      "platform": "ios",
+      "events": [
+        "create",
+        "state",
+        "start",
+        "stop"
+      ],
+      "values": [
+        {
+          "id": "AXP",
+          "name": "B",
+          "rssi": -45
+        },
+        {
+          "id": "AXP",
+          "name": "still B",
+          "rssi": -45
+        }
+      ],
+      "ends": [
+        null
+      ]
+    }
+  ]
+}

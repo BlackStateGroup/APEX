@@ -1,0 +1,68 @@
+✖ preconnected transport remains held when listener setup throws and cleanup rejects (1.983775ms)
+✖ close must not confirm release before deferred connect can acquire transport (0.51718ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (0.40718ms)
+✔ explicit close of preconnected new session releases exactly once (0.290523ms)
+✖ real BleTransport setup failure does not lose rejected native cleanup (1.117409ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (2.017429ms)
+✔ terminal callback synchronously inside close joins the same attempt (0.545503ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 4
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.873352
+
+✖ failing tests:
+
+test at tests/session-review.test.ts:7:1
+✖ preconnected transport remains held when listener setup throws and cleanup rejects (1.983775ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:13:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session-review.test.ts:17:1
+✖ close must not confirm release before deferred connect can acquire transport (0.51718ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:23:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/session-review.test.ts:45:1
+✖ real BleTransport setup failure does not lose rejected native cleanup (1.117409ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:56:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

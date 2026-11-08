@@ -1,0 +1,48 @@
+{
+  "scope": "Installed PLX published ESM; synthetic RN/native events and promises; C data callbacks only. No native ordering, ABI, radio or startup proof.",
+  "platform": "android",
+  "mtu": 23,
+  "events": [
+    "permissions",
+    "create",
+    "readiness",
+    "connect",
+    "discover",
+    "mtu",
+    "characteristics",
+    "monitor:13",
+    "monitor-ready",
+    "cancelTransaction",
+    "cancelDevice"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 0 0 65535"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "SUBSCRIBE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 2 0 0 0 0 0 65535"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "TICK"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 3 0 0 0 0 0 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

@@ -3,7 +3,6 @@ on:
   pull_request:
     paths-ignore:
       - 'docs/**'
-      - 'research/**'
       - 'README.md'
       - 'LICENSE.md'
   workflow_dispatch:
@@ -24,6 +23,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run research:setup
+      - name: Verify source archive restoration
+        run: python3 -m unittest discover -s tests -p 'test_source_archives.py' -v
+      - name: Verify REA readiness diagnostics
+        run: node --test tools/reverse-engineering/preflight.test.mjs
       - run: npm test
       - run: npm run typecheck
       - run: python3 tools/build_firmware.py --sanitize

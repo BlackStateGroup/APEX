@@ -1,0 +1,2 @@
+src/hci-workbench.ts(25,137): error TS1117: An object literal cannot have multiple properties with the same name.
+src/hci-workbench.ts(25,161): error TS1117: An object literal cannot have multiple properties with the same name.

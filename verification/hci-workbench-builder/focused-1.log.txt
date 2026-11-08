@@ -1,0 +1,13 @@
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (13.13152ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.516268ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.619536ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.076402ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.541401ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 169.01163

@@ -1,0 +1,30 @@
+✔ independent bridge fails closed: EOF during command (75.368478ms)
+✔ independent bridge fails closed: abnormal child exit (67.840881ms)
+✔ independent bridge fails closed: unterminated oversized stdout (65.928832ms)
+✔ independent bridge fails closed: malformed control response (59.502127ms)
+✔ independent bridge fails closed: notification width overflow (63.674641ms)
+✔ independent bridge fails closed: bounded stderr (58.509605ms)
+✔ independent bridge bounds command bytes before writing (62.551533ms)
+✔ independent bridge times out unresponsive owned child and waits for close (2004.776322ms)
+✔ independent bridge rejects correlated-control fault: wrong serial (61.028556ms)
+✔ independent bridge rejects correlated-control fault: unsafe integer (57.949746ms)
+✔ independent bridge rejects correlated-control fault: invalid connection handle (64.238375ms)
+✔ independent bridge rejects correlated-control fault: invalid ATT return code (60.146296ms)
+✔ independent bridge rejects correlated-control fault: impossible stream length (60.017019ms)
+✔ independent bridge rejects high-bit bytes rather than ASCII-normalizing them (57.162778ms)
+✔ independent bridge rejects notification bytes following completed control response (62.436474ms)
+✔ independent fake successful control ACK cannot manufacture READY or session identity (119.069466ms)
+✔ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (22.355311ms)
+✔ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (12.027828ms)
+✔ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (4.675887ms)
+✔ CRC-corrupt framed browser write produces no C response; following session request recovers (9.908567ms)
+✔ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (15.660196ms)
+✔ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (4.11572ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3161.390373

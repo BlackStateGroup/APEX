@@ -1,0 +1,10 @@
+✔ independent synthetic staging needs no TextEncoder and preserves exact ASCII bytes/hash (10.004631ms)
+✔ independent missing decoder or WebCrypto refuses Inspect cleanly and permits later explicit retry (13.676802ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.689233

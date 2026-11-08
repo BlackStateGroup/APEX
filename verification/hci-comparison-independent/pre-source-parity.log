@@ -1,0 +1,41 @@
+✔ synthetic cross-platform fixture is deterministic; counts, byte offsets and runs are exact (12.808583ms)
+✔ within-group changes are not field identification; absent byte differs from zero (7.120765ms)
+✔ encrypted BTHome is opaque, including unknown header versions, without inferred objects (13.538343ms)
+✔ FEAA payloads compare without assuming frame kind or equal payload lengths (2.555723ms)
+✔ exact provenance, whitespace and unverified receipt survive; iOS raw bytes stay opaque (2.775061ms)
+✔ reject ambiguous selections, missing Android raw bytes and malformed/truncated AD (3.163591ms)
+✔ strict schema, grouping, source declarations and duplicate references fail closed (8.33509ms)
+✔ exact character and trial limits; over-limit fails before analysis (7.533881ms)
+✔ CLI synthetic demo succeeds; malformed input produces no partial report (266.508274ms)
+✔ CLI only reads regular files, follows regular-file symlinks, and rejects invalid UTF-8 and excess bytes (784.965616ms)
+✔ golden synthetic fixture retains exact inputs and independently matches 2000/100 and 1844/100 (11.268009ms)
+✔ all integer widths, byte orders and signed extrema use exact independent golden integers (33.783919ms)
+✔ rational residuals, decimal negatives and inclusive tolerance never use floating comparison (5.965606ms)
+✔ designated held-out changes do not affect discovery, sources remain separate, unselected explicit (2.716791ms)
+✔ missing candidate bytes are incomplete while malformed format truncation rejects (4.914336ms)
+✔ eligibility rejects encrypted, unknown, partial, identity and unsupported public formats (23.174446ms)
+✔ strict schema, declarations, decimals, candidate and assignment bounds reject (23.971689ms)
+✔ 32 selected trials and explicit source omission remain bounded and transparent (6.824586ms)
+✔ CLI bounded regular file, symlink, malformed, UTF-8, byte-limit and FIFO paths (1016.176326ms)
+✔ independent exact binary slice, hash oracle, unrelated sentinels and derivative coordinates (16.300317ms)
+✔ literal minimum 55 bytes and maximum 298 bytes with exact 255 parameter limit (2.714368ms)
+✔ existing serialized metadata, legacy and extended output is byte-for-byte unchanged (2.020208ms)
+✔ caller input and preparation/creation/read hash buffers cannot alias retained bytes (1.53035ms)
+✔ brand spoofs, nonlegacy and invalid selectors reject before hash exposure (2.897079ms)
+✔ hash failures reject atomically; valid shape is not hash honesty (2.775006ms)
+✔ exact imported whitespace and escaped Unicode survive, bounded by UTF16 length (1.903329ms)
+✔ all exact object fields reject missing and extra fields before hashing (2.478666ms)
+✔ decoded and escaped duplicate keys at every depth reject before hash (2.133467ms)
+✔ wrong types, nested objects, arrays, nonJSON and unsafe string controls reject (7.697088ms)
+✔ hex, exact header, hash syntax, byte counts and original-range plausibility are strict (8.932493ms)
+✔ plausible original claims can change and always remain explicitly UNVERIFIED (0.798227ms)
+✔ structural and late bad reports reject even with recomputed matching derivative digest (1.468272ms)
+✔ malformed, unknown, encrypted AD and inert URL retain bytes and recomputed interpretation parity (2.363927ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1297.573396

@@ -1,0 +1,42 @@
+✔ independent HCI exact inner document retained; outer canonical digest and byte digest distinct (11.481272ms)
+✔ independent missing byte capability fails all verification/persistence APIs; parse/list stay structural (2.150254ms)
+✔ independent re-signed outer envelopes and bundles cannot launder invalid inner digest/framing (6.367512ms)
+✔ independent source declaration mapping is exact and rejects native/mismatched labels (1.364132ms)
+✔ independent save refuses payload/input accessors without executing them (0.690547ms)
+✔ independent verify refuses accessor-bearing HCI records before serialization (0.624565ms)
+✔ independent save snapshots mutable caller input before text/byte hash awaits (2.886912ms)
+✔ independent malicious byte-hasher cannot mutate retained framing or future report (2.891119ms)
+✔ independent errors never insert; storage failure is not success; byte vs hex-text hash rejects (1.413326ms)
+✔ independent old string-only callers preserve bytes, false mismatch and malformed throw (0.59199ms)
+✔ independent actual CLI HCI roundtrip and malformed/strict inputs emit no partial stdout (1144.034516ms)
+✔ independent exact payload rejects inherited/nonenumerable/symbol/extra fields and never calls toJSON (0.758307ms)
+✔ independent delayed verify and bundle hash cannot observe later caller mutation (1.43018ms)
+✔ independent inherited and accessor toJSON cannot substitute a different HCI verification target (0.537152ms)
+✔ independent outer envelope serialized size cap remains fail closed (0.536167ms)
+✔ independent HCI verification cannot enter through missing-own-kind toJSON substitution (0.367945ms)
+✔ independent real web adapter hashes HCI bytes and preserves stored records on quota failure (13.936965ms)
+✖ independent old-kind toJSON cannot smuggle HCI past descriptor validation (1.369875ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1356.114894
+
+✖ failing tests:
+
+test at tests/hci-evidence-independent.test.ts:58:1
+✖ independent old-kind toJSON cannot smuggle HCI past descriptor validation (1.369875ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/tests/hci-evidence-independent.test.ts:58:234)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

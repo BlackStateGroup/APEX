@@ -1,0 +1,3 @@
+PASS host descriptors, intrinsic size/kind/storage, unsupported ambiguity, alias metadata, single original-byte field
+{"inputBytes":8224,"fieldRecords":4096,"coreCompactJsonChars":729857,"cliPrettyJsonChars":1456230,"cliUtf8Bytes":1456230}
+Resizable out-of-bounds rejected: invalid-input

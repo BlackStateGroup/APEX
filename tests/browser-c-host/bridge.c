@@ -1,0 +1,75 @@
+/* Host-only bridge: no SDK libraries, startup entry point, host task or radio.
+ * Reuse the existing fake SDK's mbuf ownership, delivery capture and timer.
+ * Explicit fixture setup/teardown substitutes for the real link lifecycle.
+ */
+#include <stdio.h>
+#include "../../firmware/esp32s3-reviewed/main/ble_accessory.c"
+#define REQUIRE(x) do { if (!(x)) { fprintf(stderr, "bridge invariant: %s\n", #x); return 2; } } while (0)
+static int nibble(char c) {
+    if (c >= '0' && c <= '9') return c-'0';
+    if (c >= 'a' && c <= 'f') return c-'a'+10;
+    return -1;
+}
+int main(int argc, char **argv) {
+    REQUIRE(argc == 2 && (!strcmp(argv[1], "23") || !strcmp(argv[1], "517")));
+    fake_mtu = (uint16_t)atoi(argv[1]);
+    reset_peer(); connection = 7; notify_handle = 42;
+    char storage[496]; unsigned commands = 0;
+    while (fgets(storage, sizeof(storage), stdin)) {
+        char *line=storage;
+        REQUIRE(++commands <= 512);
+        size_t len = strlen(line);
+        REQUIRE(len && line[len-1] == '\n'); line[--len] = 0;
+        char *space=strchr(line, ' ');
+        REQUIRE(space && space-line>=1 && space-line<=3 && line[0]!='0');
+        unsigned sequence=0;
+        for(char *p=line;p<space;p++){REQUIRE(*p>='0' && *p<='9');sequence=sequence*10u+(unsigned)(*p-'0');}
+        REQUIRE(sequence==commands);
+        line=space+1;len=strlen(line);REQUIRE(len<=490);
+        int rc = 0;
+        if (!strcmp(line, "SUBSCRIBE")) {
+            struct ble_gap_event e = {.type=BLE_GAP_EVENT_SUBSCRIBE, .subscribe={7,42,1}};
+            gap_event(&e, NULL);
+        } else if (!strcmp(line, "CLOSE")) {
+            /* Fixture retirement only. No GAP disconnect callback/advertising. */
+            reset_peer(); connection = BLE_HS_CONN_HANDLE_NONE;
+        } else if (!strcmp(line, "FAIL_FLATTEN")) {
+            flatten_fail = 1;
+        } else if (!strcmp(line, "TICK")) {
+            /* Deliberately invoke a stale scheduled callback, even after close. */
+            transmit(NULL);
+        } else if (len >= 2 && line[0] == 'W' && line[1] == ' ') {
+            REQUIRE(len > 2 && (len-2)%2 == 0 && (len-2)/2 <= 244);
+            struct os_mbuf m = {.len=(uint16_t)((len-2)/2)};
+            for (size_t i=0; i<m.len; i++) {
+                int a=nibble(line[2+i*2]), b=nibble(line[3+i*2]);
+                REQUIRE(a>=0 && b>=0); m.bytes[i]=(uint8_t)((a<<4)|b);
+            }
+            struct ble_gatt_access_ctxt a = {.op=BLE_GATT_ACCESS_OP_WRITE_CHR, .om=&m};
+            rc=access_characteristic(7,0,&a,NULL);
+        } else { REQUIRE(0); }
+        /* Deterministic fake scheduler: fully drain after each command. The
+         * five-ms timer is NOT wall-clock time and GATT ACK is a fixture result. */
+        unsigned ticks=0;
+        while(tx_timer.pending) {
+            REQUIRE(++ticks<=64); tx_timer.pending=0; transmit(NULL);
+        }
+        size_t offset=0;
+        for(size_t i=0;i<chunks_len;i++) {
+            REQUIRE(chunks[i]>0 && chunks[i]<=244 && offset+chunks[i]<=delivered_len);
+            fputs("N ",stdout);
+            for(size_t j=0;j<chunks[i];j++) printf("%02x",delivered[offset++]);
+            putchar('\n');
+        }
+        REQUIRE(offset==delivered_len && allocations==frees);
+        REQUIRE(nvs_calls==0 && erase_calls==0 && startup_calls==0 && host_start_calls==0 && callout_init_calls==0 && adv_calls==0);
+        delivered_len=chunks_len=0;
+        /* Control line never goes into the client decoder. */
+        printf("R %u %d %u %zu %u %u %u\n",sequence,rc,count,peer.stream.used,allocations,frees,connection);
+        REQUIRE(fflush(stdout)==0);
+    }
+    REQUIRE(!ferror(stdin));
+    reset_peer(); connection=BLE_HS_CONN_HANDLE_NONE;
+    REQUIRE(allocations==frees);
+    return 0;
+}

@@ -1,0 +1,158 @@
+{
+  "repository": "BlackStateGroup/APEX",
+  "commit": "e51750ec0b34b280399877d67e1036058874c373",
+  "restoration_base_commit": "27ad6b405d99171224a717474bee1af29b006f18",
+  "status": "Historical original material missing from the selected reconstruction, not an upstream deletion. Not current continuation acceptance. Existing LICENSE.md is unchanged.",
+  "files": [
+    {
+      "path": "docs/ACCESSORY_WORKBENCH.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "9ab0003ad10d4ccaad415ef3749c1bad862fa9db",
+      "sha256": "a310b311b0b246b88e06ed98ce137bf2e52e00c9363c1219f1d9920869f5e78a",
+      "bytes": 3746,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/ACCESSORY_WORKBENCH.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "0931fb1b46008107205d4cc040bf503ee590b089",
+      "sha256": "a9dbcdccae59f09f7ae86f3f1c5a991ca41318b3f4f7d4aa3292826c9d795d85",
+      "bytes": 9071,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/ARCHITECTURE.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/BENCH_ACCEPTANCE.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "6c9a6b590441501b6509e496deb5377c8c8bc103",
+      "sha256": "7400045be3185c6b1ac2c1ca09c48c7cd4481185e916140f5cc6c274a5d3ff84",
+      "bytes": 2884,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/BENCH_ACCEPTANCE.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/CAPABILITY_MATRIX.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "a6d686da4b7ee8432308d4b2cc5111d334273367",
+      "sha256": "596397536e35374852a8c50280abf283b5982c215f7537bd6a586a4414f93eb1",
+      "bytes": 6045,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/CAPABILITY_MATRIX.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/DEVICE_PROTOCOL.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "08218462828f966658a2dca59e54b003325e5c17",
+      "sha256": "41f9b0711727b54b302e79dbf7071ade27ddd15ec3a73c36a90824c6e9f4f3c1",
+      "bytes": 3210,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/DEVICE_PROTOCOL.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/ENGINEERING_WORK_PACKAGES.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "77d4a976c3372b877228e30607d2bbb0eeca9ecf",
+      "sha256": "c48cb27eb41f4694710f9bbb90b4e058e8e87c121936ffbb13ed11f9d2348ee8",
+      "bytes": 7336,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/ENGINEERING_WORK_PACKAGES.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/HARDWARE_STRATEGY.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "879172a74306f5bf85389f0b74971529f231016e",
+      "sha256": "30884648dcdcef8b9c5535e154db774a371ffbf3d8884bb0d80564d336cefda9",
+      "bytes": 6913,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/HARDWARE_STRATEGY.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "f4dad7162d309a4a0c7b936bb29a6695e1e94e2a",
+      "sha256": "a65a8972072e059894bf55c6faf5b296fe732869b3cf7af463cc316ab8cf642e",
+      "bytes": 8197,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/LICENSING.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/PLATFORM_SCOPE.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "6c447911af5a947af76cf2b1070a9a22dfdd1b75",
+      "sha256": "5436ad9a1b0c742572fc911c66d6dae61ccc27c1ce8d88b22544665167bd216f",
+      "bytes": 913,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/PLATFORM_SCOPE.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/PRD.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "36e442b750d68e0012ff64f93dfa2cc69294cea8",
+      "sha256": "2a7c02d0e4bc4872d9aa4c75e3f47639694293b4b3b46a4ea41aa129bf327c9f",
+      "bytes": 10588,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/PRD.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/RESEARCH_REGISTER.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "305061779b9b47d54ded71158c5c8df52e8261c6",
+      "sha256": "e8ae3b96206edaaf8f946e19722ce9e455cd869c7bb04af1f276fdc509e20bed",
+      "bytes": 24294,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/RESEARCH_REGISTER.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/SECURITY_RESEARCH.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "a97a508466b1a81277acf22117c316311e5ef6b2",
+      "sha256": "164d0b4e71cedc10b5ef27505a9b2c2fcafa3fec31411c53d6744d4967a4b0ee",
+      "bytes": 3327,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/SECURITY_RESEARCH.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "docs/images/console.png",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "523de11aea01ecdd77309fe183369f3f6816b871",
+      "sha256": "6efc8e70521f3f8c0a9ee934263a8cf3f7b0686bce271dff14341ed91ed71396",
+      "bytes": 55842,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/docs/images/console.png",
+      "role": "missing README target"
+    },
+    {
+      "path": "firmware/README.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "2557ff1f9cd88021cb6ce1b05665fd53ce6ac8fb",
+      "sha256": "6521dcb83cf92f65cbba7c23a68cc5b4dabc6483ac9c0658d96572880d14bb90",
+      "bytes": 1127,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/firmware/README.md",
+      "role": "missing README target"
+    },
+    {
+      "path": "research/SOURCE_MINING.md",
+      "commit": "e51750ec0b34b280399877d67e1036058874c373",
+      "git_blob_sha1": "d821e094a2f2d402c43052912febba06daf00b50",
+      "sha256": "9574be04f527eace24d6b6daf1f59d790e70c0961b86d2f35ca0955925024cf8",
+      "bytes": 3740,
+      "mode": "100644",
+      "source_url": "https://github.com/BlackStateGroup/APEX/blob/e51750ec0b34b280399877d67e1036058874c373/research/SOURCE_MINING.md",
+      "role": "missing README target"
+    }
+  ]
+}

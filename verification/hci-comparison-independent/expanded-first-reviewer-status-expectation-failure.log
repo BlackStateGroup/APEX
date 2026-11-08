@@ -1,0 +1,87 @@
+✔ synthetic cross-platform fixture is deterministic; counts, byte offsets and runs are exact (13.964662ms)
+✔ within-group changes are not field identification; absent byte differs from zero (4.1829ms)
+✔ encrypted BTHome is opaque, including unknown header versions, without inferred objects (8.760302ms)
+✔ FEAA payloads compare without assuming frame kind or equal payload lengths (7.298034ms)
+✔ exact provenance, whitespace and unverified receipt survive; iOS raw bytes stay opaque (3.032848ms)
+✔ reject ambiguous selections, missing Android raw bytes and malformed/truncated AD (4.978578ms)
+✔ strict schema, grouping, source declarations and duplicate references fail closed (18.324036ms)
+✔ exact character and trial limits; over-limit fails before analysis (9.335358ms)
+✔ CLI synthetic demo succeeds; malformed input produces no partial report (416.517339ms)
+✔ CLI only reads regular files, follows regular-file symlinks, and rejects invalid UTF-8 and excess bytes (1261.065525ms)
+✔ golden synthetic fixture retains exact inputs and independently matches 2000/100 and 1844/100 (14.618175ms)
+✔ all integer widths, byte orders and signed extrema use exact independent golden integers (33.295524ms)
+✔ rational residuals, decimal negatives and inclusive tolerance never use floating comparison (6.521956ms)
+✔ designated held-out changes do not affect discovery, sources remain separate, unselected explicit (2.678118ms)
+✔ missing candidate bytes are incomplete while malformed format truncation rejects (6.075927ms)
+✔ eligibility rejects encrypted, unknown, partial, identity and unsupported public formats (28.467937ms)
+✔ strict schema, declarations, decimals, candidate and assignment bounds reject (40.004375ms)
+✔ 32 selected trials and explicit source omission remain bounded and transparent (9.297493ms)
+✔ CLI bounded regular file, symlink, malformed, UTF-8, byte-limit and FIFO paths (1530.092165ms)
+✔ independent actual CLI strict args, symlinks, fatal decoding and atomic errors (9175.298716ms)
+✔ independent exhaustive 256 byte values at all 31 positions and null boundaries (217.611431ms)
+✖ explicit report 24 and nonfirst offsets; no unselected bytes or documents leak (2.388353ms)
+✔ identical pairs are hashed independently sequentially; mutation cannot alter retained data (2.345499ms)
+✔ primitive bounds and ambiguous JSON reject before any hashing on either side (8.522235ms)
+✔ whole event late invalid unselected report refuses despite matching recomputed digest (1.708667ms)
+✔ serializer counts final newline UTF8 bytes and refuses oversized output (3.236284ms)
+✔ actual CLI produces complete bounded result with filesystem writes prohibited (516.193154ms)
+✔ strict CLI explicit indices and paths, no defaults/duplicates/unknown flags (4851.857382ms)
+✔ both inputs refuse malformed UTF8/BOM/byte and character bounds/digest/late framing atomically (3953.412153ms)
+✔ bounded regular reader rejects terminal symlinks/directories/missing targets, ancestor links unchanged (1096.839845ms)
+✔ CLI nonfirst selection excludes unselected report marker and changed data remains positional (122.524708ms)
+✔ nonfirst selection exact matrix and differing metadata compare supplied fields only (17.358631ms)
+✔ empty, identical, zero vs absent, changed headers and insertion/deletion are positional only (6.112254ms)
+✔ maximum report selection/data bounds and separate malformed/unknown/encrypted AD status (9.760302ms)
+✔ all primitive/structural failures on either side precede any hashing (5.379301ms)
+✔ whole-event late failure, digest errors, sequential bounded hashes and selection after full verification (3.366926ms)
+✔ hash argument isolation, deep freezing, original substitutions and excluded report privacy (2.257235ms)
+✔ explicit preparation/reopen uses binary digest, excludes unrelated records and performs no file writes (592.788472ms)
+✔ old metadata, page, legacy and extended subprocess outputs remain byte-for-byte compatible (976.877456ms)
+✔ preparation rejects conflicts, bad indices, duplicate flags, extra args, wrong record types and missing context (3424.780166ms)
+✔ reopen rejects strict argument errors and unsafe filesystem targets; ancestor links are allowed (2114.757884ms)
+✔ reopen rejects malformed UTF8, preserved BOM, byte and decoded limits, strict JSON and digest corruption atomically (2294.901819ms)
+✔ late source framing and event failures never publish prepared or reopened partial output (510.641195ms)
+✔ plausible original claims can change without derivative failure and remain explicitly unverified (334.618931ms)
+✔ independent exact binary slice, hash oracle, unrelated sentinels and derivative coordinates (19.787874ms)
+✔ literal minimum 55 bytes and maximum 298 bytes with exact 255 parameter limit (2.649721ms)
+✔ existing serialized metadata, legacy and extended output is byte-for-byte unchanged (1.745042ms)
+✔ caller input and preparation/creation/read hash buffers cannot alias retained bytes (1.398989ms)
+✔ brand spoofs, nonlegacy and invalid selectors reject before hash exposure (2.538655ms)
+✔ hash failures reject atomically; valid shape is not hash honesty (2.890011ms)
+✔ exact imported whitespace and escaped Unicode survive, bounded by UTF16 length (7.747046ms)
+✔ all exact object fields reject missing and extra fields before hashing (2.645211ms)
+✔ decoded and escaped duplicate keys at every depth reject before hash (2.509472ms)
+✔ wrong types, nested objects, arrays, nonJSON and unsafe string controls reject (9.386992ms)
+✔ hex, exact header, hash syntax, byte counts and original-range plausibility are strict (10.889228ms)
+✔ plausible original claims can change and always remain explicitly UNVERIFIED (2.476489ms)
+✔ structural and late bad reports reject even with recomputed matching derivative digest (2.814776ms)
+✔ malformed, unknown, encrypted AD and inert URL retain bytes and recomputed interpretation parity (4.367478ms)
+ℹ tests 58
+ℹ suites 0
+ℹ pass 57
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10772.008756
+
+✖ failing tests:
+
+test at tests/hci-comparison-independent.test.ts:18:1
+✖ explicit report 24 and nonfirst offsets; no unselected bytes or documents leak (2.388353ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'parsed'
+  - 'complete'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-comparison-review/tests/hci-comparison-independent.test.ts:22:316)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'parsed',
+    expected: 'complete',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

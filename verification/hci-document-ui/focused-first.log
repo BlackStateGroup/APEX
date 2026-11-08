@@ -1,0 +1,27 @@
+✔ eleven typed inspector choices retaining the original ten, Recording default, and separate explicit source routes (3.16526ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.827497ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.449021ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (3.861686ms)
+✔ source delivery during pending saves survives old completion without reviving results (3.808189ms)
+✔ source delivery during pending saves survives old failure without reviving results (3.340858ms)
+✔ creation only follows explicit valid selection and explicit prepare; handoff once only (5.75727ms)
+✔ prepare overlap, stale callbacks, repeated selection, edits, clear and exit fence late success/rejection (7.949214ms)
+✔ exact source delivery once including hidden state; no automatic verification, old reports cleared (3.29359ms)
+✔ 4096 UTF16 whole-edit budget retains exact draft, clears reports and fences rejected edits (0.869592ms)
+✔ reopen races: new sources, accepted/rejected edits, Clear, exits and stale snapshots (1.805384ms)
+✔ bounded reports paginate and never project nested advertising or readable private text (2.409154ms)
+✔ App routes exact prepared document and preserves separate stable inspector mounts (0.775205ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (19.931257ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.669802ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.819752ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.699286ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (2.127072ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.235241ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 359.62691

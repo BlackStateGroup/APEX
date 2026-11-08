@@ -1,0 +1,34 @@
+✔ independent node crypto oracle: exact-byte ceiling, offset views, comments, CRLF and lexical spellings (85.329454ms)
+✔ independent total timing ceiling stays atomic and whole-array recognition stays conditional (33.923823ms)
+✔ independent rejected ASCII controls accepted into draft but never hashed; synchronous throws recover (0.943038ms)
+✖ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (8.026294ms)
+✔ independent actual TSX 128-record final page and escaped exact field spellings (18.522377ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.794248
+
+✖ failing tests:
+
+test at tests/ir-independent-static.test.ts:74:1
+✖ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (8.026294ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /accepted (?:ASCII )?(?:JavaScript )?draft/i. Input:
+  
+  '<div><span>Offline ordinary .ir remote inspector</span><span>Memory only: draft and declaration retained across tabs, lost on reload. Leaving Analysis clears inspection results. Pending hashing is fenced, not cancelled. No journal import, save, export, share, copy action, transmission, replay, device access or provider calls.</span><span>Paste an ordinary Flipper .ir remote: strict standard NEC parsed fields or raw subset only. Unsupported protocols are rejected by this narrow parser, not declared physically invalid IR. Maximum 262144 ASCII characters (exact source bytes), 128 records, 1024 timings per record and 8192 total timings. Non-ASCII or oversized edits are rejected whole, never truncated; the previous draft remains but Inspect is blocked until an accepted replacement or Clear. Control characters are checked during inspection.</span><div><button aria-label="Load synthetic IR example"><span>Load synthetic IR example</span></button><button aria-label="Declare synthetic IR source"><span>Declare synthetic IR source</span></button><button aria-label="Declare imported IR source"><span>Declare imported IR source</span></button></div><span>IR caller declaration: not selected. Neither declaration proves origin. The example is manually authored, not imported upstream bytes or a physical recording.</span><span>0 exact ASCII draft characters. Edits, examples and declaration changes never inspect automatically.</span><div><button aria-label="Inspect ordinary IR remote"><span>Inspect ordinary IR remote</span></button><button aria-label="Clear IR draft"><span>Clear IR draft</span></button></div><span>Paste an ordinary .ir remote and declare provenance, then Inspect.</span></div>'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ir-workbench-independent/tests/ir-independent-static.test.ts:79:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div><span>Offline ordinary .ir remote inspector</span><span>Memory only: draft and declaration retained across tabs, lost on reload. Leaving Analysis clears inspection results. Pending hashing is fenced, not cancelled. No journal import, save, export, share, copy action, transmission, replay, device access or provider calls.</span><span>Paste an ordinary Flipper .ir remote: strict standard NEC parsed fields or raw subset only. Unsupported protocols are rejected by this narrow parser, not declared physically invalid IR. Maximum 262144 ASCII characters (exact source bytes), 128 records, 1024 timings per record and 8192 total timings. Non-ASCII or oversized edits are rejected whole, never truncated; the previous draft remains but Inspect is blocked until an accepted replacement or Clear. Control characters are checked during inspection.</span><div><button aria-label="Load synthetic IR example"><span>Load synthetic IR example</span></button><button aria-label="Declare synthetic IR source"><span>Declare synthetic IR source</span></button><button aria-label="Declare imported IR source"><span>Declare imported IR source</span></button></div><span>IR caller declaration: not selected. Neither declaration proves origin. The example is manually authored, not imported upstream bytes or a physical recording.</span><span>0 exact ASCII draft characters. Edits, examples and declaration changes never inspect automatically.</span><div><button aria-label="Inspect ordinary IR remote"><span>Inspect ordinary IR remote</span></button><button aria-label="Clear IR draft"><span>Clear IR draft</span></button></div><span>Paste an ordinary .ir remote and declare provenance, then Inspect.</span></div>',
+    expected: /accepted (?:ASCII )?(?:JavaScript )?draft/i,
+    operator: 'match',
+    diff: 'simple'
+  }

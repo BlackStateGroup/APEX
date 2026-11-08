@@ -1,0 +1,26 @@
+✔ independent bridge fails closed: EOF during command (63.715409ms)
+✔ independent bridge fails closed: abnormal child exit (54.754155ms)
+✔ independent bridge fails closed: unterminated oversized stdout (57.674805ms)
+✔ independent bridge fails closed: malformed control response (72.989566ms)
+✔ independent bridge fails closed: notification width overflow (56.622459ms)
+✔ independent bridge fails closed: bounded stderr (60.338473ms)
+✔ independent bridge bounds command bytes before writing (55.906887ms)
+✔ independent bridge times out unresponsive owned child and waits for close (2004.879899ms)
+✔ independent bridge rejects correlated-control fault: wrong serial (60.032025ms)
+✔ independent bridge rejects correlated-control fault: unsafe integer (58.051441ms)
+✔ independent bridge rejects correlated-control fault: invalid connection handle (63.801899ms)
+✔ independent bridge rejects correlated-control fault: invalid ATT return code (55.822617ms)
+✔ independent bridge rejects correlated-control fault: impossible stream length (64.861765ms)
+✔ independent bridge rejects high-bit bytes rather than ASCII-normalizing them (58.330578ms)
+✔ independent bridge rejects notification bytes following completed control response (57.337023ms)
+✔ independent fake successful control ACK cannot manufacture READY or session identity (111.357099ms)
+✔ independent shared bridge observer receives an isolated copy (58.844343ms)
+✔ independent shared bridge observer exception fails command and retires child (57.2839ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3212.307348

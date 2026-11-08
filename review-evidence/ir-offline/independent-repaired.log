@@ -1,0 +1,23 @@
+✔ independent decimal oracle rejects exact values above one despite Number rounding (2.265316ms)
+✔ all 256 parsed byte values preserve independent integer identity (32.885983ms)
+✔ independent raw oracle covers all byte values, and individual waveform corruption (53.548571ms)
+✔ independent integer tolerance boundaries and metadata separation (3.909182ms)
+✔ physical line oracle, exact source digest and duplicate inert identities (1.299805ms)
+✔ source view uses exact slots and context cannot mutate previously captured bytes (1.070293ms)
+✔ ASCII grammar rejects every forbidden byte, extra whitespace, protocol aliases and key confusion (8.982668ms)
+✔ actual CLI bounded output and atomic failures with writes denied (1237.142133ms)
+✔ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (9.260403ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (1.879751ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (1.623037ms)
+✔ bounded actual bytes, lines, names, record and timing counts (61.907401ms)
+✔ raw numerical limits and finite strict fractions (2.574526ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (1.818692ms)
+✔ CLI executes with filesystem writes denied and stdout atomic; regular-file bounds (810.357408ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1483.158995

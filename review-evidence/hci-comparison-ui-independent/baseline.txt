@@ -1,0 +1,40 @@
+✔ eleven unique typed choices preserving prior inspectors, Recording default and exact source routes (2.653315ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.507112ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.74057ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.483088ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (2.273189ms)
+✔ ir: newer inspector request wins over older completion after exit (3.666533ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.887179ms)
+✔ hci: newer inspector request wins over older completion after exit (1.789787ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.763046ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (4.170316ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.947388ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.791171ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.989242ms)
+✔ eleven typed inspector choices retaining the original ten, Recording default, and separate explicit source routes (2.252566ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.304576ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.418706ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (3.901755ms)
+✔ source delivery during pending saves survives old completion without reviving results (7.561932ms)
+✔ source delivery during pending saves survives old failure without reviving results (1.761315ms)
+✔ independent document races: earlier success/failure cannot overwrite later accepted verification (11.29172ms)
+✔ independent document fencing: clear, rejected edit, source delivery and navigation invalidate pending work (1.581978ms)
+✔ independent exact edits, source IDs, private frozen state and stale callbacks (2.456922ms)
+✔ independent preparation: second selection owns document despite overlapping hashes and stale handoff (6.11287ms)
+✔ independent preparation fences rejected edits, clear, extended selection and navigation (3.618462ms)
+✔ independent source receipt while inactive is exact, one-shot and never verifies (0.716741ms)
+✔ independent save keeps detached snapshot and one pending lock across every invalidation (16.161018ms)
+✔ independent saves require current full verification and preserve successful insert on refresh failure (1.380315ms)
+✔ independent reopen snapshots before outer and inner awaits, and fences replacement/exit (12.349283ms)
+✔ independent forged boolean verifier cannot bypass stale binary digest or malformed legacy framing (3.990045ms)
+✔ independent bundle requires byte capability, preserves exact documents and fences delayed completion (9.662703ms)
+✔ independent reopen rejects missing byte capability and wrong source even with permissive outer verifier (1.752641ms)
+✔ independent bundle UI refuses stale and malformed derivatives even under valid record and bundle hashes (2.215777ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 271.722641

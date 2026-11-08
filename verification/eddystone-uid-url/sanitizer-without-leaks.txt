@@ -1,0 +1,2 @@
+C: CRC vector, bounds, fragmentation, corruption recovery and 1,000,000 noise bytes passed.
+Built portable C firmware and passed C checks with ASan/UBSan.

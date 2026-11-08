@@ -1,0 +1,14 @@
+harness.o: tests/esp32-host/harness.c \
+ tests/esp32-host/../../firmware/esp32s3/main/ble_accessory.c \
+ firmware/core/apex.h \
+ tests/esp32-host/../../firmware/esp32s3/main/ble_accessory.h \
+ tests/esp32-host/fakes/esp_err.h tests/esp32-host/fakes/fake.h \
+ tests/esp32-host/fakes/nvs_flash.h \
+ tests/esp32-host/fakes/nimble/nimble_port.h \
+ tests/esp32-host/fakes/fake.h \
+ tests/esp32-host/fakes/nimble/nimble_port_freertos.h \
+ tests/esp32-host/fakes/host/ble_hs.h \
+ tests/esp32-host/fakes/host/util/util.h \
+ tests/esp32-host/fakes/services/gap/ble_svc_gap.h \
+ tests/esp32-host/fakes/services/gatt/ble_svc_gatt.h
+apex.o: firmware/core/apex.c firmware/core/apex.h
