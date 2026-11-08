@@ -137,3 +137,7 @@ Current evidence and unexecuted native/hardware gates are recorded in [VERIFICAT
 
 ![Historical APEX software-simulator console, not a screenshot of current changes](docs/images/console.png)
 
+
+### IR receiver timing excerpts
+
+Analysis → IR includes an original bounded [IRremoteESP8266 receiver excerpt importer](docs/ir-receiver-import.md), alongside the ordinary `.ir` inspector. Paste `rawData` source-code excerpts, declare provenance and inspect locally. Exact accepted text is retained and hashed; carrier and capture completeness remain unknown. No upstream runtime, device connection or transmission is added.

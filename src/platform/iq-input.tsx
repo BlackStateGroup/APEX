@@ -1,6 +1,6 @@
 import React from 'react';
-import type { IqFile, IqSide } from '../iq-workbench.ts';
-export interface IqInputProps { onFile: (side: IqSide, file: IqFile | null) => void }
+import type { IqFile, IqSide, IqPair } from '../iq-workbench.ts';
+export interface IqInputProps { onFile: (side: IqSide, file: IqFile | null) => void; onPair?: (pair: IqPair) => void; resetKey?: number }
 /** Ordinary local browser file handles. Selection stages only; no read, upload or normalization. */
 export function IqInput({onFile}: IqInputProps) {
  return <div style={{display:'flex',flexDirection:'column',gap:12,color:'#b8c1af'}}>

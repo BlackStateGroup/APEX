@@ -11,6 +11,7 @@ export type IqWindowMode = 'default' | 'explicit' | 'time-frequency' | 'activity
 export const IQ_FFT_SIZES: readonly IqFftSize[] = Object.freeze([256,512,1024,2048,4096]);
 const defaults = () => ({ activitySettings:activityDefaults(), windowMode: 'default' as IqWindowMode, fftSize: 1024 as IqFftSize | null, startText: '0', startSample: 0 as number | null, hopText: '1024', hopSamples: 1024 as number | null, frameCountText: '1', frameCount: 1 as number | null });
 export type IqSide = 'metadata' | 'data';
+export interface IqPair { readonly metadata: IqFile; readonly data: IqFile }
 export interface IqFile { readonly name: string; readonly size: number; arrayBuffer(): Promise<ArrayBuffer> }
 type Immutable<T> = T extends object ? { readonly [K in keyof T]: Immutable<T[K]> } : T;
 type Analysis = ReturnType<typeof analyzeIq>;
@@ -55,6 +56,7 @@ const emptyActivity = () => ({activityReport:null,activityFrames:Object.freeze([
 const emptyFrames: readonly IqFrameSummary[] = Object.freeze([]);
 const emptyTimeFrequency = () => ({timeFrequencyReport: null, frames: emptyFrames, framePage: 0, framePageCount: 0, selectedFrame: null});
 export interface IqState {
+ readonly inputRevision: number;
  readonly activitySettings:IqActivitySettings; readonly activityReport:IqActivityReport|null;
  readonly activityFrames:readonly IqActivityFrame[]; readonly activityFramePage:number; readonly activityFramePageCount:number;
  readonly activityRuns:readonly IqActivityRun[]; readonly activityRunPage:number; readonly activityRunPageCount:number;
@@ -69,7 +71,7 @@ export interface IqState {
 }
 interface Source { label: IqLabel; read: () => Promise<ArrayBuffer> }
 const emptyBins = Object.freeze([]) as readonly IqBin[];
-const initial = (): IqState => Object.freeze({ ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
+const initial = (): IqState => Object.freeze({ inputRevision: 0, ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
 // Copy every mutable analysis object before publication, without exposing core/source aliases.
 function immutable<T>(value: T): Immutable<T> {
  if (Array.isArray(value)) return Object.freeze(value.map(immutable)) as Immutable<T>;
@@ -113,14 +115,14 @@ export class IqController {
  }
  #current(lease: number, state: IqState) { return this.isActive(lease) && this.#state === state; }
  #invalidate(message: string) { ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity(); this.#publish({ ...emptyActivity(), ...emptyTimeFrequency(), report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }
- #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false) {
+ #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false, inputChange = true) {
   // Commit handles, provenance, labels and invalidation before one notification.
   // A synchronous observer's newer selection/clear/exit then remains authoritative.
   ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
-  this.#publish({...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
+  this.#publish({inputRevision: this.#state.inputRevision + (inputChange ? 1 : 0), ...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
  }
  activate() { if (!this.#active) { this.#active = true; ++this.#lease; } }
- deactivate() { this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true); }
+ deactivate() { this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true,false); }
  stageFile(side: IqSide, file: IqFile | null, lease: number, state: IqState) {
   if (!this.#current(lease,state) || (side !== 'metadata' && side !== 'data')) return;
   const sources: Partial<Record<IqSide, Source>> = state.origin === 'synthetic-fixture' ? {} : {...this.#sources};
@@ -130,6 +132,23 @@ export class IqController {
    catch { delete sources[side]; message = 'File handle refused.'; }
   } else { delete sources[side]; }
   this.#selection(sources,'external-file',message);
+ }
+ /** Atomically stage a native pair; no intermediate mixed pair or source reads. */
+ stagePair(pair: IqPair, lease: number, state: IqState) {
+  if (!this.#current(lease,state)) return;
+  const sources: Partial<Record<IqSide, Source>> = {};
+  let message = 'Selected pair staged only. Explicit Inspect required.';
+  try {
+   for (const side of ['metadata','data'] as const) {
+    const file = pair[side];
+    sources[side] = {label:label(file.name,file.size),read:file.arrayBuffer.bind(file)};
+   }
+  } catch {
+   delete sources.metadata; delete sources.data;
+   message = 'Selected pair refused.';
+  }
+  // Property access must not overwrite a newer reentrant intent.
+  if (this.#current(lease,state)) this.#selection(sources,'external-file',message);
  }
  example(lease: number, state: IqState) {
   if (!this.#current(lease,state)) return;

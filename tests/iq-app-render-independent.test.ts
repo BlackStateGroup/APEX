@@ -29,7 +29,7 @@ test('independent actual web TSX renders only bounded bins and inert hostile lab
  c.example(c.lease,c.state);await c.inspect(c.lease,c.state);assert.match(render(c),/−∞ \(zero amplitude\)/);assert.match(render(c),/none \(all zero amplitudes\)/);
  c.stageFile('metadata',{name:'m',size:p.metadata.length,arrayBuffer:async()=>p.metadata.slice().buffer},c.lease,c.state);c.stageFile('data',{name:'d',size:4,arrayBuffer:async()=>new ArrayBuffer(4)},c.lease,c.state);await c.inspect(c.lease,c.state);assert.match(render(c),/Full-file statistics only; no padding/);assert.doesNotMatch(render(c),/Bin -?\d+:/);
 });
-test('independent actual native input explicitly lacks picker, owner inactive render is empty',()=>{const html=renderToStaticMarkup(React.createElement(NativeInput,{onFile:fail}));assert.match(html,/Arbitrary local file import is unavailable/);assert.match(html,/explicitly Inspect/);assert.doesNotMatch(html,/<input|<button/);assert.equal(renderToStaticMarkup(React.createElement(Owner,{active:false})),'');});
+test('independent actual native input exposes inert picker controls, owner inactive render is empty',()=>{const html=renderToStaticMarkup(React.createElement(NativeInput,{onFile:fail}));assert.match(html,/Choose native I\/Q pair/);assert.match(html,/Stage and Inspect/);assert.doesNotMatch(html,/<input/);assert.equal(renderToStaticMarkup(React.createElement(Owner,{active:false})),'');});
 
 test('independent actual TSX window callbacks expose all choices and truthful actual report',async()=>{
  const c=new IqController(true,{digest:nodeDigest});c.toneExample(c.lease,c.state);

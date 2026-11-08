@@ -16,7 +16,8 @@ const { renderToStaticMarkup } = require('react-dom/server') as { renderToStatic
 
 import { IrWorkbenchController as Controller, IR_EXAMPLE } from '../src/ir-workbench.ts';
 import type { IrWorkbenchState } from '../src/ir-workbench.ts';
-import type { IrWorkbenchViewProps } from '../src/IrWorkbench.tsx';
+import type { IrWorkbenchViewProps, IrReceiverWorkbenchViewProps } from '../src/IrWorkbench.tsx';
+import { IrReceiverWorkbenchController as ReceiverController } from '../src/ir-receiver-workbench.ts';
 const componentUrl = new URL('../src/IrWorkbench.tsx', import.meta.url).href;
 // Deliberately narrow host projection, not RN layout, event or accessibility emulation.
 const primitives = {
@@ -58,7 +59,8 @@ const hooks = registerHooks({
 });
 let Owner: React.ComponentType<{ active: boolean }>;
 let Projection: React.ComponentType<IrWorkbenchViewProps>;
-try { ({ IrWorkbench: Owner, IrWorkbenchView: Projection } = await import('../src/IrWorkbench.tsx')); }
+let ReceiverProjection: React.ComponentType<IrReceiverWorkbenchViewProps>;
+try { ({ IrWorkbench: Owner, IrWorkbenchView: Projection, IrReceiverWorkbenchView: ReceiverProjection } = await import('../src/IrWorkbench.tsx')); }
 finally { hooks.deregister(); rmSync(output, { recursive: true, force: true }); delete (globalThis as any).__apexIrStaticRender; }
 function render(state: IrWorkbenchState) {
   const noAction = () => assert.fail('Static projection must not act');
@@ -73,7 +75,9 @@ function disabled(markup: string, label: string) {
 }
 test('actual TSX initial/inactive render: exact limits, no automatic result or external actions', () => {
   const c = new Controller(), markup = render(c.state);
-  assert.equal(renderToStaticMarkup(React.createElement(Owner, { active: true })), markup);
+  const ownerMarkup = renderToStaticMarkup(React.createElement(Owner, { active: true }));
+  assert.ok(ownerMarkup.startsWith(markup));
+  assert.match(ownerMarkup, /Offline IRremoteESP8266 receiver import/);
   assert.equal(renderToStaticMarkup(React.createElement(Owner, { active: false })), '');
   assert.match(markup, /262144 ASCII characters/); assert.match(markup, /128 records, 1024 timings per record and 8192 total/);
   assert.match(markup, /Leaving this inspector or Analysis clears inspection results\./); assert.match(markup, /Pending hashing is fenced, not cancelled/);
@@ -132,4 +136,37 @@ test('actual TSX errors and rejected edits never render old report; pending disa
   assert.match(render(c.state), /unsupported-protocol/); assert.doesNotMatch(render(c.state), /IR inspection:/);
   c.edit('x'.repeat(262145), c.lease); assert.ok(disabled(render(c.state), 'Inspect ordinary IR remote'));
   c.clear(c.lease); assert.doesNotMatch(render(c.state), /Subset rejected:|IR inspection:/); assert.equal(c.state.draft, '');
+});
+
+function renderReceiver(c: ReceiverController) {
+  const noAction = () => assert.fail('Static projection must not act');
+  return renderToStaticMarkup(React.createElement(ReceiverProjection, { state: c.state, edit: noAction, clear: noAction, inspect: noAction, page: noAction, declare: noAction, example: noAction }));
+}
+test('receiver TSX explicitly shows unknown carrier, unverified completeness and accepted-draft identity', async () => {
+  const c = new ReceiverController(); let markup = renderReceiver(c);
+  assert.match(markup, /No code is executed/); assert.match(markup, /source-code excerpts only/);
+  assert.match(markup, /32 captures, 1024 timings per capture, 8192 total timings/);
+  assert.match(markup, /Zero separators used for split long durations are unsupported and rejected/);
+  assert.doesNotMatch(markup, /Receiver inspection:/);
+  c.example(c.lease); await c.inspect(c.lease); markup = renderReceiver(c);
+  assert.match(markup, /Carrier frequency and duty cycle are unknown/);
+  assert.match(markup, /Capture completeness is unverified/);
+  assert.match(markup, /excerpts can omit buffer-overflow warnings/);
+  assert.match(markup, /Accepted receiver draft SHA-256: [a-f0-9]{64}/);
+  assert.match(markup, /not original file or clipboard bytes before paste/);
+  assert.match(markup, /This reference does not identify the firmware/);
+  assert.match(markup, /3 unchanged timings/); assert.match(markup, /not-recognized/);
+  assert.doesNotMatch(withoutDraft(markup), /38000|0[.]33|href=|<script/);
+});
+test('receiver TSX bounds final page, treats comments inertly, and never displays stale results', async () => {
+  const c = new ReceiverController(); c.example(c.lease);
+  c.edit('// <script>alert(1)</script> https://example.invalid/\n' + 'uint16_t rawData[1] = {65535};\n'.repeat(32), c.lease);
+  await c.inspect(c.lease); c.page(7, c.lease); let markup = renderReceiver(c);
+  assert.match(markup, /Receiver capture page 8 of 8/);
+  assert.deepEqual([...markup.matchAll(/Receiver capture (\d+)<\/span>/g)].map(m => Number(m[1])), [29,30,31,32]);
+  assert.equal(disabled(markup, 'Next receiver captures'), true);
+  assert.doesNotMatch(withoutDraft(markup), /alert|https:|<script|href=/);
+  assert.ok(markup.length < 10000);
+  c.edit('é', c.lease); markup = renderReceiver(c);
+  assert.equal(disabled(markup, 'Inspect receiver excerpt'), true); assert.doesNotMatch(markup, /Receiver inspection:/);
 });
