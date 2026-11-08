@@ -329,7 +329,10 @@ test('foreground observation stays native-only and discloses limits on a phone v
   await expect(page.getByRole('button', { name: 'Start advertised-UUID BLE observation' })).toBeDisabled();
   await expect(page.getByRole('button', { name: 'Stop advertised-UUID BLE observation' })).toBeDisabled();
   await expect(page.getByText(/Observation is unavailable in this web console/)).toBeVisible();
-  await expect(page.getByText(/No native phone validation has been performed/)).toBeVisible();
+  // Both modes deliberately retain their own full native-validation warning.
+  // Match each complete paragraph so neither absence nor duplication is hidden.
+  await expect(page.getByText("10-second foreground window including permission preparation, at most 25 callbacks and 65536 serialized characters. No pairing, connections, writes or automatic saves. Leaving Devices or backgrounding stops collection. No native phone validation has been performed for this build.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Receipt times are app callback times, not hardware transmission times. Repeated callbacks need not be distinct radio packets. No matches does not prove absence, identity, ownership or complete capture. No native phone validation has been performed.", { exact: true })).toBeVisible();
   await expect(page.getByText(/this is not yet a general BTHome collector/)).toBeVisible();
   await page.getByRole('button', { name: 'Select Eddystone FEAA' }).click();
   await expect(page.getByText('Selected advertised UUID: Eddystone / FEAA', { exact: true })).toBeVisible();
