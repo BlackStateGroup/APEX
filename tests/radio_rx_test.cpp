@@ -173,11 +173,49 @@ void budgets_and_expiry() {
   assert(h.poll().payload[3] == 0); assert(h.start().payload[4] == 2); h.service.shutdown();
   Harness expired; expired.start(500); expired.hal.time += 500; expired.service.tick(); assert(expired.service.state() == State::expired && !expired.hal.rx);
   const auto before = expired.hal.transactions.size(); expired.service.tick(); assert(before == expired.hal.transactions.size());
-  Harness during_init; auto reply = during_init.start(50); assert(reply.payload[1] == std::uint8_t(State::expired)); assert(!during_init.hal.rx);
   Harness maximum; maximum.start(1000,1); maximum.hal.packet(std::vector<std::uint8_t>(60,0xa5));
   auto record = maximum.poll(); assert(record.length == 91 && record.payload[17] == 60); assert(!maximum.hal.rx);
   unsigned arms = 0; for (const auto& t : maximum.hal.transactions) if (t.size() == 1 && t[0] == 0x34) ++arms;
   assert(arms == 1);
+}
+void startup_lease_tests() {
+  // Pinned CC1101::config() has an unconditional 150 ms delay. These are
+  // synthetic clock observations, not a bound on real hardware initialization.
+  for (const auto duration : {50, 149, 150}) {
+    Harness h;
+    const auto first = h.start(std::uint16_t(duration));
+    assert(h.hal.time == 150 && first.kind == APEX_RESPONSE);
+    assert(first.payload[1] == std::uint8_t(State::expired) && first.payload[4] == 1);
+    assert(first.payload[3] == 0 && first.payload[8] == 0 && !h.hal.rx);
+    unsigned resets = 0, arms = 0;
+    for (const auto& t : h.hal.transactions) {
+      if (t.size() == 1 && t[0] == 0x30) ++resets;
+      if (t.size() == 1 && t[0] == 0x34) ++arms;
+    }
+    assert(resets == 1 && arms == 0);
+    const auto transactions = h.hal.transactions.size();
+    h.service.tick(); assert(h.hal.transactions.size() == transactions);
+
+    // Only a fresh explicit request can use the completed initialization.
+    // Preserve the useful 50 ms warm lease without resetting/extending it.
+    const auto warm = h.start(50);
+    assert(warm.payload[1] == std::uint8_t(State::running) && warm.payload[4] == 2);
+    assert(warm.payload[18] == 0 && h.hal.time == 150 && h.hal.rx);
+    resets = arms = 0;
+    for (const auto& t : h.hal.transactions) {
+      if (t.size() == 1 && t[0] == 0x30) ++resets;
+      if (t.size() == 1 && t[0] == 0x34) ++arms;
+    }
+    assert(resets == 1 && arms == 1);
+    h.hal.time += 49; h.service.tick(); assert(h.service.state() == State::running);
+    ++h.hal.time; h.service.tick(); assert(h.service.state() == State::expired && !h.hal.rx);
+  }
+  // A minimally longer cold lease retains only its remainder after setup.
+  Harness remainder; assert(remainder.start(151).payload[1] == std::uint8_t(State::running));
+  assert(remainder.hal.time == 150 && remainder.hal.rx);
+  ++remainder.hal.time; remainder.service.tick();
+  assert(remainder.service.state() == State::expired && !remainder.hal.rx);
+  Harness too_short; assert(too_short.start(49).kind == APEX_ERROR && too_short.hal.transactions.empty());
 }
 void rejected_and_faults() {
   Harness crc; crc.start(1000,2); crc.hal.packet({7},false); crc.service.tick(); assert(crc.hal.rx);
@@ -259,6 +297,6 @@ void output_failure_tests() {
   assert(no_output.transport_failed() && no_output.state() == State::fault && hal.transactions.empty());
 }
 int main() {
-  guard_tests(); linked_driver_test(); protocol_tests(); budgets_and_expiry(); rejected_and_faults(); output_failure_tests();
-  std::cout << "PASS: SPI firewall, real pinned RadioLib linked against synthetic register model, AXP receive protocol, fragmentation, malformed inputs, stale captures, FIFO/queue/event/deadline bounds, CRC/SPI faults, terminal output/read failures and buffered-command rejection.\n";
+  guard_tests(); linked_driver_test(); protocol_tests(); budgets_and_expiry(); startup_lease_tests(); rejected_and_faults(); output_failure_tests();
+  std::cout << "PASS: SPI firewall, real pinned RadioLib linked against synthetic register model, AXP receive protocol, fragmentation, malformed inputs, stale captures, FIFO/queue/event/deadline bounds, cold/warm startup lease boundaries, CRC/SPI faults, terminal output/read failures and buffered-command rejection.\n";
 }

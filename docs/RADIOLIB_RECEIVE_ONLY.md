@@ -113,6 +113,28 @@ All multibyte fields below are little-endian. Requests are exact length:
 - `0x62 radio.rx.stop`: 4-byte current capture ID. Stops reception and preserves
   the queue for draining. Repeating stop for the same finished capture is harmless.
 
+### Cold starts and short leases
+
+The pinned RadioLib [`CC1101::config()`](https://github.com/jgromes/RadioLib/blob/3a664b64099e4bdbdb3e6f28a5ca6b833050b21e/src/modules/CC1101/CC1101.cpp#L1090-L1095)
+requests a 150 ms delay during first initialization, before other setup costs.
+**A first 50 ms lease cannot capture.** In the synthetic host model, cold leases
+of 150 ms or less expire without arming. They return a normal status
+response with state `EXPIRED` (3), no packet and zero observed events, not a
+promise that capture started. Clients must inspect the returned state.
+
+For an initial lab capture, choose a total lease with initialization headroom
+(for example 1,000 ms). This is not a guarantee of hardware startup time or a
+minimum receive window: scheduling, SPI and driver work consume that same lease.
+The clock is not restarted after initialization and the lease is never silently
+extended. Host tests reproduce exactly 150 ms of setup only in the synthetic
+model; real timing still requires physical acceptance.
+
+After successful initialization, a **new explicit** start request may use the
+50 ms minimum without paying the reset delay again. Even a cold request that
+expires after successful initialization leaves it ready for a later explicit
+start. Expiry never auto-retries or auto-arms. A later request receives a new
+capture ID and must independently satisfy its own lease and event limits.
+
 Wrong/stale IDs, sizes, versions, profiles and ranges are errors. No input can
 change the modem profile or become a generic command tunnel. A faulted session
 cannot restart. A firmware restart or fresh service instance is required.
