@@ -1,0 +1,139 @@
+{
+  "reviewedAt": "2026-11-08",
+  "apexBase": "d4434c5cf789938447e83e49a5cfcbdf68b59277",
+  "status": "implemented and host-tested with synthetic fixtures; no concrete platform GATT port or physical connection tested",
+  "sources": [
+    {
+      "kind": "schema",
+      "repository": "flipperdevices/flipperzero-protobuf",
+      "commit": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+      "path": "flipper.proto",
+      "gitBlob": "2ba75dadce34aebe41a325e6038fcde21ee79fa0",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/flipper.proto"
+    },
+    {
+      "kind": "schema",
+      "repository": "flipperdevices/flipperzero-protobuf",
+      "commit": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+      "path": "system.proto",
+      "gitBlob": "90238e8f34112c640b8d5b5ac1ba4a2ab2d73767",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/system.proto"
+    },
+    {
+      "kind": "schema",
+      "repository": "flipperdevices/flipperzero-protobuf",
+      "commit": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+      "path": "Changelog",
+      "gitBlob": "14c1f14751e94b020b8e1b543a6910a73ef6116d",
+      "url": "https://github.com/flipperdevices/flipperzero-protobuf/blob/1c84fa48919cbb71d1cc65236fc0ee36740e24c6/Changelog"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "targets/f7/ble_glue/services/serial_service.c",
+      "gitBlob": "6fe6a71300c2e279aaab58bed89159faa437066a",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service.c"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "targets/f7/ble_glue/services/serial_service.h",
+      "gitBlob": "4d2b069d145ee5c18c8fef1a0036437e76c4c0a3",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service.h"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "targets/f7/ble_glue/services/serial_service_uuid.inc",
+      "gitBlob": "577e8f2eda449a590d10bf17017b8595be1fbb91",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service_uuid.inc"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "applications/services/rpc/rpc.c",
+      "gitBlob": "cc58d4559106bd7e2ad4a24f2f43875d7ca436b1",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/applications/services/rpc/rpc.c"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "applications/services/rpc/rpc_system.c",
+      "gitBlob": "4bf923d7f53ca025074994946709945c60462105",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/applications/services/rpc/rpc_system.c"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "applications/services/bt/bt_service/bt.c",
+      "gitBlob": "7554d87efdb114d60e22edd196751d64d433bfcf",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/applications/services/bt/bt_service/bt.c"
+    },
+    {
+      "kind": "firmware",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "path": "LICENSE",
+      "gitBlob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/LICENSE"
+    },
+    {
+      "kind": "uuid-cross-check",
+      "repository": "flipperdevices/Flipper-Android-App",
+      "commit": "bc6d8151d99e84947423b1cf55bc93fc5498f60f",
+      "path": "components/bridge/connection/transportconfigbuilder/impl/src/commonMain/kotlin/com/flipperdevices/bridge/connection/configbuilder/impl/builders/FlipperZeroBleBuilderConfig.kt",
+      "gitBlob": "726fc4ebe289253ceaee8db5c62b416bccc91ebe",
+      "url": "https://github.com/flipperdevices/Flipper-Android-App/blob/bc6d8151d99e84947423b1cf55bc93fc5498f60f/components/bridge/connection/transportconfigbuilder/impl/src/commonMain/kotlin/com/flipperdevices/bridge/connection/configbuilder/impl/builders/FlipperZeroBleBuilderConfig.kt"
+    }
+  ],
+  "sourceUse": {
+    "implementation": "independently written wire client and credit transport using existing APEX parser",
+    "copiedUpstreamFiles": [],
+    "generatedCode": false,
+    "addedNpmDependencies": [],
+    "licenseFindings": {
+      "firmware": "GPL version 3 text at pinned LICENSE",
+      "androidClient": "MIT text at pinned LICENSE, git blob a4d07df061749e6d4ad3fc4402d50019a64f3ad2",
+      "protobuf": "No license file in complete non-truncated pinned tree; no schema distribution clearance asserted"
+    }
+  },
+  "protocol": {
+    "schemaVersion": {
+      "major": 0,
+      "minor": 25
+    },
+    "acceptedVersions": [
+      {
+        "major": 0,
+        "minor": 25
+      }
+    ],
+    "requestTags": {
+      "version": 39,
+      "identity": 32,
+      "power": 44
+    },
+    "responseTags": {
+      "version": 40,
+      "identity": 33,
+      "power": 45
+    },
+    "creditBytes": 4,
+    "creditEndian": "big",
+    "creditSemantics": "absolute window replenished after previous allowance reaches zero and RPC buffer empties",
+    "transportPacketMaxFromSource": 486
+  },
+  "unverified": [
+    "physical Flipper and DIY fork interoperability",
+    "concrete platform GATT port and pairing",
+    "iOS and Android device lifecycle",
+    "USB CLI-to-RPC mode transition",
+    "real-device fixtures and measured limits"
+  ]
+}
