@@ -8,7 +8,8 @@ correlates command IDs and assembles streamed identity/power pairs. A separate B
 transport enforces the vendor's byte-credit windows and serializes writes.
 
 The client can run against an injected, already-established RPC byte stream. The
-BLE transport can run against an injected authenticated GATT port. Host tests
+BLE transport can run against an injected GATT port. An optional concrete Android
+PLX bridge is now provided separately in [FLIPPER_PHONE_GATT.md](FLIPPER_PHONE_GATT.md). Host tests
 exercise both together with **synthetic** fixtures. This is implemented protocol
 and transport logic, **not a working mobile pairing screen or a demonstrated
 physical Flipper connection**. There is no change to AXP, app discovery, native
@@ -53,8 +54,10 @@ try {
 ## BLE integration contract
 
 The port implementer owns actual pairing, user device selection, platform
-permissions, subscription setup, lifecycle cleanup and disconnection. No concrete
-Web Bluetooth, iOS or Android GATT port is included in this increment. The port
+permissions, subscription setup, lifecycle cleanup and disconnection. The optional
+Android bridge implements GATT operations but requires a host-owned exclusive
+manager lease and is not connected to app UI. Web Bluetooth and iOS ports remain
+unimplemented. The port
 must belong to one fresh, dedicated authenticated Flipper serial RPC session, with
 no other writer and no inherited credit consumption. Never attach it to AXP.
 
@@ -80,7 +83,8 @@ no other writer and no inherited credit consumption. Never attach it to AXP.
    never issue further writes after cancellation. A platform write already in
    flight can have an uncertain outcome; neither layer retries it.
 
-The RPC status UUID is exported for a future read/monitor integration. Nothing
+The RPC status UUID is exported for read/monitor integration and is used by the
+optional Android bridge. Nothing
 writes it: a zero status write requests a firmware BLE reset, which this adapter
 does **not** perform. Source shows RPC session creation on serial-profile BLE
 connect, not a USB CLI-to-RPC transition. USB session entry is still unimplemented.
@@ -152,7 +156,7 @@ refills during GATT acknowledgement, notification/read races, double-grant
 rejection, input snapshots and a combined simulated BLE/RPC snapshot.
 
 **Physical acceptance: NOT RUN.** Before exposing this as connected-device
-functionality, implement and test the actual GATT port and record phone/OS,
+functionality, integrate and physically test the optional Android GATT port and record phone/OS,
 app commit, Flipper model and firmware revision, protocol version and explicit
 owned-device authorization. Exercise fresh pairing, denial, reconnect, MTU 23,
 fragmentation, low battery, timeout, disconnect during read/write, backgrounding

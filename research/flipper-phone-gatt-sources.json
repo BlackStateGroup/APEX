@@ -1,0 +1,110 @@
+{
+  "reviewedAt": "2026-11-08",
+  "adapterBaseCommit": "1e1e88caddf3a48432752700575e701758bafb07",
+  "packageLockGitBlob": "05f26d6b14d859856bc292a7382d7979ba4e355c",
+  "packageLockVerification": "Complete existing authoring checkout apex-continuation/package-lock.json Git blob matches remote private-branch blob 05f26d6b14d859856bc292a7382d7979ba4e355c. The focused adapter checkout has no lockfile. Installed source digests recorded separately; npm archive not independently redownloaded.",
+  "packages": {
+    "react-native-ble-plx": {
+      "version": "3.5.1",
+      "resolved": "https://registry.npmjs.org/react-native-ble-plx/-/react-native-ble-plx-3.5.1.tgz",
+      "integrity": "sha512-SxksmrUt9jG6DOarrrdkb5c/HBLSfZOKauo/9VQSSi3WJA4bmF78GkrtXrgSoGNk0m1ksacFTjB5DuL39xZq/g==",
+      "license": "MIT"
+    },
+    "base64-js": {
+      "version": "1.5.1",
+      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
+      "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==",
+      "license": "MIT"
+    }
+  },
+  "reviewedInstalledSources": [
+    {
+      "package": "react-native-ble-plx",
+      "path": "package.json",
+      "sha256": "444d4ca4869195ce4919c3eed4d66c9fa511bfe4997f15382f90c49a020cd279"
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "LICENSE",
+      "sha256": "f6387df69841a4423411e83f739fd4e4b80dc0622d3da948f67d9606e9d996fe",
+      "upstreamGitBlob": "fb4279e9d666fc1a3ab00f57ae521982e02cffed",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/LICENSE",
+      "verification": "Installed Git blob matches immutable upstream."
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "src/BleManager.js",
+      "sha256": "4d0b629168f8b41ffffe622a3d1803b29de33fe62be755d830680f2470244a10",
+      "upstreamGitBlob": "933dcddddb5bbd8f8d18d457b23f0a46676a2fc8",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/src/BleManager.js",
+      "verification": "Installed Git blob matches immutable upstream, independently reviewed."
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "src/index.d.ts",
+      "sha256": "3172028910162fe6ccb4484449ae02bc6c8d9310d5ab795ef0542bb948b70bc0"
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "src/BleError.js",
+      "sha256": "04e1084206b13dd921bedf350b21c0e7afea85918c6a57933ffd12c9345ad1e7"
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "android/src/main/java/com/bleplx/BlePlxModule.java",
+      "sha256": "42229c43cfc7bd1393c563b025776fa0b1e50d2ad9a035add3d778705b9caf9d",
+      "upstreamGitBlob": "d4ef9c5eb505a67c7a565d9403e266d5ec4d5ccc",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/android/src/main/java/com/bleplx/BlePlxModule.java",
+      "verification": "Installed Git blob matches immutable upstream, independently reviewed."
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "android/src/main/java/com/bleplx/adapter/BleModule.java",
+      "sha256": "a9abdbae436e2a0cf76c8514b8d1a64f2251bf8e476c3fb35b2d79ff5f50a286",
+      "upstreamGitBlob": "44392b65d7f08e747fdfed2d3750d7bb9ae2bff2",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/android/src/main/java/com/bleplx/adapter/BleModule.java",
+      "verification": "Installed Git blob matches immutable upstream, independently reviewed."
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "android/src/main/java/com/bleplx/adapter/Characteristic.java",
+      "sha256": "7369fb0680e3a72301a4ac521520c09fb2f47029a8d7ab99ea695f29fbd2811f",
+      "upstreamGitBlob": "7208813a2445b978cea1a802aedffd210cd74848",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/android/src/main/java/com/bleplx/adapter/Characteristic.java",
+      "verification": "Installed Git blob matches immutable upstream, independently reviewed."
+    },
+    {
+      "package": "react-native-ble-plx",
+      "path": "android/build.gradle",
+      "sha256": "a0f3d03d8db5f22df2ca56ddafb54bfff45f28cac0c6bca86bc0e6b6932d990e",
+      "upstreamGitBlob": "4f1fd5d1efbe99e2526f13676c511cdc15044f75",
+      "upstreamUrl": "https://github.com/dotintent/react-native-ble-plx/blob/1136d1542487e8836f9b833bedf76e858329dd2e/android/build.gradle",
+      "verification": "Installed Git blob matches immutable upstream, independently reviewed."
+    }
+  ],
+  "findings": [
+    "BleManager constructor returns sharedInstance when already created; optional bridge does not create or destroy managers.",
+    "monitorCharacteristicForDevice has no subscription-ready callback; returned subscription is not a readiness acknowledgement.",
+    "Android monitor supports explicit indication/notification selection and QUICK_SETUP when CCCD exists.",
+    "Android Characteristic.isNotifying tests CCCD bit 0 only, missing indication-only bit 1.",
+    "Android readDescriptor uses the native remote descriptor read operation.",
+    "Android cancelTransaction resolves after disposal request; terminal connection event and issued-operation settlement are checked separately.",
+    "Android disconnect callbacks identify only device ID, not connection generation.",
+    "SDK DeviceNotConnected is errorCode 205; it does not alone certify cleanup."
+  ],
+  "licenseFindings": {
+    "declaredPackageAndLockfile": "MIT",
+    "installedLicenseText": "Apache License, Version 2.0",
+    "resolution": "Discrepancy recorded, not resolved; no release-license clearance asserted."
+  },
+  "addedDependencies": [],
+  "copiedUpstreamImplementationFiles": [],
+  "physicalAcceptance": "NOT RUN",
+  "scope": "Optional Android PLX GATT bridge with host-provided exclusive lease, not app UI wiring; iOS rejected before native effects.",
+  "upstream": {
+    "repository": "dotintent/react-native-ble-plx",
+    "tag": "v3.5.1",
+    "commit": "1136d1542487e8836f9b833bedf76e858329dd2e",
+    "url": "https://github.com/dotintent/react-native-ble-plx/commit/1136d1542487e8836f9b833bedf76e858329dd2e"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-11-08",
   "apexBase": "d4434c5cf789938447e83e49a5cfcbdf68b59277",
-  "status": "implemented and host-tested with synthetic fixtures; no concrete platform GATT port or physical connection tested",
+  "status": "protocol and optional Android PLX bridge implemented and host-tested with synthetic fixtures; host lease/UI integration and physical acceptance pending",
   "sources": [
     {
       "kind": "schema",
@@ -131,9 +131,10 @@
   },
   "unverified": [
     "physical Flipper and DIY fork interoperability",
-    "concrete platform GATT port and pairing",
+    "real-device execution of optional Android GATT port and OS pairing",
     "iOS and Android device lifecycle",
     "USB CLI-to-RPC mode transition",
     "real-device fixtures and measured limits"
-  ]
+  ],
+  "phoneGattSources": "research/flipper-phone-gatt-sources.json"
 }
