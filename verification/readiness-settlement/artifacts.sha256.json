@@ -1,0 +1,13 @@
+{
+  "verification/readiness-settlement/REPORT.md": "fbbc6a438d0273a0f2372da5ddaba69fe43ddc234408abab362d4a7cfea3d7c9",
+  "verification/readiness-settlement/setup.json": "14b68bd8a470226d81c4b417db9673fa67a9ac97849d80a0bd451f0e9a222380",
+  "verification/readiness-settlement/inputs.sha256.json": "2473a1651916aef5775af22f628b681404051e72486893c3fe27fa584d1d41ec",
+  "verification/readiness-settlement/before.log": "f084360efde304690dbdb33e0df19d4e3e49cee6aa5a1ec36c5601a0f726aa9f",
+  "verification/readiness-settlement/after.log": "c37a92a12923eb0be4c6a9e75ef025537e67d539a5d833ce15e2256d932d5743",
+  "verification/readiness-settlement/consumers.log": "b8a00949213e05a4fcb730e9130fc40a36e63fb599ccaed583979ba0db0b13c4",
+  "verification/readiness-settlement/review-fix-tests.log": "22f7c3e0287a17fd1a9bd42692d3fea1ec085f7af10ba0f81837867b15c6686f",
+  "verification/readiness-settlement/final-consumers.log": "5291b8c069ae112c03e45879f3e578baff73a74de374dff2561ffe9234cfe771",
+  "verification/readiness-settlement/unprepared-clone-full-tests.log": "dffa5a850d453eb6a843db964ab1ae8fdd074d55a19a0ce85f214d7e8a36d68c",
+  "verification/readiness-settlement/full-tests.log": "7300648104e7c98583502a959ad5ffe5a83b19894c9b2553d16a469e1fa92366",
+  "verification/readiness-settlement/typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

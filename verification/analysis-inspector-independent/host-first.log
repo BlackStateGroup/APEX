@@ -1,0 +1,21 @@
+✔ nine unique typed choices, Recording default, exact source routes and invalid IDs (2.606335ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.501953ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.271427ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.44602ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (0.792473ms)
+✔ ir: newer inspector request wins over older completion after exit (4.240643ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.594945ms)
+✔ hci: newer inspector request wins over older completion after exit (1.075468ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.460357ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (2.482869ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.600737ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (1.686235ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.139124ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.172036

@@ -1,0 +1,14 @@
+tests/nfc-static-memory-render-review.test.ts
+tests/ui.smoke.spec.mjs
+tests/nfc-static-memory-review.test.ts
+tests/nfc-static-workbench.test.ts
+tests/hci-document-static-render.test.ts
+tests/analysis-navigation.test.ts
+tests/hci-static-render.test.ts
+tests/hci-render-boundaries-review.test.ts
+tests/nfc-static-render.test.ts
+tests/hci-extended-workbench-independent.test.ts
+tests/hci-document-render-independent.test.ts
+tests/hci-workbench.test.ts
+tests/hci-workbench-boundaries-review.test.ts
+tests/web-evidence.test.ts

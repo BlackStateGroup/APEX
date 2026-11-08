@@ -1,0 +1,637 @@
+✔ nine typed inspector choices, Recording default, and separate explicit source routes (4.923669ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (0.968084ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.231002ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (16.800864ms)
+✔ source delivery during pending saves survives old completion without reviving results (8.715042ms)
+✔ source delivery during pending saves survives old failure without reviving results (9.728382ms)
+✔ explicit check retains exact document and full report; repeated analysis is deterministic (69.06914ms)
+✔ every edit invalidates results; oversize is refused whole including after a report (13.982268ms)
+✔ invalid, duplicate and ineligible documents fail closed without stale report (4.499778ms)
+✔ source-separated bounded pagination preserves all rows and rejects invalid navigation (3.501856ms)
+✔ exact fractions stay primary, incomplete never becomes zero; unselected rows excluded (6.3374ms)
+✖ integration stays mounted and imported content cannot trigger actions or persistence (3.404991ms)
+✔ staging requires exact current validated selected source, never legacy, edits, or pending saves (12.701256ms)
+✔ stage preserves exact strings without adding trial, ownership or export; same-frame invalidation (18.248073ms)
+✔ atomic edits, referenced removal and failed builds clear stale exports (25.319894ms)
+✔ explicit build then single-use handoff replaces comparison without analysis or automatic save (9.141163ms)
+✔ staging gate consumes before callbacks and reads current revision, not a stale render (1.530629ms)
+✔ unsupported runtime edit kind rejects atomically and clears built output (6.021823ms)
+✔ explicit analysis only; exact draft and complete core report survive selection changes (20.630134ms)
+✔ every edit and fixture reload invalidates results, including repeated identical text (16.312021ms)
+✔ oversized edit is rejected whole without silently truncating or leaving stale results (6.517349ms)
+✔ malformed, duplicate-key, declaration mismatch and missing reference fail without partial report (5.462826ms)
+✔ summary separates sources and exposes declared references without raw documents or payload dumps (1.988448ms)
+✔ bounded pagination retains full matrix, distinguishes absent and zero, and leaves ciphertext opaque (4.020703ms)
+✔ invalid navigation cannot leave the bounded projection or select another source accidentally (1.601319ms)
+✖ Analysis integration remains mounted and presentation has no persistence or actionable data paths (3.0132ms)
+✔ initial and edited documents cannot save before successful interpretation (6.49274ms)
+✔ demo fixture is identical to documented decoder test data (0.334757ms)
+✔ edits immediately invalidate both visible results and save input (1.024886ms)
+✔ import provenance is derived from envelope, not the control used to load it (1.180368ms)
+✔ failed reparse never leaves a successful result saveable (4.220536ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.803424ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.930394ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.450709ms)
+✔ failed save retains interpreted source for explicit retry (0.4301ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (7.172397ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-BLE records (2.077496ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (1.755337ms)
+✔ iOS workflow retains normalized fields, and encrypted BTHome stays opaque through save/reopen (2.314989ms)
+✔ selected Android and iOS sources explicitly save exact whitespace then freshly reopen (5.950136ms)
+✔ missing Android raw bytes remain saveable selected source without invented interpretation (2.048021ms)
+✔ selected-source controls never relabel imported provenance, and mode changes invalidate findings (0.783341ms)
+✔ selected-source rejects malformed, oversize, incorrect representation and envelope inputs without truncation (0.634187ms)
+✔ selected-source double taps, mode edits during save and late completion never restore stale source (12.917712ms)
+✔ selected-source asynchronous verification snapshots input and rejects failing verifier (1.852549ms)
+✔ reopen success wording distinguishes actual interpretation from unavailable raw bytes (0.583628ms)
+✔ exact draft, explicit inspect and caller declaration; authored response has explicit presence (10.64387ms)
+✔ malformed and over-budget edits reject whole, preserve exact previous draft and clear results (65.090201ms)
+✔ every edit attempt and provenance selection invalidates, fixture does not inspect (1.785314ms)
+✔ unknown and nonzero status, omitted defaults, incomplete tails and ambiguity remain observations (0.696207ms)
+✔ frame and metadata pages are bounded; malformed navigation cannot expand rendering (0.470245ms)
+✖ content remains data, including URL/control/markup strings (3.40216ms)
+✔ UI snapshots and navigation aliases cannot mutate observations or retained source (0.571949ms)
+✔ accessor actions are rejected without invoking getters, including enums and page values (0.566224ms)
+✔ extended explicit selection stays metadata-only across all data statuses; deeply immutable private observations (15.951813ms)
+✔ switching kinds and failed whole-event selection clears every previous result (2.583323ms)
+✔ exact observed state fences both kinds and pages; bounded whole reports, invalid bounds, old activation (1.281363ms)
+✔ all reset paths clear extended and legacy results; pending hash never resurrects them (4.816195ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (40.291517ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (2.143788ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (1.070024ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.695441ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (2.531007ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.452786ms)
+✔ string adapter parity, exact CRLF bytes, immutable argument, input/context async mutation (14.179006ms)
+✔ adapter malformed results/rejections never produce a report or alter strict parsing (5.847725ms)
+✔ state and nested report are frozen and inaccessible to alias corruption; declaration is explicit (13.734627ms)
+✔ whole edit bounds preserve exact source; rejected edit remains blocked across declarations/tabs (70.616444ms)
+✔ success and error completions are fenced by edits, rejected edits, declarations, clear, example and tab transitions (2.023668ms)
+✔ new inspection survives old success/error and duplicate pending inspection is ignored (0.89978ms)
+✔ queued callbacks from prior activation cannot edit, clear, declare, load, page or inspect after reentry (0.463349ms)
+✔ bounded four-record pages; original long names/duty survive display excerpts and numeric summaries (3.433797ms)
+✔ malformed and unsupported sources rejected whole without partial records (1.522261ms)
+✔ initial and edited documents cannot save before successful interpretation (2.845651ms)
+✔ edits immediately invalidate both visible results and save input (0.570546ms)
+✔ import provenance is derived from envelope, not the control used to load it (0.394528ms)
+✔ failed reparse never leaves a successful result saveable (0.911864ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.822293ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.395127ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.319021ms)
+✔ failed save retains interpreted source for explicit retry (0.319928ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (4.733002ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-NDEF records (1.798971ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (0.894127ms)
+✔ android: exact selected fields survive SQLite close/reopen and verified reinterpretation (12.206558ms)
+✔ ios: exact selected fields survive SQLite close/reopen and verified reinterpretation (5.909118ms)
+✔ selected-source platform/provenance binding, unsupported claims and old wire cross-import fail (6.692004ms)
+✔ missing, null, empty and absent versus empty record IDs survive journal (3.688732ms)
+✔ exact 4096 character cap; larger imports can preview but cannot save or truncate (2.446792ms)
+✔ digest tampering refuses reinterpretation; reopen snapshots caller data before async verification (2.876358ms)
+✔ draft/platform edits invalidate findings; duplicate saves and stale completions cannot restore findings (1.123635ms)
+✔ save failure permits retry, unrelated completion is ignored, same document cannot be resaved after refresh failure (1.080355ms)
+✔ editing or replacing a recording clears both displayed report and save eligibility (1.849258ms)
+✔ pending save uses selected analysis snapshot; late success never restores replaced report (2.360002ms)
+✔ committed save stays consumed after failed list refresh, tab-like reuse, and repeated interpretation (0.897263ms)
+✔ failed persistence releases retry only for the current interpreted draft (0.563664ms)
+✔ legacy analysis evidence schema and sources are preserved for all three formats (3.67012ms)
+✔ NEC rejects an oversized whole edit rather than interpreting its valid prefix (1.947789ms)
+✔ CAN rejects an oversized whole edit rather than interpreting its valid prefix (3.756549ms)
+✔ REA ELF rejects an oversized whole edit rather than interpreting its valid prefix (1.967301ms)
+✔ rejected recording edit stays invalid after an older pending save completes (0.425673ms)
+✔ recording source reaches controller without a platform truncation cap (3.421512ms)
+ℹ tests 102
+ℹ suites 0
+ℹ pass 99
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 601.198906
+
+✖ failing tests:
+
+test at tests/ble-candidate-workbench.test.ts:86:1
+✖ integration stays mounted and imported content cannot trigger actions or persistence (3.404991ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /<BleCandidateWorkbench active=\{tab === 'Analysis'\} \/>/. Input:
+  
+  'import { HciWorkbench } from "./src/HciWorkbench.tsx";\n' +
+    "import { IrWorkbench } from './src/IrWorkbench.tsx';\n" +
+    "import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';\n" +
+    "import { FlipperWorkbench } from './src/FlipperWorkbench.tsx';\n" +
+    "import { BleTrialAuthoringWorkbench } from './src/ble-trial-authoring-workbench.ts';\n" +
+    "import { BleCandidateWorkbench } from './src/BleCandidateWorkbench.tsx';\n" +
+    "import { BleTrialWorkbench } from './src/BleTrialWorkbench.tsx';\n" +
+    "import { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from './src/PhoneNdefWorkbench.tsx';\n" +
+    "import React, { useEffect, useRef, useState } from 'react';\n" +
+    "import { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';\n" +
+    "import { StatusBar } from 'expo-status-bar';\n" +
+    "import { DeviceSession } from './packages/core/session.ts';\n" +
+    "import { SimulatorTransport } from './packages/core/simulator.ts';\n" +
+    "import { RecordingWorkbench } from './src/recording-workbench.ts';\n" +
+    "import type { ByteTransport } from './packages/core/transport.ts';\n" +
+    "import { text, utf8 } from './packages/protocol/index.ts';\n" +
+    "import { nativeDevice } from './modules/apex-device/index.ts';\n" +
+    "import type { NativeStatus, UsbDevice } from './modules/apex-device/index.ts';\n" +
+    "import { AndroidUsbTransport } from './modules/apex-device/usb-transport.ts';\n" +
+    "import { catalogue } from './src/catalogue.ts';\n" +
+    '\n' +
+    "import { updatePhoneNdefLifecycle } from './src/phone-ndef-lifecycle.ts';\n" +
+    "import { PhoneNdefCapture } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import { NfcReader } from './packages/core/nfc.ts';\n" +
+    "import { runNfcReaderAction } from './src/nfc-reader-action.ts';\n" +
+    "import { runAccessoryDiscoveryAction, runForegroundDeviceAction } from './src/foreground-device-action.ts';\n" +
+    "import { recoverBluetooth } from './src/bluetooth-recovery.ts';\n" +
+    "import { clearReleasedSession, sessionControls } from './src/session-controls.ts';\n" +
+    "import type { NfcObservation } from './packages/core/nfc.ts';\n" +
+    "import { nfcBackend } from './src/platform/nfc';\n" +
+    "import { BleTransport } from './packages/core/ble-transport.ts';\n" +
+    "import type { BleCandidate } from './packages/core/ble-transport.ts';\n" +
+    "import { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from './src/platform/bluetooth';\n" +
+    "import { evidenceStore } from './src/platform/evidence';\n" +
+    "import type { EvidenceRecord } from './packages/core/evidence.ts';\n" +
+    "import reaSample from './src/fixtures/rea-elf-notes.json';\n" +
+    "import { NdefWorkbench, NdefEvidenceReopen } from './src/NdefWorkbench.tsx';\n" +
+    "import { BleWorkbench, BleEvidenceReopen } from './src/BleWorkbench.tsx';\n" +
+    "import { ServiceDataWorkbench } from './src/ServiceDataWorkbench.tsx';\n" +
+    "import { ForegroundBleWorkbench } from './src/ForegroundBleWorkbench.tsx';\n" +
+    "import { sourceAtlas } from './src/source-atlas.ts';\n" +
+    '\n' +
+    "import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from './src/analysis-navigation.ts';\n" +
+    "import type { AnalysisInspector, Tab } from './src/analysis-navigation.ts';\n" +
+    'function Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n' +
+    '  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n' +
+    '    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n' +
+    "    <Text style={[styles.buttonText, quiet && { color: '#d4d7d2' }]}>{title}</Text>\n" +
+    '  </Pressable>;\n' +
+    '}\n' +
+    'function Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n' +
+    '\n' +
+    'export default function App() {\n' +
+    '  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n' +
+    '  const [, refreshTrialAuthoring] = useState(0);\n' +
+    '  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n' +
+    "  const [tab, setTab] = useState<Tab>('Console');\n" +
+    '  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n' +
+    '  const [chooserOpen, setChooserOpen] = useState(false);\n' +
+    "  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, 'scrollTo'> | null>(null);\n" +
+    '  function selectInspector(next: AnalysisInspector) {\n' +
+    "    setInspector(next); setChooserOpen(false); setTab('Analysis');\n" +
+    '    scroll.current?.scrollTo({ y: 0, animated: false });\n' +
+    '  }\n' +
+    '  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n' +
+    '  const [busy, setBusy] = useState(false);\n' +
+    '  const [notice, setNotice] = useState<string | null>(null);\n' +
+    '  const lock = useRef(false);\n' +
+    '  const session = useRef<DeviceSession | null>(null);\n' +
+    '  const disconnectListener = useRef<(() => void) | null>(null);\n' +
+    "  const [identity, setIdentity] = useState('No active APEX session');\n" +
+    "  const [source, setSource] = useState('No active session');\n" +
+    '  const [caps, setCaps] = useState<string[]>([]);\n' +
+    "  const [events, setEvents] = useState<string[]>(['Ready. Select a simulator or an attached USB accessory.']);\n" +
+    '  const [devices, setDevices] = useState<UsbDevice[]>([]);\n' +
+    '  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n' +
+    '  const [nfcActive, setNfcActive] = useState(false);\n' +
+    '  const captureReader = useRef<PhoneNdefCapture | null>(null);\n' +
+    '  const captureBusy = useRef(false);\n' +
+    "  const foreground = useRef(AppState.currentState === 'active');\n" +
+    "  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: 'idle', message: 'Ready for an explicit one-tag read.', capture: null });\n" +
+    '  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n' +
+    '  const [tag, setTag] = useState<NfcObservation | null>(null);\n' +
+    '  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n' +
+    '  const [scanning, setScanning] = useState(false);\n' +
+    '  const [observing, setObserving] = useState(false);\n' +
+    '  const observationBusy = useRef(false);\n' +
+    '  const observationUncertain = useRef(false);\n' +
+    '  const [observationFenced, setObservationFenced] = useState(false);\n' +
+    '  const serviceDataBusy = useRef(false);\n' +
+    '  const serviceDataUncertain = useRef(false);\n' +
+    '  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n' +
+    '  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n' +
+    '  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n' +
+    '  const accessoryScanning = useRef(false);\n' +
+    '  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n' +
+    '  const stopScan = useRef<(() => Promise<void>) | null>(null);\n' +
+    '  const reader = useRef<NfcReader | null>(null);\n' +
+    '  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n' +
+    '  const recording = useRef(new RecordingWorkbench()).current;\n' +
+    '  const [, recordingRender] = useState(0);\n' +
+    '  const recordingChanged = () => recordingRender(value => value + 1);\n' +
+    '  const { format, input, fixture, analysis } = recording;\n' +
+    "  const [search, setSearch] = useState('');\n" +
+    '  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n' +
+    "  const clearSession = () => { setIdentity('No active APEX session'); setSource('No active session'); setCaps([]); };\n" +
+    '  const sessionView = sessionControls(session.current);\n' +
+    '\n' +
+    '  useEffect(() => {\n' +
+    '    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n' +
+    '    void load();\n' +
+    '    const nfc = new NfcReader(nfcBackend, {\n' +
+    "      onState: state => setNfcActive(state !== 'idle'),\n" +
+    '      onError: error => setNotice(error.message),\n' +
+    '      onTag: observation => {\n' +
+    '        setTag(observation);\n' +
+    "        if (observation.platform === 'web') return;\n" +
+    "        void evidenceStore.save({ kind: 'nfc.metadata', source: observation.platform === 'ios' ? 'native-ios' : 'native-android', payload: observation, observedAt: observation.observedAt })\n" +
+    '          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n' +
+    '      },\n' +
+    '    });\n' +
+    '    reader.current = nfc;\n' +
+    '    let mounted = true;\n' +
+    "    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== 'idle'; if (mounted) setCaptureState(state); });\n" +
+    '    captureReader.current = capture;\n' +
+    "    const lifecycle = AppState.addEventListener('change', state => {\n" +
+    '      foreground.current = updatePhoneNdefLifecycle(state, capture);\n' +
+    '      // iOS permission sheets can be temporarily inactive without backgrounding.\n' +
+    "      if (state === 'background') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n" +
+    '    });\n' +
+    '    return () => {\n' +
+    '      mounted = false; void capture.cancel();\n' +
+    '      lifecycle.remove(); disconnectListener.current?.();\n' +
+    '      void session.current?.close().catch(() => {});\n' +
+    '      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n' +
+    '    };\n' +
+    '  }, []);\n' +
+    '\n' +
+    '  async function run(action: () => Promise<void>, recovery = false) {\n' +
+    '    if (lock.current) return;\n' +
+    "    if (captureBusy.current) { setNotice('Stop the phone NDEF read and wait for native release first.'); return; }\n" +
+    "    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice('Wait for service-data observation to settle; use Android Reset if native state is uncertain.'); return; }\n" +
+    "    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice('Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.'); return; }\n" +
+    '    lock.current = true; setBusy(true); setNotice(null);\n' +
+    '    try { await action(); }\n' +
+    '    catch (error) {\n' +
+    '      const message = error instanceof Error ? error.message : String(error);\n' +
+    '      setNotice(message); append(`Error: ${message}`);\n' +
+    '    }\n' +
+    '    finally { lock.current = false; setBusy(false); }\n' +
+    '  }\n' +
+    '  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n' +
+    "    () => foreground.current && AppState.currentState === 'active');\n" +
+    '  async function connect(transport: ByteTr'... 27319 more characters
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-inspector/tests/ble-candidate-workbench.test.ts:89:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import { HciWorkbench } from "./src/HciWorkbench.tsx";\nimport { IrWorkbench } from \'./src/IrWorkbench.tsx\';\nimport { EvidenceBundleWorkbench } from \'./src/EvidenceBundleWorkbench.tsx\';\nimport { FlipperWorkbench } from \'./src/FlipperWorkbench.tsx\';\nimport { BleTrialAuthoringWorkbench } from \'./src/ble-trial-authoring-workbench.ts\';\nimport { BleCandidateWorkbench } from \'./src/BleCandidateWorkbench.tsx\';\nimport { BleTrialWorkbench } from \'./src/BleTrialWorkbench.tsx\';\nimport { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from \'./src/PhoneNdefWorkbench.tsx\';\nimport React, { useEffect, useRef, useState } from \'react\';\nimport { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from \'react-native\';\nimport { StatusBar } from \'expo-status-bar\';\nimport { DeviceSession } from \'./packages/core/session.ts\';\nimport { SimulatorTransport } from \'./packages/core/simulator.ts\';\nimport { RecordingWorkbench } from \'./src/recording-workbench.ts\';\nimport type { ByteTransport } from \'./packages/core/transport.ts\';\nimport { text, utf8 } from \'./packages/protocol/index.ts\';\nimport { nativeDevice } from \'./modules/apex-device/index.ts\';\nimport type { NativeStatus, UsbDevice } from \'./modules/apex-device/index.ts\';\nimport { AndroidUsbTransport } from \'./modules/apex-device/usb-transport.ts\';\nimport { catalogue } from \'./src/catalogue.ts\';\n\nimport { updatePhoneNdefLifecycle } from \'./src/phone-ndef-lifecycle.ts\';\nimport { PhoneNdefCapture } from \'./packages/core/phone-ndef-capture.ts\';\nimport type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from \'./packages/core/phone-ndef-capture.ts\';\nimport { NfcReader } from \'./packages/core/nfc.ts\';\nimport { runNfcReaderAction } from \'./src/nfc-reader-action.ts\';\nimport { runAccessoryDiscoveryAction, runForegroundDeviceAction } from \'./src/foreground-device-action.ts\';\nimport { recoverBluetooth } from \'./src/bluetooth-recovery.ts\';\nimport { clearReleasedSession, sessionControls } from \'./src/session-controls.ts\';\nimport type { NfcObservation } from \'./packages/core/nfc.ts\';\nimport { nfcBackend } from \'./src/platform/nfc\';\nimport { BleTransport } from \'./packages/core/ble-transport.ts\';\nimport type { BleCandidate } from \'./packages/core/ble-transport.ts\';\nimport { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from \'./src/platform/bluetooth\';\nimport { evidenceStore } from \'./src/platform/evidence\';\nimport type { EvidenceRecord } from \'./packages/core/evidence.ts\';\nimport reaSample from \'./src/fixtures/rea-elf-notes.json\';\nimport { NdefWorkbench, NdefEvidenceReopen } from \'./src/NdefWorkbench.tsx\';\nimport { BleWorkbench, BleEvidenceReopen } from \'./src/BleWorkbench.tsx\';\nimport { ServiceDataWorkbench } from \'./src/ServiceDataWorkbench.tsx\';\nimport { ForegroundBleWorkbench } from \'./src/ForegroundBleWorkbench.tsx\';\nimport { sourceAtlas } from \'./src/source-atlas.ts\';\n\nimport { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from \'./src/analysis-navigation.ts\';\nimport type { AnalysisInspector, Tab } from \'./src/analysis-navigation.ts\';\nfunction Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n    <Text style={[styles.buttonText, quiet && { color: \'#d4d7d2\' }]}>{title}</Text>\n  </Pressable>;\n}\nfunction Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n\nexport default function App() {\n  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n  const [, refreshTrialAuthoring] = useState(0);\n  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n  const [tab, setTab] = useState<Tab>(\'Console\');\n  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n  const [chooserOpen, setChooserOpen] = useState(false);\n  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, \'scrollTo\'> | null>(null);\n  function selectInspector(next: AnalysisInspector) {\n    setInspector(next); setChooserOpen(false); setTab(\'Analysis\');\n    scroll.current?.scrollTo({ y: 0, animated: false });\n  }\n  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n  const [busy, setBusy] = useState(false);\n  const [notice, setNotice] = useState<string | null>(null);\n  const lock = useRef(false);\n  const session = useRef<DeviceSession | null>(null);\n  const disconnectListener = useRef<(() => void) | null>(null);\n  const [identity, setIdentity] = useState(\'No active APEX session\');\n  const [source, setSource] = useState(\'No active session\');\n  const [caps, setCaps] = useState<string[]>([]);\n  const [events, setEvents] = useState<string[]>([\'Ready. Select a simulator or an attached USB accessory.\']);\n  const [devices, setDevices] = useState<UsbDevice[]>([]);\n  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n  const [nfcActive, setNfcActive] = useState(false);\n  const captureReader = useRef<PhoneNdefCapture | null>(null);\n  const captureBusy = useRef(false);\n  const foreground = useRef(AppState.currentState === \'active\');\n  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: \'idle\', message: \'Ready for an explicit one-tag read.\', capture: null });\n  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n  const [tag, setTag] = useState<NfcObservation | null>(null);\n  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n  const [scanning, setScanning] = useState(false);\n  const [observing, setObserving] = useState(false);\n  const observationBusy = useRef(false);\n  const observationUncertain = useRef(false);\n  const [observationFenced, setObservationFenced] = useState(false);\n  const serviceDataBusy = useRef(false);\n  const serviceDataUncertain = useRef(false);\n  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n  const accessoryScanning = useRef(false);\n  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n  const stopScan = useRef<(() => Promise<void>) | null>(null);\n  const reader = useRef<NfcReader | null>(null);\n  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n  const recording = useRef(new RecordingWorkbench()).current;\n  const [, recordingRender] = useState(0);\n  const recordingChanged = () => recordingRender(value => value + 1);\n  const { format, input, fixture, analysis } = recording;\n  const [search, setSearch] = useState(\'\');\n  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n  const clearSession = () => { setIdentity(\'No active APEX session\'); setSource(\'No active session\'); setCaps([]); };\n  const sessionView = sessionControls(session.current);\n\n  useEffect(() => {\n    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n    void load();\n    const nfc = new NfcReader(nfcBackend, {\n      onState: state => setNfcActive(state !== \'idle\'),\n      onError: error => setNotice(error.message),\n      onTag: observation => {\n        setTag(observation);\n        if (observation.platform === \'web\') return;\n        void evidenceStore.save({ kind: \'nfc.metadata\', source: observation.platform === \'ios\' ? \'native-ios\' : \'native-android\', payload: observation, observedAt: observation.observedAt })\n          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n      },\n    });\n    reader.current = nfc;\n    let mounted = true;\n    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== \'idle\'; if (mounted) setCaptureState(state); });\n    captureReader.current = capture;\n    const lifecycle = AppState.addEventListener(\'change\', state => {\n      foreground.current = updatePhoneNdefLifecycle(state, capture);\n      // iOS permission sheets can be temporarily inactive without backgrounding.\n      if (state === \'background\') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n    });\n    return () => {\n      mounted = false; void capture.cancel();\n      lifecycle.remove(); disconnectListener.current?.();\n      void session.current?.close().catch(() => {});\n      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n    };\n  }, []);\n\n  async function run(action: () => Promise<void>, recovery = false) {\n    if (lock.current) return;\n    if (captureBusy.current) { setNotice(\'Stop the phone NDEF read and wait for native release first.\'); return; }\n    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice(\'Wait for service-data observation to settle; use Android Reset if native state is uncertain.\'); return; }\n    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice(\'Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.\'); return; }\n    lock.current = true; setBusy(true); setNotice(null);\n    try { await action(); }\n    catch (error) {\n      const message = error instanceof Error ? error.message : String(error);\n      setNotice(message); append(`Error: ${message}`);\n    }\n    finally { lock.current = false; setBusy(false); }\n  }\n  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n    () => foreground.current && AppState.currentState === \'active\');\n  async function connect(transport: ByteTr'... 27319 more characters,
+    expected: /<BleCandidateWorkbench active=\{tab === 'Analysis'\} \/>/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/ble-trial-workbench.test.ts:97:1
+✖ Analysis integration remains mounted and presentation has no persistence or actionable data paths (3.0132ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /<BleTrialWorkbench active=\{tab === 'Analysis'\} authoring=\{trialAuthoring\}/. Input:
+  
+  'import { HciWorkbench } from "./src/HciWorkbench.tsx";\n' +
+    "import { IrWorkbench } from './src/IrWorkbench.tsx';\n" +
+    "import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';\n" +
+    "import { FlipperWorkbench } from './src/FlipperWorkbench.tsx';\n" +
+    "import { BleTrialAuthoringWorkbench } from './src/ble-trial-authoring-workbench.ts';\n" +
+    "import { BleCandidateWorkbench } from './src/BleCandidateWorkbench.tsx';\n" +
+    "import { BleTrialWorkbench } from './src/BleTrialWorkbench.tsx';\n" +
+    "import { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from './src/PhoneNdefWorkbench.tsx';\n" +
+    "import React, { useEffect, useRef, useState } from 'react';\n" +
+    "import { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';\n" +
+    "import { StatusBar } from 'expo-status-bar';\n" +
+    "import { DeviceSession } from './packages/core/session.ts';\n" +
+    "import { SimulatorTransport } from './packages/core/simulator.ts';\n" +
+    "import { RecordingWorkbench } from './src/recording-workbench.ts';\n" +
+    "import type { ByteTransport } from './packages/core/transport.ts';\n" +
+    "import { text, utf8 } from './packages/protocol/index.ts';\n" +
+    "import { nativeDevice } from './modules/apex-device/index.ts';\n" +
+    "import type { NativeStatus, UsbDevice } from './modules/apex-device/index.ts';\n" +
+    "import { AndroidUsbTransport } from './modules/apex-device/usb-transport.ts';\n" +
+    "import { catalogue } from './src/catalogue.ts';\n" +
+    '\n' +
+    "import { updatePhoneNdefLifecycle } from './src/phone-ndef-lifecycle.ts';\n" +
+    "import { PhoneNdefCapture } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import { NfcReader } from './packages/core/nfc.ts';\n" +
+    "import { runNfcReaderAction } from './src/nfc-reader-action.ts';\n" +
+    "import { runAccessoryDiscoveryAction, runForegroundDeviceAction } from './src/foreground-device-action.ts';\n" +
+    "import { recoverBluetooth } from './src/bluetooth-recovery.ts';\n" +
+    "import { clearReleasedSession, sessionControls } from './src/session-controls.ts';\n" +
+    "import type { NfcObservation } from './packages/core/nfc.ts';\n" +
+    "import { nfcBackend } from './src/platform/nfc';\n" +
+    "import { BleTransport } from './packages/core/ble-transport.ts';\n" +
+    "import type { BleCandidate } from './packages/core/ble-transport.ts';\n" +
+    "import { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from './src/platform/bluetooth';\n" +
+    "import { evidenceStore } from './src/platform/evidence';\n" +
+    "import type { EvidenceRecord } from './packages/core/evidence.ts';\n" +
+    "import reaSample from './src/fixtures/rea-elf-notes.json';\n" +
+    "import { NdefWorkbench, NdefEvidenceReopen } from './src/NdefWorkbench.tsx';\n" +
+    "import { BleWorkbench, BleEvidenceReopen } from './src/BleWorkbench.tsx';\n" +
+    "import { ServiceDataWorkbench } from './src/ServiceDataWorkbench.tsx';\n" +
+    "import { ForegroundBleWorkbench } from './src/ForegroundBleWorkbench.tsx';\n" +
+    "import { sourceAtlas } from './src/source-atlas.ts';\n" +
+    '\n' +
+    "import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from './src/analysis-navigation.ts';\n" +
+    "import type { AnalysisInspector, Tab } from './src/analysis-navigation.ts';\n" +
+    'function Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n' +
+    '  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n' +
+    '    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n' +
+    "    <Text style={[styles.buttonText, quiet && { color: '#d4d7d2' }]}>{title}</Text>\n" +
+    '  </Pressable>;\n' +
+    '}\n' +
+    'function Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n' +
+    '\n' +
+    'export default function App() {\n' +
+    '  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n' +
+    '  const [, refreshTrialAuthoring] = useState(0);\n' +
+    '  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n' +
+    "  const [tab, setTab] = useState<Tab>('Console');\n" +
+    '  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n' +
+    '  const [chooserOpen, setChooserOpen] = useState(false);\n' +
+    "  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, 'scrollTo'> | null>(null);\n" +
+    '  function selectInspector(next: AnalysisInspector) {\n' +
+    "    setInspector(next); setChooserOpen(false); setTab('Analysis');\n" +
+    '    scroll.current?.scrollTo({ y: 0, animated: false });\n' +
+    '  }\n' +
+    '  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n' +
+    '  const [busy, setBusy] = useState(false);\n' +
+    '  const [notice, setNotice] = useState<string | null>(null);\n' +
+    '  const lock = useRef(false);\n' +
+    '  const session = useRef<DeviceSession | null>(null);\n' +
+    '  const disconnectListener = useRef<(() => void) | null>(null);\n' +
+    "  const [identity, setIdentity] = useState('No active APEX session');\n" +
+    "  const [source, setSource] = useState('No active session');\n" +
+    '  const [caps, setCaps] = useState<string[]>([]);\n' +
+    "  const [events, setEvents] = useState<string[]>(['Ready. Select a simulator or an attached USB accessory.']);\n" +
+    '  const [devices, setDevices] = useState<UsbDevice[]>([]);\n' +
+    '  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n' +
+    '  const [nfcActive, setNfcActive] = useState(false);\n' +
+    '  const captureReader = useRef<PhoneNdefCapture | null>(null);\n' +
+    '  const captureBusy = useRef(false);\n' +
+    "  const foreground = useRef(AppState.currentState === 'active');\n" +
+    "  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: 'idle', message: 'Ready for an explicit one-tag read.', capture: null });\n" +
+    '  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n' +
+    '  const [tag, setTag] = useState<NfcObservation | null>(null);\n' +
+    '  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n' +
+    '  const [scanning, setScanning] = useState(false);\n' +
+    '  const [observing, setObserving] = useState(false);\n' +
+    '  const observationBusy = useRef(false);\n' +
+    '  const observationUncertain = useRef(false);\n' +
+    '  const [observationFenced, setObservationFenced] = useState(false);\n' +
+    '  const serviceDataBusy = useRef(false);\n' +
+    '  const serviceDataUncertain = useRef(false);\n' +
+    '  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n' +
+    '  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n' +
+    '  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n' +
+    '  const accessoryScanning = useRef(false);\n' +
+    '  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n' +
+    '  const stopScan = useRef<(() => Promise<void>) | null>(null);\n' +
+    '  const reader = useRef<NfcReader | null>(null);\n' +
+    '  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n' +
+    '  const recording = useRef(new RecordingWorkbench()).current;\n' +
+    '  const [, recordingRender] = useState(0);\n' +
+    '  const recordingChanged = () => recordingRender(value => value + 1);\n' +
+    '  const { format, input, fixture, analysis } = recording;\n' +
+    "  const [search, setSearch] = useState('');\n" +
+    '  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n' +
+    "  const clearSession = () => { setIdentity('No active APEX session'); setSource('No active session'); setCaps([]); };\n" +
+    '  const sessionView = sessionControls(session.current);\n' +
+    '\n' +
+    '  useEffect(() => {\n' +
+    '    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n' +
+    '    void load();\n' +
+    '    const nfc = new NfcReader(nfcBackend, {\n' +
+    "      onState: state => setNfcActive(state !== 'idle'),\n" +
+    '      onError: error => setNotice(error.message),\n' +
+    '      onTag: observation => {\n' +
+    '        setTag(observation);\n' +
+    "        if (observation.platform === 'web') return;\n" +
+    "        void evidenceStore.save({ kind: 'nfc.metadata', source: observation.platform === 'ios' ? 'native-ios' : 'native-android', payload: observation, observedAt: observation.observedAt })\n" +
+    '          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n' +
+    '      },\n' +
+    '    });\n' +
+    '    reader.current = nfc;\n' +
+    '    let mounted = true;\n' +
+    "    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== 'idle'; if (mounted) setCaptureState(state); });\n" +
+    '    captureReader.current = capture;\n' +
+    "    const lifecycle = AppState.addEventListener('change', state => {\n" +
+    '      foreground.current = updatePhoneNdefLifecycle(state, capture);\n' +
+    '      // iOS permission sheets can be temporarily inactive without backgrounding.\n' +
+    "      if (state === 'background') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n" +
+    '    });\n' +
+    '    return () => {\n' +
+    '      mounted = false; void capture.cancel();\n' +
+    '      lifecycle.remove(); disconnectListener.current?.();\n' +
+    '      void session.current?.close().catch(() => {});\n' +
+    '      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n' +
+    '    };\n' +
+    '  }, []);\n' +
+    '\n' +
+    '  async function run(action: () => Promise<void>, recovery = false) {\n' +
+    '    if (lock.current) return;\n' +
+    "    if (captureBusy.current) { setNotice('Stop the phone NDEF read and wait for native release first.'); return; }\n" +
+    "    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice('Wait for service-data observation to settle; use Android Reset if native state is uncertain.'); return; }\n" +
+    "    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice('Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.'); return; }\n" +
+    '    lock.current = true; setBusy(true); setNotice(null);\n' +
+    '    try { await action(); }\n' +
+    '    catch (error) {\n' +
+    '      const message = error instanceof Error ? error.message : String(error);\n' +
+    '      setNotice(message); append(`Error: ${message}`);\n' +
+    '    }\n' +
+    '    finally { lock.current = false; setBusy(false); }\n' +
+    '  }\n' +
+    '  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n' +
+    "    () => foreground.current && AppState.currentState === 'active');\n" +
+    '  async function connect(transport: ByteTr'... 27319 more characters
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-inspector/tests/ble-trial-workbench.test.ts:100:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import { HciWorkbench } from "./src/HciWorkbench.tsx";\nimport { IrWorkbench } from \'./src/IrWorkbench.tsx\';\nimport { EvidenceBundleWorkbench } from \'./src/EvidenceBundleWorkbench.tsx\';\nimport { FlipperWorkbench } from \'./src/FlipperWorkbench.tsx\';\nimport { BleTrialAuthoringWorkbench } from \'./src/ble-trial-authoring-workbench.ts\';\nimport { BleCandidateWorkbench } from \'./src/BleCandidateWorkbench.tsx\';\nimport { BleTrialWorkbench } from \'./src/BleTrialWorkbench.tsx\';\nimport { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from \'./src/PhoneNdefWorkbench.tsx\';\nimport React, { useEffect, useRef, useState } from \'react\';\nimport { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from \'react-native\';\nimport { StatusBar } from \'expo-status-bar\';\nimport { DeviceSession } from \'./packages/core/session.ts\';\nimport { SimulatorTransport } from \'./packages/core/simulator.ts\';\nimport { RecordingWorkbench } from \'./src/recording-workbench.ts\';\nimport type { ByteTransport } from \'./packages/core/transport.ts\';\nimport { text, utf8 } from \'./packages/protocol/index.ts\';\nimport { nativeDevice } from \'./modules/apex-device/index.ts\';\nimport type { NativeStatus, UsbDevice } from \'./modules/apex-device/index.ts\';\nimport { AndroidUsbTransport } from \'./modules/apex-device/usb-transport.ts\';\nimport { catalogue } from \'./src/catalogue.ts\';\n\nimport { updatePhoneNdefLifecycle } from \'./src/phone-ndef-lifecycle.ts\';\nimport { PhoneNdefCapture } from \'./packages/core/phone-ndef-capture.ts\';\nimport type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from \'./packages/core/phone-ndef-capture.ts\';\nimport { NfcReader } from \'./packages/core/nfc.ts\';\nimport { runNfcReaderAction } from \'./src/nfc-reader-action.ts\';\nimport { runAccessoryDiscoveryAction, runForegroundDeviceAction } from \'./src/foreground-device-action.ts\';\nimport { recoverBluetooth } from \'./src/bluetooth-recovery.ts\';\nimport { clearReleasedSession, sessionControls } from \'./src/session-controls.ts\';\nimport type { NfcObservation } from \'./packages/core/nfc.ts\';\nimport { nfcBackend } from \'./src/platform/nfc\';\nimport { BleTransport } from \'./packages/core/ble-transport.ts\';\nimport type { BleCandidate } from \'./packages/core/ble-transport.ts\';\nimport { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from \'./src/platform/bluetooth\';\nimport { evidenceStore } from \'./src/platform/evidence\';\nimport type { EvidenceRecord } from \'./packages/core/evidence.ts\';\nimport reaSample from \'./src/fixtures/rea-elf-notes.json\';\nimport { NdefWorkbench, NdefEvidenceReopen } from \'./src/NdefWorkbench.tsx\';\nimport { BleWorkbench, BleEvidenceReopen } from \'./src/BleWorkbench.tsx\';\nimport { ServiceDataWorkbench } from \'./src/ServiceDataWorkbench.tsx\';\nimport { ForegroundBleWorkbench } from \'./src/ForegroundBleWorkbench.tsx\';\nimport { sourceAtlas } from \'./src/source-atlas.ts\';\n\nimport { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from \'./src/analysis-navigation.ts\';\nimport type { AnalysisInspector, Tab } from \'./src/analysis-navigation.ts\';\nfunction Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n    <Text style={[styles.buttonText, quiet && { color: \'#d4d7d2\' }]}>{title}</Text>\n  </Pressable>;\n}\nfunction Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n\nexport default function App() {\n  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n  const [, refreshTrialAuthoring] = useState(0);\n  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n  const [tab, setTab] = useState<Tab>(\'Console\');\n  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n  const [chooserOpen, setChooserOpen] = useState(false);\n  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, \'scrollTo\'> | null>(null);\n  function selectInspector(next: AnalysisInspector) {\n    setInspector(next); setChooserOpen(false); setTab(\'Analysis\');\n    scroll.current?.scrollTo({ y: 0, animated: false });\n  }\n  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n  const [busy, setBusy] = useState(false);\n  const [notice, setNotice] = useState<string | null>(null);\n  const lock = useRef(false);\n  const session = useRef<DeviceSession | null>(null);\n  const disconnectListener = useRef<(() => void) | null>(null);\n  const [identity, setIdentity] = useState(\'No active APEX session\');\n  const [source, setSource] = useState(\'No active session\');\n  const [caps, setCaps] = useState<string[]>([]);\n  const [events, setEvents] = useState<string[]>([\'Ready. Select a simulator or an attached USB accessory.\']);\n  const [devices, setDevices] = useState<UsbDevice[]>([]);\n  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n  const [nfcActive, setNfcActive] = useState(false);\n  const captureReader = useRef<PhoneNdefCapture | null>(null);\n  const captureBusy = useRef(false);\n  const foreground = useRef(AppState.currentState === \'active\');\n  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: \'idle\', message: \'Ready for an explicit one-tag read.\', capture: null });\n  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n  const [tag, setTag] = useState<NfcObservation | null>(null);\n  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n  const [scanning, setScanning] = useState(false);\n  const [observing, setObserving] = useState(false);\n  const observationBusy = useRef(false);\n  const observationUncertain = useRef(false);\n  const [observationFenced, setObservationFenced] = useState(false);\n  const serviceDataBusy = useRef(false);\n  const serviceDataUncertain = useRef(false);\n  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n  const accessoryScanning = useRef(false);\n  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n  const stopScan = useRef<(() => Promise<void>) | null>(null);\n  const reader = useRef<NfcReader | null>(null);\n  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n  const recording = useRef(new RecordingWorkbench()).current;\n  const [, recordingRender] = useState(0);\n  const recordingChanged = () => recordingRender(value => value + 1);\n  const { format, input, fixture, analysis } = recording;\n  const [search, setSearch] = useState(\'\');\n  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n  const clearSession = () => { setIdentity(\'No active APEX session\'); setSource(\'No active session\'); setCaps([]); };\n  const sessionView = sessionControls(session.current);\n\n  useEffect(() => {\n    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n    void load();\n    const nfc = new NfcReader(nfcBackend, {\n      onState: state => setNfcActive(state !== \'idle\'),\n      onError: error => setNotice(error.message),\n      onTag: observation => {\n        setTag(observation);\n        if (observation.platform === \'web\') return;\n        void evidenceStore.save({ kind: \'nfc.metadata\', source: observation.platform === \'ios\' ? \'native-ios\' : \'native-android\', payload: observation, observedAt: observation.observedAt })\n          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n      },\n    });\n    reader.current = nfc;\n    let mounted = true;\n    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== \'idle\'; if (mounted) setCaptureState(state); });\n    captureReader.current = capture;\n    const lifecycle = AppState.addEventListener(\'change\', state => {\n      foreground.current = updatePhoneNdefLifecycle(state, capture);\n      // iOS permission sheets can be temporarily inactive without backgrounding.\n      if (state === \'background\') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n    });\n    return () => {\n      mounted = false; void capture.cancel();\n      lifecycle.remove(); disconnectListener.current?.();\n      void session.current?.close().catch(() => {});\n      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n    };\n  }, []);\n\n  async function run(action: () => Promise<void>, recovery = false) {\n    if (lock.current) return;\n    if (captureBusy.current) { setNotice(\'Stop the phone NDEF read and wait for native release first.\'); return; }\n    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice(\'Wait for service-data observation to settle; use Android Reset if native state is uncertain.\'); return; }\n    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice(\'Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.\'); return; }\n    lock.current = true; setBusy(true); setNotice(null);\n    try { await action(); }\n    catch (error) {\n      const message = error instanceof Error ? error.message : String(error);\n      setNotice(message); append(`Error: ${message}`);\n    }\n    finally { lock.current = false; setBusy(false); }\n  }\n  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n    () => foreground.current && AppState.currentState === \'active\');\n  async function connect(transport: ByteTr'... 27319 more characters,
+    expected: /<BleTrialWorkbench active=\{tab === 'Analysis'\} authoring=\{trialAuthoring\}/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/flipper-workbench.test.ts:67:1
+✖ content remains data, including URL/control/markup strings (3.40216ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /<FlipperWorkbench active=\{tab === 'Analysis'\} \/>/. Input:
+  
+  'import { HciWorkbench } from "./src/HciWorkbench.tsx";\n' +
+    "import { IrWorkbench } from './src/IrWorkbench.tsx';\n" +
+    "import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';\n" +
+    "import { FlipperWorkbench } from './src/FlipperWorkbench.tsx';\n" +
+    "import { BleTrialAuthoringWorkbench } from './src/ble-trial-authoring-workbench.ts';\n" +
+    "import { BleCandidateWorkbench } from './src/BleCandidateWorkbench.tsx';\n" +
+    "import { BleTrialWorkbench } from './src/BleTrialWorkbench.tsx';\n" +
+    "import { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from './src/PhoneNdefWorkbench.tsx';\n" +
+    "import React, { useEffect, useRef, useState } from 'react';\n" +
+    "import { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';\n" +
+    "import { StatusBar } from 'expo-status-bar';\n" +
+    "import { DeviceSession } from './packages/core/session.ts';\n" +
+    "import { SimulatorTransport } from './packages/core/simulator.ts';\n" +
+    "import { RecordingWorkbench } from './src/recording-workbench.ts';\n" +
+    "import type { ByteTransport } from './packages/core/transport.ts';\n" +
+    "import { text, utf8 } from './packages/protocol/index.ts';\n" +
+    "import { nativeDevice } from './modules/apex-device/index.ts';\n" +
+    "import type { NativeStatus, UsbDevice } from './modules/apex-device/index.ts';\n" +
+    "import { AndroidUsbTransport } from './modules/apex-device/usb-transport.ts';\n" +
+    "import { catalogue } from './src/catalogue.ts';\n" +
+    '\n' +
+    "import { updatePhoneNdefLifecycle } from './src/phone-ndef-lifecycle.ts';\n" +
+    "import { PhoneNdefCapture } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from './packages/core/phone-ndef-capture.ts';\n" +
+    "import { NfcReader } from './packages/core/nfc.ts';\n" +
+    "import { runNfcReaderAction } from './src/nfc-reader-action.ts';\n" +
+    "import { runAccessoryDiscoveryAction, runForegroundDeviceAction } from './src/foreground-device-action.ts';\n" +
+    "import { recoverBluetooth } from './src/bluetooth-recovery.ts';\n" +
+    "import { clearReleasedSession, sessionControls } from './src/session-controls.ts';\n" +
+    "import type { NfcObservation } from './packages/core/nfc.ts';\n" +
+    "import { nfcBackend } from './src/platform/nfc';\n" +
+    "import { BleTransport } from './packages/core/ble-transport.ts';\n" +
+    "import type { BleCandidate } from './packages/core/ble-transport.ts';\n" +
+    "import { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from './src/platform/bluetooth';\n" +
+    "import { evidenceStore } from './src/platform/evidence';\n" +
+    "import type { EvidenceRecord } from './packages/core/evidence.ts';\n" +
+    "import reaSample from './src/fixtures/rea-elf-notes.json';\n" +
+    "import { NdefWorkbench, NdefEvidenceReopen } from './src/NdefWorkbench.tsx';\n" +
+    "import { BleWorkbench, BleEvidenceReopen } from './src/BleWorkbench.tsx';\n" +
+    "import { ServiceDataWorkbench } from './src/ServiceDataWorkbench.tsx';\n" +
+    "import { ForegroundBleWorkbench } from './src/ForegroundBleWorkbench.tsx';\n" +
+    "import { sourceAtlas } from './src/source-atlas.ts';\n" +
+    '\n' +
+    "import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from './src/analysis-navigation.ts';\n" +
+    "import type { AnalysisInspector, Tab } from './src/analysis-navigation.ts';\n" +
+    'function Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n' +
+    '  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n' +
+    '    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n' +
+    "    <Text style={[styles.buttonText, quiet && { color: '#d4d7d2' }]}>{title}</Text>\n" +
+    '  </Pressable>;\n' +
+    '}\n' +
+    'function Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n' +
+    '\n' +
+    'export default function App() {\n' +
+    '  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n' +
+    '  const [, refreshTrialAuthoring] = useState(0);\n' +
+    '  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n' +
+    "  const [tab, setTab] = useState<Tab>('Console');\n" +
+    '  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n' +
+    '  const [chooserOpen, setChooserOpen] = useState(false);\n' +
+    "  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, 'scrollTo'> | null>(null);\n" +
+    '  function selectInspector(next: AnalysisInspector) {\n' +
+    "    setInspector(next); setChooserOpen(false); setTab('Analysis');\n" +
+    '    scroll.current?.scrollTo({ y: 0, animated: false });\n' +
+    '  }\n' +
+    '  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n' +
+    '  const [busy, setBusy] = useState(false);\n' +
+    '  const [notice, setNotice] = useState<string | null>(null);\n' +
+    '  const lock = useRef(false);\n' +
+    '  const session = useRef<DeviceSession | null>(null);\n' +
+    '  const disconnectListener = useRef<(() => void) | null>(null);\n' +
+    "  const [identity, setIdentity] = useState('No active APEX session');\n" +
+    "  const [source, setSource] = useState('No active session');\n" +
+    '  const [caps, setCaps] = useState<string[]>([]);\n' +
+    "  const [events, setEvents] = useState<string[]>(['Ready. Select a simulator or an attached USB accessory.']);\n" +
+    '  const [devices, setDevices] = useState<UsbDevice[]>([]);\n' +
+    '  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n' +
+    '  const [nfcActive, setNfcActive] = useState(false);\n' +
+    '  const captureReader = useRef<PhoneNdefCapture | null>(null);\n' +
+    '  const captureBusy = useRef(false);\n' +
+    "  const foreground = useRef(AppState.currentState === 'active');\n" +
+    "  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: 'idle', message: 'Ready for an explicit one-tag read.', capture: null });\n" +
+    '  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n' +
+    '  const [tag, setTag] = useState<NfcObservation | null>(null);\n' +
+    '  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n' +
+    '  const [scanning, setScanning] = useState(false);\n' +
+    '  const [observing, setObserving] = useState(false);\n' +
+    '  const observationBusy = useRef(false);\n' +
+    '  const observationUncertain = useRef(false);\n' +
+    '  const [observationFenced, setObservationFenced] = useState(false);\n' +
+    '  const serviceDataBusy = useRef(false);\n' +
+    '  const serviceDataUncertain = useRef(false);\n' +
+    '  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n' +
+    '  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n' +
+    '  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n' +
+    '  const accessoryScanning = useRef(false);\n' +
+    '  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n' +
+    '  const stopScan = useRef<(() => Promise<void>) | null>(null);\n' +
+    '  const reader = useRef<NfcReader | null>(null);\n' +
+    '  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n' +
+    '  const recording = useRef(new RecordingWorkbench()).current;\n' +
+    '  const [, recordingRender] = useState(0);\n' +
+    '  const recordingChanged = () => recordingRender(value => value + 1);\n' +
+    '  const { format, input, fixture, analysis } = recording;\n' +
+    "  const [search, setSearch] = useState('');\n" +
+    '  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n' +
+    "  const clearSession = () => { setIdentity('No active APEX session'); setSource('No active session'); setCaps([]); };\n" +
+    '  const sessionView = sessionControls(session.current);\n' +
+    '\n' +
+    '  useEffect(() => {\n' +
+    '    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n' +
+    '    void load();\n' +
+    '    const nfc = new NfcReader(nfcBackend, {\n' +
+    "      onState: state => setNfcActive(state !== 'idle'),\n" +
+    '      onError: error => setNotice(error.message),\n' +
+    '      onTag: observation => {\n' +
+    '        setTag(observation);\n' +
+    "        if (observation.platform === 'web') return;\n" +
+    "        void evidenceStore.save({ kind: 'nfc.metadata', source: observation.platform === 'ios' ? 'native-ios' : 'native-android', payload: observation, observedAt: observation.observedAt })\n" +
+    '          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n' +
+    '      },\n' +
+    '    });\n' +
+    '    reader.current = nfc;\n' +
+    '    let mounted = true;\n' +
+    "    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== 'idle'; if (mounted) setCaptureState(state); });\n" +
+    '    captureReader.current = capture;\n' +
+    "    const lifecycle = AppState.addEventListener('change', state => {\n" +
+    '      foreground.current = updatePhoneNdefLifecycle(state, capture);\n' +
+    '      // iOS permission sheets can be temporarily inactive without backgrounding.\n' +
+    "      if (state === 'background') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n" +
+    '    });\n' +
+    '    return () => {\n' +
+    '      mounted = false; void capture.cancel();\n' +
+    '      lifecycle.remove(); disconnectListener.current?.();\n' +
+    '      void session.current?.close().catch(() => {});\n' +
+    '      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n' +
+    '    };\n' +
+    '  }, []);\n' +
+    '\n' +
+    '  async function run(action: () => Promise<void>, recovery = false) {\n' +
+    '    if (lock.current) return;\n' +
+    "    if (captureBusy.current) { setNotice('Stop the phone NDEF read and wait for native release first.'); return; }\n" +
+    "    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice('Wait for service-data observation to settle; use Android Reset if native state is uncertain.'); return; }\n" +
+    "    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice('Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.'); return; }\n" +
+    '    lock.current = true; setBusy(true); setNotice(null);\n' +
+    '    try { await action(); }\n' +
+    '    catch (error) {\n' +
+    '      const message = error instanceof Error ? error.message : String(error);\n' +
+    '      setNotice(message); append(`Error: ${message}`);\n' +
+    '    }\n' +
+    '    finally { lock.current = false; setBusy(false); }\n' +
+    '  }\n' +
+    '  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n' +
+    "    () => foreground.current && AppState.currentState === 'active');\n" +
+    '  async function connect(transport: ByteTr'... 27319 more characters
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-inspector/tests/flipper-workbench.test.ts:76:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import { HciWorkbench } from "./src/HciWorkbench.tsx";\nimport { IrWorkbench } from \'./src/IrWorkbench.tsx\';\nimport { EvidenceBundleWorkbench } from \'./src/EvidenceBundleWorkbench.tsx\';\nimport { FlipperWorkbench } from \'./src/FlipperWorkbench.tsx\';\nimport { BleTrialAuthoringWorkbench } from \'./src/ble-trial-authoring-workbench.ts\';\nimport { BleCandidateWorkbench } from \'./src/BleCandidateWorkbench.tsx\';\nimport { BleTrialWorkbench } from \'./src/BleTrialWorkbench.tsx\';\nimport { PhoneNdefWorkbench, PhoneNdefEvidenceReopen } from \'./src/PhoneNdefWorkbench.tsx\';\nimport React, { useEffect, useRef, useState } from \'react\';\nimport { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from \'react-native\';\nimport { StatusBar } from \'expo-status-bar\';\nimport { DeviceSession } from \'./packages/core/session.ts\';\nimport { SimulatorTransport } from \'./packages/core/simulator.ts\';\nimport { RecordingWorkbench } from \'./src/recording-workbench.ts\';\nimport type { ByteTransport } from \'./packages/core/transport.ts\';\nimport { text, utf8 } from \'./packages/protocol/index.ts\';\nimport { nativeDevice } from \'./modules/apex-device/index.ts\';\nimport type { NativeStatus, UsbDevice } from \'./modules/apex-device/index.ts\';\nimport { AndroidUsbTransport } from \'./modules/apex-device/usb-transport.ts\';\nimport { catalogue } from \'./src/catalogue.ts\';\n\nimport { updatePhoneNdefLifecycle } from \'./src/phone-ndef-lifecycle.ts\';\nimport { PhoneNdefCapture } from \'./packages/core/phone-ndef-capture.ts\';\nimport type { PhoneNdefCaptureState, PhoneNdefCaptureDocument } from \'./packages/core/phone-ndef-capture.ts\';\nimport { NfcReader } from \'./packages/core/nfc.ts\';\nimport { runNfcReaderAction } from \'./src/nfc-reader-action.ts\';\nimport { runAccessoryDiscoveryAction, runForegroundDeviceAction } from \'./src/foreground-device-action.ts\';\nimport { recoverBluetooth } from \'./src/bluetooth-recovery.ts\';\nimport { clearReleasedSession, sessionControls } from \'./src/session-controls.ts\';\nimport type { NfcObservation } from \'./packages/core/nfc.ts\';\nimport { nfcBackend } from \'./src/platform/nfc\';\nimport { BleTransport } from \'./packages/core/ble-transport.ts\';\nimport type { BleCandidate } from \'./packages/core/ble-transport.ts\';\nimport { bleDriver, scanAccessories, shutdownBluetooth, stopAccessoryDiscovery } from \'./src/platform/bluetooth\';\nimport { evidenceStore } from \'./src/platform/evidence\';\nimport type { EvidenceRecord } from \'./packages/core/evidence.ts\';\nimport reaSample from \'./src/fixtures/rea-elf-notes.json\';\nimport { NdefWorkbench, NdefEvidenceReopen } from \'./src/NdefWorkbench.tsx\';\nimport { BleWorkbench, BleEvidenceReopen } from \'./src/BleWorkbench.tsx\';\nimport { ServiceDataWorkbench } from \'./src/ServiceDataWorkbench.tsx\';\nimport { ForegroundBleWorkbench } from \'./src/ForegroundBleWorkbench.tsx\';\nimport { sourceAtlas } from \'./src/source-atlas.ts\';\n\nimport { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR, nextAnalysisSource } from \'./src/analysis-navigation.ts\';\nimport type { AnalysisInspector, Tab } from \'./src/analysis-navigation.ts\';\nfunction Button({ title, onPress, disabled = false, quiet = false }: { title: string; onPress: () => void; disabled?: boolean; quiet?: boolean }) {\n  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}\n    style={({ pressed }) => [styles.button, quiet && styles.quietButton, (disabled || pressed) && { opacity: 0.5 }]}>\n    <Text style={[styles.buttonText, quiet && { color: \'#d4d7d2\' }]}>{title}</Text>\n  </Pressable>;\n}\nfunction Label({ children }: { children: React.ReactNode }) { return <Text style={styles.label}>{children}</Text>; }\n\nexport default function App() {\n  const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;\n  const [, refreshTrialAuthoring] = useState(0);\n  const authoringChanged = () => refreshTrialAuthoring(value => value + 1);\n  const [tab, setTab] = useState<Tab>(\'Console\');\n  const [inspector, setInspector] = useState<AnalysisInspector>(DEFAULT_ANALYSIS_INSPECTOR);\n  const [chooserOpen, setChooserOpen] = useState(false);\n  const scroll = useRef<Pick<React.ComponentRef<typeof ScrollView>, \'scrollTo\'> | null>(null);\n  function selectInspector(next: AnalysisInspector) {\n    setInspector(next); setChooserOpen(false); setTab(\'Analysis\');\n    scroll.current?.scrollTo({ y: 0, animated: false });\n  }\n  const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;\n  const [busy, setBusy] = useState(false);\n  const [notice, setNotice] = useState<string | null>(null);\n  const lock = useRef(false);\n  const session = useRef<DeviceSession | null>(null);\n  const disconnectListener = useRef<(() => void) | null>(null);\n  const [identity, setIdentity] = useState(\'No active APEX session\');\n  const [source, setSource] = useState(\'No active session\');\n  const [caps, setCaps] = useState<string[]>([]);\n  const [events, setEvents] = useState<string[]>([\'Ready. Select a simulator or an attached USB accessory.\']);\n  const [devices, setDevices] = useState<UsbDevice[]>([]);\n  const [nativeStatus, setNativeStatus] = useState<NativeStatus | null>(null);\n  const [nfcActive, setNfcActive] = useState(false);\n  const captureReader = useRef<PhoneNdefCapture | null>(null);\n  const captureBusy = useRef(false);\n  const foreground = useRef(AppState.currentState === \'active\');\n  const [captureState, setCaptureState] = useState<PhoneNdefCaptureState>({ phase: \'idle\', message: \'Ready for an explicit one-tag read.\', capture: null });\n  const [selectedPhoneSource, setSelectedPhoneSource] = useState<(PhoneNdefCaptureDocument & { id: number }) | null>(null);\n  const [tag, setTag] = useState<NfcObservation | null>(null);\n  const [bleDevices, setBleDevices] = useState<BleCandidate[]>([]);\n  const [scanning, setScanning] = useState(false);\n  const [observing, setObserving] = useState(false);\n  const observationBusy = useRef(false);\n  const observationUncertain = useRef(false);\n  const [observationFenced, setObservationFenced] = useState(false);\n  const serviceDataBusy = useRef(false);\n  const serviceDataUncertain = useRef(false);\n  const [serviceDataObserving, setServiceDataObserving] = useState(false);\n  const [serviceDataFenced, setServiceDataFenced] = useState(false);\n  const [bluetoothResetVersion, setBluetoothResetVersion] = useState(0);\n  const accessoryScanning = useRef(false);\n  const [selectedBleSource, setSelectedBleSource] = useState<{ id: number; document: string } | null>(null);\n  const stopScan = useRef<(() => Promise<void>) | null>(null);\n  const reader = useRef<NfcReader | null>(null);\n  const [records, setRecords] = useState<EvidenceRecord[]>([]);\n  const recording = useRef(new RecordingWorkbench()).current;\n  const [, recordingRender] = useState(0);\n  const recordingChanged = () => recordingRender(value => value + 1);\n  const { format, input, fixture, analysis } = recording;\n  const [search, setSearch] = useState(\'\');\n  const append = (message: string) => setEvents(previous => [...previous.slice(-19), message]);\n  const clearSession = () => { setIdentity(\'No active APEX session\'); setSource(\'No active session\'); setCaps([]); };\n  const sessionView = sessionControls(session.current);\n\n  useEffect(() => {\n    const load = () => evidenceStore.list().then(setRecords).catch(error => setNotice(String(error)));\n    void load();\n    const nfc = new NfcReader(nfcBackend, {\n      onState: state => setNfcActive(state !== \'idle\'),\n      onError: error => setNotice(error.message),\n      onTag: observation => {\n        setTag(observation);\n        if (observation.platform === \'web\') return;\n        void evidenceStore.save({ kind: \'nfc.metadata\', source: observation.platform === \'ios\' ? \'native-ios\' : \'native-android\', payload: observation, observedAt: observation.observedAt })\n          .then(load).catch(error => setNotice(`NFC observed; saving failed: ${String(error)}`));\n      },\n    });\n    reader.current = nfc;\n    let mounted = true;\n    const capture = new PhoneNdefCapture(nfcBackend, state => { captureBusy.current = state.phase !== \'idle\'; if (mounted) setCaptureState(state); });\n    captureReader.current = capture;\n    const lifecycle = AppState.addEventListener(\'change\', state => {\n      foreground.current = updatePhoneNdefLifecycle(state, capture);\n      // iOS permission sheets can be temporarily inactive without backgrounding.\n      if (state === \'background\') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }\n    });\n    return () => {\n      mounted = false; void capture.cancel();\n      lifecycle.remove(); disconnectListener.current?.();\n      void session.current?.close().catch(() => {});\n      void nfc.stop().catch(() => {}); void shutdownBluetooth().catch(() => {});\n    };\n  }, []);\n\n  async function run(action: () => Promise<void>, recovery = false) {\n    if (lock.current) return;\n    if (captureBusy.current) { setNotice(\'Stop the phone NDEF read and wait for native release first.\'); return; }\n    if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice(\'Wait for service-data observation to settle; use Android Reset if native state is uncertain.\'); return; }\n    if (observationBusy.current || (!recovery && observationUncertain.current)) { setNotice(\'Wait for advertised-UUID observation to settle; use Android Reset if controller reuse is uncertain.\'); return; }\n    lock.current = true; setBusy(true); setNotice(null);\n    try { await action(); }\n    catch (error) {\n      const message = error instanceof Error ? error.message : String(error);\n      setNotice(message); append(`Error: ${message}`);\n    }\n    finally { lock.current = false; setBusy(false); }\n  }\n  const runForeground = (action: () => Promise<void>) => runForegroundDeviceAction(action, run,\n    () => foreground.current && AppState.currentState === \'active\');\n  async function connect(transport: ByteTr'... 27319 more characters,
+    expected: /<FlipperWorkbench active=\{tab === 'Analysis'\} \/>/,
+    operator: 'match',
+    diff: 'simple'
+  }

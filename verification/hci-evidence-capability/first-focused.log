@@ -1,0 +1,29 @@
+✔ selected bundle retains exact stored text/order, mixed source payloads and old digest parity (16.403114ms)
+✔ tampering, order changes, duplicate keys/IDs, unknown fields and source conflicts fail closed (5.800058ms)
+✔ bounds, canonical time and digest failures reject without partial values (41.825287ms)
+✔ export snapshots the entire selection before the first awaited hash (2.546263ms)
+✔ CLI only reads bounded regular UTF-8 files and emits nothing on any invalid input (1531.735205ms)
+✔ normalized phone NDEF and BLE source records retain exact source/platform rules (7.775088ms)
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (8.285198ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (1.489677ms)
+✔ failed inserts retain existing evidence and never report a successful save (1.254082ms)
+✔ evidence rejects duplicate decoded envelope and payload keys before digest verification (1.50702ms)
+✔ evidence bounded envelope parsing preserves the existing maximum canonical depth (1.41671ms)
+✔ evidence accepts inert duplicate-looking JSON text without interpreting it as envelope structure (0.955318ms)
+✔ nonfirst event exact binary span, unrelated marker exclusion, source vs derivative and coordinate oracles (10.082467ms)
+✔ 55 and 298 byte exact boundaries and maximum document label (2.751393ms)
+✔ forged spread proxy and invalid selections fail before hashing (1.07257ms)
+✔ caller and malicious hash copy mutation, async hash rejection and bad digest never publish (2.584199ms)
+✔ strict bounded exact schema, escaped duplicate names and shape/range confusion before hashing (7.590306ms)
+✔ plausible claimed original references remain explicitly unverified, not substituted (0.597712ms)
+✔ all accepted report enums/RSSI/AD lengths and opaque malformed unknown encrypted/inert AD parity (42.400455ms)
+✔ whole event rejected for malformed wrappers, framing, reports or late invalid data on create and reopen (2.090128ms)
+✔ exact JSON budget, escaped text retained, runtime input types, and multiple embedded records refused (0.60806ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1785.097065

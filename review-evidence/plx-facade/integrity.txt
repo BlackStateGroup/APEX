@@ -1,0 +1,5 @@
+All 31 candidate artifact manifest entries match exact candidate Git bytes.
+All 24 installed PLX source/native/metadata pins match, before and after executable test verification.
+All 20 candidate traces report exactly one clean owned subprocess exit.
+Node: v24.22.1
+Compiler: gcc (Debian 14.2.0-19) 14.2.0

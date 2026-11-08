@@ -33,7 +33,9 @@
       "limitation": "Reading or identifying a credential is distinct from authenticating it.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R01-flipperdevices--flipperzero-firmware"
     },
     {
       "id": "R02",
@@ -71,7 +73,9 @@
       "limitation": "Pinned technical notes report no RFID/NFC in the published build and partial external peripheral support.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on"
     },
     {
       "id": "R03",
@@ -109,7 +113,9 @@
       "limitation": "Third-party attribution identifies additional copyleft and proprietary-material concerns; no code or keystores imported.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R03-BruceDevices--firmware"
     },
     {
       "id": "R04",
@@ -141,7 +147,9 @@
       "limitation": "Requires its own RF front end and matched host/firmware versions.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R04-RfidResearchGroup--proxmark3"
     },
     {
       "id": "R05",
@@ -173,7 +181,9 @@
       "limitation": "Supported tag families, device revision and authorisation constrain any operation.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R05-RfidResearchGroup--ChameleonUltra"
     },
     {
       "id": "R06",
@@ -212,7 +222,9 @@
       "limitation": "HackRF One is half duplex; wide frequency coverage does not supply a protocol decoder.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R06-greatscottgadgets--hackrf"
     },
     {
       "id": "R07",
@@ -244,7 +256,9 @@
       "limitation": "LoRa mesh is a separate radio system, not a CC1101 firmware mode.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R07-meshtastic--firmware"
     },
     {
       "id": "R08",
@@ -276,7 +290,9 @@
       "limitation": "A driver only works with compatible attached hardware, matching networks and antennas.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R08-jgromes--RadioLib"
     },
     {
       "id": "R09",
@@ -308,7 +324,9 @@
       "limitation": "Arduino-oriented dependency requires a porting and distribution decision for ESP-IDF.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R09-crankyoldgit--IRremoteESP8266"
     },
     {
       "id": "R10",
@@ -340,7 +358,9 @@
       "limitation": "The initial S3 target uses the fixed USB Serial/JTAG peripheral, not this stack.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R10-hathach--tinyusb"
     },
     {
       "id": "R11",
@@ -372,7 +392,9 @@
       "limitation": "Research snapshots track master; hardware build uses v6.1 and remains unflashed.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R11-espressif--esp-idf"
     },
     {
       "id": "R12",
@@ -404,7 +426,9 @@
       "limitation": "Board support does not prove timing or RF performance for APEX.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R12-zephyrproject-rtos--zephyr"
     },
     {
       "id": "R13",
@@ -436,7 +460,9 @@
       "limitation": "Not bundled now; initial native code does not claim CP210x, FTDI or CH34x support.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R13-mik3y--usb-serial-for-android"
     },
     {
       "id": "R14",
@@ -468,7 +494,9 @@
       "limitation": "Expo Go cannot contain the custom APEX native module; use a development build.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R14-expo--expo"
     },
     {
       "id": "R15",
@@ -500,7 +528,15 @@
       "limitation": "Does not provide Bluetooth Classic or arbitrary radio sniffing; not bundled now.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R15-dotintent--react-native-ble-plx",
+      "runtimeDependency": {
+        "package": "react-native-ble-plx",
+        "version": "3.5.1",
+        "licence": "Apache-2.0",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      }
     },
     {
       "id": "R16",
@@ -532,7 +568,15 @@
       "limitation": "Requires NFC hardware and a native build; support varies by tag and handset.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R16-revtel--react-native-nfc-manager",
+      "runtimeDependency": {
+        "package": "react-native-nfc-manager",
+        "version": "4.2.0",
+        "licence": "MIT",
+        "integration": "Called through native APIs; npm release pin differs from reference checkout; no reference checkout files copied into application source."
+      }
     },
     {
       "id": "R17",
@@ -564,7 +608,9 @@
       "limitation": "Supported decoders are finite; the project name does not mean only one frequency.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R17-merbanan--rtl_433"
     },
     {
       "id": "R18",
@@ -596,7 +642,9 @@
       "limitation": "Do not route high-rate IQ samples through the React Native JavaScript bridge.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R18-gnuradio--gnuradio"
     },
     {
       "id": "R19",
@@ -628,7 +676,9 @@
       "limitation": "Hardware driver plug-ins retain their own licences and compatibility constraints.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R19-pothosware--SoapySDR"
     },
     {
       "id": "R20",
@@ -660,7 +710,9 @@
       "limitation": "Not an Android NFC-controller replacement; dependency/backend compatibility varies.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R20-nfc-tools--libnfc"
     },
     {
       "id": "R21",
@@ -698,7 +750,9 @@
       "limitation": "Access to CAN frames does not establish ECU signal meaning, security access or vehicle control.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R21-linux-can--can-utils"
     },
     {
       "id": "R22",
@@ -730,7 +784,9 @@
       "limitation": "No vehicle writes, diagnostics unlock or immobiliser functionality is integrated.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R22-hardbyte--python-can"
     },
     {
       "id": "R23",
@@ -762,7 +818,9 @@
       "limitation": "Device register maps remain vendor-specific; no industrial network discovery implemented.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R23-pymodbus-dev--pymodbus"
     },
     {
       "id": "R24",
@@ -800,7 +858,9 @@
       "limitation": "An open protocol does not imply open building-controller access.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R24-bacnet-stack--bacnet-stack"
     },
     {
       "id": "R25",
@@ -832,7 +892,9 @@
       "limitation": "Secure-channel commissioning and device-specific keys remain necessary.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R25-osdp-dev--libosdp"
     },
     {
       "id": "R26",
@@ -864,7 +926,9 @@
       "limitation": "A recording schema is not a licence for the recorded content.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R26-sigmf--SigMF"
     },
     {
       "id": "R27",
@@ -896,7 +960,9 @@
       "limitation": "Inference produces hypotheses; it cannot certify authentication success or invent secret keys.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R27-jopohl--urh"
     },
     {
       "id": "R28",
@@ -934,7 +1000,9 @@
       "limitation": "Android file-descriptor handling and permissions still need explicit integration.",
       "upstreamEvidence": "source-inspected",
       "apexHardwareEvidence": "not-tested",
-      "sourceCopied": false
+      "sourceCopied": true,
+      "applicationCodeIntegrated": false,
+      "referenceSourcePath": "research/upstream-sources/R28-libusb--libusb"
     }
   ]
 }

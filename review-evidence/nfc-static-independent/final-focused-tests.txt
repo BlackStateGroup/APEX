@@ -1,0 +1,47 @@
+✔ NDEF exact whitespace and case survive SQLite close/reopen with fresh interpretation (10.527761ms)
+✔ source conflicts, native claims and extra decoded claims fail save/read/replay (4.005372ms)
+✔ recorded provenance remains only a caller claim and URI remains inert (1.799789ms)
+✔ malformed, opaque and unsupported bytes retain all original records/tails through journal replay (5.071122ms)
+✔ tampering with exact whitespace or bytes breaks digest (1.767639ms)
+✔ 4096 character journal cap retains all or rejects all without widening old limits (1.37504ms)
+✔ old canonical digest and schema are unchanged (1.439396ms)
+✔ known synthetic fixtures yield readable values without reception or identity claims (4.024329ms)
+✔ UTF-8 preserves scalars, BOM, controls and text as inert content (0.816703ms)
+✔ Text status and language lengths are validated without guessing language validity (0.302467ms)
+✔ UTF-16 handles both BOMs, BE default, surrogate pairs and malformed units (0.641656ms)
+✔ all assigned URI prefixes map exactly and unknown prefixes remain opaque (0.767694ms)
+✔ long payload length, ID field, exact record and field offsets (0.37079ms)
+✔ opaque types and nested payloads are never recursively interpreted (0.282035ms)
+✔ MB/ME/CF/SR/IL/TNF constraints and limits fail closed while retaining bytes (1.019447ms)
+✔ every truncation boundary of short/long/IL messages is rejected with all bytes retained (0.446314ms)
+✔ import preserves exact source, distinguishes claimed origins, rejects fabricated verification/native dictionaries (1.595775ms)
+✔ deterministic fuzz is total, bounded, and preserves record spans and undecoded tail (313.308141ms)
+✔ ambiguous duplicate keys including escaped aliases cannot change origin claims (0.536074ms)
+✔ inclusive byte and record boundaries and structured payload fuzz (39.157278ms)
+✔ independent: every tag at every static-area position has a fixed no-resynchronization outcome (315.615216ms)
+✔ independent: all length octets at all available positions obey subtraction bounds (370.018817ms)
+✔ independent: each CC octet exhaustively checked against literal accepted values, no physical identity inference (7.900533ms)
+✔ independent: literal NDEF slice, absolute offsets, source digest, inert URI and private opaque bytes (0.9867ms)
+✔ independent: missing, empty, ambiguous, exact exhaustion and terminator are distinct (0.259551ms)
+✔ independent: a valid early NDEF never escapes later malformed/unsupported region (0.381424ms)
+✔ independent: whole NDEF value, malformed/chunked/unknown semantics remain separate from TLV (0.412311ms)
+✔ independent: exact sizes, explicit own context, buffer brands and hasher result shape fail closed (2.309069ms)
+✔ independent: intrinsic source copy precedes context traps and async adapter mutation (0.59653ms)
+✔ independent: real CLI generic atomic errors, strict options, final symlink refusal and ancestor allowance under Node write denial (1750.858563ms)
+✔ independent: NDEF issue coordinates include exact end boundary and output budget covers maximal NULL metadata (0.68595ms)
+✔ exact source SHA256, literal offsets and whole NDEF value parity (4.302478ms)
+✔ explicit mode lengths and exact CC accepted set, no access inference (10.494661ms)
+✔ all 256 tags and length bytes, no search recovery (19.120035ms)
+✔ literal edge offsets, NULL exhaustion, terminator and opaque trailing (0.642564ms)
+✔ late malformed/unsupported suppress NDEF; missing, multiple, empty, decoder failure separate (0.677293ms)
+✔ snapshot before context, independent hash copy, frozen results and private source (1.174839ms)
+✔ actual fixed nonshared Uint8Array and strict own context (0.856411ms)
+✔ CLI strict args, bounded regular-file reads, symlinks, generic atomic errors, read-only permission (263.54377ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2601.78311

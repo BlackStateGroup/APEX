@@ -1,0 +1,11 @@
+Followup review hardening (2026-11-08 UTC), following 24513a8
+Original logs preserved. Pure API mutation and accessor-action review findings addressed.
+
+PASS node --test tests/flipper-workbench.test.ts (8/8)
+PASS npm run typecheck
+PASS git diff --check
+Logs: hardening-focused.log, hardening-typecheck.log (local ignored logs).
+Same offline environment as results.txt.
+
+No full suite/export rerun for this followup, per parent instruction while v17 is completing.
+No browser/phone/device checks. Independent review pending.

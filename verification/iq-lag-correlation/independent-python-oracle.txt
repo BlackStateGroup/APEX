@@ -1,0 +1,7 @@
+{
+  "cases": 13,
+  "exactLagRows": 511,
+  "allSignedInt16ValuesInComparedSamples": true,
+  "complexOrientationEnergyRationalCauchyGeometryTimesHashes": "PASS",
+  "fixtureOnly": true
+}

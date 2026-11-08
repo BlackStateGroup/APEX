@@ -1,0 +1,25 @@
+✔ closed command grammar and default-off (1.961031ms)
+✔ separate default-off and explicit-on configs target only derivative, preserve hashes (66.028029ms)
+✔ existing output and symlink aliases refused without commands (5.38386ms)
+✔ provenance mismatch leaves honest report with build unrun (16.265611ms)
+✔ failed configure, effective mismatch, partial compile preserve evidence (54.678392ms)
+✔ bounded synthetic subprocess success, failure, spawn failure and timeout cleanup (337.024449ms)
+✔ raw byte budget bounds multibyte output and reports exact retained prefix (150.260874ms)
+✔ UTF-8 split across subprocess writes is decoded once without replacement (113.443032ms)
+✔ exact multibyte byte limit succeeds; malformed output preserves canonical bytes (310.280302ms)
+✔ real process orchestration: independent off/on executable fixtures (1661.239757ms)
+✔ real orchestration rejects effective mismatch, missing artifact, partial build and changed final config (4654.626583ms)
+✔ previous outputs and SDK symlink cannot be overwritten (3.396939ms)
+✔ runner timeout, output overflow and signal cancellation retain failed status (422.484422ms)
+✔ ambient config/provenance overrides and arbitrary secrets are not inherited or recorded (836.698868ms)
+✔ independent raw-byte limit rejects multibyte output on each stream (283.161453ms)
+✔ independent split UTF-8 characters survive subprocess chunk boundaries (515.904363ms)
+✔ aggregate discovery includes these original fixture cases without adding stages (1.804539ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9560.052946

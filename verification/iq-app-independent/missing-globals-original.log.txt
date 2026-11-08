@@ -1,0 +1,22 @@
+✖ independent synthetic staging needs no TextEncoder and preserves exact ASCII bytes/hash (2.180974ms)
+✔ independent missing decoder or WebCrypto refuses Inspect cleanly and permits later explicit retry (17.235757ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.918372
+
+✖ failing tests:
+
+test at tests/iq-app-runtime-globals-independent.test.ts:9:1
+✖ independent synthetic staging needs no TextEncoder and preserves exact ASCII bytes/hash (2.180974ms)
+  TypeError [Error]: TextEncoder is not a constructor
+      at IqController.example (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:78:20)
+      at file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-runtime-globals-independent.test.ts:9:349
+      at without (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-runtime-globals-independent.test.ts:8:240)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-runtime-globals-independent.test.ts:9:315)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

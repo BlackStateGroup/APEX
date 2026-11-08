@@ -1,0 +1,93 @@
+SYNTHETIC ONLY: no scan, reception verification, evidence save, model call or export.
+{
+  "platform": "android",
+  "representation": "android-ad-bytes",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "SDK-shaped synthetic BTHome battery fixture; no reception",
+    "capturedAt": null
+  },
+  "captureCompleteness": "unknown",
+  "physicalReceptionVerified": false,
+  "authenticatedIdentity": false,
+  "serviceReadings": [
+    {
+      "uuid": "0000fcd2-0000-1000-8000-00805f9b34fb",
+      "reading": {
+        "format": "BTHome-v2",
+        "status": "format-match",
+        "parseStatus": "complete",
+        "payloadHex": "400164",
+        "deviceInfo": 64,
+        "triggerBased": false,
+        "objects": [
+          {
+            "offset": 1,
+            "objectId": 1,
+            "occurrence": 1,
+            "property": "battery",
+            "unit": "%",
+            "rawHex": "0164",
+            "rawInteger": 100,
+            "scaleDivisor": 1,
+            "value": 100
+          }
+        ],
+        "issues": [],
+        "unparsedHex": "",
+        "reason": null,
+        "authenticated": false,
+        "sensorTruthVerified": false
+      }
+    }
+  ],
+  "preparedEvidenceSource": "offline-fixture",
+  "retentionWarning": "The offline document is a projection. Saving it does not retain the BLE PLX snapshot, original base64, identifier, extra UUID lists, or null-versus-empty source distinctions.",
+  "note": "iOS rawScanRecord is opaque synthetic JSON base64, not AD bytes; selected snapshot is not saved by this demo."
+}
+{
+  "platform": "ios",
+  "representation": "ios-normalized-fields-with-opaque-json-base64",
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "SDK-shaped synthetic BTHome battery fixture; no reception",
+    "capturedAt": null
+  },
+  "captureCompleteness": "not-exposed",
+  "physicalReceptionVerified": false,
+  "authenticatedIdentity": false,
+  "serviceReadings": [
+    {
+      "uuid": "0000fcd2-0000-1000-8000-00805f9b34fb",
+      "reading": {
+        "format": "BTHome-v2",
+        "status": "format-match",
+        "parseStatus": "complete",
+        "payloadHex": "400164",
+        "deviceInfo": 64,
+        "triggerBased": false,
+        "objects": [
+          {
+            "offset": 1,
+            "objectId": 1,
+            "occurrence": 1,
+            "property": "battery",
+            "unit": "%",
+            "rawHex": "0164",
+            "rawInteger": 100,
+            "scaleDivisor": 1,
+            "value": 100
+          }
+        ],
+        "issues": [],
+        "unparsedHex": "",
+        "reason": null,
+        "authenticated": false,
+        "sensorTruthVerified": false
+      }
+    }
+  ],
+  "preparedEvidenceSource": "offline-fixture",
+  "retentionWarning": "The offline document is a projection. Saving it does not retain the BLE PLX snapshot, original base64, identifier, extra UUID lists, or null-versus-empty source distinctions.",
+  "note": "iOS rawScanRecord is opaque synthetic JSON base64, not AD bytes; selected snapshot is not saved by this demo."
+}

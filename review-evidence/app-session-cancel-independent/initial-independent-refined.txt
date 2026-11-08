@@ -1,0 +1,32 @@
+(node:13) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ independent: cancellation accepted in successful-open finalization must drain cleanup before releasing run (7.981602ms)
+✔ independent: reentrant cancellation before previous close dispatch cannot acquire a replacement (3.941106ms)
+✔ independent: browser-backed simulator never publishes native cancellation handle (1.725097ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.637733
+
+✖ failing tests:
+
+test at tests/app-session-cancel-independent.test.ts:21:1
+✖ independent: cancellation accepted in successful-open finalization must drain cleanup before releasing run (7.981602ms)
+  AssertionError [ERR_ASSERTION]: run must retain lock across cancellation cleanup
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-cancel-independent-review/tests/app-session-cancel-independent.test.ts:25:108)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

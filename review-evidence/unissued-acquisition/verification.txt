@@ -1,0 +1,7 @@
+Baseline: d08c01d70a32d58e69f65dad56e1373392ccef87
+Runtime candidate: 96cc5edd2d576d17cab2d365ccea77edee2baede
+PASS: 1959 baseline historical evidence/firmware/modules/lock/App/session/original manifest files byte-exact.
+PASS: tests/browser-c-host/current-inputs.sha256.json
+PASS: review-evidence/unissued-acquisition/current-source.sha256.json
+Command: node --test tests/ble-unissued-*.test.ts tests/native-acquisition-independent.test.ts tests/ble-transport-release.test.ts tests/app-plx-cancellation.test.ts tests/plx-unissued-acquisition.test.ts tests/native-c-roundtrip.test.ts tests/ble-native-observation.test.ts tests/ble-native-service-data.test.ts tests/plx-facade-c.test.ts tests/app-plx-independent.test.ts tests/app-native-acquisition.test.ts tests/app-native-lifecycle-independent.test.ts tests/app-session-cancel-independent.test.ts
+Result: 236 passed, 0 failed. npm run typecheck passed. No native/SDK/device/radio/firmware build or browser execution.

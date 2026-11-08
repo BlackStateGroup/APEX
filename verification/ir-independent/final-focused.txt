@@ -1,0 +1,34 @@
+✔ independent node crypto oracle: exact-byte ceiling, offset views, comments, CRLF and lexical spellings (104.002725ms)
+✔ independent total timing ceiling stays atomic and whole-array recognition stays conditional (37.895204ms)
+✔ independent rejected ASCII controls accepted into draft but never hashed; synchronous throws recover (1.360562ms)
+✔ independent actual TSX states limit identity to accepted draft, not original clipboard/file bytes (15.944999ms)
+✔ independent actual TSX 128-record final page and escaped exact field spellings (13.562668ms)
+✔ manual fixture, exact bytes/hash, line ranges, adjacent duplicate names and CRLF comments (12.435248ms)
+✔ intrinsic byte snapshot and context snapshot survive async mutation (2.292902ms)
+✔ strict syntax rejects duplicates, missing/unknown fields and unsafe cross-record recovery (2.148638ms)
+✔ bounded actual bytes, lines, names, record and timing counts (82.292655ms)
+✔ raw numerical limits and finite strict fractions (10.919055ms)
+✔ raw recognition is whole standard NEC only; fields are not airframes (7.256841ms)
+✔ CLI executes with filesystem writes denied and stdout atomic; regular-file bounds (782.005768ms)
+✔ actual TSX initial/inactive render: exact limits, no automatic result or external actions (14.49344ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (19.963784ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (9.610527ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (23.396243ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (9.184269ms)
+✔ string adapter parity, exact CRLF bytes, immutable argument, input/context async mutation (11.482395ms)
+✔ adapter malformed results/rejections never produce a report or alter strict parsing (3.346703ms)
+✔ state and nested report are frozen and inaccessible to alias corruption; declaration is explicit (4.439694ms)
+✔ whole edit bounds preserve exact source; rejected edit remains blocked across declarations/tabs (69.351587ms)
+✔ success and error completions are fenced by edits, rejected edits, declarations, clear, example and tab transitions (3.12ms)
+✔ new inspection survives old success/error and duplicate pending inspection is ignored (1.600029ms)
+✔ queued callbacks from prior activation cannot edit, clear, declare, load, page or inspect after reentry (0.774698ms)
+✔ bounded four-record pages; original long names/duty survive display excerpts and numeric summaries (7.597031ms)
+✔ malformed and unsupported sources rejected whole without partial records (6.872479ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1099.319609

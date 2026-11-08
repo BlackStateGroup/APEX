@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "inputKind": "nfc-manager-normalized-records",
+  "source": {
+    "sdk": "react-native-nfc-manager",
+    "version": "4.2.0",
+    "platform": "ios"
+  },
+  "provenance": {
+    "origin": "synthetic-fixture",
+    "label": "Manually constructed ios record fields; not captured"
+  },
+  "snapshot": {
+    "ndefMessage": [
+      {
+        "tnf": 1,
+        "type": [
+          84
+        ],
+        "id": [
+          171,
+          0
+        ],
+        "payload": [
+          2,
+          101,
+          110,
+          72,
+          105
+        ]
+      },
+      {
+        "tnf": 1,
+        "type": [
+          85
+        ],
+        "id": [],
+        "payload": [
+          4,
+          101,
+          120,
+          97,
+          109,
+          112,
+          108,
+          101,
+          46,
+          99,
+          111,
+          109
+        ]
+      },
+      {
+        "tnf": 2,
+        "type": [
+          97,
+          112,
+          112,
+          108,
+          105,
+          99,
+          97,
+          116,
+          105,
+          111,
+          110,
+          47,
+          111,
+          99,
+          116,
+          101,
+          116,
+          45,
+          115,
+          116,
+          114,
+          101,
+          97,
+          109
+        ],
+        "id": [],
+        "payload": [
+          0,
+          255,
+          128
+        ]
+      }
+    ]
+  }
+}

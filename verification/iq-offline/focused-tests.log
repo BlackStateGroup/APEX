@@ -1,0 +1,24 @@
+✔ synthetic CLI requires two bounded regular files and retains external-file origin (22.049962ms)
+✔ synthetic acceptance hashes, zero spectrum and exact DC statistics (7.970099ms)
+✔ synthetic signed complex tones, periodic Hann neighbors and all FFT sizes (19.676441ms)
+✔ synthetic rails, greater-than-one complex magnitude and endian sentinel (1.193821ms)
+✔ synthetic selected windows, default fallback and explicit rejection (1.483997ms)
+✔ synthetic independent direct DFT: deterministic integers and nonzero impulse (6.578261ms)
+✔ synthetic quantized off-bin and two-tone amplitudes match independent windowed DFT (6.838053ms)
+✔ FFT helper rejects unbounded, nonfinite or inconsistent inputs (0.536105ms)
+✔ analysis rejects forged prepared summaries and scans all samples outside FFT range (0.933318ms)
+✔ synthetic nonzero-location impulse passes independent windowed DFT (2.54111ms)
+✔ synthetic exact view bytes, endianness, snapshots and caller mutation during async hashing (7.185236ms)
+✔ synthetic exact source hashes and optional SHA512 are not authenticity (2.006403ms)
+✔ synthetic malformed JSON bytes, duplicates, aliases, bounds and shapes reject (3.961126ms)
+✔ synthetic unsupported fields, layout, versions, numeric types and ranges reject (2.916263ms)
+✔ synthetic optional extension content stays inert and globally bounded (4.386466ms)
+✔ synthetic context, shared buffers, and broken hash adapters reject (0.915683ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 189.40264

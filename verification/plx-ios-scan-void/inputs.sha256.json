@@ -1,0 +1,15 @@
+{
+  "node_modules/react-native-ble-plx/ios/BlePlx.m": "6ad0e48dd16c6587c279d81d06eb5553c0c9e135df4c653a91c8d8abf9990207",
+  "node_modules/react-native-ble-plx/ios/BlePlx-Swift.h": "74b496c1da9e02dbc38cf40fb04941faa9821340150bf633fcc1e1544ed90107",
+  "node_modules/react-native-ble-plx/react-native-ble-plx.podspec": "453dbd403154f876d8b4fe7736ca87015dfaff0ff92ba0d43e2fb767ee9f6330",
+  "node_modules/react-native-ble-plx/android/src/main/java/com/bleplx/BlePlxModule.java": "42229c43cfc7bd1393c563b025776fa0b1e50d2ad9a035add3d778705b9caf9d",
+  "node_modules/react-native-ble-plx/lib/module/BleManager.js": "4c7f98edd9dc1e148b618fd78a85b7a1cea8164bc45f38128a74dcd88b4acf21",
+  "node_modules/react-native-ble-plx/lib/module/BleModule.js": "05303265af8930f44711fb1bc1560ecb85d813ea29a78a4fd344aa74d1bba95c",
+  "node_modules/react-native-ble-plx/src/index.d.ts": "3172028910162fe6ccb4484449ae02bc6c8d9310d5ab795ef0542bb948b70bc0",
+  "node_modules/react-native/React/Base/RCTModuleMethod.mm": "9fb5e758204f8f415da5d351ed5505c46c3970dcd08e1b88e63e05b14dce6e10",
+  "node_modules/react-native/Libraries/BatchedBridge/NativeModules.js": "a9f1902c21dcb5b106ec17034c3ad6c0e37df9632973c5d282ad01566ce365ee",
+  "src/platform/bluetooth.native.ts": "a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578",
+  "packages/core/ble-scan-session.ts": "7b7d33ff1860ba43c49da30d029aa856cfe7c15b17aaaebcf69b1e5fd6c9f1fd",
+  "src/foreground-ble-workbench.ts": "ae683fd18dd613dcd315201cee643c660da3e8a38105b84ca1368fcd2f508f33",
+  "src/ForegroundBleWorkbench.tsx": "1f5fd4ebddb4495f0cfd4e02ecf01247d5779f4a6d33641bc0fe78fa972329aa"
+}

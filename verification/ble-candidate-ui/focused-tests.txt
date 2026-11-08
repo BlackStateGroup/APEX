@@ -1,0 +1,23 @@
+✔ explicit check retains exact document and full report; repeated analysis is deterministic (12.980929ms)
+✔ every edit invalidates results; oversize is refused whole including after a report (4.31463ms)
+✔ invalid, duplicate and ineligible documents fail closed without stale report (2.468486ms)
+✔ source-separated bounded pagination preserves all rows and rejects invalid navigation (2.262639ms)
+✔ exact fractions stay primary, incomplete never becomes zero; unselected rows excluded (3.696344ms)
+✔ integration stays mounted and imported content cannot trigger actions or persistence (0.488356ms)
+✔ golden synthetic fixture retains exact inputs and independently matches 2000/100 and 1844/100 (16.530061ms)
+✔ all integer widths, byte orders and signed extrema use exact independent golden integers (32.98905ms)
+✔ rational residuals, decimal negatives and inclusive tolerance never use floating comparison (9.333359ms)
+✔ designated held-out changes do not affect discovery, sources remain separate, unselected explicit (4.963604ms)
+✔ missing candidate bytes are incomplete while malformed format truncation rejects (8.498959ms)
+✔ eligibility rejects encrypted, unknown, partial, identity and unsupported public formats (18.772097ms)
+✔ strict schema, declarations, decimals, candidate and assignment bounds reject (21.201351ms)
+✔ 32 selected trials and explicit source omission remain bounded and transparent (6.323035ms)
+✔ CLI bounded regular file, symlink, malformed, UTF-8, byte-limit and FIFO paths (1036.170808ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1357.624946

@@ -1,0 +1,5 @@
+2c5729bdf62f9c49dd4d8b3bd5e035bce76e485cc068c4d4f9b3567a8dcf9fda  tests/helpers/nfc-js-facade.ts
+31716326538676835a96df94dfe8ff8a1fd832f0f8a7eb6f04499d339511b2eb  tests/nfc-js-facade-review.test.ts
+2052861cfd43093e0c422d2a8d50988708ef5c2937a291ebb3a9a61bb10d762d  tests/nfc-js-facade.test.ts
+16166a858a6318e4e49e1c17a3ad9b5b6648655a1904ca45c1c43ec0338b9157  verification/nfc-js-facade/inputs.json
+16c4e6f3e7dc21f93cdf6dbb8fb51ef1fbf6b8e6195bf815009f9618e062aee0  docs/NFC_JS_FACADE_INDEPENDENT_REVIEW.md

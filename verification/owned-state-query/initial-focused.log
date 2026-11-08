@@ -1,0 +1,729 @@
+✔ native wrappers use one lease, preserve AXP filter and connect/write behavior, never connect for observations (22.913131ms)
+✔ native permission cancellation never starts later and invalid/oversize source fails without invented bytes (2.181778ms)
+✔ foreground validation and single AXP error callback (1.968888ms)
+✖ first iOS permission sheet inactive/active preserves preparation, while real background cancels (3.082666ms)
+✖ poisoned manager blocks connect, both scans and existing writes until successful destruction (1.636366ms)
+✖ connection setup lease spans pending connect and discovery and forbids reset or overlapping work (2.071815ms)
+✖ failed connect or discovery releases the setup lease without allowing stale work (1.436388ms)
+✖ all connection handles retain ownership and lifecycle listeners survive notification unsubscribe (0.77788ms)
+✖ native close delivers once and removes notification subscriptions independently of the caller (0.304431ms)
+✖ identical close callbacks retain independent notification subscription lifetimes (0.373043ms)
+✖ Android reconnect waits for both cancellation settlement and terminal event consumption (0.420243ms)
+✖ iOS successful connection uses consumed single-terminal monitor and settled-cancel fence (0.277424ms)
+✖ failed startup cancellation retains unknown ownership until native close or destruction (3.994836ms)
+✖ characteristic failure cancels, optional MTU rejection preserves normal writes (0.675556ms)
+✖ failed explicit disconnect is unknown, retryable, and a late native close releases ownership (0.241832ms)
+✖ native close during cancellation cannot release the in-flight operation; repeated disconnect coalesces (0.362543ms)
+✖ native close before subscribe is remembered and stale callbacks cannot release a new epoch (0.240788ms)
+✖ disconnect during pending connect or synchronous registration requires settled startup cleanup (2.140848ms)
+(node:12) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 13)
+ℹ Error: Test "failed connect or discovery releases the setup lease without allowing stale work" at tests/ble-native-observation.test.ts:136:1 generated asynchronous activity after the test ended. This activity created the error "Error: setup failed" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "failed startup cancellation retains unknown ownership until native close or destruction" at tests/ble-native-observation.test.ts:211:1 generated asynchronous activity after the test ended. This activity created the error "Error: startup rejected" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+✔ reservation is synchronous, broad duplicates only for explicit mode, matching then destruction (23.232338ms)
+✔ busy ordinary scan, owned connection and unknown cancellation reject exclusive mode (3.363087ms)
+✔ permission cancellation reserves until delayed permission settles and never starts (1.789398ms)
+✔ immediate stop before deferred acquisition releases reservation without permissions (2.095142ms)
+✔ denied permission certifies no acquisition and background/inactive rules (1.760493ms)
+✔ synchronous callbacks exhaust callback budget and still stop/destroy once (2.136671ms)
+✔ pending start blocks shutdown and destruction until final start settlement (1.709457ms)
+✔ failed stop still destroys but reports nonreusable; failed destroy requires explicit recovery (2.622444ms)
+✔ hung stop timeout never releases; late settlement safely finishes destruction (6020.716658ms)
+✔ hung destruction timeout holds singleton; late success releases without rewriting result (2018.312938ms)
+✔ closed connection with unsettled write still fences broad acquisition and destruction (5.270327ms)
+✔ readiness failure destroys Android manager; iOS rejects before preparation (0.983891ms)
+✔ late start settlement after timeout only cleans old owner, never starts replacement (2003.044606ms)
+✔ hung permission keeps quarantine past done until late no-effect cleanup (2001.889ms)
+✔ start rejection after native entry still stops and destroys (0.636016ms)
+✔ constructor throw cannot masquerade as no native ownership (7.23761ms)
+✔ iOS void destruction never certifies teardown or permits manager reuse; empty shutdown is safe (0.41461ms)
+✔ normal Android 30 permission denial releases only after settlement (32.674295ms)
+✔ normal Android 30 permission grant after cancel releases only after settlement (5.811055ms)
+✔ normal Android 30 permission denial after cancel releases only after settlement (6.288134ms)
+✔ normal Android 34 permission denial releases only after settlement (5.520778ms)
+✔ normal Android 34 permission grant after cancel releases only after settlement (5.262725ms)
+✔ normal Android 34 permission denial after cancel releases only after settlement (5.041495ms)
+✔ initial cancellation proves only the exact unique invocation and is one-shot (4.43376ms)
+✔ native id query retires token without certifying (4.362207ms)
+✔ native error query retires token without certifying (4.357698ms)
+✔ native receiver query retires token without certifying (4.335619ms)
+✔ native premature query retires token without certifying (4.290562ms)
+✔ copied token and fabricated error properties cannot claim native provenance (4.132107ms)
+✔ reusing token before-consumption invalidates both invocations (5.854049ms)
+✔ reusing token after-consumption invalidates both invocations (10.908562ms)
+✔ reusing token concurrent invalidates both invocations (6.436517ms)
+✔ unexpected permission rejection remains unknown with exact original Error: Bluetooth permission denied (6.982993ms)
+✔ unexpected permission rejection remains unknown with exact original [object Object] (5.219631ms)
+✔ unexpected permission rejection remains unknown with exact original Bluetooth preparation cancelled (5.26134ms)
+✔ unexpected permission rejection remains unknown with exact original null (4.563349ms)
+✔ unexpected permission rejection remains unknown with exact original undefined (4.387225ms)
+✔ same rejection reused by later permission call cannot borrow initial cancellation proof (6.640912ms)
+✔ android readiness cancellation remains unknown and late callbacks inert (17.101896ms)
+✔ ios readiness cancellation remains unknown and late callbacks inert (9.109003ms)
+✔ listenerError remains unknown even with successful native cancellation (6.05471ms)
+✔ connectError remains unknown even with successful native cancellation (4.841371ms)
+✔ managerError remains unknown even with successful native cancellation (5.212182ms)
+✔ busy rejection does not release another preparation reservation (6.28808ms)
+✔ scanner stop failure is not permission proof and preserves poisoned scanner (9.514428ms)
+✔ bounded scanner stop with unresolved raw effect retains global shutdown fence and stays unknown after late settlement (2015.711991ms)
+✔ partial-registration remains unknown without entering connection section (13.444991ms)
+✔ readiness-state remains unknown without entering connection section (6.121153ms)
+✔ duplicate identifier failure after successful manager preparation never certifies (5.085422ms)
+✔ malformed normal-result candidate missing preserves denial without receipt (3.990655ms)
+✔ malformed normal-result candidate partial preserves denial without receipt (3.782434ms)
+✔ malformed normal-result candidate unknown preserves denial without receipt (3.75262ms)
+✔ malformed normal-result candidate inherited preserves denial without receipt (5.869776ms)
+✔ malformed normal-result candidate accessor preserves denial without receipt (4.565845ms)
+✔ malformed normal-result candidate skippedGetter preserves denial without receipt (3.879604ms)
+✔ malformed normal-result candidate array preserves denial without receipt (3.738055ms)
+✔ normal never_ask_again data result certifies denial (3.816785ms)
+✖ readiness event remove rejects original 0 without escape (30.585856ms)
+✔ readiness initial remove rejects original 0 without escape (9.968152ms)
+✔ readiness alternate-contract-sync remove rejects original 0 without escape (11.021127ms)
+✔ alternate-contract-sync registration after success rejects original 0 (7.089645ms)
+✔ installed registration failure preserves original 0 (8.172184ms)
+✖ readiness event remove rejects original 1 without escape (7.152437ms)
+✔ readiness initial remove rejects original 1 without escape (10.067872ms)
+✔ readiness alternate-contract-sync remove rejects original 1 without escape (11.507452ms)
+✔ alternate-contract-sync registration after success rejects original 1 (9.026517ms)
+✔ installed registration failure preserves original 1 (9.047349ms)
+✖ readiness event remove rejects original 2 without escape (7.439243ms)
+✔ readiness initial remove rejects original 2 without escape (8.013001ms)
+✔ readiness alternate-contract-sync remove rejects original 2 without escape (9.695915ms)
+✔ alternate-contract-sync registration after success rejects original 2 (7.409343ms)
+✔ installed registration failure preserves original 2 (8.08045ms)
+✖ readiness event remove rejects original 3 without escape (14.314974ms)
+✔ readiness initial remove rejects original 3 without escape (8.714494ms)
+✔ readiness alternate-contract-sync remove rejects original 3 without escape (8.461273ms)
+✔ alternate-contract-sync registration after success rejects original 3 (7.618886ms)
+✔ installed registration failure preserves original 3 (8.748689ms)
+✖ readiness event remove rejects original 4 without escape (10.228001ms)
+✔ readiness initial remove rejects original 4 without escape (38.667302ms)
+✔ readiness alternate-contract-sync remove rejects original 4 without escape (6.293995ms)
+✔ alternate-contract-sync registration after success rejects original 4 (8.513232ms)
+✔ installed registration failure preserves original 4 (7.122344ms)
+✖ readiness event remove rejects original 5 without escape (7.668232ms)
+✔ readiness initial remove rejects original 5 without escape (7.988798ms)
+✔ readiness alternate-contract-sync remove rejects original 5 without escape (10.599918ms)
+✔ alternate-contract-sync registration after success rejects original 5 (8.36594ms)
+✔ installed registration failure preserves original 5 (7.340013ms)
+✖ readiness event remove rejects original 6 without escape (6.65063ms)
+✔ readiness initial remove rejects original 6 without escape (7.648351ms)
+✔ readiness alternate-contract-sync remove rejects original 6 without escape (6.029349ms)
+✔ alternate-contract-sync registration after success rejects original 6 (7.128962ms)
+✔ installed registration failure preserves original 6 (7.210396ms)
+✔ alternate-contract-sync readiness denial precedes registration error without coercion (11.685718ms)
+✔ independent timer, subscription and abort cleanup preserve deterministic causes (9.54014ms)
+✖ normal PoweredOff cleanup does not latch (7.551181ms)
+✖ normal Unauthorized cleanup does not latch (7.189719ms)
+✖ normal Unsupported cleanup does not latch (7.172804ms)
+✖ normal abort cleanup does not latch (7.133839ms)
+✖ normal timeout cleanup does not latch (9.712383ms)
+✖ normal event success waits for removal and disconnect remains usable (7.410329ms)
+✔ normal initial success waits for removal and disconnect remains usable (8.149648ms)
+✔ normal alternate-contract-sync success waits for removal and disconnect remains usable (8.9579ms)
+✔ readiness failure remains transport acquisitionUnknown, without receipt certification (8.485846ms)
+✔ exclusive failure blocks automatic destruction and explicit shutdown (8.588286ms)
+✔ owned connection can still cancel after another readiness cleanup loses ownership (7.48317ms)
+✖ local-only timer failure rejects without restart latch (10.099465ms)
+✖ local-only abort-listener failure rejects without restart latch (8.040195ms)
+✔ local-only abort-registration failure rejects without restart latch (8.146466ms)
+✔ abort plus SDK remove failure aggregates and fences destruction (12.780708ms)
+✔ timeout plus SDK remove failure aggregates and fences destruction (6.888572ms)
+✖ competing stale preparation fences current owner before-success (7.890061ms)
+✖ competing stale preparation fences current owner before-return (7.12136ms)
+✔ alternate-contract missing cleanup capability 0 state PoweredOn cannot succeed (7.298896ms)
+✔ alternate-contract missing cleanup capability 0 state Unknown cannot succeed (7.215084ms)
+✔ alternate-contract missing cleanup capability 1 state PoweredOn cannot succeed (7.23057ms)
+✔ alternate-contract missing cleanup capability 1 state Unknown cannot succeed (7.180746ms)
+✔ alternate-contract missing cleanup capability 2 state PoweredOn cannot succeed (7.21477ms)
+✔ alternate-contract missing cleanup capability 2 state Unknown cannot succeed (7.029023ms)
+✔ alternate-contract missing cleanup capability 3 state PoweredOn cannot succeed (7.602395ms)
+✔ alternate-contract missing cleanup capability 3 state Unknown cannot succeed (7.838688ms)
+ℹ tests 138
+ℹ suites 0
+ℹ pass 106
+ℹ fail 32
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13358.868676
+
+✖ failing tests:
+
+test at tests/ble-native-observation.test.ts:89:1
+✖ first iOS permission sheet inactive/active preserves preparation, while real background cancels (3.082666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:95:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-native-observation.test.ts:101:1
+✖ poisoned manager blocks connect, both scans and existing writes until successful destruction (1.636366ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:102:43)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:117:1
+✖ connection setup lease spans pending connect and discovery and forbids reset or overlapping work (2.071815ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:121:36)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:136:1
+✖ failed connect or discovery releases the setup lease without allowing stale work (1.436388ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /setup failed/. Input:
+  
+  'Error: Bluetooth state query dispatch unknown; restart the app before retrying'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Bluetooth state query dispatch unknown; restart the app before retrying
+        at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+        at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+        at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+        at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+        at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:140:38)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /setup failed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-native-observation.test.ts:147:1
+✖ all connection handles retain ownership and lifecycle listeners survive notification unsubscribe (0.77788ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:148:40)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:165:1
+✖ native close delivers once and removes notification subscriptions independently of the caller (0.304431ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:166:45)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:176:1
+✖ identical close callbacks retain independent notification subscription lifetimes (0.373043ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:177:45)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:188:1
+✖ Android reconnect waits for both cancellation settlement and terminal event consumption (0.420243ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:189:40)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:199:1
+✖ iOS successful connection uses consumed single-terminal monitor and settled-cancel fence (0.277424ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:201:40)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:211:1
+✖ failed startup cancellation retains unknown ownership until native close or destruction (3.994836ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /cancellation failed/. Input:
+  
+  'Error: Bluetooth state query dispatch unknown; restart the app before retrying'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Bluetooth state query dispatch unknown; restart the app before retrying
+        at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+        at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+        at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+        at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+        at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:219:38)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /cancellation failed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-native-observation.test.ts:232:1
+✖ characteristic failure cancels, optional MTU rejection preserves normal writes (0.675556ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /characteristics rejected/. Input:
+  
+  'Error: Bluetooth state query dispatch unknown; restart the app before retrying'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:234:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Bluetooth state query dispatch unknown; restart the app before retrying
+        at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+        at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+        at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+        at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+        at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:234:41)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /characteristics rejected/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-native-observation.test.ts:241:1
+✖ failed explicit disconnect is unknown, retryable, and a late native close releases ownership (0.241832ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:242:45)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:256:1
+✖ native close during cancellation cannot release the in-flight operation; repeated disconnect coalesces (0.362543ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:257:45)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:268:1
+✖ native close before subscribe is remembered and stale callbacks cannot release a new epoch (0.240788ms)
+  Error: Bluetooth state query dispatch unknown; restart the app before retrying
+      at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+      at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+      at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+      at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+      at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:269:38)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tests/ble-native-observation.test.ts:276:1
+✖ disconnect during pending connect or synchronous registration requires settled startup cleanup (2.140848ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /cancellation failed/. Input:
+  
+  'Error: Bluetooth state query dispatch unknown; restart the app before retrying'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Bluetooth state query dispatch unknown; restart the app before retrying
+        at assertReadinessCleanupKnown (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:36:40)
+        at assertReadinessQuiescent (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:31:3)
+        at assertManagerHealthy (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:92:3)
+        at assertScanAvailable (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:97:3)
+        at Object.connect (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/src/platform/bluetooth.native.ts:390:7)
+        at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/ble-native-observation.test.ts:280:38)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /cancellation failed/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 0 without escape (30.585856ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 1 without escape (7.152437ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 2 without escape (7.439243ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 3 without escape (14.314974ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 4 without escape (10.228001ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 5 without escape (7.668232ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:68:80
+✖ readiness event remove rejects original 6 without escape (6.65063ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at fenced (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:58:10)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:72:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:108:91
+✖ normal PoweredOff cleanup does not latch (7.551181ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'owned' !== 'idle'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:114:55)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'owned',
+    expected: 'idle',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:108:91
+✖ normal Unauthorized cleanup does not latch (7.189719ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'owned' !== 'idle'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:114:55)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'owned',
+    expected: 'idle',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:108:91
+✖ normal Unsupported cleanup does not latch (7.172804ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'owned' !== 'idle'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:114:55)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'owned',
+    expected: 'idle',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:108:91
+✖ normal abort cleanup does not latch (7.133839ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'owned' !== 'idle'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:114:55)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'owned',
+    expected: 'idle',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:108:91
+✖ normal timeout cleanup does not latch (9.712383ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'owned' !== 'idle'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:114:55)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'owned',
+    expected: 'idle',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:120:69
+✖ normal event success waits for removal and disconnect remains usable (7.410329ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'resolved'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:123:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'resolved',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:151:72
+✖ local-only timer failure rejects without restart latch (10.099465ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:160:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:151:72
+✖ local-only abort-listener failure rejects without restart latch (8.040195ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'rejected'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:160:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'rejected',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:177:58
+✖ competing stale preparation fences current owner before-success (7.890061ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:192:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plx-readiness-settlement.test.ts:177:58
+✖ competing stale preparation fences current owner before-return (7.12136ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-owned-state-prototype/tests/plx-readiness-settlement.test.ts:192:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

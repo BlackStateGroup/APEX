@@ -1,0 +1,18 @@
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (8.58105ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (17.445265ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (12.017301ms)
+✔ actual TSX distinguishes malformed AD and opaque service data from transport acceptance (7.353608ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (13.398965ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (2.324241ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.844821ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.153299ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (2.068315ms)
+✔ transport acceptance preserves malformed AD and opaque/invalid/format-match service statuses (3.261391ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 393.174367

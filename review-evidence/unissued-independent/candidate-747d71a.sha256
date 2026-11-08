@@ -1,0 +1,3 @@
+e17189664e9d583c8933c36f4a25674e2b72c9d95bbf4cf80725c58bd8b0e49c  src/platform/bluetooth.native.ts
+7c2cd733755f90f5e025baa96fff6169574b298bc9294760233b9d25fefd80c0  packages/core/ble-transport.ts
+509e3a60a16062a40868759a0fbfc2f50c249dd0a4a116bb3d4e6db8cb90caef  tests/ble-unissued-independent.test.ts

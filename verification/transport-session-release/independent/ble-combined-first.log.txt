@@ -1,0 +1,86 @@
+✔ failed setup retains exact connection for explicit cleanup retry (2.22085ms)
+✔ concurrent disconnects coalesce and rejected cleanup can be retried (6.07737ms)
+✔ invalid MTU retains cleanup handle when native disconnect rejects (0.483374ms)
+✔ close during pending acquisition waits then releases returned exact handle (1.237984ms)
+✔ cancelled acquisition retains returned handle after failed native cleanup (10.967347ms)
+✔ rejected acquisition without handle remains explicitly unknown (0.549563ms)
+✔ disconnect waits late subscription and ignores late READY, data and terminal events (1.82701ms)
+✔ readiness timeout does not release while native subscribe remains pending (40.696267ms)
+✔ write timeout rejects caller promptly but cleanup waits raw native write settlement (30.328514ms)
+✔ terminal event during native write does not certify release or start queued writes (1.420412ms)
+✔ disconnect before connect has no native effects and forbids reuse (0.408413ms)
+✔ throwing unsubscribe retains subscription and native handle for explicit retry (0.518675ms)
+✔ late rejected subscribe still drains before exact handle disconnect (3.477665ms)
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (2.507311ms)
+✔ failed manager shutdown preserves session and UI ownership (0.763466ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.370803ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.275992ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (8.182171ms)
+✔ closed session remains explicitly releasable after capabilities disappear (5.390655ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.48459ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.319364ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (0.226778ms)
+✔ App retention helper keeps a real failed session through failed retry (6.703419ms)
+✔ preconnected transport remains held when listener setup throws and cleanup rejects (2.434471ms)
+✔ close must not confirm release before deferred connect can acquire transport (0.637144ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (0.55802ms)
+✔ explicit close of preconnected new session releases exactly once (1.923731ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (6.201486ms)
+✔ terminal callback synchronously inside close joins the same attempt (0.949282ms)
+✔ early successful disconnect keeps slot pending until late acquisition is released (0.536448ms)
+✔ failed early disconnect is not automatically retried after connect settles (0.96733ms)
+✔ synchronous terminal registration prevents connect and removes late registered listener (3.941553ms)
+✔ throwing unsubscribe does not prevent other removal, pending rejection or transport cleanup (1.428919ms)
+✔ concurrent closes join failed late release (connect-first) (2.667771ms)
+✔ concurrent closes join failed late release (release-first) (0.511745ms)
+✔ preconnected transport remains held when listener setup throws and cleanup rejects (1.368781ms)
+✔ close must not confirm release before deferred connect can acquire transport (0.560567ms)
+✔ sync throwing connect and cleanup retain uncertainty and preserve original error (0.325178ms)
+✔ explicit close of preconnected new session releases exactly once (0.467388ms)
+✖ real BleTransport setup failure does not lose rejected native cleanup (1.674661ms)
+✔ late terminal callback cannot retry successful old release or failed explicit release (2.14802ms)
+✔ terminal callback synchronously inside close joins the same attempt (0.63165ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (18.745729ms)
+✔ disconnected and unavailable operations reject without transport execution (1.688561ms)
+✔ failed connect removes listeners and closes the one-use session (0.460944ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.921682ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (20.857768ms)
+✔ pending queue is bounded and unplug rejects every request (0.899839ms)
+✔ wrong response opcode and device error are rejected (0.780109ms)
+✔ write failure rejects immediately and clears pending requests (0.600072ms)
+✔ request IDs are never reused through the full 16-bit session space (606.327897ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.441039ms)
+✔ synchronous transport failure also clears pending state (0.491689ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.272849ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.346266ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.233929ms)
+✔ close during pending connect follows early successful cancellation with post-connect release (0.233078ms)
+✔ clean refused open and explicit normal close confirm release (0.222946ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.244792ms)
+ℹ tests 59
+ℹ suites 0
+ℹ pass 58
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 920.285696
+
+✖ failing tests:
+
+test at tests/session-review.test.ts:45:1
+✖ real BleTransport setup failure does not lose rejected native cleanup (1.674661ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-review/tests/session-review.test.ts:55:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

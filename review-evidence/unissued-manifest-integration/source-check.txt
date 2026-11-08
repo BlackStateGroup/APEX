@@ -1,0 +1,6 @@
+Unchanged: tests/browser-c-host/inputs.sha256.json e4d1470bc20505c83d30782346614b0fe14e5d79fd6a976ab4a26142b45d2a44
+Unchanged: tests/browser-c-host/current-inputs.sha256.json b352ea1d0c1ffa832c7f7b486b10d5e63d523e95debe5e53ff1362af8d44319b
+Unchanged: packages/core/ble-transport.ts a377ccd2563a03d329a5cab19b804424467a5d8a09cbea2ba0421a17fe8649b8
+Unchanged: src/platform/bluetooth.native.ts a4fc189ea28209c9c172b6aa92fd49e4e20a49da0165b83f1fbe7d6c7b7dd578
+All current input bytes match expected pins.
+Corrected browser suite: d79d8e505f90b10eaa2ba6922145859527608667963378727a1f396ac9a8b063

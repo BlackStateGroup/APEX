@@ -1,0 +1,3 @@
+tests/iq-app-runtime-globals-independent.test.ts(9,543): error TS2339: Property 'metadataSha256' does not exist on type 'never'.
+tests/iq-app-runtime-globals-independent.test.ts(9,597): error TS2339: Property 'dataSha256' does not exist on type 'never'.
+tests/iq-app-runtime-globals-independent.test.ts(9,687): error TS2339: Property 'statistics' does not exist on type 'never'.

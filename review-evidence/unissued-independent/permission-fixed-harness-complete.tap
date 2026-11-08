@@ -1,0 +1,52 @@
+✖ installed PLX normal deny releases and permits fresh real-facade connection (39.739152ms)
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (12.206319ms)
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (9.090371ms)
+✔ malformed permission missing must never certify (4.732442ms)
+✔ malformed permission unknown must never certify (4.996519ms)
+✔ malformed permission partial must never certify (6.006491ms)
+✔ malformed permission inherited must never certify (4.296567ms)
+✔ malformed permission accessor must never certify (4.8008ms)
+✔ malformed permission later-getter must never certify (5.93849ms)
+✔ malformed permission array must never certify (4.629507ms)
+✔ unexpected permission rejection keeps exact identity and transport hold (4.489089ms)
+✔ duplicate token cannot restore first pending receipt through late continuation (4.567647ms)
+✔ installed PLX construction rejection cannot certify (7.493068ms)
+✔ installed PLX readiness rejection cannot certify (8.299664ms)
+✔ installed PLX issued rejection cannot certify (11.713382ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 12
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.88392
+
+✖ failing tests:
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal deny releases and permits fresh real-facade connection (39.739152ms)
+  TypeError [Error]: BleModule.servicesForDevice is not a function
+      at BleManager.discoverAllServicesAndCharacteristicsForDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10001:500:56)
+      at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10001:392:20)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal never-ask releases and permits fresh real-facade connection (12.206319ms)
+  TypeError [Error]: BleModule.servicesForDevice is not a function
+      at BleManager.discoverAllServicesAndCharacteristicsForDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10002:500:56)
+      at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10002:392:20)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/ble-unissued-independent.test.ts:24:49
+✖ installed PLX normal cancel releases and permits fresh real-facade connection (9.090371ms)
+  TypeError [Error]: BleModule.servicesForDevice is not a function
+      at BleManager.discoverAllServicesAndCharacteristicsForDevice (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/node_modules/react-native-ble-plx/lib/module/BleManager.js?plx-case=10003:500:56)
+      at async Object.connect (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/src/platform/bluetooth.native.ts?plx-case=10003:392:20)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-independent.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

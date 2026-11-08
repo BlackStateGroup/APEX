@@ -1,0 +1,18 @@
+Filetype: IR signals file
+Version: 1
+# Manually authored synthetic data; no capture or upstream source.
+name: declared
+type: parsed
+protocol: NEC
+address: 21 00 00 00
+command: 45 00 00 00
+name: whole-frame
+type: raw
+frequency: 38000
+duty_cycle: 0.33
+data: 9000 4500 563 1688 563 563 563 563 563 563 563 563 563 1688 563 563 563 563 563 563 563 1688 563 1688 563 1688 563 1688 563 563 563 1688 563 1688 563 1688 563 563 563 1688 563 563 563 563 563 563 563 1688 563 563 563 563 563 1688 563 563 563 1688 563 1688 563 1688 563 563 563 1688 563
+name: partial
+type: raw
+frequency: 38000
+duty_cycle: 0.33
+data: 9000 4500 563

@@ -1,0 +1,33 @@
+tests/iq-app-render-independent.test.ts(23,101): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Object literal may only specify known properties, and 'mode' does not exist in type 'Attributes & IqViewProps'.
+tests/iq-app-render-independent.test.ts(35,55): error TS2339: Property 'toneExample' does not exist on type 'IqController'.
+tests/iq-app-render-independent.test.ts(36,123): error TS2353: Object literal may only specify known properties, and 'toneExample' does not exist in type 'IqViewProps'.
+tests/iq-app-render-independent.test.ts(36,163): error TS7006: Parameter 'm' implicitly has an 'any' type.
+tests/iq-app-render-independent.test.ts(36,185): error TS7006: Parameter 'n' implicitly has an 'any' type.
+tests/iq-app-render-independent.test.ts(36,208): error TS7006: Parameter 't' implicitly has an 'any' type.
+tests/iq-app-render-independent.test.ts(39,4): error TS2339: Property 'windowMode' does not exist on type 'IqController'.
+tests/iq-app-render-independent.test.ts(40,4): error TS2339: Property 'fftSize' does not exist on type 'IqController'.
+tests/iq-app-render-independent.test.ts(40,35): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-app-render-independent.test.ts(41,4): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-app-render-independent.test.ts(41,41): error TS2339: Property 'windowMode' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(6,14): error TS2305: Module '"../src/iq-workbench.ts"' has no exported member 'IqFftSize'.
+tests/iq-window-independent.test.ts(10,62): error TS2339: Property 'windowMode' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(10,103): error TS2339: Property 'fftSize' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(10,132): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(12,627): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(13,326): error TS2339: Property 'windowMode' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(13,361): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(13,416): error TS2339: Property 'startText' does not exist on type 'IqState'.
+tests/iq-window-independent.test.ts(13,451): error TS2339: Property 'startSample' does not exist on type 'IqState'.
+tests/iq-window-independent.test.ts(13,621): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(13,676): error TS2339: Property 'startText' does not exist on type 'IqState'.
+tests/iq-window-independent.test.ts(13,713): error TS2339: Property 'startSample' does not exist on type 'IqState'.
+tests/iq-window-independent.test.ts(16,142): error TS2339: Property 'toneExample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(17,411): error TS2339: Property 'toneExample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(17,464): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(17,543): error TS2339: Property 'fftSize' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(18,868): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(18,1058): error TS2339: Property 'toneExample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(20,290): error TS2339: Property 'startSample' does not exist on type 'IqController'.
+tests/iq-window-independent.test.ts(20,482): error TS2339: Property 'startSample' does not exist on type 'IqState'.

@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "status": "succeeded",
+  "startedAt": "2026-11-08T03:41:41.988Z",
+  "source": {
+    "root": "/workspace/scratch/b96d3539d24d/apex-continuation",
+    "head": "a417247bafe80651ac6bcb6b1ef521a8a566daf3",
+    "statusPorcelain": "",
+    "dirty": false
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "environment": {
+    "CI": "1",
+    "EXPO_OFFLINE": "1",
+    "EXPO_NO_TELEMETRY": "1",
+    "npm_config_update_notifier": "false",
+    "npm_config_offline": "true",
+    "npm_config_audit": "false",
+    "npm_config_fund": "false"
+  },
+  "gates": [
+    {
+      "id": "browser-execution",
+      "status": "not-run"
+    },
+    {
+      "id": "native-prebuild-and-build",
+      "status": "not-run"
+    },
+    {
+      "id": "physical-device",
+      "status": "not-run"
+    },
+    {
+      "id": "provider-network-actions",
+      "status": "not-run"
+    },
+    {
+      "id": "rea-engine-readiness",
+      "status": "not-run"
+    }
+  ],
+  "stages": [
+    {
+      "id": "portable-firmware",
+      "command": "python3",
+      "args": [
+        "tools/build_firmware.py"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:41:41.990Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 139,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 25,
+      "processGroup": 25,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:41:42.265Z"
+    },
+    {
+      "id": "node-tests",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "tests/accessory.test.ts",
+        "tests/analysis.test.ts",
+        "tests/axp-response-independent-review.test.ts",
+        "tests/axp-response-json.test.ts",
+        "tests/ble-advertisements.test.ts",
+        "tests/ble-candidate-workbench.test.ts",
+        "tests/ble-differential.test.ts",
+        "tests/ble-evidence.test.ts",
+        "tests/ble-field-hypothesis.test.ts",
+        "tests/ble-filter-diagnostic.test.ts",
+        "tests/ble-hypothesis-contract.test.ts",
+        "tests/ble-native-observation.test.ts",
+        "tests/ble-native-service-data.test.ts",
+        "tests/ble-plx-observation.test.ts",
+        "tests/ble-plx-service-data-filter.test.ts",
+        "tests/ble-plx-source-evidence.test.ts",
+        "tests/ble-review-automatic-context.test.ts",
+        "tests/ble-review-pending-effects.test.ts",
+        "tests/ble-scan-session.test.ts",
+        "tests/ble-service-data-session.test.ts",
+        "tests/ble-session-release.test.ts",
+        "tests/ble-transport-release.test.ts",
+        "tests/ble-trial-authoring-workbench.test.ts",
+        "tests/ble-trial-authoring.test.ts",
+        "tests/ble-trial-workbench.test.ts",
+        "tests/ble-workbench.test.ts",
+        "tests/bluetooth-recovery.test.ts",
+        "tests/bounded-json.test.ts",
+        "tests/bthome-numeric.test.ts",
+        "tests/bthome.test.ts",
+        "tests/catalogue.test.ts",
+        "tests/eddystone-identity.test.ts",
+        "tests/evidence-bundle-independent.test.ts",
+        "tests/evidence-bundle-repair-independent.test.ts",
+        "tests/evidence-bundle-static-render.test.ts",
+        "tests/evidence-bundle-workbench.test.ts",
+        "tests/evidence-bundle.test.ts",
+        "tests/evidence.test.ts",
+        "tests/firmware.integration.test.ts",
+        "tests/flipper-offline.test.ts",
+        "tests/flipper-static-render.test.ts",
+        "tests/flipper-workbench.test.ts",
+        "tests/foreground-ble-workbench.test.ts",
+        "tests/foreground-device-action.test.ts",
+        "tests/hypotheses.test.ts",
+        "tests/inspect-iq-activity.test.ts",
+        "tests/inspect-iq-lag-correlation.test.ts",
+        "tests/inspect-iq-phase-increment.test.ts",
+        "tests/inspect-iq-time-frequency.test.ts",
+        "tests/inspect-iq.test.ts",
+        "tests/ios-ble-teardown-proposal.test.ts",
+        "tests/iq-activity.test.ts",
+        "tests/iq-analysis.test.ts",
+        "tests/iq-lag-correlation.test.ts",
+        "tests/iq-offline.test.ts",
+        "tests/iq-phase-increment.test.ts",
+        "tests/iq-time-frequency.test.ts",
+        "tests/native-build.test.ts",
+        "tests/native-process-group.test.ts",
+        "tests/ndef-evidence.test.ts",
+        "tests/ndef-offline.test.ts",
+        "tests/ndef-workbench.test.ts",
+        "tests/nfc-lifecycle.test.ts",
+        "tests/nfc-manager-ndef.test.ts",
+        "tests/observation-static-render.test.ts",
+        "tests/offline-checkpoint.test.ts",
+        "tests/offline-lab-independent-review.test.ts",
+        "tests/offline-lab-walkthrough.test.ts",
+        "tests/phone-ndef-capture.test.ts",
+        "tests/phone-ndef-workbench.test.ts",
+        "tests/protocol-byte-boundary.test.ts",
+        "tests/protocol-byte-independent.test.ts",
+        "tests/protocol.test.ts",
+        "tests/rea-inspection.test.ts",
+        "tests/recording-workbench.test.ts",
+        "tests/research.test.ts",
+        "tests/service-data-workbench.test.ts",
+        "tests/session-controls.test.ts",
+        "tests/session-release-boundary.test.ts",
+        "tests/session-review-races.test.ts",
+        "tests/session.test.ts",
+        "tests/usb-review-adversarial.test.ts",
+        "tests/usb-session-integration.test.ts",
+        "tests/usb-transport.test.ts",
+        "tests/web-evidence.test.ts"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 600000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:41:42.266Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 76503,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 41,
+      "processGroup": 41,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:35.474Z"
+    },
+    {
+      "id": "typecheck",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 180000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:35.474Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 0,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2154,
+      "processGroup": 2154,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:35.989Z"
+    },
+    {
+      "id": "source-archives",
+      "command": "python3",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_source_archives.py"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:35.989Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 0,
+        "stderr": 121
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2175,
+      "processGroup": 2175,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:37.885Z"
+    },
+    {
+      "id": "rea-preflight-tests",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "--test",
+        "tools/reverse-engineering/preflight.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:37.886Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 455,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2550,
+      "processGroup": 2550,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:38.049Z"
+    },
+    {
+      "id": "npm-inventory",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "tools/npm-inventory.mjs",
+        "--check"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:38.049Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 53,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2565,
+      "processGroup": 2565,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:38.115Z"
+    },
+    {
+      "id": "playwright-list",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--list"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:38.115Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 3469,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2573,
+      "processGroup": 2573,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:38.797Z"
+    },
+    {
+      "id": "expo-js-export",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--platform",
+        "android",
+        "--platform",
+        "web",
+        "--output-dir",
+        "/workspace/scratch/b96d3539d24d/apex-v21-validation-run/expo-export"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 600000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:38.798Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 1577,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2585,
+      "processGroup": 2585,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:47.415Z"
+    },
+    {
+      "id": "synthetic-lab",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "tools/demo-offline-lab.ts"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T03:42:47.415Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 5796,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2605,
+      "processGroup": 2605,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T03:42:47.581Z"
+    }
+  ],
+  "finishedAt": "2026-11-08T03:42:47.581Z"
+}

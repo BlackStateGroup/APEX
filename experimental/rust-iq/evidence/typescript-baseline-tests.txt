@@ -1,0 +1,42 @@
+✔ synthetic acceptance hashes, zero spectrum and exact DC statistics (8.297613ms)
+✔ synthetic signed complex tones, periodic Hann neighbors and all FFT sizes (24.299664ms)
+✔ synthetic rails, greater-than-one complex magnitude and endian sentinel (1.254765ms)
+✔ synthetic selected windows, default fallback and explicit rejection (1.287496ms)
+✔ synthetic independent direct DFT: deterministic integers and nonzero impulse (7.775872ms)
+✔ synthetic quantized off-bin and two-tone amplitudes match independent windowed DFT (6.533593ms)
+✔ FFT helper rejects unbounded, nonfinite or inconsistent inputs (0.787224ms)
+✔ analysis rejects forged prepared summaries and scans all samples outside FFT range (0.700652ms)
+✔ synthetic nonzero-location impulse passes independent windowed DFT (2.705961ms)
+✔ changing signed tones, phase rotation, axes, exact times and untouched source (13.662779ms)
+✔ zero sentinels, DC and Nyquist orientation (2.814053ms)
+✔ independent windowed negative-exponent DFT for overlapping nonzero-start off-bin frames (21.523051ms)
+✔ exact frame/cell/range/hop boundaries and refusal without truncation (56.553951ms)
+✔ invalid options, accessors and forged recording reject (1.049942ms)
+✔ Hann zero-weight endpoint sentinel and raw dB remain separate from display floor (1.083693ms)
+✔ independent all sizes first/last fit and one beyond, pagination and fresh read/hash (76.357041ms)
+✔ independent invalid edits erase text and cannot reuse earlier settings in either mode (3.584744ms)
+✔ independent maximal bound and default short source versus explicit refusal (12.121032ms)
+✔ independent nonzero-start off-bin direct DFT compares every amplitude (6.561224ms)
+✔ independent exact quarter-cycle fixture sign, coherent gain, sidelobes and untouched zero hashes (42.611971ms)
+✔ independent observer edits before reads fence captured options, and settings transaction permits coherent reentry (6.030902ms)
+✔ independent metadata success preserves one slot across settings and exit (3.578498ms)
+✔ independent metadata rejection preserves one slot across settings and exit (3.149611ms)
+✔ independent data success preserves one slot across settings and exit (6.629212ms)
+✔ independent data rejection preserves one slot across settings and exit (3.72517ms)
+✔ independent digest1 success preserves one slot across settings and exit (3.066734ms)
+✔ independent digest1 rejection preserves one slot across settings and exit (2.863507ms)
+✔ independent digest2 success preserves one slot across settings and exit (3.251572ms)
+✔ independent digest2 rejection preserves one slot across settings and exit (2.771112ms)
+✔ independent digest3 success preserves one slot across settings and exit (2.864261ms)
+✔ independent digest3 rejection preserves one slot across settings and exit (3.156302ms)
+✔ independent repeated Inspect rechecks modified bytes rather than cached prepared source (2.024329ms)
+✔ independent edit during initial notifications prevents all reads and old options publication (2.031008ms)
+✔ independent tone loading is inert without TextEncoder and resets invalid settings (2.163505ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 360.256917

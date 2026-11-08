@@ -1,0 +1,3 @@
+{"kind":"symlink","output":"/tmp/apex-runner-review-080f8c4/publication-LUcQQl","status":"passed"}
+{"kind":"dangling-symlink","output":"/tmp/apex-runner-review-080f8c4/publication-Viq4RC","status":"passed"}
+{"kind":"directory","output":"/tmp/apex-runner-review-080f8c4/publication-FGmuWa","status":"passed"}

@@ -1,0 +1,14 @@
+✔ exact text, source mapping, binary bytes and all successful entry points (12.294518ms)
+✔ missing capability rejects save, verify and both bundle operations; structural list remains available (1.985678ms)
+✔ re-signed outer content cannot authorize stale digest or matching-hash malformed legacy event (10.579994ms)
+✔ payload exact own-data fields reject getters, hidden/symbol extras and malformed bounded JSON (1.427051ms)
+✔ caller mutation during delayed byte and string hashes never changes persisted/returned snapshot; storage failure propagates (1.791137ms)
+✔ real CLI create and preview round trip HCI without decoded reports, reject forged derivative (417.605816ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 630.067628

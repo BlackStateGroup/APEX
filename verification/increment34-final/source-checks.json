@@ -1,0 +1,46 @@
+{
+  "sourceRevision": "d8496fe107044449ca6d73d92d4c019d2457e7ea",
+  "sha256": {
+    "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+    "node_modules/react-native-ble-plx/ios/BlePlx.m": "6ad0e48dd16c6587c279d81d06eb5553c0c9e135df4c653a91c8d8abf9990207",
+    "modules/apex-device/android/src/main/java/expo/modules/apexdevice/ApexDeviceModule.kt": "53887adec7cac4bf3be4e06c76aaddab20005546f4d569e2583995223eef7d30",
+    "docs/ACCESSORY_WORKBENCH.md": "a310b311b0b246b88e06ed98ce137bf2e52e00c9363c1219f1d9920869f5e78a",
+    "docs/ARCHITECTURE.md": "a9dbcdccae59f09f7ae86f3f1c5a991ca41318b3f4f7d4aa3292826c9d795d85",
+    "docs/BENCH_ACCEPTANCE.md": "7400045be3185c6b1ac2c1ca09c48c7cd4481185e916140f5cc6c274a5d3ff84",
+    "docs/CAPABILITY_MATRIX.md": "596397536e35374852a8c50280abf283b5982c215f7537bd6a586a4414f93eb1",
+    "docs/DEVICE_PROTOCOL.md": "41f9b0711727b54b302e79dbf7071ade27ddd15ec3a73c36a90824c6e9f4f3c1",
+    "docs/ENGINEERING_WORK_PACKAGES.md": "c48cb27eb41f4694710f9bbb90b4e058e8e87c121936ffbb13ed11f9d2348ee8",
+    "docs/HARDWARE_STRATEGY.md": "30884648dcdcef8b9c5535e154db774a371ffbf3d8884bb0d80564d336cefda9",
+    "docs/LICENSING.md": "a65a8972072e059894bf55c6faf5b296fe732869b3cf7af463cc316ab8cf642e",
+    "docs/PLATFORM_SCOPE.md": "5436ad9a1b0c742572fc911c66d6dae61ccc27c1ce8d88b22544665167bd216f",
+    "docs/PRD.md": "2a7c02d0e4bc4872d9aa4c75e3f47639694293b4b3b46a4ea41aa129bf327c9f",
+    "docs/RESEARCH_REGISTER.md": "e8ae3b96206edaaf8f946e19722ce9e455cd869c7bb04af1f276fdc509e20bed",
+    "docs/SECURITY_RESEARCH.md": "164d0b4e71cedc10b5ef27505a9b2c2fcafa3fec31411c53d6744d4967a4b0ee",
+    "docs/images/console.png": "6efc8e70521f3f8c0a9ee934263a8cf3f7b0686bce271dff14341ed91ed71396",
+    "firmware/README.md": "6521dcb83cf92f65cbba7c23a68cc5b4dabc6483ac9c0658d96572880d14bb90",
+    "research/SOURCE_MINING.md": "9574be04f527eace24d6b6daf1f59d790e70c0961b86d2f35ca0955925024cf8"
+  },
+  "originalGitBlobs": {
+    "research/source-imports.json": {
+      "current": "17858005967cd5dd7cc9c8812c49875e893cb247",
+      "original": "17858005967cd5dd7cc9c8812c49875e893cb247",
+      "unchanged": true
+    },
+    "research/upstreams.json": {
+      "current": "04f1751d2513270a76858d1d17dc2bf1ec6ac7c2",
+      "original": "04f1751d2513270a76858d1d17dc2bf1ec6ac7c2",
+      "unchanged": true
+    },
+    "research/source-additions.json": {
+      "current": "376b575642bab2210415e294a350e8d3dc377ca4",
+      "original": "376b575642bab2210415e294a350e8d3dc377ca4",
+      "unchanged": true
+    },
+    "modules/apex-device/android/src/main/java/expo/modules/apexdevice/ApexDeviceModule.kt": {
+      "current": "ca7012a2b14ae0b7531548650c7c290218a32c81",
+      "original": "ca7012a2b14ae0b7531548650c7c290218a32c81",
+      "unchanged": true
+    }
+  },
+  "restoredFoundationManifest": "docs/FOUNDATION_RESTORATION_MANIFEST.json"
+}

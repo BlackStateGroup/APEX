@@ -1,0 +1,13 @@
+✔ iOS void boundary: ordinary stop returns and next scan is allowed without native completion input (21.071481ms)
+✔ iOS void boundary: connect dispatch follows JS scan stop settlement without native stop ack (9.474304ms)
+✔ iOS void boundary: advertised-UUID controller publishes reusable true without native ack (8.761098ms)
+✔ Android Promise boundary: genuine boundary promise remains a JS handoff gate (8.494905ms)
+✔ iOS void boundary: exact workbench enables retained document inspection after JS-only stop (12.587114ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 211.628028

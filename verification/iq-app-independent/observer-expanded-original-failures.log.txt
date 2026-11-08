@@ -1,0 +1,74 @@
+✖ observer exceptions at running publication do not strand slot or reject inspection (2.568692ms)
+✖ observer exceptions during final publication do not reject completed job (9.445627ms)
+✖ synchronous observer reentry before first read cannot start a second job (1.761968ms)
+✖ observer invalidation during initial notifications fences first read (4.413118ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.104208
+
+✖ failing tests:
+
+test at tests/iq-app-observer-independent.test.ts:7:1
+✖ observer exceptions at running publication do not strand slot or reject inspection (2.568692ms)
+  Error: observer running failure
+      at file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:7:165
+      at #publish (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:53:160)
+      at IqController.inspect (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:84:38)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:7:210)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/iq-app-observer-independent.test.ts:8:1
+✖ observer exceptions during final publication do not reject completed job (9.445627ms)
+  Error: observer finally failure
+      at file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:8:196
+      at #publish (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:53:160)
+      at IqController.inspect (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/src/iq-workbench.ts:104:49)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:8:233)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/iq-app-observer-independent.test.ts:9:1
+✖ synchronous observer reentry before first read cannot start a second job (1.761968ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:9:512)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/iq-app-observer-independent.test.ts:10:1
+✖ observer invalidation during initial notifications fences first read (4.413118ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-review/tests/iq-app-observer-independent.test.ts:10:320)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,19 @@
+✔ actual CLI produces complete bounded result with filesystem writes prohibited (253.901397ms)
+✔ strict CLI explicit indices and paths, no defaults/duplicates/unknown flags (3565.78786ms)
+✔ both inputs refuse malformed UTF8/BOM/byte and character bounds/digest/late framing atomically (2940.225249ms)
+✔ bounded regular reader rejects terminal symlinks/directories/missing targets, ancestor links unchanged (974.256263ms)
+✔ CLI nonfirst selection excludes unselected report marker and changed data remains positional (123.948426ms)
+✔ nonfirst selection exact matrix and differing metadata compare supplied fields only (5.413644ms)
+✔ empty, identical, zero vs absent, changed headers and insertion/deletion are positional only (3.472159ms)
+✔ maximum report selection/data bounds and separate malformed/unknown/encrypted AD status (4.84659ms)
+✔ all primitive/structural failures on either side precede any hashing (2.906325ms)
+✔ whole-event late failure, digest errors, sequential bounded hashes and selection after full verification (2.158719ms)
+✔ hash argument isolation, deep freezing, original substitutions and excluded report privacy (1.269797ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7994.051079

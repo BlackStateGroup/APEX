@@ -1,0 +1,35 @@
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (1.329024ms)
+✔ failed manager shutdown preserves session and UI ownership (0.603668ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.268795ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.196423ms)
+✔ real session and BLE transport close locally after simulated manager epoch invalidation (2.100442ms)
+✔ closed session remains explicitly releasable after capabilities disappear (3.348447ms)
+✔ new and opening sessions with no capabilities still own their UI slot (0.227658ms)
+✔ failed-open UI slot survives uncertainty but clears after explicit release (0.230228ms)
+✔ clean failed open clears its slot but stale cleanup cannot clear a newer session (1.183151ms)
+✔ App retention helper keeps a real failed session through failed retry (1.129605ms)
+✔ simulator handshake and synchronous-before-write-completion replies work (6.9392ms)
+✔ disconnected and unavailable operations reject without transport execution (1.881574ms)
+✔ failed connect removes listeners and closes the one-use session (0.295074ms)
+✔ malformed identity and unrecognised capabilities fail negotiation and clean up (0.643888ms)
+✔ timeouts remove pending work and late replies cannot satisfy the next request (21.539706ms)
+✔ pending queue is bounded and unplug rejects every request (0.966732ms)
+✔ wrong response opcode and device error are rejected (0.80006ms)
+✔ write failure rejects immediately and clears pending requests (0.687848ms)
+✔ request IDs are never reused through the full 16-bit session space (612.751885ms)
+✔ invalid timeout and pending limits cannot create unbounded sessions (0.45707ms)
+✔ synchronous transport failure also clears pending state (0.879541ms)
+✔ failed open retains cleanup uncertainty and only explicit close retries (0.390206ms)
+✔ terminal cleanup remains pending until resolved and simultaneous closes share it (0.545124ms)
+✔ terminal cleanup failure stays pending until an explicit successful retry (0.313046ms)
+✔ close during pending connect shares cancellation cleanup with failed open (0.228674ms)
+✔ clean refused open and explicit normal close confirm release (0.21921ms)
+✔ terminal event during negotiation and open failure share one failed cleanup (0.471155ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 810.067886

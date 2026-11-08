@@ -1,0 +1,12 @@
+✔ activity exact integer/rational arithmetic and full-source hashes remain separate from spectra (7.787224ms)
+✔ activity accepts arbitrary window lengths, selected geometry, and resets separate settings (2.393494ms)
+✔ activity rejects entire malformed input without retention before reading (5.345893ms)
+✔ activity cells and frame ceilings validate before reads (3.493153ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 169.827203

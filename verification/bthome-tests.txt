@@ -1,0 +1,44 @@
+✔ Android-shaped synthetic input decodes a documented public telemetry layout (2.690998ms)
+✔ iOS normalized fixture yields the same telemetry without inventing raw bytes (1.289867ms)
+✔ unknown AD types, duplicate fields, names and signed TX power are preserved (0.350837ms)
+✔ 16-, 32- and 128-bit UUIDs use little-endian AD encoding (0.208707ms)
+✔ all service-data widths split UUID bytes from opaque payload without guessing (0.314894ms)
+✔ UTF-8 names decode, invalid UTF-8 remains preserved with a diagnostic (0.271409ms)
+✔ truncated AD structure preserves parsed prefix and exact undecoded tail (0.194556ms)
+✔ only all-zero trailing padding is accepted, with no parsing beyond it (0.157482ms)
+✔ malformed known fields retain original bytes and do not abort later fields (0.206104ms)
+✔ Flags allow zero or more octets as specified by CSS, without inventing missing flags (0.29197ms)
+✔ host capture truncation is separate from structurally valid AD bytes (0.463512ms)
+✔ TLM uses big-endian unsigned counters and signed fixed-point temperature (0.155228ms)
+✔ unknown, encrypted, future-version and incomplete TLM are not guessed (0.185423ms)
+✔ hex format, byte and element bounds are enforced (0.62539ms)
+✔ strict offline envelope rejects native claims and fabricated extra fields (0.411044ms)
+✔ recorded imports retain source-supplied timestamps without attesting physical reception (0.80171ms)
+✔ iOS normalized values have strict field, aggregate and dictionary limits (0.505384ms)
+✔ metadata-only summaries fit existing hypothesis input and omit raw private values (0.929507ms)
+✔ deterministic malformed-input sweep is bounded and retains every byte (57.797528ms)
+✔ BLE metadata passes the unchanged APEX hypothesis contract with a local deterministic stub (1.470033ms)
+✔ existing data-export gate blocks a remote provider before it receives any observations (0.544351ms)
+✔ existing output validator still rejects invented evidence and unsupported BLE protocol labels (0.221866ms)
+✔ official advertising example imports offline and retains source provenance (2.645082ms)
+✔ all supported numeric IDs match official wire examples (packet-id is synthetic) (0.459105ms)
+✔ signed little-endian minima, maxima, negative one and zero are numeric, not invented sentinels (1.137163ms)
+✔ unsigned 8, 16, 24-bit extrema stay unsigned without range clamping (0.205011ms)
+✔ ordered repeated object IDs retain every occurrence and byte position (0.193365ms)
+✔ descending IDs stop without reordering or overwriting the parsed prefix (0.135299ms)
+✔ unsupported object IDs stop at the ID, with no guessed length or resynchronization (0.257669ms)
+✔ all proper prefixes of each supported field preserve the truncated ID and bytes (0.454799ms)
+✔ every header byte gates version, encryption and reserved bits before measurements (0.815009ms)
+✔ official encrypted example and plausible plaintext with encryption flag stay opaque (0.351317ms)
+✔ object and common input bounds are enforced at exact boundaries (0.903689ms)
+✔ iOS and recorded envelopes preserve provenance without an identity or native claim (0.704917ms)
+✔ summary distinguishes TLM and BTHome counts and exports no measurement or label (0.352358ms)
+✔ deterministic malformed sweep preserves every byte and never exceeds object bound (277.972412ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 447.784754

@@ -17,7 +17,7 @@ Success measures: number of independently reproduced device-operation combinatio
 - Interoperability/security researcher: analyse owned equipment or explicitly authorised lab fixtures and reproduce results without touching unrelated systems.
 - Field technician: inspect equipment identity and diagnostics, with offline operation and clear separation between observation and state changes.
 
-Primary platform: Android phone plus USB accessories. Expo web provides a labelled simulator and offline-analysis console. iOS is a later compatibility target with its own hardware/API restrictions, not assumed parity. A desktop/Linux sidecar handles specialist native clients and high-rate SDR data.
+Target platforms: iPhone and Android, both first-class clients. The current native implementation covers Android USB/NFC; native iOS integrations remain pending. Expo web provides a labelled simulator and offline-analysis console. iOS is a later compatibility target with its own hardware/API restrictions, not assumed parity. A desktop/Linux sidecar handles specialist native clients and high-rate SDR data.
 
 ## Product requirements and acceptance
 
@@ -73,7 +73,7 @@ The modular vision remains broad: additional protocols and hardware belong in th
 
 ## Decisions, risks and open questions
 
-Decided: Android first, React Native/Expo, a small original C protocol core, ESP32-S3 wired target, specialist sidecars instead of embedding every upstream stack. Original code remains private pending an explicit licensing decision.
+Decided: iPhone and Android, React Native/Expo, a small original C protocol core, ESP32-S3 wired target, specialist sidecars instead of embedding every upstream stack. Original code remains private pending an explicit licensing decision.
 
 Open: actual handset and S3 board revision; accessory power source and enclosure; first real IR appliance/sensor/tag fixtures; allocation of cryptographic identity for accessories; supported desktop OS; future secure storage and evidence retention policy. Progress on host code does not depend on those choices, but hardware acceptance does.
 

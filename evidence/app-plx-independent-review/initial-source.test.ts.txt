@@ -1,0 +1,88 @@
+// Independent source-handler review; synthetic schedules are not real native ordering.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { harness } from './support/app-acquisition.ts';
+import { fixture } from './plx-facade-host/fixture.ts';
+import { AXP_NOTIFY } from '../packages/core/ble-transport.ts';
+const turn = () => new Promise<void>(resolve => setImmediate(resolve));
+const error = JSON.stringify({ errorCode: 201, reason: 'late reviewed event' });
+for (const platform of ['android', 'ios'] as const) {
+  test(`independent App PLX ${platform}: close before delayed subscribe; resolve real SDK monitor late`, { timeout: 10000 }, async () => {
+    const x = await fixture(platform, 23), h = harness(), ready = x.hold('monitor-ready');
+    let selected: typeof x.session | undefined;
+    try {
+      x.holdMonitorCancellation();
+      const work = h.run(() => h.connect(x.transport)); await ready.entered;
+      selected = h.env.session.current!;
+      const attempt = h.env.acquisition.current;
+      const read = [...x.listeners.get('ReadEvent')!][0]!;
+      h.cancelAcquisition!(attempt); await work;
+      assert.equal(selected.state, 'closed'); assert.equal(selected.transportReleasePending, false);
+      assert.equal(h.env.session.current, null); assert.equal(h.env.lock.current, false);
+      assert.equal(x.listeners.get('ReadEvent')!.size, 1);
+      assert.equal(x.f.trace.filter(e => e.value === 'SUBSCRIBE').length, 0);
+      assert.equal(x.f.trace.filter(e => e.value === 'CLOSE').length, 1);
+      ready.release(); await turn(); await x.f.command('MTU 23');
+      // A selected fake schedule allows delayed subscription after close, with no C READY.
+      assert.equal(x.f.trace.filter(e => e.value === 'SUBSCRIBE').length, 1);
+      assert.equal(x.f.trace.filter(e => e.origin === 'C-notification').length, 0);
+      const writes = h.writes.length, events = [...x.events];
+      read([error, null, x.transaction()]);
+      read([null, x.characteristic(AXP_NOTIFY, 'AAAA'), x.transaction()]);
+      h.cancelAcquisition!(attempt);
+      x.settleMonitor(); await turn();
+      assert.equal(x.listeners.get('ReadEvent')!.size, 0);
+      assert.equal(h.writes.length, writes); assert.deepEqual(x.events, events);
+      assert.equal(x.native.accessoryConnectionOwnership(), 'idle');
+      assert.equal(x.f.trace.filter(e => e.origin === 'plx-client-write').length, 0);
+    } finally { ready.release(); await x.finish(selected); }
+  });
+  test(`independent App PLX ${platform}: retired handle and late close preserve live replacement identity`, { timeout: 10000 }, async () => {
+    const a = await fixture(platform, 23), b = await fixture(platform === 'ios' ? 'android' : 'ios', 517);
+    const h = harness(), bh = harness(), write = a.hold('write');
+    let selected: typeof a.session | undefined;
+    try {
+      a.holdMonitorCancellation();
+      const work = h.run(() => h.connect(a.transport)); await write.entered;
+      selected = h.env.session.current!;
+      const attempt = h.env.acquisition.current;
+      const read = [...a.listeners.get('ReadEvent')!][0]!, disconnected = [...a.listeners.get('DisconnectionEvent')!][0]!;
+      h.cancelAcquisition!(attempt);
+      await bh.run(() => bh.connect(b.transport)); const replacement = bh.env.session.current!;
+      // Deliberately replace all identity-bearing refs while the old raw write drains.
+      const token = {}, nextAttempt = { cancelled: false }; let removed = 0;
+      const listener = () => removed++;
+      h.env.session.current = replacement; h.env.operation.current = token;
+      h.env.acquisition.current = nextAttempt; h.env.disconnectListener.current = listener;
+      const writes = h.writes.length;
+      h.cancelAcquisition!(attempt); write.release(); await work;
+      read([error, null, a.transaction()]); disconnected([null, a.device()]); a.failMonitor(); await turn();
+      assert.equal(h.env.session.current, replacement); assert.equal(h.env.operation.current, token);
+      assert.equal(h.env.acquisition.current, nextAttempt); assert.equal(nextAttempt.cancelled, false);
+      assert.equal(h.env.disconnectListener.current, listener); assert.equal(removed, 0);
+      assert.equal(h.env.lock.current, true); assert.equal(h.writes.length, writes);
+      assert.equal(selected.state, 'closed'); assert.equal(selected.transportReleasePending, false);
+      assert.equal(a.native.accessoryConnectionOwnership(), 'idle'); assert.equal(b.native.accessoryConnectionOwnership(), 'owned');
+      assert.equal(a.listeners.get('ReadEvent')!.size, 0);
+      assert.deepEqual(await replacement.request('system.ping', Uint8Array.of(41, 87)), Uint8Array.of(41, 87));
+      assert.equal(a.f.trace.filter(e => e.origin === 'plx-client-write').length, 1);
+      await bh.run(bh.disconnect);
+    } finally { write.release(); await a.finish(selected); await b.finish(bh.env.session.current ?? undefined); }
+  });
+  test(`independent App PLX ${platform}: unmount while first raw write is held suppresses every later setter`, { timeout: 10000 }, async () => {
+    const x = await fixture(platform, 23), h = harness(), write = x.hold('write');
+    let selected: typeof x.session | undefined;
+    try {
+      const work = h.run(() => h.connect(x.transport)); await write.entered;
+      selected = h.env.session.current!; const attempt = h.env.acquisition.current;
+      h.unmount(); const count = h.writes.length;
+      assert.equal(h.env.attached.current, false); assert.equal(h.env.lock.current, true);
+      h.cancelAcquisition!(attempt); write.release(); await work; await selected.close();
+      assert.equal(h.writes.length, count); assert.equal(h.env.lock.current, false);
+      assert.equal(h.env.acquisition.current, null); assert.equal(selected.state, 'closed');
+      assert.equal(x.native.accessoryConnectionOwnership(), 'idle');
+      assert.equal(x.f.trace.filter(e => e.origin === 'plx-client-write').length, 1);
+      assert.equal(x.events.filter(e => e === 'cancelDevice').length, 1);
+    } finally { write.release(); await x.finish(selected); }
+  });
+}

@@ -1,0 +1,13 @@
+✔ actual TSX initial/inactive render: exact limits, no automatic result or external actions (12.008716ms)
+✔ actual TSX example distinguishes parsed declaration and conditional raw recognition without carrier/capture claims (12.075658ms)
+✔ actual TSX bounds all four-record pages and preserves duplicate ordinals (8.775401ms)
+✔ actual TSX long duty/name excerpts and 1024-duration summary are bounded, exact source retained, strings inert (23.443216ms)
+✔ actual TSX errors and rejected edits never render old report; pending disables inspection (6.131575ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 407.443028

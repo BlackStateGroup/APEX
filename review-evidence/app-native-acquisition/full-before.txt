@@ -1,0 +1,772 @@
+(node:16) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ native detached retained run does not invoke an action or publish state (5.790409ms)
+✖ native prior-close wait cannot acquire after unmount cleanup has already run (11.649387ms)
+✖ direct retained connect is inert before removing the existing listener (1.885283ms)
+✖ prior-close continuation is inert after remount replacement (4.597373ms)
+✖ prior-close continuation is inert after operation replacement (1.916772ms)
+✔ prior-close continuation is inert after session replacement (2.464811ms)
+✔ normal native replacement negotiates and run lock excludes duplicate acquisition (3.392974ms)
+✔ uncertain prior cleanup retains exact session and prevents replacement (1.44685ms)
+✖ unmount during native open retains cleanup ownership and suppresses late callbacks/publication (8.67583ms)
+✖ run rejection cannot publish to detach successor (1.999235ms)
+✖ run rejection cannot publish to remount successor (0.5926ms)
+✖ run rejection cannot publish to operation successor (0.641866ms)
+✖ connected callback cannot publish after same-object remount or session replacement (1.065607ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 3
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 189.091865
+
+✖ failing tests:
+
+test at tests/app-native-acquisition.test.ts:64:1
+✖ native detached retained run does not invoke an action or publish state (5.790409ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'listen',
+  +   'listen',
+  +   'connect'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:67:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'listen', 'listen', 'connect' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:70:1
+✖ native prior-close wait cannot acquire after unmount cleanup has already run (11.649387ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:79:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:84:1
+✖ direct retained connect is inert before removing the existing listener (1.885283ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:88:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:92:3
+✖ prior-close continuation is inert after remount replacement (4.597373ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'listen',
+  +   'listen',
+  +   'connect'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:102:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'listen', 'listen', 'connect' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:92:3
+✖ prior-close continuation is inert after operation replacement (1.916772ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'listen',
+  +   'listen',
+  +   'connect'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:102:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'listen', 'listen', 'connect' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:134:1
+✖ unmount during native open retains cleanup ownership and suppresses late callbacks/publication (8.67583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + null
+  - DeviceSession {
+  -   capabilities: [],
+  -   connectPending: false,
+  -   decoder: FrameDecoder {
+  -     buffer: Uint8Array(524) [
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0,
+  -       0
+  -     ],
+  -     discarded: 0,
+  -     receive: [Function (anonymous)],
+  -     used: 0
+  -   },
+  -   info: null,
+  -   maxPending: 8,
+  -   nextId: 1,
+  -   pending: Map(0) {},
+  -   releaseAttempt: Promise {
+  -     Symbol(async_id_symbol): 1395,
+  -     Symbol(trigger_async_id_symbol): 1394,
+  -     undefined
+  -   },
+  -   releaseBeforeConnectSettled: false,
+  -   releaseInFlight: false,
+  -   releasePending: false,
+  -   state: 'closed',
+  -   timeoutMs: 2000,
+  -   transport: {
+  -     connect: [AsyncFunction: connect],
+  -     disconnect: [AsyncFunction: disconnect],
+  -     onData: [Function: onData],
+  -     onDisconnect: [Function: onDisconnect],
+  -     source: 'usb',
+  -     write: [Function: write]
+  -   },
+  -   unsubscribers: []
+  - }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:141:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: [DeviceSession],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:147:3
+✖ run rejection cannot publish to detach successor (1.999235ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  5 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:152:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:147:3
+✖ run rejection cannot publish to remount successor (0.5926ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  5 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:152:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:147:3
+✖ run rejection cannot publish to operation successor (0.641866ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  5 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:152:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/app-native-acquisition.test.ts:157:1
+✖ connected callback cannot publish after same-object remount or session replacement (1.065607ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  11 !== 8
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-native-app-guard/tests/app-native-acquisition.test.ts:163:79)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 11,
+    expected: 8,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

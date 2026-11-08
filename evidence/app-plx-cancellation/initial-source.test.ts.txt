@@ -1,0 +1,117 @@
+// Actual App handlers -> native TS adapter -> pinned installed PLX -> C data callbacks.
+// Only RN/native promises/events are synthetic; chosen schedules prove no native ordering.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { harness } from './support/app-acquisition.ts';
+import { fixture } from './plx-facade-host/fixture.ts';
+import { BleTransport } from '../packages/core/ble-transport.ts';
+const turn = () => new Promise<void>(resolve => setImmediate(resolve));
+const noConnected = (h: ReturnType<typeof harness>) => assert.equal(h.writes.some(value => String(value).includes('Connected:')), false);
+const effects = ['connect', 'discover', 'mtu', 'characteristics', 'monitor-ready', 'write'];
+
+// One Android boundary ladder, with iOS at the SDK-specific monitor/close boundaries below.
+for (const phase of ['permissions', 'readiness', 'connect', 'discover', 'mtu', 'characteristics', 'monitor-ready', 'write']) {
+  test(`App + installed PLX: cancel held ${phase} before the next effect`, { timeout: 10000 }, async () => {
+    const x = await fixture('android', 23), h = harness(), gate = x.hold(phase);
+    let selected: typeof x.session | undefined;
+    try {
+      const work = h.run(() => h.connect(x.transport));
+      await gate.entered;
+      selected = h.env.session.current!; const attempt = h.env.acquisition.current;
+      const before = [...x.events];
+      h.cancelAcquisition!(attempt); h.cancelAcquisition!(attempt);
+      await turn();
+      if (!['readiness', 'monitor-ready'].includes(phase)) {
+        assert.equal(h.env.lock.current, true); // Raw permission/connect/write remains owned.
+        assert.deepEqual(x.events, before);
+        await assert.rejects(x.native.shutdownBluetooth(), /busy/);
+      }
+      gate.release(); await work; await turn();
+      assert.equal(h.env.lock.current, false); assert.equal(h.env.acquisition.current, null);
+      assert.equal(selected.state, 'closed'); noConnected(h);
+      assert.deepEqual(x.events.slice(before.length).filter(event => effects.includes(event)), []);
+      const writeCommands = x.f.trace.filter(event => event.origin === 'plx-client-write');
+      assert.equal(writeCommands.length, phase === 'write' ? 1 : 0); // Info may settle; Capabilities must not start.
+      assert.equal(x.native.accessoryConnectionOwnership(), 'idle');
+      const unknown = !['monitor-ready', 'write'].includes(phase);
+      assert.equal(selected.transportReleasePending, unknown);
+      assert.equal(h.env.session.current, unknown ? selected : null);
+      const cancelled = x.events.filter(event => event === 'cancelDevice').length;
+      h.cancelAcquisition!(attempt); await turn();
+      assert.equal(x.events.filter(event => event === 'cancelDevice').length, cancelled);
+      if (unknown) { await h.run(h.disconnect); assert.equal(h.env.session.current, selected); }
+    } finally { gate.release(); await x.finish(selected, selected?.transportReleasePending ?? false); }
+  });
+}
+
+for (const platform of ['android', 'ios'] as const) {
+  test(`App + installed PLX ${platform}: failed held close, pending SDK monitor, explicit retry and stale presses`, { timeout: 10000 }, async () => {
+    const x = await fixture(platform, 23), h = harness(), write = x.hold('write');
+    let selected: typeof x.session | undefined;
+    try {
+      const work = h.run(() => h.connect(x.transport)); await write.entered;
+      selected = h.env.session.current!; const attempt = h.env.acquisition.current;
+      const staleRead = [...x.listeners.get('ReadEvent')!][0]!;
+      x.holdMonitorCancellation(); x.failCancel(true); const close = x.hold('cancelDevice');
+      h.cancelAcquisition!(attempt); h.cancelAcquisition!(attempt);
+      await turn(); assert.equal(x.events.includes('cancelDevice'), false);
+      write.release(); await close.entered;
+      assert.equal(h.env.lock.current, true); assert.equal(h.env.session.current, selected);
+      await assert.rejects(x.native.shutdownBluetooth(), /busy/);
+      close.release(); await work;
+      noConnected(h); assert.equal(h.env.lock.current, false);
+      assert.equal(selected.transportReleasePending, true); assert.equal(h.env.session.current, selected);
+      assert.equal(x.native.accessoryConnectionOwnership(), 'unknown');
+      assert.equal(x.events.filter(event => event === 'cancelDevice').length, 1);
+      await assert.rejects(x.native.bleDriver.connect('OTHER'), /unknown/);
+      h.cancelAcquisition!(attempt); await turn();
+      assert.equal(x.events.filter(event => event === 'cancelDevice').length, 1); // no silent retry
+      // Real SDK remove() leaves its event listener alive until native monitor settles.
+      assert.equal(x.listeners.get('ReadEvent')!.size, 1);
+      const beforeWrites = h.writes.length;
+      staleRead([null, x.characteristic('bad', 'AAAA'), x.transaction()]);
+      assert.equal(h.writes.length, beforeWrites);
+      x.failCancel(false); await h.run(h.disconnect);
+      assert.equal(x.native.accessoryConnectionOwnership(), 'idle'); assert.equal(h.env.session.current, null);
+      assert.equal(selected.transportReleasePending, false);
+      assert.equal(x.events.filter(event => event === 'cancelDevice').length, 2);
+      assert.equal(x.listeners.get('ReadEvent')!.size, 1);
+      x.failMonitor(); await turn(); assert.equal(x.listeners.get('ReadEvent')!.size, 0);
+      // A new acquisition uses the same real manager after an acknowledged synthetic close.
+      const successorGate = x.hold('connect');
+      const successor = h.run(() => h.connect(new BleTransport(x.native.bleDriver, 'AXP', { timeoutMs: 1500 })));
+      await successorGate.entered; const nextAttempt = h.env.acquisition.current;
+      h.cancelAcquisition!(attempt); assert.equal(nextAttempt.cancelled, false);
+      successorGate.release(); await successor;
+      assert.equal(h.env.session.current!.state, 'open');
+      h.cancelAcquisition!(nextAttempt); assert.equal(h.env.session.current!.state, 'open');
+      await h.run(h.disconnect);
+      if (platform === 'ios') { await assert.rejects(x.native.shutdownBluetooth(), /unacknowledged/); assert.equal(x.native.accessoryConnectionOwnership(), 'unknown'); }
+    } finally { write.release(); x.failCancel(false); await x.finish(selected); }
+  });
+}
+
+test('App + installed PLX: cancellation before session creation performs no native effect', async () => {
+  const x = await fixture('android', 23), h = harness();
+  try {
+    const work = h.run(() => h.connect(x.transport));
+    const attempt = h.env.acquisition.current; assert.ok(attempt);
+    h.cancelAcquisition!(attempt); h.cancelAcquisition!(attempt); await work;
+    assert.deepEqual(x.events, []); assert.equal(h.env.session.current, null); noConnected(h);
+  } finally { await x.finish(); }
+});
+
+test('App + installed PLX: cancelling one simultaneous owner leaves the other C session usable', async () => {
+  const a = await fixture('android', 517), b = await fixture('ios', 23);
+  const ah = harness(), bh = harness(), gate = a.hold('write');
+  try {
+    const work = ah.run(() => ah.connect(a.transport)); await gate.entered;
+    await bh.run(() => bh.connect(b.transport));
+    const selected = ah.env.session.current!;
+    ah.cancelAcquisition!(ah.env.acquisition.current); gate.release(); await work;
+    assert.equal(selected.state, 'closed'); assert.equal(a.native.accessoryConnectionOwnership(), 'idle');
+    assert.equal(b.native.accessoryConnectionOwnership(), 'owned'); assert.equal(bh.env.session.current!.state, 'open');
+    assert.deepEqual(await bh.env.session.current!.request('system.ping', Uint8Array.of(7, 3)), Uint8Array.of(7, 3));
+    await bh.run(bh.disconnect);
+  } finally { gate.release(); await a.finish(); await b.finish(); }
+});

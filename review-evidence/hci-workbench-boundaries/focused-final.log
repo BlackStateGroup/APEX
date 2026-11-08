@@ -1,0 +1,25 @@
+✔ independent actual TSX: header-only input has coherent empty paging and no select controls (14.98667ms)
+✔ independent actual TSX: dense inert AD bytes remain summarized, metadata reveals no addresses or payload (7.804863ms)
+✔ independent actual TSX: selected string projections are bounded even when passed long values (4.439133ms)
+✔ actual TSX exposes all source/hash/time/address caveats before inspection (11.182465ms)
+✔ actual TSX separates metadata from explicit legacy result and clears on edits (12.69878ms)
+✔ actual TSX bounds metadata and selected legacy pages independently (12.012442ms)
+✔ independent: whole rejection matrix preserves exact previous input and fence across declaration/tab changes (6.3144ms)
+✔ independent: overlapping generations cannot overwrite a newer successful inspection, including old error (2.630185ms)
+✔ independent: invalid hash outcomes never publish metadata and recover explicitly (1.637348ms)
+✔ independent: same-source failed selection atomically removes an earlier valid selected event; snapshots deeply immutable (1.858525ms)
+✔ independent: old activation lease invalidates all controls while rejected draft survives tab leave (0.487898ms)
+✔ independent: actual native adapter with narrow expo digest mock and web digest agree with Node on non-ASCII subviews (10.013521ms)
+✔ strict decoder boundaries and byte hashing parity, including all byte values and subviews (19.130616ms)
+✔ immutable snapshots, private prepared brand and metadata privacy (1.406813ms)
+✔ declaration and rejected whole edits block inspection, retain draft and clear reports (0.835452ms)
+✔ late success and rejection fenced after edit, declaration, clear or tab leave (1.008616ms)
+✔ four whole records and four whole selected reports; stale selection and whole event failure (1.831552ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 492.083729

@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "analysis": "offline-byte-differential",
+  "serviceUuid": "FCD2",
+  "groups": [
+    {
+      "id": "baseline",
+      "condition": "Synthetic declared 20 C"
+    },
+    {
+      "id": "changed",
+      "condition": "Synthetic declared 18.44 C"
+    }
+  ],
+  "sources": [
+    {
+      "id": "android",
+      "platform": "android",
+      "snapshotId": "android",
+      "origin": "synthetic-fixture"
+    },
+    {
+      "id": "ios",
+      "platform": "ios",
+      "snapshotId": "ios",
+      "origin": "synthetic-fixture"
+    }
+  ],
+  "trials": [
+    {
+      "id": "android-baseline-1",
+      "groupId": "baseline",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-baseline-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EAC0Ac=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "android",
+      "representation": "android-ad-bytes",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "android",
+      "adOffset": 0,
+      "payloadHex": "4002d007",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "android-baseline-2",
+      "groupId": "baseline",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-baseline-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EAC0Ac=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "android",
+      "representation": "android-ad-bytes",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "android",
+      "adOffset": 0,
+      "payloadHex": "4002d007",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "android-changed-1",
+      "groupId": "changed",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-changed-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EACNAc=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "android",
+      "representation": "android-ad-bytes",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "android",
+      "adOffset": 0,
+      "payloadHex": "40023407",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "android-changed-2",
+      "groupId": "changed",
+      "sourceId": "android",
+      "receiptId": "synthetic-android-changed-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"android\",\"representation\":\"android-ad-bytes\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"android\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"BxbS/EACNAc=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "android",
+      "representation": "android-ad-bytes",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "android",
+      "adOffset": 0,
+      "payloadHex": "40023407",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "ios-baseline-1",
+      "groupId": "baseline",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-baseline-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "ios",
+      "representation": "ios-normalized-fields-with-opaque-json-base64",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "ios",
+      "adOffset": null,
+      "payloadHex": "4002d007",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "ios-baseline-2",
+      "groupId": "baseline",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-baseline-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QALQBw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "ios",
+      "representation": "ios-normalized-fields-with-opaque-json-base64",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "ios",
+      "adOffset": null,
+      "payloadHex": "4002d007",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "ios-changed-1",
+      "groupId": "changed",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-changed-1",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "ios",
+      "representation": "ios-normalized-fields-with-opaque-json-base64",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "ios",
+      "adOffset": null,
+      "payloadHex": "40023407",
+      "interpretation": "byte-comparison-only"
+    },
+    {
+      "id": "ios-changed-2",
+      "groupId": "changed",
+      "sourceId": "ios",
+      "receiptId": "synthetic-ios-changed-2",
+      "document": "{\"schemaVersion\":1,\"sdk\":\"react-native-ble-plx@3.5.1\",\"platform\":\"ios\",\"representation\":\"ios-normalized-fields-with-opaque-json-base64\",\"provenance\":{\"origin\":\"synthetic-fixture\",\"label\":\"Synthetic controlled byte comparison; not a physical measurement\",\"capturedAt\":null},\"snapshot\":{\"id\":\"ios\",\"name\":null,\"rssi\":null,\"manufacturerData\":null,\"rawScanRecord\":\"e30=\",\"serviceData\":{\"FCD2\":\"QAI0Bw==\"},\"serviceUUIDs\":null,\"localName\":null,\"txPowerLevel\":null,\"solicitedServiceUUIDs\":null,\"isConnectable\":null,\"overflowServiceUUIDs\":null},\"unavailableFields\":[\"name\",\"rssi\",\"manufacturerData\",\"serviceUUIDs\",\"localName\",\"txPowerLevel\",\"solicitedServiceUUIDs\",\"isConnectable\",\"overflowServiceUUIDs\"],\"undefinedFields\":[]}",
+      "platform": "ios",
+      "representation": "ios-normalized-fields-with-opaque-json-base64",
+      "provenance": {
+        "origin": "synthetic-fixture",
+        "label": "Synthetic controlled byte comparison; not a physical measurement",
+        "capturedAt": null
+      },
+      "snapshotId": "ios",
+      "adOffset": null,
+      "payloadHex": "40023407",
+      "interpretation": "byte-comparison-only"
+    }
+  ],
+  "comparisons": [
+    {
+      "sourceId": "android",
+      "groups": [
+        {
+          "groupId": "baseline",
+          "trialIds": [
+            "android-baseline-1",
+            "android-baseline-2"
+          ]
+        },
+        {
+          "groupId": "changed",
+          "trialIds": [
+            "android-changed-1",
+            "android-changed-2"
+          ]
+        }
+      ],
+      "payloadLengths": [
+        {
+          "trialId": "android-baseline-1",
+          "bytes": 4
+        },
+        {
+          "trialId": "android-baseline-2",
+          "bytes": 4
+        },
+        {
+          "trialId": "android-changed-1",
+          "bytes": 4
+        },
+        {
+          "trialId": "android-changed-2",
+          "bytes": 4
+        }
+      ],
+      "changedOffsets": [
+        2
+      ],
+      "matrix": [
+        {
+          "offset": 0,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "40",
+                "40"
+              ],
+              "counts": [
+                {
+                  "value": "40",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "40",
+                "40"
+              ],
+              "counts": [
+                {
+                  "value": "40",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "02",
+                "02"
+              ],
+              "counts": [
+                {
+                  "value": "02",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "02",
+                "02"
+              ],
+              "counts": [
+                {
+                  "value": "02",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "changed": true,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "d0",
+                "d0"
+              ],
+              "counts": [
+                {
+                  "value": "d0",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "34",
+                "34"
+              ],
+              "counts": [
+                {
+                  "value": "34",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "07",
+                "07"
+              ],
+              "counts": [
+                {
+                  "value": "07",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "07",
+                "07"
+              ],
+              "counts": [
+                {
+                  "value": "07",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "ios",
+      "groups": [
+        {
+          "groupId": "baseline",
+          "trialIds": [
+            "ios-baseline-1",
+            "ios-baseline-2"
+          ]
+        },
+        {
+          "groupId": "changed",
+          "trialIds": [
+            "ios-changed-1",
+            "ios-changed-2"
+          ]
+        }
+      ],
+      "payloadLengths": [
+        {
+          "trialId": "ios-baseline-1",
+          "bytes": 4
+        },
+        {
+          "trialId": "ios-baseline-2",
+          "bytes": 4
+        },
+        {
+          "trialId": "ios-changed-1",
+          "bytes": 4
+        },
+        {
+          "trialId": "ios-changed-2",
+          "bytes": 4
+        }
+      ],
+      "changedOffsets": [
+        2
+      ],
+      "matrix": [
+        {
+          "offset": 0,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "40",
+                "40"
+              ],
+              "counts": [
+                {
+                  "value": "40",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "40",
+                "40"
+              ],
+              "counts": [
+                {
+                  "value": "40",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "02",
+                "02"
+              ],
+              "counts": [
+                {
+                  "value": "02",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "02",
+                "02"
+              ],
+              "counts": [
+                {
+                  "value": "02",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "changed": true,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "d0",
+                "d0"
+              ],
+              "counts": [
+                {
+                  "value": "d0",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "34",
+                "34"
+              ],
+              "counts": [
+                {
+                  "value": "34",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "changed": false,
+          "stableWithinEachGroup": true,
+          "cells": [
+            {
+              "groupId": "baseline",
+              "values": [
+                "07",
+                "07"
+              ],
+              "counts": [
+                {
+                  "value": "07",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            },
+            {
+              "groupId": "changed",
+              "values": [
+                "07",
+                "07"
+              ],
+              "counts": [
+                {
+                  "value": "07",
+                  "count": 2
+                }
+              ],
+              "runCount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Owned/lab scope, groups, conditions, identifiers, receipt references and source timestamps are user declarations, not verified identity, reception, chronology or experimental control.",
+    "Offsets are zero-based within the service payload, excluding UUID and AD headers. Null means absent, never zero. Byte positions are not aligned after insertion/deletion.",
+    "Counts and runs describe listed trial order within each source/group, not time, independence, significance, causality or sensor mappings.",
+    "Android uses raw AD bytes only; iOS uses normalized service fields only and retains opaque rawScanRecord without interpreting it.",
+    "Encrypted BTHome remains opaque. No plaintext field inference, decryption, command generation, device control or automatic action."
+  ]
+}

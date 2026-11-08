@@ -1,0 +1,32 @@
+✔ manual byte oracle: offsets, signed64 max, BE drops, repeated reports and address reversal (4.344715ms)
+✔ all RSSI octets and enum octets use exact supported sets (26.187992ms)
+✔ classification does not validate; complete wrapper with every shortened candidate refuses selection (8.795931ms)
+✔ nonlegacy metadata has only safe keys; every unknown first octet remains unexposed (7.036011ms)
+✔ AD parser and service parity retain malformed, encrypted, unknown and inert URL bytes (2.364412ms)
+✔ intrinsic view offset, detached buffer, frozen brand and copied hasher bytes (0.575373ms)
+✖ standalone selected JSON carries source/time/drop/identity/RF limitations (0.67406ms)
+✔ CLI subprocesses: no opaque markers/path leakage, strict argument matrix, atomic failure, ancestor link permitted (2344.741432ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2557.054
+
+✖ failing tests:
+
+test at tests/hci-independent-review.test.ts:81:1
+✖ standalone selected JSON carries source/time/drop/identity/RF limitations (0.67406ms)
+  AssertionError [ERR_ASSERTION]: selected artifact requires standalone warnings
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-independent-review/tests/hci-independent-review.test.ts:84:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

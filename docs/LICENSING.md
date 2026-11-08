@@ -1,6 +1,6 @@
 # Licensing inventory
 
-APEX original source remains private and all rights reserved pending the owner's licensing decision. Repository privacy does not remove third-party obligations. No upstream Flipper, Bruce, Proxmark, Chameleon, SDR or industrial-tool source is copied into this foundation. Expo and its dependencies are installed normally, with exact versions in package-lock.json. The ESP-IDF target references its SDK rather than vendoring it.
+APEX original source remains private and all rights reserved pending the owner's licensing decision. Repository privacy does not remove third-party obligations. Pinned upstream reference checkouts are held separately under research/upstream-sources with their original licences. None of their code is integrated into the APEX application or accessory firmware. Expo and its dependencies are installed normally, with exact versions in package-lock.json. The ESP-IDF target references its SDK rather than vendoring it.
 
 The following is an engineering intake inventory, not a blanket redistribution clearance. GitHub's detected licence is only a clue: PyModbus, HackRF, CAN utilities and BACnet demonstrate why component/file inspection matters. A process boundary is an architectural choice, not proof that copyleft obligations disappear.
 
@@ -41,3 +41,7 @@ Distribution gates: produce an SBOM from the lockfile and selected SDK component
 
 The implementation branch includes [npm-dependencies.json](../research/npm-dependencies.json), with package paths, exact versions, declared licences, development/optional flags, integrity identifiers and the lockfile SHA-256. Regenerate with `npm run inventory` and verify with `npm run inventory:check`. It includes the tooling graph as well as application dependencies, including MPL-2.0, attribution and dual-licence entries that deserve selected-file review before distribution. SDK images, Android/Maven dependencies and future drivers need separate inventories when actually built/adopted.
 
+
+## Desktop REA toolchain, 2 November 2026
+
+REA (`rea-agents` 6.8.0) declares MIT. Its reference checkout preserves LICENSE and THIRD_PARTY_NOTICES.md; the installed npm release and reference commit are separately pinned. `research/rea-toolchain.json` inventories the isolated tooling lockfile, including optional packages even though installation omits them. GNU objdump is a system executable, not a mobile dependency; its version output identifies GNU binutils and GPLv3-or-later licensing. The tooling is excluded from Metro and TypeScript application discovery. No proprietary Ghidra/IDA/Hopper installation or binary is redistributed.

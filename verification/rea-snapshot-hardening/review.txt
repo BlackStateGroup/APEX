@@ -1,0 +1,26 @@
+REA inspection hardening: final revised patch and validation
+Patch: apex-rea-hardening-6ad617a-v2.patch
+SHA-256: b1c9a2f5b791ed8cb2e01f6537832136f3e2c731a0c103f1cb0cf7cfa4d44e81
+Exact base: 6ad617a5da71f50faa0b19bc0df14b92c8f7a976
+Worktree: /workspace/scratch/b96d3539d24d/apex-rea-hardening
+
+Fixes include bounded descriptor input, exact private snapshot for every analyzer, source/snapshot provenance, exclusive report directory reservation, stderr/error/exit/signal diagnostics, and cleanup handling. Snapshot basename now preserves the user's original basename and raw subject.name. Snapshot cleanup precedes all report publication and success output. Cleanup failure prevents publication; a secondary cleanup failure preserves the original error through AggregateError. A report-write failure preserves partial reports. Schema remains version 1 with additive fields.
+
+Single authorized retry completed successfully with:
+CI=1 npm_config_update_notifier=false npm_config_offline=true npm_config_audit=false npm_config_fund=false
+- npm test: PASS, 294/294, including host C checks. Log rea-hardening-offline-full.log.
+- npm run typecheck: PASS. Log rea-hardening-offline-typecheck.log.
+- node --test tests/rea-inspection.test.ts: PASS, 17/17. Log rea-hardening-offline-focused.log.
+- Exit summary: rea-hardening-offline-exits.txt (all zero).
+- git diff --check: PASS.
+- git apply --check against main at db96c1b7466063ae5419bfc1917a625f2e171a4f: PASS.
+No installation/download requested; no connection attempt reported during retry. Tests use existing pinned dependencies, local GNU tools and owned/synthetic inputs. This is local host/CLI evidence, not physical hardware, native app, decompiler or remote-worker validation. Timeout/signal/overflow handling is tested with deterministic process-result injection rather than a wall-clock timeout demonstration. Source unchanged is explicitly an endpoint observation, not protection against hostile same-user snapshot modification.
+
+Prior failure evidence preserved unchanged:
+- rea-hardening-before.log: base reproductions, 5 pass / 3 fail.
+- rea-hardening-focused.log: intermediate 13/13 pass.
+- rea-hardening-focused-final.log: 13/14 pass, test harness intercepted module-loader reads; corrected inode-targeted hook is now validated.
+- rea-hardening-full.log: interrupted first npm batch with partial tests.
+- rea-hardening-verification.txt: initial blocker and exact denied command.
+
+Retry justification: original batch confirmed stopped; read-only installed npm inspection established notifier exits before request when update-notifier=false or CI, and registry fetch maps offline=true to only-if-cached. Tests/scripts were reviewed and require no network. Parent explicitly authorized one retry using this new evidence; no second retry needed. Original connection's exact cause remains unproved and is not asserted as established.

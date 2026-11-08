@@ -1,0 +1,28 @@
+{
+  "reusedPortableBinary": {
+    "source": "../apex-continuation/build/apex-firmware",
+    "destination": "build/apex-firmware",
+    "sha256": "a9d2393adc37fffa3ef8eed26344a20d572930ec207f26de96c07db07ea7cca5",
+    "sourceDestinationEqualBeforeAfter": true,
+    "builtHere": false
+  },
+  "reaDependencies": "/workspace/scratch/b96d3539d24d/apex-rea-worker-prep/node_modules",
+  "fullTestCommand": "node --test --test-concurrency=2 tests/*.test.ts",
+  "environment": {
+    "CI": "1",
+    "EXPO_OFFLINE": "1",
+    "EXPO_NO_TELEMETRY": "1",
+    "npm_config_update_notifier": "false",
+    "npm_config_offline": "true",
+    "npm_config_audit": "false",
+    "npm_config_fund": "false"
+  },
+  "initialUnpreparedRun": {
+    "log": "unprepared-clone-full-tests.log",
+    "command": "node --test tests/*.test.ts",
+    "tests": 2030,
+    "pass": 2012,
+    "fail": 18,
+    "explanation": "Missing copied portable host binary and reused REA dependencies in isolated clone. No runtime defect conclusion."
+  }
+}

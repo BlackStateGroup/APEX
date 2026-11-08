@@ -1,0 +1,33 @@
+✔ selected pinned interface response shapes and terminal pair (2.676142ms)
+✔ presence is independent of effective defaults, including empty/no content and missing children (0.536631ms)
+✔ errors and unknown statuses cannot become successful identity (0.378828ms)
+✔ IDs, repeated keys and repeated terminal sequences are never pooled (0.339572ms)
+✔ unknown values retain offsets and original bytes without nested interpretation (0.36623ms)
+✔ reject duplicate known fields and multiple possible content, even unknown content (0.676039ms)
+✔ known types, UTF-8, numeric widths, tag zero, unsupported wires and canonical policies (0.603409ms)
+✔ framing EOF tails preserve bytes while malformed complete messages throw (0.878464ms)
+✔ every byte split and coalesced responses: inspect reassembled bytes, prefix tails never scan ahead (8.787765ms)
+✔ fixed budget boundaries: input, frame, field count, frame count, strings (17.420349ms)
+✔ copies input and output, rejects missing provenance (0.372166ms)
+✔ CLI: bounded local files, explicit provenance, no stdout on error, no symlinks/FIFOs/directories/URLs (138.179128ms)
+✔ host boundary snapshots only a strict own provenance data property (0.749227ms)
+✔ host byte snapshots use intrinsic bounds and storage, rejecting shared/detached/proxy inputs (0.693728ms)
+✔ quarter tones, negative tone, DC, lag alias and half-turn convention (6.506041ms)
+✔ zero-energy endpoints never claim phase/frequency (1.229395ms)
+✔ integer oracle, rails, irregular geometry, window-one orientation (6.429178ms)
+✔ strict explicit parameters, accessor refusal and exact extent bounds (15.891873ms)
+✔ full original provenance and caller-owned report isolation (0.702643ms)
+✔ independent oracle covers the complete original metadata, not just digest shape (178.272987ms)
+✔ post-analysis serialization exception and size assertion leave stdout empty (367.555908ms)
+✔ walkthrough completes with common network entry points trapped and filesystem writes denied (171.777372ms)
+✔ actual offline lab CLI completes every synthetic stage in one bounded deterministic summary (370.321938ms)
+✔ unsupported arguments and late fixture/hash failures never emit partial success (595.023441ms)
+✔ late phase arithmetic and Flipper presence/status faults keep stdout atomic with writes denied (348.217773ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1771.154743

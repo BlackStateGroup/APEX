@@ -1,0 +1,32 @@
+✖ independent decimal oracle rejects exact values above one despite Number rounding (7.77064ms)
+✔ all 256 parsed byte values preserve independent integer identity (25.942875ms)
+✔ independent raw oracle covers all byte values, and individual waveform corruption (65.657571ms)
+✔ independent integer tolerance boundaries and metadata separation (3.260737ms)
+✔ physical line oracle, exact source digest and duplicate inert identities (0.975974ms)
+✔ source view uses exact slots and context cannot mutate previously captured bytes (1.237923ms)
+✔ ASCII grammar rejects every forbidden byte, extra whitespace, protocol aliases and key confusion (8.287858ms)
+✔ actual CLI bounded output and atomic failures with writes denied (1110.131303ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1362.127721
+
+✖ failing tests:
+
+test at tests/ir-offline-independent.test.ts:20:1
+✖ independent decimal oracle rejects exact values above one despite Number rounding (7.77064ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection: exact decimal 1.00000000000000001 exceeds 1
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ir-independent-review/tests/ir-offline-independent.test.ts:22:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /invalid-duty-cycle/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

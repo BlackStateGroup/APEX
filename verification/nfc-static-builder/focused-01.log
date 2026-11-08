@@ -1,0 +1,16 @@
+✔ exact source SHA256, literal offsets and whole NDEF value parity (2.9973ms)
+✔ explicit mode lengths and exact CC accepted set, no access inference (6.892094ms)
+✔ all 256 tags and length bytes, no search recovery (11.166292ms)
+✔ literal edge offsets, NULL exhaustion, terminator and opaque trailing (0.494242ms)
+✔ late malformed/unsupported suppress NDEF; missing, multiple, empty, decoder failure separate (0.467957ms)
+✔ snapshot before context, independent hash copy, frozen results and private source (0.915311ms)
+✔ actual fixed nonshared Uint8Array and strict own context (0.606154ms)
+✔ CLI strict args, bounded regular-file reads, symlinks, generic atomic errors, read-only permission (235.860192ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 405.529141

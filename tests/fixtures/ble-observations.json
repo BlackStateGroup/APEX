@@ -1,0 +1,44 @@
+[
+  {
+    "schemaVersion": 1,
+    "inputKind": "android-scan-record",
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Hand-constructed public TLM layout: 3000 mV, 25.5 C, one advertisement, one second uptime. Not received over RF.",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "dataStatus": "complete",
+    "advertisingHex": "0201060303aafe1116aafe20000bb81980000000010000000a"
+  },
+  {
+    "schemaVersion": 1,
+    "inputKind": "ios-advertisement-fields",
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Synthetic normalized Core Bluetooth-shaped fields with the same TLM bytes; not an iPhone capture.",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "fields": {
+      "localName": null,
+      "serviceUuids": ["FEAA"],
+      "serviceData": [{ "uuid": "FEAA", "payloadHex": "20000bb81980000000010000000a" }],
+      "manufacturerDataHex": null,
+      "txPowerDbm": null,
+      "isConnectable": false
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "inputKind": "android-scan-record",
+    "provenance": {
+      "origin": "synthetic-fixture",
+      "label": "Synthetic unknown AD type and repeated company-ID fields; company number is test data, not device attribution.",
+      "capturedAt": null
+    },
+    "rssiDbm": null,
+    "dataStatus": "unknown",
+    "advertisingHex": "020106090941504558204c6162020aec05ff3412010205ff34120304047fdeadbe"
+  }
+]

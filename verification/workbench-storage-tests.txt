@@ -1,0 +1,27 @@
+✔ initial and edited documents cannot save before successful interpretation (2.618345ms)
+✔ demo fixture is identical to documented decoder test data (0.224953ms)
+✔ edits immediately invalidate both visible results and save input (0.413053ms)
+✔ import provenance is derived from envelope, not the control used to load it (0.740068ms)
+✔ failed reparse never leaves a successful result saveable (0.942839ms)
+✔ journal cap does not hide successful interpretation or truncate source (0.253927ms)
+✔ double taps and repeat interpretation cannot duplicate a completed save (0.449016ms)
+✔ edit while saving ignores stale completion content and blocks overlapping saves (0.22291ms)
+✔ failed save retains interpreted source for explicit retry (0.252575ms)
+✔ reopen verifies exact retained input and computes fresh unauthenticated interpretation (2.708379ms)
+✔ reopen rejects digest mismatches, verifier errors, wrong source, and non-BLE records (1.081064ms)
+✔ reopen snapshots before asynchronous verification and never trusts caller mutations (0.617016ms)
+✔ iOS workflow retains normalized fields, and encrypted BTHome stays opaque through save/reopen (2.060398ms)
+✔ web adapter retains exact BLE input and can read and verify it again (8.331191ms)
+✔ web adapter detects valid document tampering without discarding the stored bytes (1.547546ms)
+✔ quota failure retains previous web evidence and surfaces the failure (1.999547ms)
+✔ corrupt web index is not overwritten by a new save (2.975034ms)
+✔ web capacity boundary preserves all existing records (15.728226ms)
+✔ overlapping saves in one app context preserve every record (5.095911ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.381472

@@ -1,0 +1,1419 @@
+{
+  "reviewedAt": "2026-11-08T08:42:33.272483+00:00",
+  "scope": "All 31 original archived root-repository snapshots restored; no upstream code execution, hardware operations, builds, or nested-source fetching. Pwnagotchi not in supplied corpus.",
+  "manifest": "research/source-imports.json",
+  "manifestSha256": "43aa856a5509ffc862ace737193bc8735fd422f5a5ac705283a7774645503367",
+  "summary": {
+    "rootCount": 31,
+    "archiveParts": 32,
+    "archiveBytes": 1986961997,
+    "trackedEntries": 164492,
+    "gitlinks": 63,
+    "materializedGitlinks": 0,
+    "allCommitsMatch": true,
+    "allWorktreesClean": true,
+    "allArchiveHashesMatch": true,
+    "allRecordedLicencePathsPresent": true
+  },
+  "repositories": [
+    {
+      "id": "R01",
+      "repository": "flipperdevices/flipperzero-firmware",
+      "path": "research/upstream-sources/R01-flipperdevices--flipperzero-firmware",
+      "commit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "expectedCommit": "9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 4336,
+      "rootGitlinks": [
+        {
+          "path": "assets/protobuf",
+          "commit": "1c84fa48919cbb71d1cc65236fc0ee36740e24c6",
+          "materialized": false
+        },
+        {
+          "path": "documentation/doxygen/doxygen-awesome-css",
+          "commit": "df88fe4fdd97714fadfd3ef17de0b4401f804052",
+          "materialized": false
+        },
+        {
+          "path": "lib/FreeRTOS-Kernel",
+          "commit": "def7d2df2b0506d3d249334974f51e427c17a41c",
+          "materialized": false
+        },
+        {
+          "path": "lib/heatshrink",
+          "commit": "7398ccc91652a33483245200cfa1a83b073bc206",
+          "materialized": false
+        },
+        {
+          "path": "lib/libusb_stm32",
+          "commit": "6ca2857519f996244f7b324dd227fdf0a075fffb",
+          "materialized": false
+        },
+        {
+          "path": "lib/mbedtls",
+          "commit": "107ea89daaefb9867ea9121002fbbdf926780e98",
+          "materialized": false
+        },
+        {
+          "path": "lib/microtar",
+          "commit": "1e921369b2c92bb219fcef84a37d4d2347794c0f",
+          "materialized": false
+        },
+        {
+          "path": "lib/mlib",
+          "commit": "62c8ac3e5d4a7a4f8757328e7a80286fde2686b6",
+          "materialized": false
+        },
+        {
+          "path": "lib/nanopb",
+          "commit": "6cfe48d6f1593f8fa5c0f90437f5e6522587745e",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_cmsis",
+          "commit": "d1b860584dfe24d40d455ae624ed14600dfa93c9",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_copro",
+          "commit": "133182d5583e998bb263cd947105be4df9c29cb3",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_hal",
+          "commit": "cfd0dd258cb031c95b2b2d6d04c19f9f625fe3e8",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R01-flipperdevices--flipperzero-firmware-9981d9d4aa5e.tar.gz",
+          "bytes": 41544338,
+          "sha256": "b925caae4da07e85e61dce9ff3c2cac3cd972c4b32b95a20d1ee6c14cb73295c",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_de4c701893bc8191929213d852cdf920"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R02",
+      "repository": "GthiN89/FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on",
+      "path": "research/upstream-sources/R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on",
+      "commit": "83cd7d56d06e8b0efb306c44bd23854131e3a767",
+      "expectedCommit": "83cd7d56d06e8b0efb306c44bd23854131e3a767",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 8440,
+      "rootGitlinks": [
+        {
+          "path": "applications/external",
+          "commit": "d28fd3ddaa1a6dbf84851a75e602d448c38f61e5",
+          "materialized": false
+        },
+        {
+          "path": "applications/external_Back",
+          "commit": "d28fd3ddaa1a6dbf84851a75e602d448c38f61e5",
+          "materialized": false
+        },
+        {
+          "path": "assets/protobuf",
+          "commit": "ea4f185f5eaa265955c520eae2832887ee6aa5e4",
+          "materialized": false
+        },
+        {
+          "path": "documentation/doxygen/doxygen-awesome-css",
+          "commit": "df88fe4fdd97714fadfd3ef17de0b4401f804052",
+          "materialized": false
+        },
+        {
+          "path": "lib/FreeRTOS-Kernel",
+          "commit": "def7d2df2b0506d3d249334974f51e427c17a41c",
+          "materialized": false
+        },
+        {
+          "path": "lib/heatshrink",
+          "commit": "7398ccc91652a33483245200cfa1a83b073bc206",
+          "materialized": false
+        },
+        {
+          "path": "lib/libusb_stm32",
+          "commit": "6ca2857519f996244f7b324dd227fdf0a075fffb",
+          "materialized": false
+        },
+        {
+          "path": "lib/mbedtls",
+          "commit": "107ea89daaefb9867ea9121002fbbdf926780e98",
+          "materialized": false
+        },
+        {
+          "path": "lib/microtar",
+          "commit": "1e921369b2c92bb219fcef84a37d4d2347794c0f",
+          "materialized": false
+        },
+        {
+          "path": "lib/mlib",
+          "commit": "62c8ac3e5d4a7a4f8757328e7a80286fde2686b6",
+          "materialized": false
+        },
+        {
+          "path": "lib/nanopb",
+          "commit": "6cfe48d6f1593f8fa5c0f90437f5e6522587745e",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_cmsis",
+          "commit": "d1b860584dfe24d40d455ae624ed14600dfa93c9",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_copro",
+          "commit": "133182d5583e998bb263cd947105be4df9c29cb3",
+          "materialized": false
+        },
+        {
+          "path": "lib/stm32wb_hal",
+          "commit": "cfd0dd258cb031c95b2b2d6d04c19f9f625fe3e8",
+          "materialized": false
+        },
+        {
+          "path": "lib/uzlib",
+          "commit": "6d60d651a4499a64f2e5b21b4cc08d98cb84b5c1",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on-83cd7d56d06e.tar.gz",
+          "bytes": 140705528,
+          "sha256": "be5e4fdc3b485e0fcb4bff444936a040acfd35485871e0b0985da044e121e763",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_947b76d113f08191abb8de6de7852779"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R03",
+      "repository": "BruceDevices/firmware",
+      "path": "research/upstream-sources/R03-BruceDevices--firmware",
+      "commit": "a59213f3ec6cd302fa32c2042b2700c9c24d991a",
+      "expectedCommit": "a59213f3ec6cd302fa32c2042b2700c9c24d991a",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 1256,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R03-BruceDevices--firmware-a59213f3ec6c.tar.gz",
+          "bytes": 101600591,
+          "sha256": "3bd0872cbba2eed7857c543a1a2f356df29cb3f67ee3c333df0ff5d53c276d1b",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_8d4a703ed2308191ae2497b8e0e141e9"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R04",
+      "repository": "RfidResearchGroup/proxmark3",
+      "path": "research/upstream-sources/R04-RfidResearchGroup--proxmark3",
+      "commit": "754bbae3d946429a6354cd34a97a2dd29ce6f157",
+      "expectedCommit": "754bbae3d946429a6354cd34a97a2dd29ce6f157",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 2827,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE.txt",
+          "exists": true,
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R04-RfidResearchGroup--proxmark3-754bbae3d946.tar.gz",
+          "bytes": 86985635,
+          "sha256": "5553d14a6052ddfd94f2ada00bc45310143d5c397138654612cf0415f97425c6",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_def31ed15354819187ecc3eb14bf9c92"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R05",
+      "repository": "RfidResearchGroup/ChameleonUltra",
+      "path": "research/upstream-sources/R05-RfidResearchGroup--ChameleonUltra",
+      "commit": "4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e",
+      "expectedCommit": "4c5bc2cb6b023d23f7bbc383c9b2b5e39f95419e",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 1810,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R05-RfidResearchGroup--ChameleonUltra-4c5bc2cb6b02.tar.gz",
+          "bytes": 34248752,
+          "sha256": "e8ca238e48f9c5871d64bea94f455e20a8f475474d1be498c7da75e5dee769e3",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_946a459f14308191b910ef18d272239d"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R06",
+      "repository": "greatscottgadgets/hackrf",
+      "path": "research/upstream-sources/R06-greatscottgadgets--hackrf",
+      "commit": "468c5d93b66032c892c95bbf9ff15ff1b803e84f",
+      "expectedCommit": "468c5d93b66032c892c95bbf9ff15ff1b803e84f",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 559,
+      "rootGitlinks": [
+        {
+          "path": "firmware/libopencm3",
+          "commit": "a0bb997968bf57c87f2aa4e389a63219580bb5c3",
+          "materialized": false
+        },
+        {
+          "path": "hardware/gsg-kicad-lib",
+          "commit": "41173d673f9dec5f73c0cb88ea69e9b167b001b3",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "COPYING",
+          "exists": true,
+          "sha256": "49b60a6288f90f49074228cc1fae0fb16871ba36b756013abdf7c2fc92f01fad",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R06-greatscottgadgets--hackrf-468c5d93b660.tar.gz",
+          "bytes": 34255511,
+          "sha256": "0dac2d2090bcb631b91b8956b21302f9b0590385614f2f463aa13d6919381ecd",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_bcc57a1db9f08191b139a39c1994dda5"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R07",
+      "repository": "meshtastic/firmware",
+      "path": "research/upstream-sources/R07-meshtastic--firmware",
+      "commit": "f9c26505edb40c31038f5bcd71127fa408a6e929",
+      "expectedCommit": "f9c26505edb40c31038f5bcd71127fa408a6e929",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 2292,
+      "rootGitlinks": [
+        {
+          "path": "meshtestic",
+          "commit": "dcac7e5673005f4d8a2b1f0f6e06877b689d7519",
+          "materialized": false
+        },
+        {
+          "path": "protobufs",
+          "commit": "8d0ed0c135f91ad1d6f9c60bc341277d64946bce",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "0ae0485a5bd37a63e63603596417e4eb0e653334fa6c7f932ca3a0e85d4af227",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R07-meshtastic--firmware-f9c26505edb4.tar.gz",
+          "bytes": 13805316,
+          "sha256": "2c259a86f51c4b04771763d76c64ca717c3a9b3f277131d86b885bfb96f37ceb",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_448c30c8ee9c819194962253dd7a1675"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R08",
+      "repository": "jgromes/RadioLib",
+      "path": "research/upstream-sources/R08-jgromes--RadioLib",
+      "commit": "3a664b64099e4bdbdb3e6f28a5ca6b833050b21e",
+      "expectedCommit": "3a664b64099e4bdbdb3e6f28a5ca6b833050b21e",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 417,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "license.txt",
+          "exists": true,
+          "sha256": "025378110a5679f82e8a59c19cf91b8ed760dc8752e5504596ef0c0592b8a3e8",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R08-jgromes--RadioLib-3a664b64099e.tar.gz",
+          "bytes": 11251601,
+          "sha256": "b7f55bf6a17507f78cd38633497690052d4f77e5f956cb6b5c31c1da3ef00c86",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_4d6aaa6946548191800e0c6a2d3c2dcb"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R09",
+      "repository": "crankyoldgit/IRremoteESP8266",
+      "path": "research/upstream-sources/R09-crankyoldgit--IRremoteESP8266",
+      "commit": "1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f",
+      "expectedCommit": "1e2f0f3ef0a93cbf2a8ddb2e95130f8f4c584b3f",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 1877,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE.txt",
+          "exists": true,
+          "sha256": "253ab592417971d406ea43868f05ea9987728549ad59c8c8a2b2efcce0c6993e",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R09-crankyoldgit--IRremoteESP8266-1e2f0f3ef0a9.tar.gz",
+          "bytes": 11700716,
+          "sha256": "b6794c2dbdaa876d09679ba115fbab036a8e77e15436bec798ea91ee780a5fe7",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_7264a334fdc8819193e98f4d3cbf8409"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R10",
+      "repository": "hathach/tinyusb",
+      "path": "research/upstream-sources/R10-hathach--tinyusb",
+      "commit": "67570a60d4c87f8bd6da7e49643b667472d63786",
+      "expectedCommit": "67570a60d4c87f8bd6da7e49643b667472d63786",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 2783,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "b01185698f530f4f61b28f42d5a4d6bbe7834bde6a63f00773235628a7bdce22",
+          "type": "file"
+        },
+        {
+          "path": "LICENSES",
+          "exists": true,
+          "type": "directory",
+          "files": [
+            {
+              "path": "LICENSES/MIT.txt",
+              "sha256": "24f09d6d1dc1534b8efcaca939ddec1969cac255471aae25d299ab8e81ada29f"
+            }
+          ]
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R10-hathach--tinyusb-67570a60d4c8.tar.gz",
+          "bytes": 9665436,
+          "sha256": "8fea152a5e75aac17582640570859d324fa6ab05997ae4ae77ffd346f7b268ec",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_4bd339f4f1488191b76401f6e800219f"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R11",
+      "repository": "espressif/esp-idf",
+      "path": "research/upstream-sources/R11-espressif--esp-idf",
+      "commit": "d445e947156f276dfe0db5804e4edf6ae90fe6fb",
+      "expectedCommit": "d445e947156f276dfe0db5804e4edf6ae90fe6fb",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 22260,
+      "rootGitlinks": [
+        {
+          "path": "components/bootloader/subproject/components/micro-ecc/micro-ecc",
+          "commit": "24c60e243580c7868f4334a1ba3123481fe1aa48",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32",
+          "commit": "e4281c149690558467f75137d64bd5334076e7e1",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32c2/esp32c2-bt-lib",
+          "commit": "f36e7642c87d790cd43e6545479de2a93015582c",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32c3_family",
+          "commit": "0a08c4b32f3666003080b662a1a61794da24ff0f",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32c5/esp32c5-bt-lib",
+          "commit": "3556b7b894e93826cf1d83ea1a4962862315cd45",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32c6/esp32c6-bt-lib",
+          "commit": "55334862047fc94a8a40715069390092d21ab000",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32h2/esp32h2-bt-lib",
+          "commit": "7d65dcaeceb6700d6db473988939acd689282082",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32h4/esp32h4-bt-lib",
+          "commit": "c0c43b29a6381ac5a4877ae830ea87e893862435",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/controller/lib_esp32s31/esp32s31-bt-lib",
+          "commit": "7a85006f35f6839ae7ea5adee16e68a757759196",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/esp_ble_audio/lib/lib",
+          "commit": "2480ba6a30beba46a7b18fc1fd061e81dae03b2a",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/esp_ble_mesh/lib/lib",
+          "commit": "8b693178d76ec2578abf46aec53c2fb895b63df7",
+          "materialized": false
+        },
+        {
+          "path": "components/bt/host/nimble/nimble",
+          "commit": "fa3fd0e196e4cec72285cf6a1caedf921f1b057e",
+          "materialized": false
+        },
+        {
+          "path": "components/cmock/CMock",
+          "commit": "eeecc49ce8af123cf8ad40efdb9673e37b56230f",
+          "materialized": false
+        },
+        {
+          "path": "components/esp_coex/lib",
+          "commit": "fa152b3b6b2e3c5e3a57e55fcf4b005a4e28cef9",
+          "materialized": false
+        },
+        {
+          "path": "components/esp_phy/lib",
+          "commit": "20f1db053a0e6cb9f1c09d255c43bf42483041d0",
+          "materialized": false
+        },
+        {
+          "path": "components/esp_wifi/lib",
+          "commit": "d26b374259d0ead25b7f07c9f0e51cde40db8d55",
+          "materialized": false
+        },
+        {
+          "path": "components/heap/tlsf",
+          "commit": "2867f6883a12920b1969ff9624c0ab0e4185c2ce",
+          "materialized": false
+        },
+        {
+          "path": "components/lwip/lwip",
+          "commit": "fc73c67e5c37c27a319725a0aee974c087dbf1a6",
+          "materialized": false
+        },
+        {
+          "path": "components/mbedtls/mbedtls",
+          "commit": "f5c91881be98b4da0bf57c217bf45b668fb84f9f",
+          "materialized": false
+        },
+        {
+          "path": "components/openthread/lib",
+          "commit": "b7bc06ab3cb69d8058192f9177c01468880f4698",
+          "materialized": false
+        },
+        {
+          "path": "components/openthread/openthread",
+          "commit": "43cc05a9bcf780bd758bad53d897e2d88cf8cb75",
+          "materialized": false
+        },
+        {
+          "path": "components/protobuf-c/protobuf-c",
+          "commit": "abc67a11c6db271bedbb9f58be85d6f4e2ea8389",
+          "materialized": false
+        },
+        {
+          "path": "components/spiffs/spiffs",
+          "commit": "ad902cadceb39d0825a97e25ecb5867641f606ba",
+          "materialized": false
+        },
+        {
+          "path": "components/unity/unity",
+          "commit": "bf560290f6020737eafaa8b5cbd2177c3956c03f",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R11-espressif--esp-idf-d445e947156f.tar.gz",
+          "bytes": 161033649,
+          "sha256": "cfc4e598510b2c2d3759a152f26ffd8c09603767a8468083a2ac8e02438e6217",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_58d17e72e6508191bae6669027503301"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R12",
+      "repository": "zephyrproject-rtos/zephyr",
+      "path": "research/upstream-sources/R12-zephyrproject-rtos--zephyr",
+      "commit": "0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf",
+      "expectedCommit": "0534e997eacb94bae1df6c9a7dd4a9a6cbf1cecf",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 69384,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+          "type": "file"
+        },
+        {
+          "path": "LICENSES",
+          "exists": true,
+          "type": "directory",
+          "files": [
+            {
+              "path": "LICENSES/Apache-2.0.txt",
+              "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+            },
+            {
+              "path": "LICENSES/BSD-2-Clause.txt",
+              "sha256": "8116e572e44a918ea5f1b589024fbc673ccddde7a53b3bf95b4eafab0fdcd41e"
+            },
+            {
+              "path": "LICENSES/BSD-3-Clause.txt",
+              "sha256": "f24d1328dbfffe7bf66aa877957db75e60629358357d8c366ccab616fef487ab"
+            },
+            {
+              "path": "LICENSES/CC-BY-3.0.txt",
+              "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+            },
+            {
+              "path": "LICENSES/CC-BY-4.0.txt",
+              "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+            },
+            {
+              "path": "LICENSES/CC0-1.0.txt",
+              "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+            },
+            {
+              "path": "LICENSES/GCC-exception-3.1.txt",
+              "sha256": "13b86a575764e6b6aa2064e91ce22ef4d6a6546c097022f527d53b985566af57"
+            },
+            {
+              "path": "LICENSES/GPL-2.0-or-later.txt",
+              "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+            },
+            {
+              "path": "LICENSES/GPL-2.0.txt",
+              "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+            },
+            {
+              "path": "LICENSES/GPL-3.0-or-later.txt",
+              "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+            },
+            {
+              "path": "LICENSES/ISC.txt",
+              "sha256": "4aca3373f1677ae2cba83e44f30b313992fbce6727ce2e172907d56ac43b0137"
+            },
+            {
+              "path": "LICENSES/Linux-syscall-note.txt",
+              "sha256": "5bcef4fedbfc08776630e65d5d0d074dd31208037eddb167ca46a9ec4f737764"
+            },
+            {
+              "path": "LICENSES/MIT.txt",
+              "sha256": "002c2696d92b5c8cf956c11072baa58eaf9f6ade995c031ea635c6a1ee342ad1"
+            },
+            {
+              "path": "LICENSES/SHL-0.51.txt",
+              "sha256": "ed77d7e7f8bd40ad359f4eb63689547e301e3ff0c5d12f2eaaf32b1ea21e22df"
+            }
+          ]
+        },
+        {
+          "path": "README.license",
+          "exists": true,
+          "sha256": "bdd49ebf774d400cb771e3bb584fa6286fd84e1840d8f91d296e0f074b46c9d9",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R12-zephyrproject-rtos--zephyr-0534e997eacb.tar.gz",
+          "bytes": 292676281,
+          "sha256": "63a82211c27b2f161061fd98d9720212d865b433c292c22fd6a903c7010a33e0",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_5bbb084820408191aee632dfcec3246c"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R13",
+      "repository": "mik3y/usb-serial-for-android",
+      "path": "research/upstream-sources/R13-mik3y--usb-serial-for-android",
+      "commit": "4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2",
+      "expectedCommit": "4cb9e82cdcfa095eb2fe0b0bea9605f50bd8e2f2",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 97,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE.txt",
+          "exists": true,
+          "sha256": "6f467d3d79c5d31734881fb83e082e84512bde05d3f7893e0e8373fd0d2b5d2c",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R13-mik3y--usb-serial-for-android-4cb9e82cdcfa.tar.gz",
+          "bytes": 442894,
+          "sha256": "b2e1c607df20c3bd1a1bcbed5082f75e201a33559e877976b26f987800b683c2",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_a8dd9202f29881919e24de319d8e541d"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R14",
+      "repository": "expo/expo",
+      "path": "research/upstream-sources/R14-expo--expo",
+      "commit": "dfb069d9cc5bcebc493fa6e94d3c61124e62b85a",
+      "expectedCommit": "dfb069d9cc5bcebc493fa6e94d3c61124e62b85a",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 23240,
+      "rootGitlinks": [
+        {
+          "path": "react-native-lab/react-native",
+          "commit": "f7cd036f7b21dfac8a958931360866f0580bf741",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "type": "file"
+        },
+        {
+          "path": "THIRD-PARTY-LICENSES",
+          "exists": true,
+          "sha256": "3574942c0d4b613e7009ca9a832c67517cdfd6ff7157eada0a54db7f9b2f685c",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R14-expo--expo-dfb069d9cc5b.tar.gz",
+          "bytes": 347303930,
+          "sha256": "d01c31d3476795f4a619c65c7ce4f6f5749a123371f7a77751d1f6c2cfd44306",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_6d93139e41dc8191b9035dc7e5ba905b"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R15",
+      "repository": "dotintent/react-native-ble-plx",
+      "path": "research/upstream-sources/R15-dotintent--react-native-ble-plx",
+      "commit": "92a496d60f81642d2f45cecfc44f47a62904a86d",
+      "expectedCommit": "92a496d60f81642d2f45cecfc44f47a62904a86d",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 420,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "f6387df69841a4423411e83f739fd4e4b80dc0622d3da948f67d9606e9d996fe",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R15-dotintent--react-native-ble-plx-92a496d60f81.tar.gz",
+          "bytes": 5505414,
+          "sha256": "530152eaed07719886a034cb6231f6ca9de30d9223b0715dde458d4cf5f27473",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_9d1fe09691ac8191a5d4e4501a73e1f1"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R16",
+      "repository": "revtel/react-native-nfc-manager",
+      "path": "research/upstream-sources/R16-revtel--react-native-nfc-manager",
+      "commit": "c44f7110f791901823252610627dc5cbee7dddcd",
+      "expectedCommit": "c44f7110f791901823252610627dc5cbee7dddcd",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 209,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "2d3795e77cfd1f3e1e4873e87a70d997e7996f80d9815f238236494bb76e2996",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R16-revtel--react-native-nfc-manager-c44f7110f791.tar.gz",
+          "bytes": 1735875,
+          "sha256": "668afe44ffa4fbbb862a306326a13c084fb1a499ad20daffc77ebb157dff17b6",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_bff2fd05ec848191b799744b673be7da"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R17",
+      "repository": "merbanan/rtl_433",
+      "path": "research/upstream-sources/R17-merbanan--rtl_433",
+      "commit": "f35183aaf1d2d905d422fd70bcae4eb7349d6186",
+      "expectedCommit": "f35183aaf1d2d905d422fd70bcae4eb7349d6186",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 602,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "COPYING",
+          "exists": true,
+          "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R17-merbanan--rtl_433-f35183aaf1d2.tar.gz",
+          "bytes": 3500496,
+          "sha256": "3b291f10c818f4a0e34d37e8217654710304a01c216a275e1935d4a6c47502b3",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_121941abb1a88191985c24194a110a71"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R18",
+      "repository": "gnuradio/gnuradio",
+      "path": "research/upstream-sources/R18-gnuradio--gnuradio",
+      "commit": "ec1bf153c9222eca81f59d4e063e73d525a51a1a",
+      "expectedCommit": "ec1bf153c9222eca81f59d4e063e73d525a51a1a",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 5776,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "COPYING",
+          "exists": true,
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R18-gnuradio--gnuradio-ec1bf153c922.tar.gz",
+          "bytes": 13257136,
+          "sha256": "23250a9339dbc9bc5b50ea863db37b57c2e5bf359981cc44ce0c7f5c4727bda1",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_4fe8f85613a08191805e102ab7747659"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R19",
+      "repository": "pothosware/SoapySDR",
+      "path": "research/upstream-sources/R19-pothosware--SoapySDR",
+      "commit": "cf0c0eb5279aa202d5b3a48aee423294b10244eb",
+      "expectedCommit": "cf0c0eb5279aa202d5b3a48aee423294b10244eb",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 167,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE_1_0.txt",
+          "exists": true,
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R19-pothosware--SoapySDR-cf0c0eb5279a.tar.gz",
+          "bytes": 582001,
+          "sha256": "4403ebc81aaa0e21ac2982f2e6b2ab979dcfc22ddc8bd7ad085a0b4aad0d6a7a",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_7ca0f6a41e0c8191b60504d9001526f9"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R20",
+      "repository": "nfc-tools/libnfc",
+      "path": "research/upstream-sources/R20-nfc-tools--libnfc",
+      "commit": "3fa0751ad58fb0053d3de2e61bbbd4066259104c",
+      "expectedCommit": "3fa0751ad58fb0053d3de2e61bbbd4066259104c",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 199,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "COPYING",
+          "exists": true,
+          "sha256": "9ccf26cfe845e0eb8bb58053e47366e7ab6b697ae010f7650978d4b71b7d1fc1",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R20-nfc-tools--libnfc-3fa0751ad58f.tar.gz",
+          "bytes": 736826,
+          "sha256": "f823584e51bbed5609d7faa6647767b190c398182dfee5e9947ab430f278a9cc",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_384803416bac8191a8be5994f8fde7d3"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R21",
+      "repository": "linux-can/can-utils",
+      "path": "research/upstream-sources/R21-linux-can--can-utils",
+      "commit": "834ceef1f1eabec67625389172eebf1050d2f42b",
+      "expectedCommit": "834ceef1f1eabec67625389172eebf1050d2f42b",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 132,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSES",
+          "exists": true,
+          "type": "directory",
+          "files": [
+            {
+              "path": "LICENSES/BSD-3-Clause",
+              "sha256": "c3dc748f5e725cf5ed89784fe78e4ff1b05d309bf1e7ade4c572e8fde1b8406c"
+            },
+            {
+              "path": "LICENSES/GPL-2.0-only.txt",
+              "sha256": "995a31f60a9ddb4c609214cc7d17ca94cc3cbc7f37e1e64dba81e7f8ea9d4f91"
+            },
+            {
+              "path": "LICENSES/Linux-syscall-note.txt",
+              "sha256": "e244fc35f16b19c8cca5cb6e79dd48060d25b18a8ae82fdcaabf68967976f29f"
+            }
+          ]
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R21-linux-can--can-utils-834ceef1f1ea.tar.gz",
+          "bytes": 696164,
+          "sha256": "4fe4b83c7eb584a371d498a70d2738568547e1e205609e52982a3f67cc1bfaac",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_bae1111560dc8191a3864b7be20387f1"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R22",
+      "repository": "hardbyte/python-can",
+      "path": "research/upstream-sources/R22-hardbyte--python-can",
+      "commit": "b4f82abede25ff83376be793a2935c41f81c3869",
+      "expectedCommit": "b4f82abede25ff83376be793a2935c41f81c3869",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 267,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE.txt",
+          "exists": true,
+          "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R22-hardbyte--python-can-b4f82abede25.tar.gz",
+          "bytes": 2613372,
+          "sha256": "7f228887ab856287aa0b55069f6b5cc2db0bd09220e91928889470a8b9ea59f7",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_b1c3ad41b1348191a1dc6e4a8d0ed67e"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R23",
+      "repository": "pymodbus-dev/pymodbus",
+      "path": "research/upstream-sources/R23-pymodbus-dev--pymodbus",
+      "commit": "e0460de3f4646f82f232486ea528602d7f676c36",
+      "expectedCommit": "e0460de3f4646f82f232486ea528602d7f676c36",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 208,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "572a4d6fa7541553f70cc6d494fbcbee7eb7d3f2fbd16080d39b20cccda26f0b",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R23-pymodbus-dev--pymodbus-e0460de3f464.tar.gz",
+          "bytes": 5381996,
+          "sha256": "c72e719b9710ad7c5d3c788180afced2df351fb10de8958c78b4561128b05298",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_b1348ab7602c81918429ab0528400859"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R24",
+      "repository": "bacnet-stack/bacnet-stack",
+      "path": "research/upstream-sources/R24-bacnet-stack--bacnet-stack",
+      "commit": "62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba",
+      "expectedCommit": "62e4340bf044a4fdeb3d860dcda2c6e079e2f5ba",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 1863,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "license",
+          "exists": true,
+          "type": "directory",
+          "files": [
+            {
+              "path": "license/Apache-2.0",
+              "sha256": "081031e20f8b6bed430c6b75e8e7b249be2d78a79578c2fd01b5897303164675"
+            },
+            {
+              "path": "license/BSD-3-CLAUSE",
+              "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3"
+            },
+            {
+              "path": "license/GCC-exception-2.0",
+              "sha256": "0dca50b78073055447d02e8f6ae4fa94c1d0e6d7fbb4c874c9db5eb960c8b3d4"
+            },
+            {
+              "path": "license/GPL-2.0",
+              "sha256": "29345f4614f77201f257eff805edfa9a41a581c7e23742f5b3f89cf681eab937"
+            },
+            {
+              "path": "license/MIT",
+              "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f"
+            },
+            {
+              "path": "license/readme.txt",
+              "sha256": "26748a82ca59f520c863bbc4bed457164107a3b7d1bfdc3f1bba8f7be027db65"
+            }
+          ]
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R24-bacnet-stack--bacnet-stack-62e4340bf044.tar.gz",
+          "bytes": 22325994,
+          "sha256": "1669f2edf45ccf4e43f2cb228a83ed51823b1ca5462fb6bd45d8a90374a78457",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_3c142df9308c8191982291d4a0501957"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R25",
+      "repository": "osdp-dev/libosdp",
+      "path": "research/upstream-sources/R25-osdp-dev--libosdp",
+      "commit": "3654c63685d9f47c298127dafd832a4f363a2f10",
+      "expectedCommit": "3654c63685d9f47c298127dafd832a4f363a2f10",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 342,
+      "rootGitlinks": [
+        {
+          "path": "utils",
+          "commit": "538ba7b87170f1313f63ab6be90a8e3716deb085",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R25-osdp-dev--libosdp-3654c63685d9.tar.gz",
+          "bytes": 1599961,
+          "sha256": "4a093ebb4f6567cfc796cd80e2796852eee90b10dcd2b562be0d7aa16e9d47c6",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_902e5d942bd081919324d71be79a6d3a"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R26",
+      "repository": "sigmf/SigMF",
+      "path": "research/upstream-sources/R26-sigmf--SigMF",
+      "commit": "60121977f5f8d1145553251a3b3d0dbe2819aa14",
+      "expectedCommit": "60121977f5f8d1145553251a3b3d0dbe2819aa14",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 24,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE.md",
+          "exists": true,
+          "sha256": "405e857a501b372cf3e9b7b224ea85868e95f7822790b1a38f4b9c26c8808413",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R26-sigmf--SigMF-60121977f5f8.tar.gz",
+          "bytes": 2945050,
+          "sha256": "06f48d7b4a75d0896aa3889dcaee92370def696ee6b80c9d1e28bb2c18c8fc19",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_47cd36c7ba00819187b596e94fc9ee08"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R27",
+      "repository": "jopohl/urh",
+      "path": "research/upstream-sources/R27-jopohl--urh",
+      "commit": "1403d92987cc3d01d41aff64250955ce455dabd2",
+      "expectedCommit": "1403d92987cc3d01d41aff64250955ce455dabd2",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 575,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "7a0600bbe9f57579bad3c8442947fd0471b65085574839814e29048c527e3f8e",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R27-jopohl--urh-1403d92987cc.tar.gz",
+          "bytes": 27086660,
+          "sha256": "f8bdb9f2b8e9ce0ccd814658e7630a4fd48756ae1d7da41eaf304ef9d92b2628",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_5f2dc9f8207881919c1cbee0226ff363"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R28",
+      "repository": "libusb/libusb",
+      "path": "research/upstream-sources/R28-libusb--libusb",
+      "commit": "987c1170d0018ba82557823a98ae443e8335e11b",
+      "expectedCommit": "987c1170d0018ba82557823a98ae443e8335e11b",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 185,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "COPYING",
+          "exists": true,
+          "sha256": "36b6d3fa47916943fd5fec313c584784946047ec1337a78b440e5992cb595f89",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R28-libusb--libusb-987c1170d001.tar.gz",
+          "bytes": 1171677,
+          "sha256": "66899a8efa282f6ed88a43f6a4458eef41ded00f1dd2275b4d2806885ec91880",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_b69552d2078481919a6cb02b8e11f7b5"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R29",
+      "repository": "RocketGod-git/mayhem-mobile",
+      "path": "research/upstream-sources/R29-RocketGod-git--mayhem-mobile",
+      "commit": "a18fca46f58519fc81e19304fc13bbf3da2aa69f",
+      "expectedCommit": "a18fca46f58519fc81e19304fc13bbf3da2aa69f",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 611,
+      "rootGitlinks": [],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R29-RocketGod-git--mayhem-mobile-a18fca46f585.tar.gz",
+          "bytes": 26044750,
+          "sha256": "156030a36a46d055abe9bdcf2520942c1466d448413c4f02cca06a342eb387c2",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_78d961b0604c81918038b2aa77521acc"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R30",
+      "repository": "portapack-mayhem/mayhem-firmware",
+      "path": "research/upstream-sources/R30-portapack-mayhem--mayhem-firmware",
+      "commit": "97c349701723b7f8334b71867439a436a5ab8d02",
+      "expectedCommit": "97c349701723b7f8334b71867439a436a5ab8d02",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 4253,
+      "rootGitlinks": [
+        {
+          "path": "hackrf",
+          "commit": "b80cddb56bbfd01c9a951dc5000826b53f463767",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "type": "file"
+        },
+        {
+          "path": "LICENSE.GPL-2.0-or-later",
+          "exists": true,
+          "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz.part1",
+          "bytes": 268435456,
+          "sha256": "399e01ecaeb31ede3ebaa3b35e286905fc583ee5e4ff1519d661e61311fd3ac8",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_36f3d08472ac819193a47fba6be3458c"
+        },
+        {
+          "file": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz.part2",
+          "bytes": 266491933,
+          "sha256": "e500169337917bc9355306af460fc434d47efc8d7c0c4ce2c25246ad07bea075",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_04a6456132f88191869f6f97caa8446e"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    },
+    {
+      "id": "R31",
+      "repository": "morluto/rea",
+      "path": "research/upstream-sources/R31-morluto--rea",
+      "commit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
+      "expectedCommit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
+      "commitMatches": true,
+      "worktreeClean": true,
+      "status": "",
+      "trackedEntries": 7081,
+      "rootGitlinks": [
+        {
+          "path": "third_party/binwalk",
+          "commit": "4fdab3d464d97b68e0af9088df3f9e2e1545b21c",
+          "materialized": false
+        },
+        {
+          "path": "third_party/ghidra-nativeaot",
+          "commit": "effeb734fc570c32650f88b159608979dc7b423e",
+          "materialized": false
+        },
+        {
+          "path": "third_party/jadx-headless-mcp",
+          "commit": "5844800a486d2248fa949b74c9896285f5b54de2",
+          "materialized": false
+        },
+        {
+          "path": "third_party/unblob",
+          "commit": "1fcc7a0a584a70a96c31f5a276c20944d199a089",
+          "materialized": false
+        },
+        {
+          "path": "third_party/wakaru",
+          "commit": "8219bf5016a063d7fb215101a8c45d5959ec733f",
+          "materialized": false
+        }
+      ],
+      "recordedLicenceFiles": [
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+          "type": "file"
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "exists": true,
+          "sha256": "fc816339f2361c375ae79c0718e90acff56b798e03a6cef2501adffa8ea4a703",
+          "type": "file"
+        }
+      ],
+      "archiveParts": [
+        {
+          "file": "APEX-R31-morluto--rea-144843ccc26b.tar.gz",
+          "bytes": 49631058,
+          "sha256": "186e92a08125bd796c1aa71d9c1e9cd63712aaf4830dded7dae4e4866ba80274",
+          "matchesRecordedSha256": true,
+          "recordedLibraryFileId": "libfile_0ff8f1f68fe8819192b0fd4c86b4bde8"
+        }
+      ],
+      "upstreamCodeExecuted": false
+    }
+  ],
+  "schemaVersion": 1,
+  "verificationContext": "Restoration review on 8 November 2026 in an isolated source corpus. Portable paths below denote intended repository layout, not a claim that checkouts are bundled with this documentation commit."
+}

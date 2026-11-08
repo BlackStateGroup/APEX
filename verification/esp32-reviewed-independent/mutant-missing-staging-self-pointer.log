@@ -1,0 +1,1 @@
+FAIL line 42: delivered_len==12*(occupied+incoming)

@@ -1,0 +1,8 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+packages/core/evidence.ts(84,3): error TS2322: Type '{ schemaVersion: 1; id: unknown; kind: EvidenceKind; source: EvidenceSource; observedAt: unknown; payload: unknown; sha256: string; }' is not assignable to type 'EvidenceRecord'.
+  Types of property 'id' are incompatible.
+    Type 'unknown' is not assignable to type 'string'.
+packages/core/evidence.ts(110,31): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+packages/core/evidence.ts(110,65): error TS2322: Type '{ schemaVersion: 1; id: unknown; kind: EvidenceKind; source: EvidenceSource; observedAt: unknown; payload: unknown; sha256: string; }' is not assignable to type 'EvidenceRecord'.
+  Types of property 'id' are incompatible.
+    Type 'unknown' is not assignable to type 'string'.

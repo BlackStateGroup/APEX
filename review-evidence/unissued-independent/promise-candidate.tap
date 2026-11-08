@@ -1,0 +1,83 @@
+✖ independent malformed proof native-reject stays unknown without async side effects (113.998361ms)
+✖ independent malformed proof foreign-reject stays unknown without async side effects (107.106988ms)
+✔ independent malformed proof throwing-then stays unknown without async side effects (108.086694ms)
+✔ independent malformed proof thenable stays unknown without async side effects (113.473796ms)
+✔ independent malformed proof resolved stays unknown without async side effects (106.382705ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 685.146533
+
+✖ failing tests:
+
+test at tests/ble-unissued-proof-promise-independent.test.ts:4:92
+✖ independent malformed proof native-reject stays unknown without async side effects (113.998361ms)
+  AssertionError [ERR_ASSERTION]: file:///workspace/scratch/b96d3539d24d/apex-unissued-review/[eval1]:4
+  const proof=mode==='native-reject'?Promise.reject(Error('bad proof')):mode==='foreign-reject'?vm.runInNewContext('Promise.reject(new Error("foreign bad proof"))'):mode==='resolved'?Promise.resolve(true):mode==='throwing-then'?Object.defineProperty({},'then',{get(){accessed++;throw Error('getter')}}):{then(){accessed++}};
+                                                    ^
+  
+  Error: bad proof
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/[eval1]:4:51
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:223:26
+      at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:220:20)
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-proof-promise-independent.test.ts:11:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-proof-promise-independent.test.ts:4:92
+✖ independent malformed proof foreign-reject stays unknown without async side effects (107.106988ms)
+  AssertionError [ERR_ASSERTION]: evalmachine.<anonymous>:1
+  Promise.reject(new Error("foreign bad proof"))
+                 ^
+  
+  Error: foreign bad proof
+      at evalmachine.<anonymous>:1:16
+      at Script.runInContext (node:vm:149:12)
+      at Script.runInNewContext (node:vm:154:17)
+      at Object.runInNewContext (node:vm:310:38)
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-review/[eval1]:4:98
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+      at async node:internal/modules/esm/loader:223:26
+      at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:220:20)
+      at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+  
+  Node.js v24.22.1
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-review/tests/ble-unissued-proof-promise-independent.test.ts:11:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

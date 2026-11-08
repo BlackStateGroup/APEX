@@ -1,0 +1,40 @@
+✔ independent HCI exact inner document retained; outer canonical digest and byte digest distinct (20.916747ms)
+✔ independent missing byte capability fails all verification/persistence APIs; parse/list stay structural (3.722009ms)
+✔ independent re-signed outer envelopes and bundles cannot launder invalid inner digest/framing (13.854285ms)
+✔ independent source declaration mapping is exact and rejects native/mismatched labels (4.088155ms)
+✔ independent save refuses payload/input accessors without executing them (1.306511ms)
+✔ independent verify refuses accessor-bearing HCI records before serialization (1.460996ms)
+✔ independent save snapshots mutable caller input before text/byte hash awaits (7.994149ms)
+✔ independent malicious byte-hasher cannot mutate retained framing or future report (8.938985ms)
+✔ independent errors never insert; storage failure is not success; byte vs hex-text hash rejects (2.844679ms)
+✔ independent old string-only callers preserve bytes, false mismatch and malformed throw (1.07094ms)
+✔ independent actual CLI HCI roundtrip and malformed/strict inputs emit no partial stdout (1735.556132ms)
+✔ independent exact payload rejects inherited/nonenumerable/symbol/extra fields and never calls toJSON (1.061411ms)
+✔ independent delayed verify and bundle hash cannot observe later caller mutation (1.630397ms)
+✔ independent inherited and accessor toJSON cannot substitute a different HCI verification target (0.707339ms)
+✔ independent outer envelope serialized size cap remains fail closed (0.73848ms)
+✖ independent HCI verification cannot enter through missing-own-kind toJSON substitution (6.259834ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2374.35696
+
+✖ failing tests:
+
+test at tests/hci-evidence-independent.test.ts:54:1
+✖ independent HCI verification cannot enter through missing-own-kind toJSON substitution (6.259834ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-hci-evidence-review/tests/hci-evidence-independent.test.ts:54:226)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

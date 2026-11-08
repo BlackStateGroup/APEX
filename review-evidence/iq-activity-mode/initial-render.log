@@ -1,0 +1,11 @@
+✔ independent actual TSX fourth mode shows exact defaults, all six fields and bounded frame/interval navigation (120.37582ms)
+✔ independent actual TSX activity all six stale setting and navigation callbacks are inert after every replacement/exit path (49.317099ms)
+✔ independent actual TSX zero run display, exact equality and activity errors leave spectral modes usable (12.709481ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 529.385929

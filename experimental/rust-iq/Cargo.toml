@@ -1,0 +1,19 @@
+[package]
+name = "apex-iq-proof"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+publish = false
+description = "Experimental bounded APEX I/Q numerical kernel; no acquisition or mobile binding"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "apex-iq-proof"
+path = "src/main.rs"
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]

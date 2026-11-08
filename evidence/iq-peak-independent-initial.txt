@@ -1,0 +1,22 @@
+✖ independent actual peak button is unique, accessible and fenced across replacements (75.0879ms)
+✔ independent actual FFT all sizes and shifted page boundaries preserve report and bytes (161.059175ms)
+✔ independent no result, short no FFT and tied maxima retain existing selection (3.822017ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 589.765106
+
+✖ failing tests:
+
+test at tests/iq-peak-navigation-independent.test.ts:66:1
+✖ independent actual peak button is unique, accessible and fenced across replacements (75.0879ms)
+  TypeError [Error]: Cannot read properties of null (reading 'spectrum')
+      at IqWorkbenchView (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation-review/src/IqWorkbench.tsx:277:94)
+      at buttons (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation-review/tests/iq-peak-navigation-independent.test.ts:68:214)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-peak-navigation-review/tests/iq-peak-navigation-independent.test.ts:74:214)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

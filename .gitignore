@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 .expo/
 dist/
 build/
@@ -9,5 +9,11 @@ ios/
 .DS_Store
 test-results/
 playwright-report/
+__pycache__/
+*.pyc
 .env*
 !.env.example
+
+# Materialised upstream references are restored from pinned archives.
+research/upstream-sources/*/
+research/source-import-progress.json

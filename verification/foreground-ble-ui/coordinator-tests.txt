@@ -1,0 +1,20 @@
+✔ unavailable environment and repeated start do not start another collector (2.004638ms)
+✔ retains exact copied source, receipt clock and unknown RSSI without save or native claims (4.6605ms)
+✔ stop immediately ignores later callbacks and retains lease until cleanup finishes (1.454269ms)
+✔ stale callbacks and completions cannot mutate a later session (0.489172ms)
+✔ service selection and clearing are disabled during active scan and explicit after stop (0.724729ms)
+✔ disposal stops collection, suppresses callbacks and prevents restart without stranding busy state (0.407706ms)
+✔ bounded retained observations never exceed count or character budget (9.824477ms)
+✔ mismatched service, clock basis, source receipt and fixture provenance reject (0.650879ms)
+✔ synchronous start failure releases UI busy state and reports exact error (0.313533ms)
+✔ synchronous end before handle return and done-only settlement finish exactly once (0.3384ms)
+✔ stop during synchronous start stops the returned handle before accepting more observations (0.592615ms)
+✔ stop and done rejection do not strand controls or create unhandled rejection (0.307548ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 182.701403

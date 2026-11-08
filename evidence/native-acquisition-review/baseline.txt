@@ -1,0 +1,25 @@
+✔ browser-to-actual-C roundtrip, fake MTU 23, explicit close and stale callbacks (20.633328ms)
+✔ browser-to-actual-C roundtrip, fake MTU 517, explicit close and stale callbacks (10.428643ms)
+✔ C flatten rejection propagates through fake GATT into client close and verified fixture retirement (5.877796ms)
+✔ CRC-corrupt framed browser write produces no C response; following session request recovers (9.837897ms)
+✔ host control parser rejects six malformed/over-bound inputs with bounded nonzero exit (16.409129ms)
+✔ unexpected host fixture failure rejects an in-flight command and reports failed process cleanup (4.044533ms)
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (38.795639ms)
+✔ fake android MTU 23: C ATT error closes session (9.349321ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (12.810731ms)
+✔ fake android MTU 517: C ATT error closes session (11.033013ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (11.872533ms)
+✔ fake ios MTU 23: C ATT error closes session (8.901117ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (18.764932ms)
+✔ fake ios MTU 517: C ATT error closes session (8.345628ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (35.580797ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (8.499118ms)
+✔ known gap: late Android permission grant starts connection after session close (6.302888ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 419.194943

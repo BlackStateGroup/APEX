@@ -1,0 +1,14 @@
+✔ all window sizes and exact last-valid boundary preflight before either read; every Inspect rereads/rehashes (241.702848ms)
+✔ default short inputs preserve statistics-only but explicit windows refuse before IO (0.979357ms)
+✔ whole input validation rejects every malformed or oversized edit and never retains previous valid settings (100.932002ms)
+✔ exact nonzero example has independently constructed bytes and signed quarter-bin amplitudes in both halves (453.241824ms)
+✔ each settings action during held reads or either digest fences success/failure and keeps actual slot until settlement (6.032819ms)
+✔ settings notification snapshots are atomic against recursive Inspect, clear and replacement (9.33311ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1292.271765

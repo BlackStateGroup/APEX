@@ -1,0 +1,44 @@
+✔ construction/import and close-before-subscribe do no browser work; exact picker is synchronous (3.081639ms)
+✔ unsupported and insecure hosts fail without picker effects; errors retain no external message (0.640156ms)
+✔ cancelled chooser retains raw ownership and ignores late result (5.153661ms)
+✔ invalid and stale candidate handle failures cannot acquire unknown core release or disturb a lease (1.712295ms)
+✔ unchanged session negotiates real READY and info/capabilities, then echoes 0/20/21/512 byte ping with ordered 20-byte fragments (4.523219ms)
+✔ READY is not manufactured; successful browser acquisition does not imply core readiness (20.179158ms)
+✔ rejected connect fails closed and can clean up (0.532634ms)
+✔ hung connect fences deadline, retains ownership, blocks replacement and retries only after raw settlement (61.504285ms)
+✔ rejected service fails closed and can clean up (0.48152ms)
+✔ hung service fences deadline, retains ownership, blocks replacement and retries only after raw settlement (61.334089ms)
+✔ rejected write-char fails closed and can clean up (0.363687ms)
+✔ hung write-char fences deadline, retains ownership, blocks replacement and retries only after raw settlement (61.179348ms)
+✔ rejected notify-char fails closed and can clean up (0.372338ms)
+✔ hung notify-char fences deadline, retains ownership, blocks replacement and retries only after raw settlement (60.115312ms)
+✔ rejected start fails closed and can clean up (0.599863ms)
+✔ hung start fences deadline, retains ownership, blocks replacement and retries only after raw settlement (60.218558ms)
+✔ explicit cancellation rejects setup before deadline while retaining the raw effect (0.658131ms)
+✔ notifications preserve offsets, bounded copies and intrinsic DataView slots; stale callbacks are fenced (0.556331ms)
+✔ malformed or out-of-bound notification fences callbacks (0.263492ms)
+✔ malformed or out-of-bound notification fences callbacks (0.275762ms)
+✔ malformed or out-of-bound notification fences callbacks (0.178588ms)
+✔ malformed or out-of-bound notification fences callbacks (0.163946ms)
+✔ foreign/shared already-connected state is rejected without disconnecting it (0.212564ms)
+✔ missing or foreign GATT contract rejected: property (0.297343ms)
+✔ missing or foreign GATT contract rejected: method (0.151107ms)
+✔ missing or foreign GATT contract rejected: notify-property (0.132267ms)
+✔ missing or foreign GATT contract rejected: foreign-connect (0.198223ms)
+✔ missing or foreign GATT contract rejected: foreign-start (0.233629ms)
+✔ hung raw write retains session transportReleasePending and prevents replacement through explicit close retry (71.184429ms)
+✔ unsubscribe tracks a rejected stop until settlement and retires only the disconnected browser handle (0.581806ms)
+✔ disconnect never calls stopNotifications on an invalidated characteristic (0.316477ms)
+✔ hung stop is not duplicated by retry and late completion does not release without explicit retry (60.266986ms)
+✔ cleanup observer reentry joins the reserved promise without duplicate host work (0.396857ms)
+✔ unexpected disconnect and throwing observers/callbacks cannot strand ownership (0.367148ms)
+✔ observer reentry cancellation at acquisition prevents the first browser effect (0.184859ms)
+✔ fresh leases rediscover characteristics; old event callbacks cannot affect a new lease (0.251409ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 612.794734

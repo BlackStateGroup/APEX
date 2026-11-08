@@ -1,0 +1,616 @@
+✔ all frozen controller modules are covered by the transformed regression matrix (3.062815ms)
+✔ unconfigured Expo web transform reproduces the CI read-only private-field crash (496.896827ms)
+✖ web production: EvidenceBundleWorkbench frozen surface and repeated lifecycle (241.220745ms)
+✖ web production: HciComparisonController frozen surface and repeated lifecycle (53.371897ms)
+✖ web production: HciDocumentController frozen surface and repeated lifecycle (106.509452ms)
+✖ web production: HciEvidenceReopenController frozen surface and repeated lifecycle (9.383898ms)
+✖ web production: HciWorkbenchController frozen surface and repeated lifecycle (0.411971ms)
+✖ web production: IqController frozen surface and repeated lifecycle (131.05842ms)
+✖ web production: IrWorkbenchController frozen surface and repeated lifecycle (53.842606ms)
+✖ web production: NfcStaticWorkbenchController frozen surface and repeated lifecycle (34.031244ms)
+✖ web production: NFC inspection and stale async result fencing (3.568826ms)
+✖ web development: EvidenceBundleWorkbench frozen surface and repeated lifecycle (204.106912ms)
+✖ web development: HciComparisonController frozen surface and repeated lifecycle (46.812911ms)
+✖ web development: HciDocumentController frozen surface and repeated lifecycle (79.598567ms)
+✖ web development: HciEvidenceReopenController frozen surface and repeated lifecycle (15.862558ms)
+✖ web development: HciWorkbenchController frozen surface and repeated lifecycle (0.231768ms)
+✖ web development: IqController frozen surface and repeated lifecycle (147.44265ms)
+✖ web development: IrWorkbenchController frozen surface and repeated lifecycle (41.62439ms)
+✖ web development: NfcStaticWorkbenchController frozen surface and repeated lifecycle (35.041988ms)
+✖ web development: NFC inspection and stale async result fencing (0.482086ms)
+✔ android production: EvidenceBundleWorkbench frozen surface and repeated lifecycle (246.043324ms)
+✔ android production: HciComparisonController frozen surface and repeated lifecycle (43.961751ms)
+✔ android production: HciDocumentController frozen surface and repeated lifecycle (33.301171ms)
+✔ android production: HciEvidenceReopenController frozen surface and repeated lifecycle (8.646507ms)
+✔ android production: HciWorkbenchController frozen surface and repeated lifecycle (0.270537ms)
+✔ android production: IqController frozen surface and repeated lifecycle (121.7318ms)
+✔ android production: IrWorkbenchController frozen surface and repeated lifecycle (53.567097ms)
+✔ android production: NfcStaticWorkbenchController frozen surface and repeated lifecycle (28.269716ms)
+✔ android production: NFC inspection and stale async result fencing (1.335422ms)
+✔ android development: EvidenceBundleWorkbench frozen surface and repeated lifecycle (223.540808ms)
+✔ android development: HciComparisonController frozen surface and repeated lifecycle (30.249732ms)
+✔ android development: HciDocumentController frozen surface and repeated lifecycle (119.72805ms)
+✔ android development: HciEvidenceReopenController frozen surface and repeated lifecycle (9.175273ms)
+✔ android development: HciWorkbenchController frozen surface and repeated lifecycle (0.216256ms)
+✔ android development: IqController frozen surface and repeated lifecycle (104.51356ms)
+✔ android development: IrWorkbenchController frozen surface and repeated lifecycle (38.519159ms)
+✔ android development: NfcStaticWorkbenchController frozen surface and repeated lifecycle (28.496372ms)
+✔ android development: NFC inspection and stale async result fencing (0.435595ms)
+✔ ios production: EvidenceBundleWorkbench frozen surface and repeated lifecycle (203.683698ms)
+✔ ios production: HciComparisonController frozen surface and repeated lifecycle (37.647026ms)
+✔ ios production: HciDocumentController frozen surface and repeated lifecycle (30.311682ms)
+✔ ios production: HciEvidenceReopenController frozen surface and repeated lifecycle (7.801101ms)
+✔ ios production: HciWorkbenchController frozen surface and repeated lifecycle (0.220353ms)
+✔ ios production: IqController frozen surface and repeated lifecycle (104.257592ms)
+✔ ios production: IrWorkbenchController frozen surface and repeated lifecycle (45.142423ms)
+✔ ios production: NfcStaticWorkbenchController frozen surface and repeated lifecycle (27.652521ms)
+✔ ios production: NFC inspection and stale async result fencing (0.286248ms)
+✔ ios development: EvidenceBundleWorkbench frozen surface and repeated lifecycle (268.251639ms)
+✔ ios development: HciComparisonController frozen surface and repeated lifecycle (31.272846ms)
+✔ ios development: HciDocumentController frozen surface and repeated lifecycle (43.548154ms)
+✔ ios development: HciEvidenceReopenController frozen surface and repeated lifecycle (7.967035ms)
+✔ ios development: HciWorkbenchController frozen surface and repeated lifecycle (0.122683ms)
+✔ ios development: IqController frozen surface and repeated lifecycle (105.558528ms)
+✔ ios development: IrWorkbenchController frozen surface and repeated lifecycle (36.80162ms)
+✔ ios development: NfcStaticWorkbenchController frozen surface and repeated lifecycle (28.531392ms)
+✔ ios development: NFC inspection and stale async result fencing (0.304669ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 38
+ℹ fail 18
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4024.01615
+
+✖ failing tests:
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: EvidenceBundleWorkbench frozen surface and repeated lifecycle (241.220745ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_11_reset',
+  +   '__private_10_publish',
+  +   '__private_6_generation',
+  +   '__private_7_active',
+  +   '__private_8_lease',
+  +   '__private_9_state'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_11_reset', '__private_10_publish', '__private_6_generation', '__private_7_active', '__private_8_lease', '__private_9_state' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: HciComparisonController frozen surface and repeated lifecycle (53.371897ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_23_current',
+  +   '__private_22_replace',
+  +   '__private_21_fence',
+  +   '__private_20_slot',
+  +   '__private_19_publish',
+  +   '__private_12_state',
+  +   '__private_13_active',
+  +   '__private_14_lease',
+  +   '__private_15_generation',
+  +   '__private_16_sideGeneration',
+  +   '__private_17_sources',
+  +   '__private_18_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_23_current', '__private_22_replace', '__private_21_fence', '__private_20_slot', '__private_19_publish', '__private_12_state', '__private_13_active', '__private_14_lease', '__private_15_generation', '__private_16_sideGeneration', '__private_17_sources', '__private_18_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: HciDocumentController frozen surface and repeated lifecycle (106.509452ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_44_replace',
+  +   '__private_43_reset',
+  +   '__private_42_publish',
+  +   '__private_35_state',
+  +   '__private_36_active',
+  +   '__private_37_lease',
+  +   '__private_38_generation',
+  +   '__private_39_reports',
+  +   '__private_40_sources',
+  +   '__private_41_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_44_replace', '__private_43_reset', '__private_42_publish', '__private_35_state', '__private_36_active', '__private_37_lease', '__private_38_generation', '__private_39_reports', '__private_40_sources', '__private_41_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: HciEvidenceReopenController frozen surface and repeated lifecycle (9.383898ms)
+  TypeError [Error]: Cannot assign to read only property '__private_36_active' of object '#<HciDocumentController>'
+      at HciDocumentController.activate (/workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/src/hci-document-workbench.ts:90:73)
+      at HciEvidenceReopenController.activate (/workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/src/hci-evidence-reopen.ts:56:22)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:80:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: HciWorkbenchController frozen surface and repeated lifecycle (0.411971ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_34_clearSelection',
+  +   '__private_33_reset',
+  +   '__private_32_publish',
+  +   '__private_24_state',
+  +   '__private_25_active',
+  +   '__private_26_lease',
+  +   '__private_27_generation',
+  +   '__private_28_prepared',
+  +   '__private_29_selected',
+  +   '__private_30_extended',
+  +   '__private_31_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_34_clearSelection', '__private_33_reset', '__private_32_publish', '__private_24_state', '__private_25_active', '__private_26_lease', '__private_27_generation', '__private_28_prepared', '__private_29_selected', '__private_30_extended', '__private_31_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: IqController frozen surface and repeated lifecycle (131.05842ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_68_selectFrame',
+  +   '__private_67_selectActivityRun',
+  +   '__private_66_settings',
+  +   '__private_65_selection',
+  +   '__private_64_invalidate',
+  +   '__private_63_current',
+  +   '__private_62_publish',
+  +   '__private_58_clearActivity',
+  +   '__private_45_state',
+  +   '__private_46_active',
+  +   '__private_47_lease',
+  +   '__private_48_generation',
+  +   '__private_49_running',
+  +   '__private_50_notifying',
+  +   '__private_51_sources',
+  +   '__private_52_bins',
+  +   '__private_53_timeFrequency',
+  +   '__private_54_frameSummaries',
+  +   '__private_55_activityFrames',
+  +   '__private_56_activityRuns',
+  +   '__private_57_activityRunSummaries',
+  +   '__private_59_hasher',
+  +   '__private_60_now',
+  +   '__private_61_listeners'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_68_selectFrame', '__private_67_selectActivityRun', '__private_66_settings', '__private_65_selection', '__private_64_invalidate', '__private_63_current', '__private_62_publish', '__private_58_clearActivity', '__private_45_state', '__private_46_active', '__private_47_lease', '__private_48_generation', '__private_49_running', '__private_50_notifying', '__private_51_sources', '__private_52_bins', '__private_53_timeFrequency', '__private_54_frameSummaries', '__private_55_activityFrames', '__private_56_activityRuns', '__private_57_activityRunSummaries', '__private_59_hasher', '__private_60_now', '__private_61_listeners' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: IrWorkbenchController frozen surface and repeated lifecycle (53.842606ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_75_reset',
+  +   '__private_74_publish',
+  +   '__private_69_state',
+  +   '__private_70_active',
+  +   '__private_71_lease',
+  +   '__private_72_generation',
+  +   '__private_73_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_75_reset', '__private_74_publish', '__private_69_state', '__private_70_active', '__private_71_lease', '__private_72_generation', '__private_73_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web production: NfcStaticWorkbenchController frozen surface and repeated lifecycle (34.031244ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_82_reset',
+  +   '__private_81_publish',
+  +   '__private_76_state',
+  +   '__private_77_active',
+  +   '__private_78_lease',
+  +   '__private_79_generation',
+  +   '__private_80_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_82_reset', '__private_81_publish', '__private_76_state', '__private_77_active', '__private_78_lease', '__private_79_generation', '__private_80_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:87:3
+✖ web production: NFC inspection and stale async result fencing (3.568826ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(c.state.report)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:93:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: EvidenceBundleWorkbench frozen surface and repeated lifecycle (204.106912ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_88_reset',
+  +   '__private_87_publish',
+  +   '__private_83_generation',
+  +   '__private_84_active',
+  +   '__private_85_lease',
+  +   '__private_86_state'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_88_reset', '__private_87_publish', '__private_83_generation', '__private_84_active', '__private_85_lease', '__private_86_state' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: HciComparisonController frozen surface and repeated lifecycle (46.812911ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_100_current',
+  +   '__private_99_replace',
+  +   '__private_98_fence',
+  +   '__private_97_slot',
+  +   '__private_96_publish',
+  +   '__private_89_state',
+  +   '__private_90_active',
+  +   '__private_91_lease',
+  +   '__private_92_generation',
+  +   '__private_93_sideGeneration',
+  +   '__private_94_sources',
+  +   '__private_95_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_100_current', '__private_99_replace', '__private_98_fence', '__private_97_slot', '__private_96_publish', '__private_89_state', '__private_90_active', '__private_91_lease', '__private_92_generation', '__private_93_sideGeneration', '__private_94_sources', '__private_95_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: HciDocumentController frozen surface and repeated lifecycle (79.598567ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_121_replace',
+  +   '__private_120_reset',
+  +   '__private_119_publish',
+  +   '__private_112_state',
+  +   '__private_113_active',
+  +   '__private_114_lease',
+  +   '__private_115_generation',
+  +   '__private_116_reports',
+  +   '__private_117_sources',
+  +   '__private_118_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_121_replace', '__private_120_reset', '__private_119_publish', '__private_112_state', '__private_113_active', '__private_114_lease', '__private_115_generation', '__private_116_reports', '__private_117_sources', '__private_118_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: HciEvidenceReopenController frozen surface and repeated lifecycle (15.862558ms)
+  TypeError [Error]: Cannot assign to read only property '__private_113_active' of object '#<HciDocumentController>'
+      at HciDocumentController.activate (/workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/src/hci-document-workbench.ts:90:73)
+      at HciEvidenceReopenController.activate (/workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/src/hci-evidence-reopen.ts:56:22)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:80:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: HciWorkbenchController frozen surface and repeated lifecycle (0.231768ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_111_clearSelection',
+  +   '__private_110_reset',
+  +   '__private_109_publish',
+  +   '__private_101_state',
+  +   '__private_102_active',
+  +   '__private_103_lease',
+  +   '__private_104_generation',
+  +   '__private_105_prepared',
+  +   '__private_106_selected',
+  +   '__private_107_extended',
+  +   '__private_108_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_111_clearSelection', '__private_110_reset', '__private_109_publish', '__private_101_state', '__private_102_active', '__private_103_lease', '__private_104_generation', '__private_105_prepared', '__private_106_selected', '__private_107_extended', '__private_108_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: IqController frozen surface and repeated lifecycle (147.44265ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_145_selectFrame',
+  +   '__private_144_selectActivityRun',
+  +   '__private_143_settings',
+  +   '__private_142_selection',
+  +   '__private_141_invalidate',
+  +   '__private_140_current',
+  +   '__private_139_publish',
+  +   '__private_135_clearActivity',
+  +   '__private_122_state',
+  +   '__private_123_active',
+  +   '__private_124_lease',
+  +   '__private_125_generation',
+  +   '__private_126_running',
+  +   '__private_127_notifying',
+  +   '__private_128_sources',
+  +   '__private_129_bins',
+  +   '__private_130_timeFrequency',
+  +   '__private_131_frameSummaries',
+  +   '__private_132_activityFrames',
+  +   '__private_133_activityRuns',
+  +   '__private_134_activityRunSummaries',
+  +   '__private_136_hasher',
+  +   '__private_137_now',
+  +   '__private_138_listeners'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_145_selectFrame', '__private_144_selectActivityRun', '__private_143_settings', '__private_142_selection', '__private_141_invalidate', '__private_140_current', '__private_139_publish', '__private_135_clearActivity', '__private_122_state', '__private_123_active', '__private_124_lease', '__private_125_generation', '__private_126_running', '__private_127_notifying', '__private_128_sources', '__private_129_bins', '__private_130_timeFrequency', '__private_131_frameSummaries', '__private_132_activityFrames', '__private_133_activityRuns', '__private_134_activityRunSummaries', '__private_136_hasher', '__private_137_now', '__private_138_listeners' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: IrWorkbenchController frozen surface and repeated lifecycle (41.62439ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_152_reset',
+  +   '__private_151_publish',
+  +   '__private_146_state',
+  +   '__private_147_active',
+  +   '__private_148_lease',
+  +   '__private_149_generation',
+  +   '__private_150_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_152_reset', '__private_151_publish', '__private_146_state', '__private_147_active', '__private_148_lease', '__private_149_generation', '__private_150_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:69:43
+✖ web development: NfcStaticWorkbenchController frozen surface and repeated lifecycle (35.041988ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   '__private_159_reset',
+  +   '__private_158_publish',
+  +   '__private_153_state',
+  +   '__private_154_active',
+  +   '__private_155_lease',
+  +   '__private_156_generation',
+  +   '__private_157_hash'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:74:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '__private_159_reset', '__private_158_publish', '__private_153_state', '__private_154_active', '__private_155_lease', '__private_156_generation', '__private_157_hash' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/frozen-controller-transform.test.ts:87:3
+✖ web development: NFC inspection and stale async result fencing (0.482086ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(c.state.report)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-ci-repair-20261108/tests/frozen-controller-transform.test.ts:93:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

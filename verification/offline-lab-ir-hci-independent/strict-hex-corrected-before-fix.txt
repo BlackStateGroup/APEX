@@ -1,0 +1,31 @@
+✖ strict HCI hex fixture rejects ignored suffixes and odd nibble before decoding (176.308978ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.430039
+
+✖ failing tests:
+
+test at tests/offline-lab-expansion-independent.test.ts:93:1
+✖ strict HCI hex fixture rejects ignored suffixes and odd nibble before decoding (176.308978ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at failure (file:///workspace/scratch/b96d3539d24d/apex-lab-ir-hci-review-prefix/tests/offline-lab-expansion-independent.test.ts:17:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-lab-ir-hci-review-prefix/tests/offline-lab-expansion-independent.test.ts:95:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "mode": "sanitize",
+  "variant": "frozen",
+  "startedAt": "2026-11-08T09:52:54.085Z",
+  "status": "FAIL",
+  "sourceCommit": "63f530d1f6f8f943d4fd2c1016904f3259daf77a",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "mobileAcceptance": "NOT RUN",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.57",
+    "node": "v24.22.1",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  },
+  "precision": {
+    "scalar": "IEEE-754 binary64",
+    "amplitudeTolerance": "1e-12 * (1 + abs(reference))",
+    "meaningfulRawDbTolerance": "1e-6 * (1 + abs(reference)), amplitude >= 1e-10",
+    "displayDbTolerance": "1e-8 * (1 + abs(reference))",
+    "semantics": "Peak signed index and exact-zero/null classification must match. Low-amplitude dB discrepancies are counted, never hidden."
+  },
+  "sourceSha256": {
+    "src/iq.hpp": "19c5453469205464a7f6139bd7a4e34a8915a53f9411d3d5ae0b69cba288bc3e",
+    "src/iq.cpp": "2ab544e4426ad79b68dce57fa7292ac5c50597440197b39cde2a783911af9870",
+    "src/host.cpp": "604a2afa6cdee45e166e39bb9bc9d2e0a12ee6809efba50b7493aa30d7d890b3",
+    "generate-coefficients.mjs": "50bd2762aae3ec7d8829750353e86d9a0b3db2d7c66dfb1f463d2a085e4cc29c",
+    "src/coefficients.hpp": "b50cfbb65f1f480efd8f7bb88a70381fbc92be08adf2483275afc8aba868ef2c",
+    "proof.mjs": "678f24d9ab04823c580234a6c7a76a00f875f11e0e513ed546e3e816ecc98eb2",
+    "proof-codec.mjs": "e289812af0959ef37e39410bf2a2e9a4f25d46fabebb1608554540f23316c7e5",
+    "proof-codec.test.mjs": "9658339d2277df0482f6a95c62176da57785d59e1258780caa2ef0399ff92118",
+    "reference.mjs": "677a5facafca8082ae19617553246549446f142975ab0ad140c16cc2fc932dad",
+    "packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+    "packages/core/bounded-json.ts": "2dc9c63e96aed350348590119d8e5c0963e9d35f2da3e509b124bc8147690212"
+  },
+  "stages": [
+    {
+      "name": "compiler-version",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "--version"
+      ]
+    },
+    {
+      "name": "compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O1",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Werror",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-fno-pie",
+        "-no-pie",
+        "-DAPEX_FROZEN_COEFFICIENTS",
+        "src/iq.cpp",
+        "src/host.cpp",
+        "-o",
+        "/workspace/scratch/b96d3539d24d/apex-cpp-iq-proof/proof-host-frozen-sanitize"
+      ]
+    },
+    {
+      "name": "codec-tests",
+      "status": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test",
+        "proof-codec.test.mjs"
+      ]
+    }
+  ],
+  "executableSha256": "e832a1313d0b860af6fdb1bbe375cc03388499ac3b4e167f64a5c238d1440ccb",
+  "error": "AssertionError [ERR_ASSERTION]: ==320==LeakSanitizer has encountered a fatal error.\n==320==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==320==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n\n\nnull !== 0\n\n    at nativeCall (file:///workspace/scratch/b96d3539d24d/apex-cpp-iq-proof/proof.mjs:48:49)\n    at differential (file:///workspace/scratch/b96d3539d24d/apex-cpp-iq-proof/proof.mjs:83:20)\n    at async file:///workspace/scratch/b96d3539d24d/apex-cpp-iq-proof/proof.mjs:164:3",
+  "finishedAt": "2026-11-08T09:52:56.730Z"
+}

@@ -1,0 +1,33 @@
+✔ actual IQ TSX projects bounded immutable results, selectable full hashes and honest zero/short states (32.869068ms)
+✔ native input is truthful, inert and has no unsupported file picker or paste fallback (0.544281ms)
+✖ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (4.644805ms)
+✔ actual owner callbacks fence stale events and retain single job across background and inspector reentry (8.121799ms)
+✔ IQ source wiring keeps one stable mounted owner and excludes save/network/device and configurable analysis (1.237019ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 400.69574
+
+✖ failing tests:
+
+test at tests/iq-app-render.test.ts:80:1
+✖ actual web input events stage real synthetic File handles only and canceled picker leaves stage unchanged (4.644805ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at settle (file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/tests/iq-app-render.test.ts:55:86)
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-app-inspection/tests/iq-app-render.test.ts:86:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

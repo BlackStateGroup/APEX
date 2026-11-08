@@ -1,0 +1,26 @@
+✔ abort remains responsive and late success only drains (1.194166ms)
+✔ abort remains responsive and late error only drains (0.159054ms)
+✔ timeout remains responsive and late success only drains (0.202972ms)
+✔ timeout remains responsive and late error only drains (0.105046ms)
+✔ PoweredOff wins late query true (0.148458ms)
+✔ PoweredOff wins late query false (0.143094ms)
+✔ PoweredOn freezes readiness but waits for query true (0.219828ms)
+✔ PoweredOn freezes readiness but waits for query false (0.112877ms)
+✔ ready plus abort vetoes preparation while query pending (0.215807ms)
+✔ ready plus timeout vetoes preparation while query pending (0.431393ms)
+✔ newer nonterminal event suppresses stale snapshot (0.27448ms)
+✔ query failure without terminal event keeps exact falsy identity (0.163303ms)
+✔ query first wins later event (0.073198ms)
+✔ synchronous ready registration avoids dispatch (0.056078ms)
+✔ synchronous dispatch throw cannot imply native release (0.155685ms)
+✔ lost cleanup latch survives query drainage (0.282039ms)
+✔ reservation blocks competing preparation and shutdown before dispatch (0.147743ms)
+✔ cancellation after eligible success still blocks acquisition (0.106315ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 97.600384

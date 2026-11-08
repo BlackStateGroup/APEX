@@ -1,0 +1,148 @@
+✔ normal Android 30 permission denial releases only after settlement (25.205183ms)
+✔ normal Android 30 permission grant after cancel releases only after settlement (4.204111ms)
+✔ normal Android 30 permission denial after cancel releases only after settlement (5.35206ms)
+✔ normal Android 34 permission denial releases only after settlement (5.14271ms)
+✔ normal Android 34 permission grant after cancel releases only after settlement (3.95694ms)
+✔ normal Android 34 permission denial after cancel releases only after settlement (4.294875ms)
+✔ initial cancellation proves only the exact unique invocation and is one-shot (3.628408ms)
+✔ native id query retires token without certifying (3.284517ms)
+✔ native error query retires token without certifying (3.454124ms)
+✔ native receiver query retires token without certifying (3.490682ms)
+✔ native premature query retires token without certifying (3.427821ms)
+✔ copied token and fabricated error properties cannot claim native provenance (3.893464ms)
+✔ reusing token before-consumption invalidates both invocations (3.123235ms)
+✔ reusing token after-consumption invalidates both invocations (3.977625ms)
+✔ reusing token concurrent invalidates both invocations (3.707335ms)
+✔ unexpected permission rejection remains unknown with exact original Error: Bluetooth permission denied (3.93278ms)
+✔ unexpected permission rejection remains unknown with exact original [object Object] (4.593063ms)
+✔ unexpected permission rejection remains unknown with exact original Bluetooth preparation cancelled (3.74618ms)
+✔ unexpected permission rejection remains unknown with exact original null (3.787944ms)
+✔ unexpected permission rejection remains unknown with exact original undefined (3.382801ms)
+✔ same rejection reused by later permission call cannot borrow initial cancellation proof (3.532541ms)
+✔ android readiness cancellation remains unknown and late callbacks inert (9.881179ms)
+✔ ios readiness cancellation remains unknown and late callbacks inert (7.081072ms)
+✔ listenerError remains unknown even with successful native cancellation (4.585632ms)
+✔ connectError remains unknown even with successful native cancellation (3.645689ms)
+✔ managerError remains unknown even with successful native cancellation (3.578613ms)
+✔ busy rejection does not release another preparation reservation (3.372258ms)
+✔ scanner stop failure is not permission proof and preserves poisoned scanner (5.575524ms)
+✔ bounded scanner stop with unresolved raw effect retains global shutdown fence and stays unknown after late settlement (2005.316922ms)
+✔ partial-registration remains unknown without entering connection section (4.695133ms)
+✔ readiness-state remains unknown without entering connection section (4.166076ms)
+✔ duplicate identifier failure after successful manager preparation never certifies (4.018238ms)
+✖ malformed normal-result candidate missing preserves denial without receipt (3.548081ms)
+✖ malformed normal-result candidate partial preserves denial without receipt (3.085702ms)
+✖ malformed normal-result candidate unknown preserves denial without receipt (3.318761ms)
+✖ malformed normal-result candidate inherited preserves denial without receipt (3.32818ms)
+✖ malformed normal-result candidate accessor preserves denial without receipt (4.161748ms)
+✖ malformed normal-result candidate skippedGetter preserves denial without receipt (3.239918ms)
+✖ malformed normal-result candidate array preserves denial without receipt (3.306862ms)
+✔ normal never_ask_again data result certifies denial (3.181882ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 33
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2333.068247
+
+✖ failing tests:
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate missing preserves denial without receipt (3.548081ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate partial preserves denial without receipt (3.085702ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate unknown preserves denial without receipt (3.318761ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate inherited preserves denial without receipt (3.32818ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate accessor preserves denial without receipt (4.161748ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate skippedGetter preserves denial without receipt (3.239918ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/ble-unissued-acquisition.test.ts:167:5
+✖ malformed normal-result candidate array preserves denial without receipt (3.306862ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-acquisition.test.ts:171:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unknown/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

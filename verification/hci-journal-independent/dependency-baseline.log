@@ -1,0 +1,40 @@
+✔ eleven unique typed choices preserving prior inspectors, Recording default and exact source routes (2.69304ms)
+✔ source IDs increase even for identical bytes; gate rejects replay without losing later IDs or platform (0.754437ms)
+✔ source wiring retains stable unconditional component slots and exclusive active expressions (1.210217ms)
+✔ source handoffs keep exact documents and stage before navigation; Evidence stays inline (0.491818ms)
+✔ source incoming effects run before inactive return, consume once and preserve phone platform (2.487656ms)
+✔ ir: newer inspector request wins over older completion after exit (2.728519ms)
+✔ ir: newer inspector request wins over older rejection after exit (0.856669ms)
+✔ hci: newer inspector request wins over older completion after exit (1.312987ms)
+✔ hci: newer inspector request wins over older rejection after exit (0.952036ms)
+✔ ble: source handoff during save success preserves newer draft and consumes only saved snapshot (3.715956ms)
+✔ ble: source handoff during save failure preserves newer draft and consumes only saved snapshot (0.86325ms)
+✔ phone: source handoff during save success preserves newer draft and consumes only saved snapshot (2.757455ms)
+✔ phone: source handoff during save failure preserves newer draft and consumes only saved snapshot (1.042891ms)
+✔ eleven typed inspector choices retaining the original ten, Recording default, and separate explicit source routes (1.920005ms)
+✔ navigation source wiring keeps controllers at stable positions and has no implicit work (1.030557ms)
+✔ handoff IDs increase without modifying exact source or phone platform; duplicate and stale IDs never replay (0.370741ms)
+✔ stage preserves exact source only; authoring is not started, built or analysed (2.652064ms)
+✔ source delivery during pending saves survives old completion without reviving results (7.363822ms)
+✔ source delivery during pending saves survives old failure without reviving results (3.908654ms)
+✔ SQLite evidence survives reopen, verifies and detects changed payloads (10.259493ms)
+✔ evidence rejects source confusion, unbounded data and malformed envelopes (1.614344ms)
+✔ failed inserts retain existing evidence and never report a successful save (1.034496ms)
+✔ evidence rejects duplicate decoded envelope and payload keys before digest verification (1.198232ms)
+✔ evidence bounded envelope parsing preserves the existing maximum canonical depth (1.586171ms)
+✔ evidence accepts inert duplicate-looking JSON text without interpreting it as envelope structure (0.990261ms)
+✔ independent native adapter mock uses bytes, preserves exact snapshot and fails closed without fallback (6.705207ms)
+✔ web adapter retains exact BLE input and can read and verify it again (23.291364ms)
+✔ web adapter detects valid document tampering without discarding the stored bytes (2.873085ms)
+✔ quota failure retains previous web evidence and surfaces the failure (6.311639ms)
+✔ corrupt web index is not overwritten by a new save (2.626198ms)
+✔ web capacity boundary preserves all existing records (28.500462ms)
+✔ overlapping saves in one app context preserve every record (7.119266ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 305.867575

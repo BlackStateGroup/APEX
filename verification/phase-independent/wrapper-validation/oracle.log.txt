@@ -1,0 +1,2 @@
+PASS independent Python integer/math.atan2 oracle {"pairs": 4012, "processes": 61, "refusals": 33}
+Snapshot before/after each actual CLI process confirms unchanged fixture bytes and no files created in working directory; static reader review confirms read-only opens, no CLI writes except stdout/stderr.

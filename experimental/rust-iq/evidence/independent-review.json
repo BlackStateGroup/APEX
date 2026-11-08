@@ -1,0 +1,53 @@
+{
+  "verdict": "No blocking source-review defect identified; Rust acceptance remains blocked/unverified.",
+  "scope": "Independent source review and Node-only execution. No implementation edits, installations, device access, Rust execution or app integration.",
+  "checks": {
+    "nodeTests": {
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    "oracle": {
+      "status": "PASS",
+      "comparedBins": 3328,
+      "rustExecuted": false
+    },
+    "verify": {
+      "status": "BLOCKED",
+      "exit": 2,
+      "reason": "cargo not installed or not on PATH"
+    },
+    "syntheticFixtures": 56
+  },
+  "observations": [
+    "FFT sign, periodic Hann, int16 LE normalization, shifted bins, first strict peak and zero/null conventions match baseline source.",
+    "Kernel validates fixed FFT set, sample/frame/cell budgets and checked range arithmetic before allocating FFT/output arrays.",
+    "Wire parser has bounded exact lengths and explicit endian fields; CLI bounds stdin bytes and emits no partial report on validation failure by source inspection.",
+    "Harness enforces timeouts/buffers, actual executable invocation, source/executable hashes and separate oracle versus Rust verification statuses.",
+    "Benchmarks are baseline/prototype comparisons, not language-only or mobile claims; unequal structures and Rust deterministic destruction versus JS GC must be disclosed.",
+    "Nonzero dB/display/marker mutation tests and excessive-cell executable negative fixture added; GC caveat disclosed in harness and README.",
+    "Final fixture review includes 15 nonzero impulses across all five FFT sizes at sample positions 1, 37 and n/2. Strict peak and exact-zero/null comparisons remain unchanged. Independent Node-only rerun: eight tests pass, oracle 3328 bins pass, verify BLOCKED exit 2. Sibling C++ results are not Rust execution or evidence of Rust behavior."
+  ],
+  "optionalCoverage": [
+    "Exercise valid metadata endpoints through executable tests."
+  ],
+  "remaining": [
+    "Rust compile/unit tests/release execution/differential/negative-input/benchmark unrun."
+  ],
+  "sha256": {
+    "experimental/rust-iq/Cargo.toml": "9ad91205692de4cbc192cd9be2ef725df1d45f61ecd2beb69cffb93d704c1920",
+    "experimental/rust-iq/Cargo.lock": "be6216c44ced77d00106e070a2efa09258e7abb56eba05f6709019039b4a5e45",
+    "experimental/rust-iq/src/lib.rs": "372049ade0f25bf0d7daa0e03efed8cc547bc26331abe25fc86520cf24b3ceb1",
+    "experimental/rust-iq/src/main.rs": "d15fbf44d4742a3ae78b4765424deff8d2182cab518aca6375c4b80c1f50de60",
+    "experimental/rust-iq/src/wire.rs": "1c39abf356a3110992fb6010f01709749a74bdbbf91f37c1ade30dbe924050ec",
+    "experimental/rust-iq/proof-codec.mjs": "7791394759273e08bb9287ecd37532b5af88e83524fa4d0c4a059a4d95688158",
+    "experimental/rust-iq/proof-codec.test.mjs": "bfec5d41fc84d5c25f8314eda06af509bd077b369bbb4949ac3ce2427900cbc7",
+    "experimental/rust-iq/proof.mjs": "393aee9b40ef711e05552ff23cc32497675948ab39b2998a48aaded5d793803b",
+    "experimental/rust-iq/reference.mjs": "c2a93682d0220f84d61b2baa7c3054d5a0337b72b21810e347a8a52422c9c4e4",
+    "packages/core/iq-analysis.ts": "28321d3ceace4c4ea7a8ebea1dfb584399d4a55bb0cbcc900d7b6dc1c1191625",
+    "packages/core/iq-offline.ts": "f39e70db503befc36d509fe1e37b8fb8041139fb18acd0433f755734c8ac9db8",
+    "experimental/rust-iq/README.md": "90c2989913e4a34a5bacb9b1d4a2bb26323c04648ff767c9a9319d20f61ea414",
+    "experimental/rust-iq/ARCHITECTURE.md": "30ae8aff687be94f547e6e6744723e3ff28cdd8f59007bfdd0bd37231b3430c5"
+  },
+  "documentationReview": "README and ARCHITECTURE reviewed against implementation: accurate source-only status, bounds, benchmark limitations and migration gates. README now correctly distinguishes validation rejection with no output from output I/O failure that may leave partial response bytes."
+}

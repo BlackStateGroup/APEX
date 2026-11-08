@@ -1,3 +1,5 @@
+import { parseBoundedJson } from './bounded-json.ts';
+
 /** A data-only seam for optional AI providers. No hardware/transport reference crosses it. */
 export interface ObservationSummary {
   id: string;
@@ -26,10 +28,14 @@ export interface AnalysisSuggestion {
 
 function record(value: unknown, keys: string[]): Record<string, unknown> {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
-      Object.keys(value).length !== keys.length || Object.keys(value).some(k => !keys.includes(k))) {
+      ![Object.prototype, null].includes(Object.getPrototypeOf(value)) ||
+      Reflect.ownKeys(value).length !== keys.length || Reflect.ownKeys(value).some(k => typeof k !== 'string' || !keys.includes(k))) {
     throw new Error('Invalid analysis schema');
   }
-  return value as Record<string, unknown>;
+  // Only own data fields cross the seam; getters must not change values after validation.
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  if (keys.some(key => !descriptors[key] || !('value' in descriptors[key]!))) throw new Error('Invalid analysis schema');
+  return Object.fromEntries(keys.map(key => [key, descriptors[key]!.value]));
 }
 function boundedText(value: unknown, max: number): value is string {
   return typeof value === 'string' && value.length > 0 && value.length <= max;
@@ -37,14 +43,15 @@ function boundedText(value: unknown, max: number): value is string {
 
 export function validateSuggestion(json: string, observations: readonly ObservationSummary[], providerId: string): AnalysisSuggestion {
   if (typeof json !== 'string' || json.length > 16384) throw new Error('Analysis response exceeds limit');
-  const output = record(JSON.parse(json), ['summary', 'hypotheses']);
+  const output = record(parseBoundedJson(json, 16384, 4), ['summary', 'hypotheses']);
   if (!boundedText(output.summary, 2048) || !Array.isArray(output.hypotheses) || output.hypotheses.length > 8) {
     throw new Error('Invalid analysis response bounds');
   }
-  const known = new Set(observations.map(x => x.id));
+  if (typeof providerId !== 'string' || !/^[\w.:-]{1,80}$/.test(providerId)) throw new Error('Invalid analysis provider');
+  const known = new Set(selectObservations(observations).map(x => x.id));
   const hypotheses = output.hypotheses.map(value => {
     const candidate = record(value, ['protocol', 'confidence', 'rationale', 'observationIds']);
-    if (!['NEC', 'CAN', 'unknown'].includes(String(candidate.protocol)) ||
+    if (typeof candidate.protocol !== 'string' || !['NEC', 'CAN', 'unknown'].includes(candidate.protocol) ||
         typeof candidate.confidence !== 'number' || !Number.isFinite(candidate.confidence) ||
         candidate.confidence < 0 || candidate.confidence > 1 || !boundedText(candidate.rationale, 2048) ||
         !Array.isArray(candidate.observationIds) || candidate.observationIds.length < 1 || candidate.observationIds.length > 16 ||
@@ -60,32 +67,40 @@ export function validateSuggestion(json: string, observations: readonly Observat
   return { provider: providerId, summary: output.summary, hypotheses, status: 'unverified' };
 }
 
-export async function suggestProtocols(provider: AnalysisProvider, observations: readonly ObservationSummary[], options: { allowRemoteDataExport?: boolean; timeoutMs?: number } = {}): Promise<AnalysisSuggestion> {
-  if (!/^[\w.:-]{1,80}$/.test(provider.id) || !['local', 'remote'].includes(provider.location)) throw new Error('Invalid analysis provider');
-  if (provider.location === 'remote' && options.allowRemoteDataExport !== true) throw new Error('Explicit data-export selection required');
-  const timeoutMs = options.timeoutMs ?? 10000;
-  if (!Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 30000) throw new Error('Invalid analysis timeout');
+function selectObservations(observations: readonly ObservationSummary[]): readonly ObservationSummary[] {
   if (!Array.isArray(observations) || observations.length < 1 || observations.length > 64) throw new Error('Observation count exceeds bounds');
   const ids = new Set<string>(); let characters = 0;
-  const selected = observations.map(value => {
+  const selected: ObservationSummary[] = [];
+  for (let index = 0; index < observations.length; index++) {
+    const value = observations[index];
     const observation = record(value, ['id', 'kind', 'inputSha256', 'summary']);
     if (typeof observation.id !== 'string' || !/^[\w.:-]{1,80}$/.test(observation.id) || ids.has(observation.id) ||
-        !['ir-pulses', 'can-frames', 'signal-metadata'].includes(String(observation.kind)) ||
+        typeof observation.kind !== 'string' || !['ir-pulses', 'can-frames', 'signal-metadata'].includes(observation.kind) ||
         typeof observation.inputSha256 !== 'string' || !/^[a-f0-9]{64}$/.test(observation.inputSha256) || !boundedText(observation.summary, 1024)) {
       throw new Error('Invalid observation summary');
     }
     ids.add(observation.id); characters += observation.summary.length;
-    return Object.freeze({ id: observation.id, kind: observation.kind as ObservationSummary['kind'], inputSha256: observation.inputSha256, summary: observation.summary });
-  });
+    selected.push(Object.freeze({ id: observation.id, kind: observation.kind as ObservationSummary['kind'], inputSha256: observation.inputSha256, summary: observation.summary }));
+  }
   if (characters > 32768) throw new Error('Observation summaries exceed size limit');
+  return Object.freeze(selected);
+}
+
+export async function suggestProtocols(provider: AnalysisProvider, observations: readonly ObservationSummary[], options: { allowRemoteDataExport?: boolean; timeoutMs?: number } = {}): Promise<AnalysisSuggestion> {
+  const { id, location, suggest } = provider;
+  if (typeof id !== 'string' || !/^[\w.:-]{1,80}$/.test(id) || !['local', 'remote'].includes(location) || typeof suggest !== 'function') throw new Error('Invalid analysis provider');
+  if (location === 'remote' && options.allowRemoteDataExport !== true) throw new Error('Explicit data-export selection required');
+  const timeoutMs = options.timeoutMs ?? 10000;
+  if (!Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 30000) throw new Error('Invalid analysis timeout');
+  const selected = selectObservations(observations);
   // Providers return bounded structured data, never code, commands or execution authority.
   const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
   const timedOut = new Promise<never>((_resolve, reject) => {
-    timer = setTimeout(() => { controller.abort(); reject(new Error('Analysis provider timed out')); }, timeoutMs);
+    timer = setTimeout(() => { reject(new Error('Analysis provider timed out')); controller.abort(); }, timeoutMs);
   });
   try {
-    const response = await Promise.race([provider.suggest(Object.freeze(selected), controller.signal), timedOut]);
-    return validateSuggestion(response, selected, provider.id);
+    const response = await Promise.race([suggest.call(provider, selected, controller.signal), timedOut]);
+    return validateSuggestion(response, selected, id);
   } finally { clearTimeout(timer); }
 }

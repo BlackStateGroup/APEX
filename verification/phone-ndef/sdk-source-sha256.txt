@@ -1,0 +1,6 @@
+2d5afdb1dccbbda51b0e60a6c9ecb2e9452fbfc6dc90d208a225ecf81db6703e  node_modules/react-native-nfc-manager/index.d.ts
+1847443662e841fd885819d3f93b57c7a1305527daf83af61139438e09c03f73  node_modules/react-native-nfc-manager/ios/RNNfcManager.swift
+1231ea17779151483230c94d903561ab50a414cc3170616c1b90b124a4041f41  node_modules/react-native-nfc-manager/ios/RNNfcSessionDelegateProxy.swift
+0eee5d811d44ec14c647ac471f7b8880e3dd935066d8e8e1071db85e033a7b1f  node_modules/react-native-nfc-manager/ios/RNNfcSwiftUtil.swift
+14c0f969528bb265752480a45abee3b8dfd805ddfe9d202f62f4f196443f34d2  node_modules/react-native-nfc-manager/android/src/main/java/community/revteltech/nfc/Util.java
+8dab22ece3b9e5280932066fe6b5fe7b1e9ef745fc83b9dbffada533557d0541  node_modules/react-native-nfc-manager/android/src/main/java/community/revteltech/nfc/NdefHandler.java

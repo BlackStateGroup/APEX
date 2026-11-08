@@ -1,0 +1,12 @@
+{
+  "reviewed": "e53480171292e4698439b91c7d3dd90e7f6ddc0b",
+  "baseline": "386cdaf957d49078cf660fd936def0b6ebfa219a",
+  "verified_manifests": {
+    "evidence/app-plx-cancellation/source-hashes.json": 93,
+    "evidence/app-plx-cancellation/artifacts.sha256.json": 21
+  },
+  "builder_clean_process_exits": 13,
+  "original_test_bodies": "byte-identical from function frames onward",
+  "historical_verification": "byte-identical",
+  "loader_pins_runtime_and_bridge": "byte-identical"
+}

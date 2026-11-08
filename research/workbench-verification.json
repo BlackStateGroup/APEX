@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "904ca433f6567bc11439623c04c0200ef65c3dda",
+  "workflowRun": 41300944586,
+  "local": {
+    "nodeTestsPassed": 54,
+    "browserScenariosPassed": 3,
+    "exports": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "typecheck": "passed",
+    "cSanitizers": "passed with detect_leaks=0; host LeakSanitizer cannot inspect proc tasks",
+    "sourceRootsReverified": 30,
+    "backupIdentitiesRetained": 31
+  },
+  "ci": {
+    "host": {
+      "jobId": 124831531317,
+      "conclusion": "success",
+      "nodeTestsPassed": 54,
+      "browserScenariosPassed": 3,
+      "unmodifiedSanitizers": "passed"
+    },
+    "esp32s3": {
+      "jobId": 124831531156,
+      "conclusion": "success",
+      "binaryBytes": 458336
+    },
+    "android": {
+      "jobId": 124831531389,
+      "conclusion": "success",
+      "target": "arm64-v8a full debug APK including native NFC/BLE dependencies"
+    },
+    "ios": {
+      "jobId": 124831531413,
+      "conclusion": "success",
+      "target": "unsigned iPhone Simulator Debug",
+      "runner": "macos-26",
+      "xcode": "26.6",
+      "physicalNfcTested": false
+    }
+  },
+  "physicalHardwareTested": false,
+  "iPhoneSigningConfigured": false,
+  "priorIosFailures": [
+    {
+      "run": 41299626059,
+      "toolchain": "Xcode 16.4",
+      "reason": "Swift tools too old"
+    },
+    {
+      "run": 41300075340,
+      "toolchain": "Xcode 26.2",
+      "reason": "Below Expo 58 supported minimum; ExpoModulesJSI concurrency compiler error"
+    }
+  ],
+  "workflowConclusion": "success"
+}

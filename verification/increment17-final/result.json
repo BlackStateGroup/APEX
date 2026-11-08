@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "status": "succeeded",
+  "startedAt": "2026-11-08T02:38:29.971Z",
+  "source": {
+    "root": "/workspace/scratch/b96d3539d24d/apex-continuation",
+    "head": "d973a20eb393aac84efce826c8cb47b05e4ac9bb",
+    "statusPorcelain": "",
+    "dirty": false
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "environment": {
+    "CI": "1",
+    "EXPO_OFFLINE": "1",
+    "EXPO_NO_TELEMETRY": "1",
+    "npm_config_update_notifier": "false",
+    "npm_config_offline": "true",
+    "npm_config_audit": "false",
+    "npm_config_fund": "false"
+  },
+  "gates": [
+    {
+      "id": "browser-execution",
+      "status": "not-run"
+    },
+    {
+      "id": "native-prebuild-and-build",
+      "status": "not-run"
+    },
+    {
+      "id": "physical-device",
+      "status": "not-run"
+    },
+    {
+      "id": "provider-network-actions",
+      "status": "not-run"
+    },
+    {
+      "id": "rea-engine-readiness",
+      "status": "not-run"
+    }
+  ],
+  "stages": [
+    {
+      "id": "portable-firmware",
+      "command": "python3",
+      "args": [
+        "tools/build_firmware.py"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:38:29.973Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 139,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 18,
+      "processGroup": 18,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:38:30.245Z"
+    },
+    {
+      "id": "node-tests",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "tests/accessory.test.ts",
+        "tests/analysis.test.ts",
+        "tests/ble-advertisements.test.ts",
+        "tests/ble-candidate-workbench.test.ts",
+        "tests/ble-differential.test.ts",
+        "tests/ble-evidence.test.ts",
+        "tests/ble-field-hypothesis.test.ts",
+        "tests/ble-filter-diagnostic.test.ts",
+        "tests/ble-hypothesis-contract.test.ts",
+        "tests/ble-native-observation.test.ts",
+        "tests/ble-native-service-data.test.ts",
+        "tests/ble-plx-observation.test.ts",
+        "tests/ble-plx-service-data-filter.test.ts",
+        "tests/ble-plx-source-evidence.test.ts",
+        "tests/ble-review-pending-effects.test.ts",
+        "tests/ble-scan-session.test.ts",
+        "tests/ble-service-data-session.test.ts",
+        "tests/ble-trial-authoring-workbench.test.ts",
+        "tests/ble-trial-authoring.test.ts",
+        "tests/ble-trial-workbench.test.ts",
+        "tests/ble-workbench.test.ts",
+        "tests/bluetooth-recovery.test.ts",
+        "tests/bounded-json.test.ts",
+        "tests/bthome-numeric.test.ts",
+        "tests/bthome.test.ts",
+        "tests/catalogue.test.ts",
+        "tests/eddystone-identity.test.ts",
+        "tests/evidence-bundle.test.ts",
+        "tests/evidence.test.ts",
+        "tests/firmware.integration.test.ts",
+        "tests/flipper-offline.test.ts",
+        "tests/foreground-ble-workbench.test.ts",
+        "tests/foreground-device-action.test.ts",
+        "tests/hypotheses.test.ts",
+        "tests/inspect-iq-activity.test.ts",
+        "tests/inspect-iq-lag-correlation.test.ts",
+        "tests/inspect-iq-time-frequency.test.ts",
+        "tests/inspect-iq.test.ts",
+        "tests/ios-ble-teardown-proposal.test.ts",
+        "tests/iq-activity.test.ts",
+        "tests/iq-analysis.test.ts",
+        "tests/iq-lag-correlation.test.ts",
+        "tests/iq-offline.test.ts",
+        "tests/iq-time-frequency.test.ts",
+        "tests/native-build.test.ts",
+        "tests/native-process-group.test.ts",
+        "tests/ndef-evidence.test.ts",
+        "tests/ndef-offline.test.ts",
+        "tests/ndef-workbench.test.ts",
+        "tests/nfc-lifecycle.test.ts",
+        "tests/nfc-manager-ndef.test.ts",
+        "tests/observation-static-render.test.ts",
+        "tests/offline-checkpoint.test.ts",
+        "tests/offline-lab-walkthrough.test.ts",
+        "tests/phone-ndef-capture.test.ts",
+        "tests/phone-ndef-workbench.test.ts",
+        "tests/protocol.test.ts",
+        "tests/rea-inspection.test.ts",
+        "tests/recording-workbench.test.ts",
+        "tests/research.test.ts",
+        "tests/service-data-workbench.test.ts",
+        "tests/session-controls.test.ts",
+        "tests/session.test.ts",
+        "tests/usb-transport.test.ts",
+        "tests/web-evidence.test.ts"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 600000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:38:30.246Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 57801,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 34,
+      "processGroup": 34,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:22.817Z"
+    },
+    {
+      "id": "typecheck",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 180000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:22.818Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 0,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 1867,
+      "processGroup": 1867,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:23.356Z"
+    },
+    {
+      "id": "source-archives",
+      "command": "python3",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_source_archives.py"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:23.357Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 0,
+        "stderr": 121
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 1888,
+      "processGroup": 1888,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:25.428Z"
+    },
+    {
+      "id": "rea-preflight-tests",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "--test",
+        "tools/reverse-engineering/preflight.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:25.429Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 455,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2263,
+      "processGroup": 2263,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:25.589Z"
+    },
+    {
+      "id": "npm-inventory",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "tools/npm-inventory.mjs",
+        "--check"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:25.589Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 53,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2278,
+      "processGroup": 2278,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:25.678Z"
+    },
+    {
+      "id": "playwright-list",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--list"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:25.678Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 3254,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2286,
+      "processGroup": 2286,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:26.262Z"
+    },
+    {
+      "id": "expo-js-export",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--platform",
+        "android",
+        "--platform",
+        "web",
+        "--output-dir",
+        "/workspace/scratch/b96d3539d24d/apex-v17-validation-run/expo-export"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 600000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:26.262Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 1576,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2298,
+      "processGroup": 2298,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:34.587Z"
+    },
+    {
+      "id": "synthetic-lab",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": [
+        "tools/demo-offline-lab.ts"
+      ],
+      "cwd": "/workspace/scratch/b96d3539d24d/apex-continuation",
+      "timeoutMs": 120000,
+      "status": "succeeded",
+      "startedAt": "2026-11-08T02:39:34.587Z",
+      "cleanup": "settled",
+      "logBytes": {
+        "stdout": 2509,
+        "stderr": 0
+      },
+      "logTruncated": false,
+      "maxLogBytes": 16777216,
+      "pid": 2318,
+      "processGroup": 2318,
+      "code": 0,
+      "signal": null,
+      "finishedAt": "2026-11-08T02:39:34.751Z"
+    }
+  ],
+  "finishedAt": "2026-11-08T02:39:34.756Z"
+}

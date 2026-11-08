@@ -81,4 +81,4 @@ Before active modules: add accessory authentication, signed capability manifests
 
 ## Decisions
 
-ADR-001: compose specialist devices instead of a monolithic firmware fork. ADR-002: Android native development build first. ADR-003: small original TypeScript/C control envelope and process-level conformance tests. ADR-004: separate control and high-rate capture data. ADR-005: upstream code remains external until selected-file licensing and hardware validation. ADR-006: evidence level is separate from implementation state and device claims.
+ADR-001: compose specialist devices instead of a monolithic firmware fork. ADR-002: iPhone and Android are first-class clients; current Android native integration does not establish iOS coverage. ADR-003: small original TypeScript/C control envelope and process-level conformance tests. ADR-004: separate control and high-rate capture data. ADR-005: pinned upstream source copies are kept separate from application/firmware integration, which requires selected-file licensing and hardware validation. ADR-006: evidence level is separate from implementation state and device claims.

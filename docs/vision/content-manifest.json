@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "excludes": [
+    "content-manifest.json",
+    "VALIDATION.md"
+  ],
+  "files": [
+    {
+      "path": "AUDIT_PROTOCOL.md",
+      "bytes": 6242,
+      "sha256": "4c3f4f95386752e744a33509a50ed6170340a1e20455361028fa33261cb24b4d"
+    },
+    {
+      "path": "DECISION_HISTORY.md",
+      "bytes": 11953,
+      "sha256": "ddf2c1261c7be88191583b90bf4613e01c063713a6d985bd3ccc1e467f98fe0f"
+    },
+    {
+      "path": "DELIVERY_ROADMAP.md",
+      "bytes": 14156,
+      "sha256": "48bd9a00883ca3613ffc23b1352d5413165234870eb4f1901b3de85eae23940a"
+    },
+    {
+      "path": "FULL_CAPABILITY_ROLLOUT.md",
+      "bytes": 6800,
+      "sha256": "87a04eb3f6bbfb4b4177b4394aa666deb64d6779d698f2c3ea705c404627d26a"
+    },
+    {
+      "path": "LOCAL_CHECKPOINT_REFERENCES.md",
+      "bytes": 3841,
+      "sha256": "00ea8b9cc0118281186a72c7810591b8a2f6036c30ef4022c05b86d97153aab3"
+    },
+    {
+      "path": "NATIVE_HYBRID_ARCHITECTURE.md",
+      "bytes": 14245,
+      "sha256": "8b0ecef9ad639d5e1b7dd243d5e20e9d3af48cdf1c15407cc2ab5e21cfbd454a"
+    },
+    {
+      "path": "PRODUCT_VISION.md",
+      "bytes": 11674,
+      "sha256": "7566900baa1bccf814c32b48deb9c7c0e3dc7d8467fa24210efc7c8864318152"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4457,
+      "sha256": "1745bac0cf14e3c3cb0590a24f3ac339e20ec472244a1abb0b1fca67d2286e90"
+    },
+    {
+      "path": "REQUIREMENTS_TRACEABILITY.md",
+      "bytes": 13732,
+      "sha256": "19185190f4349992aa02bea67da672af80b7fa55aef74f318753998ffdb4a4d8"
+    },
+    {
+      "path": "RESEARCH_PROGRAMME.md",
+      "bytes": 9079,
+      "sha256": "e78c295596948af668990814e652e7c863861103b262652e26a8e5456b121f91"
+    },
+    {
+      "path": "SOURCE_PROVENANCE_AND_LICENSING.md",
+      "bytes": 10910,
+      "sha256": "e63048942b39c43099cda74d06561687ad9e77062d9db4067a3c367078531347"
+    },
+    {
+      "path": "VERIFIED_STATUS.md",
+      "bytes": 8036,
+      "sha256": "c51d40b159cbdc93aa95bc9c550f82676f973d27f5fbf350e90eb4a08f8e21ed"
+    },
+    {
+      "path": "checkpoint-v42/result.json",
+      "bytes": 16539,
+      "sha256": "bb91d92210410c3666d96265189ade9d503b5fe984fb4e5c8e9fc6eeb731d695"
+    },
+    {
+      "path": "conversations/.gitattributes",
+      "bytes": 85,
+      "sha256": "cb749d8682eb33243021226843cc4dfba55f154cb89db02b40260689630f549f"
+    },
+    {
+      "path": "conversations/README.md",
+      "bytes": 3966,
+      "sha256": "918284c6b769eb5238bdb9e3e72386d880f3c397a803c6f4217b01f394653092"
+    },
+    {
+      "path": "conversations/capabilities.md",
+      "bytes": 20843,
+      "sha256": "ca0cb1568571f494fd45980328153ea465a38d614443740bf7ebb47ffb93dffc"
+    },
+    {
+      "path": "conversations/current-direction.json",
+      "bytes": 1807,
+      "sha256": "9a9a3be20f9804b21d97009ef3b8f9bae8c07ccc3ae524db5a70415893817c87"
+    },
+    {
+      "path": "conversations/current-direction.md",
+      "bytes": 1606,
+      "sha256": "0aa7a292c1ac2255f58c666ae57368e9b573a6ca89bd799a546b65e85c730213"
+    },
+    {
+      "path": "conversations/implementation.md",
+      "bytes": 18995,
+      "sha256": "25e11a1cd26e08a97a44f8b25747b15c96d8c8d0717b201cf94c2a040dbd1134"
+    },
+    {
+      "path": "conversations/origin.md",
+      "bytes": 5989,
+      "sha256": "38008a8ef0cc4b2481319d2d2fb300d0cd9fb75fbc833c66528c4cedb724611e"
+    },
+    {
+      "path": "conversations/recovered-messages.json",
+      "bytes": 61717,
+      "sha256": "e31cbd63724a070454d8f2971e1bfb04e563129099e306d13d96dffee8984e4e"
+    },
+    {
+      "path": "conversations/search-recovered-proposals.json",
+      "bytes": 18958,
+      "sha256": "59e6f59a6a651db2d0cea15de81e0c56350c45783c33e8ac782e20653289a05b"
+    },
+    {
+      "path": "conversations/site.md",
+      "bytes": 2210,
+      "sha256": "7f5115ec4e5c9a932a159bc4d45aad80ddcf24e6d2cadd9bbb3d55f4883ea0cd"
+    },
+    {
+      "path": "conversations/text-digests.json",
+      "bytes": 15341,
+      "sha256": "73ee61c550a59c2fb456ebf3d113c65e672d38f3d024e17e3baa0fa57b178201"
+    },
+    {
+      "path": "delivery-status.json",
+      "bytes": 1008,
+      "sha256": "c122d40ba88c244cecfc897b1de43f9738560eaec2a9331ee9ad2e7cdc023df6"
+    },
+    {
+      "path": "local-checkpoint-references.json",
+      "bytes": 2555,
+      "sha256": "3d96b7de4096df6bdae9b0f5e233b510f01fe74e3623e475146fc8fcf680f34a"
+    },
+    {
+      "path": "requirements.json",
+      "bytes": 18063,
+      "sha256": "96a7acf42440568ed507db02fda453352906717d3ca29436b0b19ef793f618dc"
+    },
+    {
+      "path": "sources/INVENTORY.md",
+      "bytes": 34891,
+      "sha256": "f6cf9e6d1fa06d99612ec3835c6e8f691d4a6c8f63665427ac655c44d4f23f8d"
+    },
+    {
+      "path": "sources/README.md",
+      "bytes": 1250,
+      "sha256": "0a3f032ae2ea9c1af66989f6cc5df113df9efd19f3a791f2af58daf84c9143af"
+    },
+    {
+      "path": "sources/recovery-inventory.json",
+      "bytes": 48888,
+      "sha256": "c37512d70310d61b35943ad57b0310060639993d77482ed30daa59642b9d8117"
+    },
+    {
+      "path": "validate_pack.py",
+      "bytes": 4911,
+      "sha256": "b1e5fc7cf657e14f036f851d7d9125557214db8536ac6b174b979aa4eb9267bc"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+✔ explicit preparation/reopen uses binary digest, excludes unrelated records and performs no file writes (379.203285ms)
+✔ old metadata, page, legacy and extended subprocess outputs remain byte-for-byte compatible (601.289589ms)
+✔ preparation rejects conflicts, bad indices, duplicate flags, extra args, wrong record types and missing context (2543.278478ms)
+✔ reopen rejects strict argument errors and unsafe filesystem targets; ancestor links are allowed (1506.116436ms)
+✔ reopen rejects malformed UTF8, preserved BOM, byte and decoded limits, strict JSON and digest corruption atomically (1534.138107ms)
+✔ late source framing and event failures never publish prepared or reopened partial output (489.381675ms)
+✔ plausible original claims can change without derivative failure and remain explicitly unverified (232.328732ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7424.059892

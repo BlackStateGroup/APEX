@@ -1,0 +1,30 @@
+✔ 24 additional scalar IDs retain independent golden values, units and exact rational evidence (3.189762ms)
+✔ new scalar types preserve zero, all-bits-set and high-bit extrema without clamps (0.688785ms)
+✔ every proper prefix of each new field stops after a valid original field without consuming bytes (0.625049ms)
+✔ mixed original/new stream preserves ordering, repeated IDs, offsets and complete byte reconstruction (0.26579ms)
+✔ all new scalar fields compose into an ordered stream and survive encrypted-header gating (0.246681ms)
+✔ excluded objects stop without guessing across numeric-looking tails (0.270377ms)
+✔ wide unsigned values obey the unchanged 128-object cap (0.421835ms)
+✔ retained MIT constants and license remain exactly the pinned local source bytes (1.120427ms)
+✔ official advertising example imports offline and retains source provenance (4.550628ms)
+✔ original numeric IDs match official wire examples (packet-id is synthetic) (0.428695ms)
+✔ signed little-endian minima, maxima, negative one and zero are numeric, not invented sentinels (1.285917ms)
+✔ unsigned 8, 16, 24-bit extrema stay unsigned without range clamping (0.217099ms)
+✔ ordered repeated object IDs retain every occurrence and byte position (0.177336ms)
+✔ descending IDs stop without reordering or overwriting the parsed prefix (0.193033ms)
+✔ unsupported object IDs stop at the ID, with no guessed length or resynchronization (0.243945ms)
+✔ all proper prefixes of each supported field preserve the truncated ID and bytes (0.362811ms)
+✔ every header byte gates version, encryption and reserved bits before measurements (0.941802ms)
+✔ official encrypted example and plausible plaintext with encryption flag stay opaque (0.415198ms)
+✔ object and common input bounds are enforced at exact boundaries (0.79961ms)
+✔ iOS and recorded envelopes preserve provenance without an identity or native claim (1.090328ms)
+✔ summary distinguishes TLM and BTHome counts and exports no measurement or label (0.829317ms)
+✔ deterministic malformed sweep preserves every byte and never exceeds object bound (285.477451ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 444.455927

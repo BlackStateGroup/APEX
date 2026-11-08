@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "inspectedAt": "2026-11-02T14:58:57.388Z",
+  "engine": {
+    "name": "rea-agents",
+    "version": "6.8.0"
+  },
+  "input": "apex-firmware",
+  "artifactSha256": "367acc06436a2499defdf1b76bb314fb37d03ab619305cbfd164b7e7304631e0",
+  "rawEvidenceSha256": "8fca1deb5f51093dfda50cee37d958fdd61f02406611d078790f84c1d11fee0a",
+  "supplements": [
+    {
+      "provider": "GNU objdump (direct; not REA subprocess integration)",
+      "file": "objdump-headers.txt",
+      "argument": "--file-headers",
+      "success": true,
+      "exitCode": 0,
+      "error": null,
+      "sha256": "0a3970a0e0325dfa926bf13bc10e944b75ec3346c1e9e763135e07f1df09bdb4",
+      "diagnosticFile": "objdump-headers.stderr.txt",
+      "diagnosticSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "provider": "GNU objdump (direct; not REA subprocess integration)",
+      "file": "objdump-sections.txt",
+      "argument": "--section-headers",
+      "success": true,
+      "exitCode": 0,
+      "error": null,
+      "sha256": "5226e253f76c076ebe82f809c2773362cbeb966ba398ffcf0e35c81ae148d7b3",
+      "diagnosticFile": "objdump-sections.stderr.txt",
+      "diagnosticSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "provider": "GNU objdump (direct; not REA subprocess integration)",
+      "file": "objdump-symbols.txt",
+      "argument": "--syms",
+      "success": true,
+      "exitCode": 0,
+      "error": null,
+      "sha256": "b31b589af9fa4ed42fd241ab61cb4c41401c6f0d0a8e38911102a073b9408930",
+      "diagnosticFile": "objdump-symbols.stderr.txt",
+      "diagnosticSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "provider": "GNU objdump (direct; not REA subprocess integration)",
+      "file": "objdump-crc-disassembly.txt",
+      "argument": "--disassemble=apex_crc16",
+      "success": true,
+      "exitCode": 0,
+      "error": null,
+      "sha256": "bf02db9cb673c3573f23fb576d9996fb3b258e8b688ae806142b1c9fe0143169",
+      "diagnosticFile": "objdump-crc-disassembly.stderr.txt",
+      "diagnosticSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "artifactObservedUnchanged": true,
+  "targetExecuted": false,
+  "inspection": {
+    "engine": "REA ELF note parser",
+    "evidenceId": "ev_ab85becd64d452275faca52e75de73e58eab45a3e61895575aa95eff068844da",
+    "artifact": {
+      "name": "apex-firmware",
+      "sha256": "367acc06436a2499defdf1b76bb314fb37d03ab619305cbfd164b7e7304631e0",
+      "bytes": 16712,
+      "architecture": "x86_64",
+      "format": "elf64",
+      "byteOrder": "little",
+      "machine": 62
+    },
+    "coverage": "complete",
+    "examinedEntries": 6,
+    "buildIds": [
+      "f7144a644b6f71c613da114411c963db47fae728"
+    ],
+    "noteRanges": [
+      {
+        "offset": 824,
+        "bytes": 48,
+        "kind": "gnu_property"
+      },
+      {
+        "offset": 872,
+        "bytes": 36,
+        "kind": "gnu_build_id"
+      },
+      {
+        "offset": 908,
+        "bytes": 32,
+        "kind": "gnu_abi_tag"
+      },
+      {
+        "offset": 824,
+        "bytes": 48,
+        "kind": "gnu_property"
+      },
+      {
+        "offset": 872,
+        "bytes": 36,
+        "kind": "gnu_build_id"
+      },
+      {
+        "offset": 908,
+        "bytes": 32,
+        "kind": "gnu_abi_tag"
+      }
+    ],
+    "limitations": [
+      "ELF notes do not establish executable behaviour, protocol compatibility, authentication or credential access.",
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ],
+    "provenance": "Imported report; original artifact has not been verified on this device"
+  }
+}

@@ -1,0 +1,28 @@
+✔ application chooser is same-stack, reserves before publication and refuses double clicks (3.751098ms)
+✔ every live acquisition gate rejects without invoking chooser (0.762953ms)
+✔ real unchanged session negotiation and ping use shared slot and 20-byte fragments (5.153209ms)
+✔ pending picker cancellation cannot replace raw owner; late selection never connects (5.348291ms)
+✔ pending open cancels synchronously before close, holds raw poison and requires explicit retry (30.737248ms)
+✖ unmount/remount detaches presentation but preserves pending owner and stale callbacks (1.182391ms)
+✔ cancel during reservation observer never proceeds into GATT or leaves an orphan handle (1.615254ms)
+✔ pending write cancel fences immediately and raw settlement alone never clears the shared slot (32.02278ms)
+✔ missing actual READY does not negotiate; cancellation remains reachable outside lock (1.209487ms)
+✔ unsupported or insecure host never invokes picker and can be retried after public rejection (0.566159ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 231.099977
+
+✖ failing tests:
+
+test at tests/web-axp-application.test.ts:110:1
+✖ unmount/remount detaches presentation but preserves pending owner and stale callbacks (1.182391ms)
+  Error: Browser AXP ownership must be released first.
+      at WebAxpApplication.choose (file:///workspace/scratch/b96d3539d24d/apex-web-axp-application/src/experimental/web-axp-application.ts:53:42)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-web-axp-application/tests/web-axp-application.test.ts:117:37)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

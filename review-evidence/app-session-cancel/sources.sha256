@@ -1,0 +1,5 @@
+cbe848259cf66f327f5855438bace84d2c345d015f70dd0f13eed4ece3a19716  App.tsx
+b48769c1e7ce5678e774ac1dbaac22eedea72391d0a205a9368c63ca88a2cca7  tests/support/app-acquisition.ts
+a92be3b8ab0e2cb191ae3607e9f7fff8d21941ad4c06b6260a2e53a5b21251a8  tests/app-native-acquisition.test.ts
+1ebf532c024785c457ba2008c7a8d2652cc0c3275c0741b2fed1aec482bdc043  tests/native-c-roundtrip.test.ts
+fb6aed27450b6cd5db4fbe759441f41b7491dbc34a4e64e4808482bbe7676281  tests/web-axp-application-independent.test.ts

@@ -1,0 +1,4 @@
+8e5dd2f8b89eadfbe9cc1f3fdd58aa7540a73bc089871d744e1bf570edc5fe29  packages/core/hci-offline.ts
+242868ade09a4cdf1a61f882083a4a2ec9ffb7dc9817f2611c2a22849ff25547  tests/hci-selected-document.test.ts
+4345b17d9a233e5c86d9fae67b2488ccc94e83efb1050a9cfc441f7428bec7f5  tests/hci-selected-document-independent.test.ts
+04aee81c01f710be98a0f9315d6a618bf0cb5ed090ae555b22ad9a47e11d5fd7  tests/hci-selected-review-fixture.ts

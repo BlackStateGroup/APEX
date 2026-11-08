@@ -1,0 +1,32 @@
+✔ exact raw rejection and one fresh frozen token: undefined (1.958824ms)
+✔ exact raw rejection and one fresh frozen token: null (1.773327ms)
+✔ exact raw rejection and one fresh frozen token: 0 (0.505822ms)
+✔ exact raw rejection and one fresh frozen token: rejected (0.38095ms)
+✔ exact raw rejection and one fresh frozen token: [object Object] (0.624809ms)
+✔ exact raw rejection and one fresh frozen token: Error: original (0.25731ms)
+✔ proof missing preserves original and remains held (0.940689ms)
+✔ proof getter-throw preserves original and remains held (0.385146ms)
+✔ proof method-throw preserves original and remains held (0.37653ms)
+✔ proof promise preserves original and remains held (0.465105ms)
+✔ proof object preserves original and remains held (0.368986ms)
+✔ proof truthy preserves original and remains held (0.225594ms)
+✔ proof false preserves original and remains held (0.238962ms)
+✔ proof is never queried before dispatch or for a late returned handle (6.472875ms)
+✖ malformed rejected Promise proof stays unknown without unhandled rejection (0.785275ms)
+✔ malformed thenable proof is neither inspected nor assimilated (0.89941ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.32615
+
+✖ failing tests:
+
+test at tests/ble-unissued-transport.test.ts:46:1
+✖ malformed rejected Promise proof stays unknown without unhandled rejection (0.785275ms)
+  Error: proof rejection
+      at Object.consumeUnissuedConnection (file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/tests/ble-unissued-transport.test.ts:48:126)
+      at file:///workspace/scratch/b96d3539d24d/apex-unissued-impl/packages/core/ble-transport.ts:73:67

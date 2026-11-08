@@ -1,0 +1,1 @@
+PASS: poisoned view/buffer getters and iterators never read; synchronous caller mutations and retained hasher buffers isolated; SHA512 copy isolated; output tree frozen; all non-enumerable context fields preserved; revoked proxy rejected.

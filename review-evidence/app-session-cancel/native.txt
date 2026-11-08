@@ -1,0 +1,43 @@
+✔ fake android native adapter to C, MTU 23: exact frames and stale callbacks (39.178891ms)
+✔ fake android MTU 23: C ATT error closes session (9.55699ms)
+✔ fake android native adapter to C, MTU 517: exact frames and stale callbacks (12.948827ms)
+✔ fake android MTU 517: C ATT error closes session (8.252763ms)
+✔ fake ios native adapter to C, MTU 23: exact frames and stale callbacks (14.99186ms)
+✔ fake ios MTU 23: C ATT error closes session (11.353835ms)
+✔ fake ios native adapter to C, MTU 517: exact frames and stale callbacks (12.393134ms)
+✔ fake ios MTU 517: C ATT error closes session (8.079171ms)
+✔ fake android: close drains pending write and failed cancel stays unknown until explicit retry (9.87551ms)
+✔ fake ios: close drains pending write and failed cancel stays unknown until explicit retry (7.881467ms)
+✔ late Android permission grant cannot start a connection after session close (5.605727ms)
+✔ fake android: cancellation during readiness removes listener and prevents connect (6.575775ms)
+✔ fake android: cancel during connect drains issued effect without next setup effect (8.631828ms)
+✔ fake android: cancel during discover drains issued effect without next setup effect (7.301089ms)
+✔ fake android: cancel during requestMTU:185 drains issued effect without next setup effect (7.615302ms)
+✔ fake android: cancel during characteristics drains issued effect without next setup effect (6.040464ms)
+✔ fake ios: cancellation during readiness removes listener and prevents connect (6.152171ms)
+✔ fake ios: cancel during connect drains issued effect without next setup effect (6.93152ms)
+✔ fake ios: cancel during discover drains issued effect without next setup effect (7.500181ms)
+✔ fake ios: cancel during characteristics drains issued effect without next setup effect (6.360669ms)
+(node:12) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ cancelled native setup with failed cancellation retains unknown ownership (6.24092ms)
+✔ App cancel on fake android during readiness (7.361097ms)
+✔ App cancel on fake android during permission (7.535849ms)
+✔ App cancel on fake android during connect (7.618286ms)
+✔ App cancel on fake android during discover (7.866295ms)
+✔ App cancel on fake android during requestMTU:185 (6.704623ms)
+✔ App cancel on fake android during characteristics (7.501946ms)
+✔ App cancel on fake android during negotiation (7.509882ms)
+✔ App cancel on fake ios during readiness (6.431998ms)
+✔ App cancel on fake ios during connect (6.882323ms)
+✔ App cancel on fake ios during discover (8.977187ms)
+✔ App cancel on fake ios during characteristics (6.700837ms)
+✔ App cancel on fake ios during negotiation (7.2125ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 536.926503

@@ -1,0 +1,17 @@
+✔ golden synthetic fixture retains exact inputs and independently matches 2000/100 and 1844/100 (9.305844ms)
+✔ all integer widths, byte orders and signed extrema use exact independent golden integers (18.056077ms)
+✔ rational residuals, decimal negatives and inclusive tolerance never use floating comparison (5.024666ms)
+✔ designated held-out changes do not affect discovery, sources remain separate, unselected explicit (2.134049ms)
+✔ missing candidate bytes are incomplete while malformed format truncation rejects (4.276022ms)
+✔ eligibility rejects encrypted, unknown, partial, identity and unsupported public formats (18.230394ms)
+✔ strict schema, declarations, decimals, candidate and assignment bounds reject (18.849431ms)
+✔ 32 selected trials and explicit source omission remain bounded and transparent (6.410509ms)
+✔ CLI bounded regular file, symlink, malformed, UTF-8, byte-limit and FIFO paths (1031.329984ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1294.797184

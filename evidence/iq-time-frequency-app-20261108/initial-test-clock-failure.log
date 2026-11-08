@@ -1,0 +1,34 @@
+✖ TF every size reaches exact 16384 cells and final fit, maximum frames, rereads and hashes exactly once per source (3.712857ms)
+✔ TF rejects oversized cells, invalid geometry, strict whole edits before reads; allows overlap and gaps (13.623168ms)
+✔ TF every frame and bin page has exact unique immutable rows, selected navigation does not read/hash (20.228948ms)
+✔ TF exact quarter-cycle transitions, gapped summaries and zero including nonzero Hann-zero endpoint (10.599566ms)
+✔ TF every setting at each actual read/hash boundary fences success and rejection without freeing slot (14.333574ms)
+✔ TF synchronous observers see atomic settings, cannot replace captured geometry and cannot strand ownership (6.835047ms)
+✔ TF edits and navigation snapshots fence old callbacks; clear/examples/background reset all settings (2.308455ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 217.003486
+
+✖ failing tests:
+
+test at tests/iq-app-time-frequency.test.ts:15:1
+✖ TF every size reaches exact 16384 cells and final fit, maximum frames, rereads and hashes exactly once per source (3.712857ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-iq-time-frequency-app/tests/iq-app-time-frequency.test.ts:17:48)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

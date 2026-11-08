@@ -1,0 +1,595 @@
+{
+  "scope": "host-only fake RN/PLX, MTU, scheduling and acknowledgments; no native/device/startup acceptance",
+  "platform": "ios",
+  "mtu": 23,
+  "hashes": {
+    "firmware/core/apex.c": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+    "firmware/core/apex.h": "d2afe3870cf7ef794bcf33a3e57f0cb0c05e91c22534cfd5a0e67b6c08c1b588",
+    "firmware/esp32s3-reviewed/main/ble_accessory.c": "57503eaabc1773bb46272d72bd3c9b04e85964d1666093e02bb672eaf569242c",
+    "firmware/esp32s3/main/ble_accessory.h": "8328b10ae8c6452cc7236b1e3f1c6d2f951a05f00fa3af4074c0f088f86a4ed8",
+    "packages/core/ble-transport.ts": "0a4b369de47cb35a6ad04fe4a3102594c4c7052ceb3179cf40f2ab915cb1f208",
+    "packages/core/session.ts": "9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404",
+    "packages/protocol/index.ts": "fdc143b45f0722665b637ae341957e3774876be5d9343c6652e07061a3faf7bb",
+    "src/experimental/web-axp.ts": "61a0cb7cbbbeaf6ca0b632c8bf21f9bfbc6dece7fafdda0a9a99214d6a7fe50d",
+    "tests/esp32-reviewed-host/fakes/esp_err.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/fake.h": "66696ef70b0a593ff495731014653e89fd42751f8df4d86879bed282ea265bb5",
+    "tests/esp32-reviewed-host/fakes/host/ble_hs.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/host/util/util.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nimble/nimble_port.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nimble/nimble_port_freertos.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/nvs_flash.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/sdkconfig.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/esp32-reviewed-host/fakes/services/gap/ble_svc_gap.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "tests/esp32-reviewed-host/fakes/services/gatt/ble_svc_gatt.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
+    "src/platform/bluetooth.native.ts": "6310d4e8b96acf183e85bc7b3261963df0b8d461ed3030c0244987a1297021e5",
+    "tests/browser-c-host/bridge.c": "b9a53bf7738a9ab6e707171a1ba12f1534471b21687962ec72188e80faccea5e",
+    "tests/browser-c-host/bridge.ts": "02df9e372d93bcd654e5f584fe1960b9648571bde4cbf8a90b16b56aced66ef2",
+    "tests/native-c-roundtrip.test.ts": "24a9192ea14e7930969054bf827d3949cf3613939902619c15d508017d5a66ca"
+  },
+  "events": [
+    "readiness",
+    "remove-readiness",
+    "connect",
+    "discover",
+    "characteristics",
+    "monitor",
+    "C-notification",
+    "write-enter",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "write-settled",
+    "write-enter",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "write-settled",
+    "write-enter",
+    "C-notification",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "C-notification",
+    "C-notification",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "write-settled",
+    "write-enter",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "C-notification",
+    "write-settled",
+    "remove-monitor",
+    "cancel",
+    "fake-destroy"
+  ],
+  "trace": [
+    {
+      "origin": "fixture-command",
+      "value": "SUBSCRIBE"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158505f5245414459"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 1 0 0 0 1 1 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 415801010100010000001815"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102010001005b007b226964223a22617065"
+    },
+    {
+      "origin": "C-notification",
+      "value": "782d73332d646576222c22626f617264223a2265"
+    },
+    {
+      "origin": "C-notification",
+      "value": "737033327333222c226669726d77617265223a22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "302e312e30222c2270726f746f636f6c223a312c"
+    },
+    {
+      "origin": "C-notification",
+      "value": "22736f75726365223a226163636573736f727922"
+    },
+    {
+      "origin": "C-notification",
+      "value": "7d7cdf"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 2 0 0 0 7 7 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 415801010200020000002440"
+    },
+    {
+      "origin": "C-notification",
+      "value": "415801020200020042007b226f7065726174696f"
+    },
+    {
+      "origin": "C-notification",
+      "value": "6e73223a5b2273797374656d2e696e666f222c22"
+    },
+    {
+      "origin": "C-notification",
+      "value": "73797374656d2e6361706162696c697469657322"
+    },
+    {
+      "origin": "C-notification",
+      "value": "2c2273797374656d2e70696e67225d7de7d7"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 3 0 0 0 11 11 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 415801010300030000003073"
+    },
+    {
+      "origin": "C-notification",
+      "value": "41580102030003000000b2ab"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 4 0 0 0 12 12 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 4158010103000400110080a70000000000000000"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 5 0 0 20 12 12 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 4158505f524541c109"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158010203000400110080a70000000000000000"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158505f524541c450"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 6 0 0 0 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 4158010103000500000200010203040506070809"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 7 0 0 20 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 0a0b0c0d0e0f101112131415161718191a1b1c1d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 8 0 0 40 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 1e1f202122232425262728292a2b2c2d2e2f3031"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 9 0 0 60 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 32333435363738393a3b3c3d3e3f404142434445"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 10 0 0 80 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 464748494a4b4c4d4e4f50515253545556575859"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 11 0 0 100 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 5a5b5c5d5e5f606162636465666768696a6b6c6d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 12 0 0 120 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 6e6f707172737475767778797a7b7c7d7e7f8081"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 13 0 0 140 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 82838485868788898a8b8c8d8e8f909192939495"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 14 0 0 160 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 15 0 0 180 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 16 0 0 200 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W bebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 17 0 0 220 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 18 0 0 240 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 19 0 0 260 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W fafbfcfdfeff000102030405060708090a0b0c0d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 20 0 0 280 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 0e0f101112131415161718191a1b1c1d1e1f2021"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 21 0 0 300 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 22232425262728292a2b2c2d2e2f303132333435"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 22 0 0 320 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 363738393a3b3c3d3e3f40414243444546474849"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 23 0 0 340 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 4a4b4c4d4e4f505152535455565758595a5b5c5d"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 24 0 0 360 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 5e5f606162636465666768696a6b6c6d6e6f7071"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 25 0 0 380 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 72737475767778797a7b7c7d7e7f808182838485"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 26 0 0 400 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 868788898a8b8c8d8e8f90919293949596979899"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 27 0 0 420 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W 9a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacad"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 28 0 0 440 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W aeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 29 0 0 460 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 30 0 0 480 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 31 0 0 500 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfd"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 32 0 0 520 14 14 7"
+    },
+    {
+      "origin": "native-client-write",
+      "value": "W feff5a06"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4158010203000500000200010203040506070809"
+    },
+    {
+      "origin": "C-notification",
+      "value": "0a0b0c0d0e0f101112131415161718191a1b1c1d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "1e1f202122232425262728292a2b2c2d2e2f3031"
+    },
+    {
+      "origin": "C-notification",
+      "value": "32333435363738393a3b3c3d3e3f404142434445"
+    },
+    {
+      "origin": "C-notification",
+      "value": "464748494a4b4c4d4e4f50515253545556575859"
+    },
+    {
+      "origin": "C-notification",
+      "value": "5a5b5c5d5e5f606162636465666768696a6b6c6d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "6e6f707172737475767778797a7b7c7d7e7f8081"
+    },
+    {
+      "origin": "C-notification",
+      "value": "82838485868788898a8b8c8d8e8f909192939495"
+    },
+    {
+      "origin": "C-notification",
+      "value": "969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbd"
+    },
+    {
+      "origin": "C-notification",
+      "value": "bebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1"
+    },
+    {
+      "origin": "C-notification",
+      "value": "d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5"
+    },
+    {
+      "origin": "C-notification",
+      "value": "e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "fafbfcfdfeff000102030405060708090a0b0c0d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "0e0f101112131415161718191a1b1c1d1e1f2021"
+    },
+    {
+      "origin": "C-notification",
+      "value": "22232425262728292a2b2c2d2e2f303132333435"
+    },
+    {
+      "origin": "C-notification",
+      "value": "363738393a3b3c3d3e3f40414243444546474849"
+    },
+    {
+      "origin": "C-notification",
+      "value": "4a4b4c4d4e4f505152535455565758595a5b5c5d"
+    },
+    {
+      "origin": "C-notification",
+      "value": "5e5f606162636465666768696a6b6c6d6e6f7071"
+    },
+    {
+      "origin": "C-notification",
+      "value": "72737475767778797a7b7c7d7e7f808182838485"
+    },
+    {
+      "origin": "C-notification",
+      "value": "868788898a8b8c8d8e8f90919293949596979899"
+    },
+    {
+      "origin": "C-notification",
+      "value": "9a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacad"
+    },
+    {
+      "origin": "C-notification",
+      "value": "aeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1"
+    },
+    {
+      "origin": "C-notification",
+      "value": "c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5"
+    },
+    {
+      "origin": "C-notification",
+      "value": "d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9"
+    },
+    {
+      "origin": "C-notification",
+      "value": "eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfd"
+    },
+    {
+      "origin": "C-notification",
+      "value": "feffdadc"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 33 0 0 0 41 41 7"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "CLOSE"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 34 0 0 0 41 41 65535"
+    },
+    {
+      "origin": "fixture-command",
+      "value": "TICK"
+    },
+    {
+      "origin": "fixture-result",
+      "value": "R 35 0 0 0 41 41 65535"
+    },
+    {
+      "origin": "fixture-process-exit",
+      "value": "{\"code\":0,\"signal\":null,\"stderr\":\"\"}"
+    }
+  ]
+}

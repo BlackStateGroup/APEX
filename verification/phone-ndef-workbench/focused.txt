@@ -1,0 +1,16 @@
+✔ android: exact selected fields survive SQLite close/reopen and verified reinterpretation (8.303775ms)
+✔ ios: exact selected fields survive SQLite close/reopen and verified reinterpretation (4.045361ms)
+✔ selected-source platform/provenance binding, unsupported claims and old wire cross-import fail (3.766517ms)
+✔ missing, null, empty and absent versus empty record IDs survive journal (2.55049ms)
+✔ exact 4096 character cap; larger imports can preview but cannot save or truncate (2.535804ms)
+✔ digest tampering refuses reinterpretation; reopen snapshots caller data before async verification (2.234195ms)
+✔ draft/platform edits invalidate findings; duplicate saves and stale completions cannot restore findings (0.810981ms)
+✔ save failure permits retry, unrelated completion is ignored, same document cannot be resaved after refresh failure (0.786003ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.312581

@@ -1,0 +1,58 @@
+✖ frame metadata is read once and validated as encoded (1.016108ms)
+✖ byte access ignores own hooks and preserves Buffer and subarray bytes (0.25051ms)
+✔ real payload size is bounded even with a shadowed length (0.784032ms)
+✖ unsupported byte inputs are rejected before changing partial decoder state (0.969954ms)
+✔ callback mutation of unread bytes is observed, delivered payload is independent (1.038128ms)
+✔ callback reentrant push is synchronous; reset and exceptions keep consumed frame removed (0.488972ms)
+✔ detachment in callback rejects remaining input without feeding undefined bytes (0.24995ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 4
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 133.0011
+
+✖ failing tests:
+
+test at tests/protocol-byte-boundary.test.ts:13:1
+✖ frame metadata is read once and validated as encoded (1.016108ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'length')
+      at encode (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/packages/protocol/index.ts:30:21)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/tests/protocol-byte-boundary.test.ts:17:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/protocol-byte-boundary.test.ts:20:1
+✖ byte access ignores own hooks and preserves Buffer and subarray bytes (0.25051ms)
+  Error: caller hook: length
+      at Uint8Array.get (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/tests/protocol-byte-boundary.test.ts:9:55)
+      at encode (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/packages/protocol/index.ts:30:21)
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/tests/protocol-byte-boundary.test.ts:23:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/protocol-byte-boundary.test.ts:40:1
+✖ unsupported byte inputs are rejected before changing partial decoder state (0.969954ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-protocol-byte-audit/tests/protocol-byte-boundary.test.ts:45:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

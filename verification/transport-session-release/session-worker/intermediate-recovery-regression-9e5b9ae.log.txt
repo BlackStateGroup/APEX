@@ -1,0 +1,33 @@
+9e5b9ae028005f908c654421c1071f43ffda6f3c
+✔ Bluetooth recovery changes state only after confirmed manager shutdown (1.289105ms)
+✔ failed manager shutdown preserves session and UI ownership (0.49223ms)
+✔ Bluetooth recovery does not close USB, simulator or absent sessions (0.454603ms)
+✔ post-destruction JS cleanup failure remains distinct from native shutdown failure (0.271411ms)
+✖ real session and BLE transport close locally after simulated manager epoch invalidation (2.615277ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.494742
+
+✖ failing tests:
+
+test at tests/bluetooth-recovery.test.ts:35:1
+✖ real session and BLE transport close locally after simulated manager epoch invalidation (2.615277ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b96d3539d24d/apex-session-cleanup/tests/bluetooth-recovery.test.ts:46:41)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,11 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 typecheck
+> tsc --noEmit
+
+verification/flipper-review/adversarial-fixed.test.ts(7,26): error TS2540: Cannot assign to 'effective' because it is a read-only property.
+verification/flipper-review/adversarial-fixed.test.ts(16,46): error TS2540: Cannot assign to 'effective' because it is a read-only property.
+verification/flipper-review/adversarial.test.ts(7,26): error TS2540: Cannot assign to 'effective' because it is a read-only property.
+verification/flipper-review/adversarial.test.ts(11,36): error TS2339: Property 'originalBytes' does not exist on type '{ readonly provenance: FlipperProvenance; readonly frames: readonly { readonly offset: number; readonly payloadOffset: number; readonly end: number; readonly fields: readonly { readonly tag: number; readonly wire: number; readonly offset: number; readonly end: number; readonly valueOffset: number; readonly valueEnd:...'.
+verification/flipper-review/adversarial.test.ts(12,25): error TS2339: Property 'originalBytes' does not exist on type '{ readonly provenance: FlipperProvenance; readonly frames: readonly { readonly offset: number; readonly payloadOffset: number; readonly end: number; readonly fields: readonly { readonly tag: number; readonly wire: number; readonly offset: number; readonly end: number; readonly valueOffset: number; readonly valueEnd:...'.
+verification/flipper-review/adversarial.test.ts(16,46): error TS2540: Cannot assign to 'effective' because it is a read-only property.

@@ -1,0 +1,17 @@
+✔ catalogue separates offline evidence from historical builds and unverified acquisition (1.056972ms)
+✔ exact draft, explicit inspect and caller declaration; authored response has explicit presence (3.937738ms)
+✔ malformed and over-budget edits reject whole, preserve exact previous draft and clear results (13.145165ms)
+✔ every edit attempt and provenance selection invalidates, fixture does not inspect (0.258462ms)
+✔ unknown and nonzero status, omitted defaults, incomplete tails and ambiguity remain observations (0.603212ms)
+✔ frame and metadata pages are bounded; malformed navigation cannot expand rendering (0.503096ms)
+✔ content remains data, including URL/control/markup strings (0.758843ms)
+✔ UI snapshots and navigation aliases cannot mutate observations or retained source (1.108393ms)
+✔ accessor actions are rejected without invoking getters, including enums and page values (4.10067ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 215.820604
