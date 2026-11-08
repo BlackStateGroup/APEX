@@ -58,14 +58,16 @@ export async function inspectIrReceiverExcerpt(source: string, context: IrContex
     if (!start) return fail('expected-rawData-excerpt', row.line);
     const declaredCount = Number(start[1]);
     if (declaredCount < 1 || declaredCount > IR_RECEIVER_LIMITS.timings || total + declaredCount > IR_RECEIVER_LIMITS.totalTimings) return fail('timing-limit', row.line);
-    let body = start[2]!, endLine = row.line;
-    while (!body.includes('}')) {
+    const chunks = [start[2]!];
+    let closed = chunks[0]!.includes('}'), endLine = row.line;
+    while (!closed) {
       if (at >= rows.length) return fail('unterminated-rawData', row.line);
-      const next = rows[at++]!; body += '\n' + next.code; endLine = next.line;
-      // Bound accumulation even for whitespace/comment-heavy input before splitting.
-      if (body.length > IR_RECEIVER_LIMITS.bytes) return fail('byte-limit', row.line);
+      const next = rows[at++]!; chunks.push(next.code); endLine = next.line;
+      closed = next.code.includes('}');
     }
-    const array = /^([0-9, \t\n]*)\}[ \t]*;$/.exec(body);
+    // Scan each line once and join once. Trim/comment removal and CRLF-to-LF
+    // parsing cannot grow this body beyond the bounded original source length.
+    const array = /^([0-9, \t\n]*)\}[ \t]*;$/.exec(chunks.join('\n'));
     if (!array) return fail('unsupported-array-syntax', endLine);
     const tokens = array[1]!.split(',').map(s => s.trim());
     if (tokens.length !== declaredCount) return fail('declared-count-mismatch', row.line);

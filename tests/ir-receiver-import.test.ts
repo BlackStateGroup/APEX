@@ -99,3 +99,11 @@ test('context snapshot is stable before asynchronous hashing and digest is not a
   mutable.provenance = 'recorded-import'; mutable.sourceLabel = 'mutated'; release(await hash(valid));
   const report = await pending; assert.deepEqual(report.context, context); assert.equal(report.verification.provenanceIsCallerClaim, true); frozenTree(report);
 });
+
+test('near-byte-limit multiline blank/comment input is consumed without repeated prefix scans', async () => {
+  const source = 'uint16_t rawData[1] = {\n' + '\n'.repeat(200000) + '// inert comment\n1};\n';
+  const report = await inspect(source, context);
+  assert.equal(report.originalSource, source); assert.deepEqual(report.records[0]!.durationsUs, [1]);
+  assert.equal(report.records[0]!.endLine, 200003);
+  await rejected('uint16_t rawData[1] = {\n' + '\n'.repeat(200000), 'unterminated-rawData');
+});
