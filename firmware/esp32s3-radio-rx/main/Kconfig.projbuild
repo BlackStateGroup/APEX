@@ -1,0 +1,28 @@
+menu "APEX receive-only accessory"
+config APEX_RADIO_RX_ENABLE
+    bool "Enable explicitly reviewed CC1101 wiring"
+    default n
+    help
+        Leave disabled until the board, voltage, pins and antenna are reviewed.
+        Radio reception starts only after an explicit bounded start request.
+config APEX_RADIO_SCK
+    int "SPI clock GPIO"
+    range -1 48
+    default -1
+config APEX_RADIO_MISO
+    int "SPI MISO GPIO"
+    range -1 48
+    default -1
+config APEX_RADIO_MOSI
+    int "SPI MOSI GPIO"
+    range -1 48
+    default -1
+config APEX_RADIO_CS
+    int "CC1101 chip-select GPIO"
+    range -1 48
+    default -1
+config APEX_RADIO_GDO0
+    int "CC1101 GDO0 GPIO"
+    range -1 48
+    default -1
+endmenu

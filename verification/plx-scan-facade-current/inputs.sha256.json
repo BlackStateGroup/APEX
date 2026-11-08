@@ -5,7 +5,7 @@
   "tests/plx-facade-host/loader.ts": "74b700c6fbb108923c190b6f30881067627e93d4d6afd07de00247c03d6483a7",
   "tests/plx-facade-host/inputs.sha256.json": "2ddad250dd1a4cf4d43b9abfd37ae8b925bc9ce4c6f273ba89e3debba57f2337",
   "tests/plx-facade-scan.test.ts": "d95982ae599177b9ef3aed14d4865c973b8d5b865fc0183b29367a6e2528a223",
-  "package.json": "4c39f2cae0ecefa617fb32d510c7d0f089626a2e3fae426d5955d4aefd5bb018",
-  "package-lock.json": "8a9d0da060c260fb3009fecf79036c22fde1faf2737c0a5f4bf4c629901f1e74",
+  "package.json": "58ae11008e7ce6bf4278f5fd320f5c795f0eca1c5df371af81d416b1941cc6ef",
+  "package-lock.json": "4a2e632b3a3db4bd68b8699c7dbd6f38e614e3d06505a1837f99b530a4555be3",
   "tests/plx-scan-independent.test.ts": "33077dad1a364982f5b620c73285f79f9febf777722518a1725e05e7648dfde7"
 }
