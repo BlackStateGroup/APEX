@@ -22,7 +22,7 @@ const sources = ['firmware/esp32s3-reviewed/main/ble_accessory.c', 'firmware/cor
   'tests/browser-c-host/bridge.ts', 'tests/browser-c-roundtrip.test.ts',
   // Shared current-manifest input: verified bytes only, not executed by this browser-C suite.
   'src/platform/bluetooth.native.ts',
-  'src/experimental/web-axp.ts', 'packages/core/ble-transport.ts', 'packages/core/session.ts', 'packages/protocol/index.ts'];
+  'src/experimental/web-axp.ts', 'packages/core/ble-transport.ts', 'packages/core/session.ts', 'packages/core/radio-receive-protocol.ts', 'packages/protocol/index.ts'];
 const hashes = Object.fromEntries(sources.map(path => [path, createHash('sha256').update(readFileSync(path)).digest('hex')]));
 const args = ['-std=c11', '-Wall', '-Wextra', '-Werror', '-Wno-misleading-indentation',
   '-DCONFIG_APEX_REVIEWED_BLE_BENCH_OPT_IN=1', '-DESP_PLATFORM',
