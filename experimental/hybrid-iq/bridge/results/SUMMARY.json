@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "sourceBase": "f8efc5f95ef966cabf24eccc7dbdfb7ac9a420a3",
+  "syntheticOnly": true,
+  "appIntegrated": false,
+  "platformBindingsImplemented": false,
+  "rustInThisBoundary": false,
+  "mobileAcceptance": "NOT RUN",
+  "leakSanitizer": "NOT RUN",
+  "optimizedTests": 16,
+  "sanitizedTests": 16,
+  "casesPerRun": 1485,
+  "windowsPerRun": 8924,
+  "binsPerRun": 23029248,
+  "exactRawDoubleComponentsPerRun": 46058496,
+  "typecheck": "PASS: strict ES2022-only, no Node/DOM library",
+  "sourceSha256": {
+    "experimental/hybrid-iq/bridge/codec.ts": "c9f41bf09c95bd57563dd1fcbd991843fc617f8197f6e45cfe9da06411f44bfb",
+    "experimental/hybrid-iq/bridge/client.ts": "c4e7c530f9c9badf3167f6cf96acdefde6010c0489abdfa1f682df70f9167d26",
+    "experimental/hybrid-iq/bridge/bridge.cpp": "c2a6942e334626dcbe61b083880740f314137695e002b7bbdefbe90e199de8c1",
+    "experimental/hybrid-iq/bridge/bridge.h": "79ebdbc803d0a7ed612740548415d89fd8db928c4ecab43a8fb47c3691300ae7",
+    "experimental/hybrid-iq/bridge/host.cpp": "0309bd18e2363849ff48916c4490ae164be2bff81dc2d1f9371caa7694f5af6b",
+    "experimental/hybrid-iq/bridge/abi.test.cpp": "9db43a6def626eb5b3731e2bc55c3317bf0875fd5db763694912c7dc011a28a1",
+    "experimental/hybrid-iq/bridge/proof.test.mjs": "f6f325a2096e3b3129a9eadc9fb592299294dbbbcc7e0dca4fa001e7890541cd",
+    "experimental/hybrid-iq/bridge/ci-host-check.sh": "e0b02421b2aff20e591e1ba5e97fad4a090bbfd39bb9c05a68d8c5af3805a06e",
+    ".github/workflows/iq-bridge.yml": "80137cfbf217621a3724559bbb4994a31c8c00c723f01b0803d51f71936462f9"
+  },
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "node": "v24.22.1",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0"
+  },
+  "limits": [
+    "Host-only acceptance, not mobile/Hermes/ARM, app integration, Rust linkage, universal equivalence or device acceleration.",
+    "Cancellation is cooperative between frames and result publication; client busy gate remains until actual drain.",
+    "Independent review harnesses complement the main test gate."
+  ],
+  "upstreamCoreTests": 15,
+  "independentReview": {
+    "jsCheckGroups": 17,
+    "randomizedAbiCases": 12000,
+    "successes": 4935,
+    "rejections": 7065,
+    "asanUbsan": true,
+    "leakSanitizer": false
+  }
+}

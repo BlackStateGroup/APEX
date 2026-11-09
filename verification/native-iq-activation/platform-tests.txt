@@ -1,0 +1,12 @@
+✔ iOS never looks up Android module and reports JavaScript (8.24227ms)
+✔ absent and incompatible module capabilities remain JavaScript without opening sessions (8.170111ms)
+✔ native adapter reserves identity synchronously before queued execute and closes on rejection (3.515965ms)
+✔ cancel uses independent control before async settlement; close waits for drain (4.086603ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 408.123947

@@ -1,0 +1,49 @@
+name: Experimental IQ byte bridge
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/iq-bridge.yml'
+      - 'experimental/hybrid-iq/bridge/**'
+      - 'experimental/hybrid-iq/src/kernel.*'
+      - 'experimental/hybrid-iq/reference.mjs'
+      - 'experimental/cpp-iq/proof-codec.mjs'
+      - 'experimental/cpp-iq/extra-fixtures.mjs'
+      - 'packages/core/iq-*.ts'
+      - 'packages/core/bounded-json.ts'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bridge-host-proof:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.head.repo.full_name == github.repository &&
+       github.event.pull_request.head.ref == 'experiment/optional-iq-bridge')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Require preinstalled Node 24 and g++
+        shell: bash
+        run: |
+          set -euo pipefail
+          node_bin=''
+          while IFS= read -r candidate; do
+            if [[ -x "$candidate" ]]; then node_bin="$candidate"; fi
+          done < <(find "$RUNNER_TOOL_CACHE/node" -path '*/24.*/x64/bin/node' -type f | sort -V)
+          [[ -n "$node_bin" ]] || { echo 'Preinstalled Node 24 not found; refusing installation'; exit 1; }
+          "$node_bin" -e 'if(Number(process.versions.node.split(".")[0])!==24)throw Error("Node 24 required")'
+          command -v g++ >/dev/null || { echo 'Preinstalled g++ not found'; exit 1; }
+          dirname "$node_bin" >> "$GITHUB_PATH"
+      - name: Exact portable bridge and cancellation proof
+        shell: bash
+        run: bash experimental/hybrid-iq/bridge/ci-host-check.sh
+      - name: Record scope
+        shell: bash
+        run: |
+          printf '%s\n' \
+            'Portable byte boundary: host exact parity and C++ ASan/UBSan passed.' \
+            'No app integration, platform binding, Rust mobile build, device timing or LeakSanitizer acceptance.' >> "$GITHUB_STEP_SUMMARY"

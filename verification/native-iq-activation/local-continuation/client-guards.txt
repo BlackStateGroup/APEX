@@ -1,0 +1,16 @@
+✔ framed test helper consumes clean output to EOF (123.03518ms)
+✔ later-chunk trailing stdout is rejected, not silently discarded (90.369103ms)
+✔ oversized diagnostics fail with bounded retained output (69.392025ms)
+✔ timeout kills a TERM-ignoring child and rejects rather than hanging (1108.80561ms)
+✔ abort also kills TERM-ignoring child independently of test deadline (161.505436ms)
+✔ truncated, oversized and nonzero-exit responses cannot pass (367.336426ms)
+✔ failed process start cannot leak or wait for the corpus timeout (3.89283ms)
+✔ invalid input bounds reject before dispatch without corrupting admission (59.185139ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2167.88647

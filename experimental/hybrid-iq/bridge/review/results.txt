@@ -1,0 +1,10 @@
+Node v24.22.1
+g++ (Debian 14.2.0-19) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS: cancellation at all 10 checkpoints, bounded requests, atomic failure, exact output span, rounding rejection
+PASS 12000 independent randomized ABI cases: 4935 success, 7065 rejection; max request/output; exception containment
+PASS 17 independent codec/session/cancellation check groups; native subprocess ASan+UBSan instrumented
+PASS independent review checks; LeakSanitizer disabled; no mobile/runtime/performance acceptance

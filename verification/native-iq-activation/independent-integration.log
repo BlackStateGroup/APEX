@@ -1,0 +1,26 @@
+✔ optional module is Android only with no requested permissions (9.596018ms)
+✔ native build reuses the reviewed bridge and kernel with strict FP (3.260245ms)
+✔ registration keeps cancel/reserve synchronous and exposes C++ truthfully (1.466168ms)
+✔ JNI never pins a JS/Java buffer while native computes (1.106557ms)
+✔ actual C++ path qualifies all sizes then preserves complete single/TF core reports (518.998052ms)
+✔ absent module and failing open preserve JS result and provenance (4.52291ms)
+✔ short default is statistics only; forged recording/invalid windows never invoke module (1.448044ms)
+✔ raw signed-zero qualification catches a backend even when magnitude would agree (13.261774ms)
+✔ per-request verification rejects plausible finite corruption after successful qualification (207.354393ms)
+✔ wrong identity and rejected native invocation fail closed before any native result is used (24.291942ms)
+✔ cancel during qualification holds admission until real promise settles (10.82431ms)
+✔ release during actual request fences completion, drains then closes and requalifies new session (477.850776ms)
+✔ controller uses verified native path, retains provenance and clears stale backend labels (164.980718ms)
+✔ controller Clear during native qualification suppresses report until native drain (12.367267ms)
+✔ iOS never looks up Android module and reports JavaScript (10.419623ms)
+✔ absent and incompatible module capabilities remain JavaScript without opening sessions (14.140766ms)
+✔ native adapter reserves identity synchronously before queued execute and closes on rejection (3.902267ms)
+✔ cancel uses independent control before async settlement; close waits for drain (3.158357ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2881.829261

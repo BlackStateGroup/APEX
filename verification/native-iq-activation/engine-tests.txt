@@ -1,0 +1,18 @@
+✔ actual C++ path qualifies all sizes then preserves complete single/TF core reports (573.895889ms)
+✔ absent module and failing open preserve JS result and provenance (3.783499ms)
+✔ short default is statistics only; forged recording/invalid windows never invoke module (1.225666ms)
+✔ raw signed-zero qualification catches a backend even when magnitude would agree (11.653382ms)
+✔ per-request verification rejects plausible finite corruption after successful qualification (148.617323ms)
+✔ wrong identity and rejected native invocation fail closed before any native result is used (8.654054ms)
+✔ cancel during qualification holds admission until real promise settles (5.057277ms)
+✔ release during actual request fences completion, drains then closes and requalifies new session (362.693711ms)
+✔ controller uses verified native path, retains provenance and clears stale backend labels (160.273159ms)
+✔ controller Clear during native qualification suppresses report until native drain (15.259585ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2263.743987
