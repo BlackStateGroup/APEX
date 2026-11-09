@@ -1,0 +1,3003 @@
+{
+  "version": "apex-learn-synthetic-v1",
+  "evidenceKind": "deterministic-synthetic-only",
+  "fixtureRevision": "confounded-temperature-humidity-v1",
+  "comparison": {
+    "naiveFirstMatch": {
+      "candidateId": "o2-w2-little-u-d100",
+      "heldOutMatches": 3,
+      "heldOutCount": 4
+    },
+    "activeQuery": {
+      "additionalReferenceMeasurements": 1,
+      "initialCandidates": 4,
+      "finalCandidates": 1,
+      "heldOutMatches": 4,
+      "heldOutCount": 4
+    },
+    "caveat": "One designed synthetic case, not a real-world accuracy estimate or blinded independent benchmark."
+  },
+  "initial": {
+    "version": "apex-learn-synthetic-v1",
+    "status": "abstain-ambiguous",
+    "source": {
+      "id": "synthetic-sensor-01",
+      "platform": "android",
+      "snapshotId": "synthetic-sensor-01",
+      "origin": "synthetic-fixture"
+    },
+    "layout": "[64,[[1,2,2],[4,3,2]]]",
+    "toleranceMilliUnits": 0,
+    "searchSize": 24,
+    "discoveryCount": 2,
+    "surviving": [
+      {
+        "id": "o2-w2-little-u-d100",
+        "byteOffset": 2,
+        "width": 2,
+        "byteOrder": "little",
+        "signed": false,
+        "divisor": 100
+      },
+      {
+        "id": "o2-w2-little-s-d100",
+        "byteOffset": 2,
+        "width": 2,
+        "byteOrder": "little",
+        "signed": true,
+        "divisor": 100
+      },
+      {
+        "id": "o5-w2-little-u-d100",
+        "byteOffset": 5,
+        "width": 2,
+        "byteOrder": "little",
+        "signed": false,
+        "divisor": 100
+      },
+      {
+        "id": "o5-w2-little-s-d100",
+        "byteOffset": 5,
+        "width": 2,
+        "byteOrder": "little",
+        "signed": true,
+        "divisor": 100
+      }
+    ],
+    "evaluations": [
+      {
+        "candidate": {
+          "id": "o2-w2-little-u-d1",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "2000",
+              "denominator": "1",
+              "approximate": 2000
+            },
+            "residual": {
+              "numerator": "1980",
+              "denominator": "1",
+              "approximate": 1980
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "2500",
+              "denominator": "1",
+              "approximate": 2500
+            },
+            "residual": {
+              "numerator": "2475",
+              "denominator": "1",
+              "approximate": 2475
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-little-u-d10",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "200",
+              "denominator": "1",
+              "approximate": 200
+            },
+            "residual": {
+              "numerator": "180",
+              "denominator": "1",
+              "approximate": 180
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "250",
+              "denominator": "1",
+              "approximate": 250
+            },
+            "residual": {
+              "numerator": "225",
+              "denominator": "1",
+              "approximate": 225
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-little-u-d100",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 100
+        },
+        "matches": 2,
+        "survives": true,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "20",
+              "denominator": "1",
+              "approximate": 20
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "25",
+              "denominator": "1",
+              "approximate": 25
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-little-s-d1",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "2000",
+              "denominator": "1",
+              "approximate": 2000
+            },
+            "residual": {
+              "numerator": "1980",
+              "denominator": "1",
+              "approximate": 1980
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "2500",
+              "denominator": "1",
+              "approximate": 2500
+            },
+            "residual": {
+              "numerator": "2475",
+              "denominator": "1",
+              "approximate": 2475
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-little-s-d10",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "200",
+              "denominator": "1",
+              "approximate": 200
+            },
+            "residual": {
+              "numerator": "180",
+              "denominator": "1",
+              "approximate": 180
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "250",
+              "denominator": "1",
+              "approximate": 250
+            },
+            "residual": {
+              "numerator": "225",
+              "denominator": "1",
+              "approximate": 225
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-little-s-d100",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 100
+        },
+        "matches": 2,
+        "survives": true,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "20",
+              "denominator": "1",
+              "approximate": 20
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "25",
+              "denominator": "1",
+              "approximate": 25
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-u-d1",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "53255",
+              "denominator": "1",
+              "approximate": 53255
+            },
+            "residual": {
+              "numerator": "53235",
+              "denominator": "1",
+              "approximate": 53235
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "50185",
+              "denominator": "1",
+              "approximate": 50185
+            },
+            "residual": {
+              "numerator": "50160",
+              "denominator": "1",
+              "approximate": 50160
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-u-d10",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "10651",
+              "denominator": "2",
+              "approximate": 5325.5
+            },
+            "residual": {
+              "numerator": "10611",
+              "denominator": "2",
+              "approximate": 5305.5
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "10037",
+              "denominator": "2",
+              "approximate": 5018.5
+            },
+            "residual": {
+              "numerator": "9987",
+              "denominator": "2",
+              "approximate": 4993.5
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-u-d100",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 100
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "10651",
+              "denominator": "20",
+              "approximate": 532.55
+            },
+            "residual": {
+              "numerator": "10251",
+              "denominator": "20",
+              "approximate": 512.55
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "10037",
+              "denominator": "20",
+              "approximate": 501.85
+            },
+            "residual": {
+              "numerator": "9537",
+              "denominator": "20",
+              "approximate": 476.85
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-s-d1",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "1",
+              "approximate": -12281
+            },
+            "residual": {
+              "numerator": "-12301",
+              "denominator": "1",
+              "approximate": -12301
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "1",
+              "approximate": -15351
+            },
+            "residual": {
+              "numerator": "-15376",
+              "denominator": "1",
+              "approximate": -15376
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-s-d10",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "10",
+              "approximate": -1228.1
+            },
+            "residual": {
+              "numerator": "-12481",
+              "denominator": "10",
+              "approximate": -1248.1
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "10",
+              "approximate": -1535.1
+            },
+            "residual": {
+              "numerator": "-15601",
+              "denominator": "10",
+              "approximate": -1560.1
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o2-w2-big-s-d100",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 100
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "100",
+              "approximate": -122.81
+            },
+            "residual": {
+              "numerator": "-14281",
+              "denominator": "100",
+              "approximate": -142.81
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "100",
+              "approximate": -153.51
+            },
+            "residual": {
+              "numerator": "-17851",
+              "denominator": "100",
+              "approximate": -178.51
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-u-d1",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "2000",
+              "denominator": "1",
+              "approximate": 2000
+            },
+            "residual": {
+              "numerator": "1980",
+              "denominator": "1",
+              "approximate": 1980
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "2500",
+              "denominator": "1",
+              "approximate": 2500
+            },
+            "residual": {
+              "numerator": "2475",
+              "denominator": "1",
+              "approximate": 2475
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-u-d10",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "200",
+              "denominator": "1",
+              "approximate": 200
+            },
+            "residual": {
+              "numerator": "180",
+              "denominator": "1",
+              "approximate": 180
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "250",
+              "denominator": "1",
+              "approximate": 250
+            },
+            "residual": {
+              "numerator": "225",
+              "denominator": "1",
+              "approximate": 225
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-u-d100",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": false,
+          "divisor": 100
+        },
+        "matches": 2,
+        "survives": true,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "20",
+              "denominator": "1",
+              "approximate": 20
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "25",
+              "denominator": "1",
+              "approximate": 25
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-s-d1",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "2000",
+              "denominator": "1",
+              "approximate": 2000
+            },
+            "residual": {
+              "numerator": "1980",
+              "denominator": "1",
+              "approximate": 1980
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "2500",
+              "denominator": "1",
+              "approximate": 2500
+            },
+            "residual": {
+              "numerator": "2475",
+              "denominator": "1",
+              "approximate": 2475
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-s-d10",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "200",
+              "denominator": "1",
+              "approximate": 200
+            },
+            "residual": {
+              "numerator": "180",
+              "denominator": "1",
+              "approximate": 180
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "250",
+              "denominator": "1",
+              "approximate": 250
+            },
+            "residual": {
+              "numerator": "225",
+              "denominator": "1",
+              "approximate": 225
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-little-s-d100",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 100
+        },
+        "matches": 2,
+        "survives": true,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "20",
+              "denominator": "1",
+              "approximate": 20
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "25",
+              "denominator": "1",
+              "approximate": 25
+            },
+            "residual": {
+              "numerator": "0",
+              "denominator": "1",
+              "approximate": 0
+            },
+            "withinTolerance": true
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-u-d1",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "53255",
+              "denominator": "1",
+              "approximate": 53255
+            },
+            "residual": {
+              "numerator": "53235",
+              "denominator": "1",
+              "approximate": 53235
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "50185",
+              "denominator": "1",
+              "approximate": 50185
+            },
+            "residual": {
+              "numerator": "50160",
+              "denominator": "1",
+              "approximate": 50160
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-u-d10",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "10651",
+              "denominator": "2",
+              "approximate": 5325.5
+            },
+            "residual": {
+              "numerator": "10611",
+              "denominator": "2",
+              "approximate": 5305.5
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "10037",
+              "denominator": "2",
+              "approximate": 5018.5
+            },
+            "residual": {
+              "numerator": "9987",
+              "denominator": "2",
+              "approximate": 4993.5
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-u-d100",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": false,
+          "divisor": 100
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "10651",
+              "denominator": "20",
+              "approximate": 532.55
+            },
+            "residual": {
+              "numerator": "10251",
+              "denominator": "20",
+              "approximate": 512.55
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "10037",
+              "denominator": "20",
+              "approximate": 501.85
+            },
+            "residual": {
+              "numerator": "9537",
+              "denominator": "20",
+              "approximate": 476.85
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-s-d1",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 1
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "1",
+              "approximate": -12281
+            },
+            "residual": {
+              "numerator": "-12301",
+              "denominator": "1",
+              "approximate": -12301
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "1",
+              "approximate": -15351
+            },
+            "residual": {
+              "numerator": "-15376",
+              "denominator": "1",
+              "approximate": -15376
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-s-d10",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 10
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "10",
+              "approximate": -1228.1
+            },
+            "residual": {
+              "numerator": "-12481",
+              "denominator": "10",
+              "approximate": -1248.1
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "10",
+              "approximate": -1535.1
+            },
+            "residual": {
+              "numerator": "-15601",
+              "denominator": "10",
+              "approximate": -1560.1
+            },
+            "withinTolerance": false
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "id": "o5-w2-big-s-d100",
+          "byteOffset": 5,
+          "width": 2,
+          "byteOrder": "big",
+          "signed": true,
+          "divisor": 100
+        },
+        "matches": 0,
+        "survives": false,
+        "rows": [
+          {
+            "trialId": "discovery-a",
+            "receiptId": "receipt-discovery-a",
+            "readingMilliUnits": 20000,
+            "value": {
+              "numerator": "-12281",
+              "denominator": "100",
+              "approximate": -122.81
+            },
+            "residual": {
+              "numerator": "-14281",
+              "denominator": "100",
+              "approximate": -142.81
+            },
+            "withinTolerance": false
+          },
+          {
+            "trialId": "discovery-b",
+            "receiptId": "receipt-discovery-b",
+            "readingMilliUnits": 25000,
+            "value": {
+              "numerator": "-15351",
+              "denominator": "100",
+              "approximate": -153.51
+            },
+            "residual": {
+              "numerator": "-17851",
+              "denominator": "100",
+              "approximate": -178.51
+            },
+            "withinTolerance": false
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "Synthetic BTHome fixtures only; this is candidate elimination, not unknown-protocol discovery, physical testing or a connected AI provider.",
+      "Version-space size is uncertainty within the declared finite candidate family, not a calibrated probability or proof of uniqueness outside that family.",
+      "Source, control, reference readings and split declarations are not independent sensor truth, device identity, causality or verified blinding.",
+      "Held-out data is not used for selection. Reusing an exposed holdout across revised experiments can still overfit; use a fresh holdout for real research.",
+      "Artifacts contain exact local evidence. Replay detects inconsistent edits, not coordinated forgery or authenticity. No device commands or executable code are emitted."
+    ]
+  },
+  "query": {
+    "version": "apex-learn-synthetic-v1",
+    "status": "request-reference-measurement",
+    "uncertainty": {
+      "survivingCandidates": 4,
+      "calibratedProbability": null
+    },
+    "selected": {
+      "id": "query-negative",
+      "intervention": "Synthetic below-zero reference with decorrelated second channel",
+      "payloadHex": "40021efb03d610",
+      "separatedPairs": 5,
+      "predictions": [
+        {
+          "candidateId": "o2-w2-little-u-d100",
+          "value": {
+            "numerator": "32143",
+            "denominator": "50",
+            "approximate": 642.86
+          }
+        },
+        {
+          "candidateId": "o2-w2-little-s-d100",
+          "value": {
+            "numerator": "-25",
+            "denominator": "2",
+            "approximate": -12.5
+          }
+        },
+        {
+          "candidateId": "o5-w2-little-u-d100",
+          "value": {
+            "numerator": "431",
+            "denominator": "10",
+            "approximate": 43.1
+          }
+        },
+        {
+          "candidateId": "o5-w2-little-s-d100",
+          "value": {
+            "numerator": "431",
+            "denominator": "10",
+            "approximate": 43.1
+          }
+        }
+      ]
+    },
+    "probes": [
+      {
+        "id": "query-negative",
+        "intervention": "Synthetic below-zero reference with decorrelated second channel",
+        "payloadHex": "40021efb03d610",
+        "separatedPairs": 5,
+        "predictions": [
+          {
+            "candidateId": "o2-w2-little-u-d100",
+            "value": {
+              "numerator": "32143",
+              "denominator": "50",
+              "approximate": 642.86
+            }
+          },
+          {
+            "candidateId": "o2-w2-little-s-d100",
+            "value": {
+              "numerator": "-25",
+              "denominator": "2",
+              "approximate": -12.5
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-u-d100",
+            "value": {
+              "numerator": "431",
+              "denominator": "10",
+              "approximate": 43.1
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-s-d100",
+            "value": {
+              "numerator": "431",
+              "denominator": "10",
+              "approximate": 43.1
+            }
+          }
+        ]
+      },
+      {
+        "id": "query-positive",
+        "intervention": "Synthetic positive reference with decorrelated second channel",
+        "payloadHex": "4002fc0803cc10",
+        "separatedPairs": 4,
+        "predictions": [
+          {
+            "candidateId": "o2-w2-little-u-d100",
+            "value": {
+              "numerator": "23",
+              "denominator": "1",
+              "approximate": 23
+            }
+          },
+          {
+            "candidateId": "o2-w2-little-s-d100",
+            "value": {
+              "numerator": "23",
+              "denominator": "1",
+              "approximate": 23
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-u-d100",
+            "value": {
+              "numerator": "43",
+              "denominator": "1",
+              "approximate": 43
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-s-d100",
+            "value": {
+              "numerator": "43",
+              "denominator": "1",
+              "approximate": 43
+            }
+          }
+        ]
+      },
+      {
+        "id": "query-correlated",
+        "intervention": "Synthetic correlated positive channels",
+        "payloadHex": "40028c0a038c0a",
+        "separatedPairs": 0,
+        "predictions": [
+          {
+            "candidateId": "o2-w2-little-u-d100",
+            "value": {
+              "numerator": "27",
+              "denominator": "1",
+              "approximate": 27
+            }
+          },
+          {
+            "candidateId": "o2-w2-little-s-d100",
+            "value": {
+              "numerator": "27",
+              "denominator": "1",
+              "approximate": 27
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-u-d100",
+            "value": {
+              "numerator": "27",
+              "denominator": "1",
+              "approximate": 27
+            }
+          },
+          {
+            "candidateId": "o5-w2-little-s-d100",
+            "value": {
+              "numerator": "27",
+              "denominator": "1",
+              "approximate": 27
+            }
+          }
+        ]
+      }
+    ],
+    "limitation": "Selects an unlabeled synthetic packet for reference measurement; not autonomous physical experiment planning or a promise of information gain."
+  },
+  "validation": {
+    "version": "apex-learn-synthetic-v1",
+    "status": "synthetic-validated",
+    "fit": {
+      "version": "apex-learn-synthetic-v1",
+      "status": "awaiting-held-out",
+      "source": {
+        "id": "synthetic-sensor-01",
+        "platform": "android",
+        "snapshotId": "synthetic-sensor-01",
+        "origin": "synthetic-fixture"
+      },
+      "layout": "[64,[[1,2,2],[4,3,2]]]",
+      "toleranceMilliUnits": 0,
+      "searchSize": 24,
+      "discoveryCount": 3,
+      "surviving": [
+        {
+          "id": "o2-w2-little-s-d100",
+          "byteOffset": 2,
+          "width": 2,
+          "byteOrder": "little",
+          "signed": true,
+          "divisor": 100
+        }
+      ],
+      "evaluations": [
+        {
+          "candidate": {
+            "id": "o2-w2-little-u-d1",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "2000",
+                "denominator": "1",
+                "approximate": 2000
+              },
+              "residual": {
+                "numerator": "1980",
+                "denominator": "1",
+                "approximate": 1980
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "2500",
+                "denominator": "1",
+                "approximate": 2500
+              },
+              "residual": {
+                "numerator": "2475",
+                "denominator": "1",
+                "approximate": 2475
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "64286",
+                "denominator": "1",
+                "approximate": 64286
+              },
+              "residual": {
+                "numerator": "128597",
+                "denominator": "2",
+                "approximate": 64298.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-little-u-d10",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "200",
+                "denominator": "1",
+                "approximate": 200
+              },
+              "residual": {
+                "numerator": "180",
+                "denominator": "1",
+                "approximate": 180
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "250",
+                "denominator": "1",
+                "approximate": 250
+              },
+              "residual": {
+                "numerator": "225",
+                "denominator": "1",
+                "approximate": 225
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "32143",
+                "denominator": "5",
+                "approximate": 6428.6
+              },
+              "residual": {
+                "numerator": "64411",
+                "denominator": "10",
+                "approximate": 6441.1
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-little-u-d100",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 100
+          },
+          "matches": 2,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "20",
+                "denominator": "1",
+                "approximate": 20
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "25",
+                "denominator": "1",
+                "approximate": 25
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "32143",
+                "denominator": "50",
+                "approximate": 642.86
+              },
+              "residual": {
+                "numerator": "16384",
+                "denominator": "25",
+                "approximate": 655.36
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-little-s-d1",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "2000",
+                "denominator": "1",
+                "approximate": 2000
+              },
+              "residual": {
+                "numerator": "1980",
+                "denominator": "1",
+                "approximate": 1980
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "2500",
+                "denominator": "1",
+                "approximate": 2500
+              },
+              "residual": {
+                "numerator": "2475",
+                "denominator": "1",
+                "approximate": 2475
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-1250",
+                "denominator": "1",
+                "approximate": -1250
+              },
+              "residual": {
+                "numerator": "-2475",
+                "denominator": "2",
+                "approximate": -1237.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-little-s-d10",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "200",
+                "denominator": "1",
+                "approximate": 200
+              },
+              "residual": {
+                "numerator": "180",
+                "denominator": "1",
+                "approximate": 180
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "250",
+                "denominator": "1",
+                "approximate": 250
+              },
+              "residual": {
+                "numerator": "225",
+                "denominator": "1",
+                "approximate": 225
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-125",
+                "denominator": "1",
+                "approximate": -125
+              },
+              "residual": {
+                "numerator": "-225",
+                "denominator": "2",
+                "approximate": -112.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-little-s-d100",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 100
+          },
+          "matches": 3,
+          "survives": true,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "20",
+                "denominator": "1",
+                "approximate": 20
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "25",
+                "denominator": "1",
+                "approximate": 25
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-25",
+                "denominator": "2",
+                "approximate": -12.5
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-u-d1",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "53255",
+                "denominator": "1",
+                "approximate": 53255
+              },
+              "residual": {
+                "numerator": "53235",
+                "denominator": "1",
+                "approximate": 53235
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "50185",
+                "denominator": "1",
+                "approximate": 50185
+              },
+              "residual": {
+                "numerator": "50160",
+                "denominator": "1",
+                "approximate": 50160
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "1",
+                "approximate": 7931
+              },
+              "residual": {
+                "numerator": "15887",
+                "denominator": "2",
+                "approximate": 7943.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-u-d10",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "10651",
+                "denominator": "2",
+                "approximate": 5325.5
+              },
+              "residual": {
+                "numerator": "10611",
+                "denominator": "2",
+                "approximate": 5305.5
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "10037",
+                "denominator": "2",
+                "approximate": 5018.5
+              },
+              "residual": {
+                "numerator": "9987",
+                "denominator": "2",
+                "approximate": 4993.5
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "10",
+                "approximate": 793.1
+              },
+              "residual": {
+                "numerator": "4028",
+                "denominator": "5",
+                "approximate": 805.6
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-u-d100",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 100
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "10651",
+                "denominator": "20",
+                "approximate": 532.55
+              },
+              "residual": {
+                "numerator": "10251",
+                "denominator": "20",
+                "approximate": 512.55
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "10037",
+                "denominator": "20",
+                "approximate": 501.85
+              },
+              "residual": {
+                "numerator": "9537",
+                "denominator": "20",
+                "approximate": 476.85
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "100",
+                "approximate": 79.31
+              },
+              "residual": {
+                "numerator": "9181",
+                "denominator": "100",
+                "approximate": 91.81
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-s-d1",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "1",
+                "approximate": -12281
+              },
+              "residual": {
+                "numerator": "-12301",
+                "denominator": "1",
+                "approximate": -12301
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "1",
+                "approximate": -15351
+              },
+              "residual": {
+                "numerator": "-15376",
+                "denominator": "1",
+                "approximate": -15376
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "1",
+                "approximate": 7931
+              },
+              "residual": {
+                "numerator": "15887",
+                "denominator": "2",
+                "approximate": 7943.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-s-d10",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "10",
+                "approximate": -1228.1
+              },
+              "residual": {
+                "numerator": "-12481",
+                "denominator": "10",
+                "approximate": -1248.1
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "10",
+                "approximate": -1535.1
+              },
+              "residual": {
+                "numerator": "-15601",
+                "denominator": "10",
+                "approximate": -1560.1
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "10",
+                "approximate": 793.1
+              },
+              "residual": {
+                "numerator": "4028",
+                "denominator": "5",
+                "approximate": 805.6
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o2-w2-big-s-d100",
+            "byteOffset": 2,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 100
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "100",
+                "approximate": -122.81
+              },
+              "residual": {
+                "numerator": "-14281",
+                "denominator": "100",
+                "approximate": -142.81
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "100",
+                "approximate": -153.51
+              },
+              "residual": {
+                "numerator": "-17851",
+                "denominator": "100",
+                "approximate": -178.51
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "7931",
+                "denominator": "100",
+                "approximate": 79.31
+              },
+              "residual": {
+                "numerator": "9181",
+                "denominator": "100",
+                "approximate": 91.81
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-u-d1",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "2000",
+                "denominator": "1",
+                "approximate": 2000
+              },
+              "residual": {
+                "numerator": "1980",
+                "denominator": "1",
+                "approximate": 1980
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "2500",
+                "denominator": "1",
+                "approximate": 2500
+              },
+              "residual": {
+                "numerator": "2475",
+                "denominator": "1",
+                "approximate": 2475
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "4310",
+                "denominator": "1",
+                "approximate": 4310
+              },
+              "residual": {
+                "numerator": "8645",
+                "denominator": "2",
+                "approximate": 4322.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-u-d10",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "200",
+                "denominator": "1",
+                "approximate": 200
+              },
+              "residual": {
+                "numerator": "180",
+                "denominator": "1",
+                "approximate": 180
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "250",
+                "denominator": "1",
+                "approximate": 250
+              },
+              "residual": {
+                "numerator": "225",
+                "denominator": "1",
+                "approximate": 225
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "431",
+                "denominator": "1",
+                "approximate": 431
+              },
+              "residual": {
+                "numerator": "887",
+                "denominator": "2",
+                "approximate": 443.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-u-d100",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": false,
+            "divisor": 100
+          },
+          "matches": 2,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "20",
+                "denominator": "1",
+                "approximate": 20
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "25",
+                "denominator": "1",
+                "approximate": 25
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "431",
+                "denominator": "10",
+                "approximate": 43.1
+              },
+              "residual": {
+                "numerator": "278",
+                "denominator": "5",
+                "approximate": 55.6
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-s-d1",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "2000",
+                "denominator": "1",
+                "approximate": 2000
+              },
+              "residual": {
+                "numerator": "1980",
+                "denominator": "1",
+                "approximate": 1980
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "2500",
+                "denominator": "1",
+                "approximate": 2500
+              },
+              "residual": {
+                "numerator": "2475",
+                "denominator": "1",
+                "approximate": 2475
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "4310",
+                "denominator": "1",
+                "approximate": 4310
+              },
+              "residual": {
+                "numerator": "8645",
+                "denominator": "2",
+                "approximate": 4322.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-s-d10",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "200",
+                "denominator": "1",
+                "approximate": 200
+              },
+              "residual": {
+                "numerator": "180",
+                "denominator": "1",
+                "approximate": 180
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "250",
+                "denominator": "1",
+                "approximate": 250
+              },
+              "residual": {
+                "numerator": "225",
+                "denominator": "1",
+                "approximate": 225
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "431",
+                "denominator": "1",
+                "approximate": 431
+              },
+              "residual": {
+                "numerator": "887",
+                "denominator": "2",
+                "approximate": 443.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-little-s-d100",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "little",
+            "signed": true,
+            "divisor": 100
+          },
+          "matches": 2,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "20",
+                "denominator": "1",
+                "approximate": 20
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "25",
+                "denominator": "1",
+                "approximate": 25
+              },
+              "residual": {
+                "numerator": "0",
+                "denominator": "1",
+                "approximate": 0
+              },
+              "withinTolerance": true
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "431",
+                "denominator": "10",
+                "approximate": 43.1
+              },
+              "residual": {
+                "numerator": "278",
+                "denominator": "5",
+                "approximate": 55.6
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-u-d1",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "53255",
+                "denominator": "1",
+                "approximate": 53255
+              },
+              "residual": {
+                "numerator": "53235",
+                "denominator": "1",
+                "approximate": 53235
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "50185",
+                "denominator": "1",
+                "approximate": 50185
+              },
+              "residual": {
+                "numerator": "50160",
+                "denominator": "1",
+                "approximate": 50160
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "54800",
+                "denominator": "1",
+                "approximate": 54800
+              },
+              "residual": {
+                "numerator": "109625",
+                "denominator": "2",
+                "approximate": 54812.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-u-d10",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "10651",
+                "denominator": "2",
+                "approximate": 5325.5
+              },
+              "residual": {
+                "numerator": "10611",
+                "denominator": "2",
+                "approximate": 5305.5
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "10037",
+                "denominator": "2",
+                "approximate": 5018.5
+              },
+              "residual": {
+                "numerator": "9987",
+                "denominator": "2",
+                "approximate": 4993.5
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "5480",
+                "denominator": "1",
+                "approximate": 5480
+              },
+              "residual": {
+                "numerator": "10985",
+                "denominator": "2",
+                "approximate": 5492.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-u-d100",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": false,
+            "divisor": 100
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "10651",
+                "denominator": "20",
+                "approximate": 532.55
+              },
+              "residual": {
+                "numerator": "10251",
+                "denominator": "20",
+                "approximate": 512.55
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "10037",
+                "denominator": "20",
+                "approximate": 501.85
+              },
+              "residual": {
+                "numerator": "9537",
+                "denominator": "20",
+                "approximate": 476.85
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "548",
+                "denominator": "1",
+                "approximate": 548
+              },
+              "residual": {
+                "numerator": "1121",
+                "denominator": "2",
+                "approximate": 560.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-s-d1",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 1
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "1",
+                "approximate": -12281
+              },
+              "residual": {
+                "numerator": "-12301",
+                "denominator": "1",
+                "approximate": -12301
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "1",
+                "approximate": -15351
+              },
+              "residual": {
+                "numerator": "-15376",
+                "denominator": "1",
+                "approximate": -15376
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-10736",
+                "denominator": "1",
+                "approximate": -10736
+              },
+              "residual": {
+                "numerator": "-21447",
+                "denominator": "2",
+                "approximate": -10723.5
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-s-d10",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 10
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "10",
+                "approximate": -1228.1
+              },
+              "residual": {
+                "numerator": "-12481",
+                "denominator": "10",
+                "approximate": -1248.1
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "10",
+                "approximate": -1535.1
+              },
+              "residual": {
+                "numerator": "-15601",
+                "denominator": "10",
+                "approximate": -1560.1
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-5368",
+                "denominator": "5",
+                "approximate": -1073.6
+              },
+              "residual": {
+                "numerator": "-10611",
+                "denominator": "10",
+                "approximate": -1061.1
+              },
+              "withinTolerance": false
+            }
+          ]
+        },
+        {
+          "candidate": {
+            "id": "o5-w2-big-s-d100",
+            "byteOffset": 5,
+            "width": 2,
+            "byteOrder": "big",
+            "signed": true,
+            "divisor": 100
+          },
+          "matches": 0,
+          "survives": false,
+          "rows": [
+            {
+              "trialId": "discovery-a",
+              "receiptId": "receipt-discovery-a",
+              "readingMilliUnits": 20000,
+              "value": {
+                "numerator": "-12281",
+                "denominator": "100",
+                "approximate": -122.81
+              },
+              "residual": {
+                "numerator": "-14281",
+                "denominator": "100",
+                "approximate": -142.81
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "discovery-b",
+              "receiptId": "receipt-discovery-b",
+              "readingMilliUnits": 25000,
+              "value": {
+                "numerator": "-15351",
+                "denominator": "100",
+                "approximate": -153.51
+              },
+              "residual": {
+                "numerator": "-17851",
+                "denominator": "100",
+                "approximate": -178.51
+              },
+              "withinTolerance": false
+            },
+            {
+              "trialId": "query-negative",
+              "receiptId": "receipt-query-negative",
+              "readingMilliUnits": -12500,
+              "value": {
+                "numerator": "-2684",
+                "denominator": "25",
+                "approximate": -107.36
+              },
+              "residual": {
+                "numerator": "-4743",
+                "denominator": "50",
+                "approximate": -94.86
+              },
+              "withinTolerance": false
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Synthetic BTHome fixtures only; this is candidate elimination, not unknown-protocol discovery, physical testing or a connected AI provider.",
+        "Version-space size is uncertainty within the declared finite candidate family, not a calibrated probability or proof of uniqueness outside that family.",
+        "Source, control, reference readings and split declarations are not independent sensor truth, device identity, causality or verified blinding.",
+        "Held-out data is not used for selection. Reusing an exposed holdout across revised experiments can still overfit; use a fresh holdout for real research.",
+        "Artifacts contain exact local evidence. Replay detects inconsistent edits, not coordinated forgery or authenticity. No device commands or executable code are emitted."
+      ]
+    },
+    "heldOut": {
+      "count": 4,
+      "matches": 4,
+      "rows": [
+        {
+          "trialId": "holdout-a",
+          "receiptId": "receipt-holdout-a",
+          "readingMilliUnits": -5000,
+          "value": {
+            "numerator": "-5",
+            "denominator": "1",
+            "approximate": -5
+          },
+          "residual": {
+            "numerator": "0",
+            "denominator": "1",
+            "approximate": 0
+          },
+          "withinTolerance": true
+        },
+        {
+          "trialId": "holdout-b",
+          "receiptId": "receipt-holdout-b",
+          "readingMilliUnits": 1250,
+          "value": {
+            "numerator": "5",
+            "denominator": "4",
+            "approximate": 1.25
+          },
+          "residual": {
+            "numerator": "0",
+            "denominator": "1",
+            "approximate": 0
+          },
+          "withinTolerance": true
+        },
+        {
+          "trialId": "holdout-c",
+          "receiptId": "receipt-holdout-c",
+          "readingMilliUnits": 18440,
+          "value": {
+            "numerator": "461",
+            "denominator": "25",
+            "approximate": 18.44
+          },
+          "residual": {
+            "numerator": "0",
+            "denominator": "1",
+            "approximate": 0
+          },
+          "withinTolerance": true
+        },
+        {
+          "trialId": "holdout-d",
+          "receiptId": "receipt-holdout-d",
+          "readingMilliUnits": 31750,
+          "value": {
+            "numerator": "127",
+            "denominator": "4",
+            "approximate": 31.75
+          },
+          "residual": {
+            "numerator": "0",
+            "denominator": "1",
+            "approximate": 0
+          },
+          "withinTolerance": true
+        }
+      ]
+    },
+    "artifactDocument": "{\"schemaVersion\":1,\"kind\":\"apex-learn-synthetic-decoder\",\"version\":\"apex-learn-synthetic-v1\",\"candidateId\":\"o2-w2-little-s-d100\",\"discoveryDocument\":\"{\\\"schemaVersion\\\":1,\\\"kind\\\":\\\"apex-learn-synthetic-discovery\\\",\\\"dataset\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"scope\\\\\\\":\\\\\\\"owned-lab\\\\\\\",\\\\\\\"serviceUuid\\\\\\\":\\\\\\\"FCD2\\\\\\\",\\\\\\\"groups\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"first\\\\\\\",\\\\\\\"condition\\\\\\\":\\\\\\\"Synthetic first reference setting\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"condition\\\\\\\":\\\\\\\"Synthetic varied reference settings\\\\\\\"}],\\\\\\\"sources\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"snapshotId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\"}],\\\\\\\"trials\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"discovery-a\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"first\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-discovery-a\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EAC0AcD0Ac=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QALQBwPQBw==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"discovery-b\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-discovery-b\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACxAkDxAk=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QALECQPECQ==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"query-negative\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-query-negative\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACHvsD1hA=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QAIe+wPWEA==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"}]}\\\",\\\"measurements\\\":[{\\\"trialId\\\":\\\"discovery-a\\\",\\\"readingMilliUnits\\\":20000},{\\\"trialId\\\":\\\"discovery-b\\\",\\\"readingMilliUnits\\\":25000},{\\\"trialId\\\":\\\"query-negative\\\",\\\"readingMilliUnits\\\":-12500}],\\\"toleranceMilliUnits\\\":0,\\\"search\\\":{\\\"byteOffsets\\\":[2,5],\\\"widths\\\":[2],\\\"divisors\\\":[1,10,100]}}\",\"heldOutDocument\":\"{\\\"schemaVersion\\\":1,\\\"kind\\\":\\\"apex-learn-synthetic-held-out\\\",\\\"dataset\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"scope\\\\\\\":\\\\\\\"owned-lab\\\\\\\",\\\\\\\"serviceUuid\\\\\\\":\\\\\\\"FCD2\\\\\\\",\\\\\\\"groups\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"first\\\\\\\",\\\\\\\"condition\\\\\\\":\\\\\\\"Synthetic first reference setting\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"condition\\\\\\\":\\\\\\\"Synthetic varied reference settings\\\\\\\"}],\\\\\\\"sources\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"snapshotId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\"}],\\\\\\\"trials\\\\\\\":[{\\\\\\\"id\\\\\\\":\\\\\\\"holdout-a\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"first\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-holdout-a\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACDP4DGhg=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QAIM/gMaGA==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"holdout-b\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-holdout-b\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACfQADpg4=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QAJ9AAOmDg==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"holdout-c\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-holdout-c\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACNAcDphM=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QAI0BwOmEw==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"},{\\\\\\\"id\\\\\\\":\\\\\\\"holdout-d\\\\\\\",\\\\\\\"groupId\\\\\\\":\\\\\\\"other\\\\\\\",\\\\\\\"sourceId\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"receiptId\\\\\\\":\\\\\\\"receipt-holdout-d\\\\\\\",\\\\\\\"document\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"schemaVersion\\\\\\\\\\\\\\\":1,\\\\\\\\\\\\\\\"sdk\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"platform\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"representation\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"android-ad-bytes\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"provenance\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"origin\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-fixture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"capturedAt\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"snapshot\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"synthetic-sensor-01\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"rawScanRecord\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ChbS/EACZwwDkBU=\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceData\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"FCD2\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"QAJnDAOQFQ==\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\":null,\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\":null},\\\\\\\\\\\\\\\"unavailableFields\\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"rssi\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"manufacturerData\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"serviceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"localName\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"txPowerLevel\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"solicitedServiceUUIDs\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"isConnectable\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"overflowServiceUUIDs\\\\\\\\\\\\\\\"],\\\\\\\\\\\\\\\"undefinedFields\\\\\\\\\\\\\\\":[]}\\\\\\\"}]}\\\",\\\"measurements\\\":[{\\\"trialId\\\":\\\"holdout-a\\\",\\\"readingMilliUnits\\\":-5000},{\\\"trialId\\\":\\\"holdout-b\\\",\\\"readingMilliUnits\\\":1250},{\\\"trialId\\\":\\\"holdout-c\\\",\\\"readingMilliUnits\\\":18440},{\\\"trialId\\\":\\\"holdout-d\\\",\\\"readingMilliUnits\\\":31750}]}\"}"
+  },
+  "reused": {
+    "version": "apex-learn-synthetic-v1",
+    "status": "synthetic-decoded",
+    "value": {
+      "numerator": "45",
+      "denominator": "2",
+      "approximate": 22.5
+    },
+    "candidateId": "o2-w2-little-s-d100",
+    "unit": "operator-declared reference units",
+    "testedRange": {
+      "basis": "replayed-packet-predictions",
+      "minimum": {
+        "numerator": "-25",
+        "denominator": "2",
+        "approximate": -12.5
+      },
+      "maximum": {
+        "numerator": "127",
+        "denominator": "4",
+        "approximate": 31.75
+      }
+    },
+    "authenticated": false,
+    "limitations": [
+      "Synthetic BTHome fixtures only; this is candidate elimination, not unknown-protocol discovery, physical testing or a connected AI provider.",
+      "Version-space size is uncertainty within the declared finite candidate family, not a calibrated probability or proof of uniqueness outside that family.",
+      "Source, control, reference readings and split declarations are not independent sensor truth, device identity, causality or verified blinding.",
+      "Held-out data is not used for selection. Reusing an exposed holdout across revised experiments can still overfit; use a fresh holdout for real research.",
+      "Artifacts contain exact local evidence. Replay detects inconsistent edits, not coordinated forgery or authenticity. No device commands or executable code are emitted."
+    ]
+  },
+  "inputs": {
+    "discoveryDocument": "{\"schemaVersion\":1,\"kind\":\"apex-learn-synthetic-discovery\",\"dataset\":\"{\\\"schemaVersion\\\":1,\\\"scope\\\":\\\"owned-lab\\\",\\\"serviceUuid\\\":\\\"FCD2\\\",\\\"groups\\\":[{\\\"id\\\":\\\"first\\\",\\\"condition\\\":\\\"Synthetic first reference setting\\\"},{\\\"id\\\":\\\"other\\\",\\\"condition\\\":\\\"Synthetic varied reference settings\\\"}],\\\"sources\\\":[{\\\"id\\\":\\\"synthetic-sensor-01\\\",\\\"platform\\\":\\\"android\\\",\\\"snapshotId\\\":\\\"synthetic-sensor-01\\\",\\\"origin\\\":\\\"synthetic-fixture\\\"}],\\\"trials\\\":[{\\\"id\\\":\\\"discovery-a\\\",\\\"groupId\\\":\\\"first\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-discovery-a\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EAC0AcD0Ac=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QALQBwPQBw==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"discovery-b\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-discovery-b\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACxAkDxAk=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QALECQPECQ==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"}]}\",\"measurements\":[{\"trialId\":\"discovery-a\",\"readingMilliUnits\":20000},{\"trialId\":\"discovery-b\",\"readingMilliUnits\":25000}],\"toleranceMilliUnits\":0,\"search\":{\"byteOffsets\":[2,5],\"widths\":[2],\"divisors\":[1,10,100]}}",
+    "poolDocument": "{\"schemaVersion\":1,\"kind\":\"apex-learn-synthetic-query-pool\",\"sourceId\":\"synthetic-sensor-01\",\"probes\":[{\"id\":\"query-positive\",\"intervention\":\"Synthetic positive reference with decorrelated second channel\",\"payloadHex\":\"4002fc0803cc10\"},{\"id\":\"query-negative\",\"intervention\":\"Synthetic below-zero reference with decorrelated second channel\",\"payloadHex\":\"40021efb03d610\"},{\"id\":\"query-correlated\",\"intervention\":\"Synthetic correlated positive channels\",\"payloadHex\":\"40028c0a038c0a\"}]}",
+    "refinedDocument": "{\"schemaVersion\":1,\"kind\":\"apex-learn-synthetic-discovery\",\"dataset\":\"{\\\"schemaVersion\\\":1,\\\"scope\\\":\\\"owned-lab\\\",\\\"serviceUuid\\\":\\\"FCD2\\\",\\\"groups\\\":[{\\\"id\\\":\\\"first\\\",\\\"condition\\\":\\\"Synthetic first reference setting\\\"},{\\\"id\\\":\\\"other\\\",\\\"condition\\\":\\\"Synthetic varied reference settings\\\"}],\\\"sources\\\":[{\\\"id\\\":\\\"synthetic-sensor-01\\\",\\\"platform\\\":\\\"android\\\",\\\"snapshotId\\\":\\\"synthetic-sensor-01\\\",\\\"origin\\\":\\\"synthetic-fixture\\\"}],\\\"trials\\\":[{\\\"id\\\":\\\"discovery-a\\\",\\\"groupId\\\":\\\"first\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-discovery-a\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EAC0AcD0Ac=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QALQBwPQBw==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"discovery-b\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-discovery-b\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACxAkDxAk=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QALECQPECQ==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"query-negative\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-query-negative\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACHvsD1hA=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QAIe+wPWEA==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"}]}\",\"measurements\":[{\"trialId\":\"discovery-a\",\"readingMilliUnits\":20000},{\"trialId\":\"discovery-b\",\"readingMilliUnits\":25000},{\"trialId\":\"query-negative\",\"readingMilliUnits\":-12500}],\"toleranceMilliUnits\":0,\"search\":{\"byteOffsets\":[2,5],\"widths\":[2],\"divisors\":[1,10,100]}}",
+    "heldOutDocument": "{\"schemaVersion\":1,\"kind\":\"apex-learn-synthetic-held-out\",\"dataset\":\"{\\\"schemaVersion\\\":1,\\\"scope\\\":\\\"owned-lab\\\",\\\"serviceUuid\\\":\\\"FCD2\\\",\\\"groups\\\":[{\\\"id\\\":\\\"first\\\",\\\"condition\\\":\\\"Synthetic first reference setting\\\"},{\\\"id\\\":\\\"other\\\",\\\"condition\\\":\\\"Synthetic varied reference settings\\\"}],\\\"sources\\\":[{\\\"id\\\":\\\"synthetic-sensor-01\\\",\\\"platform\\\":\\\"android\\\",\\\"snapshotId\\\":\\\"synthetic-sensor-01\\\",\\\"origin\\\":\\\"synthetic-fixture\\\"}],\\\"trials\\\":[{\\\"id\\\":\\\"holdout-a\\\",\\\"groupId\\\":\\\"first\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-holdout-a\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACDP4DGhg=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QAIM/gMaGA==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"holdout-b\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-holdout-b\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACfQADpg4=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QAJ9AAOmDg==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"holdout-c\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-holdout-c\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACNAcDphM=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QAI0BwOmEw==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"},{\\\"id\\\":\\\"holdout-d\\\",\\\"groupId\\\":\\\"other\\\",\\\"sourceId\\\":\\\"synthetic-sensor-01\\\",\\\"receiptId\\\":\\\"receipt-holdout-d\\\",\\\"document\\\":\\\"{\\\\\\\"schemaVersion\\\\\\\":1,\\\\\\\"sdk\\\\\\\":\\\\\\\"react-native-ble-plx@3.5.1\\\\\\\",\\\\\\\"platform\\\\\\\":\\\\\\\"android\\\\\\\",\\\\\\\"representation\\\\\\\":\\\\\\\"android-ad-bytes\\\\\\\",\\\\\\\"provenance\\\\\\\":{\\\\\\\"origin\\\\\\\":\\\\\\\"synthetic-fixture\\\\\\\",\\\\\\\"label\\\\\\\":\\\\\\\"Controlled synthetic learning example, not a physical capture\\\\\\\",\\\\\\\"capturedAt\\\\\\\":null},\\\\\\\"snapshot\\\\\\\":{\\\\\\\"id\\\\\\\":\\\\\\\"synthetic-sensor-01\\\\\\\",\\\\\\\"name\\\\\\\":null,\\\\\\\"rssi\\\\\\\":null,\\\\\\\"manufacturerData\\\\\\\":null,\\\\\\\"rawScanRecord\\\\\\\":\\\\\\\"ChbS/EACZwwDkBU=\\\\\\\",\\\\\\\"serviceData\\\\\\\":{\\\\\\\"FCD2\\\\\\\":\\\\\\\"QAJnDAOQFQ==\\\\\\\"},\\\\\\\"serviceUUIDs\\\\\\\":null,\\\\\\\"localName\\\\\\\":null,\\\\\\\"txPowerLevel\\\\\\\":null,\\\\\\\"solicitedServiceUUIDs\\\\\\\":null,\\\\\\\"isConnectable\\\\\\\":null,\\\\\\\"overflowServiceUUIDs\\\\\\\":null},\\\\\\\"unavailableFields\\\\\\\":[\\\\\\\"name\\\\\\\",\\\\\\\"rssi\\\\\\\",\\\\\\\"manufacturerData\\\\\\\",\\\\\\\"serviceUUIDs\\\\\\\",\\\\\\\"localName\\\\\\\",\\\\\\\"txPowerLevel\\\\\\\",\\\\\\\"solicitedServiceUUIDs\\\\\\\",\\\\\\\"isConnectable\\\\\\\",\\\\\\\"overflowServiceUUIDs\\\\\\\"],\\\\\\\"undefinedFields\\\\\\\":[]}\\\"}]}\",\"measurements\":[{\"trialId\":\"holdout-a\",\"readingMilliUnits\":-5000},{\"trialId\":\"holdout-b\",\"readingMilliUnits\":1250},{\"trialId\":\"holdout-c\",\"readingMilliUnits\":18440},{\"trialId\":\"holdout-d\",\"readingMilliUnits\":31750}]}",
+    "sampleDocument": "{\"schemaVersion\":1,\"origin\":\"synthetic-fixture\",\"sourceId\":\"synthetic-sensor-01\",\"serviceUuid\":\"FCD2\",\"payloadHex\":\"4002ca08036e14\"}"
+  },
+  "digests": {
+    "discoveryDocument": "03d74ef58f163a5cd19eb5c8e3cee0cdf57e51fa36e8e3ece3c07d88d0c233c3",
+    "poolDocument": "2600cb6df9a43faf29c9e6eed0005f2b332ca43f28592df8e68c862f3d3b9337",
+    "refinedDocument": "3ba3e069f5819ab50642af9a0d2ac6ae542fcfd243de5acbad56a0e6ae1513fc",
+    "heldOutDocument": "8040a32cbe4d9db2e0812867231b868d1161ff3ca8043072bea40845aa6b4a7c",
+    "sampleDocument": "07b7fbe6d11876a42f521e19f65d24a07f5ece259b69582198e4946cc2fdaa72"
+  },
+  "artifactSha256": "a3e5137d6983b33a7818ecfb36901c1d2cee9b1af76464bfefb9f18c68eeec68",
+  "limitations": [
+    "Synthetic BTHome fixtures only; this is candidate elimination, not unknown-protocol discovery, physical testing or a connected AI provider.",
+    "Version-space size is uncertainty within the declared finite candidate family, not a calibrated probability or proof of uniqueness outside that family.",
+    "Source, control, reference readings and split declarations are not independent sensor truth, device identity, causality or verified blinding.",
+    "Held-out data is not used for selection. Reusing an exposed holdout across revised experiments can still overfit; use a fresh holdout for real research.",
+    "Artifacts contain exact local evidence. Replay detects inconsistent edits, not coordinated forgery or authenticity. No device commands or executable code are emitted."
+  ],
+  "reportContentSha256": "e025bb6c63c626775bb8e54ff145b2305564f6cba631abafc2f6cf4734de4d9d"
+}

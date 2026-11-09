@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { inspectControlFlow } from '../tools/inspect-control-flow.mjs';
 import { digest } from '../tools/reverse-engineering/elf-control-flow.mjs';
+import { verifyControlFlow } from '../tools/verify-control-flow.mjs';
 const root = resolve(import.meta.dirname, '..');
 test('actual pinned REA workflow retains verified reports, cleans snapshot and refuses overwrite', { skip: process.env.APEX_REA_INTEGRATION !== '1' }, () => {
   const temp = mkdtempSync(join(tmpdir(), 'apex-rea-flow-integration-'));
@@ -23,6 +24,11 @@ test('actual pinned REA workflow retains verified reports, cleans snapshot and r
     for (const f of JSON.parse(manifestBytes).files) {
       const bytes = readFileSync(join(out, f.file)); assert.equal(digest(bytes), f.sha256); assert.equal(bytes.length, f.bytes);
     }
+    const linkage = verifyControlFlow(target, out);
+    assert.equal(linkage.artifact.sha256, before);
+    assert.equal(linkage.functions.length, 6);
+    assert.equal(linkage.verificationExecutedTarget, false);
+    assert.equal(linkage.verificationRanAnalyzer, false);
     assert.throws(() => inspectControlFlow(target, out), /EEXIST/);
     assert.deepEqual(readFileSync(join(out, 'manifest.json')), manifestBytes);
     const stripped = join(temp, 'stripped.elf');
