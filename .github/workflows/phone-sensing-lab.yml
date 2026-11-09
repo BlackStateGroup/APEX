@@ -1,0 +1,27 @@
+name: Synthetic phone sensing lab
+on:
+  pull_request:
+    paths:
+      - 'tools/experimental/phone_sensing_lab.py'
+      - 'tests/test_phone_sensing_lab.py'
+      - 'research/phone-sensing-lab-results.json'
+      - 'docs/research/PHONE_SENSING_LAB.md'
+      - '.github/workflows/phone-sensing-lab.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phone-sensing-lab-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  synthetic-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Unit tests without device or network access
+        run: python3 -m unittest discover -s tests -p test_phone_sensing_lab.py -v
+      - name: Reproduce committed synthetic experiment
+        run: |
+          python3 tools/experimental/phone_sensing_lab.py > "$RUNNER_TEMP/phone-sensing-lab-results.json"
+          cmp research/phone-sensing-lab-results.json "$RUNNER_TEMP/phone-sensing-lab-results.json"

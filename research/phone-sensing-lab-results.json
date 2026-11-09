@@ -1,0 +1,1344 @@
+{
+  "alias_disambiguation_experiment": {
+    "assumed_input_upper_bound_hz": 500000000,
+    "counterexample_has_same_three_aliases": true,
+    "evidence": "EXACT_DISCRETE_MODEL_NOT_HARDWARE",
+    "frontend_stopband_note": "If the analog path rejects the input, the ideal sampler sees zero; no digital alias estimator can recover it.",
+    "ideal_frontend_stopband_output_power": 0.0,
+    "input_frequency_hz": 433920000,
+    "one_rate_high_vs_low_tone_max_sample_difference": 4.718447854656915e-16,
+    "progressive_constraints": [
+      {
+        "aliases_hz": [
+          80000
+        ],
+        "candidate_count": 500,
+        "candidates_hz": [
+          80000,
+          1920000,
+          2080000,
+          3920000,
+          4080000,
+          5920000,
+          6080000,
+          7920000,
+          8080000,
+          9920000,
+          10080000,
+          11920000,
+          12080000,
+          13920000,
+          14080000,
+          15920000,
+          16080000,
+          17920000,
+          18080000,
+          19920000,
+          20080000,
+          21920000,
+          22080000,
+          23920000,
+          24080000,
+          25920000,
+          26080000,
+          27920000,
+          28080000,
+          29920000,
+          30080000,
+          31920000,
+          32080000,
+          33920000,
+          34080000,
+          35920000,
+          36080000,
+          37920000,
+          38080000,
+          39920000,
+          40080000,
+          41920000,
+          42080000,
+          43920000,
+          44080000,
+          45920000,
+          46080000,
+          47920000,
+          48080000,
+          49920000,
+          50080000,
+          51920000,
+          52080000,
+          53920000,
+          54080000,
+          55920000,
+          56080000,
+          57920000,
+          58080000,
+          59920000,
+          60080000,
+          61920000,
+          62080000,
+          63920000,
+          64080000,
+          65920000,
+          66080000,
+          67920000,
+          68080000,
+          69920000,
+          70080000,
+          71920000,
+          72080000,
+          73920000,
+          74080000,
+          75920000,
+          76080000,
+          77920000,
+          78080000,
+          79920000,
+          80080000,
+          81920000,
+          82080000,
+          83920000,
+          84080000,
+          85920000,
+          86080000,
+          87920000,
+          88080000,
+          89920000,
+          90080000,
+          91920000,
+          92080000,
+          93920000,
+          94080000,
+          95920000,
+          96080000,
+          97920000,
+          98080000,
+          99920000,
+          100080000,
+          101920000,
+          102080000,
+          103920000,
+          104080000,
+          105920000,
+          106080000,
+          107920000,
+          108080000,
+          109920000,
+          110080000,
+          111920000,
+          112080000,
+          113920000,
+          114080000,
+          115920000,
+          116080000,
+          117920000,
+          118080000,
+          119920000,
+          120080000,
+          121920000,
+          122080000,
+          123920000,
+          124080000,
+          125920000,
+          126080000,
+          127920000,
+          128080000,
+          129920000,
+          130080000,
+          131920000,
+          132080000,
+          133920000,
+          134080000,
+          135920000,
+          136080000,
+          137920000,
+          138080000,
+          139920000,
+          140080000,
+          141920000,
+          142080000,
+          143920000,
+          144080000,
+          145920000,
+          146080000,
+          147920000,
+          148080000,
+          149920000,
+          150080000,
+          151920000,
+          152080000,
+          153920000,
+          154080000,
+          155920000,
+          156080000,
+          157920000,
+          158080000,
+          159920000,
+          160080000,
+          161920000,
+          162080000,
+          163920000,
+          164080000,
+          165920000,
+          166080000,
+          167920000,
+          168080000,
+          169920000,
+          170080000,
+          171920000,
+          172080000,
+          173920000,
+          174080000,
+          175920000,
+          176080000,
+          177920000,
+          178080000,
+          179920000,
+          180080000,
+          181920000,
+          182080000,
+          183920000,
+          184080000,
+          185920000,
+          186080000,
+          187920000,
+          188080000,
+          189920000,
+          190080000,
+          191920000,
+          192080000,
+          193920000,
+          194080000,
+          195920000,
+          196080000,
+          197920000,
+          198080000,
+          199920000,
+          200080000,
+          201920000,
+          202080000,
+          203920000,
+          204080000,
+          205920000,
+          206080000,
+          207920000,
+          208080000,
+          209920000,
+          210080000,
+          211920000,
+          212080000,
+          213920000,
+          214080000,
+          215920000,
+          216080000,
+          217920000,
+          218080000,
+          219920000,
+          220080000,
+          221920000,
+          222080000,
+          223920000,
+          224080000,
+          225920000,
+          226080000,
+          227920000,
+          228080000,
+          229920000,
+          230080000,
+          231920000,
+          232080000,
+          233920000,
+          234080000,
+          235920000,
+          236080000,
+          237920000,
+          238080000,
+          239920000,
+          240080000,
+          241920000,
+          242080000,
+          243920000,
+          244080000,
+          245920000,
+          246080000,
+          247920000,
+          248080000,
+          249920000,
+          250080000,
+          251920000,
+          252080000,
+          253920000,
+          254080000,
+          255920000,
+          256080000,
+          257920000,
+          258080000,
+          259920000,
+          260080000,
+          261920000,
+          262080000,
+          263920000,
+          264080000,
+          265920000,
+          266080000,
+          267920000,
+          268080000,
+          269920000,
+          270080000,
+          271920000,
+          272080000,
+          273920000,
+          274080000,
+          275920000,
+          276080000,
+          277920000,
+          278080000,
+          279920000,
+          280080000,
+          281920000,
+          282080000,
+          283920000,
+          284080000,
+          285920000,
+          286080000,
+          287920000,
+          288080000,
+          289920000,
+          290080000,
+          291920000,
+          292080000,
+          293920000,
+          294080000,
+          295920000,
+          296080000,
+          297920000,
+          298080000,
+          299920000,
+          300080000,
+          301920000,
+          302080000,
+          303920000,
+          304080000,
+          305920000,
+          306080000,
+          307920000,
+          308080000,
+          309920000,
+          310080000,
+          311920000,
+          312080000,
+          313920000,
+          314080000,
+          315920000,
+          316080000,
+          317920000,
+          318080000,
+          319920000,
+          320080000,
+          321920000,
+          322080000,
+          323920000,
+          324080000,
+          325920000,
+          326080000,
+          327920000,
+          328080000,
+          329920000,
+          330080000,
+          331920000,
+          332080000,
+          333920000,
+          334080000,
+          335920000,
+          336080000,
+          337920000,
+          338080000,
+          339920000,
+          340080000,
+          341920000,
+          342080000,
+          343920000,
+          344080000,
+          345920000,
+          346080000,
+          347920000,
+          348080000,
+          349920000,
+          350080000,
+          351920000,
+          352080000,
+          353920000,
+          354080000,
+          355920000,
+          356080000,
+          357920000,
+          358080000,
+          359920000,
+          360080000,
+          361920000,
+          362080000,
+          363920000,
+          364080000,
+          365920000,
+          366080000,
+          367920000,
+          368080000,
+          369920000,
+          370080000,
+          371920000,
+          372080000,
+          373920000,
+          374080000,
+          375920000,
+          376080000,
+          377920000,
+          378080000,
+          379920000,
+          380080000,
+          381920000,
+          382080000,
+          383920000,
+          384080000,
+          385920000,
+          386080000,
+          387920000,
+          388080000,
+          389920000,
+          390080000,
+          391920000,
+          392080000,
+          393920000,
+          394080000,
+          395920000,
+          396080000,
+          397920000,
+          398080000,
+          399920000,
+          400080000,
+          401920000,
+          402080000,
+          403920000,
+          404080000,
+          405920000,
+          406080000,
+          407920000,
+          408080000,
+          409920000,
+          410080000,
+          411920000,
+          412080000,
+          413920000,
+          414080000,
+          415920000,
+          416080000,
+          417920000,
+          418080000,
+          419920000,
+          420080000,
+          421920000,
+          422080000,
+          423920000,
+          424080000,
+          425920000,
+          426080000,
+          427920000,
+          428080000,
+          429920000,
+          430080000,
+          431920000,
+          432080000,
+          433920000,
+          434080000,
+          435920000,
+          436080000,
+          437920000,
+          438080000,
+          439920000,
+          440080000,
+          441920000,
+          442080000,
+          443920000,
+          444080000,
+          445920000,
+          446080000,
+          447920000,
+          448080000,
+          449920000,
+          450080000,
+          451920000,
+          452080000,
+          453920000,
+          454080000,
+          455920000,
+          456080000,
+          457920000,
+          458080000,
+          459920000,
+          460080000,
+          461920000,
+          462080000,
+          463920000,
+          464080000,
+          465920000,
+          466080000,
+          467920000,
+          468080000,
+          469920000,
+          470080000,
+          471920000,
+          472080000,
+          473920000,
+          474080000,
+          475920000,
+          476080000,
+          477920000,
+          478080000,
+          479920000,
+          480080000,
+          481920000,
+          482080000,
+          483920000,
+          484080000,
+          485920000,
+          486080000,
+          487920000,
+          488080000,
+          489920000,
+          490080000,
+          491920000,
+          492080000,
+          493920000,
+          494080000,
+          495920000,
+          496080000,
+          497920000,
+          498080000,
+          499920000
+        ],
+        "sample_rates_hz": [
+          2000000
+        ]
+      },
+      {
+        "aliases_hz": [
+          80000,
+          780000
+        ],
+        "candidate_count": 24,
+        "candidates_hz": [
+          13920000,
+          28080000,
+          55920000,
+          70080000,
+          97920000,
+          112080000,
+          139920000,
+          154080000,
+          181920000,
+          196080000,
+          223920000,
+          238080000,
+          265920000,
+          280080000,
+          307920000,
+          322080000,
+          349920000,
+          364080000,
+          391920000,
+          406080000,
+          433920000,
+          448080000,
+          475920000,
+          490080000
+        ],
+        "sample_rates_hz": [
+          2000000,
+          2100000
+        ]
+      },
+      {
+        "aliases_hz": [
+          80000,
+          780000,
+          780000
+        ],
+        "candidate_count": 1,
+        "candidates_hz": [
+          433920000
+        ],
+        "sample_rates_hz": [
+          2000000,
+          2100000,
+          2300000
+        ]
+      }
+    ],
+    "unbounded_counterexample_hz": 1399920000
+  },
+  "ble_uwb_fusion_experiment": {
+    "assumptions": {
+      "apple_device_error_statistics": "not measured; values are hypothetical",
+      "assumed_log_distance_exponent": 2.0,
+      "ble_window_difference_noise_sd_db": 1.1,
+      "distance_after_ratio": [
+        0.7,
+        1.8
+      ],
+      "distance_before_m": [
+        1.0,
+        4.0
+      ],
+      "obstruction_loss_db": 3.0,
+      "same_compatible_owned_peer_supports_ble_and_uwb": true,
+      "uwb_range_noise_sd_m": 0.08
+    },
+    "claim": "Joint information can reject a modeled geometry confound that each individual band cannot; this does not recover arbitrary-band RF.",
+    "evidence": "SYNTHETIC_ONLY_NOT_NATIVE_INTEGRATION",
+    "scenarios": {
+      "nominal_null": {
+        "ble_only": {
+          "flag_rate": 0.039,
+          "flagged": 39,
+          "wilson_95": [
+            0.028658960904180485,
+            0.052869310419501346
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.036,
+          "flagged": 36,
+          "wilson_95": [
+            0.02611557140738732,
+            0.049435660467207834
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.073,
+          "flagged": 73,
+          "wilson_95": [
+            0.05845902621241335,
+            0.0908090255342507
+          ]
+        }
+      },
+      "obstruction": {
+        "ble_only": {
+          "flag_rate": 0.402,
+          "flagged": 402,
+          "wilson_95": [
+            0.3720422335603109,
+            0.4327078111028579
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.787,
+          "flagged": 787,
+          "wilson_95": [
+            0.7605503974702781,
+            0.8112530431590133
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.06,
+          "flagged": 60,
+          "wilson_95": [
+            0.04689647267593196,
+            0.07647107479135655
+          ]
+        }
+      },
+      "path_exponent_null": {
+        "ble_only": {
+          "flag_rate": 0.336,
+          "flagged": 336,
+          "wilson_95": [
+            0.30740158982270954,
+            0.36585358696055253
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.401,
+          "flagged": 401,
+          "wilson_95": [
+            0.37105844196706284,
+            0.43169925621307714
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.051,
+          "flagged": 51,
+          "wilson_95": [
+            0.03900094277526684,
+            0.06643548634476165
+          ]
+        }
+      },
+      "range_bias_null": {
+        "ble_only": {
+          "flag_rate": 0.039,
+          "flagged": 39,
+          "wilson_95": [
+            0.028658960904180485,
+            0.052869310419501346
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.823,
+          "flagged": 823,
+          "wilson_95": [
+            0.7981212935038732,
+            0.8454066205144583
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "wilson_95": [
+            2.168404344971009e-19,
+            0.0038267584855551234
+          ]
+        }
+      },
+      "shared_bias_null": {
+        "ble_only": {
+          "flag_rate": 0.428,
+          "flagged": 428,
+          "wilson_95": [
+            0.3976662531744177,
+            0.4588848000475022
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.793,
+          "flagged": 793,
+          "wilson_95": [
+            0.7667904475082261,
+            0.8169670720192386
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.05,
+          "flagged": 50,
+          "wilson_95": [
+            0.03813026239274882,
+            0.06531382024425081
+          ]
+        }
+      },
+      "stale_range_null": {
+        "ble_only": {
+          "flag_rate": 0.044,
+          "flagged": 44,
+          "wilson_95": [
+            0.0329382145884185,
+            0.058551789150407776
+          ]
+        },
+        "ble_plus_uwb_residual": {
+          "flag_rate": 0.476,
+          "flagged": 476,
+          "wilson_95": [
+            0.4451969584283181,
+            0.5069867259789885
+          ]
+        },
+        "uwb_range_only": {
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "wilson_95": [
+            2.168404344971009e-19,
+            0.0038267584855551234
+          ]
+        }
+      }
+    },
+    "thresholds": {
+      "ble_only": 5.614639857155642,
+      "ble_plus_uwb_residual": 2.071543540973449,
+      "uwb_range_only": 4.857610225847062
+    },
+    "trials_per_scenario": 1000
+  },
+  "claim_level": "synthetic falsification and feasibility study, not physical discovery",
+  "missing_observation_experiment": {
+    "assumptions": {
+      "hard_sensitivity_dbm": -88,
+      "iid_rssi_standard_deviation_db": 5,
+      "known_emitted_updates_per_beacon_per_window": 160,
+      "minimum_callbacks_in_each_group": 5,
+      "nominal_callback_retention_range": [
+        0.45,
+        0.95
+      ],
+      "reference_mean_dbm": -65,
+      "rssi_quantization_db": 1,
+      "same_retention_rate_for_both_beacons": "except differential_scheduler_null",
+      "sparse_emitted_updates_per_beacon_per_window": 12,
+      "target_mean_dbm": -84,
+      "unknown_apple_hardware_parameters": true
+    },
+    "calibration_null_trials": 1000,
+    "centers": {
+      "paired_reference_retention": 0.008692800988728757,
+      "rssi_only": -0.02333657240285305,
+      "uncorrected_retention": 0.018421716179116303
+    },
+    "combined_method": "equal-weight RSSI and paired-reference scores in calibration-null SD units",
+    "evidence": "SYNTHETIC_ONLY",
+    "scales": {
+      "paired_reference_retention": 0.13734485472155517,
+      "rssi_only": 0.5724390824625297,
+      "uncorrected_retention": 0.3201865303589538
+    },
+    "scenarios": {
+      "differential_scheduler_null": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.675,
+            "flag_rate_scored_only": 0.675,
+            "flagged": 675,
+            "wilson_95_all_trials": [
+              0.6453485364754667,
+              0.703312098054589
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.907,
+            "flag_rate_scored_only": 0.907,
+            "flagged": 907,
+            "wilson_95_all_trials": [
+              0.8874087442345036,
+              0.9234762743582547
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.085,
+            "flag_rate_scored_only": 0.085,
+            "flagged": 85,
+            "wilson_95_all_trials": [
+              0.06926331853965456,
+              0.10391289100335621
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 0.343,
+            "flag_rate_scored_only": 0.343,
+            "flagged": 343,
+            "wilson_95_all_trials": [
+              0.3142286235426158,
+              0.3729729786218485
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "nominal_null": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.043,
+            "flag_rate_scored_only": 0.043,
+            "flagged": 43,
+            "wilson_95_all_trials": [
+              0.03207865341171336,
+              0.057419003844084014
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.049,
+            "flag_rate_scored_only": 0.049,
+            "flagged": 49,
+            "wilson_95_all_trials": [
+              0.037261034647360615,
+              0.06419070150661013
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.061,
+            "flag_rate_scored_only": 0.061,
+            "flagged": 61,
+            "wilson_95_all_trials": [
+              0.0477797751260337,
+              0.07758011882428367
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 0.043,
+            "flag_rate_scored_only": 0.043,
+            "flagged": 43,
+            "wilson_95_all_trials": [
+              0.03207865341171336,
+              0.057419003844084014
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "receiver_gain_null": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.998,
+            "flag_rate_scored_only": 0.998,
+            "flagged": 998,
+            "wilson_95_all_trials": [
+              0.9927371921365079,
+              0.9994513564118793
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.933,
+            "flag_rate_scored_only": 0.933,
+            "flagged": 933,
+            "wilson_95_all_trials": [
+              0.9157879467581331,
+              0.9468980803933762
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.948,
+            "flag_rate_scored_only": 0.948,
+            "flagged": 948,
+            "wilson_95_all_trials": [
+              0.93244426068072,
+              0.9601269637162226
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 0.353,
+            "flag_rate_scored_only": 0.353,
+            "flagged": 353,
+            "wilson_95_all_trials": [
+              0.32399373843890167,
+              0.3831313285558515
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "reference_fade_null": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.959,
+            "flag_rate_scored_only": 0.959,
+            "flagged": 959,
+            "wilson_95_all_trials": [
+              0.9448520067923587,
+              0.9696350289179017
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.997,
+            "flag_rate_scored_only": 0.997,
+            "flagged": 997,
+            "wilson_95_all_trials": [
+              0.9912169859464969,
+              0.9989792161188614
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.055,
+            "flag_rate_scored_only": 0.055,
+            "flagged": 55,
+            "wilson_95_all_trials": [
+              0.04249742737476844,
+              0.07090838767737563
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 0.039,
+            "flag_rate_scored_only": 0.039,
+            "flagged": 39,
+            "wilson_95_all_trials": [
+              0.028658960904180485,
+              0.052869310419501346
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "scheduler_shift_null": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.102,
+            "flag_rate_scored_only": 0.102,
+            "flagged": 102,
+            "wilson_95_all_trials": [
+              0.08473913518484719,
+              0.12230696456965467
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.123,
+            "flag_rate_scored_only": 0.123,
+            "flagged": 123,
+            "wilson_95_all_trials": [
+              0.10407414325107295,
+              0.1448112326470356
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.096,
+            "flag_rate_scored_only": 0.096,
+            "flagged": 96,
+            "wilson_95_all_trials": [
+              0.07925690009839675,
+              0.11583512075793179
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 1.0,
+            "flag_rate_scored_only": 1.0,
+            "flagged": 1000,
+            "wilson_95_all_trials": [
+              0.996173241514445,
+              1.0
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "sparse_erasure": {
+        "abstained": 645,
+        "methods": {
+          "combined": {
+            "auc_vs_nominal_null_scored_only": 0.6417183098591549,
+            "flag_rate_all_trials": 0.164,
+            "flag_rate_scored_only": 0.4619718309859155,
+            "flagged": 164,
+            "wilson_95_all_trials": [
+              0.14234418773548693,
+              0.18822739396680613
+            ]
+          },
+          "paired_reference_retention": {
+            "auc_vs_nominal_null_scored_only": 0.7364929577464788,
+            "flag_rate_all_trials": 0.191,
+            "flag_rate_scored_only": 0.5380281690140845,
+            "flagged": 191,
+            "wilson_95_all_trials": [
+              0.16783693231549512,
+              0.216528004428578
+            ]
+          },
+          "rssi_only": {
+            "auc_vs_nominal_null_scored_only": 0.4854154929577465,
+            "flag_rate_all_trials": 0.112,
+            "flag_rate_scored_only": 0.3154929577464789,
+            "flagged": 112,
+            "wilson_95_all_trials": [
+              0.09391954090888108,
+              0.1330500236759097
+            ]
+          },
+          "uncorrected_retention": {
+            "auc_vs_nominal_null_scored_only": 0.6604295774647887,
+            "flag_rate_all_trials": 0.035,
+            "flag_rate_scored_only": 0.09859154929577464,
+            "flagged": 35,
+            "wilson_95_all_trials": [
+              0.02527226301711295,
+              0.04828662237445333
+            ]
+          }
+        },
+        "scored": 355,
+        "trials": 1000
+      },
+      "sparse_null": {
+        "abstained": 385,
+        "methods": {
+          "combined": {
+            "flag_rate_all_trials": 0.179,
+            "flag_rate_scored_only": 0.2910569105691057,
+            "flagged": 179,
+            "wilson_95_all_trials": [
+              0.1564821152191892,
+              0.20397466372853723
+            ]
+          },
+          "paired_reference_retention": {
+            "flag_rate_all_trials": 0.175,
+            "flag_rate_scored_only": 0.2845528455284553,
+            "flagged": 175,
+            "wilson_95_all_trials": [
+              0.1527057476303958,
+              0.19978164538521503
+            ]
+          },
+          "rssi_only": {
+            "flag_rate_all_trials": 0.186,
+            "flag_rate_scored_only": 0.3024390243902439,
+            "flagged": 186,
+            "wilson_95_all_trials": [
+              0.1631011791493255,
+              0.21130202517960314
+            ]
+          },
+          "uncorrected_retention": {
+            "flag_rate_all_trials": 0.034,
+            "flag_rate_scored_only": 0.055284552845528454,
+            "flagged": 34,
+            "wilson_95_all_trials": [
+              0.024431348663226313,
+              0.04713519024531107
+            ]
+          }
+        },
+        "scored": 615,
+        "trials": 1000
+      },
+      "target_attenuation": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "auc_vs_nominal_null_scored_only": 0.999454,
+            "flag_rate_all_trials": 0.998,
+            "flag_rate_scored_only": 0.998,
+            "flagged": 998,
+            "wilson_95_all_trials": [
+              0.9927371921365079,
+              0.9994513564118793
+            ]
+          },
+          "paired_reference_retention": {
+            "auc_vs_nominal_null_scored_only": 0.986878,
+            "flag_rate_all_trials": 0.932,
+            "flag_rate_scored_only": 0.932,
+            "flagged": 932,
+            "wilson_95_all_trials": [
+              0.9146861384770105,
+              0.9460075421914699
+            ]
+          },
+          "rssi_only": {
+            "auc_vs_nominal_null_scored_only": 0.985616,
+            "flag_rate_all_trials": 0.951,
+            "flag_rate_scored_only": 0.951,
+            "flagged": 951,
+            "wilson_95_all_trials": [
+              0.9358092984933898,
+              0.9627389653526394
+            ]
+          },
+          "uncorrected_retention": {
+            "auc_vs_nominal_null_scored_only": 0.8339965,
+            "flag_rate_all_trials": 0.375,
+            "flag_rate_scored_only": 0.375,
+            "flagged": 375,
+            "wilson_95_all_trials": [
+              0.345526294232981,
+              0.40543039538840775
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      },
+      "target_erasure": {
+        "abstained": 0,
+        "methods": {
+          "combined": {
+            "auc_vs_nominal_null_scored_only": 0.927789,
+            "flag_rate_all_trials": 0.698,
+            "flag_rate_scored_only": 0.698,
+            "flagged": 698,
+            "wilson_95_all_trials": [
+              0.6688303415169653,
+              0.7256542621227547
+            ]
+          },
+          "paired_reference_retention": {
+            "auc_vs_nominal_null_scored_only": 0.979836,
+            "flag_rate_all_trials": 0.905,
+            "flag_rate_scored_only": 0.905,
+            "flagged": 905,
+            "wilson_95_all_trials": [
+              0.8852455602057479,
+              0.9216547654209526
+            ]
+          },
+          "rssi_only": {
+            "auc_vs_nominal_null_scored_only": 0.5132845,
+            "flag_rate_all_trials": 0.091,
+            "flag_rate_scored_only": 0.091,
+            "flagged": 91,
+            "wilson_95_all_trials": [
+              0.07470470437164412,
+              0.11042558406953998
+            ]
+          },
+          "uncorrected_retention": {
+            "auc_vs_nominal_null_scored_only": 0.8051085,
+            "flag_rate_all_trials": 0.334,
+            "flag_rate_scored_only": 0.334,
+            "flagged": 334,
+            "wilson_95_all_trials": [
+              0.3054523188740042,
+              0.36381816494320013
+            ]
+          }
+        },
+        "scored": 1000,
+        "trials": 1000
+      }
+    },
+    "threshold_method": "95th empirical percentile of independent calibration null; strict greater-than",
+    "thresholds": {
+      "combined": 2.3547392840406327,
+      "paired_reference_retention": 0.23263098412095629,
+      "rssi_only": 0.9037468555540897,
+      "uncorrected_retention": 0.5725191927713306
+    }
+  },
+  "nonidentifiability_counterexample": {
+    "accepted_rssi_can_also_be_identical": "under RSSI-independent erasure and callback loss",
+    "callback_retention_a": 0.8,
+    "callback_retention_b": 0.4,
+    "coupled_observation_vectors_identical": true,
+    "implication": "No classifier can distinguish these worlds from these observations alone. Independent reference/logging or intervention is needed.",
+    "observed_probability_both": 0.32,
+    "radio_retention_a": 0.4,
+    "radio_retention_b": 0.8
+  },
+  "runtime_dependencies": "Python 3.10+ standard library only",
+  "schema_version": 1,
+  "seed": 20261109,
+  "source_sha256": "1ed7a176b4455fd1e3d9b56bd8897f5d0f3ed001d34c3f2dd4678c0ce3210051",
+  "tiny_learned_model": {
+    "evidence": "TRAINED_AND_TESTED_ON_SYNTHETIC_DATA_ONLY",
+    "model": {
+      "centers": [
+        0.4770158861781477,
+        0.22572895304647045
+      ],
+      "epochs": 250,
+      "features": [
+        "rssi_only",
+        "paired_reference_retention"
+      ],
+      "intercept": 0.10736494479485724,
+      "kind": "two-feature L2 logistic classifier",
+      "l2": 0.02,
+      "learning_rate": 0.15,
+      "minimum_callbacks_each_group": 5,
+      "scales": [
+        0.9988811881519724,
+        0.2725069093291688
+      ],
+      "score_semantics": "uncalibrated synthetic-model score, not real-world event probability",
+      "threshold": 0.4323641634729739,
+      "training_negative_rows": 1000,
+      "training_positive_rows": 1000,
+      "training_rows": 2000,
+      "weights": [
+        0.659660435822859,
+        2.376074050794938
+      ]
+    },
+    "not_app_integrated": true,
+    "out_of_distribution_policy": "No claimed reliability beyond the published synthetic model; nuisance stress results are retained.",
+    "scenarios": {
+      "differential_scheduler_null": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.904,
+        "flagged": 904,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.8841648792420682,
+          0.9207430999016033
+        ]
+      },
+      "nominal_null": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.066,
+        "flagged": 66,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.05221235045948584,
+          0.08310927590597601
+        ]
+      },
+      "receiver_gain_null": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.987,
+        "flagged": 987,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.9778855576244203,
+          0.9923871796106489
+        ]
+      },
+      "reference_fade_null": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.995,
+        "flagged": 995,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.9883490446266249,
+          0.9978624644726756
+        ]
+      },
+      "scheduler_shift_null": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.155,
+        "flagged": 155,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.13389362461519208,
+          0.17874683873984096
+        ]
+      },
+      "sparse_erasure": {
+        "abstained": 645,
+        "flag_rate_all_trials": 0.19,
+        "flagged": 190,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.1668892700644027,
+          0.2154833201966415
+        ]
+      },
+      "sparse_null": {
+        "abstained": 385,
+        "flag_rate_all_trials": 0.178,
+        "flagged": 178,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.1555376102762298,
+          0.2029268221884677
+        ]
+      },
+      "target_attenuation": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.993,
+        "flagged": 993,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.9856216845342334,
+          0.9966051315990092
+        ]
+      },
+      "target_erasure": {
+        "abstained": 0,
+        "flag_rate_all_trials": 0.906,
+        "flagged": 906,
+        "trials": 1000,
+        "wilson_95_all_trials": [
+          0.8863268456834931,
+          0.9225658264262363
+        ]
+      }
+    },
+    "threshold_calibration_rows": 1000
+  },
+  "trials_per_scenario": 1000
+}
