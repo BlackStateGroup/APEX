@@ -8,6 +8,7 @@ const frozenControllers = new Set([
   'iq-workbench',
   'ir-receiver-workbench',
   'ir-workbench',
+  'native-hci-file',
   'nfc-static-workbench',
 ].map(name => path.join(__dirname, 'src', `${name}.ts`)));
 

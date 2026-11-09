@@ -65,7 +65,7 @@ test('Metro computes its config cache key without a source filename', () => {
 
 test('all frozen controller modules are covered by the transformed regression matrix', () => {
   const actual = frozenControllerFiles(resolve(root, 'src'));
-  assert.deepEqual(actual, controllers.map(([file]) => `${file}.ts`).sort());
+  assert.deepEqual(actual, [...controllers.map(([file]) => `${file}.ts`), 'native-hci-file.ts'].sort());
 });
 
 test('unconfigured Expo web transform reproduces the CI read-only private-field crash', () => {
@@ -77,6 +77,21 @@ test('unconfigured Expo web transform reproduces the CI read-only private-field 
 
 for (const platform of ['web', 'android', 'ios']) for (const dev of [false, true]) {
   const load = loader(platform, dev);
+  test(`${platform} ${dev ? 'development' : 'production'}: native HCI picker frozen surface, lifecycle and stale read`, async () => {
+    const { NativeHciFileSession: C } = load('src/native-hci-file.ts');
+    const selected = {canceled:false,assets:[{name:'selected.btsnoop',uri:'content://provider/selected',size:16}]};
+    let finish!: (bytes: Uint8Array) => void;
+    const c = new C(async () => selected, async () => new Promise<Uint8Array>(resolve => {finish=resolve;}));
+    assert.ok(Object.isFrozen(c)); assert.deepEqual(Reflect.ownKeys(c), []);
+    assert.throws(() => {c.injected=true;}, TypeError);
+    for (let i=0;i<3;i++) {
+      c.attach(true); await c.choose(); assert.ok(c.state.candidate); assert.ok(Object.isFrozen(c.state));
+      const pending=c.load();
+      for (let turn=0;turn<16&&!finish;turn++) await Promise.resolve();
+      assert.equal(typeof finish,'function'); c.detach(); finish(new Uint8Array(16));
+      assert.equal(await pending,null); assert.equal(c.state.reading,false); assert.equal(c.state.candidate,null); finish=undefined!;
+    }
+  });
   for (const [file, name] of controllers) test(`${platform} ${dev ? 'development' : 'production'}: ${name} frozen surface and repeated lifecycle`, () => {
     const C = load(`src/${file}.ts`)[name];
     const c = name === 'HciEvidenceReopenController' ? new C({}, hash) : new C(false, hash);
