@@ -91,6 +91,54 @@ node --test tests/rea-control-flow*.test.mjs
 APEX_REA_INTEGRATION=1 node --test tests/rea-control-flow*.test.mjs
 ```
 
+## Verify retained evidence before reuse
+
+The separate offline verifier accepts the exact artifact plus a complete evidence
+directory, without requiring REA, objdump or the original temporary snapshot:
+
+```sh
+node tools/verify-control-flow.mjs path/to/owned-host.elf existing-evidence-directory > verified-linkage.json
+```
+
+Keep the output **outside** the evidence directory. The directory must contain
+only `manifest.json`, `control-flow.json` and the six named `*.rea.json` files.
+An extra entry, `failure.json`, incomplete manifest, symlink, non-regular file,
+invalid UTF-8, oversized input or mismatched digest/length causes rejection.
+Manifest entries are an exact filename allowlist. Recorded source paths,
+snapshot paths and arbitrary extra fields are never opened or executed.
+
+The verifier reads bounded regular-file descriptors, checks the actual ELF
+digest, validates all seven manifest entries, then replays the raw REA envelopes
+and compares **every function summary** with a fresh derivation from the retained
+instruction listing and exact ELF bytes. Simply changing a graph, count or range
+and recalculating its manifest digest does not pass. All eight evidence files and
+the artifact are observed again before returning, including identity and byte
+comparisons. This is not an atomic filesystem snapshot or protection against
+coordinated same-user tampering.
+
+The output is `apex.rea.verified-byte-linkage` schema version 1. It has no local
+paths or timestamps: artifact, manifest and report hashes link each selected
+symbol's exact byte range and hash to its raw evidence file hash and evidence ID.
+Each symbol includes instruction/block counts and explicit unresolved-transfer
+count and graph coverage. Matching inputs produce the same output after moving
+the bundle or renaming the artifact. The output is data, not a phone import,
+executable job, trust score or hardware attestation.
+
+Crucially, digest agreement is **not authenticity**. Coordinated replacement of
+all inputs can pass. GNU instruction text is still trusted and is not
+independently decoded: altered mnemonic text plus a correspondingly regenerated
+summary can remain self-consistent. Tool versions, timestamps, source observations,
+historical non-execution and snapshot cleanup remain recorded assertions. The
+verifier itself runs no target and no analyzer; it does not establish behavior,
+decompilation, credential access, phone integration or physical compatibility.
+
+The verification tests replay all four retained real compiler variants and
+exercise rehashed summary tampering, changed raw observations, failures, unsafe
+paths, file kinds, input bounds and path-free deterministic output. A CLI test
+runs with Node child-process permission denied. The actual REA integration test
+also verifies a newly generated report. CI replays every newly generated compiler
+variant with child-process permission denied after the analysis step.
+
 Without the environment flag, the real REA integration test is explicitly skipped,
 not passed. A separate path-scoped CI workflow runs it plus the experiment. The
 workflow's presence does not prove CI has executed; this record describes local
