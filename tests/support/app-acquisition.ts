@@ -15,6 +15,8 @@ export function harness(overrides: Record<string, unknown> = {}) {
     session: { current: null as DeviceSession | null },
     disconnectListener: { current: null as (() => void) | null },
     acquisition: { current: null as any }, setAcquisitionView: write, refreshAcquisition: write,
+    nativeBackground: { current: null as any }, setNativeBackgroundPending: write,
+    foreground: { current: true }, AppState: { currentState: 'active' },
     captureBusy: { current: false }, serviceDataBusy: { current: false },
     serviceDataUncertain: { current: false }, observationBusy: { current: false }, observationUncertain: { current: false },
     setBusy: write, setNotice: write, append: write, clearSession: write,
@@ -23,8 +25,8 @@ export function harness(overrides: Record<string, unknown> = {}) {
   Object.assign(env, overrides);
   const runSource = source.slice(source.indexOf('  async function run('), source.indexOf('  const runForeground'));
   const connectSource = source.slice(source.indexOf('  async function connect('), source.indexOf('  async function resetBluetooth('));
-  const methods = new Function(...Object.keys(env), stripTypeScriptTypes(runSource + connectSource) + '\nreturn { run, connect, disconnect, cancelAcquisition: typeof cancelAcquisition === "function" ? cancelAcquisition : undefined };')(...Object.values(env)) as {
-    run(action: () => Promise<void>): Promise<void>; connect(transport: ByteTransport): Promise<void>; disconnect(): Promise<void>; cancelAcquisition?: (attempt: any) => void;
+  const methods = new Function(...Object.keys(env), stripTypeScriptTypes(runSource + connectSource) + '\nreturn { run, connect, disconnect, suspendNativeSession: typeof suspendNativeSession === "function" ? suspendNativeSession : undefined, cancelAcquisition: typeof cancelAcquisition === "function" ? cancelAcquisition : undefined };')(...Object.values(env)) as {
+    run(action: () => Promise<void>): Promise<void>; connect(transport: ByteTransport): Promise<void>; disconnect(): Promise<void>; suspendNativeSession?: () => void; cancelAcquisition?: (attempt: any) => void;
   };
   // Execute the actual native mount cleanup and resource cleanup, not a copy.
   const detachStart = source.indexOf('if (!browserAxp) return () =>');

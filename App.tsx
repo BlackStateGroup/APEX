@@ -82,7 +82,10 @@ export default function App() {
     scroll.current?.scrollTo({ y: 0, animated: false });
   }
   const inspectorLabel = ANALYSIS_INSPECTORS.find(item => item.id === inspector)!.label;
-  const [busy, setBusy] = useState(false);
+  const [operationBusy, setBusy] = useState(false);
+  const [nativeBackgroundPending, setNativeBackgroundPending] = useState(false);
+  const nativeBackground = useRef<{ target: DeviceSession; pending: Promise<void> | null } | null>(null);
+  const busy = operationBusy || nativeBackgroundPending;
   const [notice, setNotice] = useState<string | null>(null);
   const browserAxp = Platform.OS === 'web' ? getBrowserAxpApplication() : null;
   const localLock = useRef(false);
@@ -195,6 +198,7 @@ export default function App() {
     const lifecycle = AppState.addEventListener('change', state => {
       foreground.current = updatePhoneNdefLifecycle(state, capture);
       if (state === 'background') browserAxp?.suspend();
+      if (state === 'background') suspendNativeSession();
       if (browserAxp) syncBrowserSession();
       // iOS permission sheets can be temporarily inactive without backgrounding.
       if (state === 'background') { void nfc.stop().catch(error => setNotice(String(error))); void stopAccessoryDiscovery().catch(error => setNotice(String(error))); }
@@ -211,7 +215,7 @@ export default function App() {
   }, []);
 
   async function run(action: () => Promise<void>, recovery = false) {
-    if (lock.current || !attached.current) return;
+    if (lock.current || nativeBackground.current?.pending || !attached.current) return;
     const epoch = mountEpoch.current;
     if (captureBusy.current) { setNotice('Stop the phone NDEF read and wait for native release first.'); return; }
     if (serviceDataBusy.current || (!recovery && serviceDataUncertain.current)) { setNotice('Wait for service-data observation to settle; use Android Reset if native state is uncertain.'); return; }
@@ -221,7 +225,8 @@ export default function App() {
     try { await action(); }
     catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      if (attached.current && mountEpoch.current === epoch && operation.current === token) { setNotice(message); append(`Error: ${message}`); }
+      const backgroundInterrupted = nativeBackground.current?.pending && error instanceof Error && error.message === 'Session closed';
+      if (!backgroundInterrupted && attached.current && mountEpoch.current === epoch && operation.current === token) { setNotice(message); append(`Error: ${message}`); }
     }
     finally {
       if (operation.current === token) {
@@ -238,7 +243,9 @@ export default function App() {
     () => foreground.current && AppState.currentState === 'active');
   async function connect(transport: ByteTransport) {
     if (browserAxp?.held) throw new Error('Release browser AXP ownership before starting another session.');
-    if (!attached.current) return;
+    if (!attached.current || nativeBackground.current?.pending) return;
+    if (!browserAxp && (!foreground.current || AppState.currentState !== 'active'))
+      throw new Error('Device acquisition requires an active foreground app.');
     const epoch = mountEpoch.current;
     const token = operation.current;
     const current = () => attached.current && mountEpoch.current === epoch && operation.current === token;
@@ -303,16 +310,52 @@ export default function App() {
       }
     }
   }
-  function cancelAcquisition(attempt: NativeAcquisition | null) {
+  function cancelAcquisition(attempt: NativeAcquisition | null, automatic = false) {
     // The rendered handler captures one attempt; stale presses cannot cancel its successor.
     if (!attempt || browserAxp || acquisition.current !== attempt || !attempt.current() ||
         attempt.cancelled || session.current !== attempt.target) return;
     attempt.cancelled = true;
     refreshAcquisition(value => value + 1);
-    setNotice('Cancellation requested. Waiting for outstanding work and cleanup; permission prompts may remain open.');
+    setNotice(automatic
+      ? 'App backgrounded. Connection cancellation requested; outstanding work and permission prompts may remain pending.'
+      : 'Cancellation requested. Waiting for outstanding work and cleanup; permission prompts may remain open.');
     // close marks protocol state immediately and forwards the existing BLE abort.
     // It does not dismiss OS permission UI or prove physical release.
-    attempt.cleanup = attempt.target?.close().catch(() => {}) ?? Promise.resolve();
+    // A background event must not retry a prior failed close. The original
+    // connect still owns its outstanding open/close and awaits it before unlock.
+    attempt.cleanup = automatic && attempt.target?.state === 'closed'
+      ? Promise.resolve() : attempt.target?.close().catch(() => {}) ?? Promise.resolve();
+  }
+
+  function suspendNativeSession() {
+    if (browserAxp || !attached.current) return;
+    const attempt = acquisition.current;
+    if (attempt) { cancelAcquisition(attempt, true); return; }
+    const target = session.current;
+    // One automatic release attempt per selected session. Repeated background
+    // events and failed/closed sessions require an explicit Disconnect retry.
+    if (!target || target.state === 'closed' || nativeBackground.current?.target === target) return;
+    const epoch = mountEpoch.current;
+    const owner = { target, pending: Promise.resolve() as Promise<void> | null };
+    nativeBackground.current = owner;
+    const current = () => attached.current && mountEpoch.current === epoch && nativeBackground.current === owner;
+    setNativeBackgroundPending(true);
+    try { disconnectListener.current?.(); } catch { /* Cleanup must still reach the transport. */ }
+    disconnectListener.current = null;
+    clearSession();
+    setNotice('App backgrounded. Releasing the native session; outstanding work may remain pending.');
+    owner.pending = target.close().then(() => {
+      if (!current() || session.current !== target) return;
+      if (clearReleasedSession(session, target)) {
+        setNotice('Native session released after backgrounding. Connect again explicitly when the app is active.');
+      }
+    }, () => {
+      if (!current() || session.current !== target) return;
+      setNotice('Native session closed locally after backgrounding, but transport release is unconfirmed. Choose Disconnect to retry cleanup; no automatic reconnect occurred.');
+    }).finally(() => {
+      owner.pending = null;
+      if (current() && (session.current === target || session.current === null)) setNativeBackgroundPending(false);
+    });
   }
 
   async function disconnect() {
