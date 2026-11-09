@@ -2,12 +2,14 @@ import { encode, FrameDecoder, Kind, MAX_PAYLOAD, Opcode, text, VERSION } from '
 import type { Frame } from '../protocol/index.ts';
 import type { ByteTransport, SourceKind } from './transport.ts';
 import { parseBoundedJson } from './bounded-json.ts';
+import { RADIO_RECEIVE_OPERATIONS } from './radio-receive-protocol.ts';
 
-export const operations = {
+export const operations = Object.freeze({
   'system.info': Opcode.Info,
   'system.capabilities': Opcode.Capabilities,
   'system.ping': Opcode.Ping,
-} as const;
+  ...RADIO_RECEIVE_OPERATIONS,
+} as const);
 export type Operation = keyof typeof operations;
 export interface DeviceInfo {
   id: string; board: string; firmware: string; protocol: 1;
@@ -59,11 +61,20 @@ export function validateInfo(bytes: Uint8Array): DeviceInfo {
   }
   return value as unknown as DeviceInfo;
 }
-export function validateCapabilities(bytes: Uint8Array): Operation[] {
+export interface RadioReceiveOptions { allowRadioReceive?: boolean; }
+function radioOptIn(options: RadioReceiveOptions): boolean {
+  const value = options.allowRadioReceive;
+  if (value !== undefined && typeof value !== 'boolean') throw new Error('Invalid radio receive option');
+  return value === true;
+}
+const baseOperations = ['system.info', 'system.capabilities', 'system.ping'] as const;
+export function validateCapabilities(bytes: Uint8Array, options: RadioReceiveOptions = {}): Operation[] {
+  const allow = radioOptIn(options);
   const value = object(bytes).operations;
-  if (!Array.isArray(value) || value.length !== 3 || new Set(value).size !== value.length ||
+  if (!Array.isArray(value) || (value.length !== 3 && !(allow && value.length === 6)) ||
+      new Set(value).size !== value.length ||
       value.some(x => typeof x !== 'string' || !Object.hasOwn(operations, x)) ||
-      Object.keys(operations).some(x => !value.includes(x))) {
+      baseOperations.some(x => !value.includes(x))) {
     throw new Error('Unsupported capability manifest');
   }
   return value as Operation[];
@@ -71,6 +82,8 @@ export function validateCapabilities(bytes: Uint8Array): Operation[] {
 
 /** One-use connection; IDs are never recycled, including after timeouts. */
 export class DeviceSession {
+  #allowRadioReceive: boolean;
+  #negotiated = new Set<Operation>();
   private transport: ByteTransport;
   private decoder: FrameDecoder;
   private pending = new Map<number, Pending>();
@@ -87,7 +100,8 @@ export class DeviceSession {
   info: DeviceInfo | null = null;
   capabilities: Operation[] = [];
 
-  constructor(transport: ByteTransport, options: { timeoutMs?: number; maxPending?: number } = {}) {
+  constructor(transport: ByteTransport, options: { timeoutMs?: number; maxPending?: number; allowRadioReceive?: boolean } = {}) {
+    this.#allowRadioReceive = radioOptIn(options);
     this.transport = transport;
     this.timeoutMs = options.timeoutMs ?? 2000;
     this.maxPending = options.maxPending ?? 8;
@@ -121,7 +135,8 @@ export class DeviceSession {
       finally { this.connectPending = false; }
       if (this.state !== 'opening') throw new Error('Connection closed during open');
       this.info = validateInfo(await this.exchange(Opcode.Info, new Uint8Array()));
-      this.capabilities = validateCapabilities(await this.exchange(Opcode.Capabilities, new Uint8Array()));
+      this.capabilities = validateCapabilities(await this.exchange(Opcode.Capabilities, new Uint8Array()), { allowRadioReceive: this.#allowRadioReceive });
+      this.#negotiated = new Set(this.capabilities);
       if (this.state !== 'opening') throw new Error('Connection closed during negotiation');
       this.state = 'open';
     } catch (error) {
@@ -133,7 +148,8 @@ export class DeviceSession {
 
   async request(operation: Operation, payload: Uint8Array = new Uint8Array()): Promise<Uint8Array> {
     if (this.state !== 'open') throw new Error('Device is not connected');
-    if (!this.capabilities.includes(operation) || !Object.hasOwn(operations, operation)) {
+    if (!this.#negotiated.has(operation) || !this.capabilities.includes(operation) || !Object.hasOwn(operations, operation) ||
+        (!this.#allowRadioReceive && Object.hasOwn(RADIO_RECEIVE_OPERATIONS, operation))) {
       throw new Error('Operation is not supported');
     }
     return this.exchange(operations[operation], payload);
@@ -184,7 +200,7 @@ export class DeviceSession {
   }
   private terminate(error: Error): void {
     this.state = 'closed';
-    this.info = null; this.capabilities = [];
+    this.info = null; this.capabilities = []; this.#negotiated.clear();
     for (const unsubscribe of this.unsubscribers.splice(0)) {
       try { unsubscribe(); } catch { /* One bad listener must not prevent remaining cleanup. */ }
     }

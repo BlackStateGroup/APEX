@@ -4,7 +4,7 @@
   "firmware/esp32s3-reviewed/main/ble_accessory.c": "57503eaabc1773bb46272d72bd3c9b04e85964d1666093e02bb672eaf569242c",
   "firmware/esp32s3/main/ble_accessory.h": "8328b10ae8c6452cc7236b1e3f1c6d2f951a05f00fa3af4074c0f088f86a4ed8",
   "packages/core/ble-transport.ts": "a377ccd2563a03d329a5cab19b804424467a5d8a09cbea2ba0421a17fe8649b8",
-  "packages/core/session.ts": "9244f34f52b579adf2676c54790a99710432c91d83b4a031df5581205dc9c404",
+  "packages/core/session.ts": "7ce22b04c0d7f1f35354c222baa1797e9eeaec66b4e59b58e2a7adac59e20326",
   "packages/protocol/index.ts": "fdc143b45f0722665b637ae341957e3774876be5d9343c6652e07061a3faf7bb",
   "src/experimental/web-axp.ts": "61a0cb7cbbbeaf6ca0b632c8bf21f9bfbc6dece7fafdda0a9a99214d6a7fe50d",
   "tests/esp32-reviewed-host/fakes/esp_err.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
@@ -17,5 +17,6 @@
   "tests/esp32-reviewed-host/fakes/sdkconfig.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tests/esp32-reviewed-host/fakes/services/gap/ble_svc_gap.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
   "tests/esp32-reviewed-host/fakes/services/gatt/ble_svc_gatt.h": "160de67d43a3b90da88d1f1a92930e3db6c2d0708ee8304db58382d5ba13d7f8",
-  "src/platform/bluetooth.native.ts": "c50d769b3a5c5266e3fd3119b078258c584306cac0fb79a5e1bd90a8b3303f1d"
+  "src/platform/bluetooth.native.ts": "c50d769b3a5c5266e3fd3119b078258c584306cac0fb79a5e1bd90a8b3303f1d",
+  "packages/core/radio-receive-protocol.ts": "86ce6db35eadbdff5521cf18fe90d4af2d64ff50d19c5c7db00c8ef3031ec102"
 }

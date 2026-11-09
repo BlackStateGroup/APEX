@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { HciWorkbenchController, hciExcerpt } from './hci-workbench.ts';
 import type { HciWorkbenchState, ExtendedSummary } from './hci-workbench.ts';
 import { hciDigest } from './platform/hci-digest';
+import { HciInput } from './platform/hci-input';
 function Control({ title, disabled = false, onPress }: { title: string; disabled?: boolean; onPress: () => void }) {
  return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress} style={styles.button}><Text style={styles.text}>{title}</Text></Pressable>;
 }
@@ -14,6 +15,8 @@ export function HciWorkbench({ active, onDocument }: { active: boolean; onDocume
  const act = (action: () => void) => { if (controller.isActive(lease) && state === controller.state) { action(); changed(); } };
  if (!active) return null;
  return <HciWorkbenchView state={state}
+ fileInput={<HciInput resetKey={state.inputRevision} sourceCurrent={() => controller.isActive(lease) && state === controller.state}
+ onBytes={bytes => act(() => { controller.stageFileBytes(bytes,lease,state); })} />}
  prepareDocument={() => act(() => { void controller.prepareDocument(lease, state).then(() => { if (controller.isActive(lease)) changed(); }); })}
  openDocument={onDocument ? () => act(() => { const document = controller.takeDocument(lease, state); if (document !== null) onDocument(document); }) : undefined} edit={s => act(() => controller.edit(s, lease))} declare={p => act(() => controller.declare(p, lease))}
  example={() => act(() => controller.example(lease))} clear={() => act(() => controller.clear(lease))}
@@ -21,21 +24,23 @@ export function HciWorkbench({ active, onDocument }: { active: boolean; onDocume
  page={n => act(() => controller.page(n, lease, state))} select={n => act(() => controller.select(n, lease, state))} selectExtended={n => act(() => controller.selectExtended(n, lease, state))} extendedPage={n => act(() => controller.extendedPage(n, lease, state))} reportPage={n => act(() => controller.reportPage(n, lease, state))} />;
 }
 export interface HciWorkbenchViewProps {
+ fileInput?: React.ReactNode;
  prepareDocument?: () => void; openDocument?: () => void;
  selectExtended?: (n: number) => void; extendedPage?: (n: number) => void;
  state: HciWorkbenchState; edit: (s: string) => void; declare: (p: 'synthetic-fixture' | 'recorded-import') => void;
  example: () => void; clear: () => void; inspect: () => void; page: (n: number) => void; select: (n: number) => void; reportPage: (n: number) => void;
 }
-export function HciWorkbenchView({ state, edit, declare, example, clear, inspect, page, select, reportPage, selectExtended, extendedPage, prepareDocument, openDocument }: HciWorkbenchViewProps) {
+export function HciWorkbenchView({ state, edit, declare, example, clear, inspect, page, select, reportPage, selectExtended, extendedPage, prepareDocument, openDocument, fileInput }: HciWorkbenchViewProps) {
  const metadata = state.metadata;
  return <View style={styles.card}>
  <Text style={styles.heading}>Offline HCI byte inspector</Text>
- <Text style={styles.text}>Memory only. Leaving this inspector or Analysis clears reports but retains draft, declaration and rejected-edit fence. Pending hashing is fenced, not cancelled. No file import, persistence, journal, save, export, share, copy action, device activity or provider calls.</Text>
+ <Text style={styles.text}>Memory only. Leaving this inspector or Analysis clears reports but retains draft, declaration and rejected-edit fence. Pending hashing is fenced, not cancelled. Optional native file controls load supplied bytes only after an explicit foreground action. No automatic inspection, persistence, journal save, export, share or device activity.</Text>
  <Text style={styles.text}>Paste strict contiguous ASCII hex for btsnoop v1/H4 bytes: maximum 65536 hex characters / 32768 decoded bytes. No whitespace or normalization. Invalid or oversized edits are rejected whole, retaining the prior draft and blocking Inspect until an accepted replacement or Clear. Odd-length hex may remain while typing, but inspection requires nonempty even-length hex.</Text>
- <Text style={styles.text}>Offline host/controller bytes, not physical RF samples. Provenance is caller-declared, not verified. SHA-256 hashes the exact decoded supplied byte sequence, NOT hex text. It does not guarantee original capture bytes before paste. Digest equality is byte equality, not authenticated source, truthful capture history, ownership, receiver identity, physical reception or device identity.</Text>
+ <Text style={styles.text}>Offline host/controller bytes, not physical RF samples. Provenance is caller-declared, not verified. SHA-256 hashes the exact decoded supplied byte sequence, NOT hex text. It does not guarantee original capture bytes before paste or file selection. Digest equality is byte equality, not authenticated source, truthful capture history, ownership, receiver identity, physical reception or device identity.</Text>
  <Text style={styles.text}>Raw signed timestamps are producer-declared claims, not verified wall-clock time. Zero cumulative drops does not establish no loss. Resolved identity addresses are not necessarily over-air addresses. Scan responses stay separate from advertisements; no address pooling. Unsupported packets and extended advertising data remain opaque; no fragment pooling or reassembly. Extended header metadata requires separate explicit selection.</Text>
  <View style={styles.actions}><Control title="Load synthetic HCI example" onPress={example} /><Control title="Declare synthetic HCI source" onPress={() => declare('synthetic-fixture')} /><Control title="Declare imported HCI source" onPress={() => declare('recorded-import')} /></View>
  <Text style={styles.text}>Declared provenance: {state.provenance ?? 'not selected'}. Example bytes are manually authored, loaded without automatic inspection.</Text>
+ {fileInput}
  <TextInput accessibilityLabel="HCI hex draft" multiline autoCapitalize="none" autoCorrect={false} value={state.draft} onChangeText={edit} style={styles.input} />
  <Text style={styles.text}>{state.draft.length} accepted hex characters. Edits and declarations never inspect automatically.</Text>
  <View style={styles.actions}><Control title="Inspect HCI metadata" disabled={state.pending || state.rejectedEdit} onPress={inspect} /><Control title="Clear HCI draft" onPress={clear} /></View>
