@@ -12,7 +12,7 @@ const turn = () => new Promise<void>(resolve => setImmediate(resolve));
 function deferred() { let resolve!: () => void; let reject!: (e: Error) => void; const promise = new Promise<void>((r,j) => {resolve=r;reject=j;}); return {resolve,reject,promise}; }
 function fixture(browserAxp: any = null) {
   const writes: [string, unknown][] = []; const write = (name: string) => (value?: unknown) => writes.push([name,value]);
-  const env = {acquisition:{current:null as any},setAcquisitionView:write('acquisition'),refreshAcquisition:write('refresh'),browserAxp, attached:{current:true}, mountEpoch:{current:1}, lock:{current:false}, operation:{current:null as object|null}, session:{current:null as DeviceSession|null}, disconnectListener:{current:null as (()=>void)|null}, captureBusy:{current:false}, serviceDataBusy:{current:false}, serviceDataUncertain:{current:false}, observationBusy:{current:false}, observationUncertain:{current:false}, setNotice:write('notice'),setBusy:write('busy'),append:write('event'),clearSession:write('clear'),setIdentity:write('identity'),setSource:write('source'),setCaps:write('caps'),DeviceSession,clearReleasedSession};
+  const env = {nativeBackground:{current:null as any},setNativeBackgroundPending:()=>{},foreground:{current:true},AppState:{currentState:'active'},acquisition:{current:null as any},setAcquisitionView:write('acquisition'),refreshAcquisition:write('refresh'),browserAxp, attached:{current:true}, mountEpoch:{current:1}, lock:{current:false}, operation:{current:null as object|null}, session:{current:null as DeviceSession|null}, disconnectListener:{current:null as (()=>void)|null}, captureBusy:{current:false}, serviceDataBusy:{current:false}, serviceDataUncertain:{current:false}, observationBusy:{current:false}, observationUncertain:{current:false}, setNotice:write('notice'),setBusy:write('busy'),append:write('event'),clearSession:write('clear'),setIdentity:write('identity'),setSource:write('source'),setCaps:write('caps'),DeviceSession,clearReleasedSession};
   const code = source.slice(source.indexOf('  async function run('),source.indexOf('  const runForeground')) + source.slice(source.indexOf('  async function connect('),source.indexOf('  async function disconnect('));
   const methods = new Function(...Object.keys(env),stripTypeScriptTypes(code)+';return {run,connect}')( ...Object.values(env)) as {run(action:()=>Promise<void>):Promise<void>;connect(t:ByteTransport):Promise<void>};
   return {...methods,env,writes};
@@ -57,7 +57,7 @@ test('independent: epoch change fences successful native negotiation and retaine
   assert.equal(h.writes.length,count);assert.equal(h.env.session.current,selected);await selected.close();
 });
 
-test('independent: native run adds no foreground/background acquisition policy',async()=>{
+test('independent: active native acquisition still opens normally',async()=>{
   const h=fixture();const t=softwareUsb();await h.run(()=>h.connect(t.transport));
   assert.equal(h.env.session.current?.state,'open');assert.deepEqual(t.calls,['acquire']);await h.env.session.current!.close();
 });

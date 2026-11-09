@@ -130,6 +130,20 @@ export class EvidenceStore {
     if (!Number.isInteger(limit) || limit < 1 || limit > 500) throw new Error('Invalid evidence limit');
     return (await this.backend.list(limit)).map(parseEvidence);
   }
+  /** Exact stored documents, structurally checked only; no content digest claim. */
+  async listDocuments(limit = 50): Promise<string[]> {
+    if (!Number.isInteger(limit) || limit < 1 || limit > 500) throw new Error('Invalid evidence limit');
+    const documents = await this.backend.list(limit);
+    if (!Array.isArray(documents) || documents.length > limit) throw new Error('Invalid evidence document list');
+    const copies: string[] = [];
+    for (let index = 0; index < documents.length; index++) {
+      const document = documents[index];
+      if (typeof document !== 'string' || document.length > 16384) throw new Error('Invalid evidence document size or type');
+      parseEvidence(document);
+      copies.push(document);
+    }
+    return copies;
+  }
   async verify(record: EvidenceRecord): Promise<boolean> {
     // HCI own-data validation must precede JSON serialization (which invokes getters).
     const snapshot = snapshotHciEnvelope(record);

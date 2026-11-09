@@ -1,6 +1,7 @@
 const path = require('node:path');
 const frozenControllers = new Set([
   'evidence-bundle-workbench',
+  'evidence-export-workbench',
   'hci-comparison-workbench',
   'hci-document-workbench',
   'hci-evidence-reopen',
@@ -8,6 +9,7 @@ const frozenControllers = new Set([
   'iq-workbench',
   'ir-receiver-workbench',
   'ir-workbench',
+  'native-hci-file',
   'nfc-static-workbench',
 ].map(name => path.join(__dirname, 'src', `${name}.ts`)));
 
