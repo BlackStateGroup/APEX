@@ -1,0 +1,7 @@
+Browser UI cases were NOT executed locally.
+The default Playwright launch could not find its managed Chromium executable.
+Using the repository's supported APEX_CHROMIUM_PATH with installed /usr/bin/chromium reached launch, then aborted:
+  FATAL: chrome/browser/process_singleton_posix.cc:297
+  socket() failed: Operation not permitted (1)
+No browser installation, sandbox/security setting change, or further workaround was attempted.
+The existing foundation CI browser suite remains enabled. Metro exports and host render/lifecycle tests passed separately.

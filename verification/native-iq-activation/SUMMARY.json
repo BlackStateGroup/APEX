@@ -1,0 +1,67 @@
+{
+  "status": "LOCAL_PASS_NATIVE_BUILD_PENDING",
+  "baseCommit": "335efd95dbd3841094ad1618df06dab14a7bfdf5",
+  "appHooksIntegrated": true,
+  "backend": "cpp",
+  "rustMobile": false,
+  "androidCompiled": false,
+  "iosNativeImplemented": false,
+  "physicalDeviceTests": false,
+  "fullHostTests": 2267,
+  "engineTests": 10,
+  "nativePlatformAdapterTests": 4,
+  "moduleSourceTests": 5,
+  "javaLifecycleAssertions": 56,
+  "actualJniAssertions": 163885,
+  "jniRuns": [
+    "normal -Xcheck:jni",
+    "fatal UBSan -Xcheck:jni"
+  ],
+  "typecheck": "PASS",
+  "inventory": "PASS",
+  "metroExports": [
+    "android",
+    "ios",
+    "web"
+  ],
+  "nativeAdmission": "17 same-runtime raw qualification fixtures then per-request exact JS reference verification",
+  "sourceSha256": {
+    ".github/workflows/foundation.yml": "cd3969a522f0a901e48ae22af91666a46731550f8d193ce952245f4418fc6467",
+    "modules/apex-iq/README.md": "4cf087c2112e01c241430b84877c0821e53be6a2eba65c2fc4276a631dc88e42",
+    "modules/apex-iq/android/build.gradle": "f613eeb9c24d626d64a31cc8837e0bc41568c25af82c84be49b883399512dd76",
+    "modules/apex-iq/android/consumer-rules.pro": "a846774e03cee50605071df55c5d089ea8e18d9170203706f72041af37cb2c81",
+    "modules/apex-iq/android/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+    "modules/apex-iq/android/src/main/cpp/CMakeLists.txt": "2658266984baacfcc9c3592d81870d3731df031cca437ddd26f61fea128f9416",
+    "modules/apex-iq/android/src/main/cpp/apex_iq_jni.cpp": "cd40ee758519b4a25d3e665ebb2e23ab687cf02fe6cd33e4561ed1f6e4ca8d8d",
+    "modules/apex-iq/android/src/main/java/expo/modules/apexiq/ApexIqCoordinator.java": "aae9a5733882e03258179577549b90d925dd7b7ec9efdccefc1be390096ec739",
+    "modules/apex-iq/android/src/main/java/expo/modules/apexiq/ApexIqModule.kt": "e219a0c7b0038123b82b4e32fa189d6b27d7bde4f059c96bf687e2d1c1b915f8",
+    "modules/apex-iq/android/src/main/java/expo/modules/apexiq/ApexIqNative.java": "a1eead7fc5a1816702cb4a3aff0a080fad42057f6726b2e362012f1e61e63f6a",
+    "modules/apex-iq/android/src/test/java/expo/modules/apexiq/ApexIqCoordinatorTest.java": "75641fceae5df49e61e4819086caeeaa4265d3998d0c2c238e693b18ceac4b3b",
+    "modules/apex-iq/android/src/test/java/expo/modules/apexiq/ApexIqLifecycleChecks.java": "cdc54b0e805b90041688867f29551b836c47ac9950352b99deb3b1da1dc2ae18",
+    "modules/apex-iq/expo-module.config.json": "a5988bfaa7b9c96b14ca342ee3ba5a6204fe62b70f209b6a3b3b7f712a8e8b19",
+    "modules/apex-iq/host-check.sh": "8598b565247a0cd549beb54760fe9404dbaa33d45743993412ef51c5e27b3bff",
+    "modules/apex-iq/index.ts": "35930a7826f8d8c4d945f67024e5c1dbaafbb1ac40f803d9876d7f2fd14e1677",
+    "modules/apex-iq/package.json": "1d915e87f01e13724643765f71a36b45d6abf1a93566eccb750e4163b77430ee",
+    "modules/apex-iq/source.test.mjs": "1fab259ab3d1c6edc52244ba6892471ed7450ab1b7085f6ad93d4e8edaaabb3d",
+    "modules/apex-iq/tests/ApexIqJniChecks.java": "1b421a7e604e9db5324652a6a85cf039ed2626051a3a3af03424a1d9f29688b8",
+    "src/IqWorkbench.tsx": "71d87b5f58adb15d73f39ea0bba660ddf2b5feacfa3aa7e820e6758441429f34",
+    "src/iq-engine.ts": "d5bbba874c7e42862f740fce4930a8900e3c327a02aed72aa561b597b2b0f104",
+    "src/iq-workbench.ts": "10b2d4a6106d3455583f0fa6ca68a9d7868f7ba39face840fb41e45d9793bbc1",
+    "src/platform/iq-engine.native.ts": "f15b90439f2164fee86a9706211b40be3d31e09806ac0ca00bce9cd96af6e6e4",
+    "src/platform/iq-engine.ts": "f2e5067ebc0a99d63f44d3f975f00f0301a0a3031d2edd1998b9f361482244a6",
+    "tests/iq-native-engine.test.ts": "c0583637f1c7df633c89b7b87455891a1e3414a9e63843fb9fb33c9fd931f228",
+    "tests/iq-native-platform.test.ts": "7dbf0fd0c3ecf54900da07247dfe992540623a59a9f80294b4d5ea1d42813546"
+  },
+  "limits": [
+    "Metro export is not native compilation.",
+    "Java/JNI checks run on Linux host, not Android.",
+    "No mobile speed, release or hardware acceptance claim.",
+    "Flipper code and no-merge-before-real-device-test gate untouched."
+  ],
+  "independentReview": {
+    "iqRelatedTests": 390,
+    "sourceReview": "PASS",
+    "androidBuild": "PENDING"
+  },
+  "browserUi": "BLOCKED: managed browser absent; existing Chromium aborts on forbidden socket operation; no UI case executed"
+}

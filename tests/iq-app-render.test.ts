@@ -34,7 +34,7 @@ const mockReact = {
  useLayoutEffect(action:()=>void|(()=>void),deps:any[]){const i=effectIndex++,old=effects[i];if(!old||deps.some((v,j)=>!Object.is(v,old.deps[j])))pending.push(()=>{old?.cleanup?.();const cleanup=action();effects[i]={deps,cleanup:typeof cleanup==='function'?cleanup:undefined};});},
 };
 (globalThis as any).__iqTsx={primitives,mockReact};
-const hooks=registerHooks({resolve(s,c,next){
+const hooks=registerHooks({resolve(s,c,next){if(s==='./platform/iq-engine')return next('./platform/iq-engine.ts',c);
  if(urls.includes(c.parentURL!)&&s==='react-native')return{url:'data:text/javascript,'+encodeURIComponent('export const {AppState,View,Text,TextInput,Pressable}=globalThis.__iqTsx.primitives;'),shortCircuit:true};
  if(c.parentURL===ownerUrl&&s==='react')return{url:'data:text/javascript,'+encodeURIComponent('const r=globalThis.__iqTsx.mockReact;export default r;export const {useState,useLayoutEffect}=r;'),shortCircuit:true};
  if(c.parentURL===ownerUrl&&s==='./platform/iq-digest')return next('./platform/iq-digest.ts',c);
@@ -105,7 +105,7 @@ test('IQ source wiring keeps one stable mounted owner and excludes save/network/
  const read=(path:string)=>readFileSync(new URL(path,root),'utf8');
  const app=read('App.tsx');assert.equal((app.match(/<IqWorkbench /g)||[]).length,1);assert.match(app,/\n\s*<IqWorkbench active=\{tab === 'Analysis' && inspector === 'iq'\} \/>/);
  for(const path of ['src/iq-workbench.ts','src/IqWorkbench.tsx','src/platform/iq-input.tsx','src/platform/iq-input.native.tsx','src/platform/iq-digest.ts','src/platform/iq-digest.native.ts'])assert.doesNotMatch(read(path),/\bfetch\s*\(|XMLHttpRequest|\.save\(|AsyncStorage|Clipboard|Linking|digestStringAsync|requestPermission/);
- assert.match(read('src/iq-workbench.ts'),/analyzeIq\(prepared,options\)/);assert.doesNotMatch(read('src/iq-workbench.ts'),/analyzeIqLag|analyzeIqPhase/);
+ assert.match(read('src/iq-workbench.ts'),/this\.#engine\.single\(prepared,options\)/);assert.match(read('src/iq-engine.ts'),/analyzeIq\(recording,options\)/);assert.doesNotMatch(read('src/iq-workbench.ts'),/analyzeIqLag|analyzeIqPhase/);
 });
 
 

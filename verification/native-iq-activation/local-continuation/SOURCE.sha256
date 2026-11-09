@@ -1,0 +1,7 @@
+4c4f421afe648047bb2781d28d16a0fc79ceee85762f71436adaa5d1d119611c  modules/apex-iq/README.md
+df4aa8111559145093c31a9e01f55a79cbff9b1505cdbac1e68fc1e81d25c40b  modules/apex-iq/host-check.sh
+b3f10c2701650e071ac72454d15d09e273f07bb20fc102df4ba827fe9878ead4  modules/apex-iq/android/src/test/java/expo/modules/apexiq/ApexIqLifecycleChecks.java
+1ed04581d43b4c27d883abbc581ec32be598707299c5af3500e25fe1313afcb2  modules/apex-iq/tests/ApexIqWireHost.java
+a985179bf60f512853fc8570b9d560bc2518d758db85a8fc1d394f434336ee24  modules/apex-iq/tests/jni-host-client.mjs
+2cab7a8faeecece3b89c0dbd31aa8617f6b2ce4c5d335d7d6db911bd3dcd839e  modules/apex-iq/tests/jni-host-client.test.mjs
+3c3a5b24c4778798896d80cb392988408c64a1c8290bd6eb095986184a91ed07  modules/apex-iq/tests/jni-parity.mjs

@@ -1,0 +1,55 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.apexiq'
+version = '0.1.0'
+
+// Honor the same explicit ABI selection as React Native/Expo. Do not use Groovy's
+// truthy fallback here: an explicitly empty property must fail, not build all ABIs.
+def apexIqSupportedAbis = ['arm64-v8a', 'x86_64', 'armeabi-v7a', 'x86']
+def apexIqArchitectureProperty = findProperty('reactNativeArchitectures')
+def apexIqRequestedAbis = (apexIqArchitectureProperty == null
+  ? apexIqSupportedAbis
+  : apexIqArchitectureProperty.toString().split(',', -1).collect { it.trim() })
+if (apexIqRequestedAbis.isEmpty() ||
+    apexIqRequestedAbis.any { !apexIqSupportedAbis.contains(it) } ||
+    apexIqRequestedAbis.toSet().size() != apexIqRequestedAbis.size()) {
+  throw new GradleException('reactNativeArchitectures must be a nonempty, comma-separated list of distinct supported ABIs: ' + apexIqSupportedAbis.join(','))
+}
+
+android {
+  if (rootProject.hasProperty('ndkPath')) ndkPath rootProject.ext.ndkPath
+  if (rootProject.hasProperty('ndkVersion')) ndkVersion rootProject.ext.ndkVersion
+  namespace 'expo.modules.apexiq'
+  defaultConfig {
+    versionCode 1
+    versionName '0.1.0'
+    consumerProguardFiles 'consumer-rules.pro'
+    externalNativeBuild {
+      cmake {
+        abiFilters(*apexIqRequestedAbis)
+        arguments '-DANDROID_STL=c++_shared'
+      }
+    }
+  }
+  externalNativeBuild {
+    cmake {
+      path 'src/main/cpp/CMakeLists.txt'
+      version '3.22.1'
+    }
+  }
+  testOptions {
+    unitTests.all {
+      testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat 'full'
+      }
+    }
+  }
+}
+
+dependencies {
+  testImplementation 'junit:junit:4.13.2'
+}

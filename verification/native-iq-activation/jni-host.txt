@@ -1,0 +1,4 @@
+javac 21.0.13
+IQ lifecycle checks passed: 56
+IQ JNI host checks passed: 163885
+Host Java lifecycle and actual JNI checks passed. Android Kotlin/Gradle/NDK/device checks were NOT run.

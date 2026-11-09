@@ -1,0 +1,31 @@
+Ten corrected lifecycle-suite runs, 400 synchronized race rounds per run:
+RUN 1
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8772
+RUN 2
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8769
+RUN 3
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8776
+RUN 4
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8768
+RUN 5
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8773
+RUN 6
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8779
+RUN 7
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8771
+RUN 8
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8776
+RUN 9
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8767
+RUN 10
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8772

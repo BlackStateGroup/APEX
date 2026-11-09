@@ -1,0 +1,13 @@
+✔ optional module is Android only with no requested permissions (19.315554ms)
+✔ native build reuses the reviewed bridge and kernel with strict FP (7.184564ms)
+✔ registration keeps cancel/reserve synchronous and exposes C++ truthfully (2.665009ms)
+✔ JNI never pins a JS/Java buffer while native computes (2.513723ms)
+✔ Gradle explicitly bounds CMake ABIs and rejects empty or unsupported selections (3.181923ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.523812

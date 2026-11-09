@@ -2,6 +2,7 @@ import { prepareIq, IQ_METADATA_LIMIT, IQ_DATA_LIMIT } from '../packages/core/iq
 import type { IqByteHasher, IqImportContext } from '../packages/core/iq-offline.ts';
 import type { IqAnalysisOptions } from '../packages/core/iq-analysis.ts';
 import { analyzeIq, analyzeIqTimeFrequency } from '../packages/core/iq-analysis.ts';
+import { IqAnalysisEngine, IQ_ENGINE_IDLE } from './iq-engine.ts';
 
 import { analyzeIqActivity } from '../packages/core/iq-activity.ts';
 import type { IqActivityOptions } from '../packages/core/iq-activity.ts';
@@ -57,6 +58,7 @@ const emptyFrames: readonly IqFrameSummary[] = Object.freeze([]);
 const emptyTimeFrequency = () => ({timeFrequencyReport: null, frames: emptyFrames, framePage: 0, framePageCount: 0, selectedFrame: null});
 export interface IqState {
  readonly inputRevision: number;
+ readonly analysisEngine: string;
  readonly activitySettings:IqActivitySettings; readonly activityReport:IqActivityReport|null;
  readonly activityFrames:readonly IqActivityFrame[]; readonly activityFramePage:number; readonly activityFramePageCount:number;
  readonly activityRuns:readonly IqActivityRun[]; readonly activityRunPage:number; readonly activityRunPageCount:number;
@@ -71,7 +73,7 @@ export interface IqState {
 }
 interface Source { label: IqLabel; read: () => Promise<ArrayBuffer> }
 const emptyBins = Object.freeze([]) as readonly IqBin[];
-const initial = (): IqState => Object.freeze({ inputRevision: 0, ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
+const initial = (): IqState => Object.freeze({ inputRevision: 0, analysisEngine:IQ_ENGINE_IDLE, ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
 // Copy every mutable analysis object before publication, without exposing core/source aliases.
 function immutable<T>(value: T): Immutable<T> {
  if (Array.isArray(value)) return Object.freeze(value.map(immutable)) as Immutable<T>;
@@ -99,8 +101,9 @@ export class IqController {
  #activityRuns: Immutable<Activity['runs']> = Object.freeze([]);
  #activityRunSummaries:readonly IqActivityRun[] = Object.freeze([]);
  #clearActivity() { this.#activityFrames=Object.freeze([]); this.#activityRuns=Object.freeze([]); this.#activityRunSummaries=Object.freeze([]); }
+ readonly #engine:IqAnalysisEngine;
  readonly #hasher: IqByteHasher; readonly #now: () => string; #listeners = new Set<() => void>();
- constructor(active: boolean, hasher: IqByteHasher, now: () => string = () => new Date().toISOString()) { this.#active = active; this.#hasher = hasher; this.#now = now; Object.freeze(this); }
+ constructor(active: boolean, hasher: IqByteHasher, now: () => string = () => new Date().toISOString(), engine:IqAnalysisEngine = new IqAnalysisEngine()) { this.#active = active; this.#hasher = hasher; this.#now = now; this.#engine=engine; Object.freeze(this); }
  get state() { return this.#state; } get lease() { return this.#lease; }
  isActive(lease: number) { return this.#active && lease === this.#lease; }
  subscribe(listener: () => void) { this.#listeners.add(listener); return () => { this.#listeners.delete(listener); }; }
@@ -114,15 +117,15 @@ export class IqController {
   finally { this.#notifying = false; }
  }
  #current(lease: number, state: IqState) { return this.isActive(lease) && this.#state === state; }
- #invalidate(message: string) { ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity(); this.#publish({ ...emptyActivity(), ...emptyTimeFrequency(), report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }
+ #invalidate(message: string) { this.#engine.cancel(); ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity(); this.#publish({ ...emptyActivity(), ...emptyTimeFrequency(), analysisEngine:IQ_ENGINE_IDLE, report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }
  #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false, inputChange = true) {
   // Commit handles, provenance, labels and invalidation before one notification.
   // A synchronous observer's newer selection/clear/exit then remains authoritative.
-  ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
-  this.#publish({inputRevision: this.#state.inputRevision + (inputChange ? 1 : 0), ...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
+  this.#engine.cancel(); ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
+  this.#publish({inputRevision: this.#state.inputRevision + (inputChange ? 1 : 0), ...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,analysisEngine:IQ_ENGINE_IDLE,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
  }
  activate() { if (!this.#active) { this.#active = true; ++this.#lease; } }
- deactivate() { this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true,false); }
+ deactivate() { this.#engine.release(); this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true,false); }
  stageFile(side: IqSide, file: IqFile | null, lease: number, state: IqState) {
   if (!this.#current(lease,state) || (side !== 'metadata' && side !== 'data')) return;
   const sources: Partial<Record<IqSide, Source>> = state.origin === 'synthetic-fixture' ? {} : {...this.#sources};
@@ -169,8 +172,8 @@ export class IqController {
   this.#selection({metadata:{label:label('synthetic-quarter-cycle.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer},data:{label:label('synthetic-quarter-cycle.sigmf-data',data.length),read:async()=>data.slice().buffer}},'synthetic-fixture','Synthetic quarter-cycle example staged only. Explicit Inspect required.',true);
  }
  #settings(change: Partial<IqState>) {
-  ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
-  this.#publish({...emptyActivity(), ...emptyTimeFrequency(),...change,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message:'Window settings staged only. Explicit Inspect required.'});
+  this.#engine.cancel(); ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
+  this.#publish({...emptyActivity(), ...emptyTimeFrequency(),...change,analysisEngine:IQ_ENGINE_IDLE,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message:'Window settings staged only. Explicit Inspect required.'});
  }
  windowMode(mode: IqWindowMode, lease: number, state: IqState) {
   if (!this.#current(lease,state)) return;
@@ -291,26 +294,28 @@ export class IqController {
     this.#activityRunSummaries=Object.freeze(analysis.runs.map(({measuredSampleIntervals,...run},index)=>immutable({...run,index,intervalCount:measuredSampleIntervals.length})));
     const {analysisVersion,options,limits,processedCells,windowRelationship,units,comparison,timeBasis,runMeaning}=analysis;
     const activityReport:IqActivityReport=immutable({...source,analysisVersion,options,limits,processedCells,windowRelationship,units,comparison,timeBasis,runMeaning,warnings:[...prepared.warnings,...analysis.warnings]});
-    this.#publish({activityReport,activityFrames:Object.freeze(this.#activityFrames.slice(0,4)),activityFramePageCount:Math.ceil(this.#activityFrames.length/4),activityRuns:Object.freeze(this.#activityRunSummaries.slice(0,4)),activityRunPageCount:Math.ceil(this.#activityRuns.length/4),...(this.#activityRuns.length?this.#selectActivityRun(0):{}),pending:false,message:'Selected-window energy / threshold inspection complete. Offline acquisition not verified.'});
+    this.#publish({analysisEngine:'JavaScript selected-window energy analysis. Native FFT is not used in this mode.',activityReport,activityFrames:Object.freeze(this.#activityFrames.slice(0,4)),activityFramePageCount:Math.ceil(this.#activityFrames.length/4),activityRuns:Object.freeze(this.#activityRunSummaries.slice(0,4)),activityRunPageCount:Math.ceil(this.#activityRuns.length/4),...(this.#activityRuns.length?this.#selectActivityRun(0):{}),pending:false,message:'Selected-window energy / threshold inspection complete. Offline acquisition not verified.'});
     return;
    }
    if (tfMode) {
-    const analysis = analyzeIqTimeFrequency(prepared,tfOptions!); // Only requested FFTs; no incidental FFT or full-file statistics.
+    const executed = await this.#engine.timeFrequency(prepared,tfOptions!);
+    const analysis = executed.analysis; // JS verification retained; native used only on exact match.
     if (!valid()) return;
     this.#timeFrequency = immutable({axis:analysis.axis,frames:analysis.frames});
     this.#frameSummaries = Object.freeze(analysis.frames.map(({amplitude:_a,dbRelativeToUnitAmplitude:_d,displayDb:_f,...summary})=>immutable(summary)));
     const {fftSize:n,hopSamples:hop} = analysis.options;
     const timeFrequencyReport: IqTimeFrequencyReport = immutable({...source,geometry:analysis.options,cellCount:analysis.cellCount,windowDurationSeconds:analysis.windowDurationSeconds,binSpacingHz:analysis.binSpacingHz,normalization:analysis.normalization,displayFloorDb:analysis.displayFloorDb,spacing:hop<n?'overlap':hop===n?'contiguous':'gaps',gapSamples:Math.max(0,hop-n),warnings:[...prepared.warnings,...analysis.warnings]});
-    this.#publish({timeFrequencyReport,frames:Object.freeze(this.#frameSummaries.slice(0,4)),framePage:0,framePageCount:Math.ceil(this.#frameSummaries.length/4),...this.#selectFrame(0),pending:false,message:'Time-frequency inspection complete. Full-file statistics omitted; offline acquisition not verified.'});
+    this.#publish({analysisEngine:executed.engine.summary,timeFrequencyReport,frames:Object.freeze(this.#frameSummaries.slice(0,4)),framePage:0,framePageCount:Math.ceil(this.#frameSummaries.length/4),...this.#selectFrame(0),pending:false,message:'Time-frequency inspection complete. Full-file statistics omitted; offline acquisition not verified.'});
     return;
    }
    if (!options) throw new Error('Invalid selected window');
-   const analysis = immutable(analyzeIq(prepared,options)); // bounded synchronous parsing/FFT is not interruptible mid-call
+   const executed = await this.#engine.single(prepared,options);
+   const analysis = immutable(executed.analysis); // Full-file statistics and provenance stay in the unchanged core.
    if (!valid()) return;
    this.#bins = analysis.spectrum?.bins ?? emptyBins;
    const spectrum = analysis.spectrum ? (({bins: _bins,...summary}) => Object.freeze(summary))(analysis.spectrum) : null;
    const report: IqReport = Object.freeze({...source,statistics:analysis.statistics,spectrum,warnings:Object.freeze([...prepared.warnings,...analysis.warnings])});
-   this.#publish({report,bins:Object.freeze(this.#bins.slice(0,8)),page:0,pageCount:Math.ceil(this.#bins.length/8),pending:false,message:'Inspection complete. Offline import; acquisition not verified.'});
+   this.#publish({analysisEngine:executed.engine.summary,report,bins:Object.freeze(this.#bins.slice(0,8)),page:0,pageCount:Math.ceil(this.#bins.length/8),pending:false,message:'Inspection complete. Offline import; acquisition not verified.'});
   } catch { if (valid()) this.#publish({pending:false,message:'Inspection refused: unreadable bytes, unsupported strict profile, invalid digest or SHA-512 mismatch. No report.'}); }
   finally { this.#running = false; this.#publish({pending:false}); }
  }
