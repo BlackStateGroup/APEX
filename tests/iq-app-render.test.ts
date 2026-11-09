@@ -163,3 +163,23 @@ test('actual owner accepts only fresh atomic pair staging callbacks',()=>{
  emit('background');emit('active');p=refresh();stale(files);p=refresh();assert.equal(p.state.metadata,null);
  p.pair!(files);p=refresh();assert.equal(p.state.metadata!.name,'m');assert.equal(p.state.data!.name,'d');assert.equal(p.state.report,null);reset();
 });
+
+
+test('C8 profile controls and exact original/derived provenance render without source claims becoming verification',async()=>{
+ const c=new IqController(true,iqByteHasher);c.inputProfile('mayhem-c8',c.lease,c.state);
+ let html=render(c);assert.match(html,/Use Mayhem C8 input profile/);assert.match(html,/135168 original source bytes/);assert.match(html,/Mayhem firmware versions and physical devices are not verified/);
+ const text='sample_rate=1024\ncenter_frequency=433920000\nformat=c8 (signed int8 I,Q)\n';
+ const metadata=new TextEncoder().encode(text),data=new Uint8Array(2048);
+ c.stageFile('metadata',{name:'unverified.txt',size:metadata.length,arrayBuffer:async()=>metadata.slice().buffer},c.lease,c.state);
+ c.stageFile('data',{name:'unverified.c8',size:data.length,arrayBuffer:async()=>data.slice().buffer},c.lease,c.state);
+ await c.inspect(c.lease,c.state);html=render(c);assert.ok(c.state.report?.c8Import);
+ assert.match(html,/Original C8 SHA-256:/);assert.match(html,/Original C8 sidecar SHA-256:/);
+ assert.ok(html.includes(c.state.report.c8Import.original.dataSha256));assert.ok(html.includes(c.state.report.dataSha256));
+ assert.match(html,/derived SigMF representation, not the original selected files/);assert.match(html,/Acquisition, producer and authenticity are not verified/);
+ for(const mode of ['time-frequency','activity'] as const){c.windowMode(mode,c.lease,c.state);await c.inspect(c.lease,c.state);assert.match(render(c),/Original C8 SHA-256:/);}
+});
+
+test('actual owner profile callbacks clear selection and fence a stale profile change',()=>{
+ reset();let p=refresh();p.inputProfile!('mayhem-c8');p=refresh();assert.equal(p.state.inputProfile,'mayhem-c8');
+ const stale=p;p.inputProfile!('sigmf');p=refresh();assert.equal(p.state.inputProfile,'sigmf');stale.inputProfile!('mayhem-c8');p=refresh();assert.equal(p.state.inputProfile,'sigmf');reset();
+});

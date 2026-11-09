@@ -49,9 +49,11 @@ const hooks = registerHooks({
       return { url: `data:text/javascript,${encodeURIComponent(source)}`, shortCircuit: true };
     }
     if (context.parentURL === componentUrl && specifier === './platform/hci-digest') return next('./platform/hci-digest.ts', context);
+    if (context.parentURL === componentUrl && specifier === './platform/hci-input') return next('./platform/hci-input.tsx', context);
     return next(specifier, context);
   },
   load(url, context, next) {
+    if (url.endsWith('/src/platform/hci-input.tsx')) return {format:'module',source:readFileSync(join(output,'src/platform/hci-input.js'),'utf8'),shortCircuit:true};
     if (url !== componentUrl) return next(url, context);
     const filename = new URL(url).pathname.split('/').at(-1)!.replace(/\.tsx$/, '.js');
     return { format: 'module', source: readFileSync(join(output, 'src', filename), 'utf8'), shortCircuit: true };

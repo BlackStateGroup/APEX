@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'tools/inspect-control-flow.mjs'
+      - 'tools/verify-control-flow.mjs'
+      - 'packages/core/bounded-json.ts'
       - 'tools/research-control-flow.mjs'
       - 'tools/reverse-engineering/**'
       - 'tests/rea-control-flow*.test.mjs'
@@ -32,3 +34,10 @@ jobs:
           APEX_REA_INTEGRATION: '1'
       - name: Reproduce compiler and negative-control evidence without executing the targets
         run: node tools/research-control-flow.mjs "$RUNNER_TEMP/apex-rea-flow-experiment"
+      - name: Independently replay retained evidence against each exact artifact
+        run: |
+          for variant in O0 O2 Os O2-poly8005; do
+            node --permission --allow-fs-read="$GITHUB_WORKSPACE" --allow-fs-read="$RUNNER_TEMP/apex-rea-flow-experiment" \
+              tools/verify-control-flow.mjs "$RUNNER_TEMP/apex-rea-flow-experiment/$variant.elf" \
+              "$RUNNER_TEMP/apex-rea-flow-experiment/$variant" > "$RUNNER_TEMP/$variant.verified-byte-linkage.json"
+          done
