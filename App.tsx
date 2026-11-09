@@ -9,6 +9,7 @@ import { NfcStaticWorkbench } from './src/NfcStaticWorkbench.tsx';
 import { HciWorkbench } from "./src/HciWorkbench.tsx";
 import { IrWorkbench } from './src/IrWorkbench.tsx';
 import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';
+import { EvidenceExportWorkbench } from './src/EvidenceExportWorkbench.tsx';
 import { FlipperWorkbench } from './src/FlipperWorkbench.tsx';
 import { BleTrialAuthoringWorkbench } from './src/ble-trial-authoring-workbench.ts';
 import { BleCandidateWorkbench } from './src/BleCandidateWorkbench.tsx';
@@ -504,6 +505,7 @@ export default function App() {
         <NfcStaticWorkbench active={tab === 'Analysis' && inspector === 'static-nfc'} />
         <IqWorkbench active={tab === 'Analysis' && inspector === 'iq'} />
         <EvidenceBundleWorkbench active={tab === 'Evidence'} />
+        <EvidenceExportWorkbench active={tab === 'Evidence'} store={evidenceStore} />
         {tab === 'Evidence' && <>
           <Label>04 / LOCAL EVIDENCE</Label><Text style={styles.heading}>Keep what you learn.</Text>
           <Text style={styles.description}>Saved NFC metadata, offline analyses and imported firmware inspection summaries. SHA-256 detects changes; it does not prove authenticity. Native storage uses the app sandbox. Web storage belongs to this browser.</Text>

@@ -13,6 +13,7 @@ const require = createRequire(import.meta.url);
 const { transformFromAstSync } = require('@babel/core');
 const controllers = [
   ['evidence-bundle-workbench', 'EvidenceBundleWorkbench'],
+  ['evidence-export-workbench', 'EvidenceExportWorkbench'],
   ['hci-comparison-workbench', 'HciComparisonController'],
   ['hci-document-workbench', 'HciDocumentController'],
   ['hci-evidence-reopen', 'HciEvidenceReopenController'],

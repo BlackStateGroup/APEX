@@ -1,6 +1,7 @@
 const path = require('node:path');
 const frozenControllers = new Set([
   'evidence-bundle-workbench',
+  'evidence-export-workbench',
   'hci-comparison-workbench',
   'hci-document-workbench',
   'hci-evidence-reopen',
