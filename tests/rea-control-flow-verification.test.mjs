@@ -114,6 +114,24 @@ test('rejects malformed JSON, invalid UTF-8, and zero-byte evidence', t => {
   const f = fixture(t), path = join(f.directory, 'manifest.json');
   for (const bytes of [Buffer.from('{'), Buffer.from([0xff]), Buffer.alloc(0)]) { writeFileSync(path, bytes); assert.throws(f.verify); }
 });
+for (const file of ['manifest.json', 'control-flow.json', 'apex_crc16.rea.json']) {
+  for (const escaped of [false, true]) test(`rejects duplicate ${escaped ? 'escaped ' : ''}decoded JSON keys in ${file}`, t => {
+    const f = fixture(t), path = join(f.directory, file), original = readFileSync(path, 'utf8');
+    const key = file === 'apex_crc16.rea.json' ? 'operation' : 'schemaVersion';
+    const alias = escaped ? `\\u${key.charCodeAt(0).toString(16).padStart(4, '0')}${key.slice(1)}` : key;
+    // A contradictory first value must not be silently discarded by JSON.parse.
+    writeFileSync(path, original.replace('{', `{ "${alias}": "untrusted-first-value",`));
+    if (file !== 'manifest.json') rehash(f.directory, file);
+    assert.throws(f.verify, /Duplicate JSON/);
+  });
+}
+test('rejects duplicate nested manifest fields and excessive JSON depth before interpretation', t => {
+  const f = fixture(t), path = join(f.directory, 'manifest.json'), original = readFileSync(path, 'utf8');
+  writeFileSync(path, original.replace('"file":', '"file": "../different", "file":'));
+  assert.throws(f.verify, /Duplicate JSON/);
+  writeFileSync(path, '['.repeat(17) + '0' + ']'.repeat(17));
+  assert.throws(f.verify, /depth/);
+});
 for (const [name, mutate] of [
   ['schema', r => r.schemaVersion = 99], ['artifact size', r => r.artifact.bytes++], ['architecture', r => r.artifact.architecture = 'ESP32'],
   ['engine', r => r.engine.rea = 'other'], ['retained snapshot', r => r.analysisInput.retained = true], ['snapshot path', r => r.analysisInput.snapshotPath += '-changed'],

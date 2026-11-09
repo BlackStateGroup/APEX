@@ -103,7 +103,8 @@ node tools/verify-control-flow.mjs path/to/owned-host.elf existing-evidence-dire
 Keep the output **outside** the evidence directory. The directory must contain
 only `manifest.json`, `control-flow.json` and the six named `*.rea.json` files.
 An extra entry, `failure.json`, incomplete manifest, symlink, non-regular file,
-invalid UTF-8, oversized input or mismatched digest/length causes rejection.
+invalid UTF-8, duplicate decoded JSON member names, excessive JSON depth,
+oversized input or mismatched digest/length causes rejection.
 Manifest entries are an exact filename allowlist. Recorded source paths,
 snapshot paths and arbitrary extra fields are never opened or executed.
 

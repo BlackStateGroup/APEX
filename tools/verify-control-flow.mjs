@@ -2,6 +2,7 @@ import { closeSync, constants, fstatSync, lstatSync, openSync, opendirSync, read
 import { isDeepStrictEqual } from 'node:util';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseBoundedJson } from '../packages/core/bounded-json.ts';
 import { CORE_SYMBOLS, MAX_ARTIFACT_BYTES, digest, readElfFunctions, validateObjdumpEvidence, parseFunctionDisassembly, summarizeControlFlow } from './reverse-engineering/elf-control-flow.mjs';
 
 const RAW_LIMIT = 2 * 1024 * 1024, MANIFEST_LIMIT = 16 * 1024;
@@ -30,7 +31,8 @@ function readBounded(path, limit, minimum = 1) {
 }
 function json(bytes) {
   // Reject replacement-character decoding rather than silently changing evidence.
-  return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+  // Duplicate decoded member names are ambiguous even when hashes match.
+  return parseBoundedJson(new TextDecoder('utf-8', { fatal: true }).decode(bytes), RAW_LIMIT, 16);
 }
 function inventory(directory) {
   const stat = lstatSync(directory);
@@ -77,6 +79,7 @@ export function verifyControlFlow(selected, evidenceDirectory) {
   if (!Array.isArray(report.functions) || report.functions.length !== CORE_SYMBOLS.length) fail('Incomplete selected-function report');
   const links = functions.map((fn, index) => {
     const evidenceFile = `${fn.name}.rea.json`;
+    json(files.get(evidenceFile).bytes); // Bound depth and reject duplicate keys before envelope interpretation.
     const observation = validateObjdumpEvidence(new TextDecoder('utf-8', { fatal: true }).decode(files.get(evidenceFile).bytes), { artifactSha256, artifactPath: input.snapshotPath, symbol: fn.name });
     const summary = summarizeControlFlow(fn, parseFunctionDisassembly(observation.stdout, fn));
     const expected = { ...summary, evidenceId: observation.evidenceId, evidenceFile };

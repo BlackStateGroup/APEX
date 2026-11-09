@@ -4,6 +4,7 @@ on:
     paths:
       - 'tools/inspect-control-flow.mjs'
       - 'tools/verify-control-flow.mjs'
+      - 'packages/core/bounded-json.ts'
       - 'tools/research-control-flow.mjs'
       - 'tools/reverse-engineering/**'
       - 'tests/rea-control-flow*.test.mjs'
