@@ -1,5 +1,6 @@
+import { MAYHEM_C8_LIMITS } from '../packages/core/mayhem-c8-import.ts';
 import { IQ_DATA_LIMIT, IQ_METADATA_LIMIT } from '../packages/core/iq-offline.ts';
-import type { IqFile, IqPair, IqSide } from './iq-workbench.ts';
+import type { IqFile, IqPair, IqSide, IqInputProfile } from './iq-workbench.ts';
 
 export interface NativeIqAsset { readonly uri: string; readonly name: string; readonly size?: number }
 export interface NativeIqReadHandle {
@@ -10,7 +11,8 @@ export interface NativeIqReadHandle {
 export type NativeIqOpen = (uri: string) => NativeIqReadHandle | Promise<NativeIqReadHandle>;
 export const IQ_READ_CHUNK = 16_384;
 
-function validSize(side: IqSide, size: unknown): size is number {
+function validSize(side: IqSide, size: unknown, profile: IqInputProfile): size is number {
+ if (profile === 'mayhem-c8') return typeof size === 'number' && Number.isSafeInteger(size) && size >= (side === 'metadata' ? 1 : 2) && size <= (side === 'metadata' ? MAYHEM_C8_LIMITS.sidecarBytes : MAYHEM_C8_LIMITS.dataBytes) && (side === 'metadata' || size % 2 === 0);
  return typeof size === 'number' && Number.isSafeInteger(size) &&
   size >= (side === 'metadata' ? 1 : 4) && size <= (side === 'metadata' ? IQ_METADATA_LIMIT : IQ_DATA_LIMIT) &&
   (side === 'metadata' || size % 4 === 0);
@@ -42,22 +44,23 @@ async function readExact(uri: string, size: number, open: NativeIqOpen): Promise
 }
 
 /** Captures labels and local handles only. No stat, open, byte read, or cache copy. */
-export function nativeIqPair(assets: readonly NativeIqAsset[] | null | undefined, open: NativeIqOpen): IqPair {
- if (!Array.isArray(assets) || assets.length !== 2) throw new Error('Choose exactly two SigMF files.');
+export function nativeIqPair(assets: readonly NativeIqAsset[] | null | undefined, open: NativeIqOpen, profile: IqInputProfile = 'sigmf'): IqPair {
+ if (profile !== 'sigmf' && profile !== 'mayhem-c8') throw new Error('Unknown I/Q profile');
+ if (!Array.isArray(assets) || assets.length !== 2) throw new Error('Choose exactly two files for the selected I/Q profile.');
  const files: Partial<Record<IqSide, IqFile>> = {};
  for (const asset of assets) {
   const name = asset.name, uri = asset.uri, size = asset.size;
   if (typeof name !== 'string' || name.length < 1 || name.length > 256) throw new Error('Invalid file label.');
-  const side: IqSide | null = name.endsWith('.sigmf-meta') ? 'metadata' : name.endsWith('.sigmf-data') ? 'data' : null;
-  if (!side || files[side]) throw new Error('Choose one .sigmf-meta and one .sigmf-data file.');
-  if (!validSize(side, size)) throw new Error('File size is missing or outside the supported profile.');
+  const side: IqSide | null = profile === 'mayhem-c8' ? (name.endsWith('.txt') ? 'metadata' : name.endsWith('.c8') ? 'data' : null) : name.endsWith('.sigmf-meta') ? 'metadata' : name.endsWith('.sigmf-data') ? 'data' : null;
+  if (!side || files[side]) throw new Error('Choose one metadata/sidecar and one data file for the selected profile.');
+  if (!validSize(side, size, profile)) throw new Error('File size is missing or outside the supported profile.');
   if (typeof uri !== 'string' || uri.length > 8192 || /[\u0000-\u001f\u007f]/.test(uri) ||
       !(/^(?:file:\/\/\/[^\s]|content:\/\/[^/\s]+\/[^\s])/.test(uri)))
    throw new Error('Only selected local file or content-provider handles are supported.');
   files[side] = Object.freeze({name: name.slice(0,160), size, arrayBuffer: () => readExact(uri, size, open)});
  }
- if (!files.metadata || !files.data) throw new Error('A complete SigMF pair is required.');
- return Object.freeze({metadata: files.metadata, data: files.data});
+ if (!files.metadata || !files.data) throw new Error('A complete I/Q pair is required.');
+ return Object.freeze({...(profile === 'mayhem-c8' ? {profile} : {}),metadata: files.metadata, data: files.data});
 }
 
 export interface NativeIqPickResult { readonly canceled: boolean; readonly assets?: readonly NativeIqAsset[] | null }
@@ -85,11 +88,14 @@ export interface NativeIqPickerState {
 /** Picker lifetime is separate from analysis. Returned handles require a new explicit Stage tap. */
 export class NativeIqPickerSession {
  #mounted = false; #foreground = false; #running = false; #epoch = 0; #notifying = false;
- #pair: IqPair | null = null;
+ #pair: IqPair | null = null; #profile: IqInputProfile = 'sigmf';
  #state: NativeIqPickerState = Object.freeze({picking:false,foreground:false,candidate:null,message:'Choose a pair, then Stage and Inspect.'});
  #listeners = new Set<() => void>();
  readonly #pick: (isCurrent: () => boolean) => Promise<NativeIqPickResult>; readonly #open: NativeIqOpen;
  constructor(pick: (isCurrent: () => boolean) => Promise<NativeIqPickResult>, open: NativeIqOpen) { this.#pick = pick; this.#open = open; }
+ setProfile(profile: IqInputProfile) {
+  if ((profile === 'sigmf' || profile === 'mayhem-c8') && profile !== this.#profile) { this.#profile = profile; this.reset(); }
+ }
  get state() { return this.#state; }
  subscribe(listener: () => void) { this.#listeners.add(listener); return () => { this.#listeners.delete(listener); }; }
  #publish(message: string) {
@@ -121,13 +127,13 @@ export class NativeIqPickerSession {
    const result = await this.#pick(isCurrent);
    if (!this.#mounted || epoch !== this.#epoch) return;
    if (result.canceled) { this.#publish('File selection cancelled.'); return; }
-   const pair = nativeIqPair(result.assets,this.#open);
+   const pair = nativeIqPair(result.assets,this.#open,this.#profile);
    if (!this.#mounted || epoch !== this.#epoch) return;
    this.#pair = pair;
    this.#publish('Pair selected, not staged or read. Return to APEX and explicitly Stage selected pair.');
   } catch (error) {
    if (this.#mounted && epoch === this.#epoch)
-    this.#publish(error instanceof NativeIqPickerBusyError ? 'The system picker is still open. Finish or cancel it before choosing again.' : 'Pair selection refused. Choose exactly one .sigmf-meta (1–65536 bytes) and one .sigmf-data (4–262144 bytes, divisible by four), with known sizes.');
+    this.#publish(error instanceof NativeIqPickerBusyError ? 'The system picker is still open. Finish or cancel it before choosing again.' : this.#profile === 'mayhem-c8' ? 'Pair selection refused. Choose one .txt sidecar (1–4096 bytes) and one .c8 file (2–131072 bytes, divisible by two), with known sizes.' : 'Pair selection refused. Choose exactly one .sigmf-meta (1–65536 bytes) and one .sigmf-data (4–262144 bytes, divisible by four), with known sizes.');
   } finally {
    this.#running = false;
    this.#publish(this.#state.message);

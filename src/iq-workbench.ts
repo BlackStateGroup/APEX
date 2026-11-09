@@ -1,3 +1,4 @@
+import { importMayhemC8, MAYHEM_C8_LIMITS, type MayhemC8Import } from '../packages/core/mayhem-c8-import.ts';
 import { prepareIq, IQ_METADATA_LIMIT, IQ_DATA_LIMIT } from '../packages/core/iq-offline.ts';
 import type { IqByteHasher, IqImportContext } from '../packages/core/iq-offline.ts';
 import type { IqAnalysisOptions } from '../packages/core/iq-analysis.ts';
@@ -11,8 +12,10 @@ export type IqFftSize = 256 | 512 | 1024 | 2048 | 4096;
 export type IqWindowMode = 'default' | 'explicit' | 'time-frequency' | 'activity';
 export const IQ_FFT_SIZES: readonly IqFftSize[] = Object.freeze([256,512,1024,2048,4096]);
 const defaults = () => ({ activitySettings:activityDefaults(), windowMode: 'default' as IqWindowMode, fftSize: 1024 as IqFftSize | null, startText: '0', startSample: 0 as number | null, hopText: '1024', hopSamples: 1024 as number | null, frameCountText: '1', frameCount: 1 as number | null });
+export type IqInputProfile = 'sigmf' | 'mayhem-c8';
+export type IqC8Provenance = Immutable<Pick<MayhemC8Import, 'sourceProfile' | 'parserVersion' | 'sourceClaims' | 'conversion' | 'original' | 'verification'>>;
 export type IqSide = 'metadata' | 'data';
-export interface IqPair { readonly metadata: IqFile; readonly data: IqFile }
+export interface IqPair { readonly profile?: IqInputProfile; readonly metadata: IqFile; readonly data: IqFile }
 export interface IqFile { readonly name: string; readonly size: number; arrayBuffer(): Promise<ArrayBuffer> }
 type Immutable<T> = T extends object ? { readonly [K in keyof T]: Immutable<T[K]> } : T;
 type Analysis = ReturnType<typeof analyzeIq>;
@@ -20,6 +23,7 @@ type Spectrum = NonNullable<Analysis['spectrum']>;
 export type IqBin = Immutable<Spectrum['bins'][number]>;
 export interface IqLabel { readonly name: string; readonly size: number }
 export interface IqReport {
+ readonly c8Import?: IqC8Provenance;
  readonly origin: IqImportContext['origin']; readonly importedAt: string; readonly producerTime: string | null;
  readonly metadataSha256: string; readonly dataSha256: string; readonly metadataLength: number; readonly dataLength: number;
  readonly sha512Status: 'byte-match-only' | 'not-provided'; readonly sampleRate: number; readonly centerFrequency: number;
@@ -57,7 +61,7 @@ const emptyActivity = () => ({activityReport:null,activityFrames:Object.freeze([
 const emptyFrames: readonly IqFrameSummary[] = Object.freeze([]);
 const emptyTimeFrequency = () => ({timeFrequencyReport: null, frames: emptyFrames, framePage: 0, framePageCount: 0, selectedFrame: null});
 export interface IqState {
- readonly inputRevision: number;
+ readonly inputRevision: number; readonly inputProfile: IqInputProfile;
  readonly analysisEngine: string;
  readonly activitySettings:IqActivitySettings; readonly activityReport:IqActivityReport|null;
  readonly activityFrames:readonly IqActivityFrame[]; readonly activityFramePage:number; readonly activityFramePageCount:number;
@@ -73,14 +77,15 @@ export interface IqState {
 }
 interface Source { label: IqLabel; read: () => Promise<ArrayBuffer> }
 const emptyBins = Object.freeze([]) as readonly IqBin[];
-const initial = (): IqState => Object.freeze({ inputRevision: 0, analysisEngine:IQ_ENGINE_IDLE, ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
+const initial = (): IqState => Object.freeze({ inputRevision: 0, inputProfile:'sigmf', analysisEngine:IQ_ENGINE_IDLE, ...defaults(), ...emptyActivity(), ...emptyTimeFrequency(), metadata: null, data: null, origin: 'external-file', busy: false, pending: false, message: 'Stage a pair, then explicitly Inspect.', report: null, page: 0, pageCount: 0, bins: emptyBins });
 // Copy every mutable analysis object before publication, without exposing core/source aliases.
 function immutable<T>(value: T): Immutable<T> {
  if (Array.isArray(value)) return Object.freeze(value.map(immutable)) as Immutable<T>;
  if (value !== null && typeof value === 'object') return Object.freeze(Object.fromEntries(Object.entries(value).map(([k,v]) => [k, immutable(v)]))) as Immutable<T>;
  return value as Immutable<T>;
 }
-function validSizes(metadata: number, data: number): boolean {
+function validSizes(metadata: number, data: number, profile: IqInputProfile): boolean {
+ if (profile === 'mayhem-c8') return Number.isSafeInteger(metadata) && metadata >= 1 && metadata <= MAYHEM_C8_LIMITS.sidecarBytes && Number.isSafeInteger(data) && data >= 2 && data <= MAYHEM_C8_LIMITS.dataBytes && data % 2 === 0;
  return Number.isSafeInteger(metadata) && metadata >= 1 && metadata <= IQ_METADATA_LIMIT && Number.isSafeInteger(data) && data >= 4 && data <= IQ_DATA_LIMIT && data % 4 === 0;
 }
 function label(name: string, size: number): IqLabel { return Object.freeze({ name: name.slice(0,160), size }); }
@@ -118,14 +123,18 @@ export class IqController {
  }
  #current(lease: number, state: IqState) { return this.isActive(lease) && this.#state === state; }
  #invalidate(message: string) { this.#engine.cancel(); ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity(); this.#publish({ ...emptyActivity(), ...emptyTimeFrequency(), analysisEngine:IQ_ENGINE_IDLE, report: null, bins: emptyBins, pending: false, page: 0, pageCount: 0, message }); }
- #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false, inputChange = true) {
+ #selection(sources: Partial<Record<IqSide, Source>>, origin: IqImportContext['origin'], message: string, reset = false, inputChange = true, inputProfile: IqInputProfile = this.#state.inputProfile) {
   // Commit handles, provenance, labels and invalidation before one notification.
   // A synchronous observer's newer selection/clear/exit then remains authoritative.
   this.#engine.cancel(); ++this.#generation; this.#sources = sources; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
-  this.#publish({inputRevision: this.#state.inputRevision + (inputChange ? 1 : 0), ...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,analysisEngine:IQ_ENGINE_IDLE,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
+  this.#publish({inputProfile,inputRevision: this.#state.inputRevision + (inputChange ? 1 : 0), ...emptyActivity(), ...emptyTimeFrequency(),...(reset ? defaults() : {}),metadata:sources.metadata?.label ?? null,data:sources.data?.label ?? null,origin,analysisEngine:IQ_ENGINE_IDLE,report:null,bins:emptyBins,pending:false,page:0,pageCount:0,message});
  }
  activate() { if (!this.#active) { this.#active = true; ++this.#lease; } }
  deactivate() { this.#engine.release(); this.#active = false; ++this.#lease; this.#selection({},this.#state.origin,'Selection released on exit/background. Outstanding work drains without publication.',true,false); }
+ inputProfile(profile: IqInputProfile, lease: number, state: IqState) {
+  if (!this.#current(lease,state) || (profile !== 'sigmf' && profile !== 'mayhem-c8') || profile === state.inputProfile) return;
+  this.#selection({},'external-file','Input profile changed. Choose a new pair, then explicitly Inspect.',true,true,profile);
+ }
  stageFile(side: IqSide, file: IqFile | null, lease: number, state: IqState) {
   if (!this.#current(lease,state) || (side !== 'metadata' && side !== 'data')) return;
   const sources: Partial<Record<IqSide, Source>> = state.origin === 'synthetic-fixture' ? {} : {...this.#sources};
@@ -142,6 +151,7 @@ export class IqController {
   const sources: Partial<Record<IqSide, Source>> = {};
   let message = 'Selected pair staged only. Explicit Inspect required.';
   try {
+   if ((pair.profile ?? 'sigmf') !== state.inputProfile) throw new Error('Pair profile changed');
    for (const side of ['metadata','data'] as const) {
     const file = pair[side];
     sources[side] = {label:label(file.name,file.size),read:file.arrayBuffer.bind(file)};
@@ -160,7 +170,7 @@ export class IqController {
   const metadata = Uint8Array.from('{"global":{"core:datatype":"ci16_le","core:version":"1.2.6","core:sample_rate":1024},"captures":[{"core:sample_start":0,"core:frequency":0}],"annotations":[]}',character=>character.charCodeAt(0));
   const data = new Uint8Array(4096);
   const sources = { metadata: {label:label('synthetic-zero.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer}, data: {label:label('synthetic-zero.sigmf-data',data.length),read:async()=>data.slice().buffer} };
-  this.#selection(sources,'synthetic-fixture','Synthetic zero example staged, not inspected. Explicit Inspect required.',true);
+  this.#selection(sources,'synthetic-fixture','Synthetic zero example staged, not inspected. Explicit Inspect required.',true,true,'sigmf');
  }
  toneExample(lease: number, state: IqState) {
   if (!this.#current(lease,state)) return;
@@ -169,7 +179,7 @@ export class IqController {
   // Exact integer quarter cycles, not a trigonometric oracle. Second half reverses Q.
   const pairs = [[16384,0],[0,16384],[-16384,0],[0,-16384]] as const;
   for (let k=0;k<8192;k++) { const [i,q]=pairs[k%4]!; view.setInt16(k*4,i,true); view.setInt16(k*4+2,k<4096?q:-q,true); }
-  this.#selection({metadata:{label:label('synthetic-quarter-cycle.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer},data:{label:label('synthetic-quarter-cycle.sigmf-data',data.length),read:async()=>data.slice().buffer}},'synthetic-fixture','Synthetic quarter-cycle example staged only. Explicit Inspect required.',true);
+  this.#selection({metadata:{label:label('synthetic-quarter-cycle.sigmf-meta',metadata.length),read:async()=>metadata.slice().buffer},data:{label:label('synthetic-quarter-cycle.sigmf-data',data.length),read:async()=>data.slice().buffer}},'synthetic-fixture','Synthetic quarter-cycle example staged only. Explicit Inspect required.',true,true,'sigmf');
  }
  #settings(change: Partial<IqState>) {
   this.#engine.cancel(); ++this.#generation; this.#bins = emptyBins; this.#timeFrequency = null; this.#frameSummaries = emptyFrames; this.#clearActivity();
@@ -256,19 +266,20 @@ export class IqController {
   const activityOptions:IqActivityOptions|null = validActivitySettings(a) ? {startSample:Number(a.startSample),windowSamples:Number(a.windowSamples),hopSamples:Number(a.hopSamples),frameCount:Number(a.frameCount),thresholdNumerator:a.thresholdNumerator,thresholdDenominator:a.thresholdDenominator} : null;
   const tfMode = state.windowMode === 'time-frequency';
   const tfOptions = state.fftSize === null || state.startSample === null || state.hopSamples === null || state.frameCount === null ? null : {fftSize:state.fftSize,startSample:state.startSample,hopSamples:state.hopSamples,frameCount:state.frameCount};
-  const origin = state.origin;
+  const origin = state.origin, inputProfile = state.inputProfile;
+  const sampleCount = (dataSource?.label.size ?? 0) / (inputProfile === 'mayhem-c8' ? 2 : 4);
   // Acquire ownership and the expected generation before any observer can reenter.
   const generation = this.#generation + 1, valid = () => this.isActive(lease) && generation === this.#generation;
   this.#running = true;
   try {
    this.#invalidate('Validating both captured sizes before reading either source.');
    if (!valid()) return;
-   if (!metadataSource || !dataSource || !validSizes(metadataSource.label.size,dataSource.label.size)) { this.#publish({message:'Pair refused: metadata must be 1–65536 bytes; data 4–262144 bytes and divisible by four. No reads started.'}); return; }
-   if (!activityMode && !tfMode && (!options || (options.fftSize !== undefined && options.startSample! + options.fftSize > dataSource.label.size/4))) { this.#publish({message:'Window refused: enter 1–5 ASCII decimal digits, 0–65535, and select a complete window within the data. No reads started.'}); return; }
-   if (tfMode && (!tfOptions || tfOptions.fftSize*tfOptions.frameCount>16384 || tfOptions.startSample+(tfOptions.frameCount-1)*tfOptions.hopSamples+tfOptions.fftSize>dataSource.label.size/4)) {
+   if (!metadataSource || !dataSource || !validSizes(metadataSource.label.size,dataSource.label.size,inputProfile)) { this.#publish({message:inputProfile === 'mayhem-c8' ? 'C8 pair refused: sidecar must be 1–4096 bytes; data 2–131072 bytes and divisible by two. No reads started.' : 'Pair refused: metadata must be 1–65536 bytes; data 4–262144 bytes and divisible by four. No reads started.'}); return; }
+   if (!activityMode && !tfMode && (!options || (options.fftSize !== undefined && options.startSample! + options.fftSize > sampleCount))) { this.#publish({message:'Window refused: enter 1–5 ASCII decimal digits, 0–65535, and select a complete window within the data. No reads started.'}); return; }
+   if (tfMode && (!tfOptions || tfOptions.fftSize*tfOptions.frameCount>16384 || tfOptions.startSample+(tfOptions.frameCount-1)*tfOptions.hopSamples+tfOptions.fftSize>sampleCount)) {
     this.#publish({message:'Time-frequency geometry refused: valid FFT/start, hop 1–65536, frames 1–64, at most 16384 cells, and final complete window must fit. No reads started.'}); return;
    }
-   if (activityMode && (!activityOptions || activityOptions.windowSamples*activityOptions.frameCount>262144 || activityOptions.startSample+(activityOptions.frameCount-1)*activityOptions.hopSamples+activityOptions.windowSamples>dataSource.label.size/4)) {
+   if (activityMode && (!activityOptions || activityOptions.windowSamples*activityOptions.frameCount>262144 || activityOptions.startSample+(activityOptions.frameCount-1)*activityOptions.hopSamples+activityOptions.windowSamples>sampleCount)) {
     this.#publish({message:'Selected-window energy / threshold refused: all six settings must be valid, at most 262144 processed cells, and final complete window must fit. No reads started.'}); return;
    }
    this.#publish({pending:true,message:'Reading and hashing exact local bytes. No upload. Work is fenced, not cancelled.'});
@@ -282,10 +293,14 @@ export class IqController {
    // prepareIq awaits multiple digests. Fence each boundary, including before starting a subsequent hash.
    const fencedHasher: IqByteHasher = {digest: async (algorithm, bytes) => { if (!valid()) throw new Error('Stale inspection'); const hash = await this.#hasher.digest(algorithm,bytes); if (!valid()) throw new Error('Stale inspection'); return hash; }};
    if (!valid()) return;
-   const prepared = await prepareIq(metadata,data,context,fencedHasher); if (!valid()) return;
+   const converted = inputProfile === 'mayhem-c8' ? await importMayhemC8(data,metadata,context,fencedHasher) : null;
+   if (!valid()) return;
+   const prepared = converted ? converted.recording : await prepareIq(metadata,data,context,fencedHasher); if (!valid()) return;
+   const importWarnings = converted?.warnings ?? [];
+   const c8Import: IqC8Provenance | undefined = converted ? immutable({sourceProfile:converted.sourceProfile,parserVersion:converted.parserVersion,sourceClaims:converted.sourceClaims,conversion:converted.conversion,original:converted.original,verification:converted.verification}) : undefined;
    const captures = prepared.supplierClaim.captures as readonly Record<string, unknown>[];
    const producerTime = captures[0]?.['core:datetime'];
-   const source = {origin:prepared.context.origin,importedAt:prepared.context.importedAt,producerTime:typeof producerTime === 'string' ? producerTime : null,metadataSha256:prepared.metadataSha256,dataSha256:prepared.dataSha256,metadataLength:prepared.metadataLength,dataLength:prepared.dataLength,sha512Status:prepared.sha512Status,sampleRate:prepared.sampleRate,centerFrequency:prepared.centerFrequency};
+   const source = {...(c8Import ? {c8Import} : {}),origin:prepared.context.origin,importedAt:prepared.context.importedAt,producerTime:typeof producerTime === 'string' ? producerTime : null,metadataSha256:prepared.metadataSha256,dataSha256:prepared.dataSha256,metadataLength:prepared.metadataLength,dataLength:prepared.dataLength,sha512Status:prepared.sha512Status,sampleRate:prepared.sampleRate,centerFrequency:prepared.centerFrequency};
    if (activityMode) {
     const analysis=analyzeIqActivity(prepared,activityOptions!);
     if (!valid()) return;
@@ -293,7 +308,7 @@ export class IqController {
     this.#activityRuns=immutable(analysis.runs);
     this.#activityRunSummaries=Object.freeze(analysis.runs.map(({measuredSampleIntervals,...run},index)=>immutable({...run,index,intervalCount:measuredSampleIntervals.length})));
     const {analysisVersion,options,limits,processedCells,windowRelationship,units,comparison,timeBasis,runMeaning}=analysis;
-    const activityReport:IqActivityReport=immutable({...source,analysisVersion,options,limits,processedCells,windowRelationship,units,comparison,timeBasis,runMeaning,warnings:[...prepared.warnings,...analysis.warnings]});
+    const activityReport:IqActivityReport=immutable({...source,analysisVersion,options,limits,processedCells,windowRelationship,units,comparison,timeBasis,runMeaning,warnings:[...importWarnings,...prepared.warnings,...analysis.warnings]});
     this.#publish({analysisEngine:'JavaScript selected-window energy analysis. Native FFT is not used in this mode.',activityReport,activityFrames:Object.freeze(this.#activityFrames.slice(0,4)),activityFramePageCount:Math.ceil(this.#activityFrames.length/4),activityRuns:Object.freeze(this.#activityRunSummaries.slice(0,4)),activityRunPageCount:Math.ceil(this.#activityRuns.length/4),...(this.#activityRuns.length?this.#selectActivityRun(0):{}),pending:false,message:'Selected-window energy / threshold inspection complete. Offline acquisition not verified.'});
     return;
    }
@@ -304,7 +319,7 @@ export class IqController {
     this.#timeFrequency = immutable({axis:analysis.axis,frames:analysis.frames});
     this.#frameSummaries = Object.freeze(analysis.frames.map(({amplitude:_a,dbRelativeToUnitAmplitude:_d,displayDb:_f,...summary})=>immutable(summary)));
     const {fftSize:n,hopSamples:hop} = analysis.options;
-    const timeFrequencyReport: IqTimeFrequencyReport = immutable({...source,geometry:analysis.options,cellCount:analysis.cellCount,windowDurationSeconds:analysis.windowDurationSeconds,binSpacingHz:analysis.binSpacingHz,normalization:analysis.normalization,displayFloorDb:analysis.displayFloorDb,spacing:hop<n?'overlap':hop===n?'contiguous':'gaps',gapSamples:Math.max(0,hop-n),warnings:[...prepared.warnings,...analysis.warnings]});
+    const timeFrequencyReport: IqTimeFrequencyReport = immutable({...source,geometry:analysis.options,cellCount:analysis.cellCount,windowDurationSeconds:analysis.windowDurationSeconds,binSpacingHz:analysis.binSpacingHz,normalization:analysis.normalization,displayFloorDb:analysis.displayFloorDb,spacing:hop<n?'overlap':hop===n?'contiguous':'gaps',gapSamples:Math.max(0,hop-n),warnings:[...importWarnings,...prepared.warnings,...analysis.warnings]});
     this.#publish({analysisEngine:executed.engine.summary,timeFrequencyReport,frames:Object.freeze(this.#frameSummaries.slice(0,4)),framePage:0,framePageCount:Math.ceil(this.#frameSummaries.length/4),...this.#selectFrame(0),pending:false,message:'Time-frequency inspection complete. Full-file statistics omitted; offline acquisition not verified.'});
     return;
    }
@@ -314,7 +329,7 @@ export class IqController {
    if (!valid()) return;
    this.#bins = analysis.spectrum?.bins ?? emptyBins;
    const spectrum = analysis.spectrum ? (({bins: _bins,...summary}) => Object.freeze(summary))(analysis.spectrum) : null;
-   const report: IqReport = Object.freeze({...source,statistics:analysis.statistics,spectrum,warnings:Object.freeze([...prepared.warnings,...analysis.warnings])});
+   const report: IqReport = Object.freeze({...source,statistics:analysis.statistics,spectrum,warnings:Object.freeze([...importWarnings,...prepared.warnings,...analysis.warnings])});
    this.#publish({analysisEngine:executed.engine.summary,report,bins:Object.freeze(this.#bins.slice(0,8)),page:0,pageCount:Math.ceil(this.#bins.length/8),pending:false,message:'Inspection complete. Offline import; acquisition not verified.'});
   } catch { if (valid()) this.#publish({pending:false,message:'Inspection refused: unreadable bytes, unsupported strict profile, invalid digest or SHA-512 mismatch. No report.'}); }
   finally { this.#running = false; this.#publish({pending:false}); }
