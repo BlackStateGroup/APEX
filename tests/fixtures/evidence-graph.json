@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "devices": [
+    { "id": "device-synthetic", "label": "Synthetic sensor handle", "scope": "Designed offline example only; not a physical identity." }
+  ],
+  "experiments": [
+    { "id": "experiment-temperature", "question": "Does the proposed field track the declared reference?", "method": "Compare the candidate interpretation with separately designated synthetic examples, retaining counterexamples.", "deviceIds": ["device-synthetic"] }
+  ],
+  "recordings": [
+    { "id": "recording-discovery", "label": "Synthetic discovery bytes", "experimentId": "experiment-temperature", "deviceId": "device-synthetic", "artifact": { "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "byteLength": 4, "format": "synthetic-bthome-example" }, "origin": "synthetic-fixture" },
+    { "id": "recording-counterexample", "label": "Synthetic counterexample bytes", "experimentId": "experiment-temperature", "deviceId": "device-synthetic", "artifact": { "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "byteLength": 4, "format": "synthetic-bthome-example" }, "origin": "synthetic-fixture" }
+  ],
+  "hypotheses": [
+    { "id": "hypothesis-temperature", "statement": "The selected field encodes temperature with the proposed scaling.", "deviceIds": ["device-synthetic"], "experimentIds": ["experiment-temperature"], "confidence": { "value": 0.6, "source": "operator-declared", "rationale": "Example score only; not a calibrated probability. One counterexample remains." }, "evidence": [
+      { "recordingId": "recording-discovery", "relation": "supports", "subset": "discovery" },
+      { "recordingId": "recording-counterexample", "relation": "contradicts", "subset": "held-out" }
+    ] }
+  ]
+}

@@ -79,12 +79,14 @@ export async function importMayhemC8(dataBytes: Uint8Array, sidecarBytes: Uint8A
   // Each two's-complement int8 becomes int16 * 256. The low byte is zero;
   // the original byte is the high byte. This preserves normalized sample amplitude.
   for (let i = 0; i < originalData.length; i++) converted[2 * i + 1] = originalData[i]!;
-  const metadata = new TextEncoder().encode(JSON.stringify({
+  // The generated fields are fixed ASCII strings and canonical integer Hz.
+  // Avoid TextEncoder, which is not available in every native JS runtime.
+  const metadata = Uint8Array.from(JSON.stringify({
     global: { 'core:datatype': 'ci16_le', 'core:version': '1.2.6', 'core:sample_rate': sourceClaims.sampleRate,
       'core:recorder': 'APEX original Mayhem C8 importer v1',
       'core:description': 'Derived offline data; sidecar frequency and sample rate are unverified supplier claims.' },
     captures: [{ 'core:sample_start': 0, 'core:frequency': sourceClaims.centerFrequency }], annotations: [],
-  }));
+  }), character => character.charCodeAt(0));
   // prepareIq validates and snapshots context before its first await, then verifies derived bytes.
   const recording = await prepareIq(metadata, converted, context, hasher);
   async function hash(bytes: Uint8Array): Promise<string> {
