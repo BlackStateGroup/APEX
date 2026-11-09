@@ -1,0 +1,22 @@
+javac 21.0.13
+IQ concurrent stress passed: 100 rounds each of admission, running drain, retirement, and reservation replacement
+IQ lifecycle checks passed: 8774
+IQ JNI host checks passed: 163885
+✔ framed test helper consumes clean output to EOF (96.337819ms)
+✔ later-chunk trailing stdout is rejected, not silently discarded (84.736758ms)
+✔ oversized diagnostics fail with bounded retained output (74.736451ms)
+✔ timeout kills a TERM-ignoring child and rejects rather than hanging (1107.416192ms)
+✔ abort also kills TERM-ignoring child independently of test deadline (192.773766ms)
+✔ truncated, oversized and nonzero-exit responses cannot pass (196.95842ms)
+✔ failed process start cannot leak or wait for the corpus timeout (3.172564ms)
+✔ invalid input bounds reject before dispatch without corrupting admission (56.510442ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2051.925418
+{"status":"PASS","route":"Node JS codec → production Java coordinator → actual JNI → C++ → unchanged JS oracle","requests":1485,"windows":8924,"bins":23029248,"exactRawComponents":46058496,"appQualificationRequests":17,"appReports":8,"appCalls":25,"corpusSha256":"cecc12ba443b9ddcea00ece932f63e676c46967d8171cd68d557dac39158f6b3","librarySha256":"6a0c7b6819f14a8491526b82ff74eeb3f8f9849c29718faf75217cbb0e0ba5be","node":"v24.22.1","hostPlatform":"linux","hostArch":"x64","android":false,"hermes":false,"expoMarshalling":false,"mobileRust":false,"performanceClaim":false}
+Host Java lifecycle and actual JNI checks passed. Android Kotlin/Gradle/NDK/device checks were NOT run.

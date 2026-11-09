@@ -1,0 +1,42 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> apex@0.1.0 build
+> expo export --platform ios --platform android --platform web
+
+Starting Metro Bundler
+
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:9170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 10409ms index.ts (293 modules)
+Android Bundled 18865ms index.ts (819 modules)
+iOS Bundled 28328ms index.ts (827 modules)
+
+› web bundles (1):
+_expo/static/js/web/index-9b5b7428ff8acc64e1a4e021f85b64d7.js (881KB)
+
+› android bundles (1):
+_expo/static/js/android/index-3ad26a86523f7058ffcf46f8040178fd.hbc (2.7MB)
+
+› ios bundles (1):
+_expo/static/js/ios/index-07511b92845a5c94dc8f4b0ad2054a5c.hbc (2.6MB)
+
+› Files (2):
+index.html (1.2KB)
+metadata.json (244B)
+
+Exported: dist
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

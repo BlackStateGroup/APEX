@@ -1,0 +1,25 @@
+✔ C ABI: cancellation, bounded input, no partial output, output span and rounding (28.17609ms)
+✔ pinned reference core and runtime-neutral client imports (2.175033ms)
+✔ portable bridge exact projection and raw FFT across full 1,485-request corpus (62607.93293ms)
+ℹ {"cases":1485,"windows":8924,"bins":23029248,"exactRawComponents":46058496,"sanitized":true,"leakSanitizer":false,"mobile":false,"rust":false}
+✔ wrong identity, shape, nonfinite/oversized response and foreign context are refused (37.151815ms)
+✔ malformed native request bounds and reserved fields reject without response (388.372006ms)
+✔ snapshots own byte views, metadata; shared/resizable and invalid geometry reject (258.460499ms)
+✔ default JS fallback and optional native success preserve identical value (33.57663ms)
+✔ native reject, throw, malformed or wrong-request response falls back on untouched snapshot (45.130971ms)
+✔ cancel retains busy gate until native drain and suppresses success/fallback (113.759453ms)
+✔ old same-shape response cannot satisfy next operation (53.784841ms)
+✔ dispose and cancellation during JS fallback fence publication; errors release gate (78.026676ms)
+✔ reentrant input cancellation prevents native dispatch (20.958224ms)
+✔ intrinsic typed-array checks reject spoofed shared/resizable/oversize arrays (31.550296ms)
+✔ session identity cannot be reused by another executor even after disposal (0.367043ms)
+✔ cancelled asynchronous fallback rejection is still cancellation (19.893717ms)
+✔ session registry has a bounded fail-closed lifetime (166.275043ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 66599.805021

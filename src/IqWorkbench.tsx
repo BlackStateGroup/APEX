@@ -4,11 +4,12 @@ import { IqController, IQ_FFT_SIZES, validActivitySettings } from './iq-workbenc
 import type { IqFile, IqSide, IqPair, IqState, IqFftSize, IqWindowMode, IqActivityField } from './iq-workbench.ts';
 import { iqByteHasher } from './platform/iq-digest';
 import { IqInput } from './platform/iq-input';
+import { createIqAnalysisEngine } from './platform/iq-engine';
 function Info({children}:{children:React.ReactNode}) { return <Text selectable style={{color:'#b8c1af',lineHeight:21}}>{children}</Text>; }
 function Control({title,onPress,disabled=false}:{title:string;onPress:()=>void;disabled?:boolean}) { return <Pressable accessibilityRole="button" accessibilityLabel={title} disabled={disabled} onPress={onPress}><Text style={{color:'#d8ff6b',padding:12}}>{title}</Text></Pressable>; }
 export function IqWorkbench({active}:{active:boolean}) {
  // Stable mounted controller owns the actual outstanding slot across navigation and AppState transitions.
- const [controller] = useState(()=>new IqController(false,iqByteHasher));
+ const [controller] = useState(()=>new IqController(false,iqByteHasher,undefined,createIqAnalysisEngine()));
  const [,refresh] = useState(0);
  useLayoutEffect(()=>controller.subscribe(()=>refresh(n=>n+1)),[controller]);
  useLayoutEffect(()=>{
@@ -63,8 +64,9 @@ export function IqWorkbenchView({state,file,pair,inspect,clear,example,toneExamp
   <Info>Names are bounded inert file labels, not paths, authenticated origins or proof of pairing. Hashes cover exact bytes, not names or acquisition history. Producer metadata remains untrusted and inert; no links are opened.</Info>
   <Control title="Inspect staged I/Q pair" onPress={inspect} disabled={state.busy || !state.metadata || !state.data || (state.windowMode === 'activity' ? !validActivitySettings(state.activitySettings) : state.fftSize === null || state.startSample === null || (state.windowMode === 'time-frequency' && (state.hopSamples === null || state.frameCount === null)))}/>
   <Control title="Clear I/Q selection and report" onPress={clear}/>
-  <Info>{state.message} {state.busy ? 'One outstanding read/hash job still owns the slot; new inspection waits for settlement.' : ''}</Info>
-  <Info>Clear, replacement, exit and background fence publication, not cancellation or secure erasure. Selection is released on exit/background. Bounded synchronous parsing/analysis cannot be interrupted mid-call.</Info>
+  <Info>{state.analysisEngine}</Info>
+  <Info>{state.message} {state.busy ? 'One outstanding read/hash/analysis job still owns the slot; new inspection waits for settlement.' : ''}</Info>
+  <Info>Clear, replacement, exit and background fence publication and request native cancellation between frames. Reads, hashes and synchronous JavaScript work are not interrupted or securely erased. Selection is released on exit/background; new work waits until the previous job settles.</Info>
   {r && <>
    <Info>Source origin: {r.origin}; offline import, acquisition not verified. Import time: {r.importedAt}. Producer-declared timestamp (unvalidated): {r.producerTime === null ? 'not provided' : JSON.stringify(r.producerTime)}.</Info>
    <Info>Exact metadata SHA-256: {r.metadataSha256}; {r.metadataLength} bytes.</Info>

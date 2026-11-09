@@ -57,6 +57,17 @@ jobs:
       - name: Test Android USB permission callbacks
         working-directory: android
         run: ./gradlew :apex-device:testDebugUnitTest --no-daemon
+      - name: Verify native IQ Java ownership and real host JNI
+        run: |
+          node --test modules/apex-iq/source.test.mjs
+          bash modules/apex-iq/host-check.sh
+          bash modules/apex-iq/host-check.sh --sanitize
+      - name: Compile and test native IQ module
+        working-directory: android
+        run: ./gradlew :apex-iq:compileDebugKotlin :apex-iq:assembleDebug :apex-iq:testDebugUnitTest -PreactNativeArchitectures=arm64-v8a,x86_64 --no-daemon
+      - name: Compile native IQ release libraries
+        working-directory: android
+        run: ./gradlew :apex-iq:assembleRelease -PreactNativeArchitectures=arm64-v8a,x86_64 --no-daemon
       - name: Assemble debug APK including NFC and Bluetooth
         working-directory: android
         run: ./gradlew :app:assembleDebug -PreactNativeArchitectures=arm64-v8a --no-daemon

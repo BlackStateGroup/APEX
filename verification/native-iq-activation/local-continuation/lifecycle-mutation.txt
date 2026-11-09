@@ -1,0 +1,7 @@
+Exception in thread "main" java.lang.AssertionError: Injected engine failed independently of callback settlement: java.lang.AssertionError: Native engine receives cooperative cancellation flag
+	at expo.modules.apexiq.ApexIqLifecycleChecks.check(ApexIqLifecycleChecks.java:26)
+	at expo.modules.apexiq.ApexIqLifecycleChecks$EngineProbe.assertHealthy(ApexIqLifecycleChecks.java:72)
+	at expo.modules.apexiq.ApexIqLifecycleChecks.runningDrain(ApexIqLifecycleChecks.java:257)
+	at expo.modules.apexiq.ApexIqLifecycleChecks.runAll(ApexIqLifecycleChecks.java:83)
+	at expo.modules.apexiq.ApexIqLifecycleChecks.main(ApexIqLifecycleChecks.java:442)
+Expected mutation rejected, exit=1. Production coordinator was not modified.
