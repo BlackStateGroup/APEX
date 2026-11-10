@@ -3,7 +3,7 @@ import { mkdir } from 'node:fs/promises';
 test('first iPhone workflow renders at phone width and refuses browser connections', async ({ page }) => {
   const errors = []; page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
-  await expect(page.getByText('Your Flipper.', { exact: false })).toBeVisible();
+  await expect(page.getByText('Your Flipper. One clear read.', { exact: true })).toBeVisible();
   const find = page.getByRole('button', { name: 'Find my Flipper', exact: true });
   await expect(find).toBeDisabled();
   await page.getByRole('checkbox').click();
