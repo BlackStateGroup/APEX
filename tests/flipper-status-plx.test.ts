@@ -22,6 +22,10 @@ test('actual PLX adapter uses exact advertised UUIDs, read allowlist and no char
   assert.equal(await radio.state(), 'PoweredOn'); let found: unknown;
   await radio.scan((_error, candidate) => { found = candidate; });
   assert.deepEqual(calls[0], ['scan', [...FLIPPER_ADVERTISEMENTS], { allowDuplicates: false }]);
+  assert.deepEqual(FLIPPER_ADVERTISEMENTS, [
+    '00003080-0000-1000-8000-00805f9b34fb', '00003081-0000-1000-8000-00805f9b34fb',
+    '00003082-0000-1000-8000-00805f9b34fb', '00003083-0000-1000-8000-00805f9b34fb',
+  ], 'official unknown, black, white and transparent colour variants');
   assert.deepEqual(found, { id: 'ios-id', name: 'Test', rssi: -42 });
   await radio.stopScan(); await radio.connect('ios-id'); assert.deepEqual(await radio.discover('ios-id'), ['180a']);
   for (const field of FLIPPER_STATUS_FIELDS) await radio.read('ios-id', field);

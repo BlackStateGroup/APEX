@@ -9,6 +9,7 @@ a claim of verified hardware compatibility or a completed universal multi-tool.
 
 1. The user confirms ownership/permission and starts a ten-second foreground scan.
 2. APEX shows up to 32 devices advertising the reviewed Flipper service IDs.
+   These are `3080`–`3083`: unknown, black, white and transparent hardware colours.
 3. The user explicitly selects one. iOS handles pairing if required; enter the
    code displayed on the Flipper. APEX never captures or stores the pairing code.
 4. APEX checks the expected services and reads six fixed GATT characteristics.
@@ -131,5 +132,6 @@ upstream distribution/licensing review is not resolved by this workflow.
 - [Battery service](https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/battery_service.c), blob `66aafc4959289f953d3da0ddb8dada795d04a6e7`.
 - [Serial profile and advertised IDs](https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/profiles/serial_profile.c), blob `9bba0d897e92d0dfecedd0a1f575e9856f82b80d`.
 - [Serial service UUID](https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/f7/ble_glue/services/serial_service_uuid.inc), blob `577e8f2eda449a590d10bf17017b8595be1fbb91`.
+- [Hardware colour identifiers](https://github.com/flipperdevices/flipperzero-firmware/blob/9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a/targets/furi_hal_include/furi_hal_version.h), blob `f702aed13dc9ae960eafa444ebf42e7ee045f201`.
 - [Official Flipper pairing instructions](https://docs.flipper.net/zero/mobile-app).
 - [Expo internal distribution](https://docs.expo.dev/build/internal-distribution/) and [build profiles](https://docs.expo.dev/build/eas-json/).

@@ -1,7 +1,7 @@
 /** Independently written GATT interface facts, reviewed against official firmware
  * 9981d9d4aa5ec7b14bb46cf15763dd293a7dec6a. No RPC or upstream code is included. */
 export const bluetoothUuid = (short: string) => `0000${short}-0000-1000-8000-00805f9b34fb`;
-export const FLIPPER_ADVERTISEMENTS = Object.freeze(['3080', '3081', '3082'].map(bluetoothUuid));
+export const FLIPPER_ADVERTISEMENTS = Object.freeze(['3080', '3081', '3082', '3083'].map(bluetoothUuid));
 export const FLIPPER_SERIAL_SERVICE = '8fe5b3d5-2e7f-4a98-2a48-7acc60fe0000';
 export const DEVICE_INFORMATION = bluetoothUuid('180a');
 export const BATTERY_SERVICE = bluetoothUuid('180f');
