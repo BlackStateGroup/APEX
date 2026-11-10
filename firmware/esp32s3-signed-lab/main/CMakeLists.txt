@@ -1,5 +1,5 @@
 idf_component_register(SRCS "main.c"
-  INCLUDE_DIRS "." REQUIRES esp_driver_usb_serial_jtag esp_partition)
+  INCLUDE_DIRS "." REQUIRES esp_driver_usb_serial_jtag esp_partition esp_timer)
 if(CONFIG_APEX_SIGNED_READ_LAB_OPT_IN)
   target_sources(${COMPONENT_LIB} PRIVATE
     "../../core/apex.c" "../../lab_signed_read/lab_peer.c"

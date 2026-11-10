@@ -2,7 +2,8 @@
 
 This separate ESP32-S3 / ESP-IDF v6.1 target implements experimental AXP/1 opcode
 `0x70`. It is disabled by default, not shipping firmware, and not enabled in the
-APEX application. Nothing in this directory authorises flashing or operating
+default APEX application. A separate [opt-in lab client](../../docs/SIGNED_READ_LAB_CLIENT.md)
+provides native verification and explicit USB pairing controls. Nothing in this directory authorises flashing or operating
 hardware. See [verification evidence](../../review-evidence/lab-signed-read/REPORT.md).
 
 ## Scope and isolation
@@ -18,7 +19,8 @@ There are no Bluetooth, Wi-Fi, receive-only radio, NFC, access-control, unlock,
 write, firmware-update or arbitrary-command handlers. Radio configuration is
 rejected at compilation, and the minimal target's component list excludes radio
 adapters. The historical `esp32s3`, `esp32s3-reviewed`, `esp32s3-radio-rx` targets,
-portable `firmware/core`, host authority and app are unchanged.
+portable `firmware/core` and host authority are unchanged. The new app entry is
+selected only by an explicit build-time flag.
 
 `CONFIG_APEX_SIGNED_READ_LAB_OPT_IN` defaults to `n`. When off, `app_main` is
 inert and the signing code is not compiled into the main component. SDK/ROM boot
@@ -127,12 +129,16 @@ and latency remain unmeasured. USB partial writes advance by the returned byte
 count; an error/timeout fences the peer and wipes its key without retry or fallback.
 After 4096 signed replies, the next eligible read closes the peer; resumption needs
 a separately authorised restart. Invalid frames consume bounded parser storage
-but there is no CPU/rate or DoS guarantee. A partial request may remain buffered
-across USB disconnect; fresh host challenges still prevent authentication of an
-old reply. Physical disconnect ownership and phone cleanup need future work.
+but there is no CPU/rate or DoS guarantee. Partial requests are discarded after
+500 ms without input. Detected USB SOF/bus loss after a connection is terminal for
+that boot and wipes the peer. SOF indicates bus presence, not whether a serial
+application is open; a port close without bus loss is not detected. Actual timing
+and phone/USB cleanup still require physical acceptance. Controlled SDK tests
+exercise the actual main loop, including partial writes, failure and timeout paths.
 
 Before physical use: review protocol/key custody and this implementation, identify
 the owned board and its flash layout, approve provisioning/flashing separately,
 measure real USB behaviour, signing latency/task stack and disconnect recovery,
-and implement/review production native crypto, transport and human pairing UI.
+and review/physically validate the opt-in native crypto, USB transport and human
+pairing UI. iPhone USB transport remains unavailable.
 No physical accessory, iPhone or Android acceptance is implied by software tests.

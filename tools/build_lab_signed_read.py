@@ -27,4 +27,10 @@ suffix = '-san' if args.sanitize else ''
 for name, source in [('apex-lab-peer', base / 'host_peer.c'), ('apex-lab-unit', root / 'tests/lab_signed_read_test.c')]:
     subprocess.run(['gcc', *flags, *map(str, sources), str(source), '-o', str(out / (name + suffix))], check=True)
 subprocess.run([str(out / ('apex-lab-unit' + suffix))], check=True)
+for mode in ['off', 'on']:
+    target = out / ('apex-lab-sdk-' + mode + suffix)
+    definitions = ['-DCONFIG_APEX_SIGNED_READ_LAB_OPT_IN=1'] if mode == 'on' else []
+    subprocess.run(['gcc', *flags, '-I', str(root / 'tests/lab-sdk-stubs'), *definitions,
+                    *(map(str, sources) if mode == 'on' else []), str(root / 'tests/lab_sdk_startup_test.c'), '-o', str(target)], check=True)
+    subprocess.run([str(target)], check=True)
 print('Built portable signed-read peer with pinned Monocypher 4.0.2' + (' (ASan/UBSan).' if args.sanitize else '.'))

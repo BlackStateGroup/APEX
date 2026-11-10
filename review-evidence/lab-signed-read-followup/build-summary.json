@@ -1,0 +1,36 @@
+{
+  "off": {
+    "image_bytes": 134672,
+    "image_sha256": "75181d400217453bf640e75a2aed747d8af61472e57cbd131555e6540009d9f5",
+    "elf_sha256": "13be0d6e6bed8b01937ba4899faeeb1222612b1fa8f52914bb239ea483c33b8a",
+    "config_sha256": "b275342bf2d0b0f3ce78def6f5d8f3c2fb2dfdd0217f7c2749c86f823e6b7077",
+    "opt_in": false,
+    "bluetooth": false,
+    "wifi": false,
+    "signer_linked": false,
+    "usb_install_linked": false,
+    "radio_start_symbols": [],
+    "flash_files": {
+      "0x0": "bootloader/bootloader.bin",
+      "0x8000": "partition_table/partition-table.bin",
+      "0x10000": "apex_signed_read_lab.bin"
+    }
+  },
+  "on": {
+    "image_bytes": 163120,
+    "image_sha256": "c2bdc333332112c47c84f659ec9fee6bcadcc3f1e965fefe3ac7ee97df772a73",
+    "elf_sha256": "b005039eb90b38be66a9ff27508b56abd2ad554ebdecb28e3dfb09cd80fc4611",
+    "config_sha256": "d060784ebf657fe64fed9fa79153e20114b61f19e9d1aa13fba2bce768023093",
+    "opt_in": true,
+    "bluetooth": false,
+    "wifi": false,
+    "signer_linked": true,
+    "usb_install_linked": true,
+    "radio_start_symbols": [],
+    "flash_files": {
+      "0x0": "bootloader/bootloader.bin",
+      "0x8000": "partition_table/partition-table.bin",
+      "0x10000": "apex_signed_read_lab.bin"
+    }
+  }
+}

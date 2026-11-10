@@ -10,6 +10,9 @@ import type { AccessorySignedExchange } from '../packages/core/accessory-trust.t
 import { encode, FrameDecoder, crc16 } from '../packages/protocol/index.ts';
 import type { Frame } from '../packages/protocol/index.ts';
 import { validateInfo, validateCapabilities } from '../packages/core/session.ts';
+import { AccessorySignedConnection } from '../packages/core/accessory-signed-connection.ts';
+import { nativeAccessoryTrustAdapters } from '../packages/core/accessory-native-adapters.ts';
+import { SignedReadLabController } from '../src/signed-read-lab-controller.ts';
 
 const root = resolve(import.meta.dirname, '..');
 // npm test picks up this file without changing the frozen dependency manifest.
@@ -195,4 +198,144 @@ test('persistent C process accepts fragmented sequential requests through one ho
     for (let i = 0; i < 12; i++) assert.deepEqual((await r.request('system.ping', Uint8Array.of(i, 0, 255))).body, [i, 0, 255]);
   } finally { r.close(); child.stdin.end(); }
   assert.equal(await closed, 0); assert.equal(stderr, '');
+});
+
+const turn = () => new Promise<void>(resolve => setImmediate(resolve));
+function gate() { let resolve!: () => void; const promise = new Promise<void>(r => { resolve = r; }); return { promise, resolve }; }
+const adapters = { randomBytes: (n: number) => new Uint8Array(randomBytes(n)), now: () => performance.now(),
+  verifyEd25519: async (key: Uint8Array, message: Uint8Array, signature: Uint8Array) => verify(null, message, publicKey(key), signature) };
+const approval = { label: 'Native C lab peer', publicKeyHex: first.key, confirmedPublicKeyHex: first.key,
+  keyVerification: 'out-of-band' as const, authorization: 'owned-or-authorized-lab' as const,
+  allowedOperations: ['system.info', 'system.capabilities', 'system.ping'] as const };
+class PipeUsb {
+  readonly source = 'usb' as const;
+  data = new Set<(b: Uint8Array) => void>(); disconnected = new Set<(e: Error) => void>();
+  connects = 0; writes = 0; closes = 0;
+  connectGate?: Promise<void>; writeGate?: Promise<void>; closeGate?: Promise<void>;
+  failClose = false; failWrite = false; failConnect = false;
+  response: (bytes: Uint8Array) => Uint8Array = b => b;
+  connect = async () => { this.connects++; await this.connectGate; if (this.failConnect) throw new Error('connect failure'); };
+  write = async (bytes: Uint8Array) => {
+    this.writes++;
+    const result = run(bytes); assert.equal(result.status, 0);
+    const reply = this.response(result.stdout);
+    for (let offset = 0; offset < reply.length; offset += 7) this.emit(reply.subarray(offset, offset + 7));
+    await this.writeGate;
+    if (this.failWrite) throw new Error('write failure');
+  };
+  disconnect = async () => { this.closes++; await this.connectGate; await this.closeGate; if (this.failClose) throw new Error('cleanup failure'); };
+  onData(fn: (bytes: Uint8Array) => void) { this.data.add(fn); return () => { this.data.delete(fn); }; }
+  onDisconnect(fn: (e: Error) => void) { this.disconnected.add(fn); return () => { this.disconnected.delete(fn); }; }
+  emit(bytes: Uint8Array) { for (const fn of this.data) fn(bytes); }
+}
+function connection(usb = new PipeUsb(), options = { leaseMs: 30000, exchangeMs: 5000 }, provider = adapters) {
+  const authority = new AccessoryTrustAuthority(provider); authority.confirmPairing(approval);
+  return { authority, usb, client: new AccessorySignedConnection(usb, authority, approval.label, options) };
+}
+
+test('real C signatures cross the connection adapter without a legacy handshake; close releases listeners', async () => {
+  const { client, usb } = connection(); await client.open(); assert.equal(usb.writes, 0);
+  assert.deepEqual((await client.request('system.ping', Uint8Array.of(1, 2))).body, [1, 2]);
+  await client.close(); assert.equal(usb.closes, 1); assert.equal(client.held, false);
+  assert.equal(usb.data.size, 0); assert.equal(usb.disconnected.size, 0);
+  await assert.rejects(client.open()); assert.equal(usb.connects, 1);
+});
+
+test('received valid signature cannot publish before the USB write acknowledges successfully', async () => {
+  for (const fail of [false, true]) {
+    const { client, usb } = connection(), hold = gate(); usb.writeGate = hold.promise; usb.failWrite = fail;
+    await client.open(); let settled = false;
+    const pending = client.request('system.info').then(() => { settled = true; }, e => { settled = true; throw e; });
+    const rejection = fail ? assert.rejects(pending, /write failure/) : null;
+    await turn(); assert.equal(settled, false); hold.resolve();
+    if (rejection) await rejection; else await pending;
+    await client.close(); assert.equal(usb.writes, 1);
+  }
+});
+
+test('malformed CRC, trailing bytes, duplicated frames and substituted IDs fence and close without retry', async () => {
+  const variants = [
+    (b: Uint8Array) => { const x = b.slice(); x[x.length - 1]! ^= 1; return x; },
+    (b: Uint8Array) => new Uint8Array(Buffer.concat([b, Buffer.of(0)])),
+    (b: Uint8Array) => new Uint8Array(Buffer.concat([b, b])),
+    (b: Uint8Array) => { const f = one(b); return encode({ ...f, id: f.id + 1 }); },
+  ];
+  for (const mutation of variants) {
+    const { client, usb } = connection(); usb.response = mutation; await client.open();
+    await assert.rejects(client.request('system.info')); await client.close();
+    assert.equal(usb.writes, 1); assert.equal(usb.closes, 1);
+  }
+});
+
+test('cancelling acquisition prevents sends; ownership stays held until native acquisition/cleanup settle', async () => {
+  const { client, usb, authority } = connection(), hold = gate(); usb.connectGate = hold.promise;
+  const opening = client.open(); const rejected = assert.rejects(opening, /cancelled/); await turn();
+  const closing = client.close(); assert.equal(client.held, true);
+  const replacement = new AccessorySignedConnection(usb, authority, approval.label);
+  await assert.rejects(replacement.open(), /owned/); hold.resolve();
+  await rejected; await closing; assert.equal(usb.writes, 0); assert.equal(client.held, false);
+});
+
+test('failed cleanup permanently fences reuse; unsolicited disconnect and expiry terminate the lease', async () => {
+  const { client, usb, authority } = connection(); usb.failClose = true; await client.open();
+  await assert.rejects(client.close(), /cleanup/); assert.equal(client.state, 'cleanup-failed');
+  await assert.rejects(new AccessorySignedConnection(usb, authority, approval.label).open(), /owned/);
+  const other = connection(undefined, { leaseMs: 15, exchangeMs: 10 }); await other.client.open();
+  await new Promise(r => setTimeout(r, 25)); await other.client.close(); assert.equal(other.usb.closes, 1);
+  const d = connection(); await d.client.open();
+  for (const fn of d.usb.disconnected) fn(new Error('detached'));
+  await d.client.close(); await assert.rejects(d.client.request('system.info'));
+});
+
+test('revocation/cancellation during real verification cannot publish a late successful result', async () => {
+  const hold = gate(); let entered = false;
+  const x = connection(undefined, undefined, { ...adapters, verifyEd25519: async (...args) => {
+    const valid = await adapters.verifyEd25519(...args); entered = true; await hold.promise; return valid;
+  } });
+  await x.client.open(); const pending = x.client.request('system.info'); const rejected = assert.rejects(pending);
+  await turn(); assert.equal(entered, true); x.authority.revoke(approval.label);
+  const closing = x.client.close(); hold.resolve(); await rejected; await closing;
+});
+
+test('native adapter uses strict bytes and preserves native verification failures', async () => {
+  const provider = { isSupported: () => true, randomChallenge: () => Array.from(randomBytes(32)), monotonicMilliseconds: () => 12,
+    verifyEd25519: async (key: number[], msg: number[], sig: number[]) => adapters.verifyEd25519(Uint8Array.from(key), Uint8Array.from(msg), Uint8Array.from(sig)) };
+  const native = nativeAccessoryTrustAdapters(provider);
+  const q = request(), reply = await exchange(q), transcript = accessorySignedReadTranscript(first.key, q, reply.payload);
+  assert.equal(await native.verifyEd25519(Buffer.from(first.key, 'hex'), transcript, reply.payload.subarray(-64)), true);
+  transcript[0]! ^= 1; assert.equal(await native.verifyEd25519(Buffer.from(first.key, 'hex'), transcript, reply.payload.subarray(-64)), false);
+  assert.equal(native.now(), 12); assert.equal(native.randomBytes(32).length, 32); assert.throws(() => native.randomBytes(31));
+  assert.throws(() => nativeAccessoryTrustAdapters({ ...provider, isSupported: () => false }));
+  for (const bad of [Array(32), Array(32).fill(256), Array(31).fill(1), Array(32).fill(1.1)])
+    assert.throws(() => nativeAccessoryTrustAdapters({ ...provider, randomChallenge: () => bad }).randomBytes(32));
+});
+
+test('pairing controller requires explicit enable, full independent key confirmation, grants and device selection', async () => {
+  const usb = new PipeUsb(); let lists = 0;
+  const controller = new SignedReadLabController({ adapters, usbUnavailable: null,
+    listDevices: async () => { lists++; return [{ id: 1, vendorId: 2, productId: 3, name: 'Untrusted descriptor' }]; }, createTransport: () => usb });
+  await assert.rejects(controller.refresh()); assert.throws(() => controller.confirm(approval)); assert.equal(lists, 0);
+  controller.enable(); assert.throws(() => controller.confirm({ ...approval, confirmedPublicKeyHex: second.key }));
+  assert.throws(() => controller.confirm({ ...approval, allowedOperations: [] }));
+  controller.confirm(approval); assert.equal(usb.connects, 0); await assert.rejects(controller.connect(1));
+  await controller.refresh(); await controller.connect(1); assert.equal(usb.writes, 0);
+  await controller.read('system.info'); assert.match(controller.snapshot().result!, /apex-s3-signed-lab/);
+  await controller.revoke(); assert.equal(controller.snapshot().pairing, null); assert.equal(controller.snapshot().result, null);
+  assert.equal(controller.snapshot().enabled, false); controller.dispose();
+});
+
+test('background revokes trust, cancels verification and discards stale inventory without auto-resume', async () => {
+  const hold = gate(), usb = new PipeUsb(); usb.writeGate = hold.promise;
+  const controller = new SignedReadLabController({ adapters, usbUnavailable: null,
+    listDevices: async () => [{ id: 1, vendorId: 2, productId: 3, name: 'Lab' }], createTransport: () => usb });
+  controller.enable(); controller.confirm(approval); await controller.refresh(); await controller.connect(1);
+  const pending = controller.read('system.info'), rejected = assert.rejects(pending); await turn();
+  controller.setForeground(false); hold.resolve(); await rejected; await turn();
+  assert.equal(controller.snapshot().pairing, null); assert.equal(controller.snapshot().result, null);
+  controller.setForeground(true); assert.equal(controller.snapshot().enabled, false);
+  assert.equal(usb.writes, 1); assert.equal(usb.connects, 1); controller.dispose();
+  const inventoryGate = gate(); const c = new SignedReadLabController({ adapters, usbUnavailable: null,
+    listDevices: async () => { await inventoryGate.promise; return [{ id: 1, vendorId: 2, productId: 3, name: 'Late' }]; }, createTransport: () => usb });
+  c.enable(); const pendingList = c.refresh(); c.setForeground(false); inventoryGate.resolve(); await pendingList;
+  assert.deepEqual(c.snapshot().devices, []); c.dispose();
 });

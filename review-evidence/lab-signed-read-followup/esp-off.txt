@@ -1,0 +1,86 @@
+[0/1] Re-running CMake...
+skip submodule check on internal CI
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+-- KCONFIG_REPORT_VERBOSITY not set, using default
+-- Project sdkconfig file /workspace/scratch/e0161ce4df4e/APEX/build/sdkconfig-lab-off
+NOTE: /workspace/scratch/e0161ce4df4e/esp-idf/components/bootloader/Kconfig.projbuild:383: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /workspace/scratch/e0161ce4df4e/esp-idf/components/bootloader/Kconfig.projbuild:423: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hw_support/./lowpower/port/esp32p4/Kconfig.p4_rev3_mspi_workaround:6: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_mm/Kconfig:20: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system/./port/soc/esp32s3/Kconfig.memory:21: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+Loading defaults file /workspace/scratch/e0161ce4df4e/APEX/firmware/esp32s3-signed-lab/sdkconfig.defaults...
+NOTE: unknown kconfig symbol 'BT_ENABLED' assigned to 'n' in /workspace/scratch/e0161ce4df4e/APEX/firmware/esp32s3-signed-lab/sdkconfig.defaults
+NOTE: unknown kconfig symbol 'ESP_WIFI_ENABLED' assigned to 'n' in /workspace/scratch/e0161ce4df4e/APEX/firmware/esp32s3-signed-lab/sdkconfig.defaults
+NOTE: Kconfig parser version: 1
+NOTE: Kconfig defaults policy: use sdkconfig
+NOTE: Status: Finished successfully
+-- Compiler supported targets: xtensa-esp-elf
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- App "apex_signed_read_lab" version: 3b12d5c-dirty
+-- Setting up mbedtls configuration
+-- Linkage type is PUBLIC
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_wdt/esp32s3/rom.wdt.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system/ld/esp32s3/memory.ld.in
+--   -> Preprocessing .in script: /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system/ld/esp32s3/memory.ld.in
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system/ld/esp32s3/sections.ld.in
+--   -> Preprocessing .in script: /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system/ld/esp32s3/sections.ld.in
+--   -> Applying ldgen processing: /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Adding linker script /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_regi2c/esp32s3/rom.regi2c.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_blockdev esp_bootloader_format esp_common esp_driver_dma esp_driver_gpio esp_driver_usb_serial_jtag esp_hal_ana_conv esp_hal_clock esp_hal_dma esp_hal_gpio esp_hal_gpspi esp_hal_mspi esp_hal_pmu esp_hal_regi2c esp_hal_rtc_timer esp_hal_security esp_hal_systimer esp_hal_timg esp_hal_touch_sens esp_hal_uart esp_hal_usb esp_hal_wdt esp_hw_support esp_libc esp_mm esp_partition esp_pm esp_ringbuf esp_rom esp_security esp_stdio esp_system esp_timer esp_usb_cdc_rom_console esptool_py freertos hal heap log main mbedtls partition_table pthread soc spi_flash xtensa
+-- Component paths: /workspace/scratch/e0161ce4df4e/esp-idf/components/app_update /workspace/scratch/e0161ce4df4e/esp-idf/components/bootloader /workspace/scratch/e0161ce4df4e/esp-idf/components/bootloader_support /workspace/scratch/e0161ce4df4e/esp-idf/components/cxx /workspace/scratch/e0161ce4df4e/esp-idf/components/efuse /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_app_format /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_blockdev /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_bootloader_format /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_common /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_driver_dma /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_driver_gpio /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_driver_usb_serial_jtag /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_ana_conv /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_clock /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_dma /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_gpio /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_gpspi /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_mspi /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_pmu /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_regi2c /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_rtc_timer /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_security /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_systimer /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_timg /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_touch_sens /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_uart /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_usb /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hal_wdt /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_hw_support /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_libc /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_mm /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_partition /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_pm /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_ringbuf /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_rom /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_security /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_stdio /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_system /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_timer /workspace/scratch/e0161ce4df4e/esp-idf/components/esp_usb_cdc_rom_console /workspace/scratch/e0161ce4df4e/esp-idf/components/esptool_py /workspace/scratch/e0161ce4df4e/esp-idf/components/freertos /workspace/scratch/e0161ce4df4e/esp-idf/components/hal /workspace/scratch/e0161ce4df4e/esp-idf/components/heap /workspace/scratch/e0161ce4df4e/esp-idf/components/log /workspace/scratch/e0161ce4df4e/APEX/firmware/esp32s3-signed-lab/main /workspace/scratch/e0161ce4df4e/esp-idf/components/mbedtls /workspace/scratch/e0161ce4df4e/esp-idf/components/partition_table /workspace/scratch/e0161ce4df4e/esp-idf/components/pthread /workspace/scratch/e0161ce4df4e/esp-idf/components/soc /workspace/scratch/e0161ce4df4e/esp-idf/components/spi_flash /workspace/scratch/e0161ce4df4e/esp-idf/components/xtensa
+-- Configuring done (6.7s)
+-- Generating done (0.5s)
+-- Build files have been written to: /workspace/scratch/e0161ce4df4e/APEX/build/lab-off
+[1/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/bootloader && /workspace/scratch/e0161ce4df4e/esp-tools/python_env/idf6.1_py3.12_env/bin/python /workspace/scratch/e0161ce4df4e/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/bootloader/bootloader.bin
+Bootloader binary size 0x5280 bytes. 0x2d80 bytes (36%) free.
+[3/12] No install step for 'bootloader'
+[4/12] Completed 'bootloader'
+[5/12] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[6/12] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[7/12] Linking C static library esp-idf/main/libmain.a
+[8/12] Generating esp-idf/esp_system/ld/sections.ld
+Skipping linker script generation, section names unchanged
+[9/12] Linking CXX executable apex_signed_read_lab.elf
+[10/12] Generating binary image from built executable
+esptool v5.6.0
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/apex_signed_read_lab.bin
+[11/12] cd /workspace/scratch/e0161ce4df4e/APEX/build/lab-off && /workspace/scratch/e0161ce4df4e/esp-tools/python_env/idf6.1_py3.12_env/bin/python /workspace/scratch/e0161ce4df4e/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/partition_table/partition-table.bin /workspace/scratch/e0161ce4df4e/APEX/build/lab-off/apex_signed_read_lab.bin
+apex_signed_read_lab.bin binary size 0x20e10 bytes. Smallest app partition is 0x100000 bytes. 0xdf1f0 bytes (87%) free.
+Executing action: all (aliases: build)
+Running ninja in directory /workspace/scratch/e0161ce4df4e/APEX/build/lab-off
+Executing "ninja all"...
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32s3 -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 2MB --flash-freq 80m 0x0 build/lab-off/bootloader/bootloader.bin 0x8000 build/lab-off/partition_table/partition-table.bin 0x10000 build/lab-off/apex_signed_read_lab.bin
+or from the "/workspace/scratch/e0161ce4df4e/APEX/build/lab-off" directory
+ python -m esptool --chip esp32s3 -b 460800 --before default-reset --after hard-reset write-flash "@flash_args"

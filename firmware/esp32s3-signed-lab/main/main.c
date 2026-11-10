@@ -8,6 +8,7 @@
 #include "monocypher.h"
 #include "driver/usb_serial_jtag.h"
 #include "esp_partition.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include <string.h>
@@ -43,10 +44,26 @@ void app_main(void) {
     config.tx_buffer_size = 1024; config.rx_buffer_size = 1024;
     if (usb_serial_jtag_driver_install(&config) != ESP_OK) { apex_lab_peer_close(&peer); return; }
     uint8_t bytes[256];
+    int saw_bus = 0;
+    int64_t last_input = 0;
     while (peer.active && !transport_failed) {
+        /* SOF is bus presence, not proof of an open serial app. A detected loss
+         * is terminal for this boot; never carry parser state into a new bus. */
+        int connected = usb_serial_jtag_is_connected();
+        if (saw_bus && !connected) break;
+        if (connected) saw_bus = 1;
+        int64_t now = esp_timer_get_time();
+        if (peer.stream.used && now - last_input >= 500000) {
+            crypto_wipe(peer.stream.buffer, sizeof(peer.stream.buffer));
+            peer.stream.used = 0;
+        }
         int count = usb_serial_jtag_read_bytes(bytes, sizeof(bytes), pdMS_TO_TICKS(50));
         if (count < 0) break;
-        if (count > 0) apex_lab_peer_feed(&peer, bytes, (size_t)count);
+        if (count > 0) {
+            if (!connected || (size_t)count > sizeof(bytes)) break;
+            last_input = esp_timer_get_time();
+            apex_lab_peer_feed(&peer, bytes, (size_t)count);
+        }
         vTaskDelay(1);
     }
     apex_lab_peer_close(&peer);

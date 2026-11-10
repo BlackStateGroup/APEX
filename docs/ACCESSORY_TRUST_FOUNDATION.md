@@ -1,7 +1,7 @@
 # Explicit accessory key trust: opt-in signed-read foundation
 
 This host library adds a memory-only pairing authority and a bounded signed-read
-protocol extension. It is **not enabled by the application or implemented by any
+protocol extension. It is **not enabled in the default application or implemented by any
 shipping firmware target**. Existing `DeviceSession`, Bluetooth/USB adapters,
 receiver firmware and AXP/1 frames remain unchanged. Their ordinary identity,
 capability and ping replies remain unauthenticated. Do not describe this library
@@ -9,10 +9,11 @@ as securing those paths.
 
 An isolated, disabled-by-default [USB-only laboratory peer](../firmware/esp32s3-signed-lab/README.md)
 now implements this extension in portable C for an ESP32-S3 target. Its tests
-run the compiled peer against this unchanged authority. That experimental target
-does not enable application pairing, supply native adapters, or establish physical
-accessory/mobile acceptance; its key provisioning and verification limits are
-documented separately.
+run the compiled peer against this unchanged authority. An explicitly selected
+[lab client](SIGNED_READ_LAB_CLIENT.md) now supplies native verification, memory-only
+human key confirmation and a USB signed-read connection adapter. These opt-in
+components do not establish physical accessory/mobile acceptance; the default
+app and legacy paths remain unchanged.
 
 The new reader fails closed if its peer does not implement the extension. There
 is no legacy fallback, automatic discovery trust, trust-on-first-use, automatic
@@ -29,9 +30,11 @@ pairing, transport retry, reconnect, write authorization or RF operation.
 - A monotonic millisecond clock. Invalid, throwing or regressing clocks
   permanently fault the authority, including previously created readers.
 
-The host test uses Node's Ed25519 implementation. There is no production
-Expo/native crypto adapter in this slice. Never ship the test's RFC 8032 public
-test seed or replace cryptographic verification with a fake successful callback.
+The host test uses Node's Ed25519 implementation. The opt-in lab client uses
+platform Ed25519 on Android 13+ and Apple CryptoKit through `modules/apex-trust`,
+with native CSPRNG and monotonic clocks. This is experimental integration, not
+production acceptance. Never ship the test's RFC 8032 public test seed or replace
+cryptographic verification with a fake successful callback.
 
 These adapters and the host application are trusted code, not a sandbox against
 malicious local JavaScript or compromised runtime intrinsics. Untrusted inbound
@@ -63,8 +66,9 @@ be revived by reusing its label/key. Revocation is checked before dispatch, afte
 exchange, and after crypto verification. A pending adapter is not physically
 cancelled by revocation, but its result cannot publish as authenticated.
 
-No persistent trust store, private key provisioning, certificate chain, backup,
-key export, pairing UI, access-policy service or remote credential is created.
+The authority creates no persistent trust store, private key provisioning,
+certificate chain, backup, key export, access-policy service or remote credential.
+The separate lab UI calls this authority only after explicit full-key confirmation.
 Reloading discards local approvals and requires explicit pairing again.
 
 ## Bounded AXP/1 extension
@@ -127,8 +131,10 @@ separately if needed. A signed ping must also echo the exact request body.
 `createReader` requires a current pairing, a trusted single-connection exchange
 adapter, and explicit lease/exchange bounds. The adapter receives only the new
 signed-read frame. It must transmit that exact frame and return the matching raw
-response without retry, fallback or reconnect. This slice has no production
-transport adapter. The host fixture exercises actual AXP encode/decode with
+response without retry, fallback or reconnect. The experimental
+`AccessorySignedConnection` supplies this boundary over the existing Android USB
+transport, including ownership and cleanup fences. It is not physically accepted
+production transport. Host fixtures exercise actual AXP encode/decode with
 fragmented reads and real Ed25519 verification.
 
 - One request per reader may be pending; concurrent requests are refused.
@@ -173,8 +179,9 @@ revocation/re-pairing during verification; expiry, rollback, timeout/cancellatio
 late completions; unsafe buffers; and capacity/exhaustion bounds. The budget-only
 test explicitly uses a fake verifier and is not cryptographic evidence.
 
-Future integration requires reviewed firmware key custody and signing, a real
-native verification provider, human pairing UI, trusted connection adapter,
-physical USB/BLE tests, clean transport ownership/cleanup, independent protocol
-review and a decision on host authentication. No accessory was paired, flashed,
+The isolated lab peer, native verification provider, human confirmation UI and
+USB connection adapter are now implemented as opt-in software. Remaining acceptance
+requires reviewed key custody, physical USB/phone tests, independent protocol
+review and a decision on host authentication before any broader capability.
+iPhone USB transport remains unavailable and this lab target offers no BLE path. No accessory was paired, flashed,
 connected, transmitted to or physically validated by this change.

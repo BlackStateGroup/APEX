@@ -1,4 +1,5 @@
 import { BrowserAxpControls } from './src/BrowserAxpControls.tsx';
+import { SignedReadLabScreen } from './src/SignedReadLabScreen.tsx';
 import { getBrowserAxpApplication, browserAxpSupport, browserAxpForeground, observeBrowserAxpLifecycle } from './src/platform/web-axp';
 import { IqWorkbench } from './src/IqWorkbench.tsx';
 import { HciComparisonWorkbench } from './src/HciComparisonWorkbench.tsx';
@@ -68,6 +69,9 @@ type NativeAcquisition = {
 };
 
 export default function App() {
+  // Explicit build-time laboratory entry point. The ordinary app never opens
+  // or shares transports with this separate, memory-only pairing workflow.
+  if (process.env.EXPO_PUBLIC_APEX_SIGNED_LAB === '1') return <SignedReadLabScreen />;
   const trialAuthoring = useRef(new BleTrialAuthoringWorkbench()).current;
   const [, refreshTrialAuthoring] = useState(0);
   const authoringChanged = () => refreshTrialAuthoring(value => value + 1);

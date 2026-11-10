@@ -1,5 +1,10 @@
 # First lab-only signed-read firmware peer
 
+**Historical baseline:** this report records the initial implementation at
+`3b12d5c5934d7d607b67dba0adba9f3adab074ec`. Its counts and limitations apply to
+that version. See the [follow-up report](../lab-signed-read-followup/REPORT.md)
+for completed native/client/lifecycle work and current remaining acceptance.
+
 Date: 10 November 2026 (UTC). Base: `095cc0366aceea4d3ba7f01027fd5c0589035c39`
 (merged PR #21). Branch: `feat/lab-signed-read-peer`.
 Status: implementation prepared for review; **not approved for merge, provisioning,

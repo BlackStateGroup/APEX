@@ -1,0 +1,30 @@
+✔ actual pairing screen requires full comparison and grants, resets comparison on edits and revokes in background (149.371765ms)
+✔ compiled C peer passes existing host verifier for info, capabilities and bounded binary ping (22.446743ms)
+✔ C signatures verify against the canonical host transcript for every ping length and all operations (35.684833ms)
+✔ modified signed body, challenge, version, operation, length and signature fail after CRC recomputation (22.366837ms)
+✔ different pinned key and a different native peer key cannot authenticate (4.443228ms)
+✔ replayed C responses fail for a fresh request and after a fresh authority (3.405403ms)
+✔ outer substitutions and valid signature over a different request never pass (12.256826ms)
+✔ all other outer and inner opcodes including legacy and arbitrary commands are silent (4.952275ms)
+✔ malformed signed payloads, non-requests and metadata bodies produce no response (2.234688ms)
+✔ bad CRC, reserved flags, version, kind, zero ID, oversized header and truncation are rejected (15.212902ms)
+✔ disabled, absent, malformed, wrong-size and mismatched provisioning fail before serving (14.152094ms)
+✔ offline provisioning generates distinct keys, private permissions and refuses overwrite (52.568634ms)
+✔ persistent C process accepts fragmented sequential requests through one host reader (20.190166ms)
+✔ real C signatures cross the connection adapter without a legacy handshake; close releases listeners (4.35889ms)
+✔ received valid signature cannot publish before the USB write acknowledges successfully (5.38631ms)
+✔ malformed CRC, trailing bytes, duplicated frames and substituted IDs fence and close without retry (8.628476ms)
+✔ cancelling acquisition prevents sends; ownership stays held until native acquisition/cleanup settle (0.737312ms)
+✔ failed cleanup permanently fences reuse; unsolicited disconnect and expiry terminate the lease (25.856297ms)
+✔ revocation/cancellation during real verification cannot publish a late successful result (3.265503ms)
+✔ native adapter uses strict bytes and preserves native verification failures (3.171621ms)
+✔ pairing controller requires explicit enable, full independent key confirmation, grants and device selection (3.422128ms)
+✔ background revokes trust, cancels verification and discards stale inventory without auto-resume (2.829886ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4502.148981
