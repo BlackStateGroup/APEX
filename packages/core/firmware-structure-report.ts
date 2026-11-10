@@ -84,7 +84,7 @@ function interpret(raw:unknown,source:FirmwareSource):ImportedFirmwareStructure[
          base.payloadChecksum==='unavailable-truncated')fail('false U-Boot payload completeness');
     }else if(declared<=available || base.trailingBytes!==null ||
       base.payloadChecksum!=='unavailable-truncated')fail('false U-Boot truncation');
-    return Object.freeze({...result,kind,status,
+    return Object.freeze({...result,kind,status:String(status),
       headerCrc:base.headerChecksum as 'matched'|'mismatched',
       payloadCrc:base.payloadChecksum as 'matched'|'mismatched'|'unavailable-truncated',
       compression:['none','gzip','bzip2','lzma','lzo','lz4'][base.compressionCode as number]??'unknown',
@@ -109,7 +109,7 @@ function interpret(raw:unknown,source:FirmwareSource):ImportedFirmwareStructure[
     const plausible=major===4&&minor===0&&block>=4096&&block<=1048576&&(block&(block-1))===0&&
       log===Math.log2(block)&&used!==null&&used>=96&&used<=source.bytes&&code>=1&&code<=6;
     if((status==='plausible-v4-header')!==plausible)fail('false SquashFS plausibility');
-    return Object.freeze({...result,kind,status,compression:expectedCompression,usedBytes:used});
+    return Object.freeze({...result,kind,status:String(status),compression:expectedCompression,usedBytes:used});
   }
   if(kind==='squashfs-legacy-big-endian'){
     if(source.format!=='squashfs'||status!=='unsupported-version')fail('unsupported SquashFS identity mismatch');
