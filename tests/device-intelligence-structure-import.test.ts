@@ -129,7 +129,7 @@ test('SquashFS version, compression, size, block consistency and claimed plausib
   }
 });
 test('warnings containing secret-shaped text never appear in imported summary',()=>{
-  const report=build(uimage());
+  const report:any=build(uimage());
   report.limitations=['password=HIDDEN_TEST_VALUE','privateKey=HIDDEN_TEST_VALUE','session=HIDDEN_TEST_VALUE'];
   report.structure.limitations=['password=HIDDEN_TEST_VALUE','token=HIDDEN_TEST_VALUE','root=HIDDEN_TEST_VALUE'];
   const linked=attachFirmwareStructureReport(JSON.stringify(report),a());
