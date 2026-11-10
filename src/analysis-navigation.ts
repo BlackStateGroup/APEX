@@ -13,6 +13,7 @@ export const ANALYSIS_INSPECTORS = [
   { id: 'static-nfc', label: 'Static NFC data area' },
   { id: 'hci-compare', label: 'HCI report byte comparison' },
   { id: 'iq', label: 'Offline I/Q' },
+  { id: 'wifi-security', label: 'Wi-Fi security report' },
 ] as const;
 export type AnalysisInspector = typeof ANALYSIS_INSPECTORS[number]['id'];
 export type Tab = 'Console' | 'Devices' | 'Analysis' | 'Evidence' | 'Research';

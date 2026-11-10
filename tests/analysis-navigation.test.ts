@@ -7,10 +7,10 @@ import { bleWorkbenchReducer, initialBleWorkbench } from '../src/ble-workbench.t
 import { phoneNdefWorkbenchReducer, initialPhoneNdefWorkbench } from '../src/phone-ndef-workbench.ts';
 const read = (path: string) => readFileSync(new URL(path, import.meta.url), 'utf8');
 const app = read('../App.tsx');
-test('thirteen typed inspector choices retaining the original twelve, Recording default, and separate explicit source routes', () => {
-  assert.equal(ANALYSIS_INSPECTORS.length, 13);
-  assert.equal(new Set(ANALYSIS_INSPECTORS.map(x => x.id)).size, 13);
-  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+test('fourteen typed inspector choices retaining the original thirteen, Recording default, and separate explicit source routes', () => {
+  assert.equal(ANALYSIS_INSPECTORS.length, 14);
+  assert.equal(new Set(ANALYSIS_INSPECTORS.map(x => x.id)).size, 14);
+  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq','wifi-security']);
   assert.equal(DEFAULT_ANALYSIS_INSPECTOR, 'recording');
   for (const item of ANALYSIS_INSPECTORS) assert.ok(isAnalysisInspector(item.id));
   for (const invalid of [null, undefined, '', 'NFC', 'Analysis', '__proto__']) assert.equal(isAnalysisInspector(invalid), false);
