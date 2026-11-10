@@ -1,0 +1,22 @@
+[
+  {
+    "package": "build-tools;37.0.0",
+    "directory": "build-tools/37.0.0"
+  },
+  {
+    "package": "cmake;3.22.1",
+    "directory": "cmake/3.22.1"
+  },
+  {
+    "package": "ndk;27.1.12297006",
+    "directory": "ndk/27.1.12297006"
+  },
+  {
+    "package": "platform-tools",
+    "directory": "platform-tools"
+  },
+  {
+    "package": "platforms;android-37.0",
+    "directory": "platforms/android-37.0"
+  }
+]

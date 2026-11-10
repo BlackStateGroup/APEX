@@ -1,0 +1,21 @@
+name: Workspace setup checks
+on:
+  pull_request:
+    paths:
+      - 'tools/setup_workspace.py'
+      - 'tools/source_archive_utils.py'
+      - 'tools/restore_source_archives.py'
+      - 'tests/test_workspace_setup.py'
+      - '.github/workflows/workspace-setup.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-preservation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - run: python3 -m unittest discover -s tests -p 'test_workspace_setup.py' -v
+      - run: python3 -m unittest discover -s tests -p 'test_source_archives.py' -v
+      - run: python3 tools/setup_workspace.py --help

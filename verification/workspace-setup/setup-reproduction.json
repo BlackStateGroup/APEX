@@ -1,0 +1,13 @@
+{
+  "schema": "apex.workspace-reproduction.v1",
+  "source": "R19",
+  "repository": "pothosware/SoapySDR",
+  "commit": "cf0c0eb5279aa202d5b3a48aee423294b10244eb",
+  "freshNetworkFetchVerified": true,
+  "trackedEntries": 167,
+  "setupTestsPassed": 6,
+  "archiveTestsPassed": 22,
+  "nativePrebuildGuard": "passed; all 31 source roots subsequently verified clean",
+  "xcodeAvailable": false,
+  "physicalDeviceTested": false
+}
