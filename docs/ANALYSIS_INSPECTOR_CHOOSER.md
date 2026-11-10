@@ -1,6 +1,6 @@
 # Memory-only Analysis inspector chooser
 
-Analysis opens at Recording and offers thirteen inspectors in one single-column chooser.
+Analysis opens at Recording and offers fourteen inspectors in one single-column chooser.
 The current selection survives tab changes, but reload resets it. Opening/closing
 the chooser does not deactivate the current inspector. Selection closes the
 chooser and requests shared scroll-to-top without loading, declaring, analysing,
@@ -32,6 +32,10 @@ handles; explicit Inspect reads and hashes the pair. Native arbitrary-file impor
 is unavailable. Exit/background releases the selection and report; an outstanding
 read/hash job keeps its slot until settlement. Navigation fences publication, not
 cancellation or erasure. No journal or acquisition path is added.
+
+The Wi-Fi security report opens a memory-only summary inspector. Its separate
+mobile status card reads the explicitly selected APEX HTTPS companion on demand.
+See [setup and scope](WIFI_STATUS_PEER.md).
 
 ## Verification scope
 

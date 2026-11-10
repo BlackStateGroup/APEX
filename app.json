@@ -36,7 +36,10 @@
     ],
     "ios": {
       "bundleIdentifier": "group.blackstate.apex",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "APEX connects to the status companion you select on your local network."
+      }
     }
   }
 }

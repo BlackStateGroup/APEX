@@ -52,6 +52,22 @@ test('console, equipment, offline workbench and research work in a real browser'
   expect(errors).toEqual([]);
 });
 
+test('Wi-Fi summary is inspectable at a phone viewport and clears on exit', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await page.getByRole('tab', { name: 'Analysis' }).click();
+  await selectAnalysisInspector(page, 'Wi-Fi security report');
+  const inspect = page.getByRole('button', { name: 'Inspect Wi-Fi report' });
+  await expect(inspect).toBeDisabled();
+  await page.getByRole('button', { name: 'Load example', exact: true }).click();
+  await inspect.click();
+  await expect(page.getByText('Review whether legacy WPA2 compatibility is still needed.')).toBeVisible();
+  await page.getByRole('tab', { name: 'Console' }).click();
+  await page.getByRole('tab', { name: 'Analysis' }).click();
+  await expect(inspect).toBeDisabled();
+  await expect(page.getByText('Review whether legacy WPA2 compatibility is still needed.')).toHaveCount(0);
+});
+
 test('console is usable at a phone viewport without horizontal overflow', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
   await page.getByRole('button', { name: 'Connect simulator' }).click();
