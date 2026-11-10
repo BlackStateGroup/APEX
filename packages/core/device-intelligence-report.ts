@@ -60,7 +60,13 @@ export function parseDeviceFirmwareReport(document:string):DeviceFirmwareReport 
     archive=Object.freeze({entriesExamined,unsafeEntryIndicators,incomplete:a.incomplete});
   } else if (passport.source.format==='tar') fail('tar must have archive summary');
   if (!Array.isArray(raw.limitations) || raw.limitations.length!==3) fail('invalid limitations');
-  const warnings=raw.limitations.map(safeText);
+  // Validate imported warning shape but never echo attacker-controlled or secret-bearing prose.
+  raw.limitations.forEach(safeText);
+  const warnings=[
+    'Imported metadata was not independently verified against original firmware on this phone.',
+    'No firmware execution or physical-device access is established by this report.',
+    'Markers, source labels and hashes do not establish credentials, authentication or root access.',
+  ];
   return Object.freeze({
     passport, archive, warnings:Object.freeze(warnings),
     evidence:'offline-static-only', rootAccess:'unknown', connectivity:'unknown',
