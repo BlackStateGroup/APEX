@@ -52,7 +52,7 @@ test('mobile importer refuses forged execution, unknown envelope fields and cred
     (x:any)=>{x.archive={entriesExamined:1,unsafeEntryIndicators:0,incomplete:false};},
     (x:any)=>{x.limitations=['secret','raw password=fiction'];},
   ]) {
-    const candidate:any=report();change(candidate);
+    const candidate:any=JSON.parse(JSON.stringify(report()));change(candidate);
     // Last case has two limitations, not three. Reject rather than echoing it to users.
     assert.throws(()=>parseDeviceFirmwareReport(JSON.stringify(candidate)));
   }
