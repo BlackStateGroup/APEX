@@ -1,0 +1,9 @@
+menu "APEX signed-read laboratory target"
+config APEX_SIGNED_READ_LAB_OPT_IN
+    bool "Enable USB-only signed reads using a separately provisioned lab key"
+    default n
+    help
+        Owned or authorised laboratory equipment only. Enables experimental
+        opcode 0x70 with info/capabilities/ping. No radio or legacy dispatch.
+        This option does not authorise flashing, provisioning or device use.
+endmenu

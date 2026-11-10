@@ -1,0 +1,33 @@
+Lab C checks passed: opt-in, key mismatch, erasure, signing budget, 200000 noise bytes.
+Disabled target source links and runs without any SDK/crypto/USB calls.
+Actual target source: 10 controlled SDK startup/partial-write/timeout/bus-loss/read-failure scenarios passed.
+Built portable signed-read peer with pinned Monocypher 4.0.2 (ASan/UBSan).
+✔ compiled C peer passes existing host verifier for info, capabilities and bounded binary ping (41.910889ms)
+✔ C signatures verify against the canonical host transcript for every ping length and all operations (68.584719ms)
+✔ modified signed body, challenge, version, operation, length and signature fail after CRC recomputation (49.779807ms)
+✔ different pinned key and a different native peer key cannot authenticate (10.153076ms)
+✔ replayed C responses fail for a fresh request and after a fresh authority (5.793548ms)
+✔ outer substitutions and valid signature over a different request never pass (26.402191ms)
+✔ all other outer and inner opcodes including legacy and arbitrary commands are silent (11.023652ms)
+✔ malformed signed payloads, non-requests and metadata bodies produce no response (5.18711ms)
+✔ bad CRC, reserved flags, version, kind, zero ID, oversized header and truncation are rejected (41.185857ms)
+✔ disabled, absent, malformed, wrong-size and mismatched provisioning fail before serving (39.581985ms)
+✔ offline provisioning generates distinct keys, private permissions and refuses overwrite (54.330462ms)
+✔ persistent C process accepts fragmented sequential requests through one host reader (18.571386ms)
+✔ real C signatures cross the connection adapter without a legacy handshake; close releases listeners (8.004777ms)
+✔ received valid signature cannot publish before the USB write acknowledges successfully (11.299052ms)
+✔ malformed CRC, trailing bytes, duplicated frames and substituted IDs fence and close without retry (19.709632ms)
+✔ cancelling acquisition prevents sends; ownership stays held until native acquisition/cleanup settle (0.764062ms)
+✔ failed cleanup permanently fences reuse; unsolicited disconnect and expiry terminate the lease (26.277884ms)
+✔ revocation/cancellation during real verification cannot publish a late successful result (7.108426ms)
+✔ native adapter uses strict bytes and preserves native verification failures (5.955127ms)
+✔ pairing controller requires explicit enable, full independent key confirmation, grants and device selection (6.436232ms)
+✔ background revokes trust, cancels verification and discards stale inventory without auto-resume (5.633943ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 710.64105

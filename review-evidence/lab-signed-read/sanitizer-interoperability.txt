@@ -1,0 +1,20 @@
+✔ compiled C peer passes existing host verifier for info, capabilities and bounded binary ping (44.391995ms)
+✔ C signatures verify against the canonical host transcript for every ping length and all operations (55.934713ms)
+✔ modified signed body, challenge, version, operation, length and signature fail after CRC recomputation (58.901756ms)
+✔ different pinned key and a different native peer key cannot authenticate (10.306655ms)
+✔ replayed C responses fail for a fresh request and after a fresh authority (5.915106ms)
+✔ outer substitutions and valid signature over a different request never pass (23.977122ms)
+✔ all other outer and inner opcodes including legacy and arbitrary commands are silent (10.68706ms)
+✔ malformed signed payloads, non-requests and metadata bodies produce no response (5.523216ms)
+✔ bad CRC, reserved flags, version, kind, zero ID, oversized header and truncation are rejected (38.510513ms)
+✔ disabled, absent, malformed, wrong-size and mismatched provisioning fail before serving (40.795273ms)
+✔ offline provisioning generates distinct keys, private permissions and refuses overwrite (53.04672ms)
+✔ persistent C process accepts fragmented sequential requests through one host reader (23.315139ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 616.197698

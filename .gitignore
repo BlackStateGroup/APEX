@@ -5,6 +5,7 @@ build/
 android/
 ios/
 !modules/**/android/
+!modules/**/ios/
 *.log
 .DS_Store
 test-results/
@@ -17,3 +18,9 @@ __pycache__/
 # Materialised upstream references are restored from pinned archives.
 research/upstream-sources/*/
 research/source-import-progress.json
+
+# Laboratory identities and per-build SDK configuration must never be committed.
+lab-key-partition.bin
+public-key.json
+firmware/esp32s3-signed-lab/sdkconfig*
+!firmware/esp32s3-signed-lab/sdkconfig.defaults

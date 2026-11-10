@@ -1,5 +1,10 @@
 # Accessory firmware
 
+The separate [signed-read laboratory target](esp32s3-signed-lab/README.md) adds
+opt-in USB-only Ed25519 replies with offline lab key provisioning. It is disabled
+by default and does not change any existing firmware target. Compilation and
+host-process tests do not authorise flashing or establish physical acceptance.
+
 `core/` is original portable C with fixed-size buffers and three system operations. `host/` runs that same core as a real process. `esp32s3/` supplies USB Serial/JTAG I/O with ESP-IDF v6.1. There are no radio, tag, CAN or industrial drivers in this firmware yet.
 
 From the repository root:
