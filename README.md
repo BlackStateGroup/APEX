@@ -104,6 +104,7 @@ blocked with every case unrun; it supplies no flashing or device-operation permi
 - [Project state and continuity](docs/PROJECT_STATE.md)
 - [Physical bench acceptance](docs/BENCH_ACCEPTANCE.md)
 - [REA research and firmware inspection](docs/REA_RESEARCH.md)
+- [Device Intelligence offline firmware passport and synthetic router lab](docs/DEVICE_INTELLIGENCE_IMPLEMENTATION.md) (new: static only, no real router access)
 - [Controlled offline BLE byte comparison](docs/BLE_DIFFERENTIAL_EXPERIMENT.md)
 
 The research branch defines the system. The dependent `feat/platform-foundation` branch establishes the Expo application, native Android module, shared protocol and portable C firmware. Review research before implementation. Physical hardware claims require separate evidence; no product-wide universal unlocking claim is made.
