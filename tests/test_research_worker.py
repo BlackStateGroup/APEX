@@ -209,6 +209,21 @@ os._exit(23)
         with self.assertRaisesRegex(w.Rejected, 'cancelled'):
             w.run_process([sys.executable, '-c', 'import time; time.sleep(20)'], lambda: True, 3, dict(os.environ))
 
+    def test_pipe_setup_failure_still_cleans_owned_process(self):
+        children = []
+        original = subprocess.Popen
+        def capture(*args, **kwargs):
+            child = original(*args, **kwargs)
+            children.append(child)
+            return child
+        with patch.object(w.subprocess, 'Popen', capture), patch.object(w.os, 'set_blocking', side_effect=OSError('pipe setup failed')):
+            with self.assertRaisesRegex(OSError, 'pipe setup failed'):
+                w.run_process([sys.executable, '-c', 'import time; time.sleep(20)'], lambda: False, 3, dict(os.environ))
+        self.assertEqual(len(children), 1)
+        self.assertIsNotNone(children[0].poll())
+        with self.assertRaises(ProcessLookupError):
+            os.killpg(children[0].pid, 0)
+
     @unittest.skipUnless(os.environ.get('APEX_WORKER_REAL_REA') == '1', 'explicit real REA integration mode')
     def test_actual_rea_over_owned_elf(self):
         self.worker.close()

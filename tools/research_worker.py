@@ -290,14 +290,18 @@ class Worker:
 
 
 def run_process(args, cancelled, deadline, environment, diagnostics=None):
-    p = subprocess.Popen(args, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True, env=environment, cwd=ROOT)
     selector = selectors.DefaultSelector()
-    for stream in (p.stdout, p.stderr):
-        os.set_blocking(stream.fileno(), False)
-        selector.register(stream, selectors.EVENT_READ)
+    try:
+        p = subprocess.Popen(args, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True, env=environment, cwd=ROOT)
+    except BaseException:
+        selector.close()
+        raise
     captured, errors, total, reason = bytearray(), bytearray(), 0, None
     end = time.monotonic() + deadline
     try:
+        for stream in (p.stdout, p.stderr):
+            os.set_blocking(stream.fileno(), False)
+            selector.register(stream, selectors.EVENT_READ)
         while selector.get_map():
             if cancelled() or time.monotonic() >= end:
                 reason = 'cancelled' if cancelled() else 'engine-timeout'
@@ -362,8 +366,11 @@ def run_process(args, cancelled, deadline, environment, diagnostics=None):
             except (OSError, subprocess.SubprocessError):
                 pass
         finally:
-            p.stdout.close()
-            p.stderr.close()
+            try:
+                p.stdout.close()
+                p.stderr.close()
+            except OSError:
+                clean = False
         if diagnostics:
             try:
                 record = {'exitCode': p.returncode, 'reason': reason, 'processGroupAbsent': clean,
