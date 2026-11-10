@@ -79,7 +79,7 @@ export function inspectFirmwareBytes(bytes, filename = 'firmware.bin', rawReaRep
   });
 }
 
-export function inspectFirmwareFile(path, rawReaReport = null) {
+export function readBoundedFirmwareFile(path) {
   if (typeof path !== 'string' || !path) throw new Error('Select a firmware file');
   const file = resolve(path);
   const fd = openSync(file, INPUT_FLAGS);
@@ -100,10 +100,15 @@ export function inspectFirmwareFile(path, rawReaReport = null) {
         after.dev !== before.dev || after.mtimeMs !== before.mtimeMs || after.ctimeMs !== before.ctimeMs) {
       throw new Error('Firmware file changed during bounded read');
     }
-    return inspectFirmwareBytes(bytes.subarray(0, received), basename(file), rawReaReport);
+    return { bytes: bytes.subarray(0, received), name: basename(file) };
   } finally {
     closeSync(fd);
   }
+}
+
+export function inspectFirmwareFile(path, rawReaReport = null) {
+  const { bytes, name } = readBoundedFirmwareFile(path);
+  return inspectFirmwareBytes(bytes, name, rawReaReport);
 }
 
 export function compareFirmwareReports(a, b) {
