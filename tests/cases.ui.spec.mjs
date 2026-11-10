@@ -19,10 +19,12 @@ test('case learning, verified export, restart, deletion and restore work on a ph
   expect(decoded.artifacts[2].parents).toHaveLength(2);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await mkdir('review-evidence/case-workspace', { recursive: true });
-  await page.screenshot({ path: 'review-evidence/case-workspace/phone.png', fullPage: true });
+  await page.screenshot({ path: 'review-evidence/case-workspace/export-phone.png', fullPage: true });
   await page.reload(); await page.getByRole('tab', { name: 'Cases', exact: true }).click();
   await page.getByRole('button', { name: 'Open Sensor bench', exact: true }).click();
   await expect(page.getByText('LOCAL CASE · REVISION 4', { exact: true })).toBeVisible();
+  await page.getByText('LOCAL CASE · REVISION 4', { exact: true }).scrollIntoViewIfNeeded();
+  await page.screenshot({ path: 'review-evidence/case-workspace/phone.png', fullPage: true });
   await expect(page.getByRole('button', { name: 'Delete this local case', exact: true })).toBeDisabled();
   await page.getByRole('textbox', { name: 'Case title to confirm deletion', exact: true }).fill('Sensor bench');
   await page.getByRole('button', { name: 'Delete this local case', exact: true }).click();

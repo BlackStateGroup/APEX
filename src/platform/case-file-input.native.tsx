@@ -27,7 +27,7 @@ export function CaseFileInput({ disabled, maxBytes, onDocument }: CaseFileInputP
         const { File, FileMode } = await import('expo-file-system'); if (!current()) throw new Error('Import cancelled');
         return new File(uri).open(FileMode.ReadOnly);
       }, current);
-      if (current()) { onDocument(new TextDecoder('utf-8', { fatal: true }).decode(bytes)); setMessage('Selected UTF-8 text loaded. Nothing saved until you confirm the action.'); }
+      if (current()) { onDocument(new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(bytes)); setMessage('Selected UTF-8 text loaded. Nothing saved until you confirm the action.'); }
     } catch (error) {
       if (error instanceof NativeLocalFileCloseError) uncertain = true;
       if (mounted.current) setMessage(uncertain ? 'File cleanup uncertain. Restart before importing again.' : error instanceof Error ? error.message : 'File import failed');

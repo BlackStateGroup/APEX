@@ -32,7 +32,7 @@ The WP-V identifiers from the existing roadmap remain stable. “Implemented” 
 | WP-V11, receive-only RF | Existing `firmware/` RadioLib work | Chosen radio/board/antenna, known permitted capture and physical reception checks |
 | WP-V12, Pwnagotchi | #23 generic Linux status companion | Exact fork/API/device intake. Generic companion reachability is not Pwnagotchi protocol support or password recovery |
 | WP-V13, instrument families | Existing NFC/BLE, IR, HCI, I/Q, C8 inspectors | Versioned Meshtastic, Chameleon/Proxmark, specialist USB, IR receiver/control and SDR sidecar integrations remain individual work packages |
-| WP-V14, full REA engine | #27 `tools/research-full-engine.mjs` and pinned full-engine CI | Genuine engine experiment evidence, independent review, broader owned firmware questions and interruption tests |
+| WP-V14, full REA engine | #27 `tools/research-full-engine.mjs` and pinned full-engine CI | Six functions and 260 reconstructed CRC vector results verified in CI and retained in #27. Independent review, broader owned firmware questions and interruption tests remain |
 | WP-V15, research worker | Existing local CLI and offline report import | Authenticated bounded submit/status/cancel/result API, durable jobs, deployment, restart uncertainty and phone connection. Not implemented |
 | WP-V16, recovery entry | Case source/result lineage can retain a complete record | One exact supported device/version/failure, permitted recovery method and observed physical outcome. No universal root/access claim |
 | WP-V17, benches | Existing offline CAN parsing | Named isolated CAN/OBD, Modbus/BACnet/OSDP simulators and fixtures before live adapter work |

@@ -12,6 +12,7 @@ Implemented on `feat/case-learning-workspace`, [draft PR #26](https://github.com
 - Bounded paired BLE/ranging JSON import/replay: missingness, monotonically increasing per-session timestamps, clock offset/uncertainty/validity, fixed pairing bound and session partition checks.
 - A small two-feature, two-class research model. Discovery determines acceptance regions; calibration/holdout validate without retuning. Missing observations, ambiguous regions, false positive unknowns, absent sham/control examples or inadequate sessions block profile creation.
 - Saved profiles link to exact source and validation artifacts. Reuse recomputes the original profile before applying it to unseen declared sessions, and refuses source/phone/reference mismatches.
+- Offline replay/learning CLI uses the same engine, hashes exact input bytes and rejects oversized/non-regular/invalid UTF-8 files.
 - Selected native text-file input, local export text and the existing native share gate. Native file reads remain bounded and keep ownership until handles close.
 
 ## Limits
@@ -24,11 +25,21 @@ This is not encrypted case storage or production trust. Digests detect inconsist
 
 ## Verification
 
-- Full local host run: **2,573 passed** before addition of the three native adapter cases.
+- [Foundation host CI](https://github.com/BlackStateGroup/APEX/actions/runs/42856713186/job/129971854330) at `b981df47f9e4153d4a44d688ac0f4e173a3af78b`: **2,576 host tests and 42 browser scenarios passed**, including phone-width case learning, export/restore, tamper rejection and two-tab conflict preservation.
+- Two additional offline CLI tests pass locally; the follow-up revision preserves a UTF-8 BOM in imported original text.
 - Final focused storage/replay/learning run: **20 passed**, including three tests executing the actual native adapter SQL against real host SQLite. These are not iPhone/Android SQLite acceptance.
 - TypeScript and the locked 542-entry dependency inventory passed.
 - iOS, Android and web JavaScript/Hermes exports passed.
-- Local Chromium was attempted and failed before rendering because the workspace rejects its Unix-domain socket. Dedicated phone-width and two-tab browser scenarios are included in foundation CI.
-- CI, screenshots and native compilation results are recorded separately once available.
+- Local Chromium was attempted and failed before rendering because the workspace rejects its Unix-domain socket. The browser scenarios then passed in GitHub CI.
+- [Browser evidence artifact](https://github.com/BlackStateGroup/APEX/actions/runs/42856713186/artifacts/13783052351); retained [phone-width export screenshot](../review-evidence/case-workspace/export-phone.png). Native compilation is tracked separately from physical acceptance.
 
 No hardware was contacted, installed or flashed. No main-branch merge occurred.
+
+## Offline paired replay
+
+```sh
+node tools/inspect-paired-observations.ts replay /path/to/dataset.json
+node tools/inspect-paired-observations.ts learn /path/to/dataset.json
+```
+
+The CLI accepts a local regular UTF-8 file up to 65,536 bytes. It performs no network calls, collection or device control. A valid replay can still contain abstentions; a valid learning result can still refuse profile publication.
