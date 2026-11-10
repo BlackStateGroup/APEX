@@ -5,8 +5,10 @@ import type { FlipperStatusRadio } from '../packages/core/flipper-status.ts';
 
 /** A dedicated manager used only by the opt-in iPhone screen. No write/monitor API. */
 export function flipperStatusPlxRadio(manager: BleManager): FlipperStatusRadio {
+  let readinessUncertain = false;
   return {
     async state() {
+      if (readinessUncertain) throw new Error('Bluetooth listener cleanup is uncertain. Restart APEX.');
       const initial = await manager.state();
       if (initial !== 'Unknown' && initial !== 'Resetting') return initial;
       return new Promise<string>((resolve, reject) => {
@@ -19,13 +21,13 @@ export function flipperStatusPlxRadio(manager: BleManager): FlipperStatusRadio {
           requested = true; selected = state;
           if (!registered) return;
           settled = true; clearTimeout(timer);
-          try { subscription?.remove(); } catch { reject(new Error('Bluetooth state listener cleanup failed')); return; }
+          try { subscription?.remove(); } catch { readinessUncertain = true; reject(new Error('Bluetooth state listener cleanup failed. Restart APEX.')); return; }
           if (selected) resolve(selected); else reject(new Error('Bluetooth readiness timed out. Check Settings and retry.'));
         };
         try {
           subscription = manager.onStateChange(state => { if (state !== 'Unknown' && state !== 'Resetting') finish(state); }, true);
           registered = true; if (requested) finish(selected);
-        } catch { clearTimeout(timer); settled = true; reject(new Error('Bluetooth readiness failed')); }
+        } catch { readinessUncertain = true; clearTimeout(timer); settled = true; reject(new Error('Bluetooth readiness failed. Restart APEX.')); }
       });
     },
     async scan(callback) {

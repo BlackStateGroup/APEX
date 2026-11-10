@@ -38,6 +38,15 @@ jobs:
       - run: npx expo export --platform web --output-dir dist-flipper
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test -c playwright.flipper.config.mjs
+      - name: Keep browser evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: flipper-screen-evidence
+          path: |
+            review-evidence/iphone-flipper/preview.png
+            test-results/
+          if-no-files-found: ignore
   ios:
     runs-on: macos-26
     timeout-minutes: 50

@@ -38,7 +38,15 @@ test('readiness handles initial OS state and synchronous callback cleanup before
     const radio = flipperStatusPlxRadio({ state: async () => 'Unknown', onStateChange(callback: (s: string) => void) {
       callback('PoweredOn'); return { remove() { removed++; if (cleanupThrows) throw new Error('remove failed'); } };
     } } as unknown as BleManager);
-    if (cleanupThrows) await assert.rejects(radio.state(), /cleanup/); else assert.equal(await radio.state(), 'PoweredOn');
+    if (cleanupThrows) {
+      await assert.rejects(radio.state(), /cleanup/);
+      await assert.rejects(radio.state(), /Restart/);
+    } else assert.equal(await radio.state(), 'PoweredOn');
     assert.equal(removed, 1);
   }
+});
+test('readiness registration uncertainty latches before a second SDK attempt', async () => {
+  let registrations = 0;
+  const radio = flipperStatusPlxRadio({ state: async () => 'Unknown', onStateChange() { registrations++; throw new Error('dispatch unknown'); } } as unknown as BleManager);
+  await assert.rejects(radio.state(), /Restart/); await assert.rejects(radio.state(), /Restart/); assert.equal(registrations, 1);
 });
