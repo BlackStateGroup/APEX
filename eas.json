@@ -1,0 +1,13 @@
+{
+  "build": {
+    "flipper-iphone": {
+      "distribution": "internal",
+      "ios": { "simulator": false, "buildConfiguration": "Release" },
+      "env": { "EXPO_PUBLIC_APEX_FLIPPER_STATUS": "1" }
+    },
+    "flipper-simulator": {
+      "extends": "flipper-iphone",
+      "ios": { "simulator": true }
+    }
+  }
+}
