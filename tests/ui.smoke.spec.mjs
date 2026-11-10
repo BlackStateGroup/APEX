@@ -1027,3 +1027,37 @@ test('Offline I/Q stages local synthetic files without inspection, paginates and
  await expect(page.getByText(/Exact metadata SHA-256:/)).toHaveCount(0);
  await expect(page.getByRole('button', { name: 'Inspect staged I/Q pair', exact: true })).toBeDisabled();
 });
+
+test('Firmware Passport workflow is safe and usable at an iPhone-sized browser viewport', async ({page}) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  await page.getByRole('tab',{name:'Analysis'}).click();
+  await selectAnalysisInspector(page,'Firmware Passport');
+  await expect(page.getByText('Device Intelligence · Firmware Passport')).toBeVisible();
+  const a=page.getByRole('textbox',{name:'Firmware Passport A JSON'});
+  const b=page.getByRole('textbox',{name:'Firmware Passport B JSON'});
+  await page.getByRole('button',{name:'Load labelled synthetic Passport A'}).click();
+  const source=await a.inputValue();
+  await expect(page.getByText(/Passport A · UNKNOWN · offline/)).toHaveCount(0);
+  await page.getByRole('button',{name:'Inspect Firmware Passport A'}).click();
+  await expect(page.getByText(/Root access: UNKNOWN/).first()).toBeVisible();
+  const modified=JSON.parse(source);
+  modified.passport.source.sha256='b'.repeat(64);
+  modified.passport.indicators.webManagementMarker=false;
+  await b.fill(JSON.stringify(modified));
+  await page.getByRole('button',{name:'Inspect Firmware Passport B'}).click();
+  await page.getByRole('button',{name:'Compare inspected firmware reports'}).click();
+  await expect(page.getByText(/Security patch established: NO/)).toBeVisible();
+  await expect(page.getByText(/changed marker classes:/)).toBeVisible();
+  await b.fill('{"execute":"root"}');
+  await expect(page.getByRole('button',{name:'Compare inspected firmware reports'})).toBeDisabled();
+  await page.getByRole('button',{name:'Inspect Firmware Passport B'}).click();
+  await expect(page.getByText(/Import rejected:/)).toBeVisible();
+  await expect(page.getByText(/Security patch established: NO/)).toHaveCount(0);
+  await page.getByRole('tab',{name:'Research'}).click();
+  await page.getByRole('tab',{name:'Analysis'}).click();
+  await selectAnalysisInspector(page,'Firmware Passport');
+  await expect(page.getByText(/Root access: UNKNOWN/)).toHaveCount(0);
+  await expect(a).toHaveValue(source);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+});
