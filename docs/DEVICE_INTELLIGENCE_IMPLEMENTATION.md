@@ -26,20 +26,20 @@ Install with the normal locked dependencies first:
 
 ~~~bash
 npm ci
-npm run intelligence:test
+node --test tests/device-intelligence*.test.ts tests/device-intelligence*.test.mjs
 npm run typecheck
 ~~~
 
 Inspect an **already acquired, permitted** local firmware file (the parent directory of the destination must already exist). The tool refuses to overwrite prior evidence:
 
 ~~~bash
-npm run intelligence:inspect -- /path/to/owned-firmware.bin /path/to/new-passport.json
+node tools/device-intelligence/inspect-firmware.mjs /path/to/owned-firmware.bin /path/to/new-passport.json
 ~~~
 
 For **an ELF only**, link a saved REA ELF-note report if and only if the SHA-256 and byte count match the inspected firmware:
 
 ~~~bash
-npm run intelligence:inspect -- /path/to/host-firmware.elf /path/to/new-passport.json --rea-report /path/to/rea-evidence.json
+node tools/device-intelligence/inspect-firmware.mjs /path/to/host-firmware.elf /path/to/new-passport.json --rea-report /path/to/rea-evidence.json
 ~~~
 
 An output has four relevant sections: a source-hashed offline passport, optional REA ELF evidence link, optional TAR safety indicators, and explicit inspection limitations. It contains **no raw firmware contents, credentials, passwords or key material**. The input is read with a bounded regular-file descriptor and never executed, decompressed, written back or transmitted.
