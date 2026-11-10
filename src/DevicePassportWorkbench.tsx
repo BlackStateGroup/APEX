@@ -5,6 +5,8 @@ import {
 } from '../packages/core/device-intelligence-report.ts';
 import type { DeviceFirmwareReport, OfflineFirmwareComparison } from '../packages/core/device-intelligence-report.ts';
 import { createOfflinePassport, describeUnknownBoundaries } from '../packages/core/device-intelligence.ts';
+import { attachFirmwareStructureReport } from '../packages/core/firmware-structure-report.ts';
+import type { ImportedFirmwareStructure } from '../packages/core/firmware-structure-report.ts';
 
 const synthetic = () => JSON.stringify({
   schemaVersion:1,kind:'apex.firmware-analysis',
@@ -54,29 +56,51 @@ function PassportCard({title,report}:{title:string;report:DeviceFirmwareReport})
 export function DevicePassportWorkbench({active}:{active:boolean}) {
   const [draftA,setDraftA]=useState('');
   const [draftB,setDraftB]=useState('');
+  const [structureDraft,setStructureDraft]=useState('');
+  const [linkedStructure,setLinkedStructure]=useState<ImportedFirmwareStructure|null>(null);
   const [reportA,setReportA]=useState<DeviceFirmwareReport|null>(null);
   const [reportB,setReportB]=useState<DeviceFirmwareReport|null>(null);
   const [comparison,setComparison]=useState<OfflineFirmwareComparison|null>(null);
   const [message,setMessage]=useState('Paste an exact JSON report exported by the desktop inspector, then inspect it.');
-  useEffect(()=>{if (!active){setReportA(null);setReportB(null);setComparison(null);}},[active]);
+  useEffect(()=>{if (!active){setReportA(null);setReportB(null);setComparison(null);setLinkedStructure(null);}},[active]);
   const edit=(slot:'A'|'B',value:string)=>{
     if(value.length>DEVICE_REPORT_MAX_CHARS) {
       setMessage('Input rejected: 65,536-character bound. Previous draft retained, no result available.');
-      if(slot==='A') setReportA(null); else setReportB(null);
+      if(slot==='A'){setReportA(null);setLinkedStructure(null);} else setReportB(null);
       setComparison(null);return;
     }
-    if(slot==='A'){setDraftA(value);setReportA(null);}else{setDraftB(value);setReportB(null);}
+    if(slot==='A'){setDraftA(value);setReportA(null);setLinkedStructure(null);}else{setDraftB(value);setReportB(null);}
     setComparison(null);setMessage('Draft edited. Inspect explicitly to obtain a new result.');
   };
   const inspect=(slot:'A'|'B')=>{
     try {
       const result=parseDeviceFirmwareReport(slot==='A'?draftA:draftB);
-      if(slot==='A') setReportA(result); else setReportB(result);
+      if(slot==='A'){setReportA(result);setLinkedStructure(null);} else setReportB(result);
       setComparison(null);setMessage('Report '+slot+' inspected as imported, unverified offline metadata.');
     } catch(error) {
-      if(slot==='A') setReportA(null);else setReportB(null);
+      if(slot==='A'){setReportA(null);setLinkedStructure(null);}else setReportB(null);
       setComparison(null);
       setMessage('Import rejected: '+(error instanceof Error?error.message:'invalid report'));
+    }
+  };
+  const editStructure=(value:string)=>{
+    if(value.length>32768){
+      setLinkedStructure(null);
+      setMessage('Structure report rejected: 32,768-character limit. Previous draft remains.');
+      return;
+    }
+    setStructureDraft(value);setLinkedStructure(null);
+    setMessage('Structure draft edited. Inspect explicitly against Passport A.');
+  };
+  const inspectStructure=()=>{
+    if(!reportA){setLinkedStructure(null);setMessage('Inspect Passport A before importing structure evidence.');return;}
+    try{
+      const result=attachFirmwareStructureReport(structureDraft,reportA.passport);
+      setLinkedStructure(result);
+      setMessage('Structure report matched to Passport A by declared SHA-256, size and format. Original bytes were not verified on this phone.');
+    }catch(error){
+      setLinkedStructure(null);
+      setMessage('Structure import rejected: '+(error instanceof Error?error.message:'invalid report'));
     }
   };
   if(!active)return null;
@@ -100,9 +124,29 @@ export function DevicePassportWorkbench({active}:{active:boolean}) {
       <Control label="Clear both Passport drafts" onPress={()=>{
         setDraftA('');setDraftB('');setReportA(null);setReportB(null);setComparison(null);setMessage('Cleared.');}}/>
     </View>
+    <View style={styles.result}>
+      <Text style={styles.heading}>Hash-bound firmware structure</Text>
+      <Text style={styles.text}>Paste a separate apex.firmware-structure report generated on the desktop. It can only attach to the exact SHA-256, byte length and firmware format of inspected Passport A. Imported CRC results are declarations, not independent mobile verification or signatures.</Text>
+      <TextInput accessibilityLabel="Firmware structure report JSON" multiline value={structureDraft} autoCapitalize="none"
+        autoCorrect={false} onChangeText={editStructure} style={styles.input}/>
+      <View style={styles.actions}>
+        <Control label="Inspect firmware structure against Passport A" disabled={!reportA||!structureDraft.length} onPress={inspectStructure}/>
+        <Control label="Clear firmware structure draft" onPress={()=>{setStructureDraft('');setLinkedStructure(null);setMessage('Structure draft cleared.');}}/>
+      </View>
+    </View>
     <Text accessibilityLiveRegion="polite" style={styles.text}>{message}</Text>
     {reportA&&<PassportCard title="Passport A" report={reportA}/>}
     {reportB&&<PassportCard title="Passport B" report={reportB}/>}
+    {linkedStructure&&<View style={styles.result}>
+      <Text style={styles.heading}>Linked structure · {linkedStructure.structure.kind}</Text>
+      <Text selectable style={styles.digest}>Source SHA-256: {linkedStructure.source.sha256}</Text>
+      <Text style={styles.text}>Status: {linkedStructure.structure.status}. Compression: {linkedStructure.structure.compression}.</Text>
+      <Text style={styles.text}>Reported U-Boot header CRC: {linkedStructure.structure.headerCrc};
+        payload CRC: {linkedStructure.structure.payloadCrc}. Declared payload size: {linkedStructure.structure.payloadBytes??'unknown'} bytes.</Text>
+      <Text style={styles.text}>SquashFS declared bytes used: {linkedStructure.structure.usedBytes??'unknown'}.</Text>
+      <Text style={styles.warning}>Original byte verification: NOT PERFORMED ON THIS PHONE. Signature: NOT VERIFIED. Root: UNKNOWN.</Text>
+      {linkedStructure.warnings.map((warning,i)=><Text key={i} style={styles.text}>{warning}</Text>)}
+    </View>}
     {comparison&&<View style={styles.result}>
       <Text style={styles.heading}>Exact offline comparison</Text>
       <Text style={styles.text}>Same SHA-256: {comparison.sameFirmwareBytes?'yes':'no'};
