@@ -53,7 +53,7 @@ An output has four relevant sections: a source-hashed offline passport, optional
 - A hash identifies the bytes read in that observation, not signed firmware authenticity. File changes between endpoint observations cannot be fully excluded.
 - The synthetic router lab never makes a network connection. Declared operator scope is **not proof of legal authority or a successful login**.
 - Every privilege boundary is deliberately **unknown** until independently verified through authorised hardware-specific tests.
-- The data-only Analysis UI is now implemented in source and awaits browser/native CI and device acceptance. The OpenWrt ubus request/reply protocol codec and a **Node-only HTTPS local/private lab transport** now exist. The latter uses an already-authorised operator session, explicitly supplied CA, exact endpoint/host, private network checks and fixed read-only calls, and is tested against a TLS loopback fixture. A physical OpenWrt adapter acceptance, login/user credential management, full extraction, advisory-aware comparison and recovery remain future work. Do not market them as implemented.
+- The data-only Analysis UI is now implemented in source and awaits browser/native CI and device acceptance. The OpenWrt ubus request/reply protocol codec and a **Node-only HTTPS local/private lab transport** now exist. The latter uses an already-authorised operator session, explicitly supplied CA, exact endpoint/private IPv4 literal, private network checks and fixed read-only calls, and is tested against a TLS loopback fixture. A physical OpenWrt adapter acceptance, login/user credential management, full extraction, advisory-aware comparison and recovery remain future work. Do not market them as implemented.
 
 ## Mobile operator workflow
 
