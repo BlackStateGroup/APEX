@@ -7,6 +7,7 @@ import { HciEvidenceReopen } from './src/HciEvidenceReopen.tsx';
 import { HciDocumentWorkbench } from './src/HciDocumentWorkbench.tsx';
 import { NfcStaticWorkbench } from './src/NfcStaticWorkbench.tsx';
 import { HciWorkbench } from "./src/HciWorkbench.tsx";
+import { WifiSecurityWorkbench } from './src/WifiSecurityWorkbench.tsx';
 import { IrWorkbench } from './src/IrWorkbench.tsx';
 import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';
 import { EvidenceExportWorkbench } from './src/EvidenceExportWorkbench.tsx';
@@ -527,6 +528,7 @@ export default function App() {
         <BleCandidateWorkbench active={tab === 'Analysis' && inspector === 'ble-candidate'} />
         <FlipperWorkbench active={tab === 'Analysis' && inspector === 'flipper'} />
         <IrWorkbench active={tab === 'Analysis' && inspector === 'ir'} />
+        {tab === 'Analysis' && inspector === 'wifi-security' && <WifiSecurityWorkbench />}
         <HciWorkbench active={tab === 'Analysis' && inspector === 'hci'} onDocument={document => { setSelectedHciDocument(previous => nextAnalysisSource(previous, { document })); selectInspector(ANALYSIS_ROUTES['selected-hci-event']); }} />
         <HciDocumentWorkbench active={tab === 'Analysis' && inspector === 'hci-document'} onStage={source => { setSelectedHciComparison(previous => nextAnalysisSource(previous, source)); selectInspector(ANALYSIS_ROUTES['staged-hci-report']); }} selectedSource={selectedHciDocument} store={evidenceStore} onSaved={async () => {
           try { setRecords(await evidenceStore.list()); }

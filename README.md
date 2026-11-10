@@ -26,7 +26,7 @@ Missing original design documents and the historical simulator image have been
 [restored with pinned provenance](docs/FOUNDATION_RESTORATION.md). Their historical
 claims are not acceptance of this continuation.
 
-Offline Analysis offers [thirteen inspectors](docs/ANALYSIS_INSPECTOR_CHOOSER.md),
+Offline Analysis offers [fourteen inspectors](docs/ANALYSIS_INSPECTOR_CHOOSER.md),
 including source-separated BLE trials, exact rational checks of declared numeric
 candidates, serialized NDEF and normalized phone NDEF. Selected HCI event documents
 support [exact local journal save/reopen](docs/hci-journal-workflow.md) and a separate
