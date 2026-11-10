@@ -89,7 +89,9 @@ test('expired authority, private-host mismatch, HTTP downgrade and URL credentia
   await loopback((_req,_body,res)=>{calls++;write(res,200,good());},async config=>{
     for(const mutation of [
       {nowMs:10000},{endpoint:config.endpoint.replace('https:','http:')},
-      {expectedHost:'example.com'},{endpoint:config.endpoint.replace('/ubus','/admin')},
+      {expectedHost:'example.com'},{endpoint:'https://test.lan/ubus',expectedHost:'test.lan'},
+      {endpoint:'https://localhost/ubus',expectedHost:'localhost'},
+      {endpoint:config.endpoint.replace('/ubus','/admin')},
       {endpoint:config.endpoint.replace('https://','https://user:pass@')},
       {method:'reboot'},
     ])await assert.rejects(readOwnedOpenWrtUbus({...config,...mutation}));
