@@ -10,7 +10,9 @@
 | tools/device-intelligence/inspect-firmware.mjs | Node-only static import of an exact regular file (16 B–64 MiB); format recognition for ELF/uImage/SquashFS/gzip/zip/tar; SHA-256; boolean-only service/credential-configuration markers; unsafe TAR entries are counted without extracting; exclusive JSON output | Decompress firmware; execute anything; detect a vulnerability; recover or print secrets; contact a device |
 | packages/core/device-intelligence-report.ts | Strict mobile-safe JSON report import and comparison; never upgrades marker changes into patch claims | No file selection, firmware execution or live router interaction |
 | src/DevicePassportWorkbench.tsx | Analysis → Firmware Passport, explicit two-slot paste/inspect/compare, synthetic example and security-boundary display | Device or firmware validation on a physical handset |
+| packages/core/openwrt-ubus.ts | Build exact, session-scoped JSON-RPC 2.0 `system.board` and `system.info` read requests; validate and redact responses | No session login, HTTP transport, credential discovery, remote access or root claims |
 | packages/core/router-lab.ts | Deterministic synthetic router state machine; connection does not imply login; declared scope and read-only operation checks; fixture responses tagged synthetic | Implement an OpenWrt API client; prove real administration; reach OS root; run mutation commands |
+| tests/device-intelligence-ubus.test.ts | Request allowlist, invalid sessions/scopes, permission-denied replies, ID mismatch and safe field projection | Live ubus/OS/hardware acceptance |
 | tests/device-intelligence-ui.test.ts | Strict mobile report envelopes, comparisons, source-only results and inspector wiring | Native view acceptance |
 | tests/device-intelligence.test.ts | Source integrity, schema, forged privilege, REA mismatch, read grants, emulator denial and immutable boundary graph regression suite | Actual OS/browser/native/hardware tests |
 | tests/device-intelligence-cli.test.mjs | CLI subprocess, malformed input, archive safety, redaction, format recognition and firmware comparison tests | Real firmware extraction or full advisory validation |
@@ -49,7 +51,7 @@ An output has four relevant sections: a source-hashed offline passport, optional
 - A hash identifies the bytes read in that observation, not signed firmware authenticity. File changes between endpoint observations cannot be fully excluded.
 - The synthetic router lab never makes a network connection. Declared operator scope is **not proof of legal authority or a successful login**.
 - Every privilege boundary is deliberately **unknown** until independently verified through authorised hardware-specific tests.
-- The data-only Analysis UI is now implemented in source and awaits browser/native CI and device acceptance. A real OpenWrt authenticated adapter, full extraction, advisory-aware firmware comparison and physical recovery remain future work. Do not market them as implemented.
+- The data-only Analysis UI is now implemented in source and awaits browser/native CI and device acceptance. The OpenWrt ubus request/reply **protocol codec** is now implemented, with no network transport or authenticated login. A live authenticated OpenWrt adapter, full extraction, advisory-aware firmware comparison and physical recovery remain future work. Do not market them as implemented.
 
 ## Mobile operator workflow
 
@@ -76,3 +78,9 @@ The first PR does not permit secret recovery, exploitation, bypass automation or
 - A connection event cannot become an authenticated session without an explicit separate synthetic state transition.
 - Denied/expired/mismatched scopes fail before the adapter publishes a simulated response.
 - CI must pass before merging; all physical acceptance remains unrun.
+
+## Read-only OpenWrt ubus codec
+
+The repo now contains a native-safe, transport-free JSON-RPC codec for two official OpenWrt ubus system methods: `system.board` and `system.info`. It takes an already-authorised, memory-held ubus session ID (32 hex characters, not the null session), exact source-hash scope and operator declaration; it refuses unknown/mutating functions, expired/mismatched scopes and bad request IDs. The server independently enforces session ACLs. Response projections retain only selected board/version or uptime fields, never an arbitrary returned JSON payload. A returned value is labelled *unverified ubus response* and is not root or even authenticated device identity.
+
+Official references: [OpenWrt ubus HTTP/JSON-RPC and ACLs](https://openwrt.org/docs/techref/ubus), [OpenWrt system method catalogue](https://openwrt.org/docs/guide-developer/ubus/system). No HTTP client has been connected; physical router acceptance still awaits a named authorised fixture, TLS trust decisions and safe token custody.
