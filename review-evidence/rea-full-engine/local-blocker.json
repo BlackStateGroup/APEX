@@ -1,0 +1,10 @@
+{
+  "provider": "ghidra",
+  "providerVersion": "12.1.4",
+  "operation": "procedure_pseudo_code",
+  "targetSha256": "a9d2393adc37fffa3ef8eed26344a20d572930ec207f26de96c07db07ea7cca5",
+  "result": "local-engine-started-but-bridge-failed",
+  "reason": "UnixDomainSockets.socket: Operation not permitted",
+  "pseudocodeReturned": false,
+  "targetExecuted": false
+}

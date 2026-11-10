@@ -1,0 +1,50 @@
+name: REA full-engine baseline
+on:
+  pull_request:
+    paths:
+      - 'tools/research-full-engine.mjs'
+      - 'tools/verify-full-engine.mjs'
+      - 'tests/rea-full-engine-verifier.test.mjs'
+      - '.github/workflows/rea-full-engine.yml'
+      - 'firmware/core/**'
+      - 'tools/reverse-engineering/package-lock.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: rea-full-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  decompile-owned-firmware:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: '25'
+      - run: npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional
+      - name: Verify retained evidence and reject controlled corruption
+        run: node --test tests/rea-full-engine-verifier.test.mjs
+      - name: Download and verify the supported Ghidra release
+        shell: bash
+        run: |
+          curl --fail --location --retry 2 --max-time 300 https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip -o "$RUNNER_TEMP/ghidra.zip"
+          echo 'ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db  '"$RUNNER_TEMP/ghidra.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/ghidra.zip" -d "$RUNNER_TEMP"
+          echo "GHIDRA_INSTALL_DIR=$RUNNER_TEMP/ghidra_12.1.4_PUBLIC" >> "$GITHUB_ENV"
+      - name: Decompile, restart, reject tampering and compare reconstructed CRC vectors
+        run: node tools/research-full-engine.mjs "$RUNNER_TEMP/apex-rea-full"
+      - name: Independently replay the fresh evidence without executing targets
+        run: node --permission --allow-fs-read="$GITHUB_WORKSPACE" --allow-fs-read="$RUNNER_TEMP/apex-rea-full" tools/verify-full-engine.mjs "$RUNNER_TEMP/apex-rea-full"
+      - name: Retain results including any failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rea-full-engine-evidence
+          path: ${{ runner.temp }}/apex-rea-full
+          if-no-files-found: error
