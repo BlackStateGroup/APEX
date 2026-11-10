@@ -1,0 +1,165 @@
+{
+  "archives": [
+    {
+      "file": "APEX-R01-flipperdevices--flipperzero-firmware-9981d9d4aa5e.tar.gz",
+      "bytes": 41544338,
+      "sha256": "b925caae4da07e85e61dce9ff3c2cac3cd972c4b32b95a20d1ee6c14cb73295c"
+    },
+    {
+      "file": "APEX-R02-GthiN89--FuckingCheapFlipperZero-DIY-Flipper-zero-The-real-on-83cd7d56d06e.tar.gz",
+      "bytes": 140705528,
+      "sha256": "be5e4fdc3b485e0fcb4bff444936a040acfd35485871e0b0985da044e121e763"
+    },
+    {
+      "file": "APEX-R03-BruceDevices--firmware-a59213f3ec6c.tar.gz",
+      "bytes": 101600591,
+      "sha256": "3bd0872cbba2eed7857c543a1a2f356df29cb3f67ee3c333df0ff5d53c276d1b"
+    },
+    {
+      "file": "APEX-R04-RfidResearchGroup--proxmark3-754bbae3d946.tar.gz",
+      "bytes": 86985635,
+      "sha256": "5553d14a6052ddfd94f2ada00bc45310143d5c397138654612cf0415f97425c6"
+    },
+    {
+      "file": "APEX-R05-RfidResearchGroup--ChameleonUltra-4c5bc2cb6b02.tar.gz",
+      "bytes": 34248752,
+      "sha256": "e8ca238e48f9c5871d64bea94f455e20a8f475474d1be498c7da75e5dee769e3"
+    },
+    {
+      "file": "APEX-R06-greatscottgadgets--hackrf-468c5d93b660.tar.gz",
+      "bytes": 34255511,
+      "sha256": "0dac2d2090bcb631b91b8956b21302f9b0590385614f2f463aa13d6919381ecd"
+    },
+    {
+      "file": "APEX-R07-meshtastic--firmware-f9c26505edb4.tar.gz",
+      "bytes": 13805316,
+      "sha256": "2c259a86f51c4b04771763d76c64ca717c3a9b3f277131d86b885bfb96f37ceb"
+    },
+    {
+      "file": "APEX-R08-jgromes--RadioLib-3a664b64099e.tar.gz",
+      "bytes": 11251601,
+      "sha256": "b7f55bf6a17507f78cd38633497690052d4f77e5f956cb6b5c31c1da3ef00c86"
+    },
+    {
+      "file": "APEX-R09-crankyoldgit--IRremoteESP8266-1e2f0f3ef0a9.tar.gz",
+      "bytes": 11700716,
+      "sha256": "b6794c2dbdaa876d09679ba115fbab036a8e77e15436bec798ea91ee780a5fe7"
+    },
+    {
+      "file": "APEX-R10-hathach--tinyusb-67570a60d4c8.tar.gz",
+      "bytes": 9665436,
+      "sha256": "8fea152a5e75aac17582640570859d324fa6ab05997ae4ae77ffd346f7b268ec"
+    },
+    {
+      "file": "APEX-R11-espressif--esp-idf-d445e947156f.tar.gz",
+      "bytes": 161033649,
+      "sha256": "cfc4e598510b2c2d3759a152f26ffd8c09603767a8468083a2ac8e02438e6217"
+    },
+    {
+      "file": "APEX-R12-zephyrproject-rtos--zephyr-0534e997eacb.tar.gz",
+      "bytes": 292676281,
+      "sha256": "63a82211c27b2f161061fd98d9720212d865b433c292c22fd6a903c7010a33e0"
+    },
+    {
+      "file": "APEX-R13-mik3y--usb-serial-for-android-4cb9e82cdcfa.tar.gz",
+      "bytes": 442894,
+      "sha256": "b2e1c607df20c3bd1a1bcbed5082f75e201a33559e877976b26f987800b683c2"
+    },
+    {
+      "file": "APEX-R14-expo--expo-dfb069d9cc5b.tar.gz",
+      "bytes": 347303930,
+      "sha256": "d01c31d3476795f4a619c65c7ce4f6f5749a123371f7a77751d1f6c2cfd44306"
+    },
+    {
+      "file": "APEX-R15-dotintent--react-native-ble-plx-92a496d60f81.tar.gz",
+      "bytes": 5505414,
+      "sha256": "530152eaed07719886a034cb6231f6ca9de30d9223b0715dde458d4cf5f27473"
+    },
+    {
+      "file": "APEX-R16-revtel--react-native-nfc-manager-c44f7110f791.tar.gz",
+      "bytes": 1735875,
+      "sha256": "668afe44ffa4fbbb862a306326a13c084fb1a499ad20daffc77ebb157dff17b6"
+    },
+    {
+      "file": "APEX-R17-merbanan--rtl_433-f35183aaf1d2.tar.gz",
+      "bytes": 3500496,
+      "sha256": "3b291f10c818f4a0e34d37e8217654710304a01c216a275e1935d4a6c47502b3"
+    },
+    {
+      "file": "APEX-R18-gnuradio--gnuradio-ec1bf153c922.tar.gz",
+      "bytes": 13257136,
+      "sha256": "23250a9339dbc9bc5b50ea863db37b57c2e5bf359981cc44ce0c7f5c4727bda1"
+    },
+    {
+      "file": "APEX-R19-pothosware--SoapySDR-cf0c0eb5279a.tar.gz",
+      "bytes": 582001,
+      "sha256": "4403ebc81aaa0e21ac2982f2e6b2ab979dcfc22ddc8bd7ad085a0b4aad0d6a7a"
+    },
+    {
+      "file": "APEX-R20-nfc-tools--libnfc-3fa0751ad58f.tar.gz",
+      "bytes": 736826,
+      "sha256": "f823584e51bbed5609d7faa6647767b190c398182dfee5e9947ab430f278a9cc"
+    },
+    {
+      "file": "APEX-R21-linux-can--can-utils-834ceef1f1ea.tar.gz",
+      "bytes": 696164,
+      "sha256": "4fe4b83c7eb584a371d498a70d2738568547e1e205609e52982a3f67cc1bfaac"
+    },
+    {
+      "file": "APEX-R22-hardbyte--python-can-b4f82abede25.tar.gz",
+      "bytes": 2613372,
+      "sha256": "7f228887ab856287aa0b55069f6b5cc2db0bd09220e91928889470a8b9ea59f7"
+    },
+    {
+      "file": "APEX-R23-pymodbus-dev--pymodbus-e0460de3f464.tar.gz",
+      "bytes": 5381996,
+      "sha256": "c72e719b9710ad7c5d3c788180afced2df351fb10de8958c78b4561128b05298"
+    },
+    {
+      "file": "APEX-R24-bacnet-stack--bacnet-stack-62e4340bf044.tar.gz",
+      "bytes": 22325994,
+      "sha256": "1669f2edf45ccf4e43f2cb228a83ed51823b1ca5462fb6bd45d8a90374a78457"
+    },
+    {
+      "file": "APEX-R25-osdp-dev--libosdp-3654c63685d9.tar.gz",
+      "bytes": 1599961,
+      "sha256": "4a093ebb4f6567cfc796cd80e2796852eee90b10dcd2b562be0d7aa16e9d47c6"
+    },
+    {
+      "file": "APEX-R26-sigmf--SigMF-60121977f5f8.tar.gz",
+      "bytes": 2945050,
+      "sha256": "06f48d7b4a75d0896aa3889dcaee92370def696ee6b80c9d1e28bb2c18c8fc19"
+    },
+    {
+      "file": "APEX-R27-jopohl--urh-1403d92987cc.tar.gz",
+      "bytes": 27086660,
+      "sha256": "f8bdb9f2b8e9ce0ccd814658e7630a4fd48756ae1d7da41eaf304ef9d92b2628"
+    },
+    {
+      "file": "APEX-R28-libusb--libusb-987c1170d001.tar.gz",
+      "bytes": 1171677,
+      "sha256": "66899a8efa282f6ed88a43f6a4458eef41ded00f1dd2275b4d2806885ec91880"
+    },
+    {
+      "file": "APEX-R29-RocketGod-git--mayhem-mobile-a18fca46f585.tar.gz",
+      "bytes": 26044750,
+      "sha256": "156030a36a46d055abe9bdcf2520942c1466d448413c4f02cca06a342eb387c2"
+    },
+    {
+      "file": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz.part1",
+      "bytes": 268435456,
+      "sha256": "399e01ecaeb31ede3ebaa3b35e286905fc583ee5e4ff1519d661e61311fd3ac8"
+    },
+    {
+      "file": "APEX-R30-portapack-mayhem--mayhem-firmware-97c349701723.tar.gz.part2",
+      "bytes": 266491933,
+      "sha256": "e500169337917bc9355306af460fc434d47efc8d7c0c4ce2c25246ad07bea075"
+    },
+    {
+      "file": "APEX-R31-morluto--rea-144843ccc26b.tar.gz",
+      "bytes": 49631058,
+      "sha256": "186e92a08125bd796c1aa71d9c1e9cd63712aaf4830dded7dae4e4866ba80274"
+    }
+  ],
+  "archiveBytes": 1986961997
+}

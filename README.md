@@ -2,6 +2,11 @@
 
 
 Current work and remaining gates: [current build status](docs/CURRENT_BUILD_STATUS.md).
+
+**Set up the app and all 31 research roots:** `python3 tools/setup_workspace.py --verify`.
+This fetches each exact source pin, installs the locked APEX/REA packages and checks the build.
+See [complete workspace setup](docs/WORKSPACE_SETUP.md) for prerequisites, archive restoration and native SDK boundaries.
+
 **Universal Master Key**: a modular electronic interoperability platform from Black State Group.
 
 **Mobile targets: iPhone and Android.** Native NFC and AXP Bluetooth integrations are implemented; physical phone/accessory testing remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
