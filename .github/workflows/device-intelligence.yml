@@ -4,6 +4,10 @@ on:
     paths:
       - 'packages/core/device-intelligence.ts'
       - 'packages/core/router-lab.ts'
+      - 'packages/core/device-intelligence-report.ts'
+      - 'src/DevicePassportWorkbench.tsx'
+      - 'src/analysis-navigation.ts'
+      - 'App.tsx'
       - 'tools/device-intelligence/**'
       - 'tests/device-intelligence*'
       - 'package.json'
@@ -26,6 +30,6 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Execute isolated input and privilege-boundary regression tests
-        run: node --test tests/device-intelligence.test.ts tests/device-intelligence-cli.test.mjs
+        run: npm run intelligence:test
       - name: Check React Native and shared TypeScript compatibility
         run: npm run typecheck
