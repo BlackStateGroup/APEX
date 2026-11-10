@@ -1,0 +1,41 @@
+name: Research worker checks
+on:
+  pull_request:
+    paths:
+      - 'tools/research_worker.py'
+      - 'tools/research-worker/**'
+      - 'packages/core/research-jobs.ts'
+      - 'src/research-client.ts'
+      - 'src/ResearchWorker.tsx'
+      - 'tests/*research*'
+      - '.github/workflows/research-worker.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  durable-jobs-and-real-rea:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: '25'
+      - run: npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional
+      - run: node --test tests/research-jobs.test.ts
+      - name: Install the verified Ghidra engine
+        run: |
+          curl --fail --location --retry 2 --max-time 300 https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip -o "$RUNNER_TEMP/ghidra.zip"
+          echo 'ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db  '"$RUNNER_TEMP/ghidra.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/ghidra.zip" -d "$RUNNER_TEMP"
+          echo "GHIDRA_INSTALL_DIR=$RUNNER_TEMP/ghidra_12.1.4_PUBLIC" >> "$GITHUB_ENV"
+          timeout 60 "$JAVA_HOME/bin/java" -version
+      - name: Verify TLS, restart uncertainty, cancellation and actual REA jobs
+        env:
+          APEX_WORKER_REAL_REA: '1'
+          APEX_WORKER_GHIDRA: '1'
+        run: python3 -m unittest discover -s tests -p 'test_research_worker.py' -v

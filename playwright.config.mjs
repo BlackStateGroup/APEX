@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 export default defineConfig({
-  testDir: './tests', testMatch: ['**/ui.smoke.spec.mjs', '**/cases.ui.spec.mjs'],
+  testDir: './tests', testMatch: ['**/ui.smoke.spec.mjs', '**/cases.ui.spec.mjs', '**/research-worker.ui.spec.mjs'],
   timeout: 30000, reporter: 'line', workers: 1,
   use: {
     baseURL: 'http://127.0.0.1:4173', browserName: 'chromium', headless: true,

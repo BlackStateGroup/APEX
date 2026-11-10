@@ -1,5 +1,6 @@
 import { BrowserAxpControls } from './src/BrowserAxpControls.tsx';
 import { CaseWorkspace } from './src/CaseWorkspace.tsx';
+import { ResearchWorker } from './src/ResearchWorker.tsx';
 import { getBrowserAxpApplication, browserAxpSupport, browserAxpForeground, observeBrowserAxpLifecycle } from './src/platform/web-axp';
 import { IqWorkbench } from './src/IqWorkbench.tsx';
 import { HciComparisonWorkbench } from './src/HciComparisonWorkbench.tsx';
@@ -549,6 +550,7 @@ export default function App() {
         <NfcStaticWorkbench active={tab === 'Analysis' && inspector === 'static-nfc'} />
         <IqWorkbench active={tab === 'Analysis' && inspector === 'iq'} />
         <CaseWorkspace active={tab === 'Cases'} />
+        <ResearchWorker active={tab === 'Research'} />
         <EvidenceBundleWorkbench active={tab === 'Evidence'} />
         <EvidenceExportWorkbench active={tab === 'Evidence'} store={evidenceStore} />
         {tab === 'Evidence' && <>
