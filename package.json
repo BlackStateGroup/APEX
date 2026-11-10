@@ -24,7 +24,7 @@
     "research:setup": "npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional",
     "research:inspect": "node tools/inspect-firmware.mjs",
     "intelligence:inspect": "node tools/device-intelligence/inspect-firmware.mjs",
-    "intelligence:test": "node --test tests/device-intelligence*.test.ts tests/device-intelligence-cli.test.mjs"
+    "intelligence:test": "node --test tests/device-intelligence*.test.ts tests/device-intelligence*.test.mjs"
   },
   "dependencies": {
     "base64-js": "1.5.1",
