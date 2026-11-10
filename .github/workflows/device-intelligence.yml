@@ -33,12 +33,12 @@ jobs:
       - name: Compile APEX-owned portable C firmware as an actual ELF analysis subject
         run: npm run firmware:build
       - name: Inspect real compiled host ELF without executing inspection target
-        run: npm run intelligence:inspect -- build/apex-firmware "$RUNNER_TEMP/apex-host-passport.json"
+        run: node tools/device-intelligence/inspect-firmware.mjs build/apex-firmware "$RUNNER_TEMP/apex-host-passport.json"
       - name: Reopen passport and reject any false privilege claims
         run: |
           node -e "const p = require(process.env.RUNNER_TEMP + '/apex-host-passport.json'); if (p.passport.source.format !== 'elf' || p.passport.access.root !== 'unknown' || p.inspection.firmwareExecuted || p.passport.deviceConnected) process.exit(1);"
 
       - name: Execute isolated input and privilege-boundary regression tests
-        run: npm run intelligence:test
+        run: node --test tests/device-intelligence*.test.ts tests/device-intelligence*.test.mjs
       - name: Check React Native and shared TypeScript compatibility
         run: npm run typecheck
