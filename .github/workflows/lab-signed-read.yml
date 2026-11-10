@@ -1,0 +1,54 @@
+name: Lab-only signed-read peer
+on:
+  pull_request:
+    paths:
+      - 'firmware/lab_signed_read/**'
+      - 'firmware/esp32s3-signed-lab/**'
+      - 'firmware/core/**'
+      - 'packages/core/accessory-trust.ts'
+      - 'packages/protocol/**'
+      - 'tests/lab*'
+      - 'tools/*lab_signed_read*'
+      - '.github/workflows/lab-signed-read.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  interoperability:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - run: python3 tools/build_lab_signed_read.py
+      - run: node --test tests/lab-signed-read.test.ts tests/accessory-trust.test.ts
+      - run: python3 tools/build_lab_signed_read.py --sanitize
+      - run: APEX_LAB_SANITIZE=1 node --test tests/lab-signed-read.test.ts
+  esp32s3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    container: espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c
+    strategy:
+      matrix:
+        mode: ['off', 'on']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Compile only, never flash or provision
+        shell: bash
+        run: |
+          . /opt/esp/idf/export.sh
+          project="$PWD/firmware/esp32s3-signed-lab"
+          defaults="$project/sdkconfig.defaults"
+          if [ '${{ matrix.mode }}' = on ]; then
+            printf 'CONFIG_APEX_SIGNED_READ_LAB_OPT_IN=y\n' > "$RUNNER_TEMP/lab-on.defaults"
+            defaults="$defaults;$RUNNER_TEMP/lab-on.defaults"
+          fi
+          idf.py -C "$project" -B "$PWD/build/lab-${{ matrix.mode }}" \
+            -D "SDKCONFIG=$PWD/build/sdkconfig-lab-${{ matrix.mode }}" \
+            -D "SDKCONFIG_DEFAULTS=$defaults" -D IDF_TARGET=esp32s3 build

@@ -7,6 +7,13 @@ receiver firmware and AXP/1 frames remain unchanged. Their ordinary identity,
 capability and ping replies remain unauthenticated. Do not describe this library
 as securing those paths.
 
+An isolated, disabled-by-default [USB-only laboratory peer](../firmware/esp32s3-signed-lab/README.md)
+now implements this extension in portable C for an ESP32-S3 target. Its tests
+run the compiled peer against this unchanged authority. That experimental target
+does not enable application pairing, supply native adapters, or establish physical
+accessory/mobile acceptance; its key provisioning and verification limits are
+documented separately.
+
 The new reader fails closed if its peer does not implement the extension. There
 is no legacy fallback, automatic discovery trust, trust-on-first-use, automatic
 pairing, transport retry, reconnect, write authorization or RF operation.

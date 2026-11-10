@@ -1,0 +1,2 @@
+Lab C checks passed: opt-in, key mismatch, erasure, signing budget, 200000 noise bytes.
+Built portable signed-read peer with pinned Monocypher 4.0.2 (ASan/UBSan).

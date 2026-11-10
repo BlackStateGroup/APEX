@@ -1,0 +1,38 @@
+✔ real Ed25519 signature and existing AXP framing authenticate exact read bytes without changing AXP/1 (6.728074ms)
+✔ unknown peers, missing approval, key mismatch, implicit grants and replacement cannot auto-pair (0.523301ms)
+✔ explicit per-operation grants are copied; unsupported transmit/radio and inherited names never dispatch (0.884376ms)
+✔ legacy, unsupported, unsigned, malformed and envelope-substituted replies fail once with no downgrade (2.967354ms)
+✔ valid recomputed CRC cannot rescue modified body, challenge, operation or signature (2.398293ms)
+✔ wrong pinned key cannot verify, and a valid signature over a different request is rejected (1.597594ms)
+✔ old signed replies cannot be replayed across fresh challenges or readers (1.74093ms)
+✔ duplicate CSPRNG output is rejected across readers and re-pairing, before any second dispatch (0.744906ms)
+✔ revocation followed by re-pairing cannot revive an old reader or an in-flight verification (3.689374ms)
+✔ lease expiry, rollback, non-finite clocks and clock exceptions fail closed before dispatch (0.849003ms)
+✔ expiry during verification, explicit close, timeout and late completions cannot publish trust (17.283241ms)
+✔ one pending exchange, explicit cancellation and crypto errors never trigger retries (2.718778ms)
+✔ mutating adapter buffers cannot change privately retained request or verified reply (0.574297ms)
+✔ shared, resizable, detached, non-byte and shadowed large input are rejected before exchange (0.463039ms)
+✔ request and reply maxima fit inside the existing 512-byte envelope; oversized replies reject (1.007232ms)
+✔ pairing and lifetime challenge budgets are bounded without evicting replay history (184.27711ms)
+✔ canonical transcript agrees byte-for-byte with independent peer construction (0.663082ms)
+✔ monotonic exchange deadline rejects overdue microtasks even before the timer can run (0.847971ms)
+✔ compiled C peer passes existing host verifier for info, capabilities and bounded binary ping (19.30276ms)
+✔ C signatures verify against the canonical host transcript for every ping length and all operations (35.73217ms)
+✔ modified signed body, challenge, version, operation, length and signature fail after CRC recomputation (26.223875ms)
+✔ different pinned key and a different native peer key cannot authenticate (7.497722ms)
+✔ replayed C responses fail for a fresh request and after a fresh authority (3.258893ms)
+✔ outer substitutions and valid signature over a different request never pass (9.948077ms)
+✔ all other outer and inner opcodes including legacy and arbitrary commands are silent (6.006916ms)
+✔ malformed signed payloads, non-requests and metadata bodies produce no response (2.796907ms)
+✔ bad CRC, reserved flags, version, kind, zero ID, oversized header and truncation are rejected (15.178093ms)
+✔ disabled, absent, malformed, wrong-size and mismatched provisioning fail before serving (17.095754ms)
+✔ offline provisioning generates distinct keys, private permissions and refuses overwrite (51.554723ms)
+✔ persistent C process accepts fragmented sequential requests through one host reader (17.333231ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3045.133628
