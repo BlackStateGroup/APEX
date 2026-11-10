@@ -4,6 +4,7 @@ on:
     paths:
       - 'packages/core/device-intelligence.ts'
       - 'packages/core/router-lab.ts'
+      - 'packages/core/openwrt-ubus.ts'
       - 'packages/core/device-intelligence-report.ts'
       - 'src/DevicePassportWorkbench.tsx'
       - 'src/analysis-navigation.ts'
