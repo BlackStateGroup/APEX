@@ -1061,3 +1061,52 @@ test('Firmware Passport workflow is safe and usable at an iPhone-sized browser v
   await expect(a).toHaveValue(source);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });
+
+test('Firmware Passport binds a separate structural report by exact source hash and clears stale associations', async ({page})=>{
+  await page.setViewportSize({width:390,height:844});await page.goto('/');
+  await page.getByRole('tab',{name:'Analysis'}).click();
+  await selectAnalysisInspector(page,'Firmware Passport');
+  await page.getByRole('button',{name:'Load labelled synthetic Passport A'}).click();
+  const a=page.getByRole('textbox',{name:'Firmware Passport A JSON'});
+  const original=JSON.parse(await a.inputValue());
+  original.passport.source.format='uimage';original.passport.source.bytes=128;
+  original.passport.source.sha256='d'.repeat(64);
+  await a.fill(JSON.stringify(original));
+  await page.getByRole('button',{name:'Inspect Firmware Passport A'}).click();
+  const structure={
+    schemaVersion:1,kind:'apex.firmware-structure',
+    source:{name:'synthetic-uimage.bin',sha256:'d'.repeat(64),bytes:128,format:'uimage'},
+    structure:{
+      schemaVersion:1,kind:'uboot-legacy',status:'complete',
+      headerChecksum:'matched',payloadChecksum:'matched',
+      declaredPayloadBytes:64,availablePayloadBytes:64,trailingBytes:0,
+      osCode:5,architectureCode:2,imageTypeCode:2,compressionCode:1,
+      evidence:'static-header-only',trustedFirmware:false,rootAccess:'unknown',
+      limitations:['Checksum is not a signature.','No image name displayed.','No firmware executed.'],
+    },
+    inspection:{method:'bounded-static-header-inspection',
+      targetExecuted:false,networkContact:false,decompressed:false,extracted:false},
+    limitations:['Offline image source claim.','No kernel execution.','No root operation.'],
+  };
+  const input=page.getByRole('textbox',{name:'Firmware structure report JSON'});
+  await input.fill(JSON.stringify(structure));
+  await page.getByRole('button',{name:'Inspect firmware structure against Passport A'}).click();
+  await expect(page.getByText('Linked structure · uboot-legacy')).toBeVisible();
+  await expect(page.getByText(/Signature: NOT VERIFIED\. Root: UNKNOWN/)).toBeVisible();
+  structure.source.sha256='e'.repeat(64);
+  await input.fill(JSON.stringify(structure));
+  await page.getByRole('button',{name:'Inspect firmware structure against Passport A'}).click();
+  await expect(page.getByText(/Structure import rejected:/)).toBeVisible();
+  await expect(page.getByText('Linked structure · uboot-legacy')).toHaveCount(0);
+  structure.source.sha256='d'.repeat(64);
+  await input.fill(JSON.stringify(structure));
+  await page.getByRole('button',{name:'Inspect firmware structure against Passport A'}).click();
+  await expect(page.getByText('Linked structure · uboot-legacy')).toBeVisible();
+  await a.fill(JSON.stringify({...original,passport:{...original.passport,source:{...original.passport.source,sha256:'b'.repeat(64)}}}));
+  await expect(page.getByText('Linked structure · uboot-legacy')).toHaveCount(0);
+  await page.getByRole('tab',{name:'Research'}).click();
+  await page.getByRole('tab',{name:'Analysis'}).click();
+  await selectAnalysisInspector(page,'Firmware Passport');
+  await expect(page.getByText('Linked structure · uboot-legacy')).toHaveCount(0);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+});
