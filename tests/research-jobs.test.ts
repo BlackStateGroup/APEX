@@ -12,6 +12,13 @@ const job: ResearchJob = { id: request.requestId, request, state: 'succeeded', c
 const result: ResearchResult = { schema: 'apex.research-result.v1', jobId: job.id, request, target: { sha256: request.targetSha256, bytes: 128, label: 'owned.elf' }, reaVersion: '6.8.0', provider: 'ghidra/12.1.4', kind: 'pseudocode', output: 'synthetic CRC pseudocode', outputSha256: sha('synthetic CRC pseudocode'), targetExecuted: false };
 function response(value: unknown, status = 200) { const body = JSON.stringify(value); return new Response(body, { status, headers: { 'content-type': 'application/json', 'content-length': String(Buffer.byteLength(body)) } }); }
 const client = (fetcher: typeof fetch) => new ResearchClient('https://worker.example', 'x'.repeat(43), digest, fetcher);
+test('browser transport retains its global receiver instead of the client instance', async () => {
+  const c = client(async function (this: unknown) {
+    assert.equal(this, globalThis);
+    return response({ jobs: [] });
+  });
+  assert.deepEqual(await c.jobs(), []);
+});
 test('research contract rejects arbitrary operations, ambiguous fields and insecure endpoints', () => {
   for (const endpoint of ['http://worker.example', 'https://user:token@worker.example', 'https://worker.example/a', 'https://worker.example?token=x']) assert.throws(() => researchEndpoint(endpoint));
   for (const r of [{ ...request, operation: 'shell' }, { ...request, symbol: 'main' }, { ...request, path: '/etc/passwd' }, { ...request, requestId: '../foo' }]) assert.throws(() => researchRequest(r));

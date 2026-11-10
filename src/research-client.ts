@@ -16,7 +16,7 @@ export class ResearchClient {
   constructor(endpoint: string, token: string, digest: Digest, transport: typeof fetch = fetch) {
     this.endpoint = researchEndpoint(endpoint);
     if (!/^[A-Za-z0-9_-]{43,128}$/.test(token)) throw new Error('Enter the worker access token');
-    this.token = token; this.digest = digest; this.transport = transport;
+    this.token = token; this.digest = digest; this.transport = transport.bind(globalThis);
   }
   disconnect() { this.disconnected = true; this.token = ''; for (const request of this.requests) request.abort(); }
   private async call(path: string, body?: unknown): Promise<string> {

@@ -1,5 +1,5 @@
 export const catalogue = [
-  { domain: 'Firmware / REA', status: 'Host static checks passed', detail: 'ELF-note import and evidence logic; desktop REA CLI plus GNU binary metadata; no decompiler connected' },
+  { domain: 'Firmware / REA', status: 'Host and worker checks passed', detail: 'ELF-note inspection and optional authenticated REA/Ghidra jobs; verify and save results to Cases; physical phone acceptance remains open' },
   { domain: 'AXP control plane', status: 'Host tested', detail: 'Identity, capability negotiation and binary ping; phone/accessory acceptance unrun' },
   { domain: 'Infrared / NEC', status: 'Offline decoder', detail: 'Standard 32-bit synthetic pulse fixtures; no acquisition verified' },
   { domain: 'Vehicle / CAN', status: 'Offline parser', detail: 'Classic candump data frames, no live bus connection' },
