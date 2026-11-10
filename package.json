@@ -22,7 +22,9 @@
     "inventory:check": "node tools/npm-inventory.mjs --check",
     "ios": "node tools/native-build.mjs ios",
     "research:setup": "npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional",
-    "research:inspect": "node tools/inspect-firmware.mjs"
+    "research:inspect": "node tools/inspect-firmware.mjs",
+    "intelligence:inspect": "node tools/device-intelligence/inspect-firmware.mjs",
+    "intelligence:test": "node --test tests/device-intelligence.test.ts tests/device-intelligence-cli.test.mjs"
   },
   "dependencies": {
     "base64-js": "1.5.1",
