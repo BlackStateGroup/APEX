@@ -1,5 +1,6 @@
 {
   ".github/workflows/lab-signed-read.yml": "c8fd0e44047f548e20891975c75f36557a7e5e2fa91febff4ed48f2f4c67d950",
+  ".gitignore": "ba6848cc12c321866f304bd83f520f71572762d972e461b6d3dab9b427dd19ab",
   "App.tsx": "17da68a58e726bc98b3e3750179811f2a1d4037369fcdaaed53b08d7568e8b34",
   "docs/ACCESSORY_TRUST_FOUNDATION.md": "ab626237c08bdfbec75ffe31d6d1ead004bdc618c235856f7036d68c7b78007f",
   "docs/SIGNED_READ_LAB_CLIENT.md": "39fbfab49e0b593cd8d724176834f52bc9e2d144c7840c82ed5b00954e11b53d",
@@ -12,6 +13,9 @@
   "modules/apex-trust/android/src/main/java/expo/modules/apextrust/Ed25519Verifier.java": "ddca2c3e55d65715716f1fa1f3a9bdde162f6274a18af221a252d4ba476c3bf6",
   "modules/apex-trust/expo-module.config.json": "12090a37dacf6e02200bb3ccdca4931fbe05f3937c015432e535db0cd415c601",
   "modules/apex-trust/index.ts": "c4a9f78e829add439308165bf13db229bc1086e463120d4c123ebd43e4fe6866",
+  "modules/apex-trust/ios/ApexTrust.podspec": "d95a75d487a08a2f74f64cf88f5f863755adad3cb00d2880c0c373c0dafd3f88",
+  "modules/apex-trust/ios/ApexTrustModule.swift": "ebb240e3fefc5e3596878923c11bb5f80ca987c0c0e3a2f3779c46ef18cbc752",
+  "modules/apex-trust/ios/Ed25519Verifier.swift": "559005029f61dae94157919c955d0fd3c0373d4ae28c8a99fa06319104863366",
   "modules/apex-trust/package.json": "56f9382e3ad86782730d16c030dd71625279664a309f619fbcff4159e8ed596a",
   "packages/core/accessory-native-adapters.ts": "7a652010e3e575d2b1a2d3294d5614c33f483ce1f4851146d2f62146e2ecf623",
   "packages/core/accessory-signed-connection.ts": "c374bb2467e906fcda020f946e419d560e7f5e7ee260c9e9bcaa1fecc79524f4",

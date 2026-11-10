@@ -5,6 +5,7 @@ build/
 android/
 ios/
 !modules/**/android/
+!modules/**/ios/
 *.log
 .DS_Store
 test-results/

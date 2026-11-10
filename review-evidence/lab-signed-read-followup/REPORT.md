@@ -80,6 +80,11 @@ the new head. The lab workflow includes normal/sanitized interop, actual Java an
 Apple verifiers, rendered unavailable-state UI and both ESP configurations;
 foundation CI compiles Android and an unsigned iPhone Simulator app.
 
+The first follow-up CI pass rendered the unavailable-state lab UI successfully,
+but its Apple check found that the broad `ios/` ignore rule omitted the new Swift
+source/podspec from Git. A module-source exception now preserves those files;
+the exact-head Apple/native CI is rerun after this correction.
+
 ## Not performed and protocol non-goals
 
 No accessory or phone was connected, paired, installed, provisioned or flashed.
