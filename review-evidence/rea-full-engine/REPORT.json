@@ -1,0 +1,411 @@
+{
+  "schema": "apex.rea-full-engine.v1",
+  "rea": "6.8.0",
+  "ghidra": "12.1.4",
+  "source": "APEX-owned portable host C",
+  "functions": [
+    "apex_crc16",
+    "apex_encode",
+    "apex_stream_init",
+    "apex_stream_feed",
+    "apex_device_init",
+    "apex_device_feed"
+  ],
+  "binaries": [
+    {
+      "name": "original",
+      "path": "/home/runner/work/_temp/apex-rea-full/original.elf",
+      "sha256": "900cd8479921c65ee8b4bcf4fca93a9414d045afd3c3f22a6578de8cfe47c17f"
+    },
+    {
+      "name": "mutant",
+      "path": "/home/runner/work/_temp/apex-rea-full/mutant.elf",
+      "sha256": "f99613110d6ee4282d9a0a36b284f740a563560113000e0a574a8cd926704e9f"
+    }
+  ],
+  "checks": [
+    {
+      "variant": "original",
+      "vectors": 130,
+      "allAgreed": true
+    },
+    {
+      "variant": "mutant",
+      "vectors": 130,
+      "allAgreed": true
+    }
+  ],
+  "snapshotRestart": "fresh CLI process, identical pseudocode",
+  "tamperedSnapshotRejected": true,
+  "originalTargetsExecuted": false,
+  "reconstructedCrcExecuted": true,
+  "hardwareTested": false,
+  "semanticEquivalenceProved": false,
+  "limitations": [
+    "Finite vectors over two known-source CRC implementations, not blind algorithm recovery or proof over all inputs.",
+    "Fresh-process snapshot replay is not a persistent authenticated phone-to-worker service.",
+    "Process groups were observed absent after each tool; abnormal parent termination and escaped descendants are not proven."
+  ],
+  "files": [
+    {
+      "file": "rea-version.stdout.txt",
+      "sha256": "4c7d245d1e1c2c70e26c15a790671f5aacaacfffafbcbe8e86ce9df0bbd835bf",
+      "bytes": 6
+    },
+    {
+      "file": "rea-version.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "rea-version.process.json",
+      "sha256": "3ada3fd38c64e4c42e272237cab91217ad1ce23b6023eb627ad01a25c2046ab0",
+      "bytes": 283
+    },
+    {
+      "file": "doctor.stdout.txt",
+      "sha256": "88a46845bab166ac88287b38c73ec2682e8f2532c9ee64ae42072e64c27761cc",
+      "bytes": 9268
+    },
+    {
+      "file": "doctor.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "doctor.process.json",
+      "sha256": "c3af0ffe8b9c6677d13609ca66d81880adf5544eaf5bf5135cfdf80b4f9a6d81",
+      "bytes": 326
+    },
+    {
+      "file": "apex.c",
+      "sha256": "8ad23b15b4243c3cc82a63209d718f20cee476e69e38e4857d38d062541188ee",
+      "bytes": 5001
+    },
+    {
+      "file": "apex.h",
+      "sha256": "d2afe3870cf7ef794bcf33a3e57f0cb0c05e91c22534cfd5a0e67b6c08c1b588",
+      "bytes": 1248
+    },
+    {
+      "file": "main.c",
+      "sha256": "e56dfa51ff1206df9c0101c565d56c921773943c3cdcaa74d89fe4d60a326f6d",
+      "bytes": 812
+    },
+    {
+      "file": "apex-mutant.c",
+      "sha256": "90593c5a1aa2c1fe28de8c8d86ee5a02fe666d9427fa38e731ece49384d5b76c",
+      "bytes": 5001
+    },
+    {
+      "file": "compile-original.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-original.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-original.process.json",
+      "sha256": "e951d98fa55000377e3d626b20b7a475e17fcec2ed50a1f7a4064edf1e812722",
+      "bytes": 419
+    },
+    {
+      "file": "original.elf",
+      "sha256": "900cd8479921c65ee8b4bcf4fca93a9414d045afd3c3f22a6578de8cfe47c17f",
+      "bytes": 16712
+    },
+    {
+      "file": "compile-mutant.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-mutant.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-mutant.process.json",
+      "sha256": "9b9fb4d371a8cc8f116a1534a6db5b0e2b81b4c5b759db58ab6241e5ec7875ba",
+      "bytes": 424
+    },
+    {
+      "file": "mutant.elf",
+      "sha256": "f99613110d6ee4282d9a0a36b284f740a563560113000e0a574a8cd926704e9f",
+      "bytes": 16720
+    },
+    {
+      "file": "apex_crc16.stdout.txt",
+      "sha256": "8986982f321efaf60bb2a19df0f432aa2532ee81500ad59ba0d8a22965297c16",
+      "bytes": 3866
+    },
+    {
+      "file": "apex_crc16.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_crc16.process.json",
+      "sha256": "4a5213f4cc53f42c7f460d4c1f0b8ea33d42e9572e1a57cd1a46ff996ef4ad87",
+      "bytes": 486
+    },
+    {
+      "file": "apex_crc16.c",
+      "sha256": "a293a1dc6d06cd263edea105a9281e57dad23829577ba20223842af47717a9f2",
+      "bytes": 594
+    },
+    {
+      "file": "apex_encode.stdout.txt",
+      "sha256": "ba7391b54a79467af93afc11eaf9dcbd70c65fb51ca26f57819eb280d8292493",
+      "bytes": 4752
+    },
+    {
+      "file": "apex_encode.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_encode.process.json",
+      "sha256": "76dbbaf9ccf03a0b779c7253f3fa7844a1f960866a37e15e30ac87e7bf08878b",
+      "bytes": 406
+    },
+    {
+      "file": "apex_encode.c",
+      "sha256": "e58c1fcc5b3b502c58d0a324f568660df95f5799deab8d6b8780583f0a294e0a",
+      "bytes": 1455
+    },
+    {
+      "file": "apex_stream_init.stdout.txt",
+      "sha256": "462c667c04133890d13bc1538f9f90ba1efbb15cbdfe55ec7e630e1eef74d4cb",
+      "bytes": 3788
+    },
+    {
+      "file": "apex_stream_init.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_stream_init.process.json",
+      "sha256": "8c5ccefe2fc56904d76bdb6041ad8eccc24008062d69ba68670b51b5c13b451f",
+      "bytes": 411
+    },
+    {
+      "file": "apex_stream_init.c",
+      "sha256": "c580429ba537ed664e2904614c6efde73bbe11cb9ef588b72c748343be39c07e",
+      "bytes": 522
+    },
+    {
+      "file": "apex_stream_feed.stdout.txt",
+      "sha256": "22c4624ad5f736fc954876f55c5dcc64deef36f94332621ea7e7556031f3f32f",
+      "bytes": 8460
+    },
+    {
+      "file": "apex_stream_feed.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_stream_feed.process.json",
+      "sha256": "15cf0aa03057b115c31023ba065c1fa175055eab358db0d4a5f94846e534e22f",
+      "bytes": 411
+    },
+    {
+      "file": "apex_stream_feed.c",
+      "sha256": "943bd3db68e267e2e6bf24e995d0e50409c5fb024c94e6db56c511bea378ba0c",
+      "bytes": 4773
+    },
+    {
+      "file": "apex_device_init.stdout.txt",
+      "sha256": "ef5ca6863251eb646397301899a397daa0a5a00417d555bbb4f8e938c8b83607",
+      "bytes": 3845
+    },
+    {
+      "file": "apex_device_init.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_device_init.process.json",
+      "sha256": "856d50ff5e86c541b5f87e85c747a3a328bf6e83d1d1517ce303361a5f3d3068",
+      "bytes": 411
+    },
+    {
+      "file": "apex_device_init.c",
+      "sha256": "d713f4684c8a8372a891be2997cc755b9af2caa1d500a51b62f9a7ff3bf25f1f",
+      "bytes": 577
+    },
+    {
+      "file": "apex_device_feed.stdout.txt",
+      "sha256": "d2d16f485cf24b363ee75e47c615daaac8133aeacedc4b18c60d4a4274ed50e7",
+      "bytes": 3574
+    },
+    {
+      "file": "apex_device_feed.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "apex_device_feed.process.json",
+      "sha256": "5571fab98a53e8561cdeaf3796edbd600bc761c38d431211b531dc08b31543cc",
+      "bytes": 411
+    },
+    {
+      "file": "apex_device_feed.c",
+      "sha256": "7864e6a29eb380589adaa50e14cdf584faf29bc9987fa48628fe5f9d0cb4cdaa",
+      "bytes": 67
+    },
+    {
+      "file": "restart-crc.stdout.txt",
+      "sha256": "8986982f321efaf60bb2a19df0f432aa2532ee81500ad59ba0d8a22965297c16",
+      "bytes": 3866
+    },
+    {
+      "file": "restart-crc.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "restart-crc.process.json",
+      "sha256": "f9d75a2e3ca70bba4f510a38325ba6490898dad49c10f6403d01555cf2666fa3",
+      "bytes": 486
+    },
+    {
+      "file": "crc.snapshot-before-restart.json",
+      "sha256": "91c2e752b9d1bac67646a03891ea9d55d65594d2f55fc40ed88e88f27a31a15e",
+      "bytes": 6044
+    },
+    {
+      "file": "crc.snapshot.json",
+      "sha256": "91c2e752b9d1bac67646a03891ea9d55d65594d2f55fc40ed88e88f27a31a15e",
+      "bytes": 6044
+    },
+    {
+      "file": "crc.snapshot-tampered.json",
+      "sha256": "d47e2394da8ab33ad43f576702e940eb6572200c5c6a240fef3af9b9f79ce096",
+      "bytes": 6043
+    },
+    {
+      "file": "tampered-snapshot.stdout.txt",
+      "sha256": "63218f2575cd22d2c98febc085f89803a817b6cd29baac142788d1f87aa57f38",
+      "bytes": 396
+    },
+    {
+      "file": "tampered-snapshot.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "tampered-snapshot.process.json",
+      "sha256": "9445abb70d2e2cf911502ec3225a3efa8de24bd7de3430b89079e0e0c9623d73",
+      "bytes": 495
+    },
+    {
+      "file": "mutant-crc.stdout.txt",
+      "sha256": "7c1bd417e76601a777780b57f6f5c97d0e32a2b9b35a49fe7b53c5fc44ec364e",
+      "bytes": 3860
+    },
+    {
+      "file": "mutant-crc.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "mutant-crc.process.json",
+      "sha256": "bb2f06bedab8e03e719cc22e3cd5ebe5a765691137120742179a1229e5a9f462",
+      "bytes": 403
+    },
+    {
+      "file": "mutant-crc.c",
+      "sha256": "2f7bf43af5654ef123d1258779212acb00f244a0ee0d50572bc322f4ffc4461d",
+      "bytes": 594
+    },
+    {
+      "file": "crc-vectors.hex",
+      "sha256": "729e99a2c3ab822ab6e7a7f8e7b12015334cc48efd8ec1f307be1b49fd3e641d",
+      "bytes": 65172
+    },
+    {
+      "file": "reconstructed-original.c",
+      "sha256": "d4788c4b4bb0fdce3c5ce3a2bf3f156186f4128ce4bed7d93fe4ef6bea27fcbf",
+      "bytes": 1332
+    },
+    {
+      "file": "compile-reconstructed-original.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-reconstructed-original.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-reconstructed-original.process.json",
+      "sha256": "9d19659840ee4c5878e6cbbb9eb3e1bd21aa1c299a7f30ba86b7956e8eba68c3",
+      "bytes": 297
+    },
+    {
+      "file": "vectors-original.stdout.txt",
+      "sha256": "93b81648b21b4ab59a6c52edeba8013ef36fa6ed4a692b34732c49f1a7e94604",
+      "bytes": 650
+    },
+    {
+      "file": "vectors-original.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "vectors-original.process.json",
+      "sha256": "ec6b36f14949b4e76897cf91fa557a07a3d2957387463d0622baf0ddd4861ae0",
+      "bytes": 177
+    },
+    {
+      "file": "expected-original.json",
+      "sha256": "10a84979e8da67ac0ded6dff1c993bf45a50fd7d4842174da89efc0589d067f2",
+      "bytes": 911
+    },
+    {
+      "file": "reconstructed-mutant.c",
+      "sha256": "d81078ee317f6d41bfb138d070bf97a8d5eeff4bd09ff351c5b1f66a59688ef7",
+      "bytes": 1332
+    },
+    {
+      "file": "compile-reconstructed-mutant.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-reconstructed-mutant.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "compile-reconstructed-mutant.process.json",
+      "sha256": "8e6e117f8d60b7ecb4a0b1196783d3441573c50d25320b7e00bb283a1e259a12",
+      "bytes": 293
+    },
+    {
+      "file": "vectors-mutant.stdout.txt",
+      "sha256": "a2d43e37642a613c25c5d7086e3af49690c7c21c363dfd8e2cd275aff23e119c",
+      "bytes": 650
+    },
+    {
+      "file": "vectors-mutant.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "vectors-mutant.process.json",
+      "sha256": "a2d394ba918c290384396ace3de5f4f0f09be18e80517f6e4a2be214eaa517bb",
+      "bytes": 175
+    },
+    {
+      "file": "expected-mutant.json",
+      "sha256": "1c5159468336bab7af375dcfbe1b32d41b400b80d06f3f444e78d333b5bebfa3",
+      "bytes": 911
+    }
+  ]
+}

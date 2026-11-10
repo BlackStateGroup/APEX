@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'tools/research-full-engine.mjs'
+      - 'tools/verify-full-engine.mjs'
+      - 'tests/rea-full-engine-verifier.test.mjs'
       - '.github/workflows/rea-full-engine.yml'
       - 'firmware/core/**'
       - 'tools/reverse-engineering/package-lock.json'
@@ -26,6 +28,8 @@ jobs:
           distribution: temurin
           java-version: '25'
       - run: npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional
+      - name: Verify retained evidence and reject controlled corruption
+        run: node --test tests/rea-full-engine-verifier.test.mjs
       - name: Download and verify the supported Ghidra release
         shell: bash
         run: |
@@ -35,6 +39,8 @@ jobs:
           echo "GHIDRA_INSTALL_DIR=$RUNNER_TEMP/ghidra_12.1.4_PUBLIC" >> "$GITHUB_ENV"
       - name: Decompile, restart, reject tampering and compare reconstructed CRC vectors
         run: node tools/research-full-engine.mjs "$RUNNER_TEMP/apex-rea-full"
+      - name: Independently replay the fresh evidence without executing targets
+        run: node --permission --allow-fs-read="$GITHUB_WORKSPACE" --allow-fs-read="$RUNNER_TEMP/apex-rea-full" tools/verify-full-engine.mjs "$RUNNER_TEMP/apex-rea-full"
       - name: Retain results including any failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
