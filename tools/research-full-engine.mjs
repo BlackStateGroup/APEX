@@ -43,6 +43,11 @@ function checked(raw, expectedHash) {
 try {
   const version = await run('rea-version', process.execPath, [rea, '--version']);
   if (version.stdout.trim() !== '6.8.0') throw new Error('Expected pinned REA 6.8.0');
+  // A cold shared runner can exceed REA's fixed five-second Java probe budget.
+  // Initialise the selected JVM with our bounded process runner, then still
+  // require REA's unchanged provider checks to pass. Retain both observations.
+  if (!process.env.JAVA_HOME) throw new Error('Select a full JDK using JAVA_HOME');
+  await run('java-cold-start', join(process.env.JAVA_HOME, 'bin/java'), ['-XX:-UsePerfData', '-XshowSettings:properties', '-version']);
   const doctor = JSON.parse((await run('doctor', process.execPath, [rea, 'doctor', '--provider', 'ghidra', '--json'])).stdout);
   if (doctor.healthy !== true) throw new Error('Required engine doctor failed');
   for (const [path, name] of [['firmware/core/apex.c', 'apex.c'], ['firmware/core/apex.h', 'apex.h'], ['firmware/host/main.c', 'main.c']]) save(name, readFileSync(join(root, path)));

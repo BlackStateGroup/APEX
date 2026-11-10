@@ -20,6 +20,7 @@ Use the committed workflow or a Linux environment with Node 24.22.1+, a full JDK
 
 ```sh
 npm ci --prefix tools/reverse-engineering --ignore-scripts --omit=optional
+JAVA_HOME=/absolute/path/jdk-25 \
 GHIDRA_INSTALL_DIR=/absolute/path/ghidra_12.1.4_PUBLIC \
   node tools/research-full-engine.mjs /absolute/path/new-experiment
 ```
@@ -52,3 +53,7 @@ Still separate: independent review, engine hardening for untrusted third-party f
 Durable [evidence archive](../review-evidence/rea-full-engine/evidence.zip), [report](../review-evidence/rea-full-engine/REPORT.json), [local blocker](../review-evidence/rea-full-engine/local-blocker.json) and [read-only verifier](../tools/verify-full-engine.mjs) are committed. Archive SHA-256: `d19bc6a84c6595f0fd6496ff5263ac552454a8732e77f33d672b2f96bab17076`.
 
 The archive contains APEX-owned binaries, recovered source, vectors, snapshots and tool observations. Integrity and internal consistency do not authenticate the analysis host or prove every input. No live phone-to-worker service has been built by this experiment.
+
+## Repeated-run environment check
+
+The follow-up run [42857111495](https://github.com/BlackStateGroup/APEX/actions/runs/42857111495) rejected its environment because the first Java startup exceeded REA's five-second version-probe deadline. Its failure artifact was retained. The runner now records a separate bounded cold-JVM startup before invoking REA's unchanged doctor checks. An unsuccessful doctor still prevents analysis; no failed run is converted into success.
