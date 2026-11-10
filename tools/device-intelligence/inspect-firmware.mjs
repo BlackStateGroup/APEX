@@ -67,15 +67,15 @@ export function inspectFirmwareBytes(bytes, filename = 'firmware.bin', rawReaRep
   return Object.freeze({
     schemaVersion:1, kind:'apex.firmware-analysis',
     passport, archive,
-    inspection:{method:'bounded-static-byte-inspection', decompressed:false, firmwareExecuted:false,
-      credentialValuesReturned:false, networkOrHardwareContact:false},
-    limitations:[
+    inspection:Object.freeze({method:'bounded-static-byte-inspection', decompressed:false, firmwareExecuted:false,
+      credentialValuesReturned:false, networkOrHardwareContact:false}),
+    limitations:Object.freeze([
       'Markers are byte-pattern observations, not confirmed accounts, passwords, running services or vulnerabilities.',
       format === 'gzip' || format === 'zip' || format === 'squashfs'
         ? 'Compressed filesystem contents were not decompressed or searched.'
         : 'Static bytes alone cannot establish runtime behaviour, device authenticity or root access.',
       'Source hash establishes observed byte identity, not firmware signature authenticity or hardware provenance.',
-    ],
+    ]),
   });
 }
 
@@ -114,10 +114,10 @@ export function compareFirmwareReports(a, b) {
   const first = report(a), second = report(b);
   const indicatorChanges = Object.keys(first.indicators).filter(key => first.indicators[key] !== second.indicators[key]);
   return Object.freeze({
-    schemaVersion:1, kind:'apex.firmware-comparison', sourceDigests:[first.source.sha256, second.source.sha256],
+    schemaVersion:1, kind:'apex.firmware-comparison', sourceDigests:Object.freeze([first.source.sha256, second.source.sha256]),
     sameBytes:first.source.sha256 === second.source.sha256,
     formatChanged:first.source.format !== second.source.format,
-    changedIndicatorClasses:indicatorChanges,
+    changedIndicatorClasses:Object.freeze(indicatorChanges),
     rootAccess:'unknown',
     limitations:'Changed bytes or markers do not establish a security patch, exploitability or privilege access.',
   });
