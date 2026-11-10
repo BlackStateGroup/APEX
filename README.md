@@ -1,5 +1,7 @@
 # APEX
 
+
+Current work and remaining gates: [current build status](docs/CURRENT_BUILD_STATUS.md).
 **Universal Master Key**: a modular electronic interoperability platform from Black State Group.
 
 **Mobile targets: iPhone and Android.** Native NFC and AXP Bluetooth integrations are implemented; physical phone/accessory testing remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).

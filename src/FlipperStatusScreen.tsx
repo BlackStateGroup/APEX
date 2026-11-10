@@ -3,6 +3,8 @@ import { AppState, Platform, Pressable, ScrollView, StyleSheet, Text, View } fro
 import { StatusBar } from 'expo-status-bar';
 import { FLIPPER_STATUS_FIELDS } from '../packages/core/flipper-status.ts';
 import { getFlipperStatusController, shareFlipperStatus } from './platform/flipper-status';
+import { caseStore } from './platform/cases';
+import { CaseWorkspace } from './CaseWorkspace';
 
 function Button({ label, onPress, disabled = false, secondary = false }: { label: string; onPress(): void; disabled?: boolean; secondary?: boolean }) {
   return <Pressable accessibilityRole="button" accessibilityLabel={label} disabled={disabled} onPress={onPress}
@@ -16,6 +18,7 @@ export default function FlipperStatusScreen() {
   const [owned, setOwned] = useState(false);
   const [sharing, setSharing] = useState(false);
   const [shareMessage, setShareMessage] = useState('');
+  const [casesOpen, setCasesOpen] = useState(false);
   useEffect(() => {
     const refresh = () => setState(controller.snapshot());
     const off = controller.observe(refresh);
@@ -60,6 +63,15 @@ export default function FlipperStatusScreen() {
         {FLIPPER_STATUS_FIELDS.map(field => <View style={s.valueRow} key={field.key}><Text style={s.muted}>{field.label}</Text><Text selectable style={s.value}>{String(state.report!.values[field.key])}{field.kind === 'battery' ? '%' : ''}</Text></View>)}
         <Text style={s.muted}>Device-reported values. Identity is not independently verified.</Text>
         <Text style={s.muted}>{state.report.capturedAt}</Text>
+        <Button label="Save status to a case" disabled={sharing} onPress={() => {
+          if (sharing || AppState.currentState !== 'active') return;
+          const report = state.report!; setSharing(true);
+          void (async () => {
+            const c = await caseStore.create(`Flipper ${report.capturedAt.slice(0, 10)}`);
+            await caseStore.append(c.id, c.revision, { name: 'Flipper device-reported status', kind: 'report', origin: 'device-reported', content: JSON.stringify(report) });
+            setShareMessage('Status retained in a local case. Open saved cases below to export it.');
+          })().catch(error => setShareMessage(error instanceof Error ? error.message : 'Saving failed.')).finally(() => setSharing(false));
+        }} />
         <Button label="Share status report" disabled={sharing || !!state.unavailable} onPress={() => {
           if (sharing || AppState.currentState !== 'active') return;
           const report = state.report!; setSharing(true); setShareMessage('Opening the share sheet…');
@@ -71,6 +83,8 @@ export default function FlipperStatusScreen() {
         <Button label="Clear status report" secondary onPress={() => { controller.clearReport(); setShareMessage(''); }} />
       </View>}
       {!!shareMessage && <Text accessibilityLiveRegion="polite" style={s.body}>{shareMessage}</Text>}
+      <Button label={casesOpen ? 'Close saved cases' : 'Open saved cases'} disabled={busy || sharing} secondary onPress={() => setCasesOpen(value => !value)} />
+      <CaseWorkspace active={casesOpen && !busy && !sharing} />
       <Text style={s.footer}>First accessory milestone · Software verification and physical iPhone testing are tracked separately.</Text>
     </View>
   </ScrollView></View>;
