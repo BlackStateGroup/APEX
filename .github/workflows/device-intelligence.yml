@@ -1,0 +1,31 @@
+name: Device intelligence offline acceptance
+on:
+  pull_request:
+    paths:
+      - 'packages/core/device-intelligence.ts'
+      - 'packages/core/router-lab.ts'
+      - 'tools/device-intelligence/**'
+      - 'tests/device-intelligence*'
+      - 'package.json'
+      - '.github/workflows/device-intelligence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: apex-device-intelligence
+  cancel-in-progress: true
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Execute isolated input and privilege-boundary regression tests
+        run: node --test tests/device-intelligence.test.ts tests/device-intelligence-cli.test.mjs
+      - name: Check React Native and shared TypeScript compatibility
+        run: npm run typecheck
