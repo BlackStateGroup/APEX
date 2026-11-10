@@ -72,8 +72,8 @@ test('independent stale paging, invalid numbers, and old leases do not mutate',a
 import { readFileSync } from 'node:fs';
 import { ANALYSIS_INSPECTORS, ANALYSIS_ROUTES, DEFAULT_ANALYSIS_INSPECTOR } from '../src/analysis-navigation.ts';
 test('independent source integration preserves static NFC and all prior inspectors alongside explicit HCI documents',()=>{
- assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id),['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
- assert.equal(ANALYSIS_INSPECTORS[10].label,'Static NFC data area'); assert.equal(DEFAULT_ANALYSIS_INSPECTOR,'recording');
+ assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id),['recording','ble','ble-trials','ble-candidate','flipper','device-passport','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+ assert.equal(ANALYSIS_INSPECTORS.find(x=>x.id==='static-nfc')?.label,'Static NFC data area'); assert.equal(DEFAULT_ANALYSIS_INSPECTOR,'recording');
  assert.deepEqual(ANALYSIS_ROUTES, {'staged-hci-report':'hci-compare','selected-hci-event':'hci-document','service-data':'ble','advertised-uuid':'ble','phone-capture':'phone-ndef','staged-ble':'ble-trials'});
  const app=readFileSync(new URL('../App.tsx',import.meta.url),'utf8');
  assert.equal((app.match(/<NfcStaticWorkbench /g)||[]).length,1);
