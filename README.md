@@ -104,6 +104,7 @@ blocked with every case unrun; it supplies no flashing or device-operation permi
 - [Project state and continuity](docs/PROJECT_STATE.md)
 - [Physical bench acceptance](docs/BENCH_ACCEPTANCE.md)
 - [REA research and firmware inspection](docs/REA_RESEARCH.md)
+- [Device intelligence and recovery blueprint](docs/DEVICE_INTELLIGENCE_AND_RECOVERY_BLUEPRINT.md), [16 staged work packages](docs/DEVICE_INTELLIGENCE_WORK_PACKAGES.md), and [10 November conversation record](docs/DEVICE_INTELLIGENCE_CONVERSATION_20261110.md) (planning only; not an operational root-access feature)
 - [Controlled offline BLE byte comparison](docs/BLE_DIFFERENTIAL_EXPERIMENT.md)
 
 The research branch defines the system. The dependent `feat/platform-foundation` branch establishes the Expo application, native Android module, shared protocol and portable C firmware. Review research before implementation. Physical hardware claims require separate evidence; no product-wide universal unlocking claim is made.
