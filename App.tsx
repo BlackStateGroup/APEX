@@ -1,4 +1,5 @@
 import { BrowserAxpControls } from './src/BrowserAxpControls.tsx';
+import { CaseWorkspace } from './src/CaseWorkspace.tsx';
 import { getBrowserAxpApplication, browserAxpSupport, browserAxpForeground, observeBrowserAxpLifecycle } from './src/platform/web-axp';
 import { IqWorkbench } from './src/IqWorkbench.tsx';
 import { HciComparisonWorkbench } from './src/HciComparisonWorkbench.tsx';
@@ -399,7 +400,7 @@ export default function App() {
         <View><Text style={styles.brand}>APEX<Text style={styles.brandDot}>.</Text></Text><Text style={styles.strap}>UNIVERSAL MASTER KEY</Text></View>
         <View style={styles.version}><Text style={styles.versionText}>FOUNDATION 0.1</Text><Text style={styles.platform}>{Platform.OS.toUpperCase()} / LOCAL</Text></View>
       </View>
-      <View style={styles.tabs}>{(['Console', 'Devices', 'Analysis', 'Evidence', 'Research'] as Tab[]).map(name =>
+      <View style={styles.tabs}>{(['Console', 'Devices', 'Analysis', 'Cases', 'Evidence', 'Research'] as Tab[]).map(name =>
         <Pressable key={name} accessibilityRole="tab" accessibilityState={{ selected: tab === name }} onPress={() => { if (name !== 'Devices' && captureBusy.current) void captureReader.current?.cancel('Devices tab left; read cancelled.'); activeTab.current = name; setTab(name); }} style={[styles.tab, tab === name && styles.activeTab]}>
           <Text style={[styles.tabText, tab === name && { color: '#d8ff6b' }]}>{name}</Text>
         </Pressable>)}</View>
@@ -547,6 +548,7 @@ export default function App() {
         }} />
         <NfcStaticWorkbench active={tab === 'Analysis' && inspector === 'static-nfc'} />
         <IqWorkbench active={tab === 'Analysis' && inspector === 'iq'} />
+        <CaseWorkspace active={tab === 'Cases'} />
         <EvidenceBundleWorkbench active={tab === 'Evidence'} />
         <EvidenceExportWorkbench active={tab === 'Evidence'} store={evidenceStore} />
         {tab === 'Evidence' && <>

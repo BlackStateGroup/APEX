@@ -15,7 +15,7 @@ export const ANALYSIS_INSPECTORS = [
   { id: 'iq', label: 'Offline I/Q' },
 ] as const;
 export type AnalysisInspector = typeof ANALYSIS_INSPECTORS[number]['id'];
-export type Tab = 'Console' | 'Devices' | 'Analysis' | 'Evidence' | 'Research';
+export type Tab = 'Console' | 'Devices' | 'Analysis' | 'Cases' | 'Evidence' | 'Research';
 export const DEFAULT_ANALYSIS_INSPECTOR: AnalysisInspector = 'recording';
 export function isAnalysisInspector(value: unknown): value is AnalysisInspector {
   return ANALYSIS_INSPECTORS.some(item => item.id === value);

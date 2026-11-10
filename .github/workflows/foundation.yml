@@ -33,6 +33,15 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:ui
+      - name: Retain case workspace browser evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: case-workspace-evidence
+          path: |
+            review-evidence/case-workspace/
+            test-results/
+          if-no-files-found: ignore
       - run: npm run inventory:check
   android:
     runs-on: ubuntu-24.04
