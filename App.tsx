@@ -11,6 +11,7 @@ import { IrWorkbench } from './src/IrWorkbench.tsx';
 import { EvidenceBundleWorkbench } from './src/EvidenceBundleWorkbench.tsx';
 import { EvidenceExportWorkbench } from './src/EvidenceExportWorkbench.tsx';
 import { FlipperWorkbench } from './src/FlipperWorkbench.tsx';
+import { DevicePassportWorkbench } from './src/DevicePassportWorkbench.tsx';
 import { BleTrialAuthoringWorkbench } from './src/ble-trial-authoring-workbench.ts';
 import { BleCandidateWorkbench } from './src/BleCandidateWorkbench.tsx';
 import { BleTrialWorkbench } from './src/BleTrialWorkbench.tsx';
@@ -526,6 +527,7 @@ export default function App() {
         <BleTrialWorkbench active={tab === 'Analysis' && inspector === 'ble-trials'} authoring={trialAuthoring} onAuthoringChanged={authoringChanged} />
         <BleCandidateWorkbench active={tab === 'Analysis' && inspector === 'ble-candidate'} />
         <FlipperWorkbench active={tab === 'Analysis' && inspector === 'flipper'} />
+        <DevicePassportWorkbench active={tab === 'Analysis' && inspector === 'device-passport'} />
         <IrWorkbench active={tab === 'Analysis' && inspector === 'ir'} />
         <HciWorkbench active={tab === 'Analysis' && inspector === 'hci'} onDocument={document => { setSelectedHciDocument(previous => nextAnalysisSource(previous, { document })); selectInspector(ANALYSIS_ROUTES['selected-hci-event']); }} />
         <HciDocumentWorkbench active={tab === 'Analysis' && inspector === 'hci-document'} onStage={source => { setSelectedHciComparison(previous => nextAnalysisSource(previous, source)); selectInspector(ANALYSIS_ROUTES['staged-hci-report']); }} selectedSource={selectedHciDocument} store={evidenceStore} onSaved={async () => {

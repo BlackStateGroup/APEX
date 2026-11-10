@@ -13,8 +13,8 @@ const app = source('App.tsx');
 const hash = async (bytes: Uint8Array) => createHash('sha256').update(bytes).digest('hex');
 function deferred() { let resolve!: (value:string)=>void; let reject!: (value:unknown)=>void; const promise=new Promise<string>((a,b)=>{resolve=a; reject=b;}); return {promise,resolve,reject}; }
 
-test('thirteen unique typed choices preserving prior inspectors, Recording default and exact source routes', () => {
-  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
+test('fourteen unique typed choices preserving prior inspectors, Recording default and exact source routes', () => {
+  assert.deepEqual(ANALYSIS_INSPECTORS.map(x=>x.id), ['recording','ble','ble-trials','ble-candidate','flipper','device-passport','ir','hci-document','hci','ndef','phone-ndef','static-nfc','hci-compare','iq']);
   assert.equal(DEFAULT_ANALYSIS_INSPECTOR, 'recording');
   for(const x of ANALYSIS_INSPECTORS) assert.ok(isAnalysisInspector(x.id));
   for(const x of ['', 'NFC', 'Recording', 'nfc', null, {}, 0]) assert.equal(isAnalysisInspector(x),false);

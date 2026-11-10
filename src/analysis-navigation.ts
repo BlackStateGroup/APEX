@@ -5,6 +5,7 @@ export const ANALYSIS_INSPECTORS = [
   { id: 'ble-trials', label: 'BLE trial builder & comparison' },
   { id: 'ble-candidate', label: 'Numeric BLE candidate' },
   { id: 'flipper', label: 'Flipper responses' },
+  { id: 'device-passport', label: 'Firmware Passport' },
   { id: 'ir', label: 'IR remote files' },
   { id: 'hci-document', label: 'HCI selected event document' },
   { id: 'hci', label: 'HCI captures' },
