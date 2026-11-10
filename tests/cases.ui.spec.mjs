@@ -1,5 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
+test('oversized pasted sources and restore documents cannot silently become truncated originals', async ({ page }) => {
+  await page.goto('/'); await page.getByRole('tab', { name: 'Cases', exact: true }).click();
+  await page.getByRole('textbox', { name: 'New case title', exact: true }).fill('Bounds');
+  await page.getByRole('button', { name: 'Create case', exact: true }).click();
+  const source = page.getByRole('textbox', { name: 'Case source input', exact: true });
+  const oversized = 'a'.repeat(65537); await source.fill(oversized);
+  await expect(source).toHaveValue(oversized);
+  await expect(page.getByRole('button', { name: 'Save original source', exact: true })).toBeDisabled();
+  await expect(page.getByText('Source exceeds 65,536 characters. No truncated copy will be saved.', { exact: true })).toBeVisible();
+  const restore = page.getByRole('textbox', { name: 'Case restore input', exact: true });
+  const largeRestore = 'x'.repeat(1048577); await restore.fill(largeRestore);
+  expect((await restore.inputValue()).length).toBe(1048577);
+  await expect(page.getByRole('button', { name: 'Verify and restore case', exact: true })).toBeDisabled();
+});
 test('case learning, verified export, restart, deletion and restore work on a phone viewport', async ({ page }) => {
   const errors = []; page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');

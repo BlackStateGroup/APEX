@@ -74,10 +74,11 @@ export function CaseWorkspace({ active }: { active: boolean }) {
       <Text style={s.eyebrow}>LOCAL CASE · REVISION {selected.revision}</Text><Text style={s.heading}>{selected.title}</Text>
       <Text style={s.muted}>{selected.artifacts.length} retained items · Digests checked when opened. Storage is not encrypted by APEX.</Text>
       <TextInput accessibilityLabel="Source name" value={sourceName} editable={!busy} maxLength={120} onChangeText={setSourceName} style={s.input} />
-      <TextInput accessibilityLabel="Case source input" multiline value={draft} editable={!busy} maxLength={65536} onChangeText={setDraft} style={[s.input, s.document]} autoCapitalize="none" autoCorrect={false} />
+      <TextInput accessibilityLabel="Case source input" multiline value={draft} editable={!busy} onChangeText={setDraft} style={[s.input, s.document]} autoCapitalize="none" autoCorrect={false} />
+      {draft.length > 65536 && <Text style={s.notice}>Source exceeds 65,536 characters. No truncated copy will be saved.</Text>}
       <CaseFileInput disabled={busy} maxBytes={65536} onDocument={text => { setDraft(text); setMessage('Selected text loaded. Save original source to retain it.'); }} />
       <View style={s.actions}><Button title="Load synthetic paired example" disabled={busy} onPress={() => { setDraft(pairedExample()); setSourceName('Synthetic paired observations'); }} />
-        <Button title="Save original source" disabled={busy || !draft || !sourceName.trim()} onPress={() => run(async () => {
+        <Button title="Save original source" disabled={busy || !draft || draft.length > 65536 || !sourceName.trim()} onPress={() => run(async () => {
           let origin: 'synthetic' | 'operator-import' = 'operator-import';
           try { origin = readPairedDataset(draft).origin; } catch { /* Generic retained input; paired analysis is unavailable. */ }
           const result = await append({ name: sourceName, kind: 'source', origin, content: draft });
@@ -118,9 +119,10 @@ export function CaseWorkspace({ active }: { active: boolean }) {
       <Button title="Delete this local case" disabled={busy || deleteTitle !== selected.title} onPress={() => run(async () => { await caseStore.remove(selected.id, selected.revision); setSelected(null); setSelection(null); setDeleteTitle(''); return 'Local case deleted.'; })} />
     </View>}
     <View style={s.card}><Text style={s.heading}>Restore a case</Text><Text style={s.body}>Digest and lineage checks run before saving. An existing case cannot be overwritten by an import.</Text>
-      <TextInput accessibilityLabel="Case restore input" multiline editable={!busy} value={restore} onChangeText={setRestore} maxLength={1048576} style={[s.input, s.document]} autoCapitalize="none" autoCorrect={false} />
+      <TextInput accessibilityLabel="Case restore input" multiline editable={!busy} value={restore} onChangeText={setRestore} style={[s.input, s.document]} autoCapitalize="none" autoCorrect={false} />
+      {restore.length > 1048576 && <Text style={s.notice}>Restore input exceeds 1,048,576 characters. No truncated copy will be restored.</Text>}
       <CaseFileInput disabled={busy} maxBytes={1048576} onDocument={setRestore} />
-      <Button title="Verify and restore case" disabled={busy || !restore} onPress={() => run(async () => { const result = await caseStore.restore(restore); choose(result.case); setRestore(''); return result.duplicate ? 'This exact case already exists.' : 'Case restored and verified.'; })} />
+      <Button title="Verify and restore case" disabled={busy || !restore || restore.length > 1048576} onPress={() => run(async () => { const result = await caseStore.restore(restore); choose(result.case); setRestore(''); return result.duplicate ? 'This exact case already exists.' : 'Case restored and verified.'; })} />
     </View>
     <Text accessibilityLiveRegion="polite" style={s.notice}>{message}</Text>
   </View>;
