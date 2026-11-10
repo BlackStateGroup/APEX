@@ -1,0 +1,64 @@
+name: iPhone Flipper status
+on:
+  pull_request:
+    paths:
+      - 'packages/core/flipper-status.ts'
+      - 'src/**flipper**'
+      - 'src/**Flipper**'
+      - 'src/platform/flipper-status*'
+      - 'tests/flipper-status*'
+      - 'app.config.js'
+      - 'app.json'
+      - 'index.ts'
+      - 'eas.json'
+      - 'playwright.flipper.config.mjs'
+      - '.github/workflows/iphone-flipper.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: flipper-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  EXPO_PUBLIC_APEX_FLIPPER_STATUS: '1'
+  EXPO_PUBLIC_APEX_BUILD_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
+jobs:
+  software:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node --test tests/flipper-status*.test.ts
+      - run: npm run typecheck
+      - run: npx expo export --platform web --output-dir dist-flipper
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test -c playwright.flipper.config.mjs
+      - name: Keep browser evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: flipper-screen-evidence
+          path: |
+            review-evidence/iphone-flipper/preview.png
+            test-results/
+          if-no-files-found: ignore
+  ios:
+    runs-on: macos-26
+    timeout-minutes: 50
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx expo prebuild --platform ios
+      - name: Compile opt-in iPhone screen and embedded Release JavaScript
+        run: xcodebuild -workspace ios/APEX.xcworkspace -scheme APEX -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
