@@ -16,7 +16,7 @@ export async function readOwnedOpenWrtUbus({
   let url;
   try { url=new URL(endpoint); } catch { throw new Error('OpenWrt HTTPS: invalid endpoint'); }
   if(url.protocol!=='https:' || url.pathname!=='/ubus' || url.search || url.hash ||
-     url.username || url.password || url.hostname!==expectedHost || !url.port && url.port!=='') {
+     url.username || url.password || url.hostname!==expectedHost) {
     throw new Error('OpenWrt HTTPS: HTTPS /ubus endpoint and exact host match required');
   }
   if(typeof expectedHost!=='string' || !isApprovedLabHost(expectedHost)) {
@@ -85,8 +85,10 @@ export async function readOwnedOpenWrtUbus({
 }
 
 function isApprovedLabHost(host) {
-  if(host==='localhost' || host.endsWith('.lan') || host.endsWith('.local'))return true;
-  return isApprovedPrivateAddress(host);
+  // Do not resolve DNS names, even .lan/.local, before the private-scope check:
+  // a poisoned DNS record could otherwise receive a TLS handshake. Use an
+  // explicitly selected RFC1918 or loopback IPv4 literal, with a trusted CA.
+  return isApprovedPrivateAddress(host) && isIP(host) === 4;
 }
 function isApprovedPrivateAddress(address) {
   if(typeof address!=='string')return false;
