@@ -184,6 +184,6 @@ export const sourceAtlas = [
     "id": "R31",
     "repository": "morluto/rea",
     "commit": "144843ccc26bd372d61b8c6a27b37a01a5b0fb61",
-    "use": "Desktop REA 6.8.0 tooling; ELF notes verified; deep engines unavailable"
+    "use": "REA 6.8.0; ELF inspection and Ghidra 12.1.4 worker verified on host/CI; physical phone acceptance open"
   }
 ] as const;
