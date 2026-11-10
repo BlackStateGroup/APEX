@@ -9,6 +9,9 @@ network security mode declared when the companion starts. The status is about
 the APEX companion and its host. The security mode is configuration supplied
 by the operator, so confirm it against the current router settings.
 
+The [proposed Wi-Fi access and recovery scope](WIFI_ACCESS_RECOVERY_INTENT.md)
+records Black State’s intended capability for the APEX Wi-Fi area.
+
 ## Run the companion
 
 Use an updated Python 3 installation on Linux and a private management
