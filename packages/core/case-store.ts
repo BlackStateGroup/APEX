@@ -23,9 +23,17 @@ export interface CaseCrypto { sha256(text: string): Promise<string>; randomId():
 const hashPattern = /^[a-f0-9]{64}$/;
 const idPattern = /^[a-zA-Z0-9_-]{1,80}$/;
 const controls = /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u;
+function validUnicode(value: string) {
+  for (let i = 0; i < value.length; i++) {
+    const unit = value.charCodeAt(i);
+    if (unit >= 0xd800 && unit <= 0xdbff) { const next = value.charCodeAt(++i); if (!(next >= 0xdc00 && next <= 0xdfff)) throw new Error('Unpaired Unicode surrogate in source'); }
+    else if (unit >= 0xdc00 && unit <= 0xdfff) throw new Error('Unpaired Unicode surrogate in source');
+  }
+  return value;
+}
 function label(value: unknown, max: number): string {
   if (typeof value !== 'string' || !value.trim() || value.length > max || controls.test(value)) throw new Error('Invalid case label');
-  return value;
+  return validUnicode(value);
 }
 function record(value: unknown, keys: string[]): Record<string, unknown> {
   if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length !== keys.length || keys.some(key => !Object.hasOwn(value, key))) throw new Error('Invalid case fields');
@@ -40,6 +48,7 @@ function artifact(value: unknown, previous: Set<string>): CaseArtifact {
   if (typeof a.id !== 'string' || !hashPattern.test(a.id) || typeof a.contentSha256 !== 'string' || !hashPattern.test(a.contentSha256)) throw new Error('Invalid artifact digest');
   if (!['source', 'analysis', 'profile', 'report'].includes(String(a.kind)) || !['synthetic', 'operator-import', 'device-reported', 'derived'].includes(String(a.origin))) throw new Error('Invalid artifact type');
   if (typeof a.content !== 'string' || a.content.length > SOURCE_LIMIT || !a.content.length) throw new Error('Source must contain 1 to 65536 characters');
+  validUnicode(a.content);
   if (!Array.isArray(a.parents) || a.parents.length > 16 || a.parents.some(p => typeof p !== 'string' || !previous.has(p)) || new Set(a.parents).size !== a.parents.length) throw new Error('Missing, duplicate or forward artifact parent');
   if (a.origin === 'derived' ? a.kind === 'source' || !a.parents.length : a.parents.length > 0 || a.kind === 'analysis' || a.kind === 'profile') throw new Error('Derived results need retained source parents');
   return { id: a.id, name: label(a.name, 120), kind: a.kind as ArtifactKind, origin: a.origin as ArtifactOrigin, content: a.content, contentSha256: a.contentSha256, parents: [...a.parents] };
@@ -116,6 +125,7 @@ export class CaseStore {
     // Snapshot mutable caller input before the first await.
     const raw = { name: input.name, kind: input.kind, origin: input.origin, content: input.content, parents: [...(input.parents ?? [])] };
     if (typeof raw.content !== 'string' || raw.content.length > SOURCE_LIMIT || !raw.content.length) throw new Error('Source must contain 1 to 65536 characters');
+    validUnicode(raw.content);
     const c = await this.open(id);
     if (c.revision !== revision) throw new CaseConflict();
     const candidate = { ...raw, contentSha256: await this.digest(raw.content) };

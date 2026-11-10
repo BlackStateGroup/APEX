@@ -50,6 +50,7 @@ test('missing lineage, source parents, wrong origin, oversize and title controls
   await assert.rejects(store.append(c.id, 1, { ...source, parents: ['a'.repeat(64)] }), /parent/);
   await assert.rejects(store.append(c.id, 1, { ...source, content: 'x'.repeat(65537) }), /65536/);
   await assert.rejects(store.create('bad\u202ename'), /label/);
+  await assert.rejects(store.append(c.id, 1, { ...source, content: '\ud800' }), /surrogate/);
 });
 test('restore never overwrites a conflicting revision, corruption is retained and reported', async () => {
   const { store, rows } = setup(); const c = await store.create('Recovery'); const old = await store.export(c.id);

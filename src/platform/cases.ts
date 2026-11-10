@@ -4,11 +4,13 @@ import type { CaseBackend } from '../../packages/core/case-store.ts';
 let opening: Promise<IDBDatabase> | null = null;
 function database() {
   opening ??= new Promise<IDBDatabase>((resolve, reject) => {
+    let failed = false;
     const request = indexedDB.open('apex-cases', 1);
     request.onupgradeneeded = () => { request.result.createObjectStore('cases', { keyPath: 'id' }); };
     request.onerror = () => reject(new Error('Case storage could not open. Existing data was retained.'));
-    request.onblocked = () => reject(new Error('Close older APEX tabs before opening cases.'));
+    request.onblocked = () => { failed = true; reject(new Error('Close older APEX tabs before opening cases.')); };
     request.onsuccess = () => {
+      if (failed) { request.result.close(); return; }
       request.result.onversionchange = () => { request.result.close(); opening = null; };
       resolve(request.result);
     };
