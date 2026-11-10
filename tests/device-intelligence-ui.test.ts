@@ -58,6 +58,15 @@ test('mobile importer refuses forged execution, unknown envelope fields and cred
   }
 });
 
+test('secret-shaped imported warning prose is discarded rather than echoed in the UI projection',()=>{
+  const candidate:any=JSON.parse(JSON.stringify(report()));
+  candidate.limitations=['password=SHOULD_NOT_APPEAR','privateKey=SHOULD_NOT_APPEAR','EXFILTRATE_THIS'];
+  const parsed=parseDeviceFirmwareReport(JSON.stringify(candidate));
+  assert.equal(JSON.stringify(parsed).includes('SHOULD_NOT_APPEAR'),false);
+  assert.equal(JSON.stringify(parsed).includes('EXFILTRATE_THIS'),false);
+  assert.equal(parsed.warnings.length,3);
+});
+
 test('archive accounting is bounded and tied to tar sources',()=>{
   const tar:any=report();
   tar.passport=createOfflinePassport({...tar.passport.source,format:'tar'},tar.passport.indicators);
