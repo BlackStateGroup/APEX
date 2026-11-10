@@ -11,7 +11,6 @@ import os
 from pathlib import Path
 import re
 import selectors
-import shutil
 import signal
 import sqlite3
 import ssl
@@ -105,6 +104,7 @@ class Worker:
         self.stopping = threading.Event()
         self.wake = threading.Event()
         self.thread = None
+        self.fault = None
         self.engine = engine or self.execute
         self.deadline = deadline
         self.targets = {}
@@ -132,6 +132,8 @@ class Worker:
             # Never replay work whose process cleanup was lost across a crash.
             self.db.execute("UPDATE jobs SET state='interrupted', error='restart-cleanup-unverified', updated=? WHERE state IN ('running','cancelling')", (stamp(),))
         except BaseException:
+            if hasattr(self, 'db'):
+                self.db.close()
             os.close(self.lock)
             raise
 
@@ -150,7 +152,7 @@ class Worker:
 
     def blocked(self):
         with self.mutex:
-            return self.db.execute("SELECT 1 FROM jobs WHERE state IN ('interrupted','cleanup-unknown') LIMIT 1").fetchone() is not None
+            return self.fault is not None or self.db.execute("SELECT 1 FROM jobs WHERE state IN ('interrupted','cleanup-unknown') LIMIT 1").fetchone() is not None
 
     def submit(self, value):
         value = request(value)
@@ -192,18 +194,27 @@ class Worker:
             return value
 
     def start(self):
+        if self.thread is not None:
+            raise Rejected('dispatcher-already-started')
         self.thread = threading.Thread(target=self.loop, name='apex-research-dispatch', daemon=True)
         self.thread.start()
 
     def loop(self):
         while not self.stopping.is_set():
-            if self.blocked() or not self.run_one():
-                self.wake.wait(0.2)
-                self.wake.clear()
+            try:
+                if self.blocked() or not self.run_one():
+                    self.wake.wait(0.2)
+                    self.wake.clear()
+            except Exception:
+                # Do not keep accepting work after a lost state write or a dead dispatcher.
+                self.fault = 'worker-state-unavailable'
+                return
 
     def run_one(self):
         with self.mutex:
             if self.blocked() or self.stopping.is_set():
+                return False
+            if self.db.execute("SELECT 1 FROM jobs WHERE state IN ('running','cancelling') LIMIT 1").fetchone():
                 return False
             row = self.db.execute("SELECT * FROM jobs WHERE state='queued' ORDER BY created,id LIMIT 1").fetchone()
             if not row:
@@ -255,14 +266,14 @@ class Worker:
         environment.pop('APEX_RESEARCH_TOKEN', None)
         environment['REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS'] = '60'
         try:
-            raw = run_process(args, cancelled, self.deadline, environment)
+            raw = run_process(args, cancelled, self.deadline, environment, workspace)
         except Rejected as error:
             if error.code != 'process-cleanup-unverified':
-                shutil.rmtree(workspace)
+                target.unlink(missing_ok=True)
             raise
         if digest(bounded_file(target)) != registered[0]['sha256']:
             raise Rejected('snapshot-changed')
-        shutil.rmtree(workspace)
+        target.unlink()
         return decode(raw)
 
     def close(self):
@@ -278,13 +289,13 @@ class Worker:
             os.close(self.lock)
 
 
-def run_process(args, cancelled, deadline, environment):
+def run_process(args, cancelled, deadline, environment, diagnostics=None):
     p = subprocess.Popen(args, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True, env=environment, cwd=ROOT)
     selector = selectors.DefaultSelector()
     for stream in (p.stdout, p.stderr):
         os.set_blocking(stream.fileno(), False)
         selector.register(stream, selectors.EVENT_READ)
-    captured, total, reason = bytearray(), 0, None
+    captured, errors, total, reason = bytearray(), bytearray(), 0, None
     end = time.monotonic() + deadline
     try:
         while selector.get_map():
@@ -302,6 +313,8 @@ def run_process(args, cancelled, deadline, environment):
                     break
                 if key.fileobj is p.stdout:
                     captured.extend(chunk)
+                else:
+                    errors.extend(chunk)
             if reason:
                 break
         if not reason:
@@ -318,29 +331,54 @@ def run_process(args, cancelled, deadline, environment):
                 return True
             except ProcessLookupError:
                 return False
-        if exists():
-            if not reason:
-                reason = 'engine-left-processes'
-            try:
-                os.killpg(p.pid, signal.SIGTERM)
-            except ProcessLookupError:
-                pass
-            try:
-                p.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                pass
+        clean = False
+        try:
             if exists():
+                if not reason:
+                    reason = 'engine-left-processes'
                 try:
-                    os.killpg(p.pid, signal.SIGKILL)
+                    os.killpg(p.pid, signal.SIGTERM)
                 except ProcessLookupError:
                     pass
-        p.wait(timeout=5)
-        until = time.monotonic() + 2
-        while exists() and time.monotonic() < until:
-            time.sleep(0.02)
-        p.stdout.close()
-        p.stderr.close()
-        if exists():
+                try:
+                    p.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    pass
+                if exists():
+                    try:
+                        os.killpg(p.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+            p.wait(timeout=5)
+            until = time.monotonic() + 2
+            while exists() and time.monotonic() < until:
+                time.sleep(0.02)
+            clean = not exists()
+        except (OSError, subprocess.SubprocessError):
+            # An unavailable permission/process probe is uncertainty, never ordinary completion.
+            try:
+                p.kill()
+                p.wait(timeout=2)
+            except (OSError, subprocess.SubprocessError):
+                pass
+        finally:
+            p.stdout.close()
+            p.stderr.close()
+        if diagnostics:
+            try:
+                record = {'exitCode': p.returncode, 'reason': reason, 'processGroupAbsent': clean,
+                          'stdoutSha256': digest(captured), 'stderrSha256': digest(errors),
+                          'capturedBytes': len(captured) + len(errors)}
+                for name, data in [('stdout.txt', captured), ('stderr.txt', errors), ('process.json', encode(record).encode())]:
+                    with (diagnostics / name).open('xb') as retained:
+                        os.fchmod(retained.fileno(), 0o600)
+                        retained.write(data)
+                        retained.flush()
+                        os.fsync(retained.fileno())
+            except OSError:
+                if clean:
+                    raise Rejected('diagnostic-retention-failed') from None
+        if not clean:
             raise Rejected('process-cleanup-unverified')
     if reason or p.returncode != 0:
         raise Rejected(reason or 'engine-failed')

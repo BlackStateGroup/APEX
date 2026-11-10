@@ -10,6 +10,7 @@ Updated 10 November 2026. This index supersedes older status sentences for the n
 | [PR #24](https://github.com/BlackStateGroup/APEX/pull/24) | Stock Flipper iPhone BLE status workflow and installation profiles | Separate branch. Signing, installation and a real Flipper still needed |
 | [PR #26](https://github.com/BlackStateGroup/APEX/pull/26) | Durable cases, source/derived lineage, export/restore, paired observations, bounded learning and reusable profiles | Stacked on #24. Software verification recorded in [case status](CASE_WORKSPACE_STATUS.md); synthetic fixture is not physical accuracy |
 | [PR #27](https://github.com/BlackStateGroup/APEX/pull/27) | Full REA/Ghidra decompilation, snapshot restart and reconstructed CRC vector experiment | Independent research branch. See its engine report; no authenticated worker service or third-party target acceptance |
+| [PR #33](https://github.com/BlackStateGroup/APEX/pull/33) | Authenticated durable REA jobs, Research-tab controls and source-linked case results | Stacked on #30. Actual REA/HTTPS host path verified; deployment and real-phone acceptance remain separate. See [worker scope](RESEARCH_WORKER.md) |
 | [PR #23](https://github.com/BlackStateGroup/APEX/pull/23) | Wi-Fi reports and authenticated status companion | Separate branch. Physical phone/Pi acceptance still open |
 | [PR #25](https://github.com/BlackStateGroup/APEX/pull/25) | Device intelligence and recovery blueprint | Planning only, not an implemented router integration |
 

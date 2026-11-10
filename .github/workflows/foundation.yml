@@ -40,6 +40,7 @@ jobs:
           name: case-workspace-evidence
           path: |
             review-evidence/case-workspace/
+            review-evidence/research-worker/
             test-results/
           if-no-files-found: ignore
       - run: npm run inventory:check

@@ -13,7 +13,7 @@ const original = readFileSync(input);
 if (original.length < 16 || original.length > 4_194_304 || digest(original) !== expectedHash) throw new Error('Input identity mismatch');
 function run(args) {
   const r = spawnSync(process.execPath, [rea, ...args], { encoding: 'utf8', shell: false, timeout: 150000, maxBuffer: 131072, stdio: ['ignore', 'pipe', 'pipe'] });
-  if (r.error || r.status !== 0 || r.signal) throw new Error('REA operation failed');
+  if (r.error || r.status !== 0 || r.signal) throw new Error(`REA operation failed: ${[r.error?.message, r.stderr, r.stdout].filter(Boolean).join('\n').slice(0, 4096)}`);
   return r.stdout.trim();
 }
 if (run(['--version']) !== '6.8.0') throw new Error('REA version mismatch');

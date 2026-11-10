@@ -43,6 +43,8 @@ On restart, previously running/cancelling jobs become interrupted and the dispat
 
 The service reads registered local binaries using bounded regular-file descriptors and rejects symlink leaf paths. Its state directory must be private. The operator and analysis host remain trusted; REA/Ghidra are native parsers, not a sandbox for hostile firmware. No engine isolation or remote-host attestation is claimed.
 
+Bounded stdout/stderr and a process receipt are retained beneath each private job directory, including failed attempts. They include content hashes, exit status and the cleanup observation and are not served by the API. A denied process-visibility check becomes cleanup-unknown and pauses dispatch. Successful cleanup removes the temporary ELF snapshot; unknown cleanup retains it. Keep these diagnostics private because engine output can contain firmware details and host paths.
+
 ## Evidence and bounds
 
 Targets: 16 bytes to 4 MiB, ELF only. Requests: 4 KiB. Engine stdout/stderr combined: 128 KiB. Returned output: 32 KiB; complete result: 64 KiB. A job deadline defaults to 180 seconds, followed by bounded process cleanup. The HTTPS listener allows eight concurrent connections with bounded socket reads/handshakes.

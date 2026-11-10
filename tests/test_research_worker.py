@@ -9,6 +9,7 @@ import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 from uuid import uuid4
@@ -79,6 +80,8 @@ class WorkerTests(unittest.TestCase):
         thread.start()
         self.assertTrue(entered.wait(3))
         self.assertEqual(self.worker.cancel(job['id'])['state'], 'cancelling')
+        self.worker.submit(self.request())
+        self.assertFalse(self.worker.run_one())
         release.set()
         thread.join(3)
         self.assertEqual(self.worker.get(job['id'])['state'], 'cancelled')
@@ -127,6 +130,22 @@ os._exit(23)
         self.assertEqual(self.worker.get(job['id'])['state'], 'cleanup-unknown')
         self.assertTrue(self.worker.blocked())
 
+    def test_unavailable_process_probe_fences_dispatch(self):
+        job = self.worker.submit(self.request())
+        real = w.os.killpg
+        def unavailable(pid, sig):
+            if sig == 0:
+                raise PermissionError('Process visibility denied')
+            return real(pid, sig)
+        def engine(*_):
+            with patch.object(w.os, 'killpg', unavailable):
+                w.run_process([sys.executable, '-c', 'print("done")'], lambda: False, 3, dict(os.environ))
+            return self.success()
+        self.worker.engine = engine
+        self.worker.run_one()
+        self.assertEqual(self.worker.get(job['id'])['state'], 'cleanup-unknown')
+        self.assertTrue(self.worker.blocked())
+
     def test_invalid_requests_unknown_targets_and_capacity(self):
         for request in [self.request(path='/etc/passwd'), self.request(symbol='anything'), self.request(operation='shell'), self.request(operation='ghidra-function', symbol='main'), self.request(targetSha256='0' * 64)]:
             with self.assertRaises(w.Rejected):
@@ -137,6 +156,18 @@ os._exit(23)
             self.worker.submit(self.request())
         with self.assertRaisesRegex(w.Rejected, 'duplicate-json-key'):
             w.decode('{"operation":"elf-notes","operation":"shell"}')
+
+    def test_dispatch_failure_pauses_new_work(self):
+        def broken():
+            raise OSError('Simulated persistence failure')
+        self.worker.run_one = broken
+        self.worker.start()
+        self.worker.thread.join(2)
+        self.assertTrue(self.worker.blocked())
+        with self.assertRaisesRegex(w.Rejected, 'worker-cleanup-unverified'):
+            self.worker.submit(self.request())
+        with self.assertRaisesRegex(w.Rejected, 'dispatcher-already-started'):
+            self.worker.start()
 
     def test_bad_engine_result_and_storage_tamper_rejected(self):
         job = self.worker.submit(self.request())
@@ -190,7 +221,11 @@ os._exit(23)
         result = self.worker.result(job['id'])
         self.assertEqual(result['provider'], 'rea-elf-notes/1')
         self.assertEqual(json.loads(result['output'])['subject']['digest']['sha256'], w.digest(self.target.read_bytes()))
-        self.assertFalse((self.worker.directory / job['id']).exists())
+        retained = self.worker.directory / job['id']
+        self.assertFalse((retained / 'input.elf').exists())
+        process = json.loads((retained / 'process.json').read_text())
+        self.assertTrue(process['processGroupAbsent'])
+        self.assertEqual(process['stdoutSha256'], w.digest((retained / 'stdout.txt').read_bytes()))
         # Exercise the real TypeScript client, TLS server, durable dispatcher and REA together.
         cert, key = self.root / 'real-cert.pem', self.root / 'real-key.pem'
         subprocess.run(['openssl', 'req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-keyout', str(key), '-out', str(cert), '-days', '1', '-subj', '/CN=localhost', '-addext', 'subjectAltName=DNS:localhost,IP:127.0.0.1'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
