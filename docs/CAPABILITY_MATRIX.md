@@ -1,5 +1,7 @@
 # Capability matrix
 
+> **Current product direction (13 November 2026):** Read the [Universal-key roadmap and sidelined capability register](UNIVERSAL_KEY_ROADMAP_AND_SIDELINED_REGISTER.md). APEX retains the ambition of a private, commercially distributed universal-key platform for authorised professionals. Implemented, unverified, blocked, deferred and currently unimplementable capabilities remain visible; ambition is not a claim of universal access. This addendum supplements historical foundation scope and does not remove its authority or safety requirements.
+
 This table separates the product roadmap from the foundation. **Host** means automated host execution, **source** means implementation awaiting its native/board acceptance, **cross-built** means the target compiler succeeded without physical testing, and **planned** means no working APEX adapter. The final evidence record in VERIFICATION.md takes precedence over an intended milestone.
 
 | Domain | Protocols/operations | Phone alone | Accessory/host route | Foundation | Required proof / restriction |
