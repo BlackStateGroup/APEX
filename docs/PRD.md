@@ -1,5 +1,7 @@
 # APEX product requirements
 
+> **Current product direction (13 November 2026):** Read the [Universal-key roadmap and sidelined capability register](UNIVERSAL_KEY_ROADMAP_AND_SIDELINED_REGISTER.md). APEX retains the ambition of a private, commercially distributed universal-key platform for authorised professionals. Implemented, unverified, blocked, deferred and currently unimplementable capabilities remain visible; ambition is not a claim of universal access. This addendum supplements historical foundation scope and does not remove its authority or safety requirements.
+
 Version 0.1, 1 November 2026. Product identity: **APEX, Universal Master Key**. Owner: Black State Group. This document specifies the platform; it does not claim the first foundation implements every capability.
 
 ## Vision and success
