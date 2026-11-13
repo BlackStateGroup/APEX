@@ -1,5 +1,7 @@
 # APEX
 
+> **Current product direction (13 November 2026):** Read the [Universal-key roadmap and sidelined capability register](docs/UNIVERSAL_KEY_ROADMAP_AND_SIDELINED_REGISTER.md). APEX retains the ambition of a private, commercially distributed universal-key platform for authorised professionals. Implemented, unverified, blocked, deferred and currently unimplementable capabilities remain visible; ambition is not a claim of universal access. This addendum supplements historical foundation scope and does not remove its authority or safety requirements.
+
 **Universal Master Key**: a modular electronic interoperability platform from Black State Group.
 
 **Mobile targets: iPhone and Android.** Native NFC and AXP Bluetooth integrations are implemented; physical phone/accessory testing remains pending; see [platform scope](docs/PLATFORM_SCOPE.md).
